@@ -212,7 +212,7 @@ publishing.publications.all {
 jmh {
     jmhVersion = jmhLibVersion
     humanOutputFile = null
-    includeTests = false
+    includeTests = true
     jvmArgs = ["-Djmh.ignoreLock=true"]
     jvmArgsAppend = ["-Djmh.separateClasspathJAR=true"]
 
