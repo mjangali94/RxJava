@@ -220,6 +220,7 @@ jmh {
         include = ".*" + project.jmh + ".*"
         println("JMH: " + include);
     }
+    duplicateClassesStrategy = 'warn'
 
 }
 

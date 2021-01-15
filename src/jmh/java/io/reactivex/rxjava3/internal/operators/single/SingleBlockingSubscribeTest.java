@@ -253,7 +253,7 @@ public class SingleBlockingSubscribeTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends JU2JmhBenchmark {
+    public static class myBenchmark extends JU2JmhBenchmark {
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noArgSuccess() throws java.lang.Throwable {

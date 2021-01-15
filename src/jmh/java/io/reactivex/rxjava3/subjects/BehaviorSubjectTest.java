@@ -702,7 +702,7 @@ public class BehaviorSubjectTest extends SubjectTest<Integer> {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.subjects.SubjectTest._Benchmark {
+    public static class myBenchmark extends io.reactivex.rxjava3.subjects.SubjectTest.myBenchmark {
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_thatSubscriberReceivesDefaultValueAndSubsequentEvents() throws java.lang.Throwable {

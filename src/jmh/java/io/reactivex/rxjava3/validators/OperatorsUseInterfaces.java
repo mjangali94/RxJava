@@ -154,7 +154,7 @@ public class OperatorsUseInterfaces {
     static final Set<Class<?>> CAN_RETURN = new HashSet<>(Arrays.asList(Callable.class, Supplier.class, Function.class, BiFunction.class, Function3.class, Function4.class, Function5.class, Function6.class, Function7.class, Function8.class, Function9.class, Publisher.class, ObservableSource.class, MaybeSource.class, SingleSource.class));
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends JU2JmhBenchmark {
+    public static class myBenchmark extends JU2JmhBenchmark {
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkFlowable() throws java.lang.Throwable {

@@ -294,7 +294,7 @@ public class SourceAnnotationCheck {
     static final List<String> TYPES_REQUIRING_NONNULL_TYPEARG = Arrays.asList("Iterable", "Stream", "Publisher", "Subscriber", "Processor");
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends JU2JmhBenchmark {
+    public static class myBenchmark extends JU2JmhBenchmark {
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkCompletable() throws java.lang.Throwable {

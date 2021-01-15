@@ -913,7 +913,7 @@ public class JavadocWording {
     static final String[] AT_RETURN_WORDS = { "@return a ", "@return an ", "@return the new ", "@return a new " };
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends JU2JmhBenchmark {
+    public static class myBenchmark extends JU2JmhBenchmark {
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maybeDocRefersToMaybeTypes() throws java.lang.Throwable {

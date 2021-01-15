@@ -44,13 +44,13 @@ public abstract class RxJavaTest {
     public final void announce() {
     }
 
-    @BenchmarkMode(Mode.All)
-    @Warmup(iterations = 5, time = 1, timeUnit = TimeUnit.SECONDS)
+    @BenchmarkMode({Mode.Throughput,Mode.SampleTime})
+    @Warmup(iterations = 10, time = 1, timeUnit = TimeUnit.SECONDS)
     @Measurement(iterations = 30, time = 1, timeUnit = TimeUnit.SECONDS)
     @OutputTimeUnit(TimeUnit.SECONDS)
     @Fork(value = 1)
     @State(Scope.Thread)
-    public static abstract class _Benchmark extends JU2JmhBenchmark {
+    public static abstract class myBenchmark extends JU2JmhBenchmark {
 
         @java.lang.Override
         public org.junit.runners.model.Statement applyRuleFields(org.junit.runners.model.Statement statement, org.junit.runner.Description description) {

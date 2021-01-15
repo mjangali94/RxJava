@@ -172,7 +172,7 @@ public class FlowableFromRunnableTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class myBenchmark extends io.reactivex.rxjava3.core.RxJavaTest.myBenchmark {
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromRunnable() throws java.lang.Throwable {
