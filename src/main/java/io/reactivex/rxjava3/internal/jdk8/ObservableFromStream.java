@@ -149,7 +149,7 @@ public final class ObservableFromStream<T> extends Observable<T> {
         public boolean isEmpty() {
             Iterator<T> it = iterator;
             if (it != null) {
-                if (!once || it.hasNext()) {
+                if (it.hasNext() || !once) {
                     return false;
                 }
                 clear();
