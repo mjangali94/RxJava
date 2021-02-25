@@ -59,7 +59,7 @@ public class ObservableWindowWithSizeTest extends RxJavaTest {
     @org.junit.Before
     public void myBefore() throws IOException {
     	FileWriter fw = new FileWriter("/Users/massi/Desktop/tmp.csv", true);
-    	fw.write(this.getClass().getName()+"."+name.getMethodName() +","+io.reactivex.rxjava3.core.myTestLogger.hitting_count()+"\n");
+    	fw.write(this.getClass().getName()+"."+name.getMethodName() +","+io.reactivex.rxjava3.core.myBlackhole.hitting_count()+"\n");
     	fw.close();
     }
 @Test

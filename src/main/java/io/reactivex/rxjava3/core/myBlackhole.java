@@ -13,17 +13,17 @@
 
 package io.reactivex.rxjava3.core;
 
-public class myTestLogger {
+public class myBlackhole {
 	public static int counter;
 	
 	public static Object get_value(Object o) {
-		myTestLogger.counter +=1;
+		myBlackhole.counter +=1;
 		return o;
 	}
 	
 	 public static int hitting_count() {
-		 int tmp = myTestLogger.counter;
-		 myTestLogger.counter=0;
+		 int tmp = myBlackhole.counter;
+		 myBlackhole.counter=0;
 		 return tmp;
 	 }
 	
