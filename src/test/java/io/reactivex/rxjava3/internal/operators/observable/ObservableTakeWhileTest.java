@@ -17,6 +17,9 @@ import static org.junit.Assert.fail;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import org.junit.rules.TestName;
 import org.junit.Test;
 
 import io.reactivex.rxjava3.core.*;
@@ -30,7 +33,14 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class ObservableTakeWhileTest extends RxJavaTest {
 
-    @Test
+    @org.junit.Rule public TestName name = new TestName();
+    @org.junit.Before
+    public void myBefore() throws IOException {
+    	FileWriter fw = new FileWriter("/Users/massi/Desktop/tmp.csv", true);
+    	fw.write(this.getClass().getName()+"."+name.getMethodName() +","+io.reactivex.rxjava3.core.myTestLogger.hitting_count()+"\n");
+    	fw.close();
+    }
+@Test
     public void takeWhile1() {
         Observable<Integer> w = Observable.just(1, 2, 3);
         Observable<Integer> take = w.takeWhile(new Predicate<Integer>() {

@@ -21,6 +21,9 @@ import java.util.*;
 import java.util.concurrent.*;
 
 import io.reactivex.rxjava3.disposables.Disposable;
+import java.io.FileWriter;
+import java.io.IOException;
+import org.junit.rules.TestName;
 import org.junit.Test;
 
 import io.reactivex.rxjava3.core.*;
@@ -29,7 +32,14 @@ import io.reactivex.rxjava3.core.Observer;
 import io.reactivex.rxjava3.exceptions.TestException;
 
 public class BlockingObservableToFutureTest extends RxJavaTest {
-    @Test
+    @org.junit.Rule public TestName name = new TestName();
+    @org.junit.Before
+    public void myBefore() throws IOException {
+    	FileWriter fw = new FileWriter("/Users/massi/Desktop/tmp.csv", true);
+    	fw.write(this.getClass().getName()+"."+name.getMethodName() +","+io.reactivex.rxjava3.core.myTestLogger.hitting_count()+"\n");
+    	fw.close();
+    }
+@Test
     public void toFuture() throws InterruptedException, ExecutionException {
         Observable<String> obs = Observable.just("one");
         Future<String> f = obs.toFuture();

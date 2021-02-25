@@ -14,6 +14,9 @@
 package io.reactivex.rxjava3.internal.observers;
 
 import io.reactivex.rxjava3.disposables.Disposable;
+import java.io.FileWriter;
+import java.io.IOException;
+import org.junit.rules.TestName;
 import org.junit.Test;
 
 import io.reactivex.rxjava3.annotations.Nullable;
@@ -23,7 +26,14 @@ import io.reactivex.rxjava3.testsupport.TestObserverEx;
 
 public class BasicFuseableObserverTest extends RxJavaTest {
 
-    @Test(expected = UnsupportedOperationException.class)
+    @org.junit.Rule public TestName name = new TestName();
+    @org.junit.Before
+    public void myBefore() throws IOException {
+    	FileWriter fw = new FileWriter("/Users/massi/Desktop/tmp.csv", true);
+    	fw.write(this.getClass().getName()+"."+name.getMethodName() +","+io.reactivex.rxjava3.core.myTestLogger.hitting_count()+"\n");
+    	fw.close();
+    }
+@Test(expected = UnsupportedOperationException.class)
     public void offer() {
         TestObserverEx<Integer> to = new TestObserverEx<>();
         BasicFuseableObserver<Integer, Integer> o = new BasicFuseableObserver<Integer, Integer>(to) {

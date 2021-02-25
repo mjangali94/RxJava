@@ -19,6 +19,9 @@ import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import org.junit.rules.TestName;
 import org.junit.Test;
 import org.reactivestreams.*;
 
@@ -30,7 +33,14 @@ import io.reactivex.rxjava3.subscribers.*;
 
 public class FlowableSwitchIfEmptyTest extends RxJavaTest {
 
-    @Test
+    @org.junit.Rule public TestName name = new TestName();
+    @org.junit.Before
+    public void myBefore() throws IOException {
+    	FileWriter fw = new FileWriter("/Users/massi/Desktop/tmp.csv", true);
+    	fw.write(this.getClass().getName()+"."+name.getMethodName() +","+io.reactivex.rxjava3.core.myTestLogger.hitting_count()+"\n");
+    	fw.close();
+    }
+@Test
     public void switchWhenNotEmpty() throws Exception {
         final AtomicBoolean subscribed = new AtomicBoolean(false);
         final Flowable<Integer> flowable = Flowable.just(4)

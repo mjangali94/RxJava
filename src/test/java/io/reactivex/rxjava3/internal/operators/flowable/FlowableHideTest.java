@@ -17,6 +17,9 @@ import static org.junit.Assert.assertFalse;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import org.junit.rules.TestName;
 import org.junit.Test;
 import org.reactivestreams.Subscriber;
 
@@ -27,7 +30,14 @@ import io.reactivex.rxjava3.processors.PublishProcessor;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class FlowableHideTest extends RxJavaTest {
-    @Test
+    @org.junit.Rule public TestName name = new TestName();
+    @org.junit.Before
+    public void myBefore() throws IOException {
+    	FileWriter fw = new FileWriter("/Users/massi/Desktop/tmp.csv", true);
+    	fw.write(this.getClass().getName()+"."+name.getMethodName() +","+io.reactivex.rxjava3.core.myTestLogger.hitting_count()+"\n");
+    	fw.close();
+    }
+@Test
     public void hiding() {
         PublishProcessor<Integer> src = PublishProcessor.create();
 

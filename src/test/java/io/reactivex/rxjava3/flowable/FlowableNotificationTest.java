@@ -13,13 +13,23 @@
 
 package io.reactivex.rxjava3.flowable;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import org.junit.rules.TestName;
 import org.junit.*;
 
 import io.reactivex.rxjava3.core.*;
 
 public class FlowableNotificationTest extends RxJavaTest {
 
-    @Test(expected = NullPointerException.class)
+    @org.junit.Rule public TestName name = new TestName();
+    @org.junit.Before
+    public void myBefore() throws IOException {
+    	FileWriter fw = new FileWriter("/Users/massi/Desktop/tmp.csv", true);
+    	fw.write(this.getClass().getName()+"."+name.getMethodName() +","+io.reactivex.rxjava3.core.myTestLogger.hitting_count()+"\n");
+    	fw.close();
+    }
+@Test(expected = NullPointerException.class)
     public void onNextIntegerNotificationDoesNotEqualNullNotification() {
         final Notification<Integer> integerNotification = Notification.createOnNext(1);
         final Notification<Integer> nullNotification = Notification.createOnNext(null);

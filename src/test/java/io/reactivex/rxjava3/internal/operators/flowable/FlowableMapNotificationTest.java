@@ -13,6 +13,9 @@
 
 package io.reactivex.rxjava3.internal.operators.flowable;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import org.junit.rules.TestName;
 import org.junit.Test;
 import org.reactivestreams.*;
 
@@ -27,7 +30,14 @@ import io.reactivex.rxjava3.subscribers.TestSubscriber;
 import io.reactivex.rxjava3.testsupport.*;
 
 public class FlowableMapNotificationTest extends RxJavaTest {
-    @Test
+    @org.junit.Rule public TestName name = new TestName();
+    @org.junit.Before
+    public void myBefore() throws IOException {
+    	FileWriter fw = new FileWriter("/Users/massi/Desktop/tmp.csv", true);
+    	fw.write(this.getClass().getName()+"."+name.getMethodName() +","+io.reactivex.rxjava3.core.myTestLogger.hitting_count()+"\n");
+    	fw.close();
+    }
+@Test
     public void just() {
         TestSubscriber<Object> ts = new TestSubscriber<>();
         Flowable.just(1)

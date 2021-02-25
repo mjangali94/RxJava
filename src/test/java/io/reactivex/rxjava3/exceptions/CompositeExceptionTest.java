@@ -20,6 +20,9 @@ import static org.junit.Assert.*;
 import java.io.*;
 import java.util.*;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import org.junit.rules.TestName;
 import org.junit.Test;
 
 import io.reactivex.rxjava3.core.RxJavaTest;
@@ -38,7 +41,14 @@ public class CompositeExceptionTest extends RxJavaTest {
         return new CompositeException(throwables);
     }
 
-    @Test
+    @org.junit.Rule public TestName name = new TestName();
+    @org.junit.Before
+    public void myBefore() throws IOException {
+    	FileWriter fw = new FileWriter("/Users/massi/Desktop/tmp.csv", true);
+    	fw.write(this.getClass().getName()+"."+name.getMethodName() +","+io.reactivex.rxjava3.core.myTestLogger.hitting_count()+"\n");
+    	fw.close();
+    }
+@Test
     public void multipleWithSameCause() {
         Throwable rootCause = new Throwable("RootCause");
         Throwable e1 = new Throwable("1", rootCause);

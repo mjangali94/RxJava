@@ -15,6 +15,9 @@
  */
 package io.reactivex.rxjava3.observable;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import org.junit.rules.TestName;
 import org.junit.Test;
 
 import io.reactivex.rxjava3.core.*;
@@ -25,7 +28,14 @@ public class ObservableCombineLatestTests extends RxJavaTest {
     /**
      * This won't compile if super/extends isn't done correctly on generics.
      */
-    @Test
+    @org.junit.Rule public TestName name = new TestName();
+    @org.junit.Before
+    public void myBefore() throws IOException {
+    	FileWriter fw = new FileWriter("/Users/massi/Desktop/tmp.csv", true);
+    	fw.write(this.getClass().getName()+"."+name.getMethodName() +","+io.reactivex.rxjava3.core.myTestLogger.hitting_count()+"\n");
+    	fw.close();
+    }
+@Test
     public void covarianceOfCombineLatest() {
         Observable<HorrorMovie> horrors = Observable.just(new HorrorMovie());
         Observable<CoolRating> ratings = Observable.just(new CoolRating());

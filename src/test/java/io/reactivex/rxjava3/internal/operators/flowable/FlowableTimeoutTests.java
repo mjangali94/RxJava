@@ -21,6 +21,9 @@ import static org.mockito.Mockito.*;
 import java.util.List;
 import java.util.concurrent.*;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import org.junit.rules.TestName;
 import org.junit.*;
 import org.mockito.InOrder;
 import org.reactivestreams.*;
@@ -49,7 +52,14 @@ public class FlowableTimeoutTests extends RxJavaTest {
         withTimeout = underlyingSubject.timeout(TIMEOUT, TIME_UNIT, testScheduler);
     }
 
-    @Test
+    @org.junit.Rule public TestName name = new TestName();
+    @org.junit.Before
+    public void myBefore() throws IOException {
+    	FileWriter fw = new FileWriter("/Users/massi/Desktop/tmp.csv", true);
+    	fw.write(this.getClass().getName()+"."+name.getMethodName() +","+io.reactivex.rxjava3.core.myTestLogger.hitting_count()+"\n");
+    	fw.close();
+    }
+@Test
     public void shouldNotTimeoutIfOnNextWithinTimeout() {
         Subscriber<String> subscriber = TestHelper.mockSubscriber();
         TestSubscriber<String> ts = new TestSubscriber<>(subscriber);

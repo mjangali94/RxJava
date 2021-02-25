@@ -19,6 +19,9 @@ import static org.mockito.Mockito.*;
 
 import java.util.*;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import org.junit.rules.TestName;
 import org.junit.*;
 
 import io.reactivex.rxjava3.core.*;
@@ -49,7 +52,14 @@ public class ObservableMapTest extends RxJavaTest {
         stringObserver2 = TestHelper.mockObserver();
     }
 
-    @Test
+    @org.junit.Rule public TestName name = new TestName();
+    @org.junit.Before
+    public void myBefore() throws IOException {
+    	FileWriter fw = new FileWriter("/Users/massi/Desktop/tmp.csv", true);
+    	fw.write(this.getClass().getName()+"."+name.getMethodName() +","+io.reactivex.rxjava3.core.myTestLogger.hitting_count()+"\n");
+    	fw.close();
+    }
+@Test
     public void map() {
         Map<String, String> m1 = getMap("One");
         Map<String, String> m2 = getMap("Two");

@@ -19,6 +19,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import org.junit.rules.TestName;
 import org.junit.After;
 import org.junit.Test;
 
@@ -33,7 +36,14 @@ public class SchedulerTest {
       Scheduler.IS_DRIFT_USE_NANOTIME = false;
     }
 
-    @Test
+    @org.junit.Rule public TestName name = new TestName();
+    @org.junit.Before
+    public void myBefore() throws IOException {
+    	FileWriter fw = new FileWriter("/Users/massi/Desktop/tmp.csv", true);
+    	fw.write(this.getClass().getName()+"."+name.getMethodName() +","+io.reactivex.rxjava3.core.myTestLogger.hitting_count()+"\n");
+    	fw.close();
+    }
+@Test
     public void driftUseNanoTimeNotSetByDefault() {
       assertFalse(Scheduler.IS_DRIFT_USE_NANOTIME);
       assertFalse(Boolean.getBoolean(DRIFT_USE_NANOTIME));

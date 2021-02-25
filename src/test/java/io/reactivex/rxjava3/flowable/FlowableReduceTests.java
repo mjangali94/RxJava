@@ -15,6 +15,9 @@ package io.reactivex.rxjava3.flowable;
 
 import static org.junit.Assert.*;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import org.junit.rules.TestName;
 import org.junit.Test;
 
 import io.reactivex.rxjava3.core.*;
@@ -23,7 +26,14 @@ import io.reactivex.rxjava3.functions.BiFunction;
 
 public class FlowableReduceTests extends RxJavaTest {
 
-    @Test
+    @org.junit.Rule public TestName name = new TestName();
+    @org.junit.Before
+    public void myBefore() throws IOException {
+    	FileWriter fw = new FileWriter("/Users/massi/Desktop/tmp.csv", true);
+    	fw.write(this.getClass().getName()+"."+name.getMethodName() +","+io.reactivex.rxjava3.core.myTestLogger.hitting_count()+"\n");
+    	fw.close();
+    }
+@Test
     public void reduceIntsFlowable() {
         Flowable<Integer> f = Flowable.just(1, 2, 3);
         int value = f.reduce(new BiFunction<Integer, Integer, Integer>() {

@@ -17,6 +17,9 @@ import java.io.*;
 import java.util.*;
 import java.util.regex.*;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import org.junit.rules.TestName;
 import org.junit.Test;
 
 import io.reactivex.rxjava3.testsupport.TestHelper;
@@ -29,7 +32,14 @@ public class TestPrefixInMethodName {
     private static final String pattern = "void\\s+test[a-zA-Z0-9]";
     private static final String replacement = "void ";
 
-    @Test
+    @org.junit.Rule public TestName name = new TestName();
+    @org.junit.Before
+    public void myBefore() throws IOException {
+    	FileWriter fw = new FileWriter("/Users/massi/Desktop/tmp.csv", true);
+    	fw.write(this.getClass().getName()+"."+name.getMethodName() +","+io.reactivex.rxjava3.core.myTestLogger.hitting_count()+"\n");
+    	fw.close();
+    }
+@Test
     public void checkAndUpdateTestMethodNames() throws Exception {
         File f = TestHelper.findSource("Flowable");
         if (f == null) {

@@ -19,6 +19,9 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.stream.*;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import org.junit.rules.TestName;
 import org.junit.Test;
 import org.reactivestreams.*;
 
@@ -40,7 +43,14 @@ import io.reactivex.rxjava3.testsupport.TestHelper;
  */
 public class ParamValidationCheckerTest {
 
-    @Test(timeout = 30000)
+    @org.junit.Rule public TestName name = new TestName();
+    @org.junit.Before
+    public void myBefore() throws IOException {
+    	FileWriter fw = new FileWriter("/Users/massi/Desktop/tmp.csv", true);
+    	fw.write(this.getClass().getName()+"."+name.getMethodName() +","+io.reactivex.rxjava3.core.myTestLogger.hitting_count()+"\n");
+    	fw.close();
+    }
+@Test(timeout = 30000)
     public void checkFlowable() {
         checkClass(Flowable.class);
     }

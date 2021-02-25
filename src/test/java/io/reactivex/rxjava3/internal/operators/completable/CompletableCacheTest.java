@@ -15,6 +15,9 @@ package io.reactivex.rxjava3.internal.operators.completable;
 
 import static org.junit.Assert.*;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import org.junit.rules.TestName;
 import org.junit.Test;
 
 import io.reactivex.rxjava3.core.*;
@@ -40,7 +43,14 @@ public class CompletableCacheTest extends RxJavaTest implements Consumer<Object>
         count++;
     }
 
-    @Test
+    @org.junit.Rule public TestName name = new TestName();
+    @org.junit.Before
+    public void myBefore() throws IOException {
+    	FileWriter fw = new FileWriter("/Users/massi/Desktop/tmp.csv", true);
+    	fw.write(this.getClass().getName()+"."+name.getMethodName() +","+io.reactivex.rxjava3.core.myTestLogger.hitting_count()+"\n");
+    	fw.close();
+    }
+@Test
     public void normal() {
         Completable c = Completable.complete()
         .doOnSubscribe(this)

@@ -18,6 +18,9 @@ import static org.junit.Assert.assertNotNull;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicReference;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import org.junit.rules.TestName;
 import org.junit.Test;
 import org.reactivestreams.Subscriber;
 
@@ -32,7 +35,14 @@ public class FlowableErrorHandlingTests extends RxJavaTest {
      * is handled and emitted to the onError.
      * @throws InterruptedException if the test is interrupted
      */
-    @Test
+    @org.junit.Rule public TestName name = new TestName();
+    @org.junit.Before
+    public void myBefore() throws IOException {
+    	FileWriter fw = new FileWriter("/Users/massi/Desktop/tmp.csv", true);
+    	fw.write(this.getClass().getName()+"."+name.getMethodName() +","+io.reactivex.rxjava3.core.myTestLogger.hitting_count()+"\n");
+    	fw.close();
+    }
+@Test
     public void onNextError() throws InterruptedException {
         final CountDownLatch latch = new CountDownLatch(1);
         final AtomicReference<Throwable> caughtError = new AtomicReference<>();

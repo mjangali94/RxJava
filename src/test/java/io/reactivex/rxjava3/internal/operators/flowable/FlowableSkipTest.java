@@ -21,6 +21,9 @@ import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import org.junit.rules.TestName;
 import org.junit.Test;
 import org.reactivestreams.Subscriber;
 
@@ -31,7 +34,14 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class FlowableSkipTest extends RxJavaTest {
 
-    @Test(expected = IllegalArgumentException.class)
+    @org.junit.Rule public TestName name = new TestName();
+    @org.junit.Before
+    public void myBefore() throws IOException {
+    	FileWriter fw = new FileWriter("/Users/massi/Desktop/tmp.csv", true);
+    	fw.write(this.getClass().getName()+"."+name.getMethodName() +","+io.reactivex.rxjava3.core.myTestLogger.hitting_count()+"\n");
+    	fw.close();
+    }
+@Test(expected = IllegalArgumentException.class)
     public void skipNegativeElements() {
 
         Flowable<String> skip = Flowable.just("one", "two", "three").skip(-99);

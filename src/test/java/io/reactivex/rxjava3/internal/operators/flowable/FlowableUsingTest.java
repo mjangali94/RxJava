@@ -19,6 +19,9 @@ import static org.mockito.Mockito.*;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import org.junit.rules.TestName;
 import org.junit.*;
 import org.mockito.InOrder;
 import org.reactivestreams.*;
@@ -59,7 +62,14 @@ public class FlowableUsingTest extends RxJavaTest {
 
     };
 
-    @Test
+    @org.junit.Rule public TestName name = new TestName();
+    @org.junit.Before
+    public void myBefore() throws IOException {
+    	FileWriter fw = new FileWriter("/Users/massi/Desktop/tmp.csv", true);
+    	fw.write(this.getClass().getName()+"."+name.getMethodName() +","+io.reactivex.rxjava3.core.myTestLogger.hitting_count()+"\n");
+    	fw.close();
+    }
+@Test
     public void using() {
         performTestUsing(false);
     }

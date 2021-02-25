@@ -16,6 +16,9 @@ package io.reactivex.rxjava3.internal.operators.flowable;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import org.junit.rules.TestName;
 import org.junit.*;
 import org.reactivestreams.Publisher;
 
@@ -28,7 +31,14 @@ import io.reactivex.rxjava3.subscribers.TestSubscriber;
 import io.reactivex.rxjava3.testsupport.*;
 
 public class FlowableOnBackpressureLatestTest extends RxJavaTest {
-    @Test
+    @org.junit.Rule public TestName name = new TestName();
+    @org.junit.Before
+    public void myBefore() throws IOException {
+    	FileWriter fw = new FileWriter("/Users/massi/Desktop/tmp.csv", true);
+    	fw.write(this.getClass().getName()+"."+name.getMethodName() +","+io.reactivex.rxjava3.core.myTestLogger.hitting_count()+"\n");
+    	fw.close();
+    }
+@Test
     public void simple() {
         TestSubscriberEx<Integer> ts = new TestSubscriberEx<>();
 

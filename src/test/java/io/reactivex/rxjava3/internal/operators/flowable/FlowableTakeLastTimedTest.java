@@ -18,6 +18,9 @@ import static org.mockito.Mockito.*;
 
 import java.util.concurrent.TimeUnit;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import org.junit.rules.TestName;
 import org.junit.Test;
 import org.mockito.InOrder;
 import org.reactivestreams.*;
@@ -32,7 +35,14 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class FlowableTakeLastTimedTest extends RxJavaTest {
 
-    @Test(expected = IllegalArgumentException.class)
+    @org.junit.Rule public TestName name = new TestName();
+    @org.junit.Before
+    public void myBefore() throws IOException {
+    	FileWriter fw = new FileWriter("/Users/massi/Desktop/tmp.csv", true);
+    	fw.write(this.getClass().getName()+"."+name.getMethodName() +","+io.reactivex.rxjava3.core.myTestLogger.hitting_count()+"\n");
+    	fw.close();
+    }
+@Test(expected = IllegalArgumentException.class)
     public void takeLastTimedWithNegativeCount() {
         Flowable.just("one").takeLast(-1, 1, TimeUnit.SECONDS);
     }
