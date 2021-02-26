@@ -19,7 +19,6 @@ import java.io.*;
 import java.util.*;
 
 import io.reactivex.rxjava3.annotations.NonNull;
-import io.reactivex.rxjava3.core.myBlackhole;
 
 /**
  * Represents an exception that is a composite of one or more other exceptions. A {@code CompositeException}
@@ -109,7 +108,7 @@ public final class CompositeException extends RuntimeException {
             String separator = System.getProperty("line.separator");
             if (exceptions.size() > 1) {
                 Map<Throwable, Boolean> seenCauses = new IdentityHashMap<>();
-                myBlackhole.get_value("1");
+
                 StringBuilder aggregateMessage = new StringBuilder();
                 aggregateMessage.append("Multiple exceptions (").append(exceptions.size()).append(")").append(separator);
 
@@ -206,7 +205,6 @@ public final class CompositeException extends RuntimeException {
      *            stream to print to
      */
     private void printStackTrace(PrintStreamOrWriter s) {
-    	myBlackhole.get_value("2");
         StringBuilder b = new StringBuilder(128);
         b.append(this).append('\n');
         for (StackTraceElement myStackElement : getStackTrace()) {
