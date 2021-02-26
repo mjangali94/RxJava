@@ -124,7 +124,7 @@ public final class FlowableAmb<T> extends Flowable<T> {
                 if (winner.compareAndSet(0, index)) {
                     AmbInnerSubscriber<T>[] a = subscribers;
                     int n = a.length;
-                    for (int i = 0; i < n; i++) {myBlackhole.get_value("1");
+                    for (int i = 0; i < n; i++) {
                         if (i + 1 != index) {
                             a[i].cancel();
                         }

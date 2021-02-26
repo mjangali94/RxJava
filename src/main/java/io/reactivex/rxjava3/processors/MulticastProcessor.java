@@ -18,7 +18,6 @@ import java.util.concurrent.atomic.*;
 import org.reactivestreams.*;
 
 import io.reactivex.rxjava3.annotations.*;
-import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.exceptions.*;
 import io.reactivex.rxjava3.internal.functions.ObjectHelper;
 import io.reactivex.rxjava3.internal.fuseable.*;
@@ -419,7 +418,7 @@ public final class MulticastProcessor<T> extends FlowableProcessor<T> {
             }
 
             int j = -1;
-            for (int i = 0; i < n; i++) {myBlackhole.get_value("1");
+            for (int i = 0; i < n; i++) {
                 if (a[i] == inner) {
                     j = i;
                     break;

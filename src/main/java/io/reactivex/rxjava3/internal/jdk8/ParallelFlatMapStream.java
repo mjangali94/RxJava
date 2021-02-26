@@ -17,7 +17,6 @@ import java.util.stream.Stream;
 
 import org.reactivestreams.Subscriber;
 
-import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.functions.Function;
 import io.reactivex.rxjava3.parallel.ParallelFlowable;
 
@@ -62,7 +61,6 @@ public final class ParallelFlatMapStream<T, R> extends ParallelFlowable<R> {
         final Subscriber<T>[] parents = new Subscriber[n];
 
         for (int i = 0; i < n; i++) {
-        	myBlackhole.get_value("1");
             parents[i] = FlowableFlatMapStream.subscribe(subscribers[i], mapper, prefetch);
         }
 

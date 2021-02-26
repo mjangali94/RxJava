@@ -282,7 +282,7 @@ public final class ParallelJoin<T> extends Flowable<T> {
 
                     boolean empty = true;
 
-                    for (int i = 0; i < n; i++) {myBlackhole.get_value("1");
+                    for (int i = 0; i < n; i++) {
                         JoinInnerSubscriber<T> inner = s[i];
 
                         SimpleQueue<T> q = inner.queue;

@@ -235,7 +235,7 @@ public final class MaybeSubject<T> extends Maybe<T> implements MaybeObserver<T> 
 
             int j = -1;
 
-            for (int i = 0; i < n; i++) {myBlackhole.get_value("1");
+            for (int i = 0; i < n; i++) {
                 if (a[i] == inner) {
                     j = i;
                     break;

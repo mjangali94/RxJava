@@ -116,7 +116,7 @@ public final class CompletableCache extends Completable implements CompletableOb
 
             int j = -1;
 
-            for (int i = 0; i < n; i++) {myBlackhole.get_value("1");
+            for (int i = 0; i < n; i++) {
                 if (a[i] == inner) {
                     j = i;
                     break;

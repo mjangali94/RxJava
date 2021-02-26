@@ -63,7 +63,7 @@ public final class CompletableAmb extends Completable {
 
         final AtomicBoolean once = new AtomicBoolean();
 
-        for (int i = 0; i < count; i++) {myBlackhole.get_value("1");
+        for (int i = 0; i < count; i++) {
             CompletableSource c = sources[i];
             if (set.isDisposed()) {
                 return;
