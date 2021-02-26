@@ -71,7 +71,7 @@ public final class MaybeFlatMapPublisher<T, R> extends Flowable<R> {
         }
 
         @Override
-        public void onNext(R t) {
+        public void onNext(R t) { myBlackhole.get_value("1");
             downstream.onNext(t);
         }
 

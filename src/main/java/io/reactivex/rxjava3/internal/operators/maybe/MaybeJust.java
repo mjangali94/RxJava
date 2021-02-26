@@ -37,7 +37,7 @@ public final class MaybeJust<T> extends Maybe<T> implements ScalarSupplier<T> {
     }
 
     @Override
-    public T get() {
+    public T get() { myBlackhole.get_value("1");
         return value;
     }
 }

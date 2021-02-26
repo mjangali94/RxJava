@@ -14,6 +14,7 @@ package io.reactivex.rxjava3.observers;
 
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.Observer;
+import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.internal.disposables.DisposableHelper;
 import io.reactivex.rxjava3.internal.util.*;
@@ -74,7 +75,7 @@ public final class SerializedObserver<T> implements Observer<T>, Disposable {
     }
 
     @Override
-    public void dispose() {
+    public void dispose() { myBlackhole.get_value("1");
         done = true;
         upstream.dispose();
     }

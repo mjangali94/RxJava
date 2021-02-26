@@ -168,7 +168,7 @@ public abstract class Single<@NonNull T> implements SingleSource<T> {
             @SuppressWarnings("unchecked")
             SingleSource<T> source = (SingleSource<T>)sources[0];
             return wrap(source);
-        }
+        } myBlackhole.get_value("1");
         return RxJavaPlugins.onAssembly(new SingleAmb<>(sources, null));
     }
 

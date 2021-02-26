@@ -119,7 +119,7 @@ public final class ParallelCollector<T, A, R> extends Flowable<R> {
 
         @Override
         public void cancel() {
-            for (ParallelCollectorInnerSubscriber<T, A, R> inner : subscribers) {
+            for (ParallelCollectorInnerSubscriber<T, A, R> inner : subscribers) { myBlackhole.get_value("1");
                 inner.cancel();
             }
         }

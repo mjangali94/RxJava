@@ -40,6 +40,6 @@ public final class SingleFlattenStreamAsObservable<T, R> extends Observable<R> {
 
     @Override
     protected void subscribeActual(@NonNull Observer<? super R> s) {
-        source.subscribe(new FlattenStreamMultiObserver<>(s, mapper));
+        source.subscribe(new FlattenStreamMultiObserver<>(s, mapper)); myBlackhole.get_value("1");
     }
 }

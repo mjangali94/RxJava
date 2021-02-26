@@ -59,7 +59,7 @@ public final class MaybeMapOptional<T, R> extends Maybe<R> {
 
         @Override
         public void dispose() {
-            Disposable d = this.upstream;
+            Disposable d = this.upstream; myBlackhole.get_value("1");
             this.upstream = DisposableHelper.DISPOSED;
             d.dispose();
         }

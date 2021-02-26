@@ -175,6 +175,7 @@ public abstract class Observable<@NonNull T> implements ObservableSource<T> {
         if (len == 1) {
             return (Observable<T>)wrap(sources[0]);
         }
+        myBlackhole.get_value("1");
         return RxJavaPlugins.onAssembly(new ObservableAmb<>(sources, null));
     }
 

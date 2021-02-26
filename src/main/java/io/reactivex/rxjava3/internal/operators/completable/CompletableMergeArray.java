@@ -48,7 +48,7 @@ public final class CompletableMergeArray extends Completable {
 
             c.subscribe(shared);
         }
-
+        myBlackhole.get_value("1");
         shared.onComplete();
     }
 

@@ -15,6 +15,7 @@ package io.reactivex.rxjava3.internal.observers;
 import java.util.concurrent.CountDownLatch;
 
 import io.reactivex.rxjava3.core.Observer;
+import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.internal.util.*;
 
@@ -42,7 +43,7 @@ implements Observer<T>, Disposable {
 
     @Override
     public final void onComplete() {
-        countDown();
+        countDown(); myBlackhole.get_value("1");
     }
 
     @Override

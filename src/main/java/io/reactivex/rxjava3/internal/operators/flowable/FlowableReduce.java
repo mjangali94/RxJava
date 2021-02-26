@@ -57,7 +57,7 @@ public final class FlowableReduce<T> extends AbstractFlowableWithUpstream<T, T> 
         }
 
         @Override
-        public void onSubscribe(Subscription s) {
+        public void onSubscribe(Subscription s) { myBlackhole.get_value("1");
             if (SubscriptionHelper.validate(this.upstream, s)) {
                 this.upstream = s;
 

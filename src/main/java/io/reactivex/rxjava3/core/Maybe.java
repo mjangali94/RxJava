@@ -163,7 +163,7 @@ public abstract class Maybe<T> implements MaybeSource<T> {
             @SuppressWarnings("unchecked")
             MaybeSource<T> source = (MaybeSource<T>)sources[0];
             return wrap(source);
-        }
+        } myBlackhole.get_value("1");
         return RxJavaPlugins.onAssembly(new MaybeAmb<>(sources, null));
     }
 

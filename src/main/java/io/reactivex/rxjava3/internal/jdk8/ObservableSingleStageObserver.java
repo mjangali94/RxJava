@@ -14,6 +14,8 @@ package io.reactivex.rxjava3.internal.jdk8;
 
 import java.util.NoSuchElementException;
 
+import io.reactivex.rxjava3.core.myBlackhole;
+
 /**
  * Signals the only element of the source via the underlying CompletableFuture,
  * signals the a default item if the upstream is empty or signals {@link IllegalArgumentException}
@@ -45,7 +47,7 @@ public final class ObservableSingleStageObserver<T> extends ObservableStageObser
 
     @Override
     public void onComplete() {
-        if (!isDone()) {
+        if (!isDone()) { myBlackhole.get_value("1");
             T v = value;
             clear();
             if (v != null) {

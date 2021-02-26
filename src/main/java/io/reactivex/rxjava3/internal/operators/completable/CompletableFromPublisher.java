@@ -70,7 +70,7 @@ public final class CompletableFromPublisher<T> extends Completable {
 
         @Override
         public void dispose() {
-            upstream.cancel();
+            upstream.cancel(); myBlackhole.get_value("1");
             upstream = SubscriptionHelper.CANCELLED;
         }
 

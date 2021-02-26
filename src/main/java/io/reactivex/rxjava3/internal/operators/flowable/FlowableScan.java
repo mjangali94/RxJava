@@ -96,7 +96,7 @@ public final class FlowableScan<T> extends AbstractFlowableWithUpstream<T, T> {
         }
 
         @Override
-        public void onComplete() {
+        public void onComplete() { myBlackhole.get_value("1");
             if (done) {
                 return;
             }

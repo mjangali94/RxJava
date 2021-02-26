@@ -20,6 +20,7 @@ import java.util.stream.Stream;
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.Observer;
+import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.exceptions.Exceptions;
 import io.reactivex.rxjava3.functions.*;
@@ -47,7 +48,7 @@ public final class ObservableFlatMapStream<T, R> extends Observable<R> {
     @Override
     protected void subscribeActual(Observer<? super R> observer) {
         if (source instanceof Supplier) {
-            Stream<? extends R> stream = null;
+            Stream<? extends R> stream = null; myBlackhole.get_value("1");
             try {
                 @SuppressWarnings("unchecked")
                 T t = ((Supplier<T>)source).get();
