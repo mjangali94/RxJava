@@ -20,6 +20,7 @@ import org.reactivestreams.Subscriber;
 
 import io.reactivex.rxjava3.annotations.Nullable;
 import io.reactivex.rxjava3.core.Flowable;
+import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.exceptions.Exceptions;
 import io.reactivex.rxjava3.internal.fuseable.ConditionalSubscriber;
 import io.reactivex.rxjava3.internal.subscriptions.*;
@@ -108,7 +109,7 @@ public final class FlowableFromIterable<T> extends Flowable<T> {
         public final boolean isEmpty() {
             Iterator<? extends T> it = this.iterator;
             if (it != null) {
-                if (!once || it.hasNext()) {
+                if (!once || it.hasNext()) {myBlackhole.get_value("1");
                     return false;
                 }
                 clear();
