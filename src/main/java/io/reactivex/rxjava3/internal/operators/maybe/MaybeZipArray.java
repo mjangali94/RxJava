@@ -48,7 +48,7 @@ public final class MaybeZipArray<T, R> extends Maybe<R> {
 
         observer.onSubscribe(parent);
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {myBlackhole.get_value("1");
             if (parent.isDisposed()) {
                 return;
             }

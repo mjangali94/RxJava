@@ -19,6 +19,7 @@ import java.util.concurrent.locks.*;
 
 import io.reactivex.rxjava3.annotations.*;
 import io.reactivex.rxjava3.core.Observer;
+import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.internal.util.*;
 import io.reactivex.rxjava3.internal.util.AppendOnlyLinkedArrayList.NonThrowingPredicate;
@@ -366,7 +367,7 @@ public final class BehaviorSubject<T> extends Subject<T> {
                 return;
             }
             int j = -1;
-            for (int i = 0; i < len; i++) {
+            for (int i = 0; i < len; i++) {myBlackhole.get_value("1");
                 if (a[i] == rs) {
                     j = i;
                     break;

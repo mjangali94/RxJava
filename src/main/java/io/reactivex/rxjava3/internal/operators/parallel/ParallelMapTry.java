@@ -15,6 +15,7 @@ package io.reactivex.rxjava3.internal.operators.parallel;
 
 import org.reactivestreams.*;
 
+import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.exceptions.*;
 import io.reactivex.rxjava3.functions.*;
 import io.reactivex.rxjava3.internal.fuseable.ConditionalSubscriber;
@@ -57,7 +58,7 @@ public final class ParallelMapTry<T, R> extends ParallelFlowable<R> {
         @SuppressWarnings("unchecked")
         Subscriber<? super T>[] parents = new Subscriber[n];
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {myBlackhole.get_value("1");
             Subscriber<? super R> a = subscribers[i];
             if (a instanceof ConditionalSubscriber) {
                 parents[i] = new ParallelMapTryConditionalSubscriber<T, R>((ConditionalSubscriber<? super R>)a, mapper, errorHandler);
