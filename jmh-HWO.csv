@@ -1,0 +1,400 @@
+i.r.r.core.BinaryFlatMapPerf.maybeFlatMapHidePublisher,74000000
+i.r.r.core.BinaryFlatMapPerf.maybeFlatMapPublisher,73510000
+i.r.r.core.BinaryFlatMapPerf.maybeFlatMapPublisher,72000000
+i.r.r.core.BinaryFlatMapPerf.maybeFlatMapHidePublisher,59575000
+i.r.r.core.BinaryFlatMapPerf.singleFlattenAsObservable,10326318
+i.r.r.core.EachTypeFlatMapPerf.singleJust ,7285276
+i.r.r.core.EachTypeFlatMapPerf.singleJust ,7260074
+i.r.r.core.EachTypeFlatMapPerf.singleJust ,7045562
+i.r.r.core.BlockingGetPerf.single ,6572189
+i.r.r.core.OperatorMergePerf.oneStreamOfNthatMergesIn1,6000006
+i.r.r.xmapz.ObservableConcatMapSinglePerf.observableDedicated ,6000000
+i.r.r.xmapz.FlowableConcatMapSinglePerf.flowableDedicated  1000,5298000
+i.r.r.xmapz.FlowableConcatMapSinglePerf.flowableDedicated ,5260000
+i.r.r.xmapz.ObservableConcatMapSinglePerf.observableDedicated  1000,5094000
+i.r.r.xmapz.FlowableConcatMapSinglePerf.flowableDedicated ,4943800
+i.r.r.xmapz.ObservableConcatMapSinglePerf.observableDedicated ,4880000
+i.r.r.xmapz.ObservableSwitchMapSinglePerf.observableDedicated ,4766863
+i.r.r.xmapz.ObservableConcatMapSinglePerf.observableDedicated ,4689000
+i.r.r.xmapz.ObservableConcatMapSinglePerf.observableDedicated ,4637582
+i.r.r.xmapz.ObservableConcatMapSinglePerf.observableDedicated  100000,4400000
+i.r.r.core.BinaryFlatMapPerf.singleFlatMapHideObservable,4333229
+i.r.r.core.BinaryFlatMapPerf.maybeFlatMapPublisher,4222154
+i.r.r.core.EachTypeFlatMapPerf.singleJustMapJust,4210884
+i.r.r.core.EachTypeFlatMapPerf.singleJustMapJust,4112316
+i.r.r.xmapz.ObservableConcatMapSinglePerf.observableDedicated  10,4090800
+i.r.r.core.EachTypeFlatMapPerf.singleJustMapJust,4045282
+i.r.r.xmapz.FlowableConcatMapSinglePerf.flowableDedicated ,4000000
+i.r.r.xmapz.FlowableSwitchMapCompletablePerf.flowablePlain,4000000
+i.r.r.xmapz.FlowableSwitchMapMaybeEmptyPerf.flowablePlain ,4000000
+i.r.r.core.OperatorMergePerf.oneStreamOfNthatMergesIn1,3844841
+i.r.r.xmapz.FlowableSwitchMapCompletablePerf.flowablePlain,3814000
+i.r.r.xmapz.FlowableSwitchMapMaybeEmptyPerf.flowablePlain ,3800000
+i.r.r.xmapz.FlowableSwitchMapMaybeEmptyPerf.flowablePlain  1000,3790000
+i.r.r.xmapz.FlowableSwitchMapMaybeEmptyPerf.flowablePlain ,3711000
+i.r.r.core.BinaryFlatMapPerf.maybeFlatMapHidePublisher,3664552
+i.r.r.xmapz.FlowableSwitchMapCompletablePerf.flowablePlain,3620000
+i.r.r.xmapz.FlowableSwitchMapCompletablePerf.flowablePlain,3600000
+i.r.r.xmapz.FlowableConcatMapSinglePerf.flowableDedicated  10,3472440
+i.r.r.core.BlockingPerf.observableBlockingLast,3449126
+i.r.r.xmapz.FlowableSwitchMapMaybeEmptyPerf.flowablePlain  100000,3400000
+i.r.r.xmapz.FlowableSwitchMapCompletablePerf.flowablePlain,3359000
+i.r.r.core.BlockingGetPerf.observableBlockingLast ,3310110
+i.r.r.xmapz.FlowableConcatMapSinglePerf.flowableDedicated  100000,3200000
+i.r.r.xmapz.FlowableSwitchMapCompletablePerf.flowablePlain,3048700
+i.r.r.xmapz.ObservableSwitchMapSinglePerf.observableDedicated ,3000000
+i.r.r.core.BinaryFlatMapPerf.singleFlatMapObservable,2967461
+i.r.r.xmapz.FlowableSwitchMapMaybeEmptyPerf.flowablePlain  10,2785560
+i.r.r.xmapz.ObservableSwitchMapSinglePerf.observableDedicated ,2360000
+i.r.r.core.BinaryFlatMapPerf.singleFlattenAsPublisher ,2207342
+i.r.r.core.XMapYPerf.obsFlatMapSingleAsObs1 ,2204360
+i.r.r.xmapz.ObservableSwitchMapSinglePerf.observableDedicated  100000,2200000
+i.r.r.xmapz.ObservableSwitchMapSinglePerf.observableDedicated  1000,2134000
+i.r.r.core.BinaryFlatMapPerf.singleFlatMapHidePublisher ,2105207
+i.r.r.xmapz.FlowableFlatMapSinglePerf.flowableDedicated ,2000002
+i.r.r.xmapz.FlowableConcatMapSinglePerf.flowableConvert ,2000000
+i.r.r.xmapz.FlowableSwitchMapCompletablePerf.flowableConvert,2000000
+i.r.r.xmapz.FlowableSwitchMapMaybeEmptyPerf.flowableConvert ,2000000
+i.r.r.xmapz.FlowableSwitchMapMaybePerf.flowablePlain,2000000
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowableConvert ,2000000
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowableDedicated ,2000000
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowablePlain ,2000000
+i.r.r.xmapz.ObservableConcatMapSinglePerf.observableConvert ,2000000
+i.r.r.xmapz.ObservableFlatMapSinglePerf.observableDedicated ,2000000
+i.r.r.core.ToFlowablePerf.observable,1975062
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowableDedicated ,1880000
+i.r.r.core.XMapYPerf.flowFlatMapSingleAsFlow1 ,1877914
+i.r.r.xmapz.ObservableFlatMapSinglePerf.observableConvert ,1830383
+i.r.r.xmapz.ObservableSwitchMapSinglePerf.observableDedicated ,1827700
+i.r.r.xmapz.ObservableSwitchMapSinglePerf.observableConvert ,1826354
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowableDedicated  1000,1795000
+i.r.r.xmapz.FlowableFlatMapSinglePerf.flowableConvert ,1715129
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowableDedicated  100000,1700000
+i.r.r.xmapz.FlowableSwitchMapMaybePerf.flowablePlain,1641000
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowableDedicated ,1600900
+i.r.r.xmapz.ObservableConcatMapSinglePerf.observableConvert  1000,1599000
+i.r.r.xmapz.ObservableConcatMapSinglePerf.observableConvert ,1571602
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowablePlain ,1570000
+i.r.r.xmapz.ObservableConcatMapSinglePerf.observableConvert ,1503700
+i.r.r.core.BinaryFlatMapPerf.singleFlatMapPublisher ,1502003
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowableConvert ,1498609
+i.r.r.xmapz.FlowableSwitchMapMaybePerf.flowablePlain,1460000
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowablePlain  1000,1442000
+i.r.r.xmapz.FlowableSwitchMapMaybePerf.flowablePlain,1423700
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowablePlain ,1409700
+i.r.r.xmapz.FlowableSwitchMapCompletablePerf.flowableConvert,1400000
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowableConvert  100000,1400000
+i.r.r.xmapz.FlowableConcatMapSinglePerf.flowableConvert ,1368751
+i.r.r.xmapz.FlowableConcatMapSinglePerf.flowableDedicated ,1361006
+i.r.r.xmapz.ObservableSwitchMapSinglePerf.observableDedicated  10,1338910
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowableConvert  1000,1336000
+i.r.r.xmapz.FlowableSwitchMapMaybePerf.flowablePlain,1300000
+i.r.r.xmapz.FlowableSwitchMapCompletablePerf.flowableConvert,1258000
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowablePlain  100000,1200000
+i.r.r.xmapz.ObservableConcatMapSinglePerf.observableConvert  100000,1200000
+i.r.r.xmapz.FlowableSwitchMapCompletablePerf.flowableConvert,1160000
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowablePlain  10,1153520
+i.r.r.core.XMapYPerf.obsFlatMapSingle1,1152000
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowableConvert ,1124400
+i.r.r.xmapz.FlowableSwitchMapCompletablePerf.flowableConvert,1115600
+i.r.r.xmapz.ObservableConcatMapSinglePerf.observableConvert ,1050000
+i.r.r.core.XMapYPerf.obsFlatMapSingle1,1040700
+i.r.r.xmapz.ObservableFlatMapSinglePerf.observableDedicated  1000,1039000
+i.r.r.xmapz.ObservableConcatMapSinglePerf.observableConvert  10,1031090
+i.r.r.xmapz.FlowableSwitchMapCompletablePerf.flowableConvert,1026520
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowableDedicated  10,1019160
+i.r.r.core.XMapYPerf.flowFlatMapSingle1 ,1000001
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,1000000
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,1000000
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,1000000
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,1000000
+i.r.r.core.ToFlowablePerf.flowableInner ,1000000
+i.r.r.core.XMapYPerf.flowFlatMapSingleAsFlow1 ,1000000
+i.r.r.core.XMapYPerf.obsFlatMapSingle1,1000000
+i.r.r.core.XMapYPerf.obsFlatMapSingleAsObs1 ,1000000
+i.r.r.xmapz.FlowableFlatMapSinglePerf.flowableConvert ,1000000
+i.r.r.xmapz.FlowableSwitchMapMaybeEmptyPerf.flowableConvert  100000,1000000
+i.r.r.xmapz.FlowableSwitchMapMaybePerf.flowableConvert,1000000
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowableConvert ,1000000
+i.r.r.xmapz.ObservableFlatMapSinglePerf.observableConvert ,1000000
+i.r.r.xmapz.ObservableSwitchMapSinglePerf.observableConvert ,1000000
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,999984
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,999981
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,999973
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,999966
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,999965
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,999947
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,999912
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,999908
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,999889
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,999873
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,999867
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,999859
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,999836
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,999832
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,999747
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,999740
+i.r.r.core.XMapYPerf.obsFlatMapSingle1,970000
+i.r.r.xmapz.FlowableFlatMapSinglePerf.flowableDedicated  1000,960960
+i.r.r.xmapz.FlowableSwitchMapMaybePerf.flowablePlain,958440
+i.r.r.core.XMapYPerf.flowFlatMapSingle1 ,941941
+i.r.r.xmapz.ObservableFlatMapSinglePerf.observableDedicated ,939800
+i.r.r.xmapz.FlowableSwitchMapMaybeEmptyPerf.flowableConvert  1000,938000
+i.r.r.xmapz.FlowableConcatMapSinglePerf.flowableConvert ,930600
+i.r.r.xmapz.ObservableSwitchMapSinglePerf.observableConvert ,924600
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowableConvert  10,921140
+i.r.r.xmapz.FlowableConcatMapSinglePerf.flowableConvert  1000,912000
+i.r.r.xmapz.FlowableFlatMapSinglePerf.flowableDedicated  100000,900009
+i.r.r.core.XMapYPerf.obsFlatMapSingle1,900000
+i.r.r.xmapz.FlowableSwitchMapMaybeEmptyPerf.flowableConvert ,900000
+i.r.r.xmapz.ObservableFlatMapSinglePerf.observableDedicated  100000,900000
+i.r.r.xmapz.ObservableSwitchMapSinglePerf.observableConvert  100000,900000
+i.r.r.xmapz.ObservableSwitchMapSinglePerf.observableConvert  1000,859000
+i.r.r.xmapz.FlowableConcatMapSinglePerf.flowableConvert ,840000
+i.r.r.xmapz.FlowableSwitchMapMaybeEmptyPerf.flowableConvert ,836100
+i.r.r.xmapz.ObservableFlatMapSinglePerf.observableDedicated ,820000
+i.r.r.xmapz.FlowableFlatMapSinglePerf.flowableDedicated ,810081
+i.r.r.core.XMapYPerf.flowFlatMapSingle1 ,800008
+i.r.r.xmapz.FlowableSwitchMapMaybeEmptyPerf.flowableConvert  10,795170
+i.r.r.core.XMapYPerf.flowFlatMapSingle1 ,780078
+i.r.r.xmapz.FlowableConcatMapSinglePerf.flowableConvert  10,771240
+i.r.r.xmapz.ObservableSwitchMapSinglePerf.observableConvert ,770000
+i.r.r.core.XMapYPerf.obsFlatMapSingle1,760780
+i.r.r.xmapz.ObservableFlatMapSinglePerf.observableDedicated  10,706130
+i.r.r.xmapz.FlowableConcatMapSinglePerf.flowableConvert  100000,700000
+i.r.r.xmapz.FlowableFlatMapSinglePerf.flowableDedicated ,688618
+i.r.r.core.XMapYPerf.flowFlatMapSingle1 ,668459
+i.r.r.xmapz.ObservableSwitchMapSinglePerf.observableConvert  10,634450
+i.r.r.core.XMapYPerf.flowFlatMapSingle1 ,634078
+i.r.r.xmapz.FlowableFlatMapSinglePerf.flowableDedicated  10,611072
+i.r.r.xmapz.FlowableSwitchMapMaybePerf.flowableConvert,600000
+i.r.r.core.OperatorMergePerf.oneStreamOfNthatMergesIn1,587920
+i.r.r.xmapz.FlowableSwitchMapMaybePerf.flowableConvert,560800
+i.r.r.xmapz.FlowableSwitchMapMaybePerf.flowableConvert,535000
+i.r.r.core.XMapYPerf.obsFlatMapSingleAsObs1 ,532000
+i.r.r.xmapz.ObservableFlatMapSinglePerf.observableConvert  1000,532000
+i.r.r.xmapz.ObservableFlatMapSinglePerf.observableConvert ,516600
+i.r.r.core.XMapYPerf.obsFlatMapSingleAsObs1 ,506300
+i.r.r.xmapz.FlowableSwitchMapMaybePerf.flowableConvert,489990
+i.r.r.core.XMapYPerf.obsFlatMapSingleAsObs1 ,480000
+i.r.r.core.XMapYPerf.obsFlatMapSingleAsObs1 ,472080
+i.r.r.core.XMapYPerf.obsFlatMapSingleAsObs1 ,400000
+i.r.r.xmapz.ObservableFlatMapSinglePerf.observableConvert ,400000
+i.r.r.xmapz.ObservableFlatMapSinglePerf.observableConvert  100000,400000
+i.r.r.core.OperatorMergePerf.mergeNSyncStreamsOfN ,398208
+i.r.r.xmapz.FlowableFlatMapSinglePerf.flowableConvert  1000,385000
+i.r.r.core.XMapYPerf.flowFlatMapSingle1 ,350714
+i.r.r.parallel.ParallelPerf.groupBy,350035
+i.r.r.core.OperatorMergePerf.merge1SyncStreamOfN,343054
+i.r.r.xmapz.ObservableFlatMapSinglePerf.observableConvert  10,323500
+i.r.r.xmapz.FlowableFlatMapSinglePerf.flowableConvert ,321200
+i.r.r.core.ToFlowablePerf.flowableInner ,313256
+i.r.r.core.ToFlowablePerf.observableInner ,310222
+i.r.r.core.XMapYPerf.flowFlatMapSingleAsFlow1 ,306600
+i.r.r.xmapz.FlowableFlatMapSinglePerf.flowableDedicated ,306494
+i.r.r.core.XMapYPerf.flowFlatMapSingleAsFlow1 ,300000
+i.r.r.xmapz.FlowableFlatMapSinglePerf.flowableConvert  100000,300000
+i.r.r.xmapz.FlowableSwitchMapMaybePerf.flowableConvert,300000
+i.r.r.core.XMapYPerf.flowFlatMapSingleAsFlow1 ,297000
+i.r.r.core.ToFlowablePerf.flowableInner ,274000
+i.r.r.parallel.ParallelPerf.groupBy 1,270027
+i.r.r.core.XMapYPerf.obsFlatMapSingle1,262592
+i.r.r.xmapz.ObservableFlatMapSinglePerf.observableDedicated ,256017
+i.r.r.core.XMapYPerf.flowFlatMapSingleAsFlow1 ,255620
+i.r.r.xmapz.FlowableFlatMapSinglePerf.flowableConvert ,250000
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowableDedicated ,215076
+i.r.r.parallel.ParallelPerf.groupBy,210021
+i.r.r.xmapz.FlowableFlatMapSinglePerf.flowableConvert  10,201600
+i.r.r.core.XMapYPerf.flowFlatMapSingleAsFlow1 ,180000
+i.r.r.parallel.ParallelPerf.groupBy 1,120036
+i.r.r.parallel.ParallelPerf.groupBy,100019
+i.r.r.parallel.ParallelPerf.groupBy,100015
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,100000
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,100000
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,100000
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,100000
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,100000
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,100000
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,99999
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,99999
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,99999
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,99999
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,99999
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,99999
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,99998
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,99998
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,99997
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,99997
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,99996
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,99995
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,99990
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,99987
+i.r.r.parallel.ParallelPerf.groupBy,80031
+i.r.r.parallel.ParallelPerf.groupBy 1,80022
+i.r.r.parallel.ParallelPerf.groupBy 1,80011
+i.r.r.parallel.ParallelPerf.groupBy,60023
+i.r.r.core.BlockingPerf.observableBlockingLast,50878
+i.r.r.parallel.ParallelPerf.groupBy,50013
+i.r.r.parallel.ParallelPerf.groupBy,50005
+i.r.r.parallel.ParallelPerf.groupBy,40015
+i.r.r.parallel.ParallelPerf.groupBy,40012
+i.r.r.parallel.ParallelPerf.groupBy,40008
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,40000
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,39997
+i.r.r.core.BinaryFlatMapPerf.singleFlattenAsObservable,37376
+i.r.r.core.CallableAsyncPerf.subscribeOnCompletable ,36670
+i.r.r.core.BinaryFlatMapPerf.singleFlatMapObservable,34508
+i.r.r.core.BinaryFlatMapPerf.singleFlatMapPublisher ,34378
+i.r.r.core.BinaryFlatMapPerf.singleFlattenAsPublisher ,30912
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,30000
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,30000
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,30000
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,30000
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,29999
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,29999
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,29997
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,29990
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,29973
+i.r.r.core.ToFlowablePerf.observable,29650
+i.r.r.core.CallableAsyncPerf.observeOnCompletable ,29152
+i.r.r.core.BinaryFlatMapPerf.singleFlatMapHidePublisher ,26839
+i.r.r.core.BinaryFlatMapPerf.singleFlatMapHideObservable,24331
+i.r.r.parallel.ParallelPerf.groupBy,20006
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,20000
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,20000
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,20000
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,20000
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,20000
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,20000
+i.r.r.parallel.ParallelPerf.flatMap 1,20000
+i.r.r.parallel.ParallelPerf.flatMap 1,20000
+i.r.r.parallel.ParallelPerf.flatMap,20000
+i.r.r.parallel.ParallelPerf.flatMap,20000
+i.r.r.parallel.ParallelPerf.flatMap,20000
+i.r.r.parallel.ParallelPerf.flatMap,20000
+i.r.r.parallel.ParallelPerf.flatMap,20000
+i.r.r.parallel.ParallelPerf.flatMap,20000
+i.r.r.parallel.ParallelPerf.flatMap,20000
+i.r.r.parallel.ParallelPerf.flatMap,20000
+i.r.r.parallel.ParallelPerf.flatMap 10000,20000
+i.r.r.parallel.ParallelPerf.flatMap 10000,20000
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,19999
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,19999
+i.r.r.parallel.ParallelPerf.flatMap,19999
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,19998
+i.r.r.parallel.ParallelPerf.flatMap 1,19997
+i.r.r.parallel.ParallelPerf.flatMap 10000,19997
+i.r.r.parallel.ParallelPerf.flatMap,19996
+i.r.r.parallel.ParallelPerf.flatMap 10000,19996
+i.r.r.parallel.ParallelPerf.flatMap,19994
+i.r.r.parallel.ParallelPerf.flatMap 1,19991
+i.r.r.parallel.ParallelPerf.flatMap,19988
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,18493
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,15994
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,15991
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,15973
+i.r.r.core.CallableAsyncPerf.subscribeOnMaybe ,15340
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,14998
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,14595
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,14000
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,13986
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,13981
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,13893
+i.r.r.core.JustAsyncPerf.subscribeOnSingle,13259
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,12999
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,12993
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,12991
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,12966
+i.r.r.core.OperatorMergePerf.merge1SyncStreamOfN,12704
+i.r.r.core.CallableAsyncPerf.observeOnSingle,12487
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,12390
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,12385
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,11992
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,11990
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,11952
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,11740
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,11597
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,11400
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,11198
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,11195
+i.r.r.core.CallableAsyncPerf.pipelineCompletable,11194
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,11070
+i.r.r.core.CallableAsyncPerf.observeOnMaybe ,10651
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,10494
+i.r.r.parallel.ParallelPerf.groupBy 10000,10004
+i.r.r.parallel.ParallelPerf.groupBy 10000,10003
+i.r.r.parallel.ParallelPerf.groupBy 10000,10001
+i.r.r.parallel.ParallelPerf.groupBy 10000,10001
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,9995
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,9634
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,9585
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,9396
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,9287
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,9230
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,8996
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,8990
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,8881
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,8681
+i.r.r.core.JustAsyncPerf.observeOnSingle,8540
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,8259
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,8200
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,8092
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,8057
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,8052
+i.r.r.core.OperatorMergePerf.mergeNSyncStreamsOfN ,8008
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,8000
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,7860
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,7738
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,7431
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,7374
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,7349
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,7000
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,6864
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,6684
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,6677
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,6661
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,6592
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,6553
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,6520
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,6500
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,6356
+i.r.r.core.CallableAsyncPerf.subscribeOnSingle,6123
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,6000
+i.r.r.core.JustAsyncPerf.pipelineSingle ,5980
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,5909
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,5677
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,5581
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,5238
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,5115
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,5100
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,5100
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,4908
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,4848
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,4752
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,4706
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,4250
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,4048
+i.r.r.core.CallableAsyncPerf.pipelineMaybe,4034
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,4000
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,3712
+i.r.r.core.OperatorMergePerf.mergeNAsyncStreamsOfN,3410
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,3353
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,3266
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,3217
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,3205
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,3192
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,3146
+i.r.r.core.FlowableFlatMapCompletableAsyncPerf.flatMapCompletable ,3132
+i.r.r.core.CallableAsyncPerf.pipelineSingle ,2824
+i.r.r.core.OperatorMergePerf.mergeNAsyncStreamsOfN,1001
+i.r.r.core.ToFlowablePerf.observableInner ,231
+i.r.r.core.BlockingPerf.observableBlockingLast,91
+i.r.r.core.ToFlowablePerf.observable,49
+i.r.r.core.BinaryFlatMapPerf.singleFlattenAsPublisher ,45
+i.r.r.core.BinaryFlatMapPerf.singleFlatMapObservable,38
+i.r.r.core.BinaryFlatMapPerf.singleFlatMapHideObservable,37
+i.r.r.core.BinaryFlatMapPerf.singleFlatMapHidePublisher ,36
+i.r.r.core.BinaryFlatMapPerf.singleFlatMapPublisher ,36
+i.r.r.core.BinaryFlatMapPerf.singleFlattenAsObservable,35
+i.r.r.core.OperatorMergePerf.merge1SyncStreamOfN,34
+i.r.r.core.ToFlowablePerf.observableInner ,1
