@@ -159,7 +159,7 @@ public final class ObservableCreate<T> extends Observable<T> {
 
         @Override
         public void onNext(T t) {
-            if (done || emitter.isDisposed()) {myBlackhole.get_value("1");
+            if (done || emitter.isDisposed()) {
                 return;
             }
             if (t == null) {

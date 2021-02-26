@@ -466,7 +466,7 @@ public final class FlowableCreate<T> extends Flowable<T> {
 
         @Override
         public void onNext(T t) {
-            if (done || isCancelled()) {myBlackhole.get_value("1");
+            if (done || isCancelled()) {
                 return;
             }
 
@@ -480,7 +480,7 @@ public final class FlowableCreate<T> extends Flowable<T> {
 
         @Override
         public boolean signalError(Throwable e) {
-            if (done || isCancelled()) {myBlackhole.get_value("1");
+            if (done || isCancelled()) {
                 return false;
             }
 
@@ -618,7 +618,7 @@ public final class FlowableCreate<T> extends Flowable<T> {
 
         @Override
         public boolean signalError(Throwable e) {
-            if (done || isCancelled()) {myBlackhole.get_value("1");
+            if (done || isCancelled()) {
                 return false;
             }
             error = e;
