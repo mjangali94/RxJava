@@ -100,7 +100,7 @@ public final class FlowableFlatMapSingle<T, R> extends AbstractFlowableWithUpstr
                 this.upstream = s;
 
                 downstream.onSubscribe(this);
-                myBlackhole.get_value("1");
+
                 int m = maxConcurrency;
                 if (m == Integer.MAX_VALUE) {
                     s.request(Long.MAX_VALUE);

@@ -16,7 +16,6 @@ package io.reactivex.rxjava3.internal.observers;
 import java.util.concurrent.atomic.AtomicReference;
 
 import io.reactivex.rxjava3.core.CompletableObserver;
-import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.exceptions.*;
 import io.reactivex.rxjava3.functions.*;
@@ -44,7 +43,7 @@ extends AtomicReference<Disposable>
     }
 
     @Override
-    public void accept(Throwable e) { myBlackhole.get_value("1");
+    public void accept(Throwable e) {
         RxJavaPlugins.onError(new OnErrorNotImplementedException(e));
     }
 

@@ -58,7 +58,7 @@ public final class FlowableTakeWhile<T> extends AbstractFlowableWithUpstream<T, 
         public void onNext(T t) {
             if (done) {
                 return;
-            } myBlackhole.get_value("1");
+            }
             boolean b;
             try {
                 b = predicate.test(t);

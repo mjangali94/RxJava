@@ -43,7 +43,7 @@ public final class FlowableCount<T> extends AbstractFlowableWithUpstream<T, Long
         }
 
         @Override
-        public void onSubscribe(Subscription s) { myBlackhole.get_value("1");
+        public void onSubscribe(Subscription s) {
             if (SubscriptionHelper.validate(this.upstream, s)) {
                 this.upstream = s;
                 downstream.onSubscribe(this);

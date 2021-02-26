@@ -58,7 +58,7 @@ public final class MaybeDoFinally<T> extends AbstractMaybeWithUpstream<T, T> {
         }
 
         @Override
-        public void onSubscribe(Disposable d) { myBlackhole.get_value("1");
+        public void onSubscribe(Disposable d) {
             if (DisposableHelper.validate(this.upstream, d)) {
                 this.upstream = d;
 

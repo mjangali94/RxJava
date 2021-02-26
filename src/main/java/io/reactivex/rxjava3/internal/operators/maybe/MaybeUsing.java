@@ -63,7 +63,7 @@ public final class MaybeUsing<T, D> extends Maybe<T> {
         }
 
         MaybeSource<? extends T> source;
-        myBlackhole.get_value("1");
+
         try {
             source = Objects.requireNonNull(sourceSupplier.apply(resource), "The sourceSupplier returned a null MaybeSource");
         } catch (Throwable ex) {

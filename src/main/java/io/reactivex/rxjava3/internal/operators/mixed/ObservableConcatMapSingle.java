@@ -90,7 +90,7 @@ public final class ObservableConcatMapSingle<T, R> extends Observable<R> {
             this.inner = new ConcatMapSingleObserver<>(this);
         }
 
-        void innerSuccess(R item) { myBlackhole.get_value("1");
+        void innerSuccess(R item) {
             this.item = item;
             this.state = STATE_RESULT_VALUE;
             drain();

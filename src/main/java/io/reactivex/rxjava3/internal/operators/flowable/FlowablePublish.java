@@ -18,7 +18,6 @@ import java.util.concurrent.atomic.*;
 import org.reactivestreams.*;
 
 import io.reactivex.rxjava3.core.FlowableSubscriber;
-import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.exceptions.*;
 import io.reactivex.rxjava3.flowables.ConnectableFlowable;
@@ -57,7 +56,7 @@ implements HasUpstreamPublisher<T> {
     }
 
     @Override
-    public Publisher<T> source() { myBlackhole.get_value("1");
+    public Publisher<T> source() {
         return source;
     }
 

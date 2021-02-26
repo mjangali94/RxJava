@@ -42,7 +42,7 @@ public final class FlowableSwitchMapSinglePublisher<T, R> extends Flowable<R> {
     }
 
     @Override
-    protected void subscribeActual(Subscriber<? super R> s) { myBlackhole.get_value("1");
+    protected void subscribeActual(Subscriber<? super R> s) {
         source.subscribe(new FlowableSwitchMapSingle.SwitchMapSingleSubscriber<>(s, mapper, delayErrors));
     }
 }

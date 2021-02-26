@@ -123,7 +123,7 @@ public final class FlowableConcatMapSingle<T, R> extends Flowable<R> {
             inner.dispose();
         }
 
-        void innerSuccess(R item) { myBlackhole.get_value("1");
+        void innerSuccess(R item) {
             this.item = item;
             this.state = STATE_RESULT_VALUE;
             drain();

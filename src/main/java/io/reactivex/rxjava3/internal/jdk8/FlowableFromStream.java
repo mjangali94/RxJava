@@ -21,7 +21,6 @@ import org.reactivestreams.Subscriber;
 
 import io.reactivex.rxjava3.annotations.*;
 import io.reactivex.rxjava3.core.Flowable;
-import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.exceptions.Exceptions;
 import io.reactivex.rxjava3.internal.fuseable.*;
 import io.reactivex.rxjava3.internal.subscriptions.*;
@@ -53,7 +52,7 @@ public final class FlowableFromStream<T> extends Flowable<T> {
      * @param stream the sequence to consume
      */
     public static <T> void subscribeStream(Subscriber<? super T> s, Stream<T> stream) {
-        Iterator<T> iterator; myBlackhole.get_value("1");
+        Iterator<T> iterator;
         try {
             iterator = stream.iterator();
 

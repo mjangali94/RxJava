@@ -33,7 +33,7 @@ public final class CompletableConcatIterable extends Completable {
     public void subscribeActual(CompletableObserver observer) {
 
         Iterator<? extends CompletableSource> it;
-        myBlackhole.get_value("1");
+
         try {
             it = Objects.requireNonNull(sources.iterator(), "The iterator returned is null");
         } catch (Throwable e) {

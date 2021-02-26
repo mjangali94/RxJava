@@ -110,7 +110,7 @@ implements FlowableSubscriber<T> {
         CacheSubscription<T> consumer = new CacheSubscription<>(t, this);
         t.onSubscribe(consumer);
         add(consumer);
-        myBlackhole.get_value("1");
+
         if (!once.get() && once.compareAndSet(false, true)) {
             source.subscribe(this);
         } else {

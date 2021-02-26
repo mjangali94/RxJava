@@ -66,7 +66,7 @@ public final class SingleEquals<T> extends Single<Boolean> {
         @Override
         public void onSuccess(T value) {
             values[index] = value;
-            myBlackhole.get_value("1");
+
             if (count.incrementAndGet() == 2) {
                 downstream.onSuccess(Objects.equals(values[0], values[1]));
             }

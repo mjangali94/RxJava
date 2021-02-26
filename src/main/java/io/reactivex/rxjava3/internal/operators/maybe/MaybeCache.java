@@ -54,7 +54,7 @@ public final class MaybeCache<T> extends Maybe<T> implements MaybeObserver<T> {
             if (parent.isDisposed()) {
                 remove(parent);
                 return;
-            } myBlackhole.get_value("1");
+            }
         } else {
             if (!parent.isDisposed()) {
                 Throwable ex = error;

@@ -17,7 +17,6 @@ import org.reactivestreams.Subscriber;
 
 import io.reactivex.rxjava3.annotations.Nullable;
 import io.reactivex.rxjava3.core.Flowable;
-import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.functions.Function;
 import io.reactivex.rxjava3.internal.fuseable.ConditionalSubscriber;
 import io.reactivex.rxjava3.internal.subscribers.*;
@@ -49,7 +48,7 @@ public final class FlowableMap<T, U> extends AbstractFlowableWithUpstream<T, U> 
         }
 
         @Override
-        public void onNext(T t) { myBlackhole.get_value("1");
+        public void onNext(T t) {
             if (done) {
                 return;
             }

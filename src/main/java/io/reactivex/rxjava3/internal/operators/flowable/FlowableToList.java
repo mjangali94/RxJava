@@ -86,7 +86,7 @@ public final class FlowableToList<T, U extends Collection<? super T>> extends Ab
 
         @Override
         public void cancel() {
-            super.cancel(); myBlackhole.get_value("1");
+            super.cancel();
             upstream.cancel();
         }
     }

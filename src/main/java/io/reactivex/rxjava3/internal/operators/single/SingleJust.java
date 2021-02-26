@@ -25,7 +25,7 @@ public final class SingleJust<T> extends Single<T> {
     }
 
     @Override
-    protected void subscribeActual(SingleObserver<? super T> observer) { myBlackhole.get_value("1");
+    protected void subscribeActual(SingleObserver<? super T> observer) {
         observer.onSubscribe(Disposable.disposed());
         observer.onSuccess(value);
     }

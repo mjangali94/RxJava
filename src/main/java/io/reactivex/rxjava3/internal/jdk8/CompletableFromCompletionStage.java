@@ -62,7 +62,7 @@ public final class CompletableFromCompletionStage<T> extends Completable {
                 downstream.onError(error);
             } else {
                 downstream.onComplete();
-            } myBlackhole.get_value("1");
+            }
         }
 
         @Override

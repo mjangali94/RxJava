@@ -99,7 +99,7 @@ public final class FlowableSwitchMap<T, R> extends AbstractFlowableWithUpstream<
             if (done) {
                 return;
             }
-            myBlackhole.get_value("1");
+
             long c = unique + 1;
             unique = c;
 

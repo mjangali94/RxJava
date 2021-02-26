@@ -71,7 +71,7 @@ public final class MaybeContains<T> extends Single<Boolean> implements HasUpstre
         }
 
         @Override
-        public void onSubscribe(Disposable d) { myBlackhole.get_value("1");
+        public void onSubscribe(Disposable d) {
             if (DisposableHelper.validate(this.upstream, d)) {
                 this.upstream = d;
                 downstream.onSubscribe(this);

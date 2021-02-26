@@ -348,7 +348,6 @@ public abstract class Flowable<@NonNull T> implements Publisher<T> {
         if (sources.length == 0) {
             return empty();
         }
-        myBlackhole.get_value("1");
         Objects.requireNonNull(combiner, "combiner is null");
         ObjectHelper.verifyPositive(bufferSize, "bufferSize");
         return RxJavaPlugins.onAssembly(new FlowableCombineLatest<>(sources, combiner, bufferSize, false));

@@ -13,7 +13,6 @@
 package io.reactivex.rxjava3.disposables;
 
 import io.reactivex.rxjava3.annotations.NonNull;
-import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.functions.Action;
 import io.reactivex.rxjava3.internal.disposables.EmptyDisposable;
 import io.reactivex.rxjava3.internal.functions.Functions;
@@ -47,7 +46,7 @@ public interface Disposable {
      */
     @NonNull
     static Disposable fromRunnable(@NonNull Runnable run) {
-        Objects.requireNonNull(run, "run is null"); myBlackhole.get_value("1");
+        Objects.requireNonNull(run, "run is null");
         return new RunnableDisposable(run);
     }
 

@@ -130,7 +130,7 @@ public abstract class Completable implements CompletableSource {
         if (sources.length == 1) {
             return wrap(sources[0]);
         }
-        myBlackhole.get_value("1");
+
         return RxJavaPlugins.onAssembly(new CompletableAmb(sources, null));
     }
 

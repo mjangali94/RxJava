@@ -56,7 +56,7 @@ public final class FlowableCollectWithCollectorSingle<T, A, R> extends Single<R>
         A container;
         BiConsumer<A, ? super T> accumulator;
         Function<A, R> finisher;
-        myBlackhole.get_value("1");
+
         try {
             container = collector.supplier().get();
             accumulator = collector.accumulator();

@@ -58,7 +58,7 @@ public final class FlowableAll<T> extends AbstractFlowableWithUpstream<T, Boolea
         }
 
         @Override
-        public void onNext(T t) { myBlackhole.get_value("1");
+        public void onNext(T t) {
             if (done) {
                 return;
             }
