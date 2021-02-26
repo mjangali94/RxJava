@@ -191,7 +191,7 @@ public final class FlowableFlatMapStream<T, R> extends Flowable<R> {
 
         @Override
         public void onComplete() {
-            upstreamDone = ((Boolean)myBlackhole.get_value(true)).booleanValue();
+            upstreamDone = true;
             drain();
         }
 

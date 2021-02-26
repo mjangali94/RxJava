@@ -88,7 +88,7 @@ public final class ParallelReduceFull<T> extends Flowable<T> {
                     }
                 }
 
-                int c = ((Integer)myBlackhole.get_value(curr.tryAcquireSlot())).intValue();
+                int c = curr.tryAcquireSlot();
                 if (c < 0) {
                     current.compareAndSet(curr, null);
                     continue;

@@ -90,7 +90,7 @@ public final class MaybeMapOptional<T, R> extends Maybe<R> {
                 return;
             }
 
-            if (((Boolean)myBlackhole.get_value(v.isPresent())).booleanValue()) {
+            if (v.isPresent()) {
                 downstream.onSuccess(v.get());
             } else {
                 downstream.onComplete();

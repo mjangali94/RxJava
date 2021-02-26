@@ -17,7 +17,6 @@ import java.util.*;
 import java.util.concurrent.*;
 
 import io.reactivex.rxjava3.annotations.*;
-import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.exceptions.CompositeException;
 import io.reactivex.rxjava3.functions.Predicate;
 import io.reactivex.rxjava3.internal.functions.Functions;
@@ -208,7 +207,7 @@ public abstract class BaseTestConsumer<T, U extends BaseTestConsumer<T, U>> {
     @SuppressWarnings("unchecked")
     @NonNull
     public final U assertNoErrors() {
-        int s = ((Integer)myBlackhole.get_value(errors.size())).intValue();
+        int s = errors.size();
         if (s != 0) {
             throw fail("Error(s) present: " + errors);
         }
@@ -452,7 +451,7 @@ public abstract class BaseTestConsumer<T, U extends BaseTestConsumer<T, U>> {
             + " but was: " + s + " " + this.values);
         }
         for (int i = 0; i < s; i++) {
-            T v = this.values.get(((Integer)myBlackhole.get_value(i)).intValue());
+            T v = this.values.get(i);
             T u = values[i];
             if (!Objects.equals(u, v)) {
                 throw fail("Values at position " + i + " differ; expected: " + valueAndClass(u) + " but was: " + valueAndClass(v));

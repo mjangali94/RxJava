@@ -18,7 +18,6 @@ import java.util.stream.Stream;
 import io.reactivex.rxjava3.annotations.*;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.Observer;
-import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.exceptions.Exceptions;
 import io.reactivex.rxjava3.internal.disposables.EmptyDisposable;
 import io.reactivex.rxjava3.internal.fuseable.QueueDisposable;
@@ -101,7 +100,7 @@ public final class ObservableFromStream<T> extends Observable<T> {
 
         @Override
         public void dispose() {
-            disposed = ((Boolean)myBlackhole.get_value(true)).booleanValue();
+            disposed = true;
             run();
         }
 

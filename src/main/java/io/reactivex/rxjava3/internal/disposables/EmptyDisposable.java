@@ -111,7 +111,7 @@ public enum EmptyDisposable implements QueueDisposable<Object> {
 
     @Override
     public int requestFusion(int mode) {
-        return ((Integer)myBlackhole.get_value(mode)).intValue() & ASYNC;
+        return mode & ASYNC;
     }
 
 }

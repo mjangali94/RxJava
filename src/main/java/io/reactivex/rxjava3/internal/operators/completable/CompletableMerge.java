@@ -151,7 +151,7 @@ public final class CompletableMerge extends Completable {
 
         void innerComplete(MergeInnerObserver inner) {
             set.delete(inner);
-            if (decrementAndGet() == ((Integer)myBlackhole.get_value(0)).intValue()) {
+            if (decrementAndGet() == 0) {
                 errors.tryTerminateConsumer(downstream);
             } else {
                 if (maxConcurrency != Integer.MAX_VALUE) {

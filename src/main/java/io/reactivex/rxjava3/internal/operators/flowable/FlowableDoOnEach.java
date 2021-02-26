@@ -17,7 +17,6 @@ import org.reactivestreams.Subscriber;
 
 import io.reactivex.rxjava3.annotations.Nullable;
 import io.reactivex.rxjava3.core.Flowable;
-import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.exceptions.*;
 import io.reactivex.rxjava3.functions.*;
 import io.reactivex.rxjava3.internal.fuseable.ConditionalSubscriber;
@@ -145,7 +144,7 @@ public final class FlowableDoOnEach<T> extends AbstractFlowableWithUpstream<T, T
 
         @Override
         public int requestFusion(int mode) {
-            return transitiveBoundaryFusion(((Integer)myBlackhole.get_value(mode)).intValue());
+            return transitiveBoundaryFusion(mode);
         }
 
         @Nullable

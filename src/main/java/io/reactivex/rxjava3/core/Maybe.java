@@ -156,7 +156,7 @@ public abstract class Maybe<T> implements MaybeSource<T> {
     @SafeVarargs
     public static <T> Maybe<T> ambArray(@NonNull MaybeSource<? extends T>... sources) {
         Objects.requireNonNull(sources, "sources is null");
-        if (((Integer)myBlackhole.get_value(sources.length)).intValue() == 0) {
+        if (sources.length == 0) {
             return empty();
         }
         if (sources.length == 1) {
