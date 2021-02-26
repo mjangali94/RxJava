@@ -1,0 +1,167 @@
+i.r.r.xmapz.ObservableSwitchMapCompletablePerf.observablePlain,5000000
+i.r.r.xmapz.ObservableSwitchMapMaybeEmptyPerf.observablePlain ,5000000
+i.r.r.xmapz.ObservableSwitchMapCompletablePerf.observablePlain,4600000
+i.r.r.xmapz.ObservableSwitchMapCompletablePerf.observablePlain,4594100
+i.r.r.xmapz.ObservableSwitchMapCompletablePerf.observablePlain,4590000
+i.r.r.xmapz.ObservableSwitchMapMaybeEmptyPerf.observablePlain  10,4498420
+i.r.r.xmapz.ObservableSwitchMapCompletablePerf.observablePlain,4462000
+i.r.r.xmapz.ObservableSwitchMapMaybeEmptyPerf.observablePlain  1000,4457000
+i.r.r.xmapz.ObservableSwitchMapMaybeEmptyPerf.observablePlain ,4451200
+i.r.r.xmapz.ObservableSwitchMapMaybeEmptyPerf.observablePlain ,4420000
+i.r.r.xmapz.ObservableSwitchMapMaybeEmptyPerf.observablePlain  100000,4400000
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowableConvert ,4300000
+i.r.r.xmapz.ObservableSwitchMapCompletablePerf.observablePlain,4259740
+i.r.r.xmapz.FlowableFlatMapMaybeEmptyPerf.flowableConvert ,4214555
+i.r.r.xmapz.FlowableSwitchMapMaybePerf.flowableConvert,4200000
+i.r.r.core.XMapYPerf.flowFlatMapSingleAsFlow1 ,4174902
+i.r.r.xmapz.FlowableSwitchMapMaybePerf.flowableConvert,4158000
+i.r.r.core.XMapYPerf.flowFlatMapMaybeAsFlow0,4079229
+i.r.r.xmapz.FlowableSwitchMapMaybeEmptyPerf.flowableConvert ,4048385
+i.r.r.xmapz.FlowableConcatMapMaybeEmptyPerf.flowableConvert ,4027509
+i.r.r.core.XMapYPerf.obsFlatMapIterableAsObs0 ,4000000
+i.r.r.xmapz.FlowableSwitchMapMaybePerf.flowableConvert,4000000
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowableConvert  100000,4000000
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowableConvert ,4000000
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowableConvert  10,3997300
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowableConvert ,3977400
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowableConvert  1000,3960000
+i.r.r.xmapz.FlowableSwitchMapMaybePerf.flowableConvert,3944400
+i.r.r.core.BinaryFlatMapPerf.singleFlattenAsPublisher ,3923763
+i.r.r.xmapz.FlowableFlatMapSinglePerf.flowableConvert ,3918540
+i.r.r.xmapz.FlowableSwitchMapMaybePerf.flowableConvert,3900000
+i.r.r.xmapz.FlowableSwitchMapMaybePerf.flowableConvert,3867100
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowableConvert ,3835039
+i.r.r.core.XMapYPerf.flowFlatMapMaybeAsFlow1,3726661
+i.r.r.xmapz.FlowableConcatMapMaybePerf.flowableConvert,3616186
+i.r.r.xmapz.FlowableConcatMapSinglePerf.flowableConvert ,3613548
+i.r.r.xmapz.FlowableSwitchMapMaybePerf.flowableConvert,3492129
+i.r.r.xmapz.FlowableFlatMapMaybePerf.flowableConvert,3470878
+i.r.r.core.XMapYPerf.obsFlatMapIterableAsObs0 ,3400000
+i.r.r.core.XMapYPerf.obsFlatMapIterableAsObs0 ,3390000
+i.r.r.core.XMapYPerf.obsFlatMapIterableAsObs0 ,3336000
+i.r.r.core.XMapYPerf.obsFlatMapIterableAsObs0 ,3308900
+i.r.r.core.XMapYPerf.obsFlatMapIterableAsObs0 ,3116430
+i.r.r.core.XMapYPerf.flowFlatMapMaybe1,3000000
+i.r.r.xmapz.FlowableConcatMapMaybeEmptyPerf.flowableConvert ,3000000
+i.r.r.xmapz.FlowableConcatMapMaybePerf.flowableConvert,3000000
+i.r.r.xmapz.FlowableConcatMapSinglePerf.flowableConvert ,3000000
+i.r.r.xmapz.FlowableFlatMapMaybePerf.flowableDedicated,3000000
+i.r.r.xmapz.FlowableSwitchMapMaybeEmptyPerf.flowableConvert ,3000000
+i.r.r.xmapz.FlowableConcatMapMaybeEmptyPerf.flowableConvert ,2920000
+i.r.r.xmapz.FlowableConcatMapMaybeEmptyPerf.flowableConvert  1000,2917000
+i.r.r.xmapz.FlowableSwitchMapMaybeEmptyPerf.flowableConvert  1000,2857000
+i.r.r.xmapz.FlowableConcatMapMaybeEmptyPerf.flowableConvert ,2852000
+i.r.r.xmapz.FlowableSwitchMapMaybeEmptyPerf.flowableConvert ,2830000
+i.r.r.xmapz.FlowableSwitchMapMaybeEmptyPerf.flowableConvert  100000,2800000
+i.r.r.xmapz.FlowableFlatMapMaybePerf.flowableDedicated,2760000
+i.r.r.core.XMapYPerf.flowFlatMapMaybe1,2755000
+i.r.r.xmapz.FlowableSwitchMapMaybeEmptyPerf.flowableConvert ,2750700
+i.r.r.xmapz.FlowableFlatMapMaybePerf.flowableDedicated,2730000
+i.r.r.core.XMapYPerf.flowFlatMapMaybe1,2700000
+i.r.r.xmapz.FlowableConcatMapMaybeEmptyPerf.flowableConvert  100000,2700000
+i.r.r.xmapz.FlowableFlatMapMaybePerf.flowableDedicated,2700000
+i.r.r.xmapz.FlowableFlatMapMaybePerf.flowableDedicated,2696700
+i.r.r.core.XMapYPerf.flowFlatMapMaybe1,2690000
+i.r.r.core.XMapYPerf.flowFlatMapMaybe1,2669700
+i.r.r.xmapz.FlowableConcatMapMaybeEmptyPerf.flowableConvert  10,2651880
+i.r.r.xmapz.FlowableSwitchMapMaybeEmptyPerf.flowableConvert  10,2532720
+i.r.r.xmapz.FlowableConcatMapSinglePerf.flowableConvert ,2374300
+i.r.r.xmapz.FlowableConcatMapSinglePerf.flowableConvert  1000,2371000
+i.r.r.xmapz.FlowableFlatMapMaybePerf.flowableDedicated,2360500
+i.r.r.xmapz.FlowableConcatMapMaybePerf.flowableConvert,2300000
+i.r.r.xmapz.FlowableConcatMapSinglePerf.flowableConvert  100000,2300000
+i.r.r.xmapz.FlowableConcatMapMaybePerf.flowableConvert,2290000
+i.r.r.core.XMapYPerf.flowFlatMapMaybe1,2273500
+i.r.r.xmapz.FlowableConcatMapMaybePerf.flowableConvert,2264000
+i.r.r.xmapz.FlowableConcatMapMaybePerf.flowableConvert,2184300
+i.r.r.xmapz.FlowableConcatMapSinglePerf.flowableConvert  10,2104130
+i.r.r.xmapz.FlowableConcatMapMaybePerf.flowableConvert,2098720
+i.r.r.core.XMapYPerf.flowFlatMapMaybeAsFlow0,2000000
+i.r.r.core.XMapYPerf.flowFlatMapMaybeAsFlow1,2000000
+i.r.r.core.XMapYPerf.flowFlatMapSingleAsFlow1 ,2000000
+i.r.r.xmapz.FlowableFlatMapMaybeEmptyPerf.flowableConvert ,2000000
+i.r.r.xmapz.FlowableFlatMapMaybePerf.flowableConvert,2000000
+i.r.r.xmapz.FlowableFlatMapSinglePerf.flowableConvert ,2000000
+i.r.r.core.XMapYPerf.flowFlatMapMaybeAsFlow0,1900000
+i.r.r.core.XMapYPerf.flowFlatMapMaybeAsFlow0,1847000
+i.r.r.xmapz.FlowableFlatMapMaybeEmptyPerf.flowableConvert  1000,1832000
+i.r.r.xmapz.FlowableFlatMapMaybeEmptyPerf.flowableConvert ,1830700
+i.r.r.xmapz.FlowableFlatMapMaybeEmptyPerf.flowableConvert ,1820000
+i.r.r.xmapz.FlowableFlatMapMaybeEmptyPerf.flowableConvert  100000,1800000
+i.r.r.core.XMapYPerf.flowFlatMapMaybeAsFlow0,1781600
+i.r.r.core.XMapYPerf.flowFlatMapMaybeAsFlow0,1780000
+i.r.r.core.XMapYPerf.flowFlatMapMaybeAsFlow0,1662070
+i.r.r.xmapz.FlowableConcatMapSinglePerf.flowableConvert ,1640000
+i.r.r.core.XMapYPerf.flowFlatMapMaybeAsFlow1,1600000
+i.r.r.core.XMapYPerf.flowFlatMapSingleAsFlow1 ,1588000
+i.r.r.core.XMapYPerf.flowFlatMapMaybeAsFlow1,1564000
+i.r.r.xmapz.FlowableFlatMapMaybeEmptyPerf.flowableConvert  10,1561010
+i.r.r.core.XMapYPerf.flowFlatMapMaybeAsFlow1,1521600
+i.r.r.xmapz.FlowableFlatMapSinglePerf.flowableConvert  1000,1519000
+i.r.r.xmapz.FlowableFlatMapMaybePerf.flowableConvert,1517000
+i.r.r.xmapz.FlowableFlatMapMaybePerf.flowableConvert,1515700
+i.r.r.core.XMapYPerf.flowFlatMapSingleAsFlow1 ,1500000
+i.r.r.xmapz.FlowableFlatMapSinglePerf.flowableConvert  100000,1500000
+i.r.r.core.XMapYPerf.flowFlatMapSingleAsFlow1 ,1490000
+i.r.r.xmapz.FlowableFlatMapMaybePerf.flowableConvert,1490000
+i.r.r.core.XMapYPerf.flowFlatMapSingleAsFlow1 ,1450000
+i.r.r.xmapz.FlowableFlatMapSinglePerf.flowableConvert ,1445900
+i.r.r.core.XMapYPerf.flowFlatMapMaybeAsFlow1,1440000
+i.r.r.xmapz.FlowableFlatMapSinglePerf.flowableConvert ,1430000
+i.r.r.xmapz.FlowableFlatMapMaybePerf.flowableConvert,1400000
+i.r.r.xmapz.FlowableFlatMapSinglePerf.flowableConvert  10,1293630
+i.r.r.xmapz.FlowableFlatMapMaybePerf.flowableConvert,1265800
+i.r.r.core.XMapYPerf.flowFlatMapSingleAsFlow1 ,1256400
+i.r.r.core.XMapYPerf.flowFlatMapMaybeAsFlow1,1234640
+i.r.r.core.XMapYPerf.flowFlatMapSingle1 ,1077853
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowableDedicated ,1058680
+i.r.r.core.ToFlowablePerf.flowableInner ,1000000
+i.r.r.core.XMapYPerf.flowFlatMapMaybe1,970567
+i.r.r.xmapz.FlowableFlatMapMaybePerf.flowableDedicated,911456
+i.r.r.xmapz.FlowableFlatMapSinglePerf.flowableDedicated ,902421
+i.r.r.core.ToFlowablePerf.flowableInner ,842000
+i.r.r.core.ToFlowablePerf.flowableInner ,832534
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowableDedicated  10,428874
+i.r.r.core.XMapYPerf.flowFlatMapSingle1 ,243730
+i.r.r.xmapz.FlowableFlatMapSinglePerf.flowableDedicated  10,243649
+i.r.r.core.CallableAsyncPerf.subscribeOnFlowable,84761
+i.r.r.core.BinaryFlatMapPerf.singleFlattenAsPublisher ,65909
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowableDedicated ,49647
+i.r.r.core.XMapYPerf.flowFlatMapSingle1 ,27985
+i.r.r.xmapz.FlowableFlatMapSinglePerf.flowableDedicated ,27786
+i.r.r.core.CallableAsyncPerf.observeOnFlowable,22016
+i.r.r.core.TakeUntilPerf.flowable ,18436
+i.r.r.core.CallableAsyncPerf.pipelineFlowable ,11654
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowableDedicated  1000,5334
+i.r.r.xmapz.FlowableFlatMapSinglePerf.flowableDedicated  1000,2785
+i.r.r.core.XMapYPerf.flowFlatMapSingle1 ,2679
+i.r.r.parallel.ParallelPerf.parallel,1936
+i.r.r.parallel.ParallelPerf.parallel,1672
+i.r.r.parallel.ParallelPerf.parallel,1315
+i.r.r.parallel.ParallelPerf.parallel,1130
+i.r.r.parallel.ParallelPerf.parallel,894
+i.r.r.parallel.ParallelPerf.parallel,840
+i.r.r.parallel.ParallelPerf.parallel,750
+i.r.r.parallel.ParallelPerf.parallel,590
+i.r.r.parallel.ParallelPerf.parallel,564
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowableDedicated ,543
+i.r.r.parallel.ParallelPerf.parallel,472
+i.r.r.parallel.ParallelPerf.parallel,469
+i.r.r.parallel.ParallelPerf.parallel,364
+i.r.r.parallel.ParallelPerf.parallel 1000,280
+i.r.r.core.XMapYPerf.flowFlatMapSingle1 ,277
+i.r.r.xmapz.FlowableFlatMapSinglePerf.flowableDedicated ,262
+i.r.r.parallel.ParallelPerf.parallel 1000,204
+i.r.r.parallel.ParallelPerf.parallel 1000,130
+i.r.r.core.BinaryFlatMapPerf.singleFlattenAsPublisher ,74
+i.r.r.parallel.ParallelPerf.parallel 1000,68
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowableDedicated  100000,53
+i.r.r.parallel.ParallelPerf.parallel,42
+i.r.r.parallel.ParallelPerf.parallel,30
+i.r.r.core.XMapYPerf.flowFlatMapSingle1 ,27
+i.r.r.xmapz.FlowableFlatMapSinglePerf.flowableDedicated  100000,27
+i.r.r.parallel.ParallelPerf.parallel,20
+i.r.r.parallel.ParallelPerf.parallel,8
+i.r.r.xmapz.FlowableSwitchMapSinglePerf.flowableDedicated ,5
+i.r.r.core.XMapYPerf.flowFlatMapSingle1 ,3
+i.r.r.xmapz.FlowableFlatMapSinglePerf.flowableDedicated ,3
