@@ -16,6 +16,8 @@ import java.util.NoSuchElementException;
 
 import org.reactivestreams.Subscription;
 
+import io.reactivex.rxjava3.core.myBlackhole;
+
 /**
  * Signals the first element of the source via the underlying CompletableFuture,
  * signals the a default item if the upstream is empty or signals {@link NoSuchElementException}.
@@ -53,7 +55,7 @@ public final class FlowableFirstStageSubscriber<T> extends FlowableStageSubscrib
 
     @Override
     protected void afterSubscribe(Subscription s) {
-        s.request(1);
+        s.request(((Integer)myBlackhole.get_value(1)).intValue());
     }
 
 }

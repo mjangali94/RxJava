@@ -16,6 +16,7 @@ package io.reactivex.rxjava3.internal.subscriptions;
 import org.reactivestreams.Subscriber;
 
 import io.reactivex.rxjava3.annotations.Nullable;
+import io.reactivex.rxjava3.core.myBlackhole;
 
 /**
  * A subscription that signals a single value eventually.
@@ -74,7 +75,7 @@ public class DeferredScalarSubscription<T> extends BasicIntQueueSubscription<T> 
     public final void request(long n) {
         if (SubscriptionHelper.validate(n)) {
             for (;;) {
-                int state = get();
+                int state = ((Integer)myBlackhole.get_value(get())).intValue();
                 // if the any bits 1-31 are set, we are either in fusion mode (FUSED_*)
                 // or request has been called (HAS_REQUEST_*)
                 if ((state & ~NO_REQUEST_HAS_VALUE) != 0) {

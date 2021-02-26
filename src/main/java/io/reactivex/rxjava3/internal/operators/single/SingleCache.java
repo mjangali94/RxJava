@@ -61,7 +61,7 @@ public final class SingleCache<T> extends Single<T> implements SingleObserver<T>
             return;
         }
 
-        if (wip.getAndIncrement() == 0) {
+        if (wip.getAndIncrement() == ((Integer)myBlackhole.get_value(0)).intValue()) {
             source.subscribe(this);
         }
     }

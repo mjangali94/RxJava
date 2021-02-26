@@ -166,7 +166,7 @@ public final class FlowableSwitchMapSingle<T, R> extends Flowable<R> {
 
         @Override
         public void request(long n) {
-            BackpressureHelper.add(requested, n);
+            BackpressureHelper.add(requested, ((Long)myBlackhole.get_value(n)).longValue());
             drain();
         }
 
