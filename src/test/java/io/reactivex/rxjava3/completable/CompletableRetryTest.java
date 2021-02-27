@@ -17,7 +17,8 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-import org.junit.Test;
+import org.junit.Rule;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.*;
 import io.reactivex.rxjava3.exceptions.TestException;
@@ -25,131 +26,117 @@ import io.reactivex.rxjava3.functions.*;
 import io.reactivex.rxjava3.internal.functions.Functions;
 
 public class CompletableRetryTest extends RxJavaTest {
-    @Test
-    public void retryTimesPredicateWithMatchingPredicate() {
-        final AtomicInteger atomicInteger = new AtomicInteger(3);
-        final AtomicInteger numberOfSubscribeCalls = new AtomicInteger(0);
 
-        Completable.fromAction(new Action() {
-            @Override public void run() throws Exception {
-                numberOfSubscribeCalls.incrementAndGet();
 
-                if (atomicInteger.decrementAndGet() != 0) {
-                    throw new RuntimeException();
-                }
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
-                throw new IllegalArgumentException();
-            }
-        })
-            .retry(Integer.MAX_VALUE, new Predicate<Throwable>() {
-                @Override public boolean test(final Throwable throwable) throws Exception {
-                    return !(throwable instanceof IllegalArgumentException);
-                }
-            })
-            .test()
-            .assertFailure(IllegalArgumentException.class);
+	@Test
+	public void retryTimesPredicateWithMatchingPredicate() {
+		final AtomicInteger atomicInteger = new AtomicInteger(3);
+		final AtomicInteger numberOfSubscribeCalls = new AtomicInteger(0);
 
-        assertEquals(3, numberOfSubscribeCalls.get());
-    }
+		Completable.fromAction(new Action() {
+			@Override
+			public void run() throws Exception {
+				numberOfSubscribeCalls.incrementAndGet();
 
-    @Test
-    public void retryTimesPredicateWithMatchingRetryAmount() {
-        final AtomicInteger atomicInteger = new AtomicInteger(3);
-        final AtomicInteger numberOfSubscribeCalls = new AtomicInteger(0);
+				if (atomicInteger.decrementAndGet() != 0) {
+					throw new RuntimeException();
+				}
 
-        Completable.fromAction(new Action() {
-            @Override public void run() throws Exception {
-                numberOfSubscribeCalls.incrementAndGet();
+				throw new IllegalArgumentException();
+			}
+		}).retry(Integer.MAX_VALUE, new Predicate<Throwable>() {
+			@Override
+			public boolean test(final Throwable throwable) throws Exception {
+				return !(throwable instanceof IllegalArgumentException);
+			}
+		}).test().assertFailure(IllegalArgumentException.class);
 
-                if (atomicInteger.decrementAndGet() != 0) {
-                    throw new RuntimeException();
-                }
-            }
-        })
-            .retry(2, Functions.alwaysTrue())
-            .test()
-            .assertResult();
+		assertEquals(3, numberOfSubscribeCalls.get());
+	}
 
-        assertEquals(3, numberOfSubscribeCalls.get());
-    }
+	@Test
+	public void retryTimesPredicateWithMatchingRetryAmount() {
+		final AtomicInteger atomicInteger = new AtomicInteger(3);
+		final AtomicInteger numberOfSubscribeCalls = new AtomicInteger(0);
 
-    @Test
-    public void retryTimesPredicateWithNotMatchingRetryAmount() {
-        final AtomicInteger atomicInteger = new AtomicInteger(3);
-        final AtomicInteger numberOfSubscribeCalls = new AtomicInteger(0);
+		Completable.fromAction(new Action() {
+			@Override
+			public void run() throws Exception {
+				numberOfSubscribeCalls.incrementAndGet();
 
-        Completable.fromAction(new Action() {
-            @Override public void run() throws Exception {
-                numberOfSubscribeCalls.incrementAndGet();
+				if (atomicInteger.decrementAndGet() != 0) {
+					throw new RuntimeException();
+				}
+			}
+		}).retry(2, Functions.alwaysTrue()).test().assertResult();
 
-                if (atomicInteger.decrementAndGet() != 0) {
-                    throw new RuntimeException();
-                }
-            }
-        })
-            .retry(1, Functions.alwaysTrue())
-            .test()
-            .assertFailure(RuntimeException.class);
+		assertEquals(3, numberOfSubscribeCalls.get());
+	}
 
-        assertEquals(2, numberOfSubscribeCalls.get());
-    }
+	@Test
+	public void retryTimesPredicateWithNotMatchingRetryAmount() {
+		final AtomicInteger atomicInteger = new AtomicInteger(3);
+		final AtomicInteger numberOfSubscribeCalls = new AtomicInteger(0);
 
-    @Test
-    public void retryTimesPredicateWithZeroRetries() {
-        final AtomicInteger atomicInteger = new AtomicInteger(2);
-        final AtomicInteger numberOfSubscribeCalls = new AtomicInteger(0);
+		Completable.fromAction(new Action() {
+			@Override
+			public void run() throws Exception {
+				numberOfSubscribeCalls.incrementAndGet();
 
-        Completable.fromAction(new Action() {
-            @Override public void run() throws Exception {
-                numberOfSubscribeCalls.incrementAndGet();
+				if (atomicInteger.decrementAndGet() != 0) {
+					throw new RuntimeException();
+				}
+			}
+		}).retry(1, Functions.alwaysTrue()).test().assertFailure(RuntimeException.class);
 
-                if (atomicInteger.decrementAndGet() != 0) {
-                    throw new RuntimeException();
-                }
-            }
-        })
-            .retry(0, Functions.alwaysTrue())
-            .test()
-            .assertFailure(RuntimeException.class);
+		assertEquals(2, numberOfSubscribeCalls.get());
+	}
 
-        assertEquals(1, numberOfSubscribeCalls.get());
-    }
+	@Test
+	public void retryTimesPredicateWithZeroRetries() {
+		final AtomicInteger atomicInteger = new AtomicInteger(2);
+		final AtomicInteger numberOfSubscribeCalls = new AtomicInteger(0);
 
-    @Test
-    public void untilTrueEmpty() {
-        Completable.complete()
-        .retryUntil(() -> true)
-        .test()
-        .assertResult();
-    }
+		Completable.fromAction(new Action() {
+			@Override
+			public void run() throws Exception {
+				numberOfSubscribeCalls.incrementAndGet();
 
-    @Test
-    public void untilFalseEmpty() {
-        Completable.complete()
-        .retryUntil(() -> false)
-        .test()
-        .assertResult();
-    }
+				if (atomicInteger.decrementAndGet() != 0) {
+					throw new RuntimeException();
+				}
+			}
+		}).retry(0, Functions.alwaysTrue()).test().assertFailure(RuntimeException.class);
 
-    @Test
-    public void untilTrueError() {
-        Completable.error(new TestException())
-        .retryUntil(() -> true)
-        .test()
-        .assertFailure(TestException.class);
-    }
+		assertEquals(1, numberOfSubscribeCalls.get());
+	}
 
-    @Test
-    public void untilFalseError() {
-        AtomicInteger counter = new AtomicInteger();
-        Completable.defer(() -> {
-            if (counter.getAndIncrement() == 0) {
-                return Completable.error(new TestException());
-            }
-            return Completable.complete();
-        })
-        .retryUntil(() -> false)
-        .test()
-        .assertResult();
-    }
+	@Test
+	public void untilTrueEmpty() {
+		Completable.complete().retryUntil(() -> true).test().assertResult();
+	}
+
+	@Test
+	public void untilFalseEmpty() {
+		Completable.complete().retryUntil(() -> false).test().assertResult();
+	}
+
+	@Test
+	public void untilTrueError() {
+		Completable.error(new TestException()).retryUntil(() -> true).test().assertFailure(TestException.class);
+	}
+
+	@Test
+	public void untilFalseError() {
+		AtomicInteger counter = new AtomicInteger();
+		Completable.defer(() -> {
+			if (counter.getAndIncrement() == 0) {
+				return Completable.error(new TestException());
+			}
+			return Completable.complete();
+		}).retryUntil(() -> false).test().assertResult();
+	}
 }

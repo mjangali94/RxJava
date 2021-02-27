@@ -17,7 +17,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.concurrent.atomic.*;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 import org.reactivestreams.*;
 
 import io.reactivex.rxjava3.core.*;
@@ -25,6 +25,9 @@ import io.reactivex.rxjava3.functions.Consumer;
 import io.reactivex.rxjava3.internal.subscriptions.BooleanSubscription;
 
 public class FlowableDoOnSubscribeTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void doOnSubscribe() throws Exception {

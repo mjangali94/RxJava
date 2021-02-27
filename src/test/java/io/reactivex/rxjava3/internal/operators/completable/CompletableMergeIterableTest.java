@@ -16,7 +16,7 @@ package io.reactivex.rxjava3.internal.operators.completable;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.*;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
@@ -28,6 +28,9 @@ import io.reactivex.rxjava3.subjects.PublishSubject;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class CompletableMergeIterableTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void errorRace() {

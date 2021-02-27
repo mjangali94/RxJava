@@ -18,7 +18,7 @@ import static org.junit.Assert.assertNull;
 import java.io.IOException;
 import java.lang.ref.WeakReference;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.*;
 import io.reactivex.rxjava3.disposables.*;
@@ -29,6 +29,9 @@ import io.reactivex.rxjava3.processors.PublishProcessor;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class CompletableDetachTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void doubleSubscribe() {

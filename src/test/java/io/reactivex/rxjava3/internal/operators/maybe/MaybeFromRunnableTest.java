@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.*;
 import io.reactivex.rxjava3.functions.Supplier;
@@ -30,6 +30,9 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class MaybeFromRunnableTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     @Test
     public void fromRunnable() {
         final AtomicInteger atomicInteger = new AtomicInteger();

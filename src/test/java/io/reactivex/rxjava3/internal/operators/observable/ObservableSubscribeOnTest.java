@@ -18,7 +18,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.*;
@@ -28,6 +28,9 @@ import io.reactivex.rxjava3.schedulers.*;
 import io.reactivex.rxjava3.testsupport.*;
 
 public class ObservableSubscribeOnTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void issue813() throws InterruptedException {

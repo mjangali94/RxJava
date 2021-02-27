@@ -15,13 +15,16 @@ package io.reactivex.rxjava3.internal.operators.flowable;
 
 import static org.junit.Assert.assertSame;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.*;
 import io.reactivex.rxjava3.internal.functions.Functions;
 import io.reactivex.rxjava3.internal.fuseable.HasUpstreamPublisher;
 
 public class AbstractFlowableWithUpstreamTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @SuppressWarnings("unchecked")
     @Test

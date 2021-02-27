@@ -18,7 +18,7 @@ import static org.testng.Assert.assertTrue;
 
 import java.util.List;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.Scheduler.PeriodicDirectTask;
 import io.reactivex.rxjava3.exceptions.TestException;
@@ -27,6 +27,9 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class PeriodicDirectTaskTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void runnableThrows() {

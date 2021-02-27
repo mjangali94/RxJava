@@ -28,6 +28,9 @@ import io.reactivex.rxjava3.subscribers.TestSubscriber;
 import io.reactivex.rxjava3.testsupport.*;
 
 public class FlowableOnBackpressureLatestTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     @Test
     public void simple() {
         TestSubscriberEx<Integer> ts = new TestSubscriberEx<>();

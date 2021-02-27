@@ -39,6 +39,9 @@ import io.reactivex.rxjava3.subjects.*;
 import io.reactivex.rxjava3.testsupport.*;
 
 public class ObservableFlatMapTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     @Test
     public void normal() {
         Observer<Object> o = TestHelper.mockObserver();

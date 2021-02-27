@@ -29,6 +29,9 @@ import io.reactivex.rxjava3.testsupport.TestHelper;
  *
  */
 public class ObservableZipCompletionTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     BiFunction<String, String, String> concat2Strings;
 
     PublishSubject<String> s1;

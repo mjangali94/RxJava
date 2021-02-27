@@ -19,6 +19,9 @@ import io.reactivex.rxjava3.core.*;
 
 public class FlowableNotificationTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     @Test(expected = NullPointerException.class)
     public void onNextIntegerNotificationDoesNotEqualNullNotification() {
         final Notification<Integer> integerNotification = Notification.createOnNext(1);

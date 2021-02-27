@@ -24,6 +24,7 @@ import org.mockito.InOrder;
 
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.Observer;
+import io.reactivex.rxjava3.core.PerformanceLogger;
 import io.reactivex.rxjava3.core.RxJavaTest;
 import io.reactivex.rxjava3.disposables.*;
 import io.reactivex.rxjava3.exceptions.TestException;
@@ -36,6 +37,9 @@ import io.reactivex.rxjava3.subjects.UnicastSubject;
 import io.reactivex.rxjava3.testsupport.*;
 
 public class ObservableDistinctTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     Observer<String> w;
 

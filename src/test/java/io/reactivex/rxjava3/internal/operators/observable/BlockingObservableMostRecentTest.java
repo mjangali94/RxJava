@@ -21,12 +21,16 @@ import java.util.concurrent.TimeUnit;
 import org.junit.*;
 
 import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.PerformanceLogger;
 import io.reactivex.rxjava3.core.RxJavaTest;
 import io.reactivex.rxjava3.exceptions.TestException;
 import io.reactivex.rxjava3.schedulers.TestScheduler;
 import io.reactivex.rxjava3.subjects.*;
 
 public class BlockingObservableMostRecentTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     static <T> Iterable<T> mostRecent(Observable<T> source, T initialValue) {
         return source.blockingMostRecent(initialValue);

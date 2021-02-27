@@ -27,6 +27,9 @@ import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class ObservableDetachTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     Object o;
 
     @Test

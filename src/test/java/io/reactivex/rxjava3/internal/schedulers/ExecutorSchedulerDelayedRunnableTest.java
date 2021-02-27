@@ -17,7 +17,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.RxJavaTest;
 import io.reactivex.rxjava3.exceptions.TestException;
@@ -25,6 +25,9 @@ import io.reactivex.rxjava3.internal.schedulers.ExecutorScheduler.DelayedRunnabl
 import io.reactivex.rxjava3.testsupport.SuppressUndeliverable;
 
 public class ExecutorSchedulerDelayedRunnableTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test(expected = TestException.class)
     @SuppressUndeliverable

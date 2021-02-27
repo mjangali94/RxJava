@@ -20,11 +20,14 @@ import static org.junit.Assert.*;
 import java.io.*;
 import java.util.*;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.RxJavaTest;
 
 public class CompositeExceptionTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     private final Throwable ex1 = new Throwable("Ex1");
     private final Throwable ex2 = new Throwable("Ex2", ex1);

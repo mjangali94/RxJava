@@ -15,13 +15,16 @@
  */
 package io.reactivex.rxjava3.flowable;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.*;
 import io.reactivex.rxjava3.flowable.FlowableCovarianceTest.*;
 import io.reactivex.rxjava3.functions.*;
 
 public class FlowableCombineLatestTests extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     /**
      * This won't compile if super/extends isn't done correctly on generics.
      */

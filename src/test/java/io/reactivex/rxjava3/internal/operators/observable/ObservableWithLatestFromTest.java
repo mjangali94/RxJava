@@ -20,7 +20,7 @@ import static org.mockito.Mockito.*;
 import java.util.*;
 
 import io.reactivex.rxjava3.disposables.Disposable;
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 import org.mockito.InOrder;
 
 import io.reactivex.rxjava3.core.Observable;
@@ -36,6 +36,9 @@ import io.reactivex.rxjava3.subjects.PublishSubject;
 import io.reactivex.rxjava3.testsupport.*;
 
 public class ObservableWithLatestFromTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     static final BiFunction<Integer, Integer, Integer> COMBINER = new BiFunction<Integer, Integer, Integer>() {
         @Override
         public Integer apply(Integer t1, Integer t2) {

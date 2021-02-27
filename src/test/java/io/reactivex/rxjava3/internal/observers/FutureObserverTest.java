@@ -21,6 +21,7 @@ import java.util.concurrent.*;
 
 import org.junit.*;
 
+import io.reactivex.rxjava3.core.PerformanceLogger;
 import io.reactivex.rxjava3.core.RxJavaTest;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.exceptions.TestException;
@@ -30,6 +31,9 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class FutureObserverTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     FutureObserver<Integer> fo;
 
     @Before

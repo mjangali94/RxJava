@@ -15,12 +15,15 @@ package io.reactivex.rxjava3.internal.observers;
 
 import static org.junit.Assert.*;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.RxJavaTest;
 import io.reactivex.rxjava3.internal.functions.Functions;
 
 public final class ConsumerSingleObserverTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void onErrorMissingShouldReportNoCustomOnError() {

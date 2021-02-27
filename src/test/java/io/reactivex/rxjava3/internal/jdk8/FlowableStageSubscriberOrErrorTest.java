@@ -18,7 +18,7 @@ import static org.junit.Assert.*;
 import java.util.NoSuchElementException;
 import java.util.concurrent.*;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 import org.reactivestreams.Subscriber;
 
 import io.reactivex.rxjava3.core.*;
@@ -28,6 +28,9 @@ import io.reactivex.rxjava3.processors.*;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class FlowableStageSubscriberOrErrorTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void firstJust() throws Exception {

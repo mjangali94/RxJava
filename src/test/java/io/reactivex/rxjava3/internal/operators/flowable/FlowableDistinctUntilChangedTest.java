@@ -37,6 +37,9 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class FlowableDistinctUntilChangedTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     Subscriber<String> w;
     Subscriber<String> w2;
 

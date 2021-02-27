@@ -34,6 +34,9 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class ObservableDistinctUntilChangedTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     Observer<String> w;
     Observer<String> w2;
 

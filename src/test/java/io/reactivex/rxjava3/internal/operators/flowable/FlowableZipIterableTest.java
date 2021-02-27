@@ -34,6 +34,9 @@ import io.reactivex.rxjava3.processors.PublishProcessor;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class FlowableZipIterableTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     BiFunction<String, String, String> concat2Strings;
     PublishProcessor<String> s1;
     PublishProcessor<String> s2;

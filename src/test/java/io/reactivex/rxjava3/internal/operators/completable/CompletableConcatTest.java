@@ -19,7 +19,7 @@ import java.util.*;
 import java.util.concurrent.CountDownLatch;
 
 import io.reactivex.rxjava3.disposables.Disposable;
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 import org.reactivestreams.*;
 
 import io.reactivex.rxjava3.core.*;
@@ -33,6 +33,9 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class CompletableConcatTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void overflowReported() {

@@ -34,6 +34,9 @@ import io.reactivex.rxjava3.subjects.PublishSubject;
 import io.reactivex.rxjava3.testsupport.*;
 
 public class ObservableTimeoutTests extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     private PublishSubject<String> underlyingSubject;
     private TestScheduler testScheduler;
     private Observable<String> withTimeout;

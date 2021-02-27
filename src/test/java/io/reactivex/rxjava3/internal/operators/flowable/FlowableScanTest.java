@@ -36,6 +36,9 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class FlowableScanTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     @Test
     public void scanIntegersWithInitialValue() {
         Subscriber<String> subscriber = TestHelper.mockSubscriber();

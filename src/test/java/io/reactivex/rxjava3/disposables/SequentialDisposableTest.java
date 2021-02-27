@@ -23,11 +23,15 @@ import org.junit.*;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import io.reactivex.rxjava3.core.PerformanceLogger;
 import io.reactivex.rxjava3.core.RxJavaTest;
 import io.reactivex.rxjava3.internal.disposables.SequentialDisposable;
 
 @RunWith(MockitoJUnitRunner.class)
 public class SequentialDisposableTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     private SequentialDisposable serialDisposable;
 
     @Before

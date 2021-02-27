@@ -13,7 +13,7 @@
 
 package io.reactivex.rxjava3.internal.operators.single;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.*;
 import io.reactivex.rxjava3.exceptions.TestException;
@@ -22,6 +22,9 @@ import io.reactivex.rxjava3.subjects.SingleSubject;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class SingleMaterializeTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void success() {

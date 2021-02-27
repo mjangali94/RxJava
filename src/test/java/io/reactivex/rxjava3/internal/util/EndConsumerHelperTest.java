@@ -32,6 +32,9 @@ import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class EndConsumerHelperTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     List<Throwable> errors;
 
     @Before

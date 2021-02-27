@@ -18,7 +18,7 @@ import static org.junit.Assert.assertTrue;
 import java.io.IOException;
 import java.util.List;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.*;
 import io.reactivex.rxjava3.exceptions.*;
@@ -27,6 +27,9 @@ import io.reactivex.rxjava3.internal.functions.Functions;
 import io.reactivex.rxjava3.testsupport.*;
 
 public class SingleFlatMapNotificationTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void dispose() {

@@ -36,6 +36,9 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class FlowableDistinctTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     Subscriber<String> w;
 
     // nulls lead to exceptions

@@ -17,7 +17,7 @@ import java.io.*;
 import java.net.URL;
 import java.util.*;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 public class NoAnonymousInnerClassesTest {
 

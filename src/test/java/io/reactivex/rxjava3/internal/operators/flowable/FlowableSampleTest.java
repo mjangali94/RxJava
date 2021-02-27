@@ -33,6 +33,9 @@ import io.reactivex.rxjava3.subscribers.TestSubscriber;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class FlowableSampleTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     private TestScheduler scheduler;
     private Scheduler.Worker innerScheduler;
     private Subscriber<Long> subscriber;

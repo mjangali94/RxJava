@@ -40,6 +40,9 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class FlowableDebounceTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     private TestScheduler scheduler;
     private Subscriber<String> Subscriber;
     private Scheduler.Worker innerScheduler;

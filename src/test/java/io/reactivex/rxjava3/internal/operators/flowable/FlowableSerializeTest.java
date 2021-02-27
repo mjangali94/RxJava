@@ -30,6 +30,9 @@ import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class FlowableSerializeTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     Subscriber<String> subscriber;
 
     @Before

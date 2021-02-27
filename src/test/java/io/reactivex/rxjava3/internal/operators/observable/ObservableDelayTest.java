@@ -36,6 +36,9 @@ import io.reactivex.rxjava3.subjects.PublishSubject;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class ObservableDelayTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     private Observer<Long> observer;
     private Observer<Long> observer2;
 

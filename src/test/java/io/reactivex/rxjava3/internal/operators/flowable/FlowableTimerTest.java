@@ -35,6 +35,9 @@ import io.reactivex.rxjava3.subscribers.*;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class FlowableTimerTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     @Mock
     Subscriber<Object> subscriber;
     @Mock

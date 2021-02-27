@@ -23,6 +23,9 @@ import io.reactivex.rxjava3.subscribers.TestSubscriber;
 
 public class FlowableToSingleTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     @Test
     public void justSingleItemObservable() {
         TestSubscriber<String> subscriber = TestSubscriber.create();

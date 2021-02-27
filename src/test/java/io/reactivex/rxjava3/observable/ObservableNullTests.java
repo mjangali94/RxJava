@@ -33,6 +33,9 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
  */
 public class ObservableNullTests extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     Observable<Integer> just1 = Observable.just(1);
 
     //***********************************************************

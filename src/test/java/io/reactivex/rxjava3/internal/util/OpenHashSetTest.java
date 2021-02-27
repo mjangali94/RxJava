@@ -15,11 +15,14 @@ package io.reactivex.rxjava3.internal.util;
 
 import static org.junit.Assert.*;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.RxJavaTest;
 
 public class OpenHashSetTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     static class Value {
 

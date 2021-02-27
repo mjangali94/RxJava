@@ -37,6 +37,9 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class FlowableFilterTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     @Test
     public void filter() {
         Flowable<String> w = Flowable.just("one", "two", "three");

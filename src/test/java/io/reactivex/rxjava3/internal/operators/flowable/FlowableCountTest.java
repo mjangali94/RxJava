@@ -20,6 +20,9 @@ import io.reactivex.rxjava3.functions.Function;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class FlowableCountTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     @Test
     public void simpleFlowable() {
         Assert.assertEquals(0, Flowable.empty().count().toFlowable().blockingLast().intValue());

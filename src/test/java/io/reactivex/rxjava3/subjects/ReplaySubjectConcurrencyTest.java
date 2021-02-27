@@ -32,6 +32,9 @@ import io.reactivex.rxjava3.testsupport.TestObserverEx;
 
 public class ReplaySubjectConcurrencyTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     @Test
     public void replaySubjectConcurrentSubscribersDoingReplayDontBlockEachOther() throws InterruptedException {
         final ReplaySubject<Long> replay = ReplaySubject.create();

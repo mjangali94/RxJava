@@ -37,6 +37,9 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class FlowableGroupJoinTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     Subscriber<Object> subscriber = TestHelper.mockSubscriber();
 
     BiFunction<Integer, Integer, Integer> add = new BiFunction<Integer, Integer, Integer>() {

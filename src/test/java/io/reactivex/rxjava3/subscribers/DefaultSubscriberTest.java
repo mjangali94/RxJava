@@ -17,11 +17,14 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.*;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.*;
 
 public class DefaultSubscriberTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     static final class RequestEarly extends DefaultSubscriber<Integer> {
 

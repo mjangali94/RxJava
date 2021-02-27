@@ -14,11 +14,14 @@ package io.reactivex.rxjava3.internal.operators.single;
 
 import java.util.concurrent.Callable;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.*;
 
 public class SingleConcatPublisherTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void scalar() {

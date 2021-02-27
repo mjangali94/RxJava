@@ -47,6 +47,9 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class FlowableReplayTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     @Test
     public void bufferedReplay() {
         PublishProcessor<Integer> source = PublishProcessor.create();

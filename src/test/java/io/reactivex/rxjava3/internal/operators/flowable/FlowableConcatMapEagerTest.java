@@ -35,6 +35,9 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class FlowableConcatMapEagerTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     @Test
     public void normal() {
         Flowable.range(1, 5)

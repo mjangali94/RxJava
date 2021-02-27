@@ -33,6 +33,9 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class SerializedObserverTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     Observer<String> observer;
 
     @Before

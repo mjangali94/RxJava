@@ -15,7 +15,7 @@ package io.reactivex.rxjava3.internal.operators.single;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.*;
 import io.reactivex.rxjava3.exceptions.TestException;
@@ -25,6 +25,9 @@ import io.reactivex.rxjava3.subjects.SingleSubject;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class SingleFlatMapBiSelectorTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     BiFunction<Integer, Integer, String> stringCombine() {
         return new BiFunction<Integer, Integer, String>() {

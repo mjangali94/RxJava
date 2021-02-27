@@ -15,13 +15,16 @@ package io.reactivex.rxjava3.flowable;
 
 import static org.junit.Assert.*;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.*;
 import io.reactivex.rxjava3.flowable.FlowableCovarianceTest.*;
 import io.reactivex.rxjava3.functions.BiFunction;
 
 public class FlowableReduceTests extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void reduceIntsFlowable() {

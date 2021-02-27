@@ -13,11 +13,14 @@
 
 package io.reactivex.rxjava3.internal.operators.completable;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.*;
 
 public class CompletableFromObservableTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     @Test
     public void fromObservable() {
         Completable.fromObservable(Observable.just(1))

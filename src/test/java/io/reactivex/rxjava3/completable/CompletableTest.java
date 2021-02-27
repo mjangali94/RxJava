@@ -45,6 +45,9 @@ import io.reactivex.rxjava3.testsupport.*;
  * Test Completable methods and operators.
  */
 public class CompletableTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     /**
      * Iterable that returns an Iterator that throws in its hasNext method.
      */

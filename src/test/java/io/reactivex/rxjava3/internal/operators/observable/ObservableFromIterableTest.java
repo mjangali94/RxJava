@@ -20,7 +20,7 @@ import static org.mockito.Mockito.*;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 import org.mockito.Mockito;
 
 import io.reactivex.rxjava3.core.*;
@@ -35,6 +35,9 @@ import io.reactivex.rxjava3.observers.*;
 import io.reactivex.rxjava3.testsupport.*;
 
 public class ObservableFromIterableTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void listIterable() {

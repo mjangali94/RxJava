@@ -35,6 +35,9 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class FlowableUsingTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     private interface Resource {
         String getTextFromWeb();
 

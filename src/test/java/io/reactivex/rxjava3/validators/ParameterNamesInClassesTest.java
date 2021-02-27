@@ -14,7 +14,7 @@
 package io.reactivex.rxjava3.validators;
 
 import static org.junit.Assert.assertEquals;
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 public class ParameterNamesInClassesTest {
     void method(int paramName) {

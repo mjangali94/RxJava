@@ -30,6 +30,9 @@ import io.reactivex.rxjava3.subscribers.DefaultSubscriber;
 
 public class FlowableConversionTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     public static class Cylon { }
 
     public static class Jail {

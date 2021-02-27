@@ -24,6 +24,9 @@ import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class ObservableFinallyTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     private Action aAction0;
     private Observer<String> observer;
 

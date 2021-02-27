@@ -29,6 +29,9 @@ import io.reactivex.rxjava3.internal.functions.Functions;
 
 public class SingleNullTests extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     Single<Integer> just1 = Single.just(1);
 
     Single<Integer> error = Single.error(new TestException());

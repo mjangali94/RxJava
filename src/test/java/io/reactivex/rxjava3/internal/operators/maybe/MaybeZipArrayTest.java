@@ -18,7 +18,7 @@ import static org.junit.Assert.*;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.*;
@@ -33,6 +33,9 @@ import io.reactivex.rxjava3.subjects.MaybeSubject;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class MaybeZipArrayTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     final BiFunction<Object, Object, Object> addString = new BiFunction<Object, Object, Object>() {
         @Override

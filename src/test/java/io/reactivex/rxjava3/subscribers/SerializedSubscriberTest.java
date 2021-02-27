@@ -34,6 +34,9 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class SerializedSubscriberTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     Subscriber<String> subscriber;
 
     @Before

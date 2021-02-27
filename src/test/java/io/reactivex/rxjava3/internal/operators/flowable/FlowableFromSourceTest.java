@@ -28,6 +28,9 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class FlowableFromSourceTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     PublishAsyncEmitter source;
 
     PublishAsyncEmitterNoCancel sourceNoCancel;

@@ -22,11 +22,14 @@ import static org.junit.Assert.*;
 
 import java.util.concurrent.atomic.*;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.RxJavaTest;
 
 public class SimpleQueueTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test(expected = NullPointerException.class)
     public void spscArrayQueueNull() {

@@ -34,6 +34,9 @@ import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class BlockingObservableNextTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     private void fireOnNextInNewThread(final Subject<String> o, final String value) {
         new Thread() {
             @Override

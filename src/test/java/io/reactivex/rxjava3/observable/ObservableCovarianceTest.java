@@ -20,7 +20,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.*;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.*;
 import io.reactivex.rxjava3.core.Observable;
@@ -34,6 +34,9 @@ import io.reactivex.rxjava3.testsupport.TestObserverEx;
  * See https://github.com/Netflix/RxJava/pull/331
  */
 public class ObservableCovarianceTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     /**
      * This won't compile if super/extends isn't done correctly on generics.

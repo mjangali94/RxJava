@@ -26,6 +26,9 @@ import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class OnErrorNotImplementedExceptionTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     List<Throwable> errors;
 
     @Before

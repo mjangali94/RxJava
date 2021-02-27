@@ -30,6 +30,9 @@ import io.reactivex.rxjava3.testsupport.TestHelper;
  *
  */
 public class FlowableZipCompletionTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     BiFunction<String, String, String> concat2Strings;
 
     PublishProcessor<String> s1;

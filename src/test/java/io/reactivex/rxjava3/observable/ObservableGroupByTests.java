@@ -13,7 +13,7 @@
 
 package io.reactivex.rxjava3.observable;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.*;
 import io.reactivex.rxjava3.functions.*;
@@ -21,6 +21,9 @@ import io.reactivex.rxjava3.observable.ObservableEventStream.Event;
 import io.reactivex.rxjava3.observables.GroupedObservable;
 
 public class ObservableGroupByTests extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void takeUnsubscribesOnGroupBy() throws Exception {

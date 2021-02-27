@@ -16,7 +16,7 @@ package io.reactivex.rxjava3.core;
 import static org.junit.Assert.fail;
 import static org.testng.Assert.assertTrue;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.Scheduler.DisposeTask;
 import io.reactivex.rxjava3.exceptions.TestException;
@@ -24,6 +24,9 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class DisposeTaskTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void runnableThrows() throws Throwable {

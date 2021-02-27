@@ -34,6 +34,9 @@ import io.reactivex.rxjava3.subjects.PublishSubject;
 import io.reactivex.rxjava3.testsupport.*;
 
 public class ObservableJoinTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     Observer<Object> observer = TestHelper.mockObserver();
 
     BiFunction<Integer, Integer, Integer> add = new BiFunction<Integer, Integer, Integer>() {

@@ -13,7 +13,7 @@
 
 package io.reactivex.rxjava3.internal.observers;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.*;
 import io.reactivex.rxjava3.disposables.*;
@@ -22,6 +22,9 @@ import io.reactivex.rxjava3.observers.TestObserver;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class QueueDrainObserverTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     static final QueueDrainObserver<Integer, Integer, Integer> createUnordered(TestObserver<Integer> to, final Disposable d) {
         return new QueueDrainObserver<Integer, Integer, Integer>(to, new SpscArrayQueue<>(4)) {

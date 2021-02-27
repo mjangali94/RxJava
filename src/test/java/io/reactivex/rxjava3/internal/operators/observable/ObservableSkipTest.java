@@ -19,13 +19,16 @@ import static org.mockito.Mockito.*;
 
 import java.util.Arrays;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.*;
 import io.reactivex.rxjava3.functions.Function;
 import io.reactivex.rxjava3.testsupport.*;
 
 public class ObservableSkipTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test(expected = IllegalArgumentException.class)
     public void skipNegativeElements() {

@@ -21,7 +21,7 @@ import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.*;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 import org.reactivestreams.Subscription;
 
 import io.reactivex.rxjava3.annotations.NonNull;
@@ -35,6 +35,9 @@ import io.reactivex.rxjava3.subscribers.TestSubscriber;
 import io.reactivex.rxjava3.testsupport.*;
 
 public class SingleFlattenStreamAsFlowableTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void successJust() {

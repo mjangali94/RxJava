@@ -30,6 +30,9 @@ import io.reactivex.rxjava3.schedulers.*;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class FlowableTimestampTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     Subscriber<Object> subscriber;
 
     @Before

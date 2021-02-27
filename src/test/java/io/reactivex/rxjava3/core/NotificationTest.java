@@ -15,11 +15,14 @@ package io.reactivex.rxjava3.core;
 
 import static org.junit.Assert.*;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.exceptions.TestException;
 
 public class NotificationTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void valueOfOnErrorIsNull() {

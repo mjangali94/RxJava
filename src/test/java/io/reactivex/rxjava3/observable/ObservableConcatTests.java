@@ -16,7 +16,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.*;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.*;
 import io.reactivex.rxjava3.core.Observable;
@@ -24,6 +24,9 @@ import io.reactivex.rxjava3.core.Observer;
 import io.reactivex.rxjava3.observable.ObservableCovarianceTest.*;
 
 public class ObservableConcatTests extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void concatSimple() {

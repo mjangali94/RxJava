@@ -27,6 +27,9 @@ import io.reactivex.rxjava3.schedulers.TestScheduler;
 
 public class BlockingFlowableMostRecentTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     @Test
     public void mostRecent() {
         FlowableProcessor<String> s = PublishProcessor.create();

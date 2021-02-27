@@ -13,11 +13,14 @@
 
 package io.reactivex.rxjava3.internal.operators.completable;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.*;
 
 public class CompletableFromMaybeTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     @Test
     public void fromMaybe() {
         Completable.fromMaybe(Maybe.just(1))

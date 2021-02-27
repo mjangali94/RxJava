@@ -32,6 +32,9 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class ObservableMergeMaxConcurrentTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     Observer<String> stringObserver;
 
     @Before

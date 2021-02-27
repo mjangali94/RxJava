@@ -17,7 +17,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.*;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.*;
 import io.reactivex.rxjava3.exceptions.TestException;
@@ -25,6 +25,9 @@ import io.reactivex.rxjava3.functions.*;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class FlowableForEachTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void forEachWile() {

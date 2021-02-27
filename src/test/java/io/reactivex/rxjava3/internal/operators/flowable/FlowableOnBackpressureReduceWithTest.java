@@ -23,12 +23,15 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 import io.reactivex.rxjava3.testsupport.TestSubscriberEx;
 import org.junit.Assert;
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 public class FlowableOnBackpressureReduceWithTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     private static <T> BiFunction<List<T>, T, List<T>> createTestReducer() {
         return (list, number) -> {

@@ -19,7 +19,7 @@ import java.util.*;
 import java.util.concurrent.ExecutionException;
 
 import io.reactivex.rxjava3.disposables.Disposable;
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.*;
 import io.reactivex.rxjava3.core.Observable;
@@ -29,6 +29,9 @@ import io.reactivex.rxjava3.observers.DefaultObserver;
 import io.reactivex.rxjava3.testsupport.*;
 
 public class ObservableMaterializeTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void materialize1() {

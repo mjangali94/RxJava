@@ -39,6 +39,9 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class ObservableDebounceTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     private TestScheduler scheduler;
     private Observer<String> observer;
     private Scheduler.Worker innerScheduler;

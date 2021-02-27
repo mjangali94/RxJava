@@ -15,7 +15,7 @@ package io.reactivex.rxjava3.internal.operators.observable;
 
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.*;
 import io.reactivex.rxjava3.internal.operators.observable.ObservableInterval.IntervalObserver;
@@ -24,6 +24,9 @@ import io.reactivex.rxjava3.schedulers.*;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class ObservableIntervalTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void dispose() {

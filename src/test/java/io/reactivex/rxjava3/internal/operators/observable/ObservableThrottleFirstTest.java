@@ -30,6 +30,9 @@ import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class ObservableThrottleFirstTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     private TestScheduler scheduler;
     private Scheduler.Worker innerScheduler;
     private Observer<String> observer;

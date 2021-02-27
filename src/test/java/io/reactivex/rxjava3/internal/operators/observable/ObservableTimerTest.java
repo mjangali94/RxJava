@@ -36,6 +36,9 @@ import io.reactivex.rxjava3.schedulers.*;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class ObservableTimerTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     @Mock
     Observer<Object> observer;
     @Mock

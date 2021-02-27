@@ -36,6 +36,9 @@ import io.reactivex.rxjava3.testsupport.TestHelper;
  */
 public class FlowableNullTests extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     Flowable<Integer> just1 = Flowable.just(1);
 
     //***********************************************************

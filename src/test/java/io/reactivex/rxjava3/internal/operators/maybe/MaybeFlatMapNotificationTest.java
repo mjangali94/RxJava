@@ -15,7 +15,7 @@ package io.reactivex.rxjava3.internal.operators.maybe;
 
 import java.util.List;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.*;
 import io.reactivex.rxjava3.exceptions.*;
@@ -24,6 +24,9 @@ import io.reactivex.rxjava3.internal.functions.Functions;
 import io.reactivex.rxjava3.testsupport.*;
 
 public class MaybeFlatMapNotificationTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void dispose() {

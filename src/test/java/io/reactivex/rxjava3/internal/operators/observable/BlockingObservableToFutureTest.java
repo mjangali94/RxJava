@@ -21,7 +21,7 @@ import java.util.*;
 import java.util.concurrent.*;
 
 import io.reactivex.rxjava3.disposables.Disposable;
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.*;
 import io.reactivex.rxjava3.core.Observable;
@@ -29,6 +29,9 @@ import io.reactivex.rxjava3.core.Observer;
 import io.reactivex.rxjava3.exceptions.TestException;
 
 public class BlockingObservableToFutureTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     @Test
     public void toFuture() throws InterruptedException, ExecutionException {
         Observable<String> obs = Observable.just("one");

@@ -37,6 +37,9 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class ObservableWindowWithStartEndObservableTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     private TestScheduler scheduler;
     private Scheduler.Worker innerScheduler;
 

@@ -27,6 +27,9 @@ import io.reactivex.rxjava3.functions.*;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class ObservableToMultimapTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     Observer<Object> objectObserver;
     SingleObserver<Object> singleObserver;
 

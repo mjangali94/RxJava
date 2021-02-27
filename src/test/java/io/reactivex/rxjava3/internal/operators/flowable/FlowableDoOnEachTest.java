@@ -38,6 +38,9 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class FlowableDoOnEachTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     Subscriber<String> subscribedSubscriber;
     Subscriber<String> sideEffectSubscriber;
 

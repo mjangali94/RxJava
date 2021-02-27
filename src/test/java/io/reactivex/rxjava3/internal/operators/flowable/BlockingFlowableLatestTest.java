@@ -29,6 +29,9 @@ import io.reactivex.rxjava3.schedulers.TestScheduler;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class BlockingFlowableLatestTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     @Test
     public void simple() {
         TestScheduler scheduler = new TestScheduler();

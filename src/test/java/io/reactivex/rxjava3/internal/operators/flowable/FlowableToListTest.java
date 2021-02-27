@@ -34,6 +34,9 @@ import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class FlowableToListTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     @Test
     public void listFlowable() {
         Flowable<String> w = Flowable.fromIterable(Arrays.asList("one", "two", "three"));

@@ -14,7 +14,7 @@
 package io.reactivex.rxjava3.internal.observers;
 
 import io.reactivex.rxjava3.disposables.Disposable;
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.annotations.Nullable;
 import io.reactivex.rxjava3.core.RxJavaTest;
@@ -22,6 +22,9 @@ import io.reactivex.rxjava3.observers.TestObserver;
 import io.reactivex.rxjava3.testsupport.TestObserverEx;
 
 public class BasicFuseableObserverTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test(expected = UnsupportedOperationException.class)
     public void offer() {

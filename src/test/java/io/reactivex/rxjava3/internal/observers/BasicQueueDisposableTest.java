@@ -13,12 +13,15 @@
 
 package io.reactivex.rxjava3.internal.observers;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.annotations.Nullable;
 import io.reactivex.rxjava3.core.RxJavaTest;
 
 public class BasicQueueDisposableTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     BasicQueueDisposable<Integer> q = new BasicQueueDisposable<Integer>() {
 

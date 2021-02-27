@@ -16,7 +16,7 @@ package io.reactivex.rxjava3.internal.operators.observable;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 import org.mockito.Mockito;
 
 import io.reactivex.rxjava3.core.*;
@@ -28,6 +28,9 @@ import io.reactivex.rxjava3.subjects.UnicastSubject;
 import io.reactivex.rxjava3.testsupport.*;
 
 public class ObservableFilterTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void filter() {

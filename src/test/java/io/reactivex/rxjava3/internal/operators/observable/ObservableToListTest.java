@@ -32,6 +32,9 @@ import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class ObservableToListTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     @Test
     public void listObservable() {
         Observable<String> w = Observable.fromIterable(Arrays.asList("one", "two", "three"));

@@ -15,13 +15,16 @@ package io.reactivex.rxjava3.observable;
 
 import static org.junit.Assert.*;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.*;
 import io.reactivex.rxjava3.functions.BiFunction;
 import io.reactivex.rxjava3.observable.ObservableCovarianceTest.*;
 
 public class ObservableReduceTests extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void reduceIntsObservable() {

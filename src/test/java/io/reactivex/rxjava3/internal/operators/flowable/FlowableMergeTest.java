@@ -40,6 +40,9 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class FlowableMergeTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     Subscriber<String> stringSubscriber;
 
     int count;

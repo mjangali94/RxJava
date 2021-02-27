@@ -26,6 +26,9 @@ import io.reactivex.rxjava3.subjects.PublishSubject;
 
 public class ObservableBufferUntilSubscriberTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     @Test
     public void issue1677() throws InterruptedException {
         final AtomicLong counter = new AtomicLong();

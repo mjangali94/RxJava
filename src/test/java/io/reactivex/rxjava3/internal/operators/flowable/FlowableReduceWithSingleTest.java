@@ -13,7 +13,7 @@
 
 package io.reactivex.rxjava3.internal.operators.flowable;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.*;
 import io.reactivex.rxjava3.functions.BiFunction;
@@ -21,6 +21,9 @@ import io.reactivex.rxjava3.internal.functions.Functions;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class FlowableReduceWithSingleTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void normal() {

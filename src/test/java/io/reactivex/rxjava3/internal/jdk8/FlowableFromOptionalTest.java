@@ -15,11 +15,14 @@ package io.reactivex.rxjava3.internal.jdk8;
 
 import java.util.Optional;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.*;
 
 public class FlowableFromOptionalTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void hasValue() {

@@ -26,6 +26,9 @@ import io.reactivex.rxjava3.functions.*;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class FlowableToMultimapTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     Subscriber<Object> objectSubscriber;
 
     SingleObserver<Object> singleObserver;

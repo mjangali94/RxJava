@@ -34,6 +34,9 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class FlowableTakeWhileTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     @Test
     public void takeWhile1() {
         Flowable<Integer> w = Flowable.just(1, 2, 3);

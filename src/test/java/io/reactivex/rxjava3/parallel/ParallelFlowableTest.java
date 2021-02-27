@@ -35,6 +35,9 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class ParallelFlowableTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     @Test
     public void sequentialMode() {
         Flowable<Integer> source = Flowable.range(1, 1000000).hide();

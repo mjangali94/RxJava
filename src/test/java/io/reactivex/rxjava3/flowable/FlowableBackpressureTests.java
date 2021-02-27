@@ -33,6 +33,9 @@ import io.reactivex.rxjava3.subscribers.*;
 
 public class FlowableBackpressureTests extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     static final class FirehoseNoBackpressure extends AtomicBoolean implements Subscription {
 
         private static final long serialVersionUID = -669931580197884015L;

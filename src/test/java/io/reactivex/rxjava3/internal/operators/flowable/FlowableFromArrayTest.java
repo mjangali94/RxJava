@@ -27,6 +27,9 @@ import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class FlowableFromArrayTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     Flowable<Integer> create(int n) {
         Integer[] array = new Integer[n];
         for (int i = 0; i < n; i++) {

@@ -41,6 +41,9 @@ import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class FlowableBufferTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     private Subscriber<List<String>> subscriber;
     private TestScheduler scheduler;
     private Scheduler.Worker innerScheduler;

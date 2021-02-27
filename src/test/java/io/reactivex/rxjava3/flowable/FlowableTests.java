@@ -41,6 +41,9 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class FlowableTests extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     Subscriber<Number> w;
 
     SingleObserver<Number> wo;

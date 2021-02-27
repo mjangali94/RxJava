@@ -20,7 +20,7 @@ import java.util.Iterator;
 import java.util.concurrent.atomic.*;
 import java.util.stream.*;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.*;
@@ -31,6 +31,9 @@ import io.reactivex.rxjava3.observers.TestObserver;
 import io.reactivex.rxjava3.testsupport.*;
 
 public class ObservableFromStreamTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void empty() {

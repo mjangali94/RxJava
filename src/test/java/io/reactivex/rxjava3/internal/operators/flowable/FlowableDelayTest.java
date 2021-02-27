@@ -35,6 +35,9 @@ import io.reactivex.rxjava3.subscribers.*;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class FlowableDelayTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     private Subscriber<Long> subscriber;
     private Subscriber<Long> subscriber2;
 

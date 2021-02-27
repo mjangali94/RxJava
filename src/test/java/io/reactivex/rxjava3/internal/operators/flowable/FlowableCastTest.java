@@ -26,6 +26,9 @@ import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class FlowableCastTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     @Test
     public void cast() {
         Flowable<?> source = Flowable.just(1, 2);

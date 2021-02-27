@@ -42,6 +42,9 @@ import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class ObservableBufferTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     private Observer<List<String>> observer;
     private TestScheduler scheduler;
     private Scheduler.Worker innerScheduler;

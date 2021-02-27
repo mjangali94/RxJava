@@ -35,6 +35,9 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class ObservableConcatMapEagerTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     @Test
     public void normal() {
         Observable.range(1, 5)

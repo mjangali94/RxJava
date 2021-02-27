@@ -30,6 +30,9 @@ import io.reactivex.rxjava3.testsupport.TestSubscriberEx;
 
 public class ReplayProcessorBoundedConcurrencyTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     @Test
     public void replaySubjectConcurrentSubscribersDoingReplayDontBlockEachOther() throws InterruptedException {
         final ReplayProcessor<Long> replay = ReplayProcessor.createUnbounded();

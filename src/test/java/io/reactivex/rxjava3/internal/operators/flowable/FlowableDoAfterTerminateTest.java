@@ -33,6 +33,9 @@ import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class FlowableDoAfterTerminateTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     private Action aAction0;
     private Subscriber<String> subscriber;
 

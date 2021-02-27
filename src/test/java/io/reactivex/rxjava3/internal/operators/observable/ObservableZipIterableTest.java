@@ -35,6 +35,9 @@ import io.reactivex.rxjava3.subjects.PublishSubject;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class ObservableZipIterableTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     BiFunction<String, String, String> concat2Strings;
     PublishSubject<String> s1;
     PublishSubject<String> s2;

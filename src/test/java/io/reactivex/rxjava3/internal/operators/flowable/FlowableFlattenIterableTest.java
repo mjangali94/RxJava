@@ -37,6 +37,9 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class FlowableFlattenIterableTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     @Test
     public void normal0() {
 

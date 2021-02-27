@@ -17,11 +17,14 @@ import io.reactivex.rxjava3.core.Completable;
 import io.reactivex.rxjava3.core.Flowable;
 import io.reactivex.rxjava3.core.RxJavaTest;
 import io.reactivex.rxjava3.schedulers.Schedulers;
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import java.util.concurrent.TimeUnit;
 
 public class IoScheduledReleaseTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     /* This test will be stuck in a deadlock if IoScheduler.USE_SCHEDULED_RELEASE is not set */
     @Test

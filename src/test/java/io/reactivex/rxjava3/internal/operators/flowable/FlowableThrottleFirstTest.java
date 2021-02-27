@@ -33,6 +33,9 @@ import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class FlowableThrottleFirstTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     private TestScheduler scheduler;
     private Scheduler.Worker innerScheduler;
     private Subscriber<String> subscriber;

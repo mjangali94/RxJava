@@ -36,6 +36,9 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class ObservableDoOnEachTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     Observer<String> subscribedObserver;
     Observer<String> sideEffectObserver;
 

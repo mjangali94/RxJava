@@ -20,11 +20,15 @@ import java.util.concurrent.*;
 
 import org.junit.*;
 
+import io.reactivex.rxjava3.core.PerformanceLogger;
 import io.reactivex.rxjava3.core.RxJavaTest;
 import io.reactivex.rxjava3.core.Scheduler.Worker;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 
 public class SchedulerLifecycleTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     @Test
     public void shutdown() throws InterruptedException {
         tryOutSchedulers();

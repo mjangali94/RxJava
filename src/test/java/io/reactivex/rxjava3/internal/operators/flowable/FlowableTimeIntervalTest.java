@@ -31,6 +31,9 @@ import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class FlowableTimeIntervalTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     private static final TimeUnit TIME_UNIT = TimeUnit.MILLISECONDS;
 
     private Subscriber<Timed<Integer>> subscriber;

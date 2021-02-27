@@ -14,7 +14,7 @@
 package io.reactivex.rxjava3.internal.fuseable;
 
 import static org.junit.Assert.*;
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.testsupport.TestHelper;
 

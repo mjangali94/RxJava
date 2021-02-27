@@ -38,6 +38,9 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class FlowableMapTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     Subscriber<String> stringSubscriber;
     Subscriber<String> stringSubscriber2;
 

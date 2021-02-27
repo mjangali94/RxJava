@@ -17,7 +17,7 @@ import static org.junit.Assert.assertFalse;
 
 import java.util.Optional;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 import org.reactivestreams.Subscriber;
 
 import io.reactivex.rxjava3.core.*;
@@ -30,6 +30,9 @@ import io.reactivex.rxjava3.processors.*;
 import io.reactivex.rxjava3.testsupport.*;
 
 public class FlowableMapOptionalTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     static final Function<? super Integer, Optional<? extends Integer>> MODULO = v -> v % 2 == 0 ? Optional.of(v) : Optional.<Integer>empty();
 

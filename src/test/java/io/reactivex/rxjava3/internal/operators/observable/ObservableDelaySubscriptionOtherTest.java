@@ -28,6 +28,9 @@ import io.reactivex.rxjava3.subjects.PublishSubject;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class ObservableDelaySubscriptionOtherTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     @Test
     public void noPrematureSubscription() {
         PublishSubject<Object> other = PublishSubject.create();

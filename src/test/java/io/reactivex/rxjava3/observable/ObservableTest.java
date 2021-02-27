@@ -38,6 +38,9 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class ObservableTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     Observer<Number> w;
     SingleObserver<Number> wo;
     MaybeObserver<Number> wm;

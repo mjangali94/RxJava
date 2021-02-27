@@ -20,6 +20,7 @@ import java.util.*;
 import org.junit.*;
 
 import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.PerformanceLogger;
 import io.reactivex.rxjava3.core.RxJavaTest;
 import io.reactivex.rxjava3.functions.*;
 import io.reactivex.rxjava3.observable.ObservableCovarianceTest.*;
@@ -27,6 +28,9 @@ import io.reactivex.rxjava3.observable.ObservableEventStream.Event;
 import io.reactivex.rxjava3.observables.GroupedObservable;
 
 public class ObservableZipTests extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void zipObservableOfObservables() throws Exception {

@@ -31,6 +31,9 @@ import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class XFlatMapTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     @Rule
     public Retry retry = new Retry(5, 1000, true);
 

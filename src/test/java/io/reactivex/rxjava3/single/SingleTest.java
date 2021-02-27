@@ -33,6 +33,9 @@ import io.reactivex.rxjava3.testsupport.*;
 
 public class SingleTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     @Test
     public void helloWorld() {
         TestSubscriber<String> ts = new TestSubscriber<>();

@@ -18,7 +18,7 @@ import static org.junit.Assert.*;
 import java.util.ArrayDeque;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 import org.reactivestreams.Subscription;
 
 import io.reactivex.rxjava3.core.RxJavaTest;
@@ -26,6 +26,9 @@ import io.reactivex.rxjava3.internal.subscriptions.BooleanSubscription;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class BlockingSubscriberTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void doubleOnSubscribe() {

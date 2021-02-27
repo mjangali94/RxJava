@@ -15,12 +15,15 @@ package io.reactivex.rxjava3.processors;
 
 import static org.junit.Assert.*;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.RxJavaTest;
 import io.reactivex.rxjava3.internal.util.ExceptionHelper;
 
 public abstract class FlowableProcessorTest<T>  extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     protected abstract FlowableProcessor<T> create();
 

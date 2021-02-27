@@ -28,6 +28,9 @@ import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class FlowableFirstTest extends RxJavaTest {
 
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
+
     Subscriber<String> w;
 
     SingleObserver<Object> wo;

@@ -31,6 +31,9 @@ import io.reactivex.rxjava3.subjects.PublishSubject;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class ObservableSampleTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     private TestScheduler scheduler;
     private Scheduler.Worker innerScheduler;
     private Observer<Long> observer;

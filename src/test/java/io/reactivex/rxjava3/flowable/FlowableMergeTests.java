@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
 
 import java.util.List;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 import org.reactivestreams.Publisher;
 
 import io.reactivex.rxjava3.core.*;
@@ -25,6 +25,9 @@ import io.reactivex.rxjava3.flowable.FlowableCovarianceTest.*;
 import io.reactivex.rxjava3.functions.Supplier;
 
 public class FlowableMergeTests extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     /**
      * This won't compile if super/extends isn't done correctly on generics.

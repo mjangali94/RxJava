@@ -15,13 +15,16 @@ package io.reactivex.rxjava3.internal.subscriptions;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.annotations.Nullable;
 import io.reactivex.rxjava3.core.RxJavaTest;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class QueueSubscriptionTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
     static final class EmptyQS extends BasicQueueSubscription<Integer> {
 
         private static final long serialVersionUID = -5312809687598840520L;

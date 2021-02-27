@@ -18,7 +18,7 @@ import static org.junit.Assert.*;
 import java.util.NoSuchElementException;
 import java.util.concurrent.CompletableFuture;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 
 import io.reactivex.rxjava3.core.*;
 import io.reactivex.rxjava3.disposables.Disposable;
@@ -27,6 +27,9 @@ import io.reactivex.rxjava3.subjects.*;
 import io.reactivex.rxjava3.testsupport.TestHelper;
 
 public class ObservableStageSubscriberOrErrorTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void firstJust() throws Exception {

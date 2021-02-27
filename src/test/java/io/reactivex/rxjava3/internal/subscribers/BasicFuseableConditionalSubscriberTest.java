@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-import org.junit.Test;
+import org.junit.Test; import org.junit.Rule; import io.reactivex.rxjava3.core.PerformanceLogger;
 import org.reactivestreams.Subscription;
 
 import io.reactivex.rxjava3.annotations.*;
@@ -27,6 +27,9 @@ import io.reactivex.rxjava3.internal.subscriptions.*;
 import io.reactivex.rxjava3.testsupport.*;
 
 public class BasicFuseableConditionalSubscriberTest extends RxJavaTest {
+
+	@Rule
+	public PerformanceLogger myPLogger = new PerformanceLogger();
 
     @Test
     public void offerThrows() {
