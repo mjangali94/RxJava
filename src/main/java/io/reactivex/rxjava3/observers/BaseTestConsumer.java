@@ -17,6 +17,7 @@ import java.util.*;
 import java.util.concurrent.*;
 
 import io.reactivex.rxjava3.annotations.*;
+import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.exceptions.CompositeException;
 import io.reactivex.rxjava3.functions.Predicate;
 import io.reactivex.rxjava3.internal.functions.Functions;
@@ -94,7 +95,8 @@ public abstract class BaseTestConsumer<T, U extends BaseTestConsumer<T, U>> {
      */
     @NonNull
     protected final AssertionError fail(@NonNull String message) {
-        StringBuilder b = new StringBuilder(64 + message.length());
+    	
+    	StringBuffer b = new StringBuffer(64 + message.length());
         b.append(message);
 
         b.append(" (")
