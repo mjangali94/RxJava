@@ -94,8 +94,7 @@ public abstract class BaseTestConsumer<T, U extends BaseTestConsumer<T, U>> {
      */
     @NonNull
     protected final AssertionError fail(@NonNull String message) {
-    	
-    	StringBuffer b = new StringBuffer(64 + message.length());
+        StringBuilder b = new StringBuilder(64 + message.length());
         b.append(message);
 
         b.append(" (")
