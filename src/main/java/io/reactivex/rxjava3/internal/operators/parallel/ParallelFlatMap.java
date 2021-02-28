@@ -15,6 +15,7 @@ package io.reactivex.rxjava3.internal.operators.parallel;
 
 import org.reactivestreams.*;
 
+import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.functions.Function;
 import io.reactivex.rxjava3.internal.operators.flowable.FlowableFlatMap;
 import io.reactivex.rxjava3.parallel.ParallelFlowable;
@@ -66,8 +67,10 @@ public final class ParallelFlatMap<T, R> extends ParallelFlowable<R> {
         @SuppressWarnings("unchecked")
         final Subscriber<T>[] parents = new Subscriber[n];
 
-        for (int i = 0; i < n; i++) {
-            parents[i] = FlowableFlatMap.subscribe(subscribers[i], mapper, delayError, maxConcurrency, prefetch);
+        int i=-1;
+        for (Subscriber<? super R> a: subscribers) {
+        	i++;
+            parents[i] = FlowableFlatMap.subscribe(a, mapper, delayError, maxConcurrency, prefetch);
         }
 
         source.subscribe(parents);
