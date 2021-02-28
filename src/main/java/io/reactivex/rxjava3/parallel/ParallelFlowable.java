@@ -79,7 +79,7 @@ public abstract class ParallelFlowable<@NonNull T> {
      */
     protected final boolean validate(@NonNull Subscriber<@NonNull ?>[] subscribers) {
         Objects.requireNonNull(subscribers, "subscribers is null");
-        int p = ((Integer)(parallelism())).intValue();
+        int p = parallelism();
         if (subscribers.length != p) {
             Throwable iae = new IllegalArgumentException("parallelism = " + p + ", subscribers = " + subscribers.length);
             for (Subscriber<@NonNull ?> s : subscribers) {

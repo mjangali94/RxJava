@@ -166,7 +166,7 @@ public final class FlowableSwitchMapSingle<T, R> extends Flowable<R> {
 
         @Override
         public void request(long n) {
-            BackpressureHelper.add(requested, ((Long)(n)).longValue());
+            BackpressureHelper.add(requested, n);
             drain();
         }
 
