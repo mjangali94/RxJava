@@ -19,7 +19,6 @@ import org.reactivestreams.*;
 
 import io.reactivex.rxjava3.core.*;
 import io.reactivex.rxjava3.exceptions.Exceptions;
-import io.reactivex.rxjava3.internal.operators.completable.CompletableCache.InnerCompletableCache;
 import io.reactivex.rxjava3.internal.subscriptions.*;
 import io.reactivex.rxjava3.plugins.RxJavaPlugins;
 
@@ -125,11 +124,9 @@ public final class FlowableAmb<T> extends Flowable<T> {
                 if (winner.compareAndSet(0, index)) {
                     AmbInnerSubscriber<T>[] a = subscribers;
                     int n = a.length;
-                    int i = -1;
-                    for ( AmbInnerSubscriber<T> tmp:a) {
-                    	i++;
+                    for (int i = 0; i < n; i++) {
                         if (i + 1 != index) {
-                            tmp.cancel();
+                            a[i].cancel();
                         }
                     }
                     return true;
