@@ -15,6 +15,7 @@ package io.reactivex.rxjava3.internal.subscribers;
 
 import org.reactivestreams.Subscription;
 
+import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.exceptions.Exceptions;
 import io.reactivex.rxjava3.internal.fuseable.*;
 import io.reactivex.rxjava3.internal.subscriptions.SubscriptionHelper;
@@ -133,7 +134,7 @@ public abstract class BasicFuseableConditionalSubscriber<T, R> implements Condit
         QueueSubscription<T> qs = this.qs;
         if (qs != null) {
             if ((mode & BOUNDARY) == 0) {
-                int m = qs.requestFusion(mode);
+                int m = qs.requestFusion(((Integer)(mode)).intValue());
                 if (m != NONE) {
                     sourceMode = m;
                 }

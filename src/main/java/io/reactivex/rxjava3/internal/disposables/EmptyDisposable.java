@@ -111,7 +111,7 @@ public enum EmptyDisposable implements QueueDisposable<Object> {
 
     @Override
     public int requestFusion(int mode) {
-        return mode & ASYNC;
+        return ((Integer)(mode)).intValue() & ASYNC;
     }
 
 }

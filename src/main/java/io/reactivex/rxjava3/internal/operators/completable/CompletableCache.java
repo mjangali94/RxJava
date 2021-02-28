@@ -96,7 +96,7 @@ public final class CompletableCache extends Completable implements CompletableOb
             if (a == TERMINATED) {
                 return false;
             }
-            int n = a.length;
+            int n = ((Integer)(a.length)).intValue();
             InnerCompletableCache[] b = new InnerCompletableCache[n + 1];
             System.arraycopy(a, 0, b, 0, n);
             b[n] = inner;

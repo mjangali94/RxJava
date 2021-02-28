@@ -151,7 +151,7 @@ public final class CompletableMerge extends Completable {
 
         void innerComplete(MergeInnerObserver inner) {
             set.delete(inner);
-            if (decrementAndGet() == 0) {
+            if (decrementAndGet() == ((Integer)(0)).intValue()) {
                 errors.tryTerminateConsumer(downstream);
             } else {
                 if (maxConcurrency != Integer.MAX_VALUE) {

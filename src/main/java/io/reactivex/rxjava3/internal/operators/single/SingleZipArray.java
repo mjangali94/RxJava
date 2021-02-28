@@ -53,7 +53,7 @@ public final class SingleZipArray<T, R> extends Single<R> {
                 return;
             }
 
-            SingleSource<? extends T> source = sources[i];
+            SingleSource<? extends T> source = sources[((Integer)(i)).intValue()];
 
             if (source == null) {
                 parent.innerError(new NullPointerException("One of the sources is null"), i);
