@@ -14,14 +14,18 @@
 package io.reactivex.rxjava3.internal.operators.mixed;
 
 import java.util.Objects;
-import java.util.concurrent.atomic.AtomicReference;
+import java.util.concurrent.atomic.*;
+
+import org.reactivestreams.Subscription;
 
 import io.reactivex.rxjava3.core.*;
 import io.reactivex.rxjava3.disposables.Disposable;
-import io.reactivex.rxjava3.exceptions.Exceptions;
+import io.reactivex.rxjava3.exceptions.*;
 import io.reactivex.rxjava3.functions.Function;
 import io.reactivex.rxjava3.internal.disposables.DisposableHelper;
-import io.reactivex.rxjava3.internal.fuseable.SimpleQueue;
+import io.reactivex.rxjava3.internal.fuseable.SimplePlainQueue;
+import io.reactivex.rxjava3.internal.queue.SpscArrayQueue;
+import io.reactivex.rxjava3.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.rxjava3.internal.util.*;
 
 /**
@@ -57,8 +61,8 @@ public final class FlowableConcatMapCompletable<T> extends Completable {
     }
 
     static final class ConcatMapCompletableObserver<T>
-    extends ConcatMapXMainSubscriber<T>
-    implements Disposable {
+    extends AtomicInteger
+    implements FlowableSubscriber<T>, Disposable {
 
         private static final long serialVersionUID = 3610901111000061034L;
 
@@ -66,39 +70,93 @@ public final class FlowableConcatMapCompletable<T> extends Completable {
 
         final Function<? super T, ? extends CompletableSource> mapper;
 
+        final ErrorMode errorMode;
+
+        final AtomicThrowable errors;
+
         final ConcatMapInnerObserver inner;
 
+        final int prefetch;
+
+        final SimplePlainQueue<T> queue;
+
+        Subscription upstream;
+
         volatile boolean active;
+
+        volatile boolean done;
+
+        volatile boolean disposed;
 
         int consumed;
 
         ConcatMapCompletableObserver(CompletableObserver downstream,
                 Function<? super T, ? extends CompletableSource> mapper,
                 ErrorMode errorMode, int prefetch) {
-            super(prefetch, errorMode);
             this.downstream = downstream;
             this.mapper = mapper;
+            this.errorMode = errorMode;
+            this.prefetch = prefetch;
+            this.errors = new AtomicThrowable();
             this.inner = new ConcatMapInnerObserver(this);
+            this.queue = new SpscArrayQueue<>(prefetch);
         }
 
         @Override
-        void onSubscribeDownstream() {
-            downstream.onSubscribe(this);
+        public void onSubscribe(Subscription s) {
+            if (SubscriptionHelper.validate(upstream, s)) {
+                this.upstream = s;
+                downstream.onSubscribe(this);
+                s.request(prefetch);
+            }
         }
 
         @Override
-        void disposeInner() {
-            inner.dispose();
+        public void onNext(T t) {
+            if (queue.offer(t)) {
+                drain();
+            } else {
+                upstream.cancel();
+                onError(new MissingBackpressureException("Queue full?!"));
+            }
+        }
+
+        @Override
+        public void onError(Throwable t) {
+            if (errors.tryAddThrowableOrReport(t)) {
+                if (errorMode == ErrorMode.IMMEDIATE) {
+                    inner.dispose();
+                    errors.tryTerminateConsumer(downstream);
+                    if (getAndIncrement() == 0) {
+                        queue.clear();
+                    }
+                } else {
+                    done = true;
+                    drain();
+                }
+            }
+        }
+
+        @Override
+        public void onComplete() {
+            done = true;
+            drain();
         }
 
         @Override
         public void dispose() {
-            stop();
+            disposed = true;
+            upstream.cancel();
+            inner.dispose();
+            errors.tryTerminateAndReport();
+            if (getAndIncrement() == 0) {
+                queue.clear();
+            }
         }
 
         @Override
         public boolean isDisposed() {
-            return cancelled;
+            return disposed;
         }
 
         void innerError(Throwable ex) {
@@ -121,45 +179,29 @@ public final class FlowableConcatMapCompletable<T> extends Completable {
             drain();
         }
 
-        @Override
         void drain() {
             if (getAndIncrement() != 0) {
                 return;
             }
 
-            ErrorMode errorMode = this.errorMode;
-            SimpleQueue<T> queue = this.queue;
-            AtomicThrowable errors = this.errors;
-            boolean syncFused = this.syncFused;
-
             do {
-                if (cancelled) {
+                if (disposed) {
                     queue.clear();
                     return;
                 }
 
-                if (errors.get() != null) {
-                    if (errorMode == ErrorMode.IMMEDIATE
-                            || (errorMode == ErrorMode.BOUNDARY && !active)) {
-                        queue.clear();
-                        errors.tryTerminateConsumer(downstream);
-                        return;
-                    }
-                }
-
                 if (!active) {
 
-                    boolean d = done;
-                    T v;
-                    try {
-                        v = queue.poll();
-                    } catch (Throwable ex) {
-                        Exceptions.throwIfFatal(ex);
-                        upstream.cancel();
-                        errors.tryAddThrowableOrReport(ex);
-                        errors.tryTerminateConsumer(downstream);
-                        return;
+                    if (errorMode == ErrorMode.BOUNDARY) {
+                        if (errors.get() != null) {
+                            queue.clear();
+                            errors.tryTerminateConsumer(downstream);
+                            return;
+                        }
                     }
+
+                    boolean d = done;
+                    T v = queue.poll();
                     boolean empty = v == null;
 
                     if (d && empty) {
@@ -170,15 +212,12 @@ public final class FlowableConcatMapCompletable<T> extends Completable {
                     if (!empty) {
 
                         int limit = prefetch - (prefetch >> 1);
-
-                        if (!syncFused) {
-                            int c = consumed + 1;
-                            if (c == limit) {
-                                consumed = 0;
-                                upstream.request(limit);
-                            } else {
-                                consumed = c;
-                            }
+                        int c = consumed + 1;
+                        if (c == limit) {
+                            consumed = 0;
+                            upstream.request(limit);
+                        } else {
+                            consumed = c;
                         }
 
                         CompletableSource cs;

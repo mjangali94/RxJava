@@ -115,9 +115,11 @@ public final class ObservableUsing<T, D> extends Observable<T> {
                     }
                 }
 
+                upstream.dispose();
                 downstream.onError(t);
             } else {
                 downstream.onError(t);
+                upstream.dispose();
                 disposeResource();
             }
         }
@@ -135,9 +137,11 @@ public final class ObservableUsing<T, D> extends Observable<T> {
                     }
                 }
 
+                upstream.dispose();
                 downstream.onComplete();
             } else {
                 downstream.onComplete();
+                upstream.dispose();
                 disposeResource();
             }
         }

@@ -159,7 +159,7 @@ public final class ObservableCreate<T> extends Observable<T> {
 
         @Override
         public void onNext(T t) {
-            if (emitter.isDisposed() || done) {
+            if (done || emitter.isDisposed()) {
                 return;
             }
             if (t == null) {
