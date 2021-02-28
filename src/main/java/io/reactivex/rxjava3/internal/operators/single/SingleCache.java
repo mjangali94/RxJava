@@ -61,7 +61,7 @@ public final class SingleCache<T> extends Single<T> implements SingleObserver<T>
             return;
         }
 
-        if (wip.getAndIncrement() == ((Integer)(0)).intValue()) {
+        if (wip.getAndIncrement() == 0) {
             source.subscribe(this);
         }
     }

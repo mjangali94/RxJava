@@ -168,7 +168,7 @@ public abstract class Observable<@NonNull T> implements ObservableSource<T> {
     @SafeVarargs
     public static <T> Observable<T> ambArray(@NonNull ObservableSource<? extends T>... sources) {
         Objects.requireNonNull(sources, "sources is null");
-        int len = ((Integer)(sources.length)).intValue();
+        int len = sources.length;
         if (len == 0) {
             return empty();
         }

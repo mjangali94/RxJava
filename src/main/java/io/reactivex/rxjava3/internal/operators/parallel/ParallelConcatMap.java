@@ -15,7 +15,6 @@ package io.reactivex.rxjava3.internal.operators.parallel;
 
 import org.reactivestreams.*;
 
-import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.functions.Function;
 import io.reactivex.rxjava3.internal.operators.flowable.FlowableConcatMap;
 import io.reactivex.rxjava3.internal.util.ErrorMode;
@@ -66,7 +65,7 @@ public final class ParallelConcatMap<T, R> extends ParallelFlowable<R> {
         final Subscriber<T>[] parents = new Subscriber[n];
 
         for (int i = 0; i < n; i++) {
-            parents[i] = FlowableConcatMap.subscribe(subscribers[((Integer)(i)).intValue()], mapper, prefetch, errorMode);
+            parents[i] = FlowableConcatMap.subscribe(subscribers[i], mapper, prefetch, errorMode);
         }
 
         source.subscribe(parents);

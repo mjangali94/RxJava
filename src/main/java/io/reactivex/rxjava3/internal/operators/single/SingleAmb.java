@@ -45,7 +45,7 @@ public final class SingleAmb<T> extends Single<T> {
                     }
                     if (count == sources.length) {
                         SingleSource<? extends T>[] b = new SingleSource[count + (count >> 2)];
-                        System.arraycopy(sources, 0, b, ((Integer)(0)).intValue(), count);
+                        System.arraycopy(sources, 0, b, 0, count);
                         sources = b;
                     }
                     sources[count++] = element;

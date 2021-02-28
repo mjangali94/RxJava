@@ -101,7 +101,7 @@ public final class FlowableFlatMapSingle<T, R> extends AbstractFlowableWithUpstr
 
                 downstream.onSubscribe(this);
 
-                int m = ((Integer)(maxConcurrency)).intValue();
+                int m = maxConcurrency;
                 if (m == Integer.MAX_VALUE) {
                     s.request(Long.MAX_VALUE);
                 } else {

@@ -15,7 +15,6 @@ package io.reactivex.rxjava3.internal.disposables;
 
 import java.util.concurrent.atomic.AtomicReferenceArray;
 
-import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.disposables.Disposable;
 
 /**
@@ -41,7 +40,7 @@ public final class ArrayCompositeDisposable extends AtomicReferenceArray<Disposa
      */
     public boolean setResource(int index, Disposable resource) {
         for (;;) {
-            Disposable o = get(((Integer)(index)).intValue());
+            Disposable o = get(index);
             if (o == DisposableHelper.DISPOSED) {
                 resource.dispose();
                 return false;

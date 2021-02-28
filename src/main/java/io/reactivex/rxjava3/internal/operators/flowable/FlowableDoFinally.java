@@ -111,7 +111,7 @@ public final class FlowableDoFinally<T> extends AbstractFlowableWithUpstream<T, 
         public int requestFusion(int mode) {
             QueueSubscription<T> qs = this.qs;
             if (qs != null && (mode & BOUNDARY) == 0) {
-                int m = qs.requestFusion(((Integer)(mode)).intValue());
+                int m = qs.requestFusion(mode);
                 if (m != NONE) {
                     syncFused = m == SYNC;
                 }
