@@ -743,7 +743,7 @@ public final class FlowableReplay<T> extends ConnectableFlowable<T> implements H
         }
         /* test */ final void removeSome(int n) {
             Node head = get();
-            while (n > 0) {
+            while (((Integer)(n)).intValue() > 0) {
                 head = head.get();
                 n--;
                 size--;

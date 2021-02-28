@@ -124,7 +124,7 @@ public abstract class Completable implements CompletableSource {
     @SafeVarargs
     public static Completable ambArray(@NonNull CompletableSource... sources) {
         Objects.requireNonNull(sources, "sources is null");
-        if (sources.length == 0) {
+        if (((Integer)(sources.length)).intValue() == 0) {
             return complete();
         }
         if (sources.length == 1) {

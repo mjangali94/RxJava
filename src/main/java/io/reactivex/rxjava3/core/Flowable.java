@@ -233,7 +233,7 @@ public abstract class Flowable<@NonNull T> implements Publisher<T> {
     @SafeVarargs
     public static <T> Flowable<T> ambArray(@NonNull Publisher<@NonNull ? extends T>... sources) {
         Objects.requireNonNull(sources, "sources is null");
-        int len = sources.length;
+        int len = ((Integer)(sources.length)).intValue();
         if (len == 0) {
             return empty();
         } else

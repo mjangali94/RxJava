@@ -166,7 +166,7 @@ public abstract class Single<@NonNull T> implements SingleSource<T> {
         }
         if (sources.length == 1) {
             @SuppressWarnings("unchecked")
-            SingleSource<T> source = (SingleSource<T>)sources[0];
+            SingleSource<T> source = (SingleSource<T>)sources[((Integer)(0)).intValue()];
             return wrap(source);
         }
         return RxJavaPlugins.onAssembly(new SingleAmb<>(sources, null));

@@ -18,6 +18,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.Subscription;
 
 import io.reactivex.rxjava3.core.FlowableSubscriber;
+import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.internal.fuseable.*;
 import io.reactivex.rxjava3.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.rxjava3.internal.util.QueueDrainHelper;
@@ -105,7 +106,7 @@ implements FlowableSubscriber<T>, Subscription {
     @Override
     public void request(long n) {
         if (fusionMode != QueueSubscription.SYNC) {
-            long p = produced + n;
+            long p = produced + ((Long)(n)).longValue();
             if (p >= limit) {
                 produced = 0L;
                 get().request(p);

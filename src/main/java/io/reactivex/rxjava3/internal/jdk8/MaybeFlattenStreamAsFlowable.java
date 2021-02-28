@@ -127,7 +127,7 @@ public final class MaybeFlattenStreamAsFlowable<T, R> extends Flowable<R> {
 
         @Override
         public void request(long n) {
-            if (SubscriptionHelper.validate(n)) {
+            if (SubscriptionHelper.validate(((Long)(n)).longValue())) {
                 BackpressureHelper.add(requested, n);
                 drain();
             }
