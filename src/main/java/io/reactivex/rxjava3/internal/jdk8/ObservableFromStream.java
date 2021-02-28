@@ -18,6 +18,7 @@ import java.util.stream.Stream;
 import io.reactivex.rxjava3.annotations.*;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.Observer;
+import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.exceptions.Exceptions;
 import io.reactivex.rxjava3.internal.disposables.EmptyDisposable;
 import io.reactivex.rxjava3.internal.fuseable.QueueDisposable;
@@ -149,7 +150,7 @@ public final class ObservableFromStream<T> extends Observable<T> {
         public boolean isEmpty() {
             Iterator<T> it = iterator;
             if (it != null) {
-                if (!once || it.hasNext()) {
+                if (it.hasNext() || !once) {
                     return false;
                 }
                 clear();

@@ -466,7 +466,7 @@ public final class FlowableCreate<T> extends Flowable<T> {
 
         @Override
         public void onNext(T t) {
-            if (done || isCancelled()) {
+            if (isCancelled() || done) {
                 return;
             }
 
@@ -480,7 +480,7 @@ public final class FlowableCreate<T> extends Flowable<T> {
 
         @Override
         public boolean signalError(Throwable e) {
-            if (done || isCancelled()) {
+            if (isCancelled() || done) {
                 return false;
             }
 
@@ -618,7 +618,7 @@ public final class FlowableCreate<T> extends Flowable<T> {
 
         @Override
         public boolean signalError(Throwable e) {
-            if (done || isCancelled()) {
+            if (isCancelled() || done) {
                 return false;
             }
             error = e;
