@@ -110,7 +110,13 @@ implements FlowableSubscriber<T> {
         CacheSubscription<T> consumer = new CacheSubscription<>(t, this);
         t.onSubscribe(consumer);
         add(consumer);
-
+        
+try {
+			Thread.sleep(0,100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         if (!once.get() && once.compareAndSet(false, true)) {
             source.subscribe(this);
         } else {

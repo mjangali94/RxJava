@@ -59,7 +59,13 @@ public final class MaybeMapOptional<T, R> extends Maybe<R> {
 
         @Override
         public void dispose() {
-            Disposable d = this.upstream;
+            Disposable d = this.upstream; 
+try {
+			Thread.sleep(0,100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
             this.upstream = DisposableHelper.DISPOSED;
             d.dispose();
         }

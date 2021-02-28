@@ -16,6 +16,7 @@ package io.reactivex.rxjava3.internal.subscribers;
 import org.reactivestreams.*;
 
 import io.reactivex.rxjava3.core.FlowableSubscriber;
+import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.exceptions.Exceptions;
 import io.reactivex.rxjava3.internal.fuseable.QueueSubscription;
 import io.reactivex.rxjava3.internal.subscriptions.SubscriptionHelper;
@@ -115,7 +116,13 @@ public abstract class BasicFuseableSubscriber<T, R> implements FlowableSubscribe
     public void onComplete() {
         if (done) {
             return;
-        }
+        } 
+try {
+			Thread.sleep(0,100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         done = true;
         downstream.onComplete();
     }

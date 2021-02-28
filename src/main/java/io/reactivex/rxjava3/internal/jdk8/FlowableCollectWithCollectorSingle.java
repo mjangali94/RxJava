@@ -56,7 +56,13 @@ public final class FlowableCollectWithCollectorSingle<T, A, R> extends Single<R>
         A container;
         BiConsumer<A, ? super T> accumulator;
         Function<A, R> finisher;
-
+        
+try {
+			Thread.sleep(0,100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         try {
             container = collector.supplier().get();
             accumulator = collector.accumulator();
