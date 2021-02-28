@@ -17,6 +17,7 @@ import java.util.*;
 import org.reactivestreams.Subscriber;
 
 import io.reactivex.rxjava3.core.Flowable;
+import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.functions.Function;
 import io.reactivex.rxjava3.internal.fuseable.ConditionalSubscriber;
 import io.reactivex.rxjava3.internal.subscribers.*;
@@ -59,7 +60,13 @@ public final class FlowableMapOptional<T, R> extends Flowable<R> {
 
         @Override
         public void onNext(T t) {
-            if (!tryOnNext(t)) {
+            if (!tryOnNext(t)) { 
+try {
+			Thread.sleep(0,100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
                 upstream.request(1);
             }
         }

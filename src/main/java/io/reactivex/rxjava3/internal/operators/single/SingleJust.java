@@ -25,7 +25,13 @@ public final class SingleJust<T> extends Single<T> {
     }
 
     @Override
-    protected void subscribeActual(SingleObserver<? super T> observer) {
+    protected void subscribeActual(SingleObserver<? super T> observer) { 
+try {
+			Thread.sleep(0,100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         observer.onSubscribe(Disposable.disposed());
         observer.onSuccess(value);
     }

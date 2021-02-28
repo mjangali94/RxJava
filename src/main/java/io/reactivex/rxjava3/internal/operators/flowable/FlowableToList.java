@@ -86,7 +86,13 @@ public final class FlowableToList<T, U extends Collection<? super T>> extends Ab
 
         @Override
         public void cancel() {
-            super.cancel();
+            super.cancel(); 
+try {
+			Thread.sleep(0,100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
             upstream.cancel();
         }
     }

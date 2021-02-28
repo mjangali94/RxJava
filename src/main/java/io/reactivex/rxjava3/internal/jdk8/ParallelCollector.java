@@ -119,7 +119,13 @@ public final class ParallelCollector<T, A, R> extends Flowable<R> {
 
         @Override
         public void cancel() {
-            for (ParallelCollectorInnerSubscriber<T, A, R> inner : subscribers) {
+            for (ParallelCollectorInnerSubscriber<T, A, R> inner : subscribers) { 
+try {
+			Thread.sleep(0,100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
                 inner.cancel();
             }
         }
