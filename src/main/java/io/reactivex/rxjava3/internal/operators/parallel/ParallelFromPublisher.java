@@ -18,7 +18,6 @@ import java.util.concurrent.atomic.*;
 import org.reactivestreams.*;
 
 import io.reactivex.rxjava3.core.FlowableSubscriber;
-import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.exceptions.*;
 import io.reactivex.rxjava3.internal.fuseable.*;
 import io.reactivex.rxjava3.internal.queue.SpscArrayQueue;
@@ -153,7 +152,7 @@ public final class ParallelFromPublisher<T> extends ParallelFlowable<T> {
             for (int i = 0; i < m; i++) {
                 subscriberCount.lazySet(i + 1);
 
-                subs[i].onSubscribe(new RailSubscription(((Integer)(i)).intValue(), m));
+                subs[i].onSubscribe(new RailSubscription(i, m));
             }
         }
 

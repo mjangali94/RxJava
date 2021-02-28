@@ -98,7 +98,7 @@ public final class ParallelCollector<T, A, R> extends Flowable<R> {
                     }
                 }
 
-                int c = ((Integer)(curr.tryAcquireSlot())).intValue();
+                int c = curr.tryAcquireSlot();
                 if (c < 0) {
                     current.compareAndSet(curr, null);
                     continue;

@@ -145,7 +145,7 @@ public final class ParallelSortedJoin<T> extends Flowable<T> {
             Subscriber<? super T> a = downstream;
             List<T>[] lists = this.lists;
             int[] indexes = this.indexes;
-            int n = ((Integer)(indexes.length)).intValue();
+            int n = indexes.length;
 
             for (;;) {
 
