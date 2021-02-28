@@ -42,13 +42,7 @@ public final class FlowableSwitchMapSinglePublisher<T, R> extends Flowable<R> {
     }
 
     @Override
-    protected void subscribeActual(Subscriber<? super R> s) { 
-try {
-			Thread.sleep(0,100);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+    protected void subscribeActual(Subscriber<? super R> s) {
         source.subscribe(new FlowableSwitchMapSingle.SwitchMapSingleSubscriber<>(s, mapper, delayErrors));
     }
 }

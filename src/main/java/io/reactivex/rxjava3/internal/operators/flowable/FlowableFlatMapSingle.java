@@ -100,13 +100,7 @@ public final class FlowableFlatMapSingle<T, R> extends AbstractFlowableWithUpstr
                 this.upstream = s;
 
                 downstream.onSubscribe(this);
-                
-try {
-			Thread.sleep(0,100);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
                 int m = maxConcurrency;
                 if (m == Integer.MAX_VALUE) {
                     s.request(Long.MAX_VALUE);

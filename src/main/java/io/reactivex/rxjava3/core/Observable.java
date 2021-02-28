@@ -175,13 +175,6 @@ public abstract class Observable<@NonNull T> implements ObservableSource<T> {
         if (len == 1) {
             return (Observable<T>)wrap(sources[0]);
         }
-        
-try {
-			Thread.sleep(0,100);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
         return RxJavaPlugins.onAssembly(new ObservableAmb<>(sources, null));
     }
 

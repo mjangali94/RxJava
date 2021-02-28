@@ -54,13 +54,7 @@ public final class MaybeCache<T> extends Maybe<T> implements MaybeObserver<T> {
             if (parent.isDisposed()) {
                 remove(parent);
                 return;
-            } 
-try {
-			Thread.sleep(0,100);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+            }
         } else {
             if (!parent.isDisposed()) {
                 Throwable ex = error;

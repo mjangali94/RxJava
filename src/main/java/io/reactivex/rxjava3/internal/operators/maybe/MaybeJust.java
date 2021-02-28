@@ -37,13 +37,7 @@ public final class MaybeJust<T> extends Maybe<T> implements ScalarSupplier<T> {
     }
 
     @Override
-    public T get() { 
-try {
-			Thread.sleep(0,100);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+    public T get() {
         return value;
     }
 }

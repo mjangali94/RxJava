@@ -40,12 +40,6 @@ public final class SingleFlattenStreamAsObservable<T, R> extends Observable<R> {
 
     @Override
     protected void subscribeActual(@NonNull Observer<? super R> s) {
-        source.subscribe(new FlattenStreamMultiObserver<>(s, mapper)); 
-try {
-			Thread.sleep(0,100);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        source.subscribe(new FlattenStreamMultiObserver<>(s, mapper));
     }
 }

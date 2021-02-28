@@ -57,13 +57,7 @@ public final class FlowableAny<T> extends AbstractFlowableWithUpstream<T, Boolea
         }
 
         @Override
-        public void onNext(T t) { 
-try {
-			Thread.sleep(0,100);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        public void onNext(T t) {
             if (done) {
                 return;
             }
