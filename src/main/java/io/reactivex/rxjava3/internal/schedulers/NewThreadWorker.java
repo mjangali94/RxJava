@@ -116,8 +116,10 @@ public class NewThreadWorker extends Scheduler.Worker implements Disposable {
     }
 
     /**
-     * Wraps and returns the given runnable into a ScheduledRunnable and schedules it
+     * Wraps the given runnable into a ScheduledRunnable and schedules it
      * on the underlying ScheduledExecutorService.
+     * <p>If the schedule has been rejected, the ScheduledRunnable.wasScheduled will return
+     * false.
      * @param run the runnable instance
      * @param delayTime the time to delay the execution
      * @param unit the time unit

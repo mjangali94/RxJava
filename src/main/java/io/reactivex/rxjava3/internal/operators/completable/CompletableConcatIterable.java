@@ -33,13 +33,7 @@ public final class CompletableConcatIterable extends Completable {
     public void subscribeActual(CompletableObserver observer) {
 
         Iterator<? extends CompletableSource> it;
-        
-try {
-			Thread.sleep(0,100);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
         try {
             it = Objects.requireNonNull(sources.iterator(), "The iterator returned is null");
         } catch (Throwable e) {

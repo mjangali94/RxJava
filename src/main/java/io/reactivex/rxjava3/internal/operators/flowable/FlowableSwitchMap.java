@@ -99,13 +99,7 @@ public final class FlowableSwitchMap<T, R> extends AbstractFlowableWithUpstream<
             if (done) {
                 return;
             }
-            
-try {
-			Thread.sleep(0,100);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
             long c = unique + 1;
             unique = c;
 
