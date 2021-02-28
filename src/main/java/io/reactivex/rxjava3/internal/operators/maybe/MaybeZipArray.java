@@ -21,6 +21,7 @@ import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.exceptions.Exceptions;
 import io.reactivex.rxjava3.functions.Function;
 import io.reactivex.rxjava3.internal.disposables.DisposableHelper;
+import io.reactivex.rxjava3.internal.operators.flowable.FlowableFlatMap.InnerSubscriber;
 import io.reactivex.rxjava3.plugins.RxJavaPlugins;
 
 public final class MaybeZipArray<T, R> extends Maybe<R> {
@@ -48,7 +49,9 @@ public final class MaybeZipArray<T, R> extends Maybe<R> {
 
         observer.onSubscribe(parent);
 
-        for (int i = 0; i < n; i++) {
+        int i = -1;
+        for ( MaybeSource<? extends T> tmp:sources) {
+        	i++;
             if (parent.isDisposed()) {
                 return;
             }

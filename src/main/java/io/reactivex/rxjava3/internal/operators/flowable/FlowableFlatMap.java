@@ -23,6 +23,7 @@ import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.exceptions.*;
 import io.reactivex.rxjava3.functions.*;
 import io.reactivex.rxjava3.internal.fuseable.*;
+import io.reactivex.rxjava3.internal.operators.flowable.FlowableAmb.AmbInnerSubscriber;
 import io.reactivex.rxjava3.internal.queue.*;
 import io.reactivex.rxjava3.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.rxjava3.internal.util.*;
@@ -189,8 +190,10 @@ public final class FlowableFlatMap<T, U> extends AbstractFlowableWithUpstream<T,
                     return;
                 }
                 int j = -1;
-                for (int i = 0; i < n; i++) {
-                    if (a[i] == inner) {
+                int i = -1;
+                for ( InnerSubscriber<?, ?> tmp:a) {
+                	i++;
+                    if (tmp == inner) {
                         j = i;
                         break;
                     }
@@ -575,7 +578,7 @@ public final class FlowableFlatMap<T, U> extends AbstractFlowableWithUpstream<T,
         }
     }
 
-    static final class InnerSubscriber<T, U> extends AtomicReference<Subscription>
+    public static final class InnerSubscriber<T, U> extends AtomicReference<Subscription>
     implements FlowableSubscriber<U>, Disposable {
 
         private static final long serialVersionUID = -4606175640614850599L;

@@ -17,6 +17,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.reactivestreams.*;
 
 import io.reactivex.rxjava3.annotations.*;
+import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.internal.subscriptions.DeferredScalarSubscription;
 import io.reactivex.rxjava3.internal.util.ExceptionHelper;
 import io.reactivex.rxjava3.plugins.RxJavaPlugins;
@@ -289,8 +290,10 @@ public final class AsyncProcessor<T> extends FlowableProcessor<T> {
             }
 
             int j = -1;
-            for (int i = 0; i < n; i++) {
-                if (a[i] == ps) {
+            int i=-1;
+            for (AsyncSubscription<T> tmp:a ) {
+            	i++;
+                if (tmp == ps) {
                     j = i;
                     break;
                 }
