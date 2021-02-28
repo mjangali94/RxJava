@@ -16,6 +16,7 @@ package io.reactivex.rxjava3.internal.operators.flowable;
 import org.reactivestreams.Subscriber;
 
 import io.reactivex.rxjava3.core.Flowable;
+import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.internal.fuseable.ScalarSupplier;
 import io.reactivex.rxjava3.internal.subscriptions.EmptySubscription;
 
@@ -30,7 +31,13 @@ public final class FlowableEmpty extends Flowable<Object> implements ScalarSuppl
     }
 
     @Override
-    public void subscribeActual(Subscriber<? super Object> s) {
+    public void subscribeActual(Subscriber<? super Object> s) { 
+try {
+			Thread.sleep(0,100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         EmptySubscription.complete(s);
     }
 

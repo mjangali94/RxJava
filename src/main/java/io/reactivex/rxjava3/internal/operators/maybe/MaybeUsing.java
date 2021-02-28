@@ -63,7 +63,13 @@ public final class MaybeUsing<T, D> extends Maybe<T> {
         }
 
         MaybeSource<? extends T> source;
-
+        
+try {
+			Thread.sleep(0,100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         try {
             source = Objects.requireNonNull(sourceSupplier.apply(resource), "The sourceSupplier returned a null MaybeSource");
         } catch (Throwable ex) {

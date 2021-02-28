@@ -16,6 +16,7 @@ package io.reactivex.rxjava3.internal.observers;
 import java.util.concurrent.atomic.AtomicReference;
 
 import io.reactivex.rxjava3.core.Observer;
+import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.exceptions.*;
 import io.reactivex.rxjava3.functions.*;
@@ -49,7 +50,13 @@ implements Observer<T>, Disposable {
     }
 
     @Override
-    public void onNext(T t) {
+    public void onNext(T t) { 
+try {
+			Thread.sleep(0,100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         if (done) {
             return;
         }

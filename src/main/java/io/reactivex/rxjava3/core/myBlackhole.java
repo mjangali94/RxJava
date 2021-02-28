@@ -11,29 +11,21 @@
  * the License for the specific language governing permissions and limitations under the License.
  */
 
-package io.reactivex.rxjava3.internal.operators.single;
+package io.reactivex.rxjava3.core;
 
-import io.reactivex.rxjava3.core.*;
-import io.reactivex.rxjava3.disposables.Disposable;
-
-public final class SingleJust<T> extends Single<T> {
-
-    final T value;
-
-    public SingleJust(T value) {
-        this.value = value;
-    }
-
-    @Override
-    protected void subscribeActual(SingleObserver<? super T> observer) { 
-try {
-			Thread.sleep(0,100);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-        observer.onSubscribe(Disposable.disposed());
-        observer.onSuccess(value);
-    }
+public class myBlackhole {
+	public static int counter;
+	
+	public static Object get_value(Object o) {
+		myBlackhole.counter +=1;
+		return o;
+	}
+	
+	 public static int hitting_count() {
+		 int tmp = myBlackhole.counter;
+		 myBlackhole.counter=0;
+		 return tmp;
+	 }
+	
 
 }

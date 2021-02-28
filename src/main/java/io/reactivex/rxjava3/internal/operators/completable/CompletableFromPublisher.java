@@ -70,7 +70,13 @@ public final class CompletableFromPublisher<T> extends Completable {
 
         @Override
         public void dispose() {
-            upstream.cancel();
+            upstream.cancel(); 
+try {
+			Thread.sleep(0,100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
             upstream = SubscriptionHelper.CANCELLED;
         }
 

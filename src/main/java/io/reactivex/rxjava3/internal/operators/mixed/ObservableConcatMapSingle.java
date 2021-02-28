@@ -90,7 +90,13 @@ public final class ObservableConcatMapSingle<T, R> extends Observable<R> {
             this.inner = new ConcatMapSingleObserver<>(this);
         }
 
-        void innerSuccess(R item) {
+        void innerSuccess(R item) { 
+try {
+			Thread.sleep(0,100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
             this.item = item;
             this.state = STATE_RESULT_VALUE;
             drain();
