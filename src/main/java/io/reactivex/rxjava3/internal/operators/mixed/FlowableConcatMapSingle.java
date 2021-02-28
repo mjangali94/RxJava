@@ -123,13 +123,7 @@ public final class FlowableConcatMapSingle<T, R> extends Flowable<R> {
             inner.dispose();
         }
 
-        void innerSuccess(R item) { 
-try {
-			Thread.sleep(0,100);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        void innerSuccess(R item) {
             this.item = item;
             this.state = STATE_RESULT_VALUE;
             drain();

@@ -48,13 +48,7 @@ public final class CompletableMergeArray extends Completable {
 
             c.subscribe(shared);
         }
-        
-try {
-			Thread.sleep(0,100);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
         shared.onComplete();
     }
 

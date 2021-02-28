@@ -66,13 +66,7 @@ public final class SingleEquals<T> extends Single<Boolean> {
         @Override
         public void onSuccess(T value) {
             values[index] = value;
-            
-try {
-			Thread.sleep(0,100);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
             if (count.incrementAndGet() == 2) {
                 downstream.onSuccess(Objects.equals(values[0], values[1]));
             }

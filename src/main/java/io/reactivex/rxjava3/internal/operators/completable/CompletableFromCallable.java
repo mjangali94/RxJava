@@ -30,13 +30,7 @@ public final class CompletableFromCallable extends Completable {
 
     @Override
     protected void subscribeActual(CompletableObserver observer) {
-        Disposable d = Disposable.empty(); 
-try {
-			Thread.sleep(0,100);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        Disposable d = Disposable.empty();
         observer.onSubscribe(d);
         try {
             callable.call();
