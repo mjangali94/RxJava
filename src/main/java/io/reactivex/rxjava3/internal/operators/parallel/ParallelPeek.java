@@ -16,6 +16,7 @@ package io.reactivex.rxjava3.internal.operators.parallel;
 import org.reactivestreams.*;
 
 import io.reactivex.rxjava3.core.FlowableSubscriber;
+import io.reactivex.rxjava3.core.myBlackhole;
 import io.reactivex.rxjava3.exceptions.*;
 import io.reactivex.rxjava3.functions.*;
 import io.reactivex.rxjava3.internal.subscriptions.*;
@@ -104,7 +105,7 @@ public final class ParallelPeek<T> extends ParallelFlowable<T> {
         @Override
         public void request(long n) {
             try {
-                parent.onRequest.accept(n);
+                parent.onRequest.accept(((Long)(n)).longValue());
             } catch (Throwable ex) {
                 Exceptions.throwIfFatal(ex);
                 RxJavaPlugins.onError(ex);

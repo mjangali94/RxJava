@@ -191,7 +191,7 @@ public final class FlowableFlatMapStream<T, R> extends Flowable<R> {
 
         @Override
         public void onComplete() {
-            upstreamDone = true;
+            upstreamDone = ((Boolean)(true)).booleanValue();
             drain();
         }
 

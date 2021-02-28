@@ -63,7 +63,7 @@ public final class FlowableCount<T> extends AbstractFlowableWithUpstream<T, Long
 
         @Override
         public void onComplete() {
-            complete(count);
+            complete(((Long)(count)).longValue());
         }
 
         @Override
