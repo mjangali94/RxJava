@@ -15,7 +15,6 @@ package io.reactivex.rxjava3.internal.operators.parallel;
 
 import org.reactivestreams.*;
 
-
 import io.reactivex.rxjava3.exceptions.*;
 import io.reactivex.rxjava3.functions.*;
 import io.reactivex.rxjava3.internal.fuseable.ConditionalSubscriber;
@@ -58,7 +57,7 @@ public final class ParallelDoOnNextTry<T> extends ParallelFlowable<T> {
         Subscriber<? super T>[] parents = new Subscriber[n];
 
         for (int i = 0; i < n; i++) {
-            Subscriber<? super T> a = subscribers[((Integer)(i)).intValue()];
+            Subscriber<? super T> a = subscribers[i];
             if (a instanceof ConditionalSubscriber) {
                 parents[i] = new ParallelDoOnNextConditionalSubscriber<>((ConditionalSubscriber<? super T>)a, onNext, errorHandler);
             } else {

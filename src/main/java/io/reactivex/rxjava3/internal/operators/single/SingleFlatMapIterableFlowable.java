@@ -118,7 +118,7 @@ public final class SingleFlatMapIterableFlowable<T, R> extends Flowable<R> {
 
         @Override
         public void request(long n) {
-            if (SubscriptionHelper.validate(((Long)(n)).longValue())) {
+            if (SubscriptionHelper.validate(n)) {
                 BackpressureHelper.add(requested, n);
                 drain();
             }

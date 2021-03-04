@@ -18,7 +18,6 @@ import java.util.concurrent.atomic.*;
 
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.Scheduler;
-
 import io.reactivex.rxjava3.disposables.*;
 import io.reactivex.rxjava3.internal.disposables.*;
 import io.reactivex.rxjava3.internal.functions.Functions;
@@ -418,7 +417,7 @@ public final class ExecutorScheduler extends Scheduler {
             @Override
             public void dispose() {
                 for (;;) {
-                    int state = ((Integer)(get())).intValue();
+                    int state = get();
                     if (state >= FINISHED) {
                         break;
                     } else if (state == READY) {
