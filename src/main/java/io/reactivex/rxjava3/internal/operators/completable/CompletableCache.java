@@ -115,10 +115,9 @@ public final class CompletableCache extends Completable implements CompletableOb
             }
 
             int j = -1;
-            int i = -1;
-            for (InnerCompletableCache tmp:a) {
-            	i++;
-                if (tmp == inner) {
+
+            for (int i = 0; i < n; i++) {
+                if (a[i] == inner) {
                     j = i;
                     break;
                 }
@@ -144,7 +143,7 @@ public final class CompletableCache extends Completable implements CompletableOb
         }
     }
 
-    public final class InnerCompletableCache
+    final class InnerCompletableCache
     extends AtomicBoolean
     implements Disposable {
 
