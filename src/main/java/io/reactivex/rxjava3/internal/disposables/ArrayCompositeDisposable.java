@@ -15,7 +15,7 @@ package io.reactivex.rxjava3.internal.disposables;
 
 import java.util.concurrent.atomic.AtomicReferenceArray;
 
-import io.reactivex.rxjava3.core.myBlackhole;
+
 import io.reactivex.rxjava3.disposables.Disposable;
 
 /**

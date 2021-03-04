@@ -15,7 +15,7 @@ package io.reactivex.rxjava3.internal.subscribers;
 
 import org.reactivestreams.Subscription;
 
-import io.reactivex.rxjava3.core.myBlackhole;
+
 import io.reactivex.rxjava3.exceptions.Exceptions;
 import io.reactivex.rxjava3.internal.fuseable.*;
 import io.reactivex.rxjava3.internal.subscriptions.SubscriptionHelper;

@@ -16,7 +16,7 @@ import java.util.NoSuchElementException;
 
 import org.reactivestreams.Subscription;
 
-import io.reactivex.rxjava3.core.myBlackhole;
+
 
 /**
  * Signals the first element of the source via the underlying CompletableFuture,

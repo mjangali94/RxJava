@@ -16,7 +16,7 @@ package io.reactivex.rxjava3.internal.subscriptions;
 import org.reactivestreams.Subscriber;
 
 import io.reactivex.rxjava3.annotations.Nullable;
-import io.reactivex.rxjava3.core.myBlackhole;
+
 
 /**
  * A subscription that signals a single value eventually.
