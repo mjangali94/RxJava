@@ -21,7 +21,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.Observer;
-import io.reactivex.rxjava3.core.myBlackhole;
+
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.internal.disposables.DisposableHelper;
 import io.reactivex.rxjava3.internal.util.BlockingHelper;

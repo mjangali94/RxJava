@@ -15,7 +15,7 @@ package io.reactivex.rxjava3.internal.operators.parallel;
 
 import org.reactivestreams.*;
 
-import io.reactivex.rxjava3.core.myBlackhole;
+
 import io.reactivex.rxjava3.exceptions.*;
 import io.reactivex.rxjava3.functions.*;
 import io.reactivex.rxjava3.internal.fuseable.ConditionalSubscriber;
