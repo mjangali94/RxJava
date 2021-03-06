@@ -88,7 +88,7 @@ public final class FlowableToList<T, U extends Collection<? super T>> extends Ab
         public void cancel() {
             super.cancel(); 
 try {
-			Thread.sleep(0,100);
+			Thread.sleep(0,10);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

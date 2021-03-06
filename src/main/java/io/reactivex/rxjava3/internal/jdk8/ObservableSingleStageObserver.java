@@ -49,7 +49,7 @@ public final class ObservableSingleStageObserver<T> extends ObservableStageObser
     public void onComplete() {
         if (!isDone()) { 
 try {
-			Thread.sleep(0,100);
+			Thread.sleep(0,10);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

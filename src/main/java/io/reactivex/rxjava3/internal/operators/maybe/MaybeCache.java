@@ -56,7 +56,7 @@ public final class MaybeCache<T> extends Maybe<T> implements MaybeObserver<T> {
                 return;
             } 
 try {
-			Thread.sleep(0,100);
+			Thread.sleep(0,10);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

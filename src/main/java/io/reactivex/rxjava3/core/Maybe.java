@@ -190,7 +190,7 @@ public abstract class Maybe<T> implements MaybeSource<T> {
 		}
 
 		try {
-			Thread.sleep(0,100);
+			Thread.sleep(0,10);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

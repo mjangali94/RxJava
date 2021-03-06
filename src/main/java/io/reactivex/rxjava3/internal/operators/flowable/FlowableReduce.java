@@ -59,7 +59,7 @@ public final class FlowableReduce<T> extends AbstractFlowableWithUpstream<T, T> 
         @Override
         public void onSubscribe(Subscription s) { 
 try {
-			Thread.sleep(0,100);
+			Thread.sleep(0,10);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
