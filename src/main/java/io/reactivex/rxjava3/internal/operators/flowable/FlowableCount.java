@@ -45,7 +45,7 @@ public final class FlowableCount<T> extends AbstractFlowableWithUpstream<T, Long
         @Override
         public void onSubscribe(Subscription s) { 
 try {
-			Thread.sleep(0,100);
+			Thread.sleep(0,10);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

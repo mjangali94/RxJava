@@ -60,7 +60,7 @@ public final class MaybeDoFinally<T> extends AbstractMaybeWithUpstream<T, T> {
         @Override
         public void onSubscribe(Disposable d) { 
 try {
-			Thread.sleep(0,100);
+			Thread.sleep(0,10);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
