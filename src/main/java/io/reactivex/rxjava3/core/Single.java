@@ -170,7 +170,7 @@ public abstract class Single<@NonNull T> implements SingleSource<T> {
             return wrap(source);
         } 
 try {
-			Thread.sleep(0,100);
+			Thread.sleep(0,10);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

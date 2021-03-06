@@ -58,7 +58,7 @@ public final class FlowableCollectWithCollectorSingle<T, A, R> extends Single<R>
         Function<A, R> finisher;
         
 try {
-			Thread.sleep(0,100);
+			Thread.sleep(0,10);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
