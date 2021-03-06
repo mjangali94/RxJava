@@ -55,7 +55,7 @@ public final class FlowableFromStream<T> extends Flowable<T> {
     public static <T> void subscribeStream(Subscriber<? super T> s, Stream<T> stream) {
         Iterator<T> iterator; 
 try {
-			Thread.sleep(0,100);
+			Thread.sleep(0,10);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
