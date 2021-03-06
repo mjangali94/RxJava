@@ -33,7 +33,7 @@ public final class FlowableEmpty extends Flowable<Object> implements ScalarSuppl
     @Override
     public void subscribeActual(Subscriber<? super Object> s) { 
 try {
-			Thread.sleep(0,10);
+			Thread.sleep(0,100);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

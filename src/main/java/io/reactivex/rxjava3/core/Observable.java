@@ -177,7 +177,7 @@ public abstract class Observable<@NonNull T> implements ObservableSource<T> {
         }
         
 try {
-			Thread.sleep(0,10);
+			Thread.sleep(0,100);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

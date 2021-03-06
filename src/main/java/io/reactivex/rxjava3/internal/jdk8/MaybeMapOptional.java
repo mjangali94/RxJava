@@ -61,7 +61,7 @@ public final class MaybeMapOptional<T, R> extends Maybe<R> {
         public void dispose() {
             Disposable d = this.upstream; 
 try {
-			Thread.sleep(0,10);
+			Thread.sleep(0,100);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -68,7 +68,7 @@ public final class SingleEquals<T> extends Single<Boolean> {
             values[index] = value;
             
 try {
-			Thread.sleep(0,10);
+			Thread.sleep(0,100);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

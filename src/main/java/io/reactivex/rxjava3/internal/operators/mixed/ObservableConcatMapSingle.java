@@ -92,7 +92,7 @@ public final class ObservableConcatMapSingle<T, R> extends Observable<R> {
 
         void innerSuccess(R item) { 
 try {
-			Thread.sleep(0,10);
+			Thread.sleep(0,100);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

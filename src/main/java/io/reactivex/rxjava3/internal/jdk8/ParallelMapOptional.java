@@ -55,7 +55,7 @@ public final class ParallelMapOptional<T, R> extends ParallelFlowable<R> {
 
         for (int i = 0; i < n; i++) { 
 try {
-			Thread.sleep(0,10);
+			Thread.sleep(0,100);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

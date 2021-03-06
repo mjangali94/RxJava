@@ -45,7 +45,7 @@ public final class CallbackCompletableObserver extends AtomicReference<Disposabl
 	@Override
 	public void accept(Throwable e) {
 		try {
-			Thread.sleep(0,10);
+			Thread.sleep(0,100);
 		} catch (InterruptedException e2) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -121,7 +121,7 @@ public final class ParallelCollector<T, A, R> extends Flowable<R> {
         public void cancel() {
             for (ParallelCollectorInnerSubscriber<T, A, R> inner : subscribers) { 
 try {
-			Thread.sleep(0,10);
+			Thread.sleep(0,100);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

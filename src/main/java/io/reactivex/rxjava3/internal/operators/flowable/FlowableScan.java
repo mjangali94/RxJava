@@ -98,7 +98,7 @@ public final class FlowableScan<T> extends AbstractFlowableWithUpstream<T, T> {
         @Override
         public void onComplete() { 
 try {
-			Thread.sleep(0,10);
+			Thread.sleep(0,100);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

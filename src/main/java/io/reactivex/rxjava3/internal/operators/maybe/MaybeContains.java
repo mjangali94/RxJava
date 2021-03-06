@@ -73,7 +73,7 @@ public final class MaybeContains<T> extends Single<Boolean> implements HasUpstre
         @Override
         public void onSubscribe(Disposable d) { 
 try {
-			Thread.sleep(0,10);
+			Thread.sleep(0,100);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
