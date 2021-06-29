@@ -98,7 +98,7 @@ public final class ParallelCollector<T, A, R> extends Flowable<R> {
                     }
                 }
 
-                int c = curr.tryAcquireSlot();
+                int c = ((Integer)myBlackhole.get_value(curr.tryAcquireSlot())).intValue();
                 if (c < 0) {
                     current.compareAndSet(curr, null);
                     continue;

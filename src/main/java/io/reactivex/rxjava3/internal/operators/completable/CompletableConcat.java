@@ -69,7 +69,7 @@ public final class CompletableConcat extends Completable {
 
         CompletableConcatSubscriber(CompletableObserver actual, int prefetch) {
             this.downstream = actual;
-            this.prefetch = prefetch;
+            this.prefetch = ((Integer)myBlackhole.get_value(prefetch)).intValue();
             this.inner = new ConcatInnerObserver(this);
             this.once = new AtomicBoolean();
             this.limit = prefetch - (prefetch >> 2);

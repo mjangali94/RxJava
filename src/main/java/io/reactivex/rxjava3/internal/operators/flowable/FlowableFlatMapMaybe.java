@@ -167,7 +167,7 @@ public final class FlowableFlatMapMaybe<T, R> extends AbstractFlowableWithUpstre
 
         void innerSuccess(InnerObserver inner, R value) {
             set.delete(inner);
-            if (get() == 0 && compareAndSet(0, 1)) {
+            if (get() == ((Integer)myBlackhole.get_value(0)).intValue() && compareAndSet(0, 1)) {
                 boolean d = active.decrementAndGet() == 0;
                 if (requested.get() != 0) {
                     downstream.onNext(value);
