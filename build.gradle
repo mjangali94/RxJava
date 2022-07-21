@@ -65,6 +65,7 @@ javadoc {
     exclude "**/test/**"
     exclude "**/perf/**"
     exclude "**/jmh/**"
+    exclude "**/src/**"
     options {
         windowTitle = "RxJava Javadoc ${project.version}"
     }
@@ -115,7 +116,7 @@ license {
 jmh {
     jmhVersion = jmhLibVersion
     humanOutputFile = null
-    includeTests = false
+    includeTests = true
     jvmArgs = ["-Djmh.ignoreLock=true"]
     jvmArgsAppend = ["-Djmh.separateClasspathJAR=true"]
 
@@ -126,7 +127,7 @@ jmh {
 }
 
 test {
-    maxHeapSize = "1200m"
+    maxHeapSize = "8000m"
 }
 
 task testNG(type: Test) {
