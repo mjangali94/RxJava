@@ -168,72 +168,149 @@ public class FutureSingleObserverTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FutureSingleObserverTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancel, this.description("cancel"));
+            this.payloads.cancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelRace, this.description("cancelRace"));
+            this.payloads.cancelRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeout() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeout, this.description("timeout"));
+            this.payloads.timeout.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorGetWithTimeout() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorGetWithTimeout, this.description("errorGetWithTimeout"));
+            this.payloads.errorGetWithTimeout.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalGetWitHTimeout() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalGetWitHTimeout, this.description("normalGetWitHTimeout"));
+            this.payloads.normalGetWitHTimeout.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_getAwait() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::getAwait, this.description("getAwait"));
+            this.payloads.getAwait.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onSuccessCancelRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onSuccessCancelRace, this.description("onSuccessCancelRace"));
+            this.payloads.onSuccessCancelRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorCancelRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorCancelRace, this.description("onErrorCancelRace"));
+            this.payloads.onErrorCancelRace.evaluate();
         }
 
-        private FutureSingleObserverTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FutureSingleObserverTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FutureSingleObserverTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FutureSingleObserverTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FutureSingleObserverTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FutureSingleObserverTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FutureSingleObserverTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FutureSingleObserverTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FutureSingleObserverTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FutureSingleObserverTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FutureSingleObserverTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement cancel;
+
+            public org.junit.runners.model.Statement cancelRace;
+
+            public org.junit.runners.model.Statement timeout;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement errorGetWithTimeout;
+
+            public org.junit.runners.model.Statement normalGetWitHTimeout;
+
+            public org.junit.runners.model.Statement getAwait;
+
+            public org.junit.runners.model.Statement onSuccessCancelRace;
+
+            public org.junit.runners.model.Statement onErrorCancelRace;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.cancel = _ClassStatement.forPayload(FutureSingleObserverTest::cancel, "cancel", this);
+            this.payloads.cancelRace = _ClassStatement.forPayload(FutureSingleObserverTest::cancelRace, "cancelRace", this);
+            this.payloads.timeout = _ClassStatement.forPayload(FutureSingleObserverTest::timeout, "timeout", this);
+            this.payloads.dispose = _ClassStatement.forPayload(FutureSingleObserverTest::dispose, "dispose", this);
+            this.payloads.errorGetWithTimeout = _ClassStatement.forPayload(FutureSingleObserverTest::errorGetWithTimeout, "errorGetWithTimeout", this);
+            this.payloads.normalGetWitHTimeout = _ClassStatement.forPayload(FutureSingleObserverTest::normalGetWitHTimeout, "normalGetWitHTimeout", this);
+            this.payloads.getAwait = _ClassStatement.forPayload(FutureSingleObserverTest::getAwait, "getAwait", this);
+            this.payloads.onSuccessCancelRace = _ClassStatement.forPayload(FutureSingleObserverTest::onSuccessCancelRace, "onSuccessCancelRace", this);
+            this.payloads.onErrorCancelRace = _ClassStatement.forPayload(FutureSingleObserverTest::onErrorCancelRace, "onErrorCancelRace", this);
         }
     }
 }

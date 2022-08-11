@@ -263,120 +263,213 @@ public class SingleFlatMapIterableObservableTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private SingleFlatMapIterableObservableTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normal, this.description("normal"));
+            this.payloads.normal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyIterable, this.description("emptyIterable"));
+            this.payloads.emptyIterable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_take() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::take, this.description("take"));
+            this.payloads.take.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fused() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fused, this.description("fused"));
+            this.payloads.fused.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedNoSync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedNoSync, this.description("fusedNoSync"));
+            this.payloads.fusedNoSync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_iteratorCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::iteratorCrash, this.description("iteratorCrash"));
+            this.payloads.iteratorCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_hasNextCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::hasNextCrash, this.description("hasNextCrash"));
+            this.payloads.hasNextCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nextCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nextCrash, this.description("nextCrash"));
+            this.payloads.nextCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_hasNextCrash2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::hasNextCrash2, this.description("hasNextCrash2"));
+            this.payloads.hasNextCrash2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_async1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::async1, this.description("async1"));
+            this.payloads.async1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_async2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::async2, this.description("async2"));
+            this.payloads.async2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_async3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::async3, this.description("async3"));
+            this.payloads.async3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_async4() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::async4, this.description("async4"));
+            this.payloads.async4.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedEmptyCheck() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedEmptyCheck, this.description("fusedEmptyCheck"));
+            this.payloads.fusedEmptyCheck.evaluate();
         }
 
-        private SingleFlatMapIterableObservableTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SingleFlatMapIterableObservableTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<SingleFlatMapIterableObservableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleFlatMapIterableObservableTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public SingleFlatMapIterableObservableTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<SingleFlatMapIterableObservableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleFlatMapIterableObservableTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new SingleFlatMapIterableObservableTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleFlatMapIterableObservableTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(SingleFlatMapIterableObservableTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(SingleFlatMapIterableObservableTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement normal;
+
+            public org.junit.runners.model.Statement emptyIterable;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement take;
+
+            public org.junit.runners.model.Statement fused;
+
+            public org.junit.runners.model.Statement fusedNoSync;
+
+            public org.junit.runners.model.Statement iteratorCrash;
+
+            public org.junit.runners.model.Statement hasNextCrash;
+
+            public org.junit.runners.model.Statement nextCrash;
+
+            public org.junit.runners.model.Statement hasNextCrash2;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement async1;
+
+            public org.junit.runners.model.Statement async2;
+
+            public org.junit.runners.model.Statement async3;
+
+            public org.junit.runners.model.Statement async4;
+
+            public org.junit.runners.model.Statement fusedEmptyCheck;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.normal = _ClassStatement.forPayload(SingleFlatMapIterableObservableTest::normal, "normal", this);
+            this.payloads.emptyIterable = _ClassStatement.forPayload(SingleFlatMapIterableObservableTest::emptyIterable, "emptyIterable", this);
+            this.payloads.error = _ClassStatement.forPayload(SingleFlatMapIterableObservableTest::error, "error", this);
+            this.payloads.take = _ClassStatement.forPayload(SingleFlatMapIterableObservableTest::take, "take", this);
+            this.payloads.fused = _ClassStatement.forPayload(SingleFlatMapIterableObservableTest::fused, "fused", this);
+            this.payloads.fusedNoSync = _ClassStatement.forPayload(SingleFlatMapIterableObservableTest::fusedNoSync, "fusedNoSync", this);
+            this.payloads.iteratorCrash = _ClassStatement.forPayload(SingleFlatMapIterableObservableTest::iteratorCrash, "iteratorCrash", this);
+            this.payloads.hasNextCrash = _ClassStatement.forPayload(SingleFlatMapIterableObservableTest::hasNextCrash, "hasNextCrash", this);
+            this.payloads.nextCrash = _ClassStatement.forPayload(SingleFlatMapIterableObservableTest::nextCrash, "nextCrash", this);
+            this.payloads.hasNextCrash2 = _ClassStatement.forPayload(SingleFlatMapIterableObservableTest::hasNextCrash2, "hasNextCrash2", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(SingleFlatMapIterableObservableTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.dispose = _ClassStatement.forPayload(SingleFlatMapIterableObservableTest::dispose, "dispose", this);
+            this.payloads.async1 = _ClassStatement.forPayload(SingleFlatMapIterableObservableTest::async1, "async1", this);
+            this.payloads.async2 = _ClassStatement.forPayload(SingleFlatMapIterableObservableTest::async2, "async2", this);
+            this.payloads.async3 = _ClassStatement.forPayload(SingleFlatMapIterableObservableTest::async3, "async3", this);
+            this.payloads.async4 = _ClassStatement.forPayload(SingleFlatMapIterableObservableTest::async4, "async4", this);
+            this.payloads.fusedEmptyCheck = _ClassStatement.forPayload(SingleFlatMapIterableObservableTest::fusedEmptyCheck, "fusedEmptyCheck", this);
         }
     }
 }

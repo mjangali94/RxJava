@@ -356,96 +356,181 @@ public class FlowableSubscribeOnTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableSubscribeOnTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_issue813() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::issue813, this.description("issue813"));
+            this.payloads.issue813.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onError, this.description("onError"));
+            this.payloads.onError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribeInfiniteStream() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribeInfiniteStream, this.description("unsubscribeInfiniteStream"));
+            this.payloads.unsubscribeInfiniteStream.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureReschedulesCorrectly() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureReschedulesCorrectly, this.description("backpressureReschedulesCorrectly"));
+            this.payloads.backpressureReschedulesCorrectly.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_setProducerSynchronousRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::setProducerSynchronousRequest, this.description("setProducerSynchronousRequest"));
+            this.payloads.setProducerSynchronousRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelBeforeActualSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelBeforeActualSubscribe, this.description("cancelBeforeActualSubscribe"));
+            this.payloads.cancelBeforeActualSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_deferredRequestRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::deferredRequestRace, this.description("deferredRequestRace"));
+            this.payloads.deferredRequestRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nonScheduledRequests() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nonScheduledRequests, this.description("nonScheduledRequests"));
+            this.payloads.nonScheduledRequests.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scheduledRequests() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scheduledRequests, this.description("scheduledRequests"));
+            this.payloads.scheduledRequests.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nonScheduledRequestsNotSubsequentSubscribeOn() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nonScheduledRequestsNotSubsequentSubscribeOn, this.description("nonScheduledRequestsNotSubsequentSubscribeOn"));
+            this.payloads.nonScheduledRequestsNotSubsequentSubscribeOn.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scheduledRequestsNotSubsequentSubscribeOn() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scheduledRequestsNotSubsequentSubscribeOn, this.description("scheduledRequestsNotSubsequentSubscribeOn"));
+            this.payloads.scheduledRequestsNotSubsequentSubscribeOn.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequest, this.description("badRequest"));
+            this.payloads.badRequest.evaluate();
         }
 
-        private FlowableSubscribeOnTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableSubscribeOnTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscribeOnTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscribeOnTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableSubscribeOnTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscribeOnTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscribeOnTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableSubscribeOnTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscribeOnTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableSubscribeOnTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableSubscribeOnTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement issue813;
+
+            public org.junit.runners.model.Statement onError;
+
+            public org.junit.runners.model.Statement unsubscribeInfiniteStream;
+
+            public org.junit.runners.model.Statement backpressureReschedulesCorrectly;
+
+            public org.junit.runners.model.Statement setProducerSynchronousRequest;
+
+            public org.junit.runners.model.Statement cancelBeforeActualSubscribe;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement deferredRequestRace;
+
+            public org.junit.runners.model.Statement nonScheduledRequests;
+
+            public org.junit.runners.model.Statement scheduledRequests;
+
+            public org.junit.runners.model.Statement nonScheduledRequestsNotSubsequentSubscribeOn;
+
+            public org.junit.runners.model.Statement scheduledRequestsNotSubsequentSubscribeOn;
+
+            public org.junit.runners.model.Statement badRequest;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.issue813 = _ClassStatement.forPayload(FlowableSubscribeOnTest::issue813, "issue813", this);
+            this.payloads.onError = _ClassStatement.forPayload(FlowableSubscribeOnTest::onError, "onError", this);
+            this.payloads.unsubscribeInfiniteStream = _ClassStatement.forPayload(FlowableSubscribeOnTest::unsubscribeInfiniteStream, "unsubscribeInfiniteStream", this);
+            this.payloads.backpressureReschedulesCorrectly = _ClassStatement.forPayload(FlowableSubscribeOnTest::backpressureReschedulesCorrectly, "backpressureReschedulesCorrectly", this);
+            this.payloads.setProducerSynchronousRequest = _ClassStatement.forPayload(FlowableSubscribeOnTest::setProducerSynchronousRequest, "setProducerSynchronousRequest", this);
+            this.payloads.cancelBeforeActualSubscribe = _ClassStatement.forPayload(FlowableSubscribeOnTest::cancelBeforeActualSubscribe, "cancelBeforeActualSubscribe", this);
+            this.payloads.dispose = _ClassStatement.forPayload(FlowableSubscribeOnTest::dispose, "dispose", this);
+            this.payloads.deferredRequestRace = _ClassStatement.forPayload(FlowableSubscribeOnTest::deferredRequestRace, "deferredRequestRace", this);
+            this.payloads.nonScheduledRequests = _ClassStatement.forPayload(FlowableSubscribeOnTest::nonScheduledRequests, "nonScheduledRequests", this);
+            this.payloads.scheduledRequests = _ClassStatement.forPayload(FlowableSubscribeOnTest::scheduledRequests, "scheduledRequests", this);
+            this.payloads.nonScheduledRequestsNotSubsequentSubscribeOn = _ClassStatement.forPayload(FlowableSubscribeOnTest::nonScheduledRequestsNotSubsequentSubscribeOn, "nonScheduledRequestsNotSubsequentSubscribeOn", this);
+            this.payloads.scheduledRequestsNotSubsequentSubscribeOn = _ClassStatement.forPayload(FlowableSubscribeOnTest::scheduledRequestsNotSubsequentSubscribeOn, "scheduledRequestsNotSubsequentSubscribeOn", this);
+            this.payloads.badRequest = _ClassStatement.forPayload(FlowableSubscribeOnTest::badRequest, "badRequest", this);
         }
     }
 }

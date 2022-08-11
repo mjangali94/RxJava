@@ -109,26 +109,4 @@ public class JavadocFindUnescapedAngleBrackets {
         }
         return b.toString();
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_find() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::find, this.description("find"));
-        }
-
-        private JavadocFindUnescapedAngleBrackets implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new JavadocFindUnescapedAngleBrackets();
-        }
-
-        @java.lang.Override
-        public JavadocFindUnescapedAngleBrackets implementation() {
-            return this.implementation;
-        }
-    }
 }

@@ -215,126 +215,221 @@ public class ObservableToListTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableToListTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_listObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::listObservable, this.description("listObservable"));
+            this.payloads.listObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_listViaObservableObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::listViaObservableObservable, this.description("listViaObservableObservable"));
+            this.payloads.listViaObservableObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_listMultipleSubscribersObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::listMultipleSubscribersObservable, this.description("listMultipleSubscribersObservable"));
+            this.payloads.listMultipleSubscribersObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_listWithBlockingFirstObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::listWithBlockingFirstObservable, this.description("listWithBlockingFirstObservable"));
+            this.payloads.listWithBlockingFirstObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_capacityHintObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::capacityHintObservable, this.description("capacityHintObservable"));
+            this.payloads.capacityHintObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_list() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::list, this.description("list"));
+            this.payloads.list.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_listViaObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::listViaObservable, this.description("listViaObservable"));
+            this.payloads.listViaObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_listMultipleSubscribers() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::listMultipleSubscribers, this.description("listMultipleSubscribers"));
+            this.payloads.listMultipleSubscribers.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_listWithBlockingFirst() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::listWithBlockingFirst, this.description("listWithBlockingFirst"));
+            this.payloads.listWithBlockingFirst.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_capacityHint() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::capacityHint, this.description("capacityHint"));
+            this.payloads.capacityHint.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorSingle() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorSingle, this.description("errorSingle"));
+            this.payloads.errorSingle.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectionSupplierThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectionSupplierThrows, this.description("collectionSupplierThrows"));
+            this.payloads.collectionSupplierThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectionSupplierReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectionSupplierReturnsNull, this.description("collectionSupplierReturnsNull"));
+            this.payloads.collectionSupplierReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleCollectionSupplierThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleCollectionSupplierThrows, this.description("singleCollectionSupplierThrows"));
+            this.payloads.singleCollectionSupplierThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleCollectionSupplierReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleCollectionSupplierReturnsNull, this.description("singleCollectionSupplierReturnsNull"));
+            this.payloads.singleCollectionSupplierReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
-        private ObservableToListTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableToListTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableToListTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableToListTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservableToListTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableToListTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableToListTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableToListTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableToListTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableToListTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableToListTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement listObservable;
+
+            public org.junit.runners.model.Statement listViaObservableObservable;
+
+            public org.junit.runners.model.Statement listMultipleSubscribersObservable;
+
+            public org.junit.runners.model.Statement listWithBlockingFirstObservable;
+
+            public org.junit.runners.model.Statement capacityHintObservable;
+
+            public org.junit.runners.model.Statement list;
+
+            public org.junit.runners.model.Statement listViaObservable;
+
+            public org.junit.runners.model.Statement listMultipleSubscribers;
+
+            public org.junit.runners.model.Statement listWithBlockingFirst;
+
+            public org.junit.runners.model.Statement capacityHint;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement errorSingle;
+
+            public org.junit.runners.model.Statement collectionSupplierThrows;
+
+            public org.junit.runners.model.Statement collectionSupplierReturnsNull;
+
+            public org.junit.runners.model.Statement singleCollectionSupplierThrows;
+
+            public org.junit.runners.model.Statement singleCollectionSupplierReturnsNull;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.listObservable = _ClassStatement.forPayload(ObservableToListTest::listObservable, "listObservable", this);
+            this.payloads.listViaObservableObservable = _ClassStatement.forPayload(ObservableToListTest::listViaObservableObservable, "listViaObservableObservable", this);
+            this.payloads.listMultipleSubscribersObservable = _ClassStatement.forPayload(ObservableToListTest::listMultipleSubscribersObservable, "listMultipleSubscribersObservable", this);
+            this.payloads.listWithBlockingFirstObservable = _ClassStatement.forPayload(ObservableToListTest::listWithBlockingFirstObservable, "listWithBlockingFirstObservable", this);
+            this.payloads.capacityHintObservable = _ClassStatement.forPayload(ObservableToListTest::capacityHintObservable, "capacityHintObservable", this);
+            this.payloads.list = _ClassStatement.forPayload(ObservableToListTest::list, "list", this);
+            this.payloads.listViaObservable = _ClassStatement.forPayload(ObservableToListTest::listViaObservable, "listViaObservable", this);
+            this.payloads.listMultipleSubscribers = _ClassStatement.forPayload(ObservableToListTest::listMultipleSubscribers, "listMultipleSubscribers", this);
+            this.payloads.listWithBlockingFirst = _ClassStatement.forPayload(ObservableToListTest::listWithBlockingFirst, "listWithBlockingFirst", this);
+            this.payloads.capacityHint = _ClassStatement.forPayload(ObservableToListTest::capacityHint, "capacityHint", this);
+            this.payloads.dispose = _ClassStatement.forPayload(ObservableToListTest::dispose, "dispose", this);
+            this.payloads.error = _ClassStatement.forPayload(ObservableToListTest::error, "error", this);
+            this.payloads.errorSingle = _ClassStatement.forPayload(ObservableToListTest::errorSingle, "errorSingle", this);
+            this.payloads.collectionSupplierThrows = _ClassStatement.forPayload(ObservableToListTest::collectionSupplierThrows, "collectionSupplierThrows", this);
+            this.payloads.collectionSupplierReturnsNull = _ClassStatement.forPayload(ObservableToListTest::collectionSupplierReturnsNull, "collectionSupplierReturnsNull", this);
+            this.payloads.singleCollectionSupplierThrows = _ClassStatement.forPayload(ObservableToListTest::singleCollectionSupplierThrows, "singleCollectionSupplierThrows", this);
+            this.payloads.singleCollectionSupplierReturnsNull = _ClassStatement.forPayload(ObservableToListTest::singleCollectionSupplierReturnsNull, "singleCollectionSupplierReturnsNull", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(ObservableToListTest::doubleOnSubscribe, "doubleOnSubscribe", this);
         }
     }
 }

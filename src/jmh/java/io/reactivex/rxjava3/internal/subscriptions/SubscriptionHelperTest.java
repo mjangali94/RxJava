@@ -220,90 +220,173 @@ public class SubscriptionHelperTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private SubscriptionHelperTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkEnum() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkEnum, this.description("checkEnum"));
+            this.payloads.checkEnum.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_validateNullThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::validateNullThrows, this.description("validateNullThrows"));
+            this.payloads.validateNullThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelNoOp() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelNoOp, this.description("cancelNoOp"));
+            this.payloads.cancelNoOp.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_set() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::set, this.description("set"));
+            this.payloads.set.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_replace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::replace, this.description("replace"));
+            this.payloads.replace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelRace, this.description("cancelRace"));
+            this.payloads.cancelRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_setRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::setRace, this.description("setRace"));
+            this.payloads.setRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_replaceRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::replaceRace, this.description("replaceRace"));
+            this.payloads.replaceRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelAndChange() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelAndChange, this.description("cancelAndChange"));
+            this.payloads.cancelAndChange.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_invalidDeferredRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::invalidDeferredRequest, this.description("invalidDeferredRequest"));
+            this.payloads.invalidDeferredRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_deferredRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::deferredRace, this.description("deferredRace"));
+            this.payloads.deferredRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_setOnceAndRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::setOnceAndRequest, this.description("setOnceAndRequest"));
+            this.payloads.setOnceAndRequest.evaluate();
         }
 
-        private SubscriptionHelperTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SubscriptionHelperTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<SubscriptionHelperTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<SubscriptionHelperTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public SubscriptionHelperTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<SubscriptionHelperTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<SubscriptionHelperTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new SubscriptionHelperTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<SubscriptionHelperTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(SubscriptionHelperTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(SubscriptionHelperTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement checkEnum;
+
+            public org.junit.runners.model.Statement validateNullThrows;
+
+            public org.junit.runners.model.Statement cancelNoOp;
+
+            public org.junit.runners.model.Statement set;
+
+            public org.junit.runners.model.Statement replace;
+
+            public org.junit.runners.model.Statement cancelRace;
+
+            public org.junit.runners.model.Statement setRace;
+
+            public org.junit.runners.model.Statement replaceRace;
+
+            public org.junit.runners.model.Statement cancelAndChange;
+
+            public org.junit.runners.model.Statement invalidDeferredRequest;
+
+            public org.junit.runners.model.Statement deferredRace;
+
+            public org.junit.runners.model.Statement setOnceAndRequest;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.checkEnum = _ClassStatement.forPayload(SubscriptionHelperTest::checkEnum, "checkEnum", this);
+            this.payloads.validateNullThrows = _ClassStatement.forPayload(SubscriptionHelperTest::validateNullThrows, "validateNullThrows", this);
+            this.payloads.cancelNoOp = _ClassStatement.forPayload(SubscriptionHelperTest::cancelNoOp, "cancelNoOp", this);
+            this.payloads.set = _ClassStatement.forPayload(SubscriptionHelperTest::set, "set", this);
+            this.payloads.replace = _ClassStatement.forPayload(SubscriptionHelperTest::replace, "replace", this);
+            this.payloads.cancelRace = _ClassStatement.forPayload(SubscriptionHelperTest::cancelRace, "cancelRace", this);
+            this.payloads.setRace = _ClassStatement.forPayload(SubscriptionHelperTest::setRace, "setRace", this);
+            this.payloads.replaceRace = _ClassStatement.forPayload(SubscriptionHelperTest::replaceRace, "replaceRace", this);
+            this.payloads.cancelAndChange = _ClassStatement.forPayload(SubscriptionHelperTest::cancelAndChange, "cancelAndChange", this);
+            this.payloads.invalidDeferredRequest = _ClassStatement.forPayload(SubscriptionHelperTest::invalidDeferredRequest, "invalidDeferredRequest", this);
+            this.payloads.deferredRace = _ClassStatement.forPayload(SubscriptionHelperTest::deferredRace, "deferredRace", this);
+            this.payloads.setOnceAndRequest = _ClassStatement.forPayload(SubscriptionHelperTest::setOnceAndRequest, "setOnceAndRequest", this);
         }
     }
 }

@@ -989,264 +989,405 @@ public class FlowableCreateTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableCreateTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_basic() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::basic, this.description("basic"));
+            this.payloads.basic.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_basicWithCancellable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::basicWithCancellable, this.description("basicWithCancellable"));
+            this.payloads.basicWithCancellable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_basicWithError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::basicWithError, this.description("basicWithError"));
+            this.payloads.basicWithError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_basicSerialized() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::basicSerialized, this.description("basicSerialized"));
+            this.payloads.basicSerialized.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_basicWithErrorSerialized() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::basicWithErrorSerialized, this.description("basicWithErrorSerialized"));
+            this.payloads.basicWithErrorSerialized.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_wrap() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::wrap, this.description("wrap"));
+            this.payloads.wrap.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsafe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsafe, this.description("unsafe"));
+            this.payloads.unsafe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsafeWithFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::unsafeWithFlowable, this.description("unsafeWithFlowable"), java.lang.IllegalArgumentException.class);
+            this.payloads.unsafeWithFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_createNullValueBuffer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::createNullValueBuffer, this.description("createNullValueBuffer"));
+            this.payloads.createNullValueBuffer.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_createNullValueLatest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::createNullValueLatest, this.description("createNullValueLatest"));
+            this.payloads.createNullValueLatest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_createNullValueError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::createNullValueError, this.description("createNullValueError"));
+            this.payloads.createNullValueError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_createNullValueDrop() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::createNullValueDrop, this.description("createNullValueDrop"));
+            this.payloads.createNullValueDrop.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_createNullValueMissing() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::createNullValueMissing, this.description("createNullValueMissing"));
+            this.payloads.createNullValueMissing.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_createNullValueBufferSerialized() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::createNullValueBufferSerialized, this.description("createNullValueBufferSerialized"));
+            this.payloads.createNullValueBufferSerialized.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_createNullValueLatestSerialized() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::createNullValueLatestSerialized, this.description("createNullValueLatestSerialized"));
+            this.payloads.createNullValueLatestSerialized.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_createNullValueErrorSerialized() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::createNullValueErrorSerialized, this.description("createNullValueErrorSerialized"));
+            this.payloads.createNullValueErrorSerialized.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_createNullValueDropSerialized() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::createNullValueDropSerialized, this.description("createNullValueDropSerialized"));
+            this.payloads.createNullValueDropSerialized.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_createNullValueMissingSerialized() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::createNullValueMissingSerialized, this.description("createNullValueMissingSerialized"));
+            this.payloads.createNullValueMissingSerialized.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorRace, this.description("onErrorRace"));
+            this.payloads.onErrorRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onCompleteRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompleteRace, this.description("onCompleteRace"));
+            this.payloads.onCompleteRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nullValue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nullValue, this.description("nullValue"));
+            this.payloads.nullValue.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nullThrowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nullThrowable, this.description("nullThrowable"));
+            this.payloads.nullThrowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_serializedConcurrentOnNextOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::serializedConcurrentOnNextOnError, this.description("serializedConcurrentOnNextOnError"));
+            this.payloads.serializedConcurrentOnNextOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_callbackThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::callbackThrows, this.description("callbackThrows"));
+            this.payloads.callbackThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nullValueSync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nullValueSync, this.description("nullValueSync"));
+            this.payloads.nullValueSync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_createNullValue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::createNullValue, this.description("createNullValue"));
+            this.payloads.createNullValue.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorCrash, this.description("onErrorCrash"));
+            this.payloads.onErrorCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onCompleteCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompleteCrash, this.description("onCompleteCrash"));
+            this.payloads.onCompleteCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_createNullValueSerialized() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::createNullValueSerialized, this.description("createNullValueSerialized"));
+            this.payloads.createNullValueSerialized.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nullThrowableSync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nullThrowableSync, this.description("nullThrowableSync"));
+            this.payloads.nullThrowableSync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_serializedConcurrentOnNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::serializedConcurrentOnNext, this.description("serializedConcurrentOnNext"));
+            this.payloads.serializedConcurrentOnNext.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_serializedConcurrentOnNextOnComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::serializedConcurrentOnNextOnComplete, this.description("serializedConcurrentOnNextOnComplete"));
+            this.payloads.serializedConcurrentOnNextOnComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_serialized() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::serialized, this.description("serialized"));
+            this.payloads.serialized.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_tryOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tryOnError, this.description("tryOnError"));
+            this.payloads.tryOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_tryOnErrorSerialized() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tryOnErrorSerialized, this.description("tryOnErrorSerialized"));
+            this.payloads.tryOnErrorSerialized.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emittersHasToString() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emittersHasToString, this.description("emittersHasToString"));
+            this.payloads.emittersHasToString.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_serializedMissingMoreWorkWithComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::serializedMissingMoreWorkWithComplete, this.description("serializedMissingMoreWorkWithComplete"));
+            this.payloads.serializedMissingMoreWorkWithComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequest, this.description("badRequest"));
+            this.payloads.badRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_tryOnErrorNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tryOnErrorNull, this.description("tryOnErrorNull"));
+            this.payloads.tryOnErrorNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_serializedCompleteOnNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::serializedCompleteOnNext, this.description("serializedCompleteOnNext"));
+            this.payloads.serializedCompleteOnNext.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_serializedCancelOnNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::serializedCancelOnNext, this.description("serializedCancelOnNext"));
+            this.payloads.serializedCancelOnNext.evaluate();
         }
 
-        private FlowableCreateTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableCreateTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableCreateTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableCreateTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableCreateTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableCreateTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableCreateTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableCreateTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableCreateTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableCreateTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableCreateTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement basic;
+
+            public org.junit.runners.model.Statement basicWithCancellable;
+
+            public org.junit.runners.model.Statement basicWithError;
+
+            public org.junit.runners.model.Statement basicSerialized;
+
+            public org.junit.runners.model.Statement basicWithErrorSerialized;
+
+            public org.junit.runners.model.Statement wrap;
+
+            public org.junit.runners.model.Statement unsafe;
+
+            public org.junit.runners.model.Statement unsafeWithFlowable;
+
+            public org.junit.runners.model.Statement createNullValueBuffer;
+
+            public org.junit.runners.model.Statement createNullValueLatest;
+
+            public org.junit.runners.model.Statement createNullValueError;
+
+            public org.junit.runners.model.Statement createNullValueDrop;
+
+            public org.junit.runners.model.Statement createNullValueMissing;
+
+            public org.junit.runners.model.Statement createNullValueBufferSerialized;
+
+            public org.junit.runners.model.Statement createNullValueLatestSerialized;
+
+            public org.junit.runners.model.Statement createNullValueErrorSerialized;
+
+            public org.junit.runners.model.Statement createNullValueDropSerialized;
+
+            public org.junit.runners.model.Statement createNullValueMissingSerialized;
+
+            public org.junit.runners.model.Statement onErrorRace;
+
+            public org.junit.runners.model.Statement onCompleteRace;
+
+            public org.junit.runners.model.Statement nullValue;
+
+            public org.junit.runners.model.Statement nullThrowable;
+
+            public org.junit.runners.model.Statement serializedConcurrentOnNextOnError;
+
+            public org.junit.runners.model.Statement callbackThrows;
+
+            public org.junit.runners.model.Statement nullValueSync;
+
+            public org.junit.runners.model.Statement createNullValue;
+
+            public org.junit.runners.model.Statement onErrorCrash;
+
+            public org.junit.runners.model.Statement onCompleteCrash;
+
+            public org.junit.runners.model.Statement createNullValueSerialized;
+
+            public org.junit.runners.model.Statement nullThrowableSync;
+
+            public org.junit.runners.model.Statement serializedConcurrentOnNext;
+
+            public org.junit.runners.model.Statement serializedConcurrentOnNextOnComplete;
+
+            public org.junit.runners.model.Statement serialized;
+
+            public org.junit.runners.model.Statement tryOnError;
+
+            public org.junit.runners.model.Statement tryOnErrorSerialized;
+
+            public org.junit.runners.model.Statement emittersHasToString;
+
+            public org.junit.runners.model.Statement serializedMissingMoreWorkWithComplete;
+
+            public org.junit.runners.model.Statement badRequest;
+
+            public org.junit.runners.model.Statement tryOnErrorNull;
+
+            public org.junit.runners.model.Statement serializedCompleteOnNext;
+
+            public org.junit.runners.model.Statement serializedCancelOnNext;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.basic = _ClassStatement.forPayload(FlowableCreateTest::basic, "basic", this);
+            this.payloads.basicWithCancellable = _ClassStatement.forPayload(FlowableCreateTest::basicWithCancellable, "basicWithCancellable", this);
+            this.payloads.basicWithError = _ClassStatement.forPayload(FlowableCreateTest::basicWithError, "basicWithError", this);
+            this.payloads.basicSerialized = _ClassStatement.forPayload(FlowableCreateTest::basicSerialized, "basicSerialized", this);
+            this.payloads.basicWithErrorSerialized = _ClassStatement.forPayload(FlowableCreateTest::basicWithErrorSerialized, "basicWithErrorSerialized", this);
+            this.payloads.wrap = _ClassStatement.forPayload(FlowableCreateTest::wrap, "wrap", this);
+            this.payloads.unsafe = _ClassStatement.forPayload(FlowableCreateTest::unsafe, "unsafe", this);
+            this.payloads.unsafeWithFlowable = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableCreateTest::unsafeWithFlowable, java.lang.IllegalArgumentException.class), "unsafeWithFlowable", this);
+            this.payloads.createNullValueBuffer = _ClassStatement.forPayload(FlowableCreateTest::createNullValueBuffer, "createNullValueBuffer", this);
+            this.payloads.createNullValueLatest = _ClassStatement.forPayload(FlowableCreateTest::createNullValueLatest, "createNullValueLatest", this);
+            this.payloads.createNullValueError = _ClassStatement.forPayload(FlowableCreateTest::createNullValueError, "createNullValueError", this);
+            this.payloads.createNullValueDrop = _ClassStatement.forPayload(FlowableCreateTest::createNullValueDrop, "createNullValueDrop", this);
+            this.payloads.createNullValueMissing = _ClassStatement.forPayload(FlowableCreateTest::createNullValueMissing, "createNullValueMissing", this);
+            this.payloads.createNullValueBufferSerialized = _ClassStatement.forPayload(FlowableCreateTest::createNullValueBufferSerialized, "createNullValueBufferSerialized", this);
+            this.payloads.createNullValueLatestSerialized = _ClassStatement.forPayload(FlowableCreateTest::createNullValueLatestSerialized, "createNullValueLatestSerialized", this);
+            this.payloads.createNullValueErrorSerialized = _ClassStatement.forPayload(FlowableCreateTest::createNullValueErrorSerialized, "createNullValueErrorSerialized", this);
+            this.payloads.createNullValueDropSerialized = _ClassStatement.forPayload(FlowableCreateTest::createNullValueDropSerialized, "createNullValueDropSerialized", this);
+            this.payloads.createNullValueMissingSerialized = _ClassStatement.forPayload(FlowableCreateTest::createNullValueMissingSerialized, "createNullValueMissingSerialized", this);
+            this.payloads.onErrorRace = _ClassStatement.forPayload(FlowableCreateTest::onErrorRace, "onErrorRace", this);
+            this.payloads.onCompleteRace = _ClassStatement.forPayload(FlowableCreateTest::onCompleteRace, "onCompleteRace", this);
+            this.payloads.nullValue = _ClassStatement.forPayload(FlowableCreateTest::nullValue, "nullValue", this);
+            this.payloads.nullThrowable = _ClassStatement.forPayload(FlowableCreateTest::nullThrowable, "nullThrowable", this);
+            this.payloads.serializedConcurrentOnNextOnError = _ClassStatement.forPayload(FlowableCreateTest::serializedConcurrentOnNextOnError, "serializedConcurrentOnNextOnError", this);
+            this.payloads.callbackThrows = _ClassStatement.forPayload(FlowableCreateTest::callbackThrows, "callbackThrows", this);
+            this.payloads.nullValueSync = _ClassStatement.forPayload(FlowableCreateTest::nullValueSync, "nullValueSync", this);
+            this.payloads.createNullValue = _ClassStatement.forPayload(FlowableCreateTest::createNullValue, "createNullValue", this);
+            this.payloads.onErrorCrash = _ClassStatement.forPayload(FlowableCreateTest::onErrorCrash, "onErrorCrash", this);
+            this.payloads.onCompleteCrash = _ClassStatement.forPayload(FlowableCreateTest::onCompleteCrash, "onCompleteCrash", this);
+            this.payloads.createNullValueSerialized = _ClassStatement.forPayload(FlowableCreateTest::createNullValueSerialized, "createNullValueSerialized", this);
+            this.payloads.nullThrowableSync = _ClassStatement.forPayload(FlowableCreateTest::nullThrowableSync, "nullThrowableSync", this);
+            this.payloads.serializedConcurrentOnNext = _ClassStatement.forPayload(FlowableCreateTest::serializedConcurrentOnNext, "serializedConcurrentOnNext", this);
+            this.payloads.serializedConcurrentOnNextOnComplete = _ClassStatement.forPayload(FlowableCreateTest::serializedConcurrentOnNextOnComplete, "serializedConcurrentOnNextOnComplete", this);
+            this.payloads.serialized = _ClassStatement.forPayload(FlowableCreateTest::serialized, "serialized", this);
+            this.payloads.tryOnError = _ClassStatement.forPayload(FlowableCreateTest::tryOnError, "tryOnError", this);
+            this.payloads.tryOnErrorSerialized = _ClassStatement.forPayload(FlowableCreateTest::tryOnErrorSerialized, "tryOnErrorSerialized", this);
+            this.payloads.emittersHasToString = _ClassStatement.forPayload(FlowableCreateTest::emittersHasToString, "emittersHasToString", this);
+            this.payloads.serializedMissingMoreWorkWithComplete = _ClassStatement.forPayload(FlowableCreateTest::serializedMissingMoreWorkWithComplete, "serializedMissingMoreWorkWithComplete", this);
+            this.payloads.badRequest = _ClassStatement.forPayload(FlowableCreateTest::badRequest, "badRequest", this);
+            this.payloads.tryOnErrorNull = _ClassStatement.forPayload(FlowableCreateTest::tryOnErrorNull, "tryOnErrorNull", this);
+            this.payloads.serializedCompleteOnNext = _ClassStatement.forPayload(FlowableCreateTest::serializedCompleteOnNext, "serializedCompleteOnNext", this);
+            this.payloads.serializedCancelOnNext = _ClassStatement.forPayload(FlowableCreateTest::serializedCancelOnNext, "serializedCancelOnNext", this);
         }
     }
 }

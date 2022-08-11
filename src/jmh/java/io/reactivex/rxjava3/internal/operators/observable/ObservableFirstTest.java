@@ -475,264 +475,398 @@ public class ObservableFirstTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableFirstTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrElseOfNoneObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrElseOfNoneObservable, this.description("firstOrElseOfNoneObservable"));
+            this.payloads.firstOrElseOfNoneObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrElseOfSomeObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrElseOfSomeObservable, this.description("firstOrElseOfSomeObservable"));
+            this.payloads.firstOrElseOfSomeObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrElseWithPredicateOfNoneMatchingThePredicateObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrElseWithPredicateOfNoneMatchingThePredicateObservable, this.description("firstOrElseWithPredicateOfNoneMatchingThePredicateObservable"));
+            this.payloads.firstOrElseWithPredicateOfNoneMatchingThePredicateObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrElseWithPredicateOfSomeObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrElseWithPredicateOfSomeObservable, this.description("firstOrElseWithPredicateOfSomeObservable"));
+            this.payloads.firstOrElseWithPredicateOfSomeObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstObservable, this.description("firstObservable"));
+            this.payloads.firstObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstWithOneElementObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstWithOneElementObservable, this.description("firstWithOneElementObservable"));
+            this.payloads.firstWithOneElementObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstWithEmptyObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstWithEmptyObservable, this.description("firstWithEmptyObservable"));
+            this.payloads.firstWithEmptyObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstWithPredicateObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstWithPredicateObservable, this.description("firstWithPredicateObservable"));
+            this.payloads.firstWithPredicateObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstWithPredicateAndOneElementObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstWithPredicateAndOneElementObservable, this.description("firstWithPredicateAndOneElementObservable"));
+            this.payloads.firstWithPredicateAndOneElementObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstWithPredicateAndEmptyObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstWithPredicateAndEmptyObservable, this.description("firstWithPredicateAndEmptyObservable"));
+            this.payloads.firstWithPredicateAndEmptyObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrDefaultObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrDefaultObservable, this.description("firstOrDefaultObservable"));
+            this.payloads.firstOrDefaultObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrDefaultWithOneElementObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrDefaultWithOneElementObservable, this.description("firstOrDefaultWithOneElementObservable"));
+            this.payloads.firstOrDefaultWithOneElementObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrDefaultWithEmptyObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrDefaultWithEmptyObservable, this.description("firstOrDefaultWithEmptyObservable"));
+            this.payloads.firstOrDefaultWithEmptyObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrDefaultWithPredicateObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrDefaultWithPredicateObservable, this.description("firstOrDefaultWithPredicateObservable"));
+            this.payloads.firstOrDefaultWithPredicateObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrDefaultWithPredicateAndOneElementObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrDefaultWithPredicateAndOneElementObservable, this.description("firstOrDefaultWithPredicateAndOneElementObservable"));
+            this.payloads.firstOrDefaultWithPredicateAndOneElementObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrDefaultWithPredicateAndEmptyObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrDefaultWithPredicateAndEmptyObservable, this.description("firstOrDefaultWithPredicateAndEmptyObservable"));
+            this.payloads.firstOrDefaultWithPredicateAndEmptyObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrElseOfNone() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrElseOfNone, this.description("firstOrElseOfNone"));
+            this.payloads.firstOrElseOfNone.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrElseOfSome() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrElseOfSome, this.description("firstOrElseOfSome"));
+            this.payloads.firstOrElseOfSome.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrElseWithPredicateOfNoneMatchingThePredicate() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrElseWithPredicateOfNoneMatchingThePredicate, this.description("firstOrElseWithPredicateOfNoneMatchingThePredicate"));
+            this.payloads.firstOrElseWithPredicateOfNoneMatchingThePredicate.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrElseWithPredicateOfSome() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrElseWithPredicateOfSome, this.description("firstOrElseWithPredicateOfSome"));
+            this.payloads.firstOrElseWithPredicateOfSome.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_first() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::first, this.description("first"));
+            this.payloads.first.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstWithOneElement() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstWithOneElement, this.description("firstWithOneElement"));
+            this.payloads.firstWithOneElement.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstWithEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstWithEmpty, this.description("firstWithEmpty"));
+            this.payloads.firstWithEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstWithPredicate() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstWithPredicate, this.description("firstWithPredicate"));
+            this.payloads.firstWithPredicate.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstWithPredicateAndOneElement() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstWithPredicateAndOneElement, this.description("firstWithPredicateAndOneElement"));
+            this.payloads.firstWithPredicateAndOneElement.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstWithPredicateAndEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstWithPredicateAndEmpty, this.description("firstWithPredicateAndEmpty"));
+            this.payloads.firstWithPredicateAndEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrDefault() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrDefault, this.description("firstOrDefault"));
+            this.payloads.firstOrDefault.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrDefaultWithOneElement() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrDefaultWithOneElement, this.description("firstOrDefaultWithOneElement"));
+            this.payloads.firstOrDefaultWithOneElement.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrDefaultWithEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrDefaultWithEmpty, this.description("firstOrDefaultWithEmpty"));
+            this.payloads.firstOrDefaultWithEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrDefaultWithPredicate() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrDefaultWithPredicate, this.description("firstOrDefaultWithPredicate"));
+            this.payloads.firstOrDefaultWithPredicate.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrDefaultWithPredicateAndOneElement() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrDefaultWithPredicateAndOneElement, this.description("firstOrDefaultWithPredicateAndOneElement"));
+            this.payloads.firstOrDefaultWithPredicateAndOneElement.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrDefaultWithPredicateAndEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrDefaultWithPredicateAndEmpty, this.description("firstOrDefaultWithPredicateAndEmpty"));
+            this.payloads.firstOrDefaultWithPredicateAndEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrErrorNoElement() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrErrorNoElement, this.description("firstOrErrorNoElement"));
+            this.payloads.firstOrErrorNoElement.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrErrorOneElement() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrErrorOneElement, this.description("firstOrErrorOneElement"));
+            this.payloads.firstOrErrorOneElement.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrErrorMultipleElements() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrErrorMultipleElements, this.description("firstOrErrorMultipleElements"));
+            this.payloads.firstOrErrorMultipleElements.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrErrorError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrErrorError, this.description("firstOrErrorError"));
+            this.payloads.firstOrErrorError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrErrorNoElementObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrErrorNoElementObservable, this.description("firstOrErrorNoElementObservable"));
+            this.payloads.firstOrErrorNoElementObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrErrorOneElementObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrErrorOneElementObservable, this.description("firstOrErrorOneElementObservable"));
+            this.payloads.firstOrErrorOneElementObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrErrorMultipleElementsObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrErrorMultipleElementsObservable, this.description("firstOrErrorMultipleElementsObservable"));
+            this.payloads.firstOrErrorMultipleElementsObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrErrorErrorObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrErrorErrorObservable, this.description("firstOrErrorErrorObservable"));
+            this.payloads.firstOrErrorErrorObservable.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().before();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableFirstTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableFirstTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.before();
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private ObservableFirstTest implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableFirstTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableFirstTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableFirstTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableFirstTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableFirstTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableFirstTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableFirstTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public ObservableFirstTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement firstOrElseOfNoneObservable;
+
+            public org.junit.runners.model.Statement firstOrElseOfSomeObservable;
+
+            public org.junit.runners.model.Statement firstOrElseWithPredicateOfNoneMatchingThePredicateObservable;
+
+            public org.junit.runners.model.Statement firstOrElseWithPredicateOfSomeObservable;
+
+            public org.junit.runners.model.Statement firstObservable;
+
+            public org.junit.runners.model.Statement firstWithOneElementObservable;
+
+            public org.junit.runners.model.Statement firstWithEmptyObservable;
+
+            public org.junit.runners.model.Statement firstWithPredicateObservable;
+
+            public org.junit.runners.model.Statement firstWithPredicateAndOneElementObservable;
+
+            public org.junit.runners.model.Statement firstWithPredicateAndEmptyObservable;
+
+            public org.junit.runners.model.Statement firstOrDefaultObservable;
+
+            public org.junit.runners.model.Statement firstOrDefaultWithOneElementObservable;
+
+            public org.junit.runners.model.Statement firstOrDefaultWithEmptyObservable;
+
+            public org.junit.runners.model.Statement firstOrDefaultWithPredicateObservable;
+
+            public org.junit.runners.model.Statement firstOrDefaultWithPredicateAndOneElementObservable;
+
+            public org.junit.runners.model.Statement firstOrDefaultWithPredicateAndEmptyObservable;
+
+            public org.junit.runners.model.Statement firstOrElseOfNone;
+
+            public org.junit.runners.model.Statement firstOrElseOfSome;
+
+            public org.junit.runners.model.Statement firstOrElseWithPredicateOfNoneMatchingThePredicate;
+
+            public org.junit.runners.model.Statement firstOrElseWithPredicateOfSome;
+
+            public org.junit.runners.model.Statement first;
+
+            public org.junit.runners.model.Statement firstWithOneElement;
+
+            public org.junit.runners.model.Statement firstWithEmpty;
+
+            public org.junit.runners.model.Statement firstWithPredicate;
+
+            public org.junit.runners.model.Statement firstWithPredicateAndOneElement;
+
+            public org.junit.runners.model.Statement firstWithPredicateAndEmpty;
+
+            public org.junit.runners.model.Statement firstOrDefault;
+
+            public org.junit.runners.model.Statement firstOrDefaultWithOneElement;
+
+            public org.junit.runners.model.Statement firstOrDefaultWithEmpty;
+
+            public org.junit.runners.model.Statement firstOrDefaultWithPredicate;
+
+            public org.junit.runners.model.Statement firstOrDefaultWithPredicateAndOneElement;
+
+            public org.junit.runners.model.Statement firstOrDefaultWithPredicateAndEmpty;
+
+            public org.junit.runners.model.Statement firstOrErrorNoElement;
+
+            public org.junit.runners.model.Statement firstOrErrorOneElement;
+
+            public org.junit.runners.model.Statement firstOrErrorMultipleElements;
+
+            public org.junit.runners.model.Statement firstOrErrorError;
+
+            public org.junit.runners.model.Statement firstOrErrorNoElementObservable;
+
+            public org.junit.runners.model.Statement firstOrErrorOneElementObservable;
+
+            public org.junit.runners.model.Statement firstOrErrorMultipleElementsObservable;
+
+            public org.junit.runners.model.Statement firstOrErrorErrorObservable;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.firstOrElseOfNoneObservable = _ClassStatement.forPayload(ObservableFirstTest::firstOrElseOfNoneObservable, "firstOrElseOfNoneObservable", this);
+            this.payloads.firstOrElseOfSomeObservable = _ClassStatement.forPayload(ObservableFirstTest::firstOrElseOfSomeObservable, "firstOrElseOfSomeObservable", this);
+            this.payloads.firstOrElseWithPredicateOfNoneMatchingThePredicateObservable = _ClassStatement.forPayload(ObservableFirstTest::firstOrElseWithPredicateOfNoneMatchingThePredicateObservable, "firstOrElseWithPredicateOfNoneMatchingThePredicateObservable", this);
+            this.payloads.firstOrElseWithPredicateOfSomeObservable = _ClassStatement.forPayload(ObservableFirstTest::firstOrElseWithPredicateOfSomeObservable, "firstOrElseWithPredicateOfSomeObservable", this);
+            this.payloads.firstObservable = _ClassStatement.forPayload(ObservableFirstTest::firstObservable, "firstObservable", this);
+            this.payloads.firstWithOneElementObservable = _ClassStatement.forPayload(ObservableFirstTest::firstWithOneElementObservable, "firstWithOneElementObservable", this);
+            this.payloads.firstWithEmptyObservable = _ClassStatement.forPayload(ObservableFirstTest::firstWithEmptyObservable, "firstWithEmptyObservable", this);
+            this.payloads.firstWithPredicateObservable = _ClassStatement.forPayload(ObservableFirstTest::firstWithPredicateObservable, "firstWithPredicateObservable", this);
+            this.payloads.firstWithPredicateAndOneElementObservable = _ClassStatement.forPayload(ObservableFirstTest::firstWithPredicateAndOneElementObservable, "firstWithPredicateAndOneElementObservable", this);
+            this.payloads.firstWithPredicateAndEmptyObservable = _ClassStatement.forPayload(ObservableFirstTest::firstWithPredicateAndEmptyObservable, "firstWithPredicateAndEmptyObservable", this);
+            this.payloads.firstOrDefaultObservable = _ClassStatement.forPayload(ObservableFirstTest::firstOrDefaultObservable, "firstOrDefaultObservable", this);
+            this.payloads.firstOrDefaultWithOneElementObservable = _ClassStatement.forPayload(ObservableFirstTest::firstOrDefaultWithOneElementObservable, "firstOrDefaultWithOneElementObservable", this);
+            this.payloads.firstOrDefaultWithEmptyObservable = _ClassStatement.forPayload(ObservableFirstTest::firstOrDefaultWithEmptyObservable, "firstOrDefaultWithEmptyObservable", this);
+            this.payloads.firstOrDefaultWithPredicateObservable = _ClassStatement.forPayload(ObservableFirstTest::firstOrDefaultWithPredicateObservable, "firstOrDefaultWithPredicateObservable", this);
+            this.payloads.firstOrDefaultWithPredicateAndOneElementObservable = _ClassStatement.forPayload(ObservableFirstTest::firstOrDefaultWithPredicateAndOneElementObservable, "firstOrDefaultWithPredicateAndOneElementObservable", this);
+            this.payloads.firstOrDefaultWithPredicateAndEmptyObservable = _ClassStatement.forPayload(ObservableFirstTest::firstOrDefaultWithPredicateAndEmptyObservable, "firstOrDefaultWithPredicateAndEmptyObservable", this);
+            this.payloads.firstOrElseOfNone = _ClassStatement.forPayload(ObservableFirstTest::firstOrElseOfNone, "firstOrElseOfNone", this);
+            this.payloads.firstOrElseOfSome = _ClassStatement.forPayload(ObservableFirstTest::firstOrElseOfSome, "firstOrElseOfSome", this);
+            this.payloads.firstOrElseWithPredicateOfNoneMatchingThePredicate = _ClassStatement.forPayload(ObservableFirstTest::firstOrElseWithPredicateOfNoneMatchingThePredicate, "firstOrElseWithPredicateOfNoneMatchingThePredicate", this);
+            this.payloads.firstOrElseWithPredicateOfSome = _ClassStatement.forPayload(ObservableFirstTest::firstOrElseWithPredicateOfSome, "firstOrElseWithPredicateOfSome", this);
+            this.payloads.first = _ClassStatement.forPayload(ObservableFirstTest::first, "first", this);
+            this.payloads.firstWithOneElement = _ClassStatement.forPayload(ObservableFirstTest::firstWithOneElement, "firstWithOneElement", this);
+            this.payloads.firstWithEmpty = _ClassStatement.forPayload(ObservableFirstTest::firstWithEmpty, "firstWithEmpty", this);
+            this.payloads.firstWithPredicate = _ClassStatement.forPayload(ObservableFirstTest::firstWithPredicate, "firstWithPredicate", this);
+            this.payloads.firstWithPredicateAndOneElement = _ClassStatement.forPayload(ObservableFirstTest::firstWithPredicateAndOneElement, "firstWithPredicateAndOneElement", this);
+            this.payloads.firstWithPredicateAndEmpty = _ClassStatement.forPayload(ObservableFirstTest::firstWithPredicateAndEmpty, "firstWithPredicateAndEmpty", this);
+            this.payloads.firstOrDefault = _ClassStatement.forPayload(ObservableFirstTest::firstOrDefault, "firstOrDefault", this);
+            this.payloads.firstOrDefaultWithOneElement = _ClassStatement.forPayload(ObservableFirstTest::firstOrDefaultWithOneElement, "firstOrDefaultWithOneElement", this);
+            this.payloads.firstOrDefaultWithEmpty = _ClassStatement.forPayload(ObservableFirstTest::firstOrDefaultWithEmpty, "firstOrDefaultWithEmpty", this);
+            this.payloads.firstOrDefaultWithPredicate = _ClassStatement.forPayload(ObservableFirstTest::firstOrDefaultWithPredicate, "firstOrDefaultWithPredicate", this);
+            this.payloads.firstOrDefaultWithPredicateAndOneElement = _ClassStatement.forPayload(ObservableFirstTest::firstOrDefaultWithPredicateAndOneElement, "firstOrDefaultWithPredicateAndOneElement", this);
+            this.payloads.firstOrDefaultWithPredicateAndEmpty = _ClassStatement.forPayload(ObservableFirstTest::firstOrDefaultWithPredicateAndEmpty, "firstOrDefaultWithPredicateAndEmpty", this);
+            this.payloads.firstOrErrorNoElement = _ClassStatement.forPayload(ObservableFirstTest::firstOrErrorNoElement, "firstOrErrorNoElement", this);
+            this.payloads.firstOrErrorOneElement = _ClassStatement.forPayload(ObservableFirstTest::firstOrErrorOneElement, "firstOrErrorOneElement", this);
+            this.payloads.firstOrErrorMultipleElements = _ClassStatement.forPayload(ObservableFirstTest::firstOrErrorMultipleElements, "firstOrErrorMultipleElements", this);
+            this.payloads.firstOrErrorError = _ClassStatement.forPayload(ObservableFirstTest::firstOrErrorError, "firstOrErrorError", this);
+            this.payloads.firstOrErrorNoElementObservable = _ClassStatement.forPayload(ObservableFirstTest::firstOrErrorNoElementObservable, "firstOrErrorNoElementObservable", this);
+            this.payloads.firstOrErrorOneElementObservable = _ClassStatement.forPayload(ObservableFirstTest::firstOrErrorOneElementObservable, "firstOrErrorOneElementObservable", this);
+            this.payloads.firstOrErrorMultipleElementsObservable = _ClassStatement.forPayload(ObservableFirstTest::firstOrErrorMultipleElementsObservable, "firstOrErrorMultipleElementsObservable", this);
+            this.payloads.firstOrErrorErrorObservable = _ClassStatement.forPayload(ObservableFirstTest::firstOrErrorErrorObservable, "firstOrErrorErrorObservable", this);
         }
     }
 }

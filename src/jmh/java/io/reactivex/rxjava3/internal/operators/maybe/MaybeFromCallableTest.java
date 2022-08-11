@@ -182,72 +182,149 @@ public class MaybeFromCallableTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private MaybeFromCallableTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromCallable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromCallable, this.description("fromCallable"));
+            this.payloads.fromCallable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromCallableTwice() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromCallableTwice, this.description("fromCallableTwice"));
+            this.payloads.fromCallableTwice.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromCallableInvokesLazy() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromCallableInvokesLazy, this.description("fromCallableInvokesLazy"));
+            this.payloads.fromCallableInvokesLazy.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromCallableThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromCallableThrows, this.description("fromCallableThrows"));
+            this.payloads.fromCallableThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_callable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::callable, this.description("callable"));
+            this.payloads.callable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noErrorLoss() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noErrorLoss, this.description("noErrorLoss"));
+            this.payloads.noErrorLoss.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_shouldNotDeliverResultIfSubscriberUnsubscribedBeforeEmission() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::shouldNotDeliverResultIfSubscriberUnsubscribedBeforeEmission, this.description("shouldNotDeliverResultIfSubscriberUnsubscribedBeforeEmission"));
+            this.payloads.shouldNotDeliverResultIfSubscriberUnsubscribedBeforeEmission.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeUpfront() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeUpfront, this.description("disposeUpfront"));
+            this.payloads.disposeUpfront.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_success() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::success, this.description("success"));
+            this.payloads.success.evaluate();
         }
 
-        private MaybeFromCallableTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeFromCallableTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeFromCallableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeFromCallableTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public MaybeFromCallableTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeFromCallableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeFromCallableTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new MaybeFromCallableTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeFromCallableTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(MaybeFromCallableTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(MaybeFromCallableTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement fromCallable;
+
+            public org.junit.runners.model.Statement fromCallableTwice;
+
+            public org.junit.runners.model.Statement fromCallableInvokesLazy;
+
+            public org.junit.runners.model.Statement fromCallableThrows;
+
+            public org.junit.runners.model.Statement callable;
+
+            public org.junit.runners.model.Statement noErrorLoss;
+
+            public org.junit.runners.model.Statement shouldNotDeliverResultIfSubscriberUnsubscribedBeforeEmission;
+
+            public org.junit.runners.model.Statement disposeUpfront;
+
+            public org.junit.runners.model.Statement success;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.fromCallable = _ClassStatement.forPayload(MaybeFromCallableTest::fromCallable, "fromCallable", this);
+            this.payloads.fromCallableTwice = _ClassStatement.forPayload(MaybeFromCallableTest::fromCallableTwice, "fromCallableTwice", this);
+            this.payloads.fromCallableInvokesLazy = _ClassStatement.forPayload(MaybeFromCallableTest::fromCallableInvokesLazy, "fromCallableInvokesLazy", this);
+            this.payloads.fromCallableThrows = _ClassStatement.forPayload(MaybeFromCallableTest::fromCallableThrows, "fromCallableThrows", this);
+            this.payloads.callable = _ClassStatement.forPayload(MaybeFromCallableTest::callable, "callable", this);
+            this.payloads.noErrorLoss = _ClassStatement.forPayload(MaybeFromCallableTest::noErrorLoss, "noErrorLoss", this);
+            this.payloads.shouldNotDeliverResultIfSubscriberUnsubscribedBeforeEmission = _ClassStatement.forPayload(MaybeFromCallableTest::shouldNotDeliverResultIfSubscriberUnsubscribedBeforeEmission, "shouldNotDeliverResultIfSubscriberUnsubscribedBeforeEmission", this);
+            this.payloads.disposeUpfront = _ClassStatement.forPayload(MaybeFromCallableTest::disposeUpfront, "disposeUpfront", this);
+            this.payloads.success = _ClassStatement.forPayload(MaybeFromCallableTest::success, "success", this);
         }
     }
 }

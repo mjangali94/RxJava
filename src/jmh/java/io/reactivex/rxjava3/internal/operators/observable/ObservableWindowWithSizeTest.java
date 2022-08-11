@@ -473,192 +473,309 @@ public class ObservableWindowWithSizeTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableWindowWithSizeTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nonOverlappingWindows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nonOverlappingWindows, this.description("nonOverlappingWindows"));
+            this.payloads.nonOverlappingWindows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipAndCountGaplessWindows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipAndCountGaplessWindows, this.description("skipAndCountGaplessWindows"));
+            this.payloads.skipAndCountGaplessWindows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_overlappingWindows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::overlappingWindows, this.description("overlappingWindows"));
+            this.payloads.overlappingWindows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipAndCountWindowsWithGaps() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipAndCountWindowsWithGaps, this.description("skipAndCountWindowsWithGaps"));
+            this.payloads.skipAndCountWindowsWithGaps.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowUnsubscribeNonOverlapping() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::windowUnsubscribeNonOverlapping, this.description("windowUnsubscribeNonOverlapping"));
+            this.payloads.windowUnsubscribeNonOverlapping.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowUnsubscribeNonOverlappingAsyncSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::windowUnsubscribeNonOverlappingAsyncSource, this.description("windowUnsubscribeNonOverlappingAsyncSource"));
+            this.payloads.windowUnsubscribeNonOverlappingAsyncSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowUnsubscribeOverlapping() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::windowUnsubscribeOverlapping, this.description("windowUnsubscribeOverlapping"));
+            this.payloads.windowUnsubscribeOverlapping.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowUnsubscribeOverlappingAsyncSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::windowUnsubscribeOverlappingAsyncSource, this.description("windowUnsubscribeOverlappingAsyncSource"));
+            this.payloads.windowUnsubscribeOverlappingAsyncSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeFlatMapCompletes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeFlatMapCompletes, this.description("takeFlatMapCompletes"));
+            this.payloads.takeFlatMapCompletes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorExact() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorExact, this.description("errorExact"));
+            this.payloads.errorExact.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorSkip() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorSkip, this.description("errorSkip"));
+            this.payloads.errorSkip.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorOverlap() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorOverlap, this.description("errorOverlap"));
+            this.payloads.errorOverlap.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorExactInner() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorExactInner, this.description("errorExactInner"));
+            this.payloads.errorExactInner.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorSkipInner() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorSkipInner, this.description("errorSkipInner"));
+            this.payloads.errorSkipInner.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorOverlapInner() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorOverlapInner, this.description("errorOverlapInner"));
+            this.payloads.errorOverlapInner.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancellingWindowCancelsUpstreamSize() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancellingWindowCancelsUpstreamSize, this.description("cancellingWindowCancelsUpstreamSize"));
+            this.payloads.cancellingWindowCancelsUpstreamSize.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowAbandonmentCancelsUpstreamSize() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::windowAbandonmentCancelsUpstreamSize, this.description("windowAbandonmentCancelsUpstreamSize"));
+            this.payloads.windowAbandonmentCancelsUpstreamSize.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancellingWindowCancelsUpstreamSkip() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancellingWindowCancelsUpstreamSkip, this.description("cancellingWindowCancelsUpstreamSkip"));
+            this.payloads.cancellingWindowCancelsUpstreamSkip.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowAbandonmentCancelsUpstreamSkip() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::windowAbandonmentCancelsUpstreamSkip, this.description("windowAbandonmentCancelsUpstreamSkip"));
+            this.payloads.windowAbandonmentCancelsUpstreamSkip.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancellingWindowCancelsUpstreamOverlap() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancellingWindowCancelsUpstreamOverlap, this.description("cancellingWindowCancelsUpstreamOverlap"));
+            this.payloads.cancellingWindowCancelsUpstreamOverlap.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowAbandonmentCancelsUpstreamOverlap() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::windowAbandonmentCancelsUpstreamOverlap, this.description("windowAbandonmentCancelsUpstreamOverlap"));
+            this.payloads.windowAbandonmentCancelsUpstreamOverlap.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelWithoutWindowSize() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelWithoutWindowSize, this.description("cancelWithoutWindowSize"));
+            this.payloads.cancelWithoutWindowSize.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelAfterAbandonmentSize() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelAfterAbandonmentSize, this.description("cancelAfterAbandonmentSize"));
+            this.payloads.cancelAfterAbandonmentSize.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelWithoutWindowSkip() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelWithoutWindowSkip, this.description("cancelWithoutWindowSkip"));
+            this.payloads.cancelWithoutWindowSkip.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelAfterAbandonmentSkip() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelAfterAbandonmentSkip, this.description("cancelAfterAbandonmentSkip"));
+            this.payloads.cancelAfterAbandonmentSkip.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelWithoutWindowOverlap() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelWithoutWindowOverlap, this.description("cancelWithoutWindowOverlap"));
+            this.payloads.cancelWithoutWindowOverlap.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelAfterAbandonmentOverlap() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelAfterAbandonmentOverlap, this.description("cancelAfterAbandonmentOverlap"));
+            this.payloads.cancelAfterAbandonmentOverlap.evaluate();
         }
 
-        private ObservableWindowWithSizeTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableWindowWithSizeTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableWindowWithSizeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableWindowWithSizeTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservableWindowWithSizeTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableWindowWithSizeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableWindowWithSizeTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableWindowWithSizeTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableWindowWithSizeTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableWindowWithSizeTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableWindowWithSizeTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement nonOverlappingWindows;
+
+            public org.junit.runners.model.Statement skipAndCountGaplessWindows;
+
+            public org.junit.runners.model.Statement overlappingWindows;
+
+            public org.junit.runners.model.Statement skipAndCountWindowsWithGaps;
+
+            public org.junit.runners.model.Statement windowUnsubscribeNonOverlapping;
+
+            public org.junit.runners.model.Statement windowUnsubscribeNonOverlappingAsyncSource;
+
+            public org.junit.runners.model.Statement windowUnsubscribeOverlapping;
+
+            public org.junit.runners.model.Statement windowUnsubscribeOverlappingAsyncSource;
+
+            public org.junit.runners.model.Statement takeFlatMapCompletes;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement errorExact;
+
+            public org.junit.runners.model.Statement errorSkip;
+
+            public org.junit.runners.model.Statement errorOverlap;
+
+            public org.junit.runners.model.Statement errorExactInner;
+
+            public org.junit.runners.model.Statement errorSkipInner;
+
+            public org.junit.runners.model.Statement errorOverlapInner;
+
+            public org.junit.runners.model.Statement cancellingWindowCancelsUpstreamSize;
+
+            public org.junit.runners.model.Statement windowAbandonmentCancelsUpstreamSize;
+
+            public org.junit.runners.model.Statement cancellingWindowCancelsUpstreamSkip;
+
+            public org.junit.runners.model.Statement windowAbandonmentCancelsUpstreamSkip;
+
+            public org.junit.runners.model.Statement cancellingWindowCancelsUpstreamOverlap;
+
+            public org.junit.runners.model.Statement windowAbandonmentCancelsUpstreamOverlap;
+
+            public org.junit.runners.model.Statement cancelWithoutWindowSize;
+
+            public org.junit.runners.model.Statement cancelAfterAbandonmentSize;
+
+            public org.junit.runners.model.Statement cancelWithoutWindowSkip;
+
+            public org.junit.runners.model.Statement cancelAfterAbandonmentSkip;
+
+            public org.junit.runners.model.Statement cancelWithoutWindowOverlap;
+
+            public org.junit.runners.model.Statement cancelAfterAbandonmentOverlap;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.nonOverlappingWindows = _ClassStatement.forPayload(ObservableWindowWithSizeTest::nonOverlappingWindows, "nonOverlappingWindows", this);
+            this.payloads.skipAndCountGaplessWindows = _ClassStatement.forPayload(ObservableWindowWithSizeTest::skipAndCountGaplessWindows, "skipAndCountGaplessWindows", this);
+            this.payloads.overlappingWindows = _ClassStatement.forPayload(ObservableWindowWithSizeTest::overlappingWindows, "overlappingWindows", this);
+            this.payloads.skipAndCountWindowsWithGaps = _ClassStatement.forPayload(ObservableWindowWithSizeTest::skipAndCountWindowsWithGaps, "skipAndCountWindowsWithGaps", this);
+            this.payloads.windowUnsubscribeNonOverlapping = _ClassStatement.forPayload(ObservableWindowWithSizeTest::windowUnsubscribeNonOverlapping, "windowUnsubscribeNonOverlapping", this);
+            this.payloads.windowUnsubscribeNonOverlappingAsyncSource = _ClassStatement.forPayload(ObservableWindowWithSizeTest::windowUnsubscribeNonOverlappingAsyncSource, "windowUnsubscribeNonOverlappingAsyncSource", this);
+            this.payloads.windowUnsubscribeOverlapping = _ClassStatement.forPayload(ObservableWindowWithSizeTest::windowUnsubscribeOverlapping, "windowUnsubscribeOverlapping", this);
+            this.payloads.windowUnsubscribeOverlappingAsyncSource = _ClassStatement.forPayload(ObservableWindowWithSizeTest::windowUnsubscribeOverlappingAsyncSource, "windowUnsubscribeOverlappingAsyncSource", this);
+            this.payloads.takeFlatMapCompletes = _ClassStatement.forPayload(ObservableWindowWithSizeTest::takeFlatMapCompletes, "takeFlatMapCompletes", this);
+            this.payloads.dispose = _ClassStatement.forPayload(ObservableWindowWithSizeTest::dispose, "dispose", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(ObservableWindowWithSizeTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.errorExact = _ClassStatement.forPayload(ObservableWindowWithSizeTest::errorExact, "errorExact", this);
+            this.payloads.errorSkip = _ClassStatement.forPayload(ObservableWindowWithSizeTest::errorSkip, "errorSkip", this);
+            this.payloads.errorOverlap = _ClassStatement.forPayload(ObservableWindowWithSizeTest::errorOverlap, "errorOverlap", this);
+            this.payloads.errorExactInner = _ClassStatement.forPayload(ObservableWindowWithSizeTest::errorExactInner, "errorExactInner", this);
+            this.payloads.errorSkipInner = _ClassStatement.forPayload(ObservableWindowWithSizeTest::errorSkipInner, "errorSkipInner", this);
+            this.payloads.errorOverlapInner = _ClassStatement.forPayload(ObservableWindowWithSizeTest::errorOverlapInner, "errorOverlapInner", this);
+            this.payloads.cancellingWindowCancelsUpstreamSize = _ClassStatement.forPayload(ObservableWindowWithSizeTest::cancellingWindowCancelsUpstreamSize, "cancellingWindowCancelsUpstreamSize", this);
+            this.payloads.windowAbandonmentCancelsUpstreamSize = _ClassStatement.forPayload(ObservableWindowWithSizeTest::windowAbandonmentCancelsUpstreamSize, "windowAbandonmentCancelsUpstreamSize", this);
+            this.payloads.cancellingWindowCancelsUpstreamSkip = _ClassStatement.forPayload(ObservableWindowWithSizeTest::cancellingWindowCancelsUpstreamSkip, "cancellingWindowCancelsUpstreamSkip", this);
+            this.payloads.windowAbandonmentCancelsUpstreamSkip = _ClassStatement.forPayload(ObservableWindowWithSizeTest::windowAbandonmentCancelsUpstreamSkip, "windowAbandonmentCancelsUpstreamSkip", this);
+            this.payloads.cancellingWindowCancelsUpstreamOverlap = _ClassStatement.forPayload(ObservableWindowWithSizeTest::cancellingWindowCancelsUpstreamOverlap, "cancellingWindowCancelsUpstreamOverlap", this);
+            this.payloads.windowAbandonmentCancelsUpstreamOverlap = _ClassStatement.forPayload(ObservableWindowWithSizeTest::windowAbandonmentCancelsUpstreamOverlap, "windowAbandonmentCancelsUpstreamOverlap", this);
+            this.payloads.cancelWithoutWindowSize = _ClassStatement.forPayload(ObservableWindowWithSizeTest::cancelWithoutWindowSize, "cancelWithoutWindowSize", this);
+            this.payloads.cancelAfterAbandonmentSize = _ClassStatement.forPayload(ObservableWindowWithSizeTest::cancelAfterAbandonmentSize, "cancelAfterAbandonmentSize", this);
+            this.payloads.cancelWithoutWindowSkip = _ClassStatement.forPayload(ObservableWindowWithSizeTest::cancelWithoutWindowSkip, "cancelWithoutWindowSkip", this);
+            this.payloads.cancelAfterAbandonmentSkip = _ClassStatement.forPayload(ObservableWindowWithSizeTest::cancelAfterAbandonmentSkip, "cancelAfterAbandonmentSkip", this);
+            this.payloads.cancelWithoutWindowOverlap = _ClassStatement.forPayload(ObservableWindowWithSizeTest::cancelWithoutWindowOverlap, "cancelWithoutWindowOverlap", this);
+            this.payloads.cancelAfterAbandonmentOverlap = _ClassStatement.forPayload(ObservableWindowWithSizeTest::cancelAfterAbandonmentOverlap, "cancelAfterAbandonmentOverlap", this);
         }
     }
 }

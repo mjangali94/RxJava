@@ -1229,264 +1229,405 @@ public class FlowableRefCountTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableRefCountTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_refCountAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::refCountAsync, this.description("refCountAsync"));
+            this.payloads.refCountAsync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_refCountSynchronous() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::refCountSynchronous, this.description("refCountSynchronous"));
+            this.payloads.refCountSynchronous.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_refCountSynchronousTake() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::refCountSynchronousTake, this.description("refCountSynchronousTake"));
+            this.payloads.refCountSynchronousTake.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_repeat() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::repeat, this.description("repeat"));
+            this.payloads.repeat.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_connectUnsubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::connectUnsubscribe, this.description("connectUnsubscribe"));
+            this.payloads.connectUnsubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_connectUnsubscribeRaceConditionLoop() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::connectUnsubscribeRaceConditionLoop, this.description("connectUnsubscribeRaceConditionLoop"));
+            this.payloads.connectUnsubscribeRaceConditionLoop.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_connectUnsubscribeRaceCondition() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::connectUnsubscribeRaceCondition, this.description("connectUnsubscribeRaceCondition"));
+            this.payloads.connectUnsubscribeRaceCondition.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onlyFirstShouldSubscribeAndLastUnsubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onlyFirstShouldSubscribeAndLastUnsubscribe, this.description("onlyFirstShouldSubscribeAndLastUnsubscribe"));
+            this.payloads.onlyFirstShouldSubscribeAndLastUnsubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_refCount() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::refCount, this.description("refCount"));
+            this.payloads.refCount.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_alreadyUnsubscribedClient() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::alreadyUnsubscribedClient, this.description("alreadyUnsubscribedClient"));
+            this.payloads.alreadyUnsubscribedClient.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_alreadyUnsubscribedInterleavesWithClient() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::alreadyUnsubscribedInterleavesWithClient, this.description("alreadyUnsubscribedInterleavesWithClient"));
+            this.payloads.alreadyUnsubscribedInterleavesWithClient.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_connectDisconnectConnectAndSubjectState() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::connectDisconnectConnectAndSubjectState, this.description("connectDisconnectConnectAndSubjectState"));
+            this.payloads.connectDisconnectConnectAndSubjectState.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_upstreamErrorAllowsRetry() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::upstreamErrorAllowsRetry, this.description("upstreamErrorAllowsRetry"));
+            this.payloads.upstreamErrorAllowsRetry.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposed, this.description("disposed"));
+            this.payloads.disposed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noOpConnect() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noOpConnect, this.description("noOpConnect"));
+            this.payloads.noOpConnect.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_replayNoLeak() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::replayNoLeak, this.description("replayNoLeak"));
+            this.payloads.replayNoLeak.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_replayNoLeak2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::replayNoLeak2, this.description("replayNoLeak2"));
+            this.payloads.replayNoLeak2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_publishNoLeak() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::publishNoLeak, this.description("publishNoLeak"));
+            this.payloads.publishNoLeak.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_publishNoLeak2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::publishNoLeak2, this.description("publishNoLeak2"));
+            this.payloads.publishNoLeak2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_replayIsUnsubscribed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::replayIsUnsubscribed, this.description("replayIsUnsubscribed"));
+            this.payloads.replayIsUnsubscribed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSourceSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSourceSubscribe, this.description("badSourceSubscribe"));
+            this.payloads.badSourceSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSourceDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSourceDispose, this.description("badSourceDispose"));
+            this.payloads.badSourceDispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSourceConnect() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSourceConnect, this.description("badSourceConnect"));
+            this.payloads.badSourceConnect.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSourceSubscribe2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSourceSubscribe2, this.description("badSourceSubscribe2"));
+            this.payloads.badSourceSubscribe2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSourceCompleteDisconnect() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSourceCompleteDisconnect, this.description("badSourceCompleteDisconnect"));
+            this.payloads.badSourceCompleteDisconnect.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_blockingSourceAsnycCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::blockingSourceAsnycCancel, this.description("blockingSourceAsnycCancel"));
+            this.payloads.blockingSourceAsnycCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_byCount() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::byCount, this.description("byCount"));
+            this.payloads.byCount.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_resubscribeBeforeTimeout() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::resubscribeBeforeTimeout, this.description("resubscribeBeforeTimeout"));
+            this.payloads.resubscribeBeforeTimeout.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_letitTimeout() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::letitTimeout, this.description("letitTimeout"));
+            this.payloads.letitTimeout.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_comeAndGo() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::comeAndGo, this.description("comeAndGo"));
+            this.payloads.comeAndGo.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribeSubscribeRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribeSubscribeRace, this.description("unsubscribeSubscribeRace"));
+            this.payloads.unsubscribeSubscribeRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnX() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnX, this.description("doubleOnX"));
+            this.payloads.doubleOnX.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnXCount() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnXCount, this.description("doubleOnXCount"));
+            this.payloads.doubleOnXCount.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnXTime() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnXTime, this.description("doubleOnXTime"));
+            this.payloads.doubleOnXTime.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelTerminateStateExclusion() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelTerminateStateExclusion, this.description("cancelTerminateStateExclusion"));
+            this.payloads.cancelTerminateStateExclusion.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_replayRefCountShallBeThreadSafe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::replayRefCountShallBeThreadSafe, this.description("replayRefCountShallBeThreadSafe"));
+            this.payloads.replayRefCountShallBeThreadSafe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeoutResetsSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeoutResetsSource, this.description("timeoutResetsSource"));
+            this.payloads.timeoutResetsSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disconnectBeforeConnect() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disconnectBeforeConnect, this.description("disconnectBeforeConnect"));
+            this.payloads.disconnectBeforeConnect.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_publishRefCountShallBeThreadSafe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::publishRefCountShallBeThreadSafe, this.description("publishRefCountShallBeThreadSafe"));
+            this.payloads.publishRefCountShallBeThreadSafe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_upstreamTerminationTriggersAnotherCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::upstreamTerminationTriggersAnotherCancel, this.description("upstreamTerminationTriggersAnotherCancel"));
+            this.payloads.upstreamTerminationTriggersAnotherCancel.evaluate();
         }
 
-        private FlowableRefCountTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableRefCountTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRefCountTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRefCountTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableRefCountTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRefCountTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRefCountTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableRefCountTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRefCountTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableRefCountTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableRefCountTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement refCountAsync;
+
+            public org.junit.runners.model.Statement refCountSynchronous;
+
+            public org.junit.runners.model.Statement refCountSynchronousTake;
+
+            public org.junit.runners.model.Statement repeat;
+
+            public org.junit.runners.model.Statement connectUnsubscribe;
+
+            public org.junit.runners.model.Statement connectUnsubscribeRaceConditionLoop;
+
+            public org.junit.runners.model.Statement connectUnsubscribeRaceCondition;
+
+            public org.junit.runners.model.Statement onlyFirstShouldSubscribeAndLastUnsubscribe;
+
+            public org.junit.runners.model.Statement refCount;
+
+            public org.junit.runners.model.Statement alreadyUnsubscribedClient;
+
+            public org.junit.runners.model.Statement alreadyUnsubscribedInterleavesWithClient;
+
+            public org.junit.runners.model.Statement connectDisconnectConnectAndSubjectState;
+
+            public org.junit.runners.model.Statement upstreamErrorAllowsRetry;
+
+            public org.junit.runners.model.Statement disposed;
+
+            public org.junit.runners.model.Statement noOpConnect;
+
+            public org.junit.runners.model.Statement replayNoLeak;
+
+            public org.junit.runners.model.Statement replayNoLeak2;
+
+            public org.junit.runners.model.Statement publishNoLeak;
+
+            public org.junit.runners.model.Statement publishNoLeak2;
+
+            public org.junit.runners.model.Statement replayIsUnsubscribed;
+
+            public org.junit.runners.model.Statement badSourceSubscribe;
+
+            public org.junit.runners.model.Statement badSourceDispose;
+
+            public org.junit.runners.model.Statement badSourceConnect;
+
+            public org.junit.runners.model.Statement badSourceSubscribe2;
+
+            public org.junit.runners.model.Statement badSourceCompleteDisconnect;
+
+            public org.junit.runners.model.Statement blockingSourceAsnycCancel;
+
+            public org.junit.runners.model.Statement byCount;
+
+            public org.junit.runners.model.Statement resubscribeBeforeTimeout;
+
+            public org.junit.runners.model.Statement letitTimeout;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement comeAndGo;
+
+            public org.junit.runners.model.Statement unsubscribeSubscribeRace;
+
+            public org.junit.runners.model.Statement doubleOnX;
+
+            public org.junit.runners.model.Statement doubleOnXCount;
+
+            public org.junit.runners.model.Statement doubleOnXTime;
+
+            public org.junit.runners.model.Statement cancelTerminateStateExclusion;
+
+            public org.junit.runners.model.Statement replayRefCountShallBeThreadSafe;
+
+            public org.junit.runners.model.Statement timeoutResetsSource;
+
+            public org.junit.runners.model.Statement disconnectBeforeConnect;
+
+            public org.junit.runners.model.Statement publishRefCountShallBeThreadSafe;
+
+            public org.junit.runners.model.Statement upstreamTerminationTriggersAnotherCancel;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.refCountAsync = _ClassStatement.forPayload(FlowableRefCountTest::refCountAsync, "refCountAsync", this);
+            this.payloads.refCountSynchronous = _ClassStatement.forPayload(FlowableRefCountTest::refCountSynchronous, "refCountSynchronous", this);
+            this.payloads.refCountSynchronousTake = _ClassStatement.forPayload(FlowableRefCountTest::refCountSynchronousTake, "refCountSynchronousTake", this);
+            this.payloads.repeat = _ClassStatement.forPayload(FlowableRefCountTest::repeat, "repeat", this);
+            this.payloads.connectUnsubscribe = _ClassStatement.forPayload(FlowableRefCountTest::connectUnsubscribe, "connectUnsubscribe", this);
+            this.payloads.connectUnsubscribeRaceConditionLoop = _ClassStatement.forPayload(FlowableRefCountTest::connectUnsubscribeRaceConditionLoop, "connectUnsubscribeRaceConditionLoop", this);
+            this.payloads.connectUnsubscribeRaceCondition = _ClassStatement.forPayload(FlowableRefCountTest::connectUnsubscribeRaceCondition, "connectUnsubscribeRaceCondition", this);
+            this.payloads.onlyFirstShouldSubscribeAndLastUnsubscribe = _ClassStatement.forPayload(FlowableRefCountTest::onlyFirstShouldSubscribeAndLastUnsubscribe, "onlyFirstShouldSubscribeAndLastUnsubscribe", this);
+            this.payloads.refCount = _ClassStatement.forPayload(FlowableRefCountTest::refCount, "refCount", this);
+            this.payloads.alreadyUnsubscribedClient = _ClassStatement.forPayload(FlowableRefCountTest::alreadyUnsubscribedClient, "alreadyUnsubscribedClient", this);
+            this.payloads.alreadyUnsubscribedInterleavesWithClient = _ClassStatement.forPayload(FlowableRefCountTest::alreadyUnsubscribedInterleavesWithClient, "alreadyUnsubscribedInterleavesWithClient", this);
+            this.payloads.connectDisconnectConnectAndSubjectState = _ClassStatement.forPayload(FlowableRefCountTest::connectDisconnectConnectAndSubjectState, "connectDisconnectConnectAndSubjectState", this);
+            this.payloads.upstreamErrorAllowsRetry = _ClassStatement.forPayload(FlowableRefCountTest::upstreamErrorAllowsRetry, "upstreamErrorAllowsRetry", this);
+            this.payloads.disposed = _ClassStatement.forPayload(FlowableRefCountTest::disposed, "disposed", this);
+            this.payloads.noOpConnect = _ClassStatement.forPayload(FlowableRefCountTest::noOpConnect, "noOpConnect", this);
+            this.payloads.replayNoLeak = _ClassStatement.forPayload(FlowableRefCountTest::replayNoLeak, "replayNoLeak", this);
+            this.payloads.replayNoLeak2 = _ClassStatement.forPayload(FlowableRefCountTest::replayNoLeak2, "replayNoLeak2", this);
+            this.payloads.publishNoLeak = _ClassStatement.forPayload(FlowableRefCountTest::publishNoLeak, "publishNoLeak", this);
+            this.payloads.publishNoLeak2 = _ClassStatement.forPayload(FlowableRefCountTest::publishNoLeak2, "publishNoLeak2", this);
+            this.payloads.replayIsUnsubscribed = _ClassStatement.forPayload(FlowableRefCountTest::replayIsUnsubscribed, "replayIsUnsubscribed", this);
+            this.payloads.badSourceSubscribe = _ClassStatement.forPayload(FlowableRefCountTest::badSourceSubscribe, "badSourceSubscribe", this);
+            this.payloads.badSourceDispose = _ClassStatement.forPayload(FlowableRefCountTest::badSourceDispose, "badSourceDispose", this);
+            this.payloads.badSourceConnect = _ClassStatement.forPayload(FlowableRefCountTest::badSourceConnect, "badSourceConnect", this);
+            this.payloads.badSourceSubscribe2 = _ClassStatement.forPayload(FlowableRefCountTest::badSourceSubscribe2, "badSourceSubscribe2", this);
+            this.payloads.badSourceCompleteDisconnect = _ClassStatement.forPayload(FlowableRefCountTest::badSourceCompleteDisconnect, "badSourceCompleteDisconnect", this);
+            this.payloads.blockingSourceAsnycCancel = _ClassStatement.forPayload(FlowableRefCountTest::blockingSourceAsnycCancel, "blockingSourceAsnycCancel", this);
+            this.payloads.byCount = _ClassStatement.forPayload(FlowableRefCountTest::byCount, "byCount", this);
+            this.payloads.resubscribeBeforeTimeout = _ClassStatement.forPayload(FlowableRefCountTest::resubscribeBeforeTimeout, "resubscribeBeforeTimeout", this);
+            this.payloads.letitTimeout = _ClassStatement.forPayload(FlowableRefCountTest::letitTimeout, "letitTimeout", this);
+            this.payloads.error = _ClassStatement.forPayload(FlowableRefCountTest::error, "error", this);
+            this.payloads.comeAndGo = _ClassStatement.forPayload(FlowableRefCountTest::comeAndGo, "comeAndGo", this);
+            this.payloads.unsubscribeSubscribeRace = _ClassStatement.forPayload(FlowableRefCountTest::unsubscribeSubscribeRace, "unsubscribeSubscribeRace", this);
+            this.payloads.doubleOnX = _ClassStatement.forPayload(FlowableRefCountTest::doubleOnX, "doubleOnX", this);
+            this.payloads.doubleOnXCount = _ClassStatement.forPayload(FlowableRefCountTest::doubleOnXCount, "doubleOnXCount", this);
+            this.payloads.doubleOnXTime = _ClassStatement.forPayload(FlowableRefCountTest::doubleOnXTime, "doubleOnXTime", this);
+            this.payloads.cancelTerminateStateExclusion = _ClassStatement.forPayload(FlowableRefCountTest::cancelTerminateStateExclusion, "cancelTerminateStateExclusion", this);
+            this.payloads.replayRefCountShallBeThreadSafe = _ClassStatement.forPayload(FlowableRefCountTest::replayRefCountShallBeThreadSafe, "replayRefCountShallBeThreadSafe", this);
+            this.payloads.timeoutResetsSource = _ClassStatement.forPayload(FlowableRefCountTest::timeoutResetsSource, "timeoutResetsSource", this);
+            this.payloads.disconnectBeforeConnect = _ClassStatement.forPayload(FlowableRefCountTest::disconnectBeforeConnect, "disconnectBeforeConnect", this);
+            this.payloads.publishRefCountShallBeThreadSafe = _ClassStatement.forPayload(FlowableRefCountTest::publishRefCountShallBeThreadSafe, "publishRefCountShallBeThreadSafe", this);
+            this.payloads.upstreamTerminationTriggersAnotherCancel = _ClassStatement.forPayload(FlowableRefCountTest::upstreamTerminationTriggersAnotherCancel, "upstreamTerminationTriggersAnotherCancel", this);
         }
     }
 }

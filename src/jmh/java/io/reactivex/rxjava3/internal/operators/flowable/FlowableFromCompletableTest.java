@@ -158,78 +158,157 @@ public class FlowableFromCompletableTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableFromCompletableTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromCompletable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromCompletable, this.description("fromCompletable"));
+            this.payloads.fromCompletable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromCompletableTwice() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromCompletableTwice, this.description("fromCompletableTwice"));
+            this.payloads.fromCompletableTwice.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromCompletableInvokesLazy() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromCompletableInvokesLazy, this.description("fromCompletableInvokesLazy"));
+            this.payloads.fromCompletableInvokesLazy.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromCompletableThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromCompletableThrows, this.description("fromCompletableThrows"));
+            this.payloads.fromCompletableThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noErrorLoss() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noErrorLoss, this.description("noErrorLoss"));
+            this.payloads.noErrorLoss.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposedUpfront() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposedUpfront, this.description("disposedUpfront"));
+            this.payloads.disposedUpfront.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelWhileRunning() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelWhileRunning, this.description("cancelWhileRunning"));
+            this.payloads.cancelWhileRunning.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncFused() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncFused, this.description("asyncFused"));
+            this.payloads.asyncFused.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_syncFusedRejected() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::syncFusedRejected, this.description("syncFusedRejected"));
+            this.payloads.syncFusedRejected.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_upstream() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::upstream, this.description("upstream"));
+            this.payloads.upstream.evaluate();
         }
 
-        private FlowableFromCompletableTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableFromCompletableTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFromCompletableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFromCompletableTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableFromCompletableTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFromCompletableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFromCompletableTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableFromCompletableTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFromCompletableTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableFromCompletableTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableFromCompletableTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement fromCompletable;
+
+            public org.junit.runners.model.Statement fromCompletableTwice;
+
+            public org.junit.runners.model.Statement fromCompletableInvokesLazy;
+
+            public org.junit.runners.model.Statement fromCompletableThrows;
+
+            public org.junit.runners.model.Statement noErrorLoss;
+
+            public org.junit.runners.model.Statement disposedUpfront;
+
+            public org.junit.runners.model.Statement cancelWhileRunning;
+
+            public org.junit.runners.model.Statement asyncFused;
+
+            public org.junit.runners.model.Statement syncFusedRejected;
+
+            public org.junit.runners.model.Statement upstream;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.fromCompletable = _ClassStatement.forPayload(FlowableFromCompletableTest::fromCompletable, "fromCompletable", this);
+            this.payloads.fromCompletableTwice = _ClassStatement.forPayload(FlowableFromCompletableTest::fromCompletableTwice, "fromCompletableTwice", this);
+            this.payloads.fromCompletableInvokesLazy = _ClassStatement.forPayload(FlowableFromCompletableTest::fromCompletableInvokesLazy, "fromCompletableInvokesLazy", this);
+            this.payloads.fromCompletableThrows = _ClassStatement.forPayload(FlowableFromCompletableTest::fromCompletableThrows, "fromCompletableThrows", this);
+            this.payloads.noErrorLoss = _ClassStatement.forPayload(FlowableFromCompletableTest::noErrorLoss, "noErrorLoss", this);
+            this.payloads.disposedUpfront = _ClassStatement.forPayload(FlowableFromCompletableTest::disposedUpfront, "disposedUpfront", this);
+            this.payloads.cancelWhileRunning = _ClassStatement.forPayload(FlowableFromCompletableTest::cancelWhileRunning, "cancelWhileRunning", this);
+            this.payloads.asyncFused = _ClassStatement.forPayload(FlowableFromCompletableTest::asyncFused, "asyncFused", this);
+            this.payloads.syncFusedRejected = _ClassStatement.forPayload(FlowableFromCompletableTest::syncFusedRejected, "syncFusedRejected", this);
+            this.payloads.upstream = _ClassStatement.forPayload(FlowableFromCompletableTest::upstream, "upstream", this);
         }
     }
 }

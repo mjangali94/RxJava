@@ -1401,390 +1401,562 @@ public class FlowableMergeTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableMergeTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeFlowableOfFlowables() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeFlowableOfFlowables, this.description("mergeFlowableOfFlowables"));
+            this.payloads.mergeFlowableOfFlowables.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeArray() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeArray, this.description("mergeArray"));
+            this.payloads.mergeArray.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeList() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeList, this.description("mergeList"));
+            this.payloads.mergeList.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unSubscribeFlowableOfFlowables() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unSubscribeFlowableOfFlowables, this.description("unSubscribeFlowableOfFlowables"));
+            this.payloads.unSubscribeFlowableOfFlowables.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeArrayWithThreading() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeArrayWithThreading, this.description("mergeArrayWithThreading"));
+            this.payloads.mergeArrayWithThreading.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_synchronizationOfMultipleSequencesLoop() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::synchronizationOfMultipleSequencesLoop, this.description("synchronizationOfMultipleSequencesLoop"));
+            this.payloads.synchronizationOfMultipleSequencesLoop.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_synchronizationOfMultipleSequences() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::synchronizationOfMultipleSequences, this.description("synchronizationOfMultipleSequences"));
+            this.payloads.synchronizationOfMultipleSequences.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error1, this.description("error1"));
+            this.payloads.error1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error2, this.description("error2"));
+            this.payloads.error2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribeAsFlowablesComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribeAsFlowablesComplete, this.description("unsubscribeAsFlowablesComplete"));
+            this.payloads.unsubscribeAsFlowablesComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_earlyUnsubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::earlyUnsubscribe, this.description("earlyUnsubscribe"));
+            this.payloads.earlyUnsubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concurrency() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concurrency, this.description("concurrency"));
+            this.payloads.concurrency.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concurrencyWithSleeping() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concurrencyWithSleeping, this.description("concurrencyWithSleeping"));
+            this.payloads.concurrencyWithSleeping.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concurrencyWithBrokenOnCompleteContract() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concurrencyWithBrokenOnCompleteContract, this.description("concurrencyWithBrokenOnCompleteContract"));
+            this.payloads.concurrencyWithBrokenOnCompleteContract.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureUpstream() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureUpstream, this.description("backpressureUpstream"));
+            this.payloads.backpressureUpstream.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureUpstream2InLoop() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureUpstream2InLoop, this.description("backpressureUpstream2InLoop"));
+            this.payloads.backpressureUpstream2InLoop.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureUpstream2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureUpstream2, this.description("backpressureUpstream2"));
+            this.payloads.backpressureUpstream2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureDownstreamWithConcurrentStreams() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureDownstreamWithConcurrentStreams, this.description("backpressureDownstreamWithConcurrentStreams"));
+            this.payloads.backpressureDownstreamWithConcurrentStreams.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureBothUpstreamAndDownstreamWithSynchronousScalarFlowables() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureBothUpstreamAndDownstreamWithSynchronousScalarFlowables, this.description("backpressureBothUpstreamAndDownstreamWithSynchronousScalarFlowables"));
+            this.payloads.backpressureBothUpstreamAndDownstreamWithSynchronousScalarFlowables.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureBothUpstreamAndDownstreamWithRegularFlowables() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureBothUpstreamAndDownstreamWithRegularFlowables, this.description("backpressureBothUpstreamAndDownstreamWithRegularFlowables"));
+            this.payloads.backpressureBothUpstreamAndDownstreamWithRegularFlowables.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_merge1AsyncStreamOf1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::merge1AsyncStreamOf1, this.description("merge1AsyncStreamOf1"));
+            this.payloads.merge1AsyncStreamOf1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_merge1AsyncStreamOf1000() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::merge1AsyncStreamOf1000, this.description("merge1AsyncStreamOf1000"));
+            this.payloads.merge1AsyncStreamOf1000.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_merge10AsyncStreamOf1000() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::merge10AsyncStreamOf1000, this.description("merge10AsyncStreamOf1000"));
+            this.payloads.merge10AsyncStreamOf1000.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_merge1000AsyncStreamOf1000() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::merge1000AsyncStreamOf1000, this.description("merge1000AsyncStreamOf1000"));
+            this.payloads.merge1000AsyncStreamOf1000.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_merge2000AsyncStreamOf100() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::merge2000AsyncStreamOf100, this.description("merge2000AsyncStreamOf100"));
+            this.payloads.merge2000AsyncStreamOf100.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_merge100AsyncStreamOf1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::merge100AsyncStreamOf1, this.description("merge100AsyncStreamOf1"));
+            this.payloads.merge100AsyncStreamOf1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_merge1SyncStreamOf1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::merge1SyncStreamOf1, this.description("merge1SyncStreamOf1"));
+            this.payloads.merge1SyncStreamOf1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_merge1SyncStreamOf1000000() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::merge1SyncStreamOf1000000, this.description("merge1SyncStreamOf1000000"));
+            this.payloads.merge1SyncStreamOf1000000.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_merge1000SyncStreamOf1000() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::merge1000SyncStreamOf1000, this.description("merge1000SyncStreamOf1000"));
+            this.payloads.merge1000SyncStreamOf1000.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_merge10000SyncStreamOf10() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::merge10000SyncStreamOf10, this.description("merge10000SyncStreamOf10"));
+            this.payloads.merge10000SyncStreamOf10.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_merge1000000SyncStreamOf1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::merge1000000SyncStreamOf1, this.description("merge1000000SyncStreamOf1"));
+            this.payloads.merge1000000SyncStreamOf1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeManyAsyncSingle() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeManyAsyncSingle, this.description("mergeManyAsyncSingle"));
+            this.payloads.mergeManyAsyncSingle.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_shouldCompleteAfterApplyingBackpressure_NormalPath() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::shouldCompleteAfterApplyingBackpressure_NormalPath, this.description("shouldCompleteAfterApplyingBackpressure_NormalPath"));
+            this.payloads.shouldCompleteAfterApplyingBackpressure_NormalPath.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_shouldCompleteAfterApplyingBackpressure_FastPath() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::shouldCompleteAfterApplyingBackpressure_FastPath, this.description("shouldCompleteAfterApplyingBackpressure_FastPath"));
+            this.payloads.shouldCompleteAfterApplyingBackpressure_FastPath.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_shouldNotCompleteIfThereArePendingScalarSynchronousEmissionsWhenTheLastInnerSubscriberCompletes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::shouldNotCompleteIfThereArePendingScalarSynchronousEmissionsWhenTheLastInnerSubscriberCompletes, this.description("shouldNotCompleteIfThereArePendingScalarSynchronousEmissionsWhenTheLastInnerSubscriberCompletes"));
+            this.payloads.shouldNotCompleteIfThereArePendingScalarSynchronousEmissionsWhenTheLastInnerSubscriberCompletes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayedErrorsShouldBeEmittedWhenCompleteAfterApplyingBackpressure_NormalPath() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayedErrorsShouldBeEmittedWhenCompleteAfterApplyingBackpressure_NormalPath, this.description("delayedErrorsShouldBeEmittedWhenCompleteAfterApplyingBackpressure_NormalPath"));
+            this.payloads.delayedErrorsShouldBeEmittedWhenCompleteAfterApplyingBackpressure_NormalPath.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayedErrorsShouldBeEmittedWhenCompleteAfterApplyingBackpressure_FastPath() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayedErrorsShouldBeEmittedWhenCompleteAfterApplyingBackpressure_FastPath, this.description("delayedErrorsShouldBeEmittedWhenCompleteAfterApplyingBackpressure_FastPath"));
+            this.payloads.delayedErrorsShouldBeEmittedWhenCompleteAfterApplyingBackpressure_FastPath.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_shouldNotCompleteWhileThereAreStillScalarSynchronousEmissionsInTheQueue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::shouldNotCompleteWhileThereAreStillScalarSynchronousEmissionsInTheQueue, this.description("shouldNotCompleteWhileThereAreStillScalarSynchronousEmissionsInTheQueue"));
+            this.payloads.shouldNotCompleteWhileThereAreStillScalarSynchronousEmissionsInTheQueue.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_shouldNotReceivedDelayedErrorWhileThereAreStillScalarSynchronousEmissionsInTheQueue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::shouldNotReceivedDelayedErrorWhileThereAreStillScalarSynchronousEmissionsInTheQueue, this.description("shouldNotReceivedDelayedErrorWhileThereAreStillScalarSynchronousEmissionsInTheQueue"));
+            this.payloads.shouldNotReceivedDelayedErrorWhileThereAreStillScalarSynchronousEmissionsInTheQueue.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_shouldNotReceivedDelayedErrorWhileThereAreStillNormalEmissionsInTheQueue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::shouldNotReceivedDelayedErrorWhileThereAreStillNormalEmissionsInTheQueue, this.description("shouldNotReceivedDelayedErrorWhileThereAreStillNormalEmissionsInTheQueue"));
+            this.payloads.shouldNotReceivedDelayedErrorWhileThereAreStillNormalEmissionsInTheQueue.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeKeepsRequesting() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeKeepsRequesting, this.description("mergeKeepsRequesting"));
+            this.payloads.mergeKeepsRequesting.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeRequestOverflow() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeRequestOverflow, this.description("mergeRequestOverflow"));
+            this.payloads.mergeRequestOverflow.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fastMergeFullScalar() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fastMergeFullScalar, this.description("fastMergeFullScalar"));
+            this.payloads.fastMergeFullScalar.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fastMergeHiddenScalar() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fastMergeHiddenScalar, this.description("fastMergeHiddenScalar"));
+            this.payloads.fastMergeHiddenScalar.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_slowMergeFullScalar() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::slowMergeFullScalar, this.description("slowMergeFullScalar"));
+            this.payloads.slowMergeFullScalar.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_slowMergeHiddenScalar() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::slowMergeHiddenScalar, this.description("slowMergeHiddenScalar"));
+            this.payloads.slowMergeHiddenScalar.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_negativeMaxConcurrent() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::negativeMaxConcurrent, this.description("negativeMaxConcurrent"));
+            this.payloads.negativeMaxConcurrent.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zeroMaxConcurrent() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zeroMaxConcurrent, this.description("zeroMaxConcurrent"));
+            this.payloads.zeroMaxConcurrent.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeConcurrentJustJust() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeConcurrentJustJust, this.description("mergeConcurrentJustJust"));
+            this.payloads.mergeConcurrentJustJust.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeConcurrentJustRange() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeConcurrentJustRange, this.description("mergeConcurrentJustRange"));
+            this.payloads.mergeConcurrentJustRange.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeArrayMaxConcurrent() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeArrayMaxConcurrent, this.description("mergeArrayMaxConcurrent"));
+            this.payloads.mergeArrayMaxConcurrent.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapJustJust() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapJustJust, this.description("flatMapJustJust"));
+            this.payloads.flatMapJustJust.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapJustRange() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapJustRange, this.description("flatMapJustRange"));
+            this.payloads.flatMapJustRange.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapMaxConcurrentJustJust() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapMaxConcurrentJustJust, this.description("flatMapMaxConcurrentJustJust"));
+            this.payloads.flatMapMaxConcurrentJustJust.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapMaxConcurrentJustRange() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapMaxConcurrentJustRange, this.description("flatMapMaxConcurrentJustRange"));
+            this.payloads.flatMapMaxConcurrentJustRange.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noInnerReordering() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noInnerReordering, this.description("noInnerReordering"));
+            this.payloads.noInnerReordering.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noOuterScalarReordering() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noOuterScalarReordering, this.description("noOuterScalarReordering"));
+            this.payloads.noOuterScalarReordering.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_array() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::array, this.description("array"));
+            this.payloads.array.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeArray2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeArray2, this.description("mergeArray2"));
+            this.payloads.mergeArray2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeErrors() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeErrors, this.description("mergeErrors"));
+            this.payloads.mergeErrors.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().before();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableMergeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableMergeTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.before();
+                try {
+                    this.payload.accept(this.benchmark.instance);
+                } finally {
+                    this.benchmark.instance.after();
+                }
+            }
         }
 
-        @java.lang.Override
-        public void after() throws java.lang.Throwable {
-            this.implementation().after();
-            super.after();
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableMergeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableMergeTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableMergeTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableMergeTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableMergeTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableMergeTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        private FlowableMergeTest implementation;
+        private static class _Payloads {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableMergeTest();
+            public org.junit.runners.model.Statement mergeFlowableOfFlowables;
+
+            public org.junit.runners.model.Statement mergeArray;
+
+            public org.junit.runners.model.Statement mergeList;
+
+            public org.junit.runners.model.Statement unSubscribeFlowableOfFlowables;
+
+            public org.junit.runners.model.Statement mergeArrayWithThreading;
+
+            public org.junit.runners.model.Statement synchronizationOfMultipleSequencesLoop;
+
+            public org.junit.runners.model.Statement synchronizationOfMultipleSequences;
+
+            public org.junit.runners.model.Statement error1;
+
+            public org.junit.runners.model.Statement error2;
+
+            public org.junit.runners.model.Statement unsubscribeAsFlowablesComplete;
+
+            public org.junit.runners.model.Statement earlyUnsubscribe;
+
+            public org.junit.runners.model.Statement concurrency;
+
+            public org.junit.runners.model.Statement concurrencyWithSleeping;
+
+            public org.junit.runners.model.Statement concurrencyWithBrokenOnCompleteContract;
+
+            public org.junit.runners.model.Statement backpressureUpstream;
+
+            public org.junit.runners.model.Statement backpressureUpstream2InLoop;
+
+            public org.junit.runners.model.Statement backpressureUpstream2;
+
+            public org.junit.runners.model.Statement backpressureDownstreamWithConcurrentStreams;
+
+            public org.junit.runners.model.Statement backpressureBothUpstreamAndDownstreamWithSynchronousScalarFlowables;
+
+            public org.junit.runners.model.Statement backpressureBothUpstreamAndDownstreamWithRegularFlowables;
+
+            public org.junit.runners.model.Statement merge1AsyncStreamOf1;
+
+            public org.junit.runners.model.Statement merge1AsyncStreamOf1000;
+
+            public org.junit.runners.model.Statement merge10AsyncStreamOf1000;
+
+            public org.junit.runners.model.Statement merge1000AsyncStreamOf1000;
+
+            public org.junit.runners.model.Statement merge2000AsyncStreamOf100;
+
+            public org.junit.runners.model.Statement merge100AsyncStreamOf1;
+
+            public org.junit.runners.model.Statement merge1SyncStreamOf1;
+
+            public org.junit.runners.model.Statement merge1SyncStreamOf1000000;
+
+            public org.junit.runners.model.Statement merge1000SyncStreamOf1000;
+
+            public org.junit.runners.model.Statement merge10000SyncStreamOf10;
+
+            public org.junit.runners.model.Statement merge1000000SyncStreamOf1;
+
+            public org.junit.runners.model.Statement mergeManyAsyncSingle;
+
+            public org.junit.runners.model.Statement shouldCompleteAfterApplyingBackpressure_NormalPath;
+
+            public org.junit.runners.model.Statement shouldCompleteAfterApplyingBackpressure_FastPath;
+
+            public org.junit.runners.model.Statement shouldNotCompleteIfThereArePendingScalarSynchronousEmissionsWhenTheLastInnerSubscriberCompletes;
+
+            public org.junit.runners.model.Statement delayedErrorsShouldBeEmittedWhenCompleteAfterApplyingBackpressure_NormalPath;
+
+            public org.junit.runners.model.Statement delayedErrorsShouldBeEmittedWhenCompleteAfterApplyingBackpressure_FastPath;
+
+            public org.junit.runners.model.Statement shouldNotCompleteWhileThereAreStillScalarSynchronousEmissionsInTheQueue;
+
+            public org.junit.runners.model.Statement shouldNotReceivedDelayedErrorWhileThereAreStillScalarSynchronousEmissionsInTheQueue;
+
+            public org.junit.runners.model.Statement shouldNotReceivedDelayedErrorWhileThereAreStillNormalEmissionsInTheQueue;
+
+            public org.junit.runners.model.Statement mergeKeepsRequesting;
+
+            public org.junit.runners.model.Statement mergeRequestOverflow;
+
+            public org.junit.runners.model.Statement fastMergeFullScalar;
+
+            public org.junit.runners.model.Statement fastMergeHiddenScalar;
+
+            public org.junit.runners.model.Statement slowMergeFullScalar;
+
+            public org.junit.runners.model.Statement slowMergeHiddenScalar;
+
+            public org.junit.runners.model.Statement negativeMaxConcurrent;
+
+            public org.junit.runners.model.Statement zeroMaxConcurrent;
+
+            public org.junit.runners.model.Statement mergeConcurrentJustJust;
+
+            public org.junit.runners.model.Statement mergeConcurrentJustRange;
+
+            public org.junit.runners.model.Statement mergeArrayMaxConcurrent;
+
+            public org.junit.runners.model.Statement flatMapJustJust;
+
+            public org.junit.runners.model.Statement flatMapJustRange;
+
+            public org.junit.runners.model.Statement flatMapMaxConcurrentJustJust;
+
+            public org.junit.runners.model.Statement flatMapMaxConcurrentJustRange;
+
+            public org.junit.runners.model.Statement noInnerReordering;
+
+            public org.junit.runners.model.Statement noOuterScalarReordering;
+
+            public org.junit.runners.model.Statement array;
+
+            public org.junit.runners.model.Statement mergeArray2;
+
+            public org.junit.runners.model.Statement mergeErrors;
         }
 
-        @java.lang.Override
-        public FlowableMergeTest implementation() {
-            return this.implementation;
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.mergeFlowableOfFlowables = _ClassStatement.forPayload(FlowableMergeTest::mergeFlowableOfFlowables, "mergeFlowableOfFlowables", this);
+            this.payloads.mergeArray = _ClassStatement.forPayload(FlowableMergeTest::mergeArray, "mergeArray", this);
+            this.payloads.mergeList = _ClassStatement.forPayload(FlowableMergeTest::mergeList, "mergeList", this);
+            this.payloads.unSubscribeFlowableOfFlowables = _ClassStatement.forPayload(FlowableMergeTest::unSubscribeFlowableOfFlowables, "unSubscribeFlowableOfFlowables", this);
+            this.payloads.mergeArrayWithThreading = _ClassStatement.forPayload(FlowableMergeTest::mergeArrayWithThreading, "mergeArrayWithThreading", this);
+            this.payloads.synchronizationOfMultipleSequencesLoop = _ClassStatement.forPayload(FlowableMergeTest::synchronizationOfMultipleSequencesLoop, "synchronizationOfMultipleSequencesLoop", this);
+            this.payloads.synchronizationOfMultipleSequences = _ClassStatement.forPayload(FlowableMergeTest::synchronizationOfMultipleSequences, "synchronizationOfMultipleSequences", this);
+            this.payloads.error1 = _ClassStatement.forPayload(FlowableMergeTest::error1, "error1", this);
+            this.payloads.error2 = _ClassStatement.forPayload(FlowableMergeTest::error2, "error2", this);
+            this.payloads.unsubscribeAsFlowablesComplete = _ClassStatement.forPayload(FlowableMergeTest::unsubscribeAsFlowablesComplete, "unsubscribeAsFlowablesComplete", this);
+            this.payloads.earlyUnsubscribe = _ClassStatement.forPayload(FlowableMergeTest::earlyUnsubscribe, "earlyUnsubscribe", this);
+            this.payloads.concurrency = _ClassStatement.forPayload(FlowableMergeTest::concurrency, "concurrency", this);
+            this.payloads.concurrencyWithSleeping = _ClassStatement.forPayload(FlowableMergeTest::concurrencyWithSleeping, "concurrencyWithSleeping", this);
+            this.payloads.concurrencyWithBrokenOnCompleteContract = _ClassStatement.forPayload(FlowableMergeTest::concurrencyWithBrokenOnCompleteContract, "concurrencyWithBrokenOnCompleteContract", this);
+            this.payloads.backpressureUpstream = _ClassStatement.forPayload(FlowableMergeTest::backpressureUpstream, "backpressureUpstream", this);
+            this.payloads.backpressureUpstream2InLoop = _ClassStatement.forPayload(FlowableMergeTest::backpressureUpstream2InLoop, "backpressureUpstream2InLoop", this);
+            this.payloads.backpressureUpstream2 = _ClassStatement.forPayload(FlowableMergeTest::backpressureUpstream2, "backpressureUpstream2", this);
+            this.payloads.backpressureDownstreamWithConcurrentStreams = _ClassStatement.forPayload(FlowableMergeTest::backpressureDownstreamWithConcurrentStreams, "backpressureDownstreamWithConcurrentStreams", this);
+            this.payloads.backpressureBothUpstreamAndDownstreamWithSynchronousScalarFlowables = _ClassStatement.forPayload(FlowableMergeTest::backpressureBothUpstreamAndDownstreamWithSynchronousScalarFlowables, "backpressureBothUpstreamAndDownstreamWithSynchronousScalarFlowables", this);
+            this.payloads.backpressureBothUpstreamAndDownstreamWithRegularFlowables = _ClassStatement.forPayload(FlowableMergeTest::backpressureBothUpstreamAndDownstreamWithRegularFlowables, "backpressureBothUpstreamAndDownstreamWithRegularFlowables", this);
+            this.payloads.merge1AsyncStreamOf1 = _ClassStatement.forPayload(FlowableMergeTest::merge1AsyncStreamOf1, "merge1AsyncStreamOf1", this);
+            this.payloads.merge1AsyncStreamOf1000 = _ClassStatement.forPayload(FlowableMergeTest::merge1AsyncStreamOf1000, "merge1AsyncStreamOf1000", this);
+            this.payloads.merge10AsyncStreamOf1000 = _ClassStatement.forPayload(FlowableMergeTest::merge10AsyncStreamOf1000, "merge10AsyncStreamOf1000", this);
+            this.payloads.merge1000AsyncStreamOf1000 = _ClassStatement.forPayload(FlowableMergeTest::merge1000AsyncStreamOf1000, "merge1000AsyncStreamOf1000", this);
+            this.payloads.merge2000AsyncStreamOf100 = _ClassStatement.forPayload(FlowableMergeTest::merge2000AsyncStreamOf100, "merge2000AsyncStreamOf100", this);
+            this.payloads.merge100AsyncStreamOf1 = _ClassStatement.forPayload(FlowableMergeTest::merge100AsyncStreamOf1, "merge100AsyncStreamOf1", this);
+            this.payloads.merge1SyncStreamOf1 = _ClassStatement.forPayload(FlowableMergeTest::merge1SyncStreamOf1, "merge1SyncStreamOf1", this);
+            this.payloads.merge1SyncStreamOf1000000 = _ClassStatement.forPayload(FlowableMergeTest::merge1SyncStreamOf1000000, "merge1SyncStreamOf1000000", this);
+            this.payloads.merge1000SyncStreamOf1000 = _ClassStatement.forPayload(FlowableMergeTest::merge1000SyncStreamOf1000, "merge1000SyncStreamOf1000", this);
+            this.payloads.merge10000SyncStreamOf10 = _ClassStatement.forPayload(FlowableMergeTest::merge10000SyncStreamOf10, "merge10000SyncStreamOf10", this);
+            this.payloads.merge1000000SyncStreamOf1 = _ClassStatement.forPayload(FlowableMergeTest::merge1000000SyncStreamOf1, "merge1000000SyncStreamOf1", this);
+            this.payloads.mergeManyAsyncSingle = _ClassStatement.forPayload(FlowableMergeTest::mergeManyAsyncSingle, "mergeManyAsyncSingle", this);
+            this.payloads.shouldCompleteAfterApplyingBackpressure_NormalPath = _ClassStatement.forPayload(FlowableMergeTest::shouldCompleteAfterApplyingBackpressure_NormalPath, "shouldCompleteAfterApplyingBackpressure_NormalPath", this);
+            this.payloads.shouldCompleteAfterApplyingBackpressure_FastPath = _ClassStatement.forPayload(FlowableMergeTest::shouldCompleteAfterApplyingBackpressure_FastPath, "shouldCompleteAfterApplyingBackpressure_FastPath", this);
+            this.payloads.shouldNotCompleteIfThereArePendingScalarSynchronousEmissionsWhenTheLastInnerSubscriberCompletes = _ClassStatement.forPayload(FlowableMergeTest::shouldNotCompleteIfThereArePendingScalarSynchronousEmissionsWhenTheLastInnerSubscriberCompletes, "shouldNotCompleteIfThereArePendingScalarSynchronousEmissionsWhenTheLastInnerSubscriberCompletes", this);
+            this.payloads.delayedErrorsShouldBeEmittedWhenCompleteAfterApplyingBackpressure_NormalPath = _ClassStatement.forPayload(FlowableMergeTest::delayedErrorsShouldBeEmittedWhenCompleteAfterApplyingBackpressure_NormalPath, "delayedErrorsShouldBeEmittedWhenCompleteAfterApplyingBackpressure_NormalPath", this);
+            this.payloads.delayedErrorsShouldBeEmittedWhenCompleteAfterApplyingBackpressure_FastPath = _ClassStatement.forPayload(FlowableMergeTest::delayedErrorsShouldBeEmittedWhenCompleteAfterApplyingBackpressure_FastPath, "delayedErrorsShouldBeEmittedWhenCompleteAfterApplyingBackpressure_FastPath", this);
+            this.payloads.shouldNotCompleteWhileThereAreStillScalarSynchronousEmissionsInTheQueue = _ClassStatement.forPayload(FlowableMergeTest::shouldNotCompleteWhileThereAreStillScalarSynchronousEmissionsInTheQueue, "shouldNotCompleteWhileThereAreStillScalarSynchronousEmissionsInTheQueue", this);
+            this.payloads.shouldNotReceivedDelayedErrorWhileThereAreStillScalarSynchronousEmissionsInTheQueue = _ClassStatement.forPayload(FlowableMergeTest::shouldNotReceivedDelayedErrorWhileThereAreStillScalarSynchronousEmissionsInTheQueue, "shouldNotReceivedDelayedErrorWhileThereAreStillScalarSynchronousEmissionsInTheQueue", this);
+            this.payloads.shouldNotReceivedDelayedErrorWhileThereAreStillNormalEmissionsInTheQueue = _ClassStatement.forPayload(FlowableMergeTest::shouldNotReceivedDelayedErrorWhileThereAreStillNormalEmissionsInTheQueue, "shouldNotReceivedDelayedErrorWhileThereAreStillNormalEmissionsInTheQueue", this);
+            this.payloads.mergeKeepsRequesting = _ClassStatement.forPayload(FlowableMergeTest::mergeKeepsRequesting, "mergeKeepsRequesting", this);
+            this.payloads.mergeRequestOverflow = _ClassStatement.forPayload(FlowableMergeTest::mergeRequestOverflow, "mergeRequestOverflow", this);
+            this.payloads.fastMergeFullScalar = _ClassStatement.forPayload(FlowableMergeTest::fastMergeFullScalar, "fastMergeFullScalar", this);
+            this.payloads.fastMergeHiddenScalar = _ClassStatement.forPayload(FlowableMergeTest::fastMergeHiddenScalar, "fastMergeHiddenScalar", this);
+            this.payloads.slowMergeFullScalar = _ClassStatement.forPayload(FlowableMergeTest::slowMergeFullScalar, "slowMergeFullScalar", this);
+            this.payloads.slowMergeHiddenScalar = _ClassStatement.forPayload(FlowableMergeTest::slowMergeHiddenScalar, "slowMergeHiddenScalar", this);
+            this.payloads.negativeMaxConcurrent = _ClassStatement.forPayload(FlowableMergeTest::negativeMaxConcurrent, "negativeMaxConcurrent", this);
+            this.payloads.zeroMaxConcurrent = _ClassStatement.forPayload(FlowableMergeTest::zeroMaxConcurrent, "zeroMaxConcurrent", this);
+            this.payloads.mergeConcurrentJustJust = _ClassStatement.forPayload(FlowableMergeTest::mergeConcurrentJustJust, "mergeConcurrentJustJust", this);
+            this.payloads.mergeConcurrentJustRange = _ClassStatement.forPayload(FlowableMergeTest::mergeConcurrentJustRange, "mergeConcurrentJustRange", this);
+            this.payloads.mergeArrayMaxConcurrent = _ClassStatement.forPayload(FlowableMergeTest::mergeArrayMaxConcurrent, "mergeArrayMaxConcurrent", this);
+            this.payloads.flatMapJustJust = _ClassStatement.forPayload(FlowableMergeTest::flatMapJustJust, "flatMapJustJust", this);
+            this.payloads.flatMapJustRange = _ClassStatement.forPayload(FlowableMergeTest::flatMapJustRange, "flatMapJustRange", this);
+            this.payloads.flatMapMaxConcurrentJustJust = _ClassStatement.forPayload(FlowableMergeTest::flatMapMaxConcurrentJustJust, "flatMapMaxConcurrentJustJust", this);
+            this.payloads.flatMapMaxConcurrentJustRange = _ClassStatement.forPayload(FlowableMergeTest::flatMapMaxConcurrentJustRange, "flatMapMaxConcurrentJustRange", this);
+            this.payloads.noInnerReordering = _ClassStatement.forPayload(FlowableMergeTest::noInnerReordering, "noInnerReordering", this);
+            this.payloads.noOuterScalarReordering = _ClassStatement.forPayload(FlowableMergeTest::noOuterScalarReordering, "noOuterScalarReordering", this);
+            this.payloads.array = _ClassStatement.forPayload(FlowableMergeTest::array, "array", this);
+            this.payloads.mergeArray2 = _ClassStatement.forPayload(FlowableMergeTest::mergeArray2, "mergeArray2", this);
+            this.payloads.mergeErrors = _ClassStatement.forPayload(FlowableMergeTest::mergeErrors, "mergeErrors", this);
         }
     }
 }

@@ -334,114 +334,205 @@ public final class FlowableCollectTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableCollectTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectToListFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectToListFlowable, this.description("collectToListFlowable"));
+            this.payloads.collectToListFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectToStringFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectToStringFlowable, this.description("collectToStringFlowable"));
+            this.payloads.collectToStringFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_factoryFailureResultsInErrorEmissionFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::factoryFailureResultsInErrorEmissionFlowable, this.description("factoryFailureResultsInErrorEmissionFlowable"));
+            this.payloads.factoryFailureResultsInErrorEmissionFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectorFailureDoesNotResultInTwoErrorEmissionsFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectorFailureDoesNotResultInTwoErrorEmissionsFlowable, this.description("collectorFailureDoesNotResultInTwoErrorEmissionsFlowable"));
+            this.payloads.collectorFailureDoesNotResultInTwoErrorEmissionsFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectorFailureDoesNotResultInErrorAndCompletedEmissionsFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectorFailureDoesNotResultInErrorAndCompletedEmissionsFlowable, this.description("collectorFailureDoesNotResultInErrorAndCompletedEmissionsFlowable"));
+            this.payloads.collectorFailureDoesNotResultInErrorAndCompletedEmissionsFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectorFailureDoesNotResultInErrorAndOnNextEmissionsFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectorFailureDoesNotResultInErrorAndOnNextEmissionsFlowable, this.description("collectorFailureDoesNotResultInErrorAndOnNextEmissionsFlowable"));
+            this.payloads.collectorFailureDoesNotResultInErrorAndOnNextEmissionsFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectIntoFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectIntoFlowable, this.description("collectIntoFlowable"));
+            this.payloads.collectIntoFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectToList() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectToList, this.description("collectToList"));
+            this.payloads.collectToList.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectToString() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectToString, this.description("collectToString"));
+            this.payloads.collectToString.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_factoryFailureResultsInErrorEmission() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::factoryFailureResultsInErrorEmission, this.description("factoryFailureResultsInErrorEmission"));
+            this.payloads.factoryFailureResultsInErrorEmission.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectorFailureDoesNotResultInTwoErrorEmissions() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectorFailureDoesNotResultInTwoErrorEmissions, this.description("collectorFailureDoesNotResultInTwoErrorEmissions"));
+            this.payloads.collectorFailureDoesNotResultInTwoErrorEmissions.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectorFailureDoesNotResultInErrorAndCompletedEmissions() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectorFailureDoesNotResultInErrorAndCompletedEmissions, this.description("collectorFailureDoesNotResultInErrorAndCompletedEmissions"));
+            this.payloads.collectorFailureDoesNotResultInErrorAndCompletedEmissions.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectorFailureDoesNotResultInErrorAndOnNextEmissions() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectorFailureDoesNotResultInErrorAndOnNextEmissions, this.description("collectorFailureDoesNotResultInErrorAndOnNextEmissions"));
+            this.payloads.collectorFailureDoesNotResultInErrorAndOnNextEmissions.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectInto() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectInto, this.description("collectInto"));
+            this.payloads.collectInto.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
-        private FlowableCollectTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableCollectTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableCollectTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableCollectTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableCollectTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableCollectTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableCollectTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableCollectTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableCollectTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableCollectTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableCollectTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement collectToListFlowable;
+
+            public org.junit.runners.model.Statement collectToStringFlowable;
+
+            public org.junit.runners.model.Statement factoryFailureResultsInErrorEmissionFlowable;
+
+            public org.junit.runners.model.Statement collectorFailureDoesNotResultInTwoErrorEmissionsFlowable;
+
+            public org.junit.runners.model.Statement collectorFailureDoesNotResultInErrorAndCompletedEmissionsFlowable;
+
+            public org.junit.runners.model.Statement collectorFailureDoesNotResultInErrorAndOnNextEmissionsFlowable;
+
+            public org.junit.runners.model.Statement collectIntoFlowable;
+
+            public org.junit.runners.model.Statement collectToList;
+
+            public org.junit.runners.model.Statement collectToString;
+
+            public org.junit.runners.model.Statement factoryFailureResultsInErrorEmission;
+
+            public org.junit.runners.model.Statement collectorFailureDoesNotResultInTwoErrorEmissions;
+
+            public org.junit.runners.model.Statement collectorFailureDoesNotResultInErrorAndCompletedEmissions;
+
+            public org.junit.runners.model.Statement collectorFailureDoesNotResultInErrorAndOnNextEmissions;
+
+            public org.junit.runners.model.Statement collectInto;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.collectToListFlowable = _ClassStatement.forPayload(FlowableCollectTest::collectToListFlowable, "collectToListFlowable", this);
+            this.payloads.collectToStringFlowable = _ClassStatement.forPayload(FlowableCollectTest::collectToStringFlowable, "collectToStringFlowable", this);
+            this.payloads.factoryFailureResultsInErrorEmissionFlowable = _ClassStatement.forPayload(FlowableCollectTest::factoryFailureResultsInErrorEmissionFlowable, "factoryFailureResultsInErrorEmissionFlowable", this);
+            this.payloads.collectorFailureDoesNotResultInTwoErrorEmissionsFlowable = _ClassStatement.forPayload(FlowableCollectTest::collectorFailureDoesNotResultInTwoErrorEmissionsFlowable, "collectorFailureDoesNotResultInTwoErrorEmissionsFlowable", this);
+            this.payloads.collectorFailureDoesNotResultInErrorAndCompletedEmissionsFlowable = _ClassStatement.forPayload(FlowableCollectTest::collectorFailureDoesNotResultInErrorAndCompletedEmissionsFlowable, "collectorFailureDoesNotResultInErrorAndCompletedEmissionsFlowable", this);
+            this.payloads.collectorFailureDoesNotResultInErrorAndOnNextEmissionsFlowable = _ClassStatement.forPayload(FlowableCollectTest::collectorFailureDoesNotResultInErrorAndOnNextEmissionsFlowable, "collectorFailureDoesNotResultInErrorAndOnNextEmissionsFlowable", this);
+            this.payloads.collectIntoFlowable = _ClassStatement.forPayload(FlowableCollectTest::collectIntoFlowable, "collectIntoFlowable", this);
+            this.payloads.collectToList = _ClassStatement.forPayload(FlowableCollectTest::collectToList, "collectToList", this);
+            this.payloads.collectToString = _ClassStatement.forPayload(FlowableCollectTest::collectToString, "collectToString", this);
+            this.payloads.factoryFailureResultsInErrorEmission = _ClassStatement.forPayload(FlowableCollectTest::factoryFailureResultsInErrorEmission, "factoryFailureResultsInErrorEmission", this);
+            this.payloads.collectorFailureDoesNotResultInTwoErrorEmissions = _ClassStatement.forPayload(FlowableCollectTest::collectorFailureDoesNotResultInTwoErrorEmissions, "collectorFailureDoesNotResultInTwoErrorEmissions", this);
+            this.payloads.collectorFailureDoesNotResultInErrorAndCompletedEmissions = _ClassStatement.forPayload(FlowableCollectTest::collectorFailureDoesNotResultInErrorAndCompletedEmissions, "collectorFailureDoesNotResultInErrorAndCompletedEmissions", this);
+            this.payloads.collectorFailureDoesNotResultInErrorAndOnNextEmissions = _ClassStatement.forPayload(FlowableCollectTest::collectorFailureDoesNotResultInErrorAndOnNextEmissions, "collectorFailureDoesNotResultInErrorAndOnNextEmissions", this);
+            this.payloads.collectInto = _ClassStatement.forPayload(FlowableCollectTest::collectInto, "collectInto", this);
+            this.payloads.dispose = _ClassStatement.forPayload(FlowableCollectTest::dispose, "dispose", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableCollectTest::doubleOnSubscribe, "doubleOnSubscribe", this);
         }
     }
 }

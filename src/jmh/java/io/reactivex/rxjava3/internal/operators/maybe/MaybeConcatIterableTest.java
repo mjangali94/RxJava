@@ -140,78 +140,157 @@ public class MaybeConcatIterableTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private MaybeConcatIterableTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_take() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::take, this.description("take"));
+            this.payloads.take.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_iteratorThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::iteratorThrows, this.description("iteratorThrows"));
+            this.payloads.iteratorThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_successCancelRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::successCancelRace, this.description("successCancelRace"));
+            this.payloads.successCancelRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_hasNextThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::hasNextThrows, this.description("hasNextThrows"));
+            this.payloads.hasNextThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nextThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nextThrows, this.description("nextThrows"));
+            this.payloads.nextThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nextReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nextReturnsNull, this.description("nextReturnsNull"));
+            this.payloads.nextReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noSubsequentSubscription() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noSubsequentSubscription, this.description("noSubsequentSubscription"));
+            this.payloads.noSubsequentSubscription.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noSubsequentSubscriptionDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noSubsequentSubscriptionDelayError, this.description("noSubsequentSubscriptionDelayError"));
+            this.payloads.noSubsequentSubscriptionDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequest, this.description("badRequest"));
+            this.payloads.badRequest.evaluate();
         }
 
-        private MaybeConcatIterableTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeConcatIterableTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeConcatIterableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeConcatIterableTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public MaybeConcatIterableTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeConcatIterableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeConcatIterableTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new MaybeConcatIterableTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeConcatIterableTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(MaybeConcatIterableTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(MaybeConcatIterableTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement take;
+
+            public org.junit.runners.model.Statement iteratorThrows;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement successCancelRace;
+
+            public org.junit.runners.model.Statement hasNextThrows;
+
+            public org.junit.runners.model.Statement nextThrows;
+
+            public org.junit.runners.model.Statement nextReturnsNull;
+
+            public org.junit.runners.model.Statement noSubsequentSubscription;
+
+            public org.junit.runners.model.Statement noSubsequentSubscriptionDelayError;
+
+            public org.junit.runners.model.Statement badRequest;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.take = _ClassStatement.forPayload(MaybeConcatIterableTest::take, "take", this);
+            this.payloads.iteratorThrows = _ClassStatement.forPayload(MaybeConcatIterableTest::iteratorThrows, "iteratorThrows", this);
+            this.payloads.error = _ClassStatement.forPayload(MaybeConcatIterableTest::error, "error", this);
+            this.payloads.successCancelRace = _ClassStatement.forPayload(MaybeConcatIterableTest::successCancelRace, "successCancelRace", this);
+            this.payloads.hasNextThrows = _ClassStatement.forPayload(MaybeConcatIterableTest::hasNextThrows, "hasNextThrows", this);
+            this.payloads.nextThrows = _ClassStatement.forPayload(MaybeConcatIterableTest::nextThrows, "nextThrows", this);
+            this.payloads.nextReturnsNull = _ClassStatement.forPayload(MaybeConcatIterableTest::nextReturnsNull, "nextReturnsNull", this);
+            this.payloads.noSubsequentSubscription = _ClassStatement.forPayload(MaybeConcatIterableTest::noSubsequentSubscription, "noSubsequentSubscription", this);
+            this.payloads.noSubsequentSubscriptionDelayError = _ClassStatement.forPayload(MaybeConcatIterableTest::noSubsequentSubscriptionDelayError, "noSubsequentSubscriptionDelayError", this);
+            this.payloads.badRequest = _ClassStatement.forPayload(MaybeConcatIterableTest::badRequest, "badRequest", this);
         }
     }
 }

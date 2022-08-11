@@ -196,102 +196,189 @@ public class ObservableDematerializeTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableDematerializeTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_simpleSelector() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::simpleSelector, this.description("simpleSelector"));
+            this.payloads.simpleSelector.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_selectorCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::selectorCrash, this.description("selectorCrash"));
+            this.payloads.selectorCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_selectorNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::selectorNull, this.description("selectorNull"));
+            this.payloads.selectorNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dematerialize1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dematerialize1, this.description("dematerialize1"));
+            this.payloads.dematerialize1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dematerialize2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dematerialize2, this.description("dematerialize2"));
+            this.payloads.dematerialize2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dematerialize3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dematerialize3, this.description("dematerialize3"));
+            this.payloads.dematerialize3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorPassThru() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorPassThru, this.description("errorPassThru"));
+            this.payloads.errorPassThru.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_completePassThru() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::completePassThru, this.description("completePassThru"));
+            this.payloads.completePassThru.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_honorsContractWhenCompleted() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::honorsContractWhenCompleted, this.description("honorsContractWhenCompleted"));
+            this.payloads.honorsContractWhenCompleted.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_honorsContractWhenThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::honorsContractWhenThrows, this.description("honorsContractWhenThrows"));
+            this.payloads.honorsContractWhenThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_eventsAfterDematerializedTerminal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::eventsAfterDematerializedTerminal, this.description("eventsAfterDematerializedTerminal"));
+            this.payloads.eventsAfterDematerializedTerminal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nonNotificationInstanceAfterDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nonNotificationInstanceAfterDispose, this.description("nonNotificationInstanceAfterDispose"));
+            this.payloads.nonNotificationInstanceAfterDispose.evaluate();
         }
 
-        private ObservableDematerializeTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableDematerializeTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableDematerializeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableDematerializeTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservableDematerializeTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableDematerializeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableDematerializeTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableDematerializeTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableDematerializeTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableDematerializeTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableDematerializeTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement simpleSelector;
+
+            public org.junit.runners.model.Statement selectorCrash;
+
+            public org.junit.runners.model.Statement selectorNull;
+
+            public org.junit.runners.model.Statement dematerialize1;
+
+            public org.junit.runners.model.Statement dematerialize2;
+
+            public org.junit.runners.model.Statement dematerialize3;
+
+            public org.junit.runners.model.Statement errorPassThru;
+
+            public org.junit.runners.model.Statement completePassThru;
+
+            public org.junit.runners.model.Statement honorsContractWhenCompleted;
+
+            public org.junit.runners.model.Statement honorsContractWhenThrows;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement eventsAfterDematerializedTerminal;
+
+            public org.junit.runners.model.Statement nonNotificationInstanceAfterDispose;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.simpleSelector = _ClassStatement.forPayload(ObservableDematerializeTest::simpleSelector, "simpleSelector", this);
+            this.payloads.selectorCrash = _ClassStatement.forPayload(ObservableDematerializeTest::selectorCrash, "selectorCrash", this);
+            this.payloads.selectorNull = _ClassStatement.forPayload(ObservableDematerializeTest::selectorNull, "selectorNull", this);
+            this.payloads.dematerialize1 = _ClassStatement.forPayload(ObservableDematerializeTest::dematerialize1, "dematerialize1", this);
+            this.payloads.dematerialize2 = _ClassStatement.forPayload(ObservableDematerializeTest::dematerialize2, "dematerialize2", this);
+            this.payloads.dematerialize3 = _ClassStatement.forPayload(ObservableDematerializeTest::dematerialize3, "dematerialize3", this);
+            this.payloads.errorPassThru = _ClassStatement.forPayload(ObservableDematerializeTest::errorPassThru, "errorPassThru", this);
+            this.payloads.completePassThru = _ClassStatement.forPayload(ObservableDematerializeTest::completePassThru, "completePassThru", this);
+            this.payloads.honorsContractWhenCompleted = _ClassStatement.forPayload(ObservableDematerializeTest::honorsContractWhenCompleted, "honorsContractWhenCompleted", this);
+            this.payloads.honorsContractWhenThrows = _ClassStatement.forPayload(ObservableDematerializeTest::honorsContractWhenThrows, "honorsContractWhenThrows", this);
+            this.payloads.dispose = _ClassStatement.forPayload(ObservableDematerializeTest::dispose, "dispose", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(ObservableDematerializeTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.eventsAfterDematerializedTerminal = _ClassStatement.forPayload(ObservableDematerializeTest::eventsAfterDematerializedTerminal, "eventsAfterDematerializedTerminal", this);
+            this.payloads.nonNotificationInstanceAfterDispose = _ClassStatement.forPayload(ObservableDematerializeTest::nonNotificationInstanceAfterDispose, "nonNotificationInstanceAfterDispose", this);
         }
     }
 }

@@ -288,210 +288,333 @@ public class FlowableFlatMapStreamTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableFlatMapStreamTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_empty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::empty, this.description("empty"));
+            this.payloads.empty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyHidden() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyHidden, this.description("emptyHidden"));
+            this.payloads.emptyHidden.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_just() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::just, this.description("just"));
+            this.payloads.just.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_justHidden() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::justHidden, this.description("justHidden"));
+            this.payloads.justHidden.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_supplierFusedError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::supplierFusedError, this.description("supplierFusedError"));
+            this.payloads.supplierFusedError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorHidden() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorHidden, this.description("errorHidden"));
+            this.payloads.errorHidden.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_range() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::range, this.description("range"));
+            this.payloads.range.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rangeHidden() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rangeHidden, this.description("rangeHidden"));
+            this.payloads.rangeHidden.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rangeToEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rangeToEmpty, this.description("rangeToEmpty"));
+            this.payloads.rangeToEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rangeTake() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rangeTake, this.description("rangeTake"));
+            this.payloads.rangeTake.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rangeTakeHidden() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rangeTakeHidden, this.description("rangeTakeHidden"));
+            this.payloads.rangeTakeHidden.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_upstreamCancelled() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::upstreamCancelled, this.description("upstreamCancelled"));
+            this.payloads.upstreamCancelled.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_upstreamCancelledCloseCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::upstreamCancelledCloseCrash, this.description("upstreamCancelledCloseCrash"));
+            this.payloads.upstreamCancelledCloseCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_crossMap() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::crossMap, this.description("crossMap"));
+            this.payloads.crossMap.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_crossMapHidden() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::crossMapHidden, this.description("crossMapHidden"));
+            this.payloads.crossMapHidden.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_crossMapBackpressured() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::crossMapBackpressured, this.description("crossMapBackpressured"));
+            this.payloads.crossMapBackpressured.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_crossMapBackpressuredHidden() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::crossMapBackpressuredHidden, this.description("crossMapBackpressuredHidden"));
+            this.payloads.crossMapBackpressuredHidden.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onSubscribe, this.description("onSubscribe"));
+            this.payloads.onSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequest, this.description("badRequest"));
+            this.payloads.badRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_queueOverflow() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::queueOverflow, this.description("queueOverflow"));
+            this.payloads.queueOverflow.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperThrows, this.description("mapperThrows"));
+            this.payloads.mapperThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperNull, this.description("mapperNull"));
+            this.payloads.mapperNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_streamNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::streamNull, this.description("streamNull"));
+            this.payloads.streamNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_hasNextThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::hasNextThrows, this.description("hasNextThrows"));
+            this.payloads.hasNextThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_hasNextThrowsLater() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::hasNextThrowsLater, this.description("hasNextThrowsLater"));
+            this.payloads.hasNextThrowsLater.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperThrowsWhenUpstreamErrors() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperThrowsWhenUpstreamErrors, this.description("mapperThrowsWhenUpstreamErrors"));
+            this.payloads.mapperThrowsWhenUpstreamErrors.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rangeBackpressured() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rangeBackpressured, this.description("rangeBackpressured"));
+            this.payloads.rangeBackpressured.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelAfterIteratorNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelAfterIteratorNext, this.description("cancelAfterIteratorNext"));
+            this.payloads.cancelAfterIteratorNext.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncUpstreamFused() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncUpstreamFused, this.description("asyncUpstreamFused"));
+            this.payloads.asyncUpstreamFused.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncUpstreamFusionBoundary() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncUpstreamFusionBoundary, this.description("asyncUpstreamFusionBoundary"));
+            this.payloads.asyncUpstreamFusionBoundary.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedPollCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedPollCrash, this.description("fusedPollCrash"));
+            this.payloads.fusedPollCrash.evaluate();
         }
 
-        private FlowableFlatMapStreamTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableFlatMapStreamTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFlatMapStreamTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFlatMapStreamTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableFlatMapStreamTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFlatMapStreamTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFlatMapStreamTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableFlatMapStreamTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFlatMapStreamTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableFlatMapStreamTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableFlatMapStreamTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement empty;
+
+            public org.junit.runners.model.Statement emptyHidden;
+
+            public org.junit.runners.model.Statement just;
+
+            public org.junit.runners.model.Statement justHidden;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement supplierFusedError;
+
+            public org.junit.runners.model.Statement errorHidden;
+
+            public org.junit.runners.model.Statement range;
+
+            public org.junit.runners.model.Statement rangeHidden;
+
+            public org.junit.runners.model.Statement rangeToEmpty;
+
+            public org.junit.runners.model.Statement rangeTake;
+
+            public org.junit.runners.model.Statement rangeTakeHidden;
+
+            public org.junit.runners.model.Statement upstreamCancelled;
+
+            public org.junit.runners.model.Statement upstreamCancelledCloseCrash;
+
+            public org.junit.runners.model.Statement crossMap;
+
+            public org.junit.runners.model.Statement crossMapHidden;
+
+            public org.junit.runners.model.Statement crossMapBackpressured;
+
+            public org.junit.runners.model.Statement crossMapBackpressuredHidden;
+
+            public org.junit.runners.model.Statement onSubscribe;
+
+            public org.junit.runners.model.Statement badRequest;
+
+            public org.junit.runners.model.Statement queueOverflow;
+
+            public org.junit.runners.model.Statement mapperThrows;
+
+            public org.junit.runners.model.Statement mapperNull;
+
+            public org.junit.runners.model.Statement streamNull;
+
+            public org.junit.runners.model.Statement hasNextThrows;
+
+            public org.junit.runners.model.Statement hasNextThrowsLater;
+
+            public org.junit.runners.model.Statement mapperThrowsWhenUpstreamErrors;
+
+            public org.junit.runners.model.Statement rangeBackpressured;
+
+            public org.junit.runners.model.Statement cancelAfterIteratorNext;
+
+            public org.junit.runners.model.Statement asyncUpstreamFused;
+
+            public org.junit.runners.model.Statement asyncUpstreamFusionBoundary;
+
+            public org.junit.runners.model.Statement fusedPollCrash;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.empty = _ClassStatement.forPayload(FlowableFlatMapStreamTest::empty, "empty", this);
+            this.payloads.emptyHidden = _ClassStatement.forPayload(FlowableFlatMapStreamTest::emptyHidden, "emptyHidden", this);
+            this.payloads.just = _ClassStatement.forPayload(FlowableFlatMapStreamTest::just, "just", this);
+            this.payloads.justHidden = _ClassStatement.forPayload(FlowableFlatMapStreamTest::justHidden, "justHidden", this);
+            this.payloads.error = _ClassStatement.forPayload(FlowableFlatMapStreamTest::error, "error", this);
+            this.payloads.supplierFusedError = _ClassStatement.forPayload(FlowableFlatMapStreamTest::supplierFusedError, "supplierFusedError", this);
+            this.payloads.errorHidden = _ClassStatement.forPayload(FlowableFlatMapStreamTest::errorHidden, "errorHidden", this);
+            this.payloads.range = _ClassStatement.forPayload(FlowableFlatMapStreamTest::range, "range", this);
+            this.payloads.rangeHidden = _ClassStatement.forPayload(FlowableFlatMapStreamTest::rangeHidden, "rangeHidden", this);
+            this.payloads.rangeToEmpty = _ClassStatement.forPayload(FlowableFlatMapStreamTest::rangeToEmpty, "rangeToEmpty", this);
+            this.payloads.rangeTake = _ClassStatement.forPayload(FlowableFlatMapStreamTest::rangeTake, "rangeTake", this);
+            this.payloads.rangeTakeHidden = _ClassStatement.forPayload(FlowableFlatMapStreamTest::rangeTakeHidden, "rangeTakeHidden", this);
+            this.payloads.upstreamCancelled = _ClassStatement.forPayload(FlowableFlatMapStreamTest::upstreamCancelled, "upstreamCancelled", this);
+            this.payloads.upstreamCancelledCloseCrash = _ClassStatement.forPayload(FlowableFlatMapStreamTest::upstreamCancelledCloseCrash, "upstreamCancelledCloseCrash", this);
+            this.payloads.crossMap = _ClassStatement.forPayload(FlowableFlatMapStreamTest::crossMap, "crossMap", this);
+            this.payloads.crossMapHidden = _ClassStatement.forPayload(FlowableFlatMapStreamTest::crossMapHidden, "crossMapHidden", this);
+            this.payloads.crossMapBackpressured = _ClassStatement.forPayload(FlowableFlatMapStreamTest::crossMapBackpressured, "crossMapBackpressured", this);
+            this.payloads.crossMapBackpressuredHidden = _ClassStatement.forPayload(FlowableFlatMapStreamTest::crossMapBackpressuredHidden, "crossMapBackpressuredHidden", this);
+            this.payloads.onSubscribe = _ClassStatement.forPayload(FlowableFlatMapStreamTest::onSubscribe, "onSubscribe", this);
+            this.payloads.badRequest = _ClassStatement.forPayload(FlowableFlatMapStreamTest::badRequest, "badRequest", this);
+            this.payloads.queueOverflow = _ClassStatement.forPayload(FlowableFlatMapStreamTest::queueOverflow, "queueOverflow", this);
+            this.payloads.mapperThrows = _ClassStatement.forPayload(FlowableFlatMapStreamTest::mapperThrows, "mapperThrows", this);
+            this.payloads.mapperNull = _ClassStatement.forPayload(FlowableFlatMapStreamTest::mapperNull, "mapperNull", this);
+            this.payloads.streamNull = _ClassStatement.forPayload(FlowableFlatMapStreamTest::streamNull, "streamNull", this);
+            this.payloads.hasNextThrows = _ClassStatement.forPayload(FlowableFlatMapStreamTest::hasNextThrows, "hasNextThrows", this);
+            this.payloads.hasNextThrowsLater = _ClassStatement.forPayload(FlowableFlatMapStreamTest::hasNextThrowsLater, "hasNextThrowsLater", this);
+            this.payloads.mapperThrowsWhenUpstreamErrors = _ClassStatement.forPayload(FlowableFlatMapStreamTest::mapperThrowsWhenUpstreamErrors, "mapperThrowsWhenUpstreamErrors", this);
+            this.payloads.rangeBackpressured = _ClassStatement.forPayload(FlowableFlatMapStreamTest::rangeBackpressured, "rangeBackpressured", this);
+            this.payloads.cancelAfterIteratorNext = _ClassStatement.forPayload(FlowableFlatMapStreamTest::cancelAfterIteratorNext, "cancelAfterIteratorNext", this);
+            this.payloads.asyncUpstreamFused = _ClassStatement.forPayload(FlowableFlatMapStreamTest::asyncUpstreamFused, "asyncUpstreamFused", this);
+            this.payloads.asyncUpstreamFusionBoundary = _ClassStatement.forPayload(FlowableFlatMapStreamTest::asyncUpstreamFusionBoundary, "asyncUpstreamFusionBoundary", this);
+            this.payloads.fusedPollCrash = _ClassStatement.forPayload(FlowableFlatMapStreamTest::fusedPollCrash, "fusedPollCrash", this);
         }
     }
 }

@@ -53,32 +53,4 @@ public class ObservableRedoTest extends RxJavaTest {
             }
         }).test().assertFailure(TestException.class);
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_redoCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::redoCancel, this.description("redoCancel"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_managerThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::managerThrows, this.description("managerThrows"));
-        }
-
-        private ObservableRedoTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableRedoTest();
-        }
-
-        @java.lang.Override
-        public ObservableRedoTest implementation() {
-            return this.implementation;
-        }
-    }
 }

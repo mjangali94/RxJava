@@ -56,32 +56,4 @@ public class MaybeTimerTest extends RxJavaTest {
             exec.shutdown();
         }
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_timerInterruptible() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timerInterruptible, this.description("timerInterruptible"));
-        }
-
-        private MaybeTimerTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeTimerTest();
-        }
-
-        @java.lang.Override
-        public MaybeTimerTest implementation() {
-            return this.implementation;
-        }
-    }
 }

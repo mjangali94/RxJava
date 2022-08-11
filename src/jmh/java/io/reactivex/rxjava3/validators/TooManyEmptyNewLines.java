@@ -112,44 +112,4 @@ public class TooManyEmptyNewLines {
             throw new AssertionError(fail.toString());
         }
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_tooManyEmptyNewLines2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tooManyEmptyNewLines2, this.description("tooManyEmptyNewLines2"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_tooManyEmptyNewLines3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tooManyEmptyNewLines3, this.description("tooManyEmptyNewLines3"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_tooManyEmptyNewLines4() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tooManyEmptyNewLines4, this.description("tooManyEmptyNewLines4"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_tooManyEmptyNewLines5() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tooManyEmptyNewLines5, this.description("tooManyEmptyNewLines5"));
-        }
-
-        private TooManyEmptyNewLines implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new TooManyEmptyNewLines();
-        }
-
-        @java.lang.Override
-        public TooManyEmptyNewLines implementation() {
-            return this.implementation;
-        }
-    }
 }

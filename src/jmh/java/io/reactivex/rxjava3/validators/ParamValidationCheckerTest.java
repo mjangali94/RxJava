@@ -1063,54 +1063,71 @@ public class ParamValidationCheckerTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ParamValidationCheckerTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkFlowable, this.description("checkFlowable"));
+            this.runBenchmark(this.payloads.checkFlowable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkObservable, this.description("checkObservable"));
+            this.runBenchmark(this.payloads.checkObservable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkSingle() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkSingle, this.description("checkSingle"));
+            this.runBenchmark(this.payloads.checkSingle);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkMaybe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkMaybe, this.description("checkMaybe"));
+            this.runBenchmark(this.payloads.checkMaybe);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkCompletable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkCompletable, this.description("checkCompletable"));
+            this.runBenchmark(this.payloads.checkCompletable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkParallelFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkParallelFlowable, this.description("checkParallelFlowable"));
+            this.runBenchmark(this.payloads.checkParallelFlowable);
         }
 
-        private ParamValidationCheckerTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ParamValidationCheckerTest();
+        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<ParamValidationCheckerTest> payload) throws java.lang.Throwable {
+            this.instance = new ParamValidationCheckerTest();
+            payload.accept(this.instance);
         }
 
-        @java.lang.Override
-        public ParamValidationCheckerTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ParamValidationCheckerTest> checkFlowable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ParamValidationCheckerTest> checkObservable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ParamValidationCheckerTest> checkSingle;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ParamValidationCheckerTest> checkMaybe;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ParamValidationCheckerTest> checkCompletable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ParamValidationCheckerTest> checkParallelFlowable;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.checkFlowable = ParamValidationCheckerTest::checkFlowable;
+            this.payloads.checkObservable = ParamValidationCheckerTest::checkObservable;
+            this.payloads.checkSingle = ParamValidationCheckerTest::checkSingle;
+            this.payloads.checkMaybe = ParamValidationCheckerTest::checkMaybe;
+            this.payloads.checkCompletable = ParamValidationCheckerTest::checkCompletable;
+            this.payloads.checkParallelFlowable = ParamValidationCheckerTest::checkParallelFlowable;
         }
     }
 }

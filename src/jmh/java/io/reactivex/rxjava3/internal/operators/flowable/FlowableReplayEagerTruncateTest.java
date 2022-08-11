@@ -1788,456 +1788,661 @@ public class FlowableReplayEagerTruncateTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableReplayEagerTruncateTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferedReplay() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferedReplay, this.description("bufferedReplay"));
+            this.payloads.bufferedReplay.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferedWindowReplay() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferedWindowReplay, this.description("bufferedWindowReplay"));
+            this.payloads.bufferedWindowReplay.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowedReplay() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::windowedReplay, this.description("windowedReplay"));
+            this.payloads.windowedReplay.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_replaySelector() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::replaySelector, this.description("replaySelector"));
+            this.payloads.replaySelector.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferedReplaySelector() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferedReplaySelector, this.description("bufferedReplaySelector"));
+            this.payloads.bufferedReplaySelector.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowedReplaySelector() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::windowedReplaySelector, this.description("windowedReplaySelector"));
+            this.payloads.windowedReplaySelector.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferedReplayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferedReplayError, this.description("bufferedReplayError"));
+            this.payloads.bufferedReplayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowedReplayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::windowedReplayError, this.description("windowedReplayError"));
+            this.payloads.windowedReplayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_synchronousDisconnect() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::synchronousDisconnect, this.description("synchronousDisconnect"));
+            this.payloads.synchronousDisconnect.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_issue2191_UnsubscribeSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::issue2191_UnsubscribeSource, this.description("issue2191_UnsubscribeSource"));
+            this.payloads.issue2191_UnsubscribeSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_issue2191_SchedulerUnsubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::issue2191_SchedulerUnsubscribe, this.description("issue2191_SchedulerUnsubscribe"));
+            this.payloads.issue2191_SchedulerUnsubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_issue2191_SchedulerUnsubscribeOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::issue2191_SchedulerUnsubscribeOnError, this.description("issue2191_SchedulerUnsubscribeOnError"));
+            this.payloads.issue2191_SchedulerUnsubscribeOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundedReplayBuffer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundedReplayBuffer, this.description("boundedReplayBuffer"));
+            this.payloads.boundedReplayBuffer.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timedAndSizedTruncation() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timedAndSizedTruncation, this.description("timedAndSizedTruncation"));
+            this.payloads.timedAndSizedTruncation.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressure, this.description("backpressure"));
+            this.payloads.backpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureBounded() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureBounded, this.description("backpressureBounded"));
+            this.payloads.backpressureBounded.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_coldReplayNoBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::coldReplayNoBackpressure, this.description("coldReplayNoBackpressure"));
+            this.payloads.coldReplayNoBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_coldReplayBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::coldReplayBackpressure, this.description("coldReplayBackpressure"));
+            this.payloads.coldReplayBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cache() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cache, this.description("cache"));
+            this.payloads.cache.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribeSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribeSource, this.description("unsubscribeSource"));
+            this.payloads.unsubscribeSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_take() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::take, this.description("take"));
+            this.payloads.take.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_async() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::async, this.description("async"));
+            this.payloads.async.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncComeAndGo() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncComeAndGo, this.description("asyncComeAndGo"));
+            this.payloads.asyncComeAndGo.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noMissingBackpressureException() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noMissingBackpressureException, this.description("noMissingBackpressureException"));
+            this.payloads.noMissingBackpressureException.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_valuesAndThenError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::valuesAndThenError, this.description("valuesAndThenError"));
+            this.payloads.valuesAndThenError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsafeChildThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsafeChildThrows, this.description("unsafeChildThrows"));
+            this.payloads.unsafeChildThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unboundedLeavesEarly() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unboundedLeavesEarly, this.description("unboundedLeavesEarly"));
+            this.payloads.unboundedLeavesEarly.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_subscribersComeAndGoAtRequestBoundaries() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscribersComeAndGoAtRequestBoundaries, this.description("subscribersComeAndGoAtRequestBoundaries"));
+            this.payloads.subscribersComeAndGoAtRequestBoundaries.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_subscribersComeAndGoAtRequestBoundaries2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscribersComeAndGoAtRequestBoundaries2, this.description("subscribersComeAndGoAtRequestBoundaries2"));
+            this.payloads.subscribersComeAndGoAtRequestBoundaries2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_replayTime() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::replayTime, this.description("replayTime"));
+            this.payloads.replayTime.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_replaySizeAndTime() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::replaySizeAndTime, this.description("replaySizeAndTime"));
+            this.payloads.replaySizeAndTime.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_replaySelectorTime() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::replaySelectorTime, this.description("replaySelectorTime"));
+            this.payloads.replaySelectorTime.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_source() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::source, this.description("source"));
+            this.payloads.source.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_connectRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::connectRace, this.description("connectRace"));
+            this.payloads.connectRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_subscribeRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscribeRace, this.description("subscribeRace"));
+            this.payloads.subscribeRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_addRemoveRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::addRemoveRace, this.description("addRemoveRace"));
+            this.payloads.addRemoveRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelOnArrival() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelOnArrival, this.description("cancelOnArrival"));
+            this.payloads.cancelOnArrival.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelOnArrival2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelOnArrival2, this.description("cancelOnArrival2"));
+            this.payloads.cancelOnArrival2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_connectConsumerThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::connectConsumerThrows, this.description("connectConsumerThrows"));
+            this.payloads.connectConsumerThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSource, this.description("badSource"));
+            this.payloads.badSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_subscribeOnNextRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscribeOnNextRace, this.description("subscribeOnNextRace"));
+            this.payloads.subscribeOnNextRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribeOnNextRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribeOnNextRace, this.description("unsubscribeOnNextRace"));
+            this.payloads.unsubscribeOnNextRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribeReplayRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribeReplayRace, this.description("unsubscribeReplayRace"));
+            this.payloads.unsubscribeReplayRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_reentrantOnNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::reentrantOnNext, this.description("reentrantOnNext"));
+            this.payloads.reentrantOnNext.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_reentrantOnNextBound() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::reentrantOnNextBound, this.description("reentrantOnNextBound"));
+            this.payloads.reentrantOnNextBound.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_reentrantOnNextCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::reentrantOnNextCancel, this.description("reentrantOnNextCancel"));
+            this.payloads.reentrantOnNextCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_reentrantOnNextCancelBounded() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::reentrantOnNextCancelBounded, this.description("reentrantOnNextCancelBounded"));
+            this.payloads.reentrantOnNextCancelBounded.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_replayMaxInt() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::replayMaxInt, this.description("replayMaxInt"));
+            this.payloads.replayMaxInt.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timedAndSizedTruncationError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timedAndSizedTruncationError, this.description("timedAndSizedTruncationError"));
+            this.payloads.timedAndSizedTruncationError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sizedTruncation() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sizedTruncation, this.description("sizedTruncation"));
+            this.payloads.sizedTruncation.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayedUpstreamOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayedUpstreamOnSubscribe, this.description("delayedUpstreamOnSubscribe"));
+            this.payloads.delayedUpstreamOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timedNoOutdatedData() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timedNoOutdatedData, this.description("timedNoOutdatedData"));
+            this.payloads.timedNoOutdatedData.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_multicastSelectorCallableConnectableCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::multicastSelectorCallableConnectableCrash, this.description("multicastSelectorCallableConnectableCrash"));
+            this.payloads.multicastSelectorCallableConnectableCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequest, this.description("badRequest"));
+            this.payloads.badRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noHeadRetentionCompleteSize() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noHeadRetentionCompleteSize, this.description("noHeadRetentionCompleteSize"));
+            this.payloads.noHeadRetentionCompleteSize.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noHeadRetentionErrorSize() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noHeadRetentionErrorSize, this.description("noHeadRetentionErrorSize"));
+            this.payloads.noHeadRetentionErrorSize.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noHeadRetentionSize() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noHeadRetentionSize, this.description("noHeadRetentionSize"));
+            this.payloads.noHeadRetentionSize.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noHeadRetentionCompleteTime() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noHeadRetentionCompleteTime, this.description("noHeadRetentionCompleteTime"));
+            this.payloads.noHeadRetentionCompleteTime.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noHeadRetentionErrorTime() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noHeadRetentionErrorTime, this.description("noHeadRetentionErrorTime"));
+            this.payloads.noHeadRetentionErrorTime.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noHeadRetentionTime() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noHeadRetentionTime, this.description("noHeadRetentionTime"));
+            this.payloads.noHeadRetentionTime.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_createBufferFactoryCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::createBufferFactoryCrash, this.description("createBufferFactoryCrash"), io.reactivex.rxjava3.exceptions.TestException.class);
+            this.payloads.createBufferFactoryCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_createBufferFactoryCrashOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::createBufferFactoryCrashOnSubscribe, this.description("createBufferFactoryCrashOnSubscribe"));
+            this.payloads.createBufferFactoryCrashOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noBoundedRetentionViaThreadLocal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noBoundedRetentionViaThreadLocal, this.description("noBoundedRetentionViaThreadLocal"));
+            this.payloads.noBoundedRetentionViaThreadLocal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sizeBoundEagerTruncate() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sizeBoundEagerTruncate, this.description("sizeBoundEagerTruncate"));
+            this.payloads.sizeBoundEagerTruncate.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeBoundEagerTruncate() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeBoundEagerTruncate, this.description("timeBoundEagerTruncate"));
+            this.payloads.timeBoundEagerTruncate.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeAndSizeBoundEagerTruncate() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeAndSizeBoundEagerTruncate, this.description("timeAndSizeBoundEagerTruncate"));
+            this.payloads.timeAndSizeBoundEagerTruncate.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sizeBoundSelectorEagerTruncate() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sizeBoundSelectorEagerTruncate, this.description("sizeBoundSelectorEagerTruncate"));
+            this.payloads.sizeBoundSelectorEagerTruncate.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeBoundSelectorEagerTruncate() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeBoundSelectorEagerTruncate, this.description("timeBoundSelectorEagerTruncate"));
+            this.payloads.timeBoundSelectorEagerTruncate.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeAndSizeBoundSelectorEagerTruncate() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeAndSizeBoundSelectorEagerTruncate, this.description("timeAndSizeBoundSelectorEagerTruncate"));
+            this.payloads.timeAndSizeBoundSelectorEagerTruncate.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeAndSizeNoTerminalTruncationOnTimechange() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeAndSizeNoTerminalTruncationOnTimechange, this.description("timeAndSizeNoTerminalTruncationOnTimechange"));
+            this.payloads.timeAndSizeNoTerminalTruncationOnTimechange.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeNoNeedForResetSizeBound() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeNoNeedForResetSizeBound, this.description("disposeNoNeedForResetSizeBound"));
+            this.payloads.disposeNoNeedForResetSizeBound.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeNoNeedForResetTimeBound() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeNoNeedForResetTimeBound, this.description("disposeNoNeedForResetTimeBound"));
+            this.payloads.disposeNoNeedForResetTimeBound.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeNoNeedForResetTimeAndSIzeBound() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeNoNeedForResetTimeAndSIzeBound, this.description("disposeNoNeedForResetTimeAndSIzeBound"));
+            this.payloads.disposeNoNeedForResetTimeAndSIzeBound.evaluate();
         }
 
-        private FlowableReplayEagerTruncateTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableReplayEagerTruncateTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableReplayEagerTruncateTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableReplayEagerTruncateTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableReplayEagerTruncateTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableReplayEagerTruncateTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableReplayEagerTruncateTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableReplayEagerTruncateTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableReplayEagerTruncateTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableReplayEagerTruncateTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableReplayEagerTruncateTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement bufferedReplay;
+
+            public org.junit.runners.model.Statement bufferedWindowReplay;
+
+            public org.junit.runners.model.Statement windowedReplay;
+
+            public org.junit.runners.model.Statement replaySelector;
+
+            public org.junit.runners.model.Statement bufferedReplaySelector;
+
+            public org.junit.runners.model.Statement windowedReplaySelector;
+
+            public org.junit.runners.model.Statement bufferedReplayError;
+
+            public org.junit.runners.model.Statement windowedReplayError;
+
+            public org.junit.runners.model.Statement synchronousDisconnect;
+
+            public org.junit.runners.model.Statement issue2191_UnsubscribeSource;
+
+            public org.junit.runners.model.Statement issue2191_SchedulerUnsubscribe;
+
+            public org.junit.runners.model.Statement issue2191_SchedulerUnsubscribeOnError;
+
+            public org.junit.runners.model.Statement boundedReplayBuffer;
+
+            public org.junit.runners.model.Statement timedAndSizedTruncation;
+
+            public org.junit.runners.model.Statement backpressure;
+
+            public org.junit.runners.model.Statement backpressureBounded;
+
+            public org.junit.runners.model.Statement coldReplayNoBackpressure;
+
+            public org.junit.runners.model.Statement coldReplayBackpressure;
+
+            public org.junit.runners.model.Statement cache;
+
+            public org.junit.runners.model.Statement unsubscribeSource;
+
+            public org.junit.runners.model.Statement take;
+
+            public org.junit.runners.model.Statement async;
+
+            public org.junit.runners.model.Statement asyncComeAndGo;
+
+            public org.junit.runners.model.Statement noMissingBackpressureException;
+
+            public org.junit.runners.model.Statement valuesAndThenError;
+
+            public org.junit.runners.model.Statement unsafeChildThrows;
+
+            public org.junit.runners.model.Statement unboundedLeavesEarly;
+
+            public org.junit.runners.model.Statement subscribersComeAndGoAtRequestBoundaries;
+
+            public org.junit.runners.model.Statement subscribersComeAndGoAtRequestBoundaries2;
+
+            public org.junit.runners.model.Statement replayTime;
+
+            public org.junit.runners.model.Statement replaySizeAndTime;
+
+            public org.junit.runners.model.Statement replaySelectorTime;
+
+            public org.junit.runners.model.Statement source;
+
+            public org.junit.runners.model.Statement connectRace;
+
+            public org.junit.runners.model.Statement subscribeRace;
+
+            public org.junit.runners.model.Statement addRemoveRace;
+
+            public org.junit.runners.model.Statement cancelOnArrival;
+
+            public org.junit.runners.model.Statement cancelOnArrival2;
+
+            public org.junit.runners.model.Statement connectConsumerThrows;
+
+            public org.junit.runners.model.Statement badSource;
+
+            public org.junit.runners.model.Statement subscribeOnNextRace;
+
+            public org.junit.runners.model.Statement unsubscribeOnNextRace;
+
+            public org.junit.runners.model.Statement unsubscribeReplayRace;
+
+            public org.junit.runners.model.Statement reentrantOnNext;
+
+            public org.junit.runners.model.Statement reentrantOnNextBound;
+
+            public org.junit.runners.model.Statement reentrantOnNextCancel;
+
+            public org.junit.runners.model.Statement reentrantOnNextCancelBounded;
+
+            public org.junit.runners.model.Statement replayMaxInt;
+
+            public org.junit.runners.model.Statement timedAndSizedTruncationError;
+
+            public org.junit.runners.model.Statement sizedTruncation;
+
+            public org.junit.runners.model.Statement delayedUpstreamOnSubscribe;
+
+            public org.junit.runners.model.Statement timedNoOutdatedData;
+
+            public org.junit.runners.model.Statement multicastSelectorCallableConnectableCrash;
+
+            public org.junit.runners.model.Statement badRequest;
+
+            public org.junit.runners.model.Statement noHeadRetentionCompleteSize;
+
+            public org.junit.runners.model.Statement noHeadRetentionErrorSize;
+
+            public org.junit.runners.model.Statement noHeadRetentionSize;
+
+            public org.junit.runners.model.Statement noHeadRetentionCompleteTime;
+
+            public org.junit.runners.model.Statement noHeadRetentionErrorTime;
+
+            public org.junit.runners.model.Statement noHeadRetentionTime;
+
+            public org.junit.runners.model.Statement createBufferFactoryCrash;
+
+            public org.junit.runners.model.Statement createBufferFactoryCrashOnSubscribe;
+
+            public org.junit.runners.model.Statement noBoundedRetentionViaThreadLocal;
+
+            public org.junit.runners.model.Statement sizeBoundEagerTruncate;
+
+            public org.junit.runners.model.Statement timeBoundEagerTruncate;
+
+            public org.junit.runners.model.Statement timeAndSizeBoundEagerTruncate;
+
+            public org.junit.runners.model.Statement sizeBoundSelectorEagerTruncate;
+
+            public org.junit.runners.model.Statement timeBoundSelectorEagerTruncate;
+
+            public org.junit.runners.model.Statement timeAndSizeBoundSelectorEagerTruncate;
+
+            public org.junit.runners.model.Statement timeAndSizeNoTerminalTruncationOnTimechange;
+
+            public org.junit.runners.model.Statement disposeNoNeedForResetSizeBound;
+
+            public org.junit.runners.model.Statement disposeNoNeedForResetTimeBound;
+
+            public org.junit.runners.model.Statement disposeNoNeedForResetTimeAndSIzeBound;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.bufferedReplay = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::bufferedReplay, "bufferedReplay", this);
+            this.payloads.bufferedWindowReplay = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::bufferedWindowReplay, "bufferedWindowReplay", this);
+            this.payloads.windowedReplay = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::windowedReplay, "windowedReplay", this);
+            this.payloads.replaySelector = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::replaySelector, "replaySelector", this);
+            this.payloads.bufferedReplaySelector = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::bufferedReplaySelector, "bufferedReplaySelector", this);
+            this.payloads.windowedReplaySelector = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::windowedReplaySelector, "windowedReplaySelector", this);
+            this.payloads.bufferedReplayError = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::bufferedReplayError, "bufferedReplayError", this);
+            this.payloads.windowedReplayError = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::windowedReplayError, "windowedReplayError", this);
+            this.payloads.synchronousDisconnect = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::synchronousDisconnect, "synchronousDisconnect", this);
+            this.payloads.issue2191_UnsubscribeSource = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::issue2191_UnsubscribeSource, "issue2191_UnsubscribeSource", this);
+            this.payloads.issue2191_SchedulerUnsubscribe = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::issue2191_SchedulerUnsubscribe, "issue2191_SchedulerUnsubscribe", this);
+            this.payloads.issue2191_SchedulerUnsubscribeOnError = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::issue2191_SchedulerUnsubscribeOnError, "issue2191_SchedulerUnsubscribeOnError", this);
+            this.payloads.boundedReplayBuffer = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::boundedReplayBuffer, "boundedReplayBuffer", this);
+            this.payloads.timedAndSizedTruncation = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::timedAndSizedTruncation, "timedAndSizedTruncation", this);
+            this.payloads.backpressure = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::backpressure, "backpressure", this);
+            this.payloads.backpressureBounded = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::backpressureBounded, "backpressureBounded", this);
+            this.payloads.coldReplayNoBackpressure = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::coldReplayNoBackpressure, "coldReplayNoBackpressure", this);
+            this.payloads.coldReplayBackpressure = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::coldReplayBackpressure, "coldReplayBackpressure", this);
+            this.payloads.cache = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::cache, "cache", this);
+            this.payloads.unsubscribeSource = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::unsubscribeSource, "unsubscribeSource", this);
+            this.payloads.take = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::take, "take", this);
+            this.payloads.async = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::async, "async", this);
+            this.payloads.asyncComeAndGo = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::asyncComeAndGo, "asyncComeAndGo", this);
+            this.payloads.noMissingBackpressureException = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::noMissingBackpressureException, "noMissingBackpressureException", this);
+            this.payloads.valuesAndThenError = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::valuesAndThenError, "valuesAndThenError", this);
+            this.payloads.unsafeChildThrows = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::unsafeChildThrows, "unsafeChildThrows", this);
+            this.payloads.unboundedLeavesEarly = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::unboundedLeavesEarly, "unboundedLeavesEarly", this);
+            this.payloads.subscribersComeAndGoAtRequestBoundaries = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::subscribersComeAndGoAtRequestBoundaries, "subscribersComeAndGoAtRequestBoundaries", this);
+            this.payloads.subscribersComeAndGoAtRequestBoundaries2 = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::subscribersComeAndGoAtRequestBoundaries2, "subscribersComeAndGoAtRequestBoundaries2", this);
+            this.payloads.replayTime = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::replayTime, "replayTime", this);
+            this.payloads.replaySizeAndTime = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::replaySizeAndTime, "replaySizeAndTime", this);
+            this.payloads.replaySelectorTime = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::replaySelectorTime, "replaySelectorTime", this);
+            this.payloads.source = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::source, "source", this);
+            this.payloads.connectRace = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::connectRace, "connectRace", this);
+            this.payloads.subscribeRace = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::subscribeRace, "subscribeRace", this);
+            this.payloads.addRemoveRace = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::addRemoveRace, "addRemoveRace", this);
+            this.payloads.cancelOnArrival = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::cancelOnArrival, "cancelOnArrival", this);
+            this.payloads.cancelOnArrival2 = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::cancelOnArrival2, "cancelOnArrival2", this);
+            this.payloads.connectConsumerThrows = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::connectConsumerThrows, "connectConsumerThrows", this);
+            this.payloads.badSource = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::badSource, "badSource", this);
+            this.payloads.subscribeOnNextRace = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::subscribeOnNextRace, "subscribeOnNextRace", this);
+            this.payloads.unsubscribeOnNextRace = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::unsubscribeOnNextRace, "unsubscribeOnNextRace", this);
+            this.payloads.unsubscribeReplayRace = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::unsubscribeReplayRace, "unsubscribeReplayRace", this);
+            this.payloads.reentrantOnNext = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::reentrantOnNext, "reentrantOnNext", this);
+            this.payloads.reentrantOnNextBound = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::reentrantOnNextBound, "reentrantOnNextBound", this);
+            this.payloads.reentrantOnNextCancel = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::reentrantOnNextCancel, "reentrantOnNextCancel", this);
+            this.payloads.reentrantOnNextCancelBounded = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::reentrantOnNextCancelBounded, "reentrantOnNextCancelBounded", this);
+            this.payloads.replayMaxInt = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::replayMaxInt, "replayMaxInt", this);
+            this.payloads.timedAndSizedTruncationError = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::timedAndSizedTruncationError, "timedAndSizedTruncationError", this);
+            this.payloads.sizedTruncation = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::sizedTruncation, "sizedTruncation", this);
+            this.payloads.delayedUpstreamOnSubscribe = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::delayedUpstreamOnSubscribe, "delayedUpstreamOnSubscribe", this);
+            this.payloads.timedNoOutdatedData = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::timedNoOutdatedData, "timedNoOutdatedData", this);
+            this.payloads.multicastSelectorCallableConnectableCrash = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::multicastSelectorCallableConnectableCrash, "multicastSelectorCallableConnectableCrash", this);
+            this.payloads.badRequest = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::badRequest, "badRequest", this);
+            this.payloads.noHeadRetentionCompleteSize = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::noHeadRetentionCompleteSize, "noHeadRetentionCompleteSize", this);
+            this.payloads.noHeadRetentionErrorSize = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::noHeadRetentionErrorSize, "noHeadRetentionErrorSize", this);
+            this.payloads.noHeadRetentionSize = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::noHeadRetentionSize, "noHeadRetentionSize", this);
+            this.payloads.noHeadRetentionCompleteTime = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::noHeadRetentionCompleteTime, "noHeadRetentionCompleteTime", this);
+            this.payloads.noHeadRetentionErrorTime = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::noHeadRetentionErrorTime, "noHeadRetentionErrorTime", this);
+            this.payloads.noHeadRetentionTime = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::noHeadRetentionTime, "noHeadRetentionTime", this);
+            this.payloads.createBufferFactoryCrash = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableReplayEagerTruncateTest::createBufferFactoryCrash, io.reactivex.rxjava3.exceptions.TestException.class), "createBufferFactoryCrash", this);
+            this.payloads.createBufferFactoryCrashOnSubscribe = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::createBufferFactoryCrashOnSubscribe, "createBufferFactoryCrashOnSubscribe", this);
+            this.payloads.noBoundedRetentionViaThreadLocal = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::noBoundedRetentionViaThreadLocal, "noBoundedRetentionViaThreadLocal", this);
+            this.payloads.sizeBoundEagerTruncate = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::sizeBoundEagerTruncate, "sizeBoundEagerTruncate", this);
+            this.payloads.timeBoundEagerTruncate = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::timeBoundEagerTruncate, "timeBoundEagerTruncate", this);
+            this.payloads.timeAndSizeBoundEagerTruncate = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::timeAndSizeBoundEagerTruncate, "timeAndSizeBoundEagerTruncate", this);
+            this.payloads.sizeBoundSelectorEagerTruncate = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::sizeBoundSelectorEagerTruncate, "sizeBoundSelectorEagerTruncate", this);
+            this.payloads.timeBoundSelectorEagerTruncate = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::timeBoundSelectorEagerTruncate, "timeBoundSelectorEagerTruncate", this);
+            this.payloads.timeAndSizeBoundSelectorEagerTruncate = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::timeAndSizeBoundSelectorEagerTruncate, "timeAndSizeBoundSelectorEagerTruncate", this);
+            this.payloads.timeAndSizeNoTerminalTruncationOnTimechange = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::timeAndSizeNoTerminalTruncationOnTimechange, "timeAndSizeNoTerminalTruncationOnTimechange", this);
+            this.payloads.disposeNoNeedForResetSizeBound = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::disposeNoNeedForResetSizeBound, "disposeNoNeedForResetSizeBound", this);
+            this.payloads.disposeNoNeedForResetTimeBound = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::disposeNoNeedForResetTimeBound, "disposeNoNeedForResetTimeBound", this);
+            this.payloads.disposeNoNeedForResetTimeAndSIzeBound = _ClassStatement.forPayload(FlowableReplayEagerTruncateTest::disposeNoNeedForResetTimeAndSIzeBound, "disposeNoNeedForResetTimeAndSIzeBound", this);
         }
     }
 }

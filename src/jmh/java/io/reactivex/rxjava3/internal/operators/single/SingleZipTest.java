@@ -150,78 +150,157 @@ public class SingleZipTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private SingleZipTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zip2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zip2, this.description("zip2"));
+            this.payloads.zip2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zip3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zip3, this.description("zip3"));
+            this.payloads.zip3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zip4() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zip4, this.description("zip4"));
+            this.payloads.zip4.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zip5() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zip5, this.description("zip5"));
+            this.payloads.zip5.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zip6() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zip6, this.description("zip6"));
+            this.payloads.zip6.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zip7() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zip7, this.description("zip7"));
+            this.payloads.zip7.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zip8() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zip8, this.description("zip8"));
+            this.payloads.zip8.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zip9() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zip9, this.description("zip9"));
+            this.payloads.zip9.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noDisposeOnAllSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noDisposeOnAllSuccess, this.description("noDisposeOnAllSuccess"));
+            this.payloads.noDisposeOnAllSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noDisposeOnAllSuccess2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noDisposeOnAllSuccess2, this.description("noDisposeOnAllSuccess2"));
+            this.payloads.noDisposeOnAllSuccess2.evaluate();
         }
 
-        private SingleZipTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SingleZipTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<SingleZipTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleZipTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public SingleZipTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<SingleZipTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleZipTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new SingleZipTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleZipTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(SingleZipTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(SingleZipTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement zip2;
+
+            public org.junit.runners.model.Statement zip3;
+
+            public org.junit.runners.model.Statement zip4;
+
+            public org.junit.runners.model.Statement zip5;
+
+            public org.junit.runners.model.Statement zip6;
+
+            public org.junit.runners.model.Statement zip7;
+
+            public org.junit.runners.model.Statement zip8;
+
+            public org.junit.runners.model.Statement zip9;
+
+            public org.junit.runners.model.Statement noDisposeOnAllSuccess;
+
+            public org.junit.runners.model.Statement noDisposeOnAllSuccess2;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.zip2 = _ClassStatement.forPayload(SingleZipTest::zip2, "zip2", this);
+            this.payloads.zip3 = _ClassStatement.forPayload(SingleZipTest::zip3, "zip3", this);
+            this.payloads.zip4 = _ClassStatement.forPayload(SingleZipTest::zip4, "zip4", this);
+            this.payloads.zip5 = _ClassStatement.forPayload(SingleZipTest::zip5, "zip5", this);
+            this.payloads.zip6 = _ClassStatement.forPayload(SingleZipTest::zip6, "zip6", this);
+            this.payloads.zip7 = _ClassStatement.forPayload(SingleZipTest::zip7, "zip7", this);
+            this.payloads.zip8 = _ClassStatement.forPayload(SingleZipTest::zip8, "zip8", this);
+            this.payloads.zip9 = _ClassStatement.forPayload(SingleZipTest::zip9, "zip9", this);
+            this.payloads.noDisposeOnAllSuccess = _ClassStatement.forPayload(SingleZipTest::noDisposeOnAllSuccess, "noDisposeOnAllSuccess", this);
+            this.payloads.noDisposeOnAllSuccess2 = _ClassStatement.forPayload(SingleZipTest::noDisposeOnAllSuccess2, "noDisposeOnAllSuccess2", this);
         }
     }
 }

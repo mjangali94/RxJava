@@ -304,138 +304,237 @@ public class SingleDoOnTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private SingleDoOnTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnDispose, this.description("doOnDispose"));
+            this.payloads.doOnDispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnError, this.description("doOnError"));
+            this.payloads.doOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnSubscribe, this.description("doOnSubscribe"));
+            this.payloads.doOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnSuccess, this.description("doOnSuccess"));
+            this.payloads.doOnSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnSubscribeNormal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnSubscribeNormal, this.description("doOnSubscribeNormal"));
+            this.payloads.doOnSubscribeNormal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnSubscribeError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnSubscribeError, this.description("doOnSubscribeError"));
+            this.payloads.doOnSubscribeError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnSubscribeJustCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnSubscribeJustCrash, this.description("doOnSubscribeJustCrash"));
+            this.payloads.doOnSubscribeJustCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnSubscribeErrorCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnSubscribeErrorCrash, this.description("doOnSubscribeErrorCrash"));
+            this.payloads.doOnSubscribeErrorCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorSuccess, this.description("onErrorSuccess"));
+            this.payloads.onErrorSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorCrashes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorCrashes, this.description("onErrorCrashes"));
+            this.payloads.onErrorCrashes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnEventThrowsSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnEventThrowsSuccess, this.description("doOnEventThrowsSuccess"));
+            this.payloads.doOnEventThrowsSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnEventThrowsError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnEventThrowsError, this.description("doOnEventThrowsError"));
+            this.payloads.doOnEventThrowsError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnDisposeDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnDisposeDispose, this.description("doOnDisposeDispose"));
+            this.payloads.doOnDisposeDispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnDisposeSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnDisposeSuccess, this.description("doOnDisposeSuccess"));
+            this.payloads.doOnDisposeSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnDisposeError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnDisposeError, this.description("doOnDisposeError"));
+            this.payloads.doOnDisposeError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnDisposeDoubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnDisposeDoubleOnSubscribe, this.description("doOnDisposeDoubleOnSubscribe"));
+            this.payloads.doOnDisposeDoubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnDisposeCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnDisposeCrash, this.description("doOnDisposeCrash"));
+            this.payloads.doOnDisposeCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnSuccessErrors() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnSuccessErrors, this.description("doOnSuccessErrors"));
+            this.payloads.doOnSuccessErrors.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnSuccessCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnSuccessCrash, this.description("doOnSuccessCrash"));
+            this.payloads.doOnSuccessCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onSubscribeCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onSubscribeCrash, this.description("onSubscribeCrash"));
+            this.payloads.onSubscribeCrash.evaluate();
         }
 
-        private SingleDoOnTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SingleDoOnTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<SingleDoOnTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleDoOnTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public SingleDoOnTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<SingleDoOnTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleDoOnTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new SingleDoOnTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleDoOnTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(SingleDoOnTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(SingleDoOnTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement doOnDispose;
+
+            public org.junit.runners.model.Statement doOnError;
+
+            public org.junit.runners.model.Statement doOnSubscribe;
+
+            public org.junit.runners.model.Statement doOnSuccess;
+
+            public org.junit.runners.model.Statement doOnSubscribeNormal;
+
+            public org.junit.runners.model.Statement doOnSubscribeError;
+
+            public org.junit.runners.model.Statement doOnSubscribeJustCrash;
+
+            public org.junit.runners.model.Statement doOnSubscribeErrorCrash;
+
+            public org.junit.runners.model.Statement onErrorSuccess;
+
+            public org.junit.runners.model.Statement onErrorCrashes;
+
+            public org.junit.runners.model.Statement doOnEventThrowsSuccess;
+
+            public org.junit.runners.model.Statement doOnEventThrowsError;
+
+            public org.junit.runners.model.Statement doOnDisposeDispose;
+
+            public org.junit.runners.model.Statement doOnDisposeSuccess;
+
+            public org.junit.runners.model.Statement doOnDisposeError;
+
+            public org.junit.runners.model.Statement doOnDisposeDoubleOnSubscribe;
+
+            public org.junit.runners.model.Statement doOnDisposeCrash;
+
+            public org.junit.runners.model.Statement doOnSuccessErrors;
+
+            public org.junit.runners.model.Statement doOnSuccessCrash;
+
+            public org.junit.runners.model.Statement onSubscribeCrash;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.doOnDispose = _ClassStatement.forPayload(SingleDoOnTest::doOnDispose, "doOnDispose", this);
+            this.payloads.doOnError = _ClassStatement.forPayload(SingleDoOnTest::doOnError, "doOnError", this);
+            this.payloads.doOnSubscribe = _ClassStatement.forPayload(SingleDoOnTest::doOnSubscribe, "doOnSubscribe", this);
+            this.payloads.doOnSuccess = _ClassStatement.forPayload(SingleDoOnTest::doOnSuccess, "doOnSuccess", this);
+            this.payloads.doOnSubscribeNormal = _ClassStatement.forPayload(SingleDoOnTest::doOnSubscribeNormal, "doOnSubscribeNormal", this);
+            this.payloads.doOnSubscribeError = _ClassStatement.forPayload(SingleDoOnTest::doOnSubscribeError, "doOnSubscribeError", this);
+            this.payloads.doOnSubscribeJustCrash = _ClassStatement.forPayload(SingleDoOnTest::doOnSubscribeJustCrash, "doOnSubscribeJustCrash", this);
+            this.payloads.doOnSubscribeErrorCrash = _ClassStatement.forPayload(SingleDoOnTest::doOnSubscribeErrorCrash, "doOnSubscribeErrorCrash", this);
+            this.payloads.onErrorSuccess = _ClassStatement.forPayload(SingleDoOnTest::onErrorSuccess, "onErrorSuccess", this);
+            this.payloads.onErrorCrashes = _ClassStatement.forPayload(SingleDoOnTest::onErrorCrashes, "onErrorCrashes", this);
+            this.payloads.doOnEventThrowsSuccess = _ClassStatement.forPayload(SingleDoOnTest::doOnEventThrowsSuccess, "doOnEventThrowsSuccess", this);
+            this.payloads.doOnEventThrowsError = _ClassStatement.forPayload(SingleDoOnTest::doOnEventThrowsError, "doOnEventThrowsError", this);
+            this.payloads.doOnDisposeDispose = _ClassStatement.forPayload(SingleDoOnTest::doOnDisposeDispose, "doOnDisposeDispose", this);
+            this.payloads.doOnDisposeSuccess = _ClassStatement.forPayload(SingleDoOnTest::doOnDisposeSuccess, "doOnDisposeSuccess", this);
+            this.payloads.doOnDisposeError = _ClassStatement.forPayload(SingleDoOnTest::doOnDisposeError, "doOnDisposeError", this);
+            this.payloads.doOnDisposeDoubleOnSubscribe = _ClassStatement.forPayload(SingleDoOnTest::doOnDisposeDoubleOnSubscribe, "doOnDisposeDoubleOnSubscribe", this);
+            this.payloads.doOnDisposeCrash = _ClassStatement.forPayload(SingleDoOnTest::doOnDisposeCrash, "doOnDisposeCrash", this);
+            this.payloads.doOnSuccessErrors = _ClassStatement.forPayload(SingleDoOnTest::doOnSuccessErrors, "doOnSuccessErrors", this);
+            this.payloads.doOnSuccessCrash = _ClassStatement.forPayload(SingleDoOnTest::doOnSuccessCrash, "doOnSuccessCrash", this);
+            this.payloads.onSubscribeCrash = _ClassStatement.forPayload(SingleDoOnTest::onSubscribeCrash, "onSubscribeCrash", this);
         }
     }
 }

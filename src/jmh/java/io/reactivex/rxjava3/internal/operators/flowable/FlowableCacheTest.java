@@ -415,174 +415,285 @@ public class FlowableCacheTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableCacheTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_coldReplayNoBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::coldReplayNoBackpressure, this.description("coldReplayNoBackpressure"));
+            this.payloads.coldReplayNoBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_coldReplayBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::coldReplayBackpressure, this.description("coldReplayBackpressure"));
+            this.payloads.coldReplayBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cache() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cache, this.description("cache"));
+            this.payloads.cache.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribeSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribeSource, this.description("unsubscribeSource"));
+            this.payloads.unsubscribeSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_take() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::take, this.description("take"));
+            this.payloads.take.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_async() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::async, this.description("async"));
+            this.payloads.async.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncComeAndGo() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncComeAndGo, this.description("asyncComeAndGo"));
+            this.payloads.asyncComeAndGo.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noMissingBackpressureException() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noMissingBackpressureException, this.description("noMissingBackpressureException"));
+            this.payloads.noMissingBackpressureException.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_valuesAndThenError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::valuesAndThenError, this.description("valuesAndThenError"));
+            this.payloads.valuesAndThenError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_take2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::take2, this.description("take2"));
+            this.payloads.take2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeOnArrival2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeOnArrival2, this.description("disposeOnArrival2"));
+            this.payloads.disposeOnArrival2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_subscribeEmitRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscribeEmitRace, this.description("subscribeEmitRace"));
+            this.payloads.subscribeEmitRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observers() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observers, this.description("observers"));
+            this.payloads.observers.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeOnArrival() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeOnArrival, this.description("disposeOnArrival"));
+            this.payloads.disposeOnArrival.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSource, this.description("badSource"));
+            this.payloads.badSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequest, this.description("badRequest"));
+            this.payloads.badRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_take1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::take1, this.description("take1"));
+            this.payloads.take1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_empty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::empty, this.description("empty"));
+            this.payloads.empty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelledUpFrontConnectAnyway() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelledUpFrontConnectAnyway, this.description("cancelledUpFrontConnectAnyway"));
+            this.payloads.cancelledUpFrontConnectAnyway.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelledUpFront() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelledUpFront, this.description("cancelledUpFront"));
+            this.payloads.cancelledUpFront.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_subscribeSubscribeRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscribeSubscribeRace, this.description("subscribeSubscribeRace"));
+            this.payloads.subscribeSubscribeRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_subscribeCompleteRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscribeCompleteRace, this.description("subscribeCompleteRace"));
+            this.payloads.subscribeCompleteRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressure, this.description("backpressure"));
+            this.payloads.backpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_addRemoveRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::addRemoveRace, this.description("addRemoveRace"));
+            this.payloads.addRemoveRace.evaluate();
         }
 
-        private FlowableCacheTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableCacheTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableCacheTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableCacheTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableCacheTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableCacheTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableCacheTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableCacheTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableCacheTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableCacheTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableCacheTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement coldReplayNoBackpressure;
+
+            public org.junit.runners.model.Statement coldReplayBackpressure;
+
+            public org.junit.runners.model.Statement cache;
+
+            public org.junit.runners.model.Statement unsubscribeSource;
+
+            public org.junit.runners.model.Statement take;
+
+            public org.junit.runners.model.Statement async;
+
+            public org.junit.runners.model.Statement asyncComeAndGo;
+
+            public org.junit.runners.model.Statement noMissingBackpressureException;
+
+            public org.junit.runners.model.Statement valuesAndThenError;
+
+            public org.junit.runners.model.Statement take2;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement disposeOnArrival2;
+
+            public org.junit.runners.model.Statement subscribeEmitRace;
+
+            public org.junit.runners.model.Statement observers;
+
+            public org.junit.runners.model.Statement disposeOnArrival;
+
+            public org.junit.runners.model.Statement badSource;
+
+            public org.junit.runners.model.Statement badRequest;
+
+            public org.junit.runners.model.Statement take1;
+
+            public org.junit.runners.model.Statement empty;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement cancelledUpFrontConnectAnyway;
+
+            public org.junit.runners.model.Statement cancelledUpFront;
+
+            public org.junit.runners.model.Statement subscribeSubscribeRace;
+
+            public org.junit.runners.model.Statement subscribeCompleteRace;
+
+            public org.junit.runners.model.Statement backpressure;
+
+            public org.junit.runners.model.Statement addRemoveRace;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.coldReplayNoBackpressure = _ClassStatement.forPayload(FlowableCacheTest::coldReplayNoBackpressure, "coldReplayNoBackpressure", this);
+            this.payloads.coldReplayBackpressure = _ClassStatement.forPayload(FlowableCacheTest::coldReplayBackpressure, "coldReplayBackpressure", this);
+            this.payloads.cache = _ClassStatement.forPayload(FlowableCacheTest::cache, "cache", this);
+            this.payloads.unsubscribeSource = _ClassStatement.forPayload(FlowableCacheTest::unsubscribeSource, "unsubscribeSource", this);
+            this.payloads.take = _ClassStatement.forPayload(FlowableCacheTest::take, "take", this);
+            this.payloads.async = _ClassStatement.forPayload(FlowableCacheTest::async, "async", this);
+            this.payloads.asyncComeAndGo = _ClassStatement.forPayload(FlowableCacheTest::asyncComeAndGo, "asyncComeAndGo", this);
+            this.payloads.noMissingBackpressureException = _ClassStatement.forPayload(FlowableCacheTest::noMissingBackpressureException, "noMissingBackpressureException", this);
+            this.payloads.valuesAndThenError = _ClassStatement.forPayload(FlowableCacheTest::valuesAndThenError, "valuesAndThenError", this);
+            this.payloads.take2 = _ClassStatement.forPayload(FlowableCacheTest::take2, "take2", this);
+            this.payloads.dispose = _ClassStatement.forPayload(FlowableCacheTest::dispose, "dispose", this);
+            this.payloads.disposeOnArrival2 = _ClassStatement.forPayload(FlowableCacheTest::disposeOnArrival2, "disposeOnArrival2", this);
+            this.payloads.subscribeEmitRace = _ClassStatement.forPayload(FlowableCacheTest::subscribeEmitRace, "subscribeEmitRace", this);
+            this.payloads.observers = _ClassStatement.forPayload(FlowableCacheTest::observers, "observers", this);
+            this.payloads.disposeOnArrival = _ClassStatement.forPayload(FlowableCacheTest::disposeOnArrival, "disposeOnArrival", this);
+            this.payloads.badSource = _ClassStatement.forPayload(FlowableCacheTest::badSource, "badSource", this);
+            this.payloads.badRequest = _ClassStatement.forPayload(FlowableCacheTest::badRequest, "badRequest", this);
+            this.payloads.take1 = _ClassStatement.forPayload(FlowableCacheTest::take1, "take1", this);
+            this.payloads.empty = _ClassStatement.forPayload(FlowableCacheTest::empty, "empty", this);
+            this.payloads.error = _ClassStatement.forPayload(FlowableCacheTest::error, "error", this);
+            this.payloads.cancelledUpFrontConnectAnyway = _ClassStatement.forPayload(FlowableCacheTest::cancelledUpFrontConnectAnyway, "cancelledUpFrontConnectAnyway", this);
+            this.payloads.cancelledUpFront = _ClassStatement.forPayload(FlowableCacheTest::cancelledUpFront, "cancelledUpFront", this);
+            this.payloads.subscribeSubscribeRace = _ClassStatement.forPayload(FlowableCacheTest::subscribeSubscribeRace, "subscribeSubscribeRace", this);
+            this.payloads.subscribeCompleteRace = _ClassStatement.forPayload(FlowableCacheTest::subscribeCompleteRace, "subscribeCompleteRace", this);
+            this.payloads.backpressure = _ClassStatement.forPayload(FlowableCacheTest::backpressure, "backpressure", this);
+            this.payloads.addRemoveRace = _ClassStatement.forPayload(FlowableCacheTest::addRemoveRace, "addRemoveRace", this);
         }
     }
 }

@@ -61,26 +61,4 @@ public class InnerQueuedSubscriberTest extends RxJavaTest {
         inner.request(1);
         assertEquals(Arrays.asList(4L, 3L), requests);
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_requestInBatches() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestInBatches, this.description("requestInBatches"));
-        }
-
-        private InnerQueuedSubscriberTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new InnerQueuedSubscriberTest();
-        }
-
-        @java.lang.Override
-        public InnerQueuedSubscriberTest implementation() {
-            return this.implementation;
-        }
-    }
 }

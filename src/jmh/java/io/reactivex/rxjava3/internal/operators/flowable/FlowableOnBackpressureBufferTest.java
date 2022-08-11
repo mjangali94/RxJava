@@ -280,138 +280,237 @@ public class FlowableOnBackpressureBufferTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableOnBackpressureBufferTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noBackpressureSupport() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noBackpressureSupport, this.description("noBackpressureSupport"));
+            this.payloads.noBackpressureSupport.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fixBackpressureWithBuffer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fixBackpressureWithBuffer, this.description("fixBackpressureWithBuffer"));
+            this.payloads.fixBackpressureWithBuffer.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fixBackpressureBufferNegativeCapacity() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::fixBackpressureBufferNegativeCapacity, this.description("fixBackpressureBufferNegativeCapacity"), java.lang.IllegalArgumentException.class);
+            this.payloads.fixBackpressureBufferNegativeCapacity.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fixBackpressureBufferZeroCapacity() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::fixBackpressureBufferZeroCapacity, this.description("fixBackpressureBufferZeroCapacity"), java.lang.IllegalArgumentException.class);
+            this.payloads.fixBackpressureBufferZeroCapacity.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fixBackpressureBoundedBuffer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fixBackpressureBoundedBuffer, this.description("fixBackpressureBoundedBuffer"));
+            this.payloads.fixBackpressureBoundedBuffer.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nonFatalExceptionThrownByOnOverflowIsNotReportedByUpstream() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nonFatalExceptionThrownByOnOverflowIsNotReportedByUpstream, this.description("nonFatalExceptionThrownByOnOverflowIsNotReportedByUpstream"));
+            this.payloads.nonFatalExceptionThrownByOnOverflowIsNotReportedByUpstream.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maxSize() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::maxSize, this.description("maxSize"));
+            this.payloads.maxSize.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fixBackpressureBufferNegativeCapacity2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::fixBackpressureBufferNegativeCapacity2, this.description("fixBackpressureBufferNegativeCapacity2"), java.lang.IllegalArgumentException.class);
+            this.payloads.fixBackpressureBufferNegativeCapacity2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fixBackpressureBufferZeroCapacity2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::fixBackpressureBufferZeroCapacity2, this.description("fixBackpressureBufferZeroCapacity2"), java.lang.IllegalArgumentException.class);
+            this.payloads.fixBackpressureBufferZeroCapacity2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noDelayError, this.description("noDelayError"));
+            this.payloads.noDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayError, this.description("delayError"));
+            this.payloads.delayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayErrorBuffer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayErrorBuffer, this.description("delayErrorBuffer"));
+            this.payloads.delayErrorBuffer.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedNormal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedNormal, this.description("fusedNormal"));
+            this.payloads.fusedNormal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedError, this.description("fusedError"));
+            this.payloads.fusedError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedPreconsume() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedPreconsume, this.description("fusedPreconsume"));
+            this.payloads.fusedPreconsume.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyDelayError, this.description("emptyDelayError"));
+            this.payloads.emptyDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusionRejected() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusionRejected, this.description("fusionRejected"));
+            this.payloads.fusionRejected.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedNoConcurrentCleanDueToCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedNoConcurrentCleanDueToCancel, this.description("fusedNoConcurrentCleanDueToCancel"));
+            this.payloads.fusedNoConcurrentCleanDueToCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequest, this.description("badRequest"));
+            this.payloads.badRequest.evaluate();
         }
 
-        private FlowableOnBackpressureBufferTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableOnBackpressureBufferTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnBackpressureBufferTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnBackpressureBufferTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableOnBackpressureBufferTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnBackpressureBufferTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnBackpressureBufferTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableOnBackpressureBufferTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnBackpressureBufferTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableOnBackpressureBufferTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableOnBackpressureBufferTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement noBackpressureSupport;
+
+            public org.junit.runners.model.Statement fixBackpressureWithBuffer;
+
+            public org.junit.runners.model.Statement fixBackpressureBufferNegativeCapacity;
+
+            public org.junit.runners.model.Statement fixBackpressureBufferZeroCapacity;
+
+            public org.junit.runners.model.Statement fixBackpressureBoundedBuffer;
+
+            public org.junit.runners.model.Statement nonFatalExceptionThrownByOnOverflowIsNotReportedByUpstream;
+
+            public org.junit.runners.model.Statement maxSize;
+
+            public org.junit.runners.model.Statement fixBackpressureBufferNegativeCapacity2;
+
+            public org.junit.runners.model.Statement fixBackpressureBufferZeroCapacity2;
+
+            public org.junit.runners.model.Statement noDelayError;
+
+            public org.junit.runners.model.Statement delayError;
+
+            public org.junit.runners.model.Statement delayErrorBuffer;
+
+            public org.junit.runners.model.Statement fusedNormal;
+
+            public org.junit.runners.model.Statement fusedError;
+
+            public org.junit.runners.model.Statement fusedPreconsume;
+
+            public org.junit.runners.model.Statement emptyDelayError;
+
+            public org.junit.runners.model.Statement fusionRejected;
+
+            public org.junit.runners.model.Statement fusedNoConcurrentCleanDueToCancel;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement badRequest;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.noBackpressureSupport = _ClassStatement.forPayload(FlowableOnBackpressureBufferTest::noBackpressureSupport, "noBackpressureSupport", this);
+            this.payloads.fixBackpressureWithBuffer = _ClassStatement.forPayload(FlowableOnBackpressureBufferTest::fixBackpressureWithBuffer, "fixBackpressureWithBuffer", this);
+            this.payloads.fixBackpressureBufferNegativeCapacity = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableOnBackpressureBufferTest::fixBackpressureBufferNegativeCapacity, java.lang.IllegalArgumentException.class), "fixBackpressureBufferNegativeCapacity", this);
+            this.payloads.fixBackpressureBufferZeroCapacity = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableOnBackpressureBufferTest::fixBackpressureBufferZeroCapacity, java.lang.IllegalArgumentException.class), "fixBackpressureBufferZeroCapacity", this);
+            this.payloads.fixBackpressureBoundedBuffer = _ClassStatement.forPayload(FlowableOnBackpressureBufferTest::fixBackpressureBoundedBuffer, "fixBackpressureBoundedBuffer", this);
+            this.payloads.nonFatalExceptionThrownByOnOverflowIsNotReportedByUpstream = _ClassStatement.forPayload(FlowableOnBackpressureBufferTest::nonFatalExceptionThrownByOnOverflowIsNotReportedByUpstream, "nonFatalExceptionThrownByOnOverflowIsNotReportedByUpstream", this);
+            this.payloads.maxSize = _ClassStatement.forPayload(FlowableOnBackpressureBufferTest::maxSize, "maxSize", this);
+            this.payloads.fixBackpressureBufferNegativeCapacity2 = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableOnBackpressureBufferTest::fixBackpressureBufferNegativeCapacity2, java.lang.IllegalArgumentException.class), "fixBackpressureBufferNegativeCapacity2", this);
+            this.payloads.fixBackpressureBufferZeroCapacity2 = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableOnBackpressureBufferTest::fixBackpressureBufferZeroCapacity2, java.lang.IllegalArgumentException.class), "fixBackpressureBufferZeroCapacity2", this);
+            this.payloads.noDelayError = _ClassStatement.forPayload(FlowableOnBackpressureBufferTest::noDelayError, "noDelayError", this);
+            this.payloads.delayError = _ClassStatement.forPayload(FlowableOnBackpressureBufferTest::delayError, "delayError", this);
+            this.payloads.delayErrorBuffer = _ClassStatement.forPayload(FlowableOnBackpressureBufferTest::delayErrorBuffer, "delayErrorBuffer", this);
+            this.payloads.fusedNormal = _ClassStatement.forPayload(FlowableOnBackpressureBufferTest::fusedNormal, "fusedNormal", this);
+            this.payloads.fusedError = _ClassStatement.forPayload(FlowableOnBackpressureBufferTest::fusedError, "fusedError", this);
+            this.payloads.fusedPreconsume = _ClassStatement.forPayload(FlowableOnBackpressureBufferTest::fusedPreconsume, "fusedPreconsume", this);
+            this.payloads.emptyDelayError = _ClassStatement.forPayload(FlowableOnBackpressureBufferTest::emptyDelayError, "emptyDelayError", this);
+            this.payloads.fusionRejected = _ClassStatement.forPayload(FlowableOnBackpressureBufferTest::fusionRejected, "fusionRejected", this);
+            this.payloads.fusedNoConcurrentCleanDueToCancel = _ClassStatement.forPayload(FlowableOnBackpressureBufferTest::fusedNoConcurrentCleanDueToCancel, "fusedNoConcurrentCleanDueToCancel", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableOnBackpressureBufferTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.badRequest = _ClassStatement.forPayload(FlowableOnBackpressureBufferTest::badRequest, "badRequest", this);
         }
     }
 }

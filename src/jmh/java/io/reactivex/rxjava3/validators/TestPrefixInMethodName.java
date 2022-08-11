@@ -102,26 +102,4 @@ public class TestPrefixInMethodName {
             throw new AssertionError(fail.toString());
         }
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_checkAndUpdateTestMethodNames() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkAndUpdateTestMethodNames, this.description("checkAndUpdateTestMethodNames"));
-        }
-
-        private TestPrefixInMethodName implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new TestPrefixInMethodName();
-        }
-
-        @java.lang.Override
-        public TestPrefixInMethodName implementation() {
-            return this.implementation;
-        }
-    }
 }

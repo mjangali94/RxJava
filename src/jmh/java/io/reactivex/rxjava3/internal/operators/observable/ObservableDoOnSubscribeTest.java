@@ -129,44 +129,4 @@ public class ObservableDoOnSubscribeTest extends RxJavaTest {
             RxJavaPlugins.reset();
         }
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_doOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnSubscribe, this.description("doOnSubscribe"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_doOnSubscribe2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnSubscribe2, this.description("doOnSubscribe2"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_doOnUnSubscribeWorksWithRefCount() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnUnSubscribeWorksWithRefCount, this.description("doOnUnSubscribeWorksWithRefCount"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_onSubscribeCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onSubscribeCrash, this.description("onSubscribeCrash"));
-        }
-
-        private ObservableDoOnSubscribeTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableDoOnSubscribeTest();
-        }
-
-        @java.lang.Override
-        public ObservableDoOnSubscribeTest implementation() {
-            return this.implementation;
-        }
-    }
 }

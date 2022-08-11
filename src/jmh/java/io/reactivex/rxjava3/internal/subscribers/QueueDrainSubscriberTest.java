@@ -302,90 +302,173 @@ public class QueueDrainSubscriberTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private QueueDrainSubscriberTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unorderedFastPathNoRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unorderedFastPathNoRequest, this.description("unorderedFastPathNoRequest"));
+            this.payloads.unorderedFastPathNoRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_orderedFastPathNoRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::orderedFastPathNoRequest, this.description("orderedFastPathNoRequest"));
+            this.payloads.orderedFastPathNoRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_acceptBadRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::acceptBadRequest, this.description("acceptBadRequest"));
+            this.payloads.acceptBadRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unorderedFastPathRequest1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unorderedFastPathRequest1, this.description("unorderedFastPathRequest1"));
+            this.payloads.unorderedFastPathRequest1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_orderedFastPathRequest1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::orderedFastPathRequest1, this.description("orderedFastPathRequest1"));
+            this.payloads.orderedFastPathRequest1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unorderedSlowPath() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unorderedSlowPath, this.description("unorderedSlowPath"));
+            this.payloads.unorderedSlowPath.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_orderedSlowPath() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::orderedSlowPath, this.description("orderedSlowPath"));
+            this.payloads.orderedSlowPath.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_orderedSlowPathNonEmptyQueue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::orderedSlowPathNonEmptyQueue, this.description("orderedSlowPathNonEmptyQueue"));
+            this.payloads.orderedSlowPathNonEmptyQueue.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unorderedOnNextRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unorderedOnNextRace, this.description("unorderedOnNextRace"));
+            this.payloads.unorderedOnNextRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_orderedOnNextRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::orderedOnNextRace, this.description("orderedOnNextRace"));
+            this.payloads.orderedOnNextRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unorderedFastPathReject() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unorderedFastPathReject, this.description("unorderedFastPathReject"));
+            this.payloads.unorderedFastPathReject.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_orderedFastPathReject() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::orderedFastPathReject, this.description("orderedFastPathReject"));
+            this.payloads.orderedFastPathReject.evaluate();
         }
 
-        private QueueDrainSubscriberTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new QueueDrainSubscriberTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<QueueDrainSubscriberTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<QueueDrainSubscriberTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public QueueDrainSubscriberTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<QueueDrainSubscriberTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<QueueDrainSubscriberTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new QueueDrainSubscriberTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<QueueDrainSubscriberTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(QueueDrainSubscriberTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(QueueDrainSubscriberTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement unorderedFastPathNoRequest;
+
+            public org.junit.runners.model.Statement orderedFastPathNoRequest;
+
+            public org.junit.runners.model.Statement acceptBadRequest;
+
+            public org.junit.runners.model.Statement unorderedFastPathRequest1;
+
+            public org.junit.runners.model.Statement orderedFastPathRequest1;
+
+            public org.junit.runners.model.Statement unorderedSlowPath;
+
+            public org.junit.runners.model.Statement orderedSlowPath;
+
+            public org.junit.runners.model.Statement orderedSlowPathNonEmptyQueue;
+
+            public org.junit.runners.model.Statement unorderedOnNextRace;
+
+            public org.junit.runners.model.Statement orderedOnNextRace;
+
+            public org.junit.runners.model.Statement unorderedFastPathReject;
+
+            public org.junit.runners.model.Statement orderedFastPathReject;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.unorderedFastPathNoRequest = _ClassStatement.forPayload(QueueDrainSubscriberTest::unorderedFastPathNoRequest, "unorderedFastPathNoRequest", this);
+            this.payloads.orderedFastPathNoRequest = _ClassStatement.forPayload(QueueDrainSubscriberTest::orderedFastPathNoRequest, "orderedFastPathNoRequest", this);
+            this.payloads.acceptBadRequest = _ClassStatement.forPayload(QueueDrainSubscriberTest::acceptBadRequest, "acceptBadRequest", this);
+            this.payloads.unorderedFastPathRequest1 = _ClassStatement.forPayload(QueueDrainSubscriberTest::unorderedFastPathRequest1, "unorderedFastPathRequest1", this);
+            this.payloads.orderedFastPathRequest1 = _ClassStatement.forPayload(QueueDrainSubscriberTest::orderedFastPathRequest1, "orderedFastPathRequest1", this);
+            this.payloads.unorderedSlowPath = _ClassStatement.forPayload(QueueDrainSubscriberTest::unorderedSlowPath, "unorderedSlowPath", this);
+            this.payloads.orderedSlowPath = _ClassStatement.forPayload(QueueDrainSubscriberTest::orderedSlowPath, "orderedSlowPath", this);
+            this.payloads.orderedSlowPathNonEmptyQueue = _ClassStatement.forPayload(QueueDrainSubscriberTest::orderedSlowPathNonEmptyQueue, "orderedSlowPathNonEmptyQueue", this);
+            this.payloads.unorderedOnNextRace = _ClassStatement.forPayload(QueueDrainSubscriberTest::unorderedOnNextRace, "unorderedOnNextRace", this);
+            this.payloads.orderedOnNextRace = _ClassStatement.forPayload(QueueDrainSubscriberTest::orderedOnNextRace, "orderedOnNextRace", this);
+            this.payloads.unorderedFastPathReject = _ClassStatement.forPayload(QueueDrainSubscriberTest::unorderedFastPathReject, "unorderedFastPathReject", this);
+            this.payloads.orderedFastPathReject = _ClassStatement.forPayload(QueueDrainSubscriberTest::orderedFastPathReject, "orderedFastPathReject", this);
         }
     }
 }

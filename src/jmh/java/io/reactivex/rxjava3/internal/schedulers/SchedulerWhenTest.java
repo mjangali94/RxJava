@@ -335,90 +335,173 @@ public class SchedulerWhenTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private SchedulerWhenTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncMaxConcurrent() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncMaxConcurrent, this.description("asyncMaxConcurrent"));
+            this.payloads.asyncMaxConcurrent.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncDelaySubscription() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncDelaySubscription, this.description("asyncDelaySubscription"));
+            this.payloads.asyncDelaySubscription.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_syncMaxConcurrent() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::syncMaxConcurrent, this.description("syncMaxConcurrent"));
+            this.payloads.syncMaxConcurrent.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_syncDelaySubscription() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::syncDelaySubscription, this.description("syncDelaySubscription"));
+            this.payloads.syncDelaySubscription.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_raceConditions() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::raceConditions, this.description("raceConditions"));
+            this.payloads.raceConditions.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_subscribedDisposable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscribedDisposable, this.description("subscribedDisposable"));
+            this.payloads.subscribedDisposable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combineCrashInConstructor() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::combineCrashInConstructor, this.description("combineCrashInConstructor"), io.reactivex.rxjava3.exceptions.TestException.class);
+            this.payloads.combineCrashInConstructor.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposed, this.description("disposed"));
+            this.payloads.disposed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scheduledActiondisposedSetRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scheduledActiondisposedSetRace, this.description("scheduledActiondisposedSetRace"));
+            this.payloads.scheduledActiondisposedSetRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scheduledActionStates() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scheduledActionStates, this.description("scheduledActionStates"));
+            this.payloads.scheduledActionStates.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onCompleteActionRunCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompleteActionRunCrash, this.description("onCompleteActionRunCrash"));
+            this.payloads.onCompleteActionRunCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_queueWorkerDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::queueWorkerDispose, this.description("queueWorkerDispose"));
+            this.payloads.queueWorkerDispose.evaluate();
         }
 
-        private SchedulerWhenTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SchedulerWhenTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<SchedulerWhenTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<SchedulerWhenTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public SchedulerWhenTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<SchedulerWhenTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<SchedulerWhenTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new SchedulerWhenTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<SchedulerWhenTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(SchedulerWhenTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(SchedulerWhenTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement asyncMaxConcurrent;
+
+            public org.junit.runners.model.Statement asyncDelaySubscription;
+
+            public org.junit.runners.model.Statement syncMaxConcurrent;
+
+            public org.junit.runners.model.Statement syncDelaySubscription;
+
+            public org.junit.runners.model.Statement raceConditions;
+
+            public org.junit.runners.model.Statement subscribedDisposable;
+
+            public org.junit.runners.model.Statement combineCrashInConstructor;
+
+            public org.junit.runners.model.Statement disposed;
+
+            public org.junit.runners.model.Statement scheduledActiondisposedSetRace;
+
+            public org.junit.runners.model.Statement scheduledActionStates;
+
+            public org.junit.runners.model.Statement onCompleteActionRunCrash;
+
+            public org.junit.runners.model.Statement queueWorkerDispose;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.asyncMaxConcurrent = _ClassStatement.forPayload(SchedulerWhenTest::asyncMaxConcurrent, "asyncMaxConcurrent", this);
+            this.payloads.asyncDelaySubscription = _ClassStatement.forPayload(SchedulerWhenTest::asyncDelaySubscription, "asyncDelaySubscription", this);
+            this.payloads.syncMaxConcurrent = _ClassStatement.forPayload(SchedulerWhenTest::syncMaxConcurrent, "syncMaxConcurrent", this);
+            this.payloads.syncDelaySubscription = _ClassStatement.forPayload(SchedulerWhenTest::syncDelaySubscription, "syncDelaySubscription", this);
+            this.payloads.raceConditions = _ClassStatement.forPayload(SchedulerWhenTest::raceConditions, "raceConditions", this);
+            this.payloads.subscribedDisposable = _ClassStatement.forPayload(SchedulerWhenTest::subscribedDisposable, "subscribedDisposable", this);
+            this.payloads.combineCrashInConstructor = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(SchedulerWhenTest::combineCrashInConstructor, io.reactivex.rxjava3.exceptions.TestException.class), "combineCrashInConstructor", this);
+            this.payloads.disposed = _ClassStatement.forPayload(SchedulerWhenTest::disposed, "disposed", this);
+            this.payloads.scheduledActiondisposedSetRace = _ClassStatement.forPayload(SchedulerWhenTest::scheduledActiondisposedSetRace, "scheduledActiondisposedSetRace", this);
+            this.payloads.scheduledActionStates = _ClassStatement.forPayload(SchedulerWhenTest::scheduledActionStates, "scheduledActionStates", this);
+            this.payloads.onCompleteActionRunCrash = _ClassStatement.forPayload(SchedulerWhenTest::onCompleteActionRunCrash, "onCompleteActionRunCrash", this);
+            this.payloads.queueWorkerDispose = _ClassStatement.forPayload(SchedulerWhenTest::queueWorkerDispose, "queueWorkerDispose", this);
         }
     }
 }

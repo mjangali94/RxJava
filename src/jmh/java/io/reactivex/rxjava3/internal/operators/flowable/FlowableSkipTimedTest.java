@@ -124,48 +124,117 @@ public class FlowableSkipTimedTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableSkipTimedTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipTimed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipTimed, this.description("skipTimed"));
+            this.payloads.skipTimed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipTimedFinishBeforeTime() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipTimedFinishBeforeTime, this.description("skipTimedFinishBeforeTime"));
+            this.payloads.skipTimedFinishBeforeTime.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipTimedErrorBeforeTime() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipTimedErrorBeforeTime, this.description("skipTimedErrorBeforeTime"));
+            this.payloads.skipTimedErrorBeforeTime.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipTimedErrorAfterTime() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipTimedErrorAfterTime, this.description("skipTimedErrorAfterTime"));
+            this.payloads.skipTimedErrorAfterTime.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipTimedDefaultScheduler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipTimedDefaultScheduler, this.description("skipTimedDefaultScheduler"));
+            this.payloads.skipTimedDefaultScheduler.evaluate();
         }
 
-        private FlowableSkipTimedTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableSkipTimedTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSkipTimedTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSkipTimedTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableSkipTimedTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSkipTimedTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSkipTimedTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableSkipTimedTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSkipTimedTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableSkipTimedTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableSkipTimedTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement skipTimed;
+
+            public org.junit.runners.model.Statement skipTimedFinishBeforeTime;
+
+            public org.junit.runners.model.Statement skipTimedErrorBeforeTime;
+
+            public org.junit.runners.model.Statement skipTimedErrorAfterTime;
+
+            public org.junit.runners.model.Statement skipTimedDefaultScheduler;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.skipTimed = _ClassStatement.forPayload(FlowableSkipTimedTest::skipTimed, "skipTimed", this);
+            this.payloads.skipTimedFinishBeforeTime = _ClassStatement.forPayload(FlowableSkipTimedTest::skipTimedFinishBeforeTime, "skipTimedFinishBeforeTime", this);
+            this.payloads.skipTimedErrorBeforeTime = _ClassStatement.forPayload(FlowableSkipTimedTest::skipTimedErrorBeforeTime, "skipTimedErrorBeforeTime", this);
+            this.payloads.skipTimedErrorAfterTime = _ClassStatement.forPayload(FlowableSkipTimedTest::skipTimedErrorAfterTime, "skipTimedErrorAfterTime", this);
+            this.payloads.skipTimedDefaultScheduler = _ClassStatement.forPayload(FlowableSkipTimedTest::skipTimedDefaultScheduler, "skipTimedDefaultScheduler", this);
         }
     }
 }

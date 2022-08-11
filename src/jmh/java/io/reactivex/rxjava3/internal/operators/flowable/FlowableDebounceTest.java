@@ -502,192 +502,302 @@ public class FlowableDebounceTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableDebounceTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_debounceWithCompleted() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::debounceWithCompleted, this.description("debounceWithCompleted"));
+            this.payloads.debounceWithCompleted.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_debounceNeverEmits() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::debounceNeverEmits, this.description("debounceNeverEmits"));
+            this.payloads.debounceNeverEmits.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_debounceWithError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::debounceWithError, this.description("debounceWithError"));
+            this.payloads.debounceWithError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_debounceSelectorNormal1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::debounceSelectorNormal1, this.description("debounceSelectorNormal1"));
+            this.payloads.debounceSelectorNormal1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_debounceSelectorFuncThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::debounceSelectorFuncThrows, this.description("debounceSelectorFuncThrows"));
+            this.payloads.debounceSelectorFuncThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_debounceSelectorFlowableThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::debounceSelectorFlowableThrows, this.description("debounceSelectorFlowableThrows"));
+            this.payloads.debounceSelectorFlowableThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_debounceTimedLastIsNotLost() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::debounceTimedLastIsNotLost, this.description("debounceTimedLastIsNotLost"));
+            this.payloads.debounceTimedLastIsNotLost.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_debounceSelectorLastIsNotLost() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::debounceSelectorLastIsNotLost, this.description("debounceSelectorLastIsNotLost"));
+            this.payloads.debounceSelectorLastIsNotLost.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_debounceWithTimeBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::debounceWithTimeBackpressure, this.description("debounceWithTimeBackpressure"));
+            this.payloads.debounceWithTimeBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_debounceDefaultScheduler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::debounceDefaultScheduler, this.description("debounceDefaultScheduler"));
+            this.payloads.debounceDefaultScheduler.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_debounceDefault() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::debounceDefault, this.description("debounceDefault"));
+            this.payloads.debounceDefault.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSource, this.description("badSource"));
+            this.payloads.badSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSourceSelector() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSourceSelector, this.description("badSourceSelector"));
+            this.payloads.badSourceSelector.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_debounceWithEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::debounceWithEmpty, this.description("debounceWithEmpty"));
+            this.payloads.debounceWithEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureNoRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureNoRequest, this.description("backpressureNoRequest"));
+            this.payloads.backpressureNoRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureNoRequestTimed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureNoRequestTimed, this.description("backpressureNoRequestTimed"));
+            this.payloads.backpressureNoRequestTimed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeInOnNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeInOnNext, this.description("disposeInOnNext"));
+            this.payloads.disposeInOnNext.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposedInOnComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposedInOnComplete, this.description("disposedInOnComplete"));
+            this.payloads.disposedInOnComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emitLate() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emitLate, this.description("emitLate"));
+            this.payloads.emitLate.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequestReported() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequestReported, this.description("badRequestReported"));
+            this.payloads.badRequestReported.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timedDoubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timedDoubleOnSubscribe, this.description("timedDoubleOnSubscribe"));
+            this.payloads.timedDoubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timedDisposedIgnoredBySource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timedDisposedIgnoredBySource, this.description("timedDisposedIgnoredBySource"));
+            this.payloads.timedDisposedIgnoredBySource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timedBadRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timedBadRequest, this.description("timedBadRequest"));
+            this.payloads.timedBadRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timedLateEmit() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timedLateEmit, this.description("timedLateEmit"));
+            this.payloads.timedLateEmit.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timedError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timedError, this.description("timedError"));
+            this.payloads.timedError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_debounceOnEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::debounceOnEmpty, this.description("debounceOnEmpty"));
+            this.payloads.debounceOnEmpty.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().before();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableDebounceTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableDebounceTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.before();
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private FlowableDebounceTest implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableDebounceTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableDebounceTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableDebounceTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableDebounceTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableDebounceTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableDebounceTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableDebounceTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public FlowableDebounceTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement debounceWithCompleted;
+
+            public org.junit.runners.model.Statement debounceNeverEmits;
+
+            public org.junit.runners.model.Statement debounceWithError;
+
+            public org.junit.runners.model.Statement debounceSelectorNormal1;
+
+            public org.junit.runners.model.Statement debounceSelectorFuncThrows;
+
+            public org.junit.runners.model.Statement debounceSelectorFlowableThrows;
+
+            public org.junit.runners.model.Statement debounceTimedLastIsNotLost;
+
+            public org.junit.runners.model.Statement debounceSelectorLastIsNotLost;
+
+            public org.junit.runners.model.Statement debounceWithTimeBackpressure;
+
+            public org.junit.runners.model.Statement debounceDefaultScheduler;
+
+            public org.junit.runners.model.Statement debounceDefault;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement badSource;
+
+            public org.junit.runners.model.Statement badSourceSelector;
+
+            public org.junit.runners.model.Statement debounceWithEmpty;
+
+            public org.junit.runners.model.Statement backpressureNoRequest;
+
+            public org.junit.runners.model.Statement backpressureNoRequestTimed;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement disposeInOnNext;
+
+            public org.junit.runners.model.Statement disposedInOnComplete;
+
+            public org.junit.runners.model.Statement emitLate;
+
+            public org.junit.runners.model.Statement badRequestReported;
+
+            public org.junit.runners.model.Statement timedDoubleOnSubscribe;
+
+            public org.junit.runners.model.Statement timedDisposedIgnoredBySource;
+
+            public org.junit.runners.model.Statement timedBadRequest;
+
+            public org.junit.runners.model.Statement timedLateEmit;
+
+            public org.junit.runners.model.Statement timedError;
+
+            public org.junit.runners.model.Statement debounceOnEmpty;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.debounceWithCompleted = _ClassStatement.forPayload(FlowableDebounceTest::debounceWithCompleted, "debounceWithCompleted", this);
+            this.payloads.debounceNeverEmits = _ClassStatement.forPayload(FlowableDebounceTest::debounceNeverEmits, "debounceNeverEmits", this);
+            this.payloads.debounceWithError = _ClassStatement.forPayload(FlowableDebounceTest::debounceWithError, "debounceWithError", this);
+            this.payloads.debounceSelectorNormal1 = _ClassStatement.forPayload(FlowableDebounceTest::debounceSelectorNormal1, "debounceSelectorNormal1", this);
+            this.payloads.debounceSelectorFuncThrows = _ClassStatement.forPayload(FlowableDebounceTest::debounceSelectorFuncThrows, "debounceSelectorFuncThrows", this);
+            this.payloads.debounceSelectorFlowableThrows = _ClassStatement.forPayload(FlowableDebounceTest::debounceSelectorFlowableThrows, "debounceSelectorFlowableThrows", this);
+            this.payloads.debounceTimedLastIsNotLost = _ClassStatement.forPayload(FlowableDebounceTest::debounceTimedLastIsNotLost, "debounceTimedLastIsNotLost", this);
+            this.payloads.debounceSelectorLastIsNotLost = _ClassStatement.forPayload(FlowableDebounceTest::debounceSelectorLastIsNotLost, "debounceSelectorLastIsNotLost", this);
+            this.payloads.debounceWithTimeBackpressure = _ClassStatement.forPayload(FlowableDebounceTest::debounceWithTimeBackpressure, "debounceWithTimeBackpressure", this);
+            this.payloads.debounceDefaultScheduler = _ClassStatement.forPayload(FlowableDebounceTest::debounceDefaultScheduler, "debounceDefaultScheduler", this);
+            this.payloads.debounceDefault = _ClassStatement.forPayload(FlowableDebounceTest::debounceDefault, "debounceDefault", this);
+            this.payloads.dispose = _ClassStatement.forPayload(FlowableDebounceTest::dispose, "dispose", this);
+            this.payloads.badSource = _ClassStatement.forPayload(FlowableDebounceTest::badSource, "badSource", this);
+            this.payloads.badSourceSelector = _ClassStatement.forPayload(FlowableDebounceTest::badSourceSelector, "badSourceSelector", this);
+            this.payloads.debounceWithEmpty = _ClassStatement.forPayload(FlowableDebounceTest::debounceWithEmpty, "debounceWithEmpty", this);
+            this.payloads.backpressureNoRequest = _ClassStatement.forPayload(FlowableDebounceTest::backpressureNoRequest, "backpressureNoRequest", this);
+            this.payloads.backpressureNoRequestTimed = _ClassStatement.forPayload(FlowableDebounceTest::backpressureNoRequestTimed, "backpressureNoRequestTimed", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableDebounceTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.disposeInOnNext = _ClassStatement.forPayload(FlowableDebounceTest::disposeInOnNext, "disposeInOnNext", this);
+            this.payloads.disposedInOnComplete = _ClassStatement.forPayload(FlowableDebounceTest::disposedInOnComplete, "disposedInOnComplete", this);
+            this.payloads.emitLate = _ClassStatement.forPayload(FlowableDebounceTest::emitLate, "emitLate", this);
+            this.payloads.badRequestReported = _ClassStatement.forPayload(FlowableDebounceTest::badRequestReported, "badRequestReported", this);
+            this.payloads.timedDoubleOnSubscribe = _ClassStatement.forPayload(FlowableDebounceTest::timedDoubleOnSubscribe, "timedDoubleOnSubscribe", this);
+            this.payloads.timedDisposedIgnoredBySource = _ClassStatement.forPayload(FlowableDebounceTest::timedDisposedIgnoredBySource, "timedDisposedIgnoredBySource", this);
+            this.payloads.timedBadRequest = _ClassStatement.forPayload(FlowableDebounceTest::timedBadRequest, "timedBadRequest", this);
+            this.payloads.timedLateEmit = _ClassStatement.forPayload(FlowableDebounceTest::timedLateEmit, "timedLateEmit", this);
+            this.payloads.timedError = _ClassStatement.forPayload(FlowableDebounceTest::timedError, "timedError", this);
+            this.payloads.debounceOnEmpty = _ClassStatement.forPayload(FlowableDebounceTest::debounceOnEmpty, "debounceOnEmpty", this);
         }
     }
 }

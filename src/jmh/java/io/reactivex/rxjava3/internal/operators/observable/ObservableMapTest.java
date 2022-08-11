@@ -363,114 +363,198 @@ public class ObservableMapTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableMapTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_map() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::map, this.description("map"));
+            this.payloads.map.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapMany() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapMany, this.description("mapMany"));
+            this.payloads.mapMany.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapMany2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapMany2, this.description("mapMany2"));
+            this.payloads.mapMany2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapWithError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapWithError, this.description("mapWithError"));
+            this.payloads.mapWithError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapWithIssue417() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::mapWithIssue417, this.description("mapWithIssue417"), java.lang.IllegalArgumentException.class);
+            this.payloads.mapWithIssue417.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapWithErrorInFuncAndThreadPoolScheduler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::mapWithErrorInFuncAndThreadPoolScheduler, this.description("mapWithErrorInFuncAndThreadPoolScheduler"), java.lang.IllegalArgumentException.class);
+            this.payloads.mapWithErrorInFuncAndThreadPoolScheduler.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorPassesThruMap() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorPassesThruMap, this.description("errorPassesThruMap"));
+            this.payloads.errorPassesThruMap.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorPassesThruMap2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::errorPassesThruMap2, this.description("errorPassesThruMap2"), java.lang.IllegalStateException.class);
+            this.payloads.errorPassesThruMap2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapWithErrorInFunc() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::mapWithErrorInFunc, this.description("mapWithErrorInFunc"), java.lang.ArithmeticException.class);
+            this.payloads.mapWithErrorInFunc.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedSync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedSync, this.description("fusedSync"));
+            this.payloads.fusedSync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedAsync, this.description("fusedAsync"));
+            this.payloads.fusedAsync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedReject() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedReject, this.description("fusedReject"));
+            this.payloads.fusedReject.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSource, this.description("badSource"));
+            this.payloads.badSource.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().before();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableMapTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableMapTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.before();
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private ObservableMapTest implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableMapTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableMapTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableMapTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableMapTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableMapTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableMapTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableMapTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public ObservableMapTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement map;
+
+            public org.junit.runners.model.Statement mapMany;
+
+            public org.junit.runners.model.Statement mapMany2;
+
+            public org.junit.runners.model.Statement mapWithError;
+
+            public org.junit.runners.model.Statement mapWithIssue417;
+
+            public org.junit.runners.model.Statement mapWithErrorInFuncAndThreadPoolScheduler;
+
+            public org.junit.runners.model.Statement errorPassesThruMap;
+
+            public org.junit.runners.model.Statement errorPassesThruMap2;
+
+            public org.junit.runners.model.Statement mapWithErrorInFunc;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement fusedSync;
+
+            public org.junit.runners.model.Statement fusedAsync;
+
+            public org.junit.runners.model.Statement fusedReject;
+
+            public org.junit.runners.model.Statement badSource;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.map = _ClassStatement.forPayload(ObservableMapTest::map, "map", this);
+            this.payloads.mapMany = _ClassStatement.forPayload(ObservableMapTest::mapMany, "mapMany", this);
+            this.payloads.mapMany2 = _ClassStatement.forPayload(ObservableMapTest::mapMany2, "mapMany2", this);
+            this.payloads.mapWithError = _ClassStatement.forPayload(ObservableMapTest::mapWithError, "mapWithError", this);
+            this.payloads.mapWithIssue417 = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(ObservableMapTest::mapWithIssue417, java.lang.IllegalArgumentException.class), "mapWithIssue417", this);
+            this.payloads.mapWithErrorInFuncAndThreadPoolScheduler = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(ObservableMapTest::mapWithErrorInFuncAndThreadPoolScheduler, java.lang.IllegalArgumentException.class), "mapWithErrorInFuncAndThreadPoolScheduler", this);
+            this.payloads.errorPassesThruMap = _ClassStatement.forPayload(ObservableMapTest::errorPassesThruMap, "errorPassesThruMap", this);
+            this.payloads.errorPassesThruMap2 = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(ObservableMapTest::errorPassesThruMap2, java.lang.IllegalStateException.class), "errorPassesThruMap2", this);
+            this.payloads.mapWithErrorInFunc = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(ObservableMapTest::mapWithErrorInFunc, java.lang.ArithmeticException.class), "mapWithErrorInFunc", this);
+            this.payloads.dispose = _ClassStatement.forPayload(ObservableMapTest::dispose, "dispose", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(ObservableMapTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.fusedSync = _ClassStatement.forPayload(ObservableMapTest::fusedSync, "fusedSync", this);
+            this.payloads.fusedAsync = _ClassStatement.forPayload(ObservableMapTest::fusedAsync, "fusedAsync", this);
+            this.payloads.fusedReject = _ClassStatement.forPayload(ObservableMapTest::fusedReject, "fusedReject", this);
+            this.payloads.badSource = _ClassStatement.forPayload(ObservableMapTest::badSource, "badSource", this);
         }
     }
 }

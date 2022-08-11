@@ -37,44 +37,4 @@ public class MaybeFromObservableTest extends RxJavaTest {
     public void error() {
         Maybe.fromObservable(Observable.error(new TestException()).hide()).test().assertFailure(TestException.class);
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_empty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::empty, this.description("empty"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_just() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::just, this.description("just"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_range() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::range, this.description("range"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
-        }
-
-        private MaybeFromObservableTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeFromObservableTest();
-        }
-
-        @java.lang.Override
-        public MaybeFromObservableTest implementation() {
-            return this.implementation;
-        }
-    }
 }

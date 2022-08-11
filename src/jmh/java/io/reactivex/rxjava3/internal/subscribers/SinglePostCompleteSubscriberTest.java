@@ -60,26 +60,4 @@ public class SinglePostCompleteSubscriberTest extends RxJavaTest {
             ts.assertResult(1);
         }
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_requestCompleteRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestCompleteRace, this.description("requestCompleteRace"));
-        }
-
-        private SinglePostCompleteSubscriberTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SinglePostCompleteSubscriberTest();
-        }
-
-        @java.lang.Override
-        public SinglePostCompleteSubscriberTest implementation() {
-            return this.implementation;
-        }
-    }
 }

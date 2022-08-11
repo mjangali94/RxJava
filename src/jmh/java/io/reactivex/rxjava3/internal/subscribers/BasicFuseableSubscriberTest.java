@@ -78,32 +78,4 @@ public class BasicFuseableSubscriberTest extends RxJavaTest {
         bfs.onSubscribe(new BooleanSubscription());
         assertFalse(ts.hasSubscription());
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_offerThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::offerThrows, this.description("offerThrows"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_implementationStopsOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::implementationStopsOnSubscribe, this.description("implementationStopsOnSubscribe"));
-        }
-
-        private BasicFuseableSubscriberTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new BasicFuseableSubscriberTest();
-        }
-
-        @java.lang.Override
-        public BasicFuseableSubscriberTest implementation() {
-            return this.implementation;
-        }
-    }
 }

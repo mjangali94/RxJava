@@ -357,126 +357,214 @@ public class ObservableJoinTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableJoinTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normal1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normal1, this.description("normal1"));
+            this.payloads.normal1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normal1WithDuration() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normal1WithDuration, this.description("normal1WithDuration"));
+            this.payloads.normal1WithDuration.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normal2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normal2, this.description("normal2"));
+            this.payloads.normal2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_leftThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::leftThrows, this.description("leftThrows"));
+            this.payloads.leftThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rightThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rightThrows, this.description("rightThrows"));
+            this.payloads.rightThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_leftDurationThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::leftDurationThrows, this.description("leftDurationThrows"));
+            this.payloads.leftDurationThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rightDurationThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rightDurationThrows, this.description("rightDurationThrows"));
+            this.payloads.rightDurationThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_leftDurationSelectorThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::leftDurationSelectorThrows, this.description("leftDurationSelectorThrows"));
+            this.payloads.leftDurationSelectorThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rightDurationSelectorThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rightDurationSelectorThrows, this.description("rightDurationSelectorThrows"));
+            this.payloads.rightDurationSelectorThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_resultSelectorThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::resultSelectorThrows, this.description("resultSelectorThrows"));
+            this.payloads.resultSelectorThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_take() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::take, this.description("take"));
+            this.payloads.take.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rightClose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rightClose, this.description("rightClose"));
+            this.payloads.rightClose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_resultSelectorThrows2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::resultSelectorThrows2, this.description("resultSelectorThrows2"));
+            this.payloads.resultSelectorThrows2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badOuterSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badOuterSource, this.description("badOuterSource"));
+            this.payloads.badOuterSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badEndSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badEndSource, this.description("badEndSource"));
+            this.payloads.badEndSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bothTerminateWithWorkRemaining() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bothTerminateWithWorkRemaining, this.description("bothTerminateWithWorkRemaining"));
+            this.payloads.bothTerminateWithWorkRemaining.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().before();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableJoinTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableJoinTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.before();
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private ObservableJoinTest implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableJoinTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableJoinTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableJoinTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableJoinTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableJoinTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableJoinTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableJoinTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public ObservableJoinTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement normal1;
+
+            public org.junit.runners.model.Statement normal1WithDuration;
+
+            public org.junit.runners.model.Statement normal2;
+
+            public org.junit.runners.model.Statement leftThrows;
+
+            public org.junit.runners.model.Statement rightThrows;
+
+            public org.junit.runners.model.Statement leftDurationThrows;
+
+            public org.junit.runners.model.Statement rightDurationThrows;
+
+            public org.junit.runners.model.Statement leftDurationSelectorThrows;
+
+            public org.junit.runners.model.Statement rightDurationSelectorThrows;
+
+            public org.junit.runners.model.Statement resultSelectorThrows;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement take;
+
+            public org.junit.runners.model.Statement rightClose;
+
+            public org.junit.runners.model.Statement resultSelectorThrows2;
+
+            public org.junit.runners.model.Statement badOuterSource;
+
+            public org.junit.runners.model.Statement badEndSource;
+
+            public org.junit.runners.model.Statement bothTerminateWithWorkRemaining;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.normal1 = _ClassStatement.forPayload(ObservableJoinTest::normal1, "normal1", this);
+            this.payloads.normal1WithDuration = _ClassStatement.forPayload(ObservableJoinTest::normal1WithDuration, "normal1WithDuration", this);
+            this.payloads.normal2 = _ClassStatement.forPayload(ObservableJoinTest::normal2, "normal2", this);
+            this.payloads.leftThrows = _ClassStatement.forPayload(ObservableJoinTest::leftThrows, "leftThrows", this);
+            this.payloads.rightThrows = _ClassStatement.forPayload(ObservableJoinTest::rightThrows, "rightThrows", this);
+            this.payloads.leftDurationThrows = _ClassStatement.forPayload(ObservableJoinTest::leftDurationThrows, "leftDurationThrows", this);
+            this.payloads.rightDurationThrows = _ClassStatement.forPayload(ObservableJoinTest::rightDurationThrows, "rightDurationThrows", this);
+            this.payloads.leftDurationSelectorThrows = _ClassStatement.forPayload(ObservableJoinTest::leftDurationSelectorThrows, "leftDurationSelectorThrows", this);
+            this.payloads.rightDurationSelectorThrows = _ClassStatement.forPayload(ObservableJoinTest::rightDurationSelectorThrows, "rightDurationSelectorThrows", this);
+            this.payloads.resultSelectorThrows = _ClassStatement.forPayload(ObservableJoinTest::resultSelectorThrows, "resultSelectorThrows", this);
+            this.payloads.dispose = _ClassStatement.forPayload(ObservableJoinTest::dispose, "dispose", this);
+            this.payloads.take = _ClassStatement.forPayload(ObservableJoinTest::take, "take", this);
+            this.payloads.rightClose = _ClassStatement.forPayload(ObservableJoinTest::rightClose, "rightClose", this);
+            this.payloads.resultSelectorThrows2 = _ClassStatement.forPayload(ObservableJoinTest::resultSelectorThrows2, "resultSelectorThrows2", this);
+            this.payloads.badOuterSource = _ClassStatement.forPayload(ObservableJoinTest::badOuterSource, "badOuterSource", this);
+            this.payloads.badEndSource = _ClassStatement.forPayload(ObservableJoinTest::badEndSource, "badEndSource", this);
+            this.payloads.bothTerminateWithWorkRemaining = _ClassStatement.forPayload(ObservableJoinTest::bothTerminateWithWorkRemaining, "bothTerminateWithWorkRemaining", this);
         }
     }
 }

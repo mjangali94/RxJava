@@ -356,96 +356,174 @@ public class FlowableToMapTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableToMapTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMapFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMapFlowable, this.description("toMapFlowable"));
+            this.payloads.toMapFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMapWithValueSelectorFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMapWithValueSelectorFlowable, this.description("toMapWithValueSelectorFlowable"));
+            this.payloads.toMapWithValueSelectorFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMapWithErrorFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMapWithErrorFlowable, this.description("toMapWithErrorFlowable"));
+            this.payloads.toMapWithErrorFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMapWithErrorInValueSelectorFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMapWithErrorInValueSelectorFlowable, this.description("toMapWithErrorInValueSelectorFlowable"));
+            this.payloads.toMapWithErrorInValueSelectorFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMapWithFactoryFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMapWithFactoryFlowable, this.description("toMapWithFactoryFlowable"));
+            this.payloads.toMapWithFactoryFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMapWithErrorThrowingFactoryFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMapWithErrorThrowingFactoryFlowable, this.description("toMapWithErrorThrowingFactoryFlowable"));
+            this.payloads.toMapWithErrorThrowingFactoryFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMap() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMap, this.description("toMap"));
+            this.payloads.toMap.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMapWithValueSelector() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMapWithValueSelector, this.description("toMapWithValueSelector"));
+            this.payloads.toMapWithValueSelector.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMapWithError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMapWithError, this.description("toMapWithError"));
+            this.payloads.toMapWithError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMapWithErrorInValueSelector() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMapWithErrorInValueSelector, this.description("toMapWithErrorInValueSelector"));
+            this.payloads.toMapWithErrorInValueSelector.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMapWithFactory() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMapWithFactory, this.description("toMapWithFactory"));
+            this.payloads.toMapWithFactory.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMapWithErrorThrowingFactory() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMapWithErrorThrowingFactory, this.description("toMapWithErrorThrowingFactory"));
+            this.payloads.toMapWithErrorThrowingFactory.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().before();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableToMapTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableToMapTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.before();
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private FlowableToMapTest implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableToMapTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableToMapTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableToMapTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableToMapTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableToMapTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableToMapTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableToMapTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public FlowableToMapTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement toMapFlowable;
+
+            public org.junit.runners.model.Statement toMapWithValueSelectorFlowable;
+
+            public org.junit.runners.model.Statement toMapWithErrorFlowable;
+
+            public org.junit.runners.model.Statement toMapWithErrorInValueSelectorFlowable;
+
+            public org.junit.runners.model.Statement toMapWithFactoryFlowable;
+
+            public org.junit.runners.model.Statement toMapWithErrorThrowingFactoryFlowable;
+
+            public org.junit.runners.model.Statement toMap;
+
+            public org.junit.runners.model.Statement toMapWithValueSelector;
+
+            public org.junit.runners.model.Statement toMapWithError;
+
+            public org.junit.runners.model.Statement toMapWithErrorInValueSelector;
+
+            public org.junit.runners.model.Statement toMapWithFactory;
+
+            public org.junit.runners.model.Statement toMapWithErrorThrowingFactory;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.toMapFlowable = _ClassStatement.forPayload(FlowableToMapTest::toMapFlowable, "toMapFlowable", this);
+            this.payloads.toMapWithValueSelectorFlowable = _ClassStatement.forPayload(FlowableToMapTest::toMapWithValueSelectorFlowable, "toMapWithValueSelectorFlowable", this);
+            this.payloads.toMapWithErrorFlowable = _ClassStatement.forPayload(FlowableToMapTest::toMapWithErrorFlowable, "toMapWithErrorFlowable", this);
+            this.payloads.toMapWithErrorInValueSelectorFlowable = _ClassStatement.forPayload(FlowableToMapTest::toMapWithErrorInValueSelectorFlowable, "toMapWithErrorInValueSelectorFlowable", this);
+            this.payloads.toMapWithFactoryFlowable = _ClassStatement.forPayload(FlowableToMapTest::toMapWithFactoryFlowable, "toMapWithFactoryFlowable", this);
+            this.payloads.toMapWithErrorThrowingFactoryFlowable = _ClassStatement.forPayload(FlowableToMapTest::toMapWithErrorThrowingFactoryFlowable, "toMapWithErrorThrowingFactoryFlowable", this);
+            this.payloads.toMap = _ClassStatement.forPayload(FlowableToMapTest::toMap, "toMap", this);
+            this.payloads.toMapWithValueSelector = _ClassStatement.forPayload(FlowableToMapTest::toMapWithValueSelector, "toMapWithValueSelector", this);
+            this.payloads.toMapWithError = _ClassStatement.forPayload(FlowableToMapTest::toMapWithError, "toMapWithError", this);
+            this.payloads.toMapWithErrorInValueSelector = _ClassStatement.forPayload(FlowableToMapTest::toMapWithErrorInValueSelector, "toMapWithErrorInValueSelector", this);
+            this.payloads.toMapWithFactory = _ClassStatement.forPayload(FlowableToMapTest::toMapWithFactory, "toMapWithFactory", this);
+            this.payloads.toMapWithErrorThrowingFactory = _ClassStatement.forPayload(FlowableToMapTest::toMapWithErrorThrowingFactory, "toMapWithErrorThrowingFactory", this);
         }
     }
 }

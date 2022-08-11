@@ -988,372 +988,542 @@ public class FlowableWindowWithTimeTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableWindowWithTimeTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timedAndCount() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timedAndCount, this.description("timedAndCount"));
+            this.payloads.timedAndCount.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timed, this.description("timed"));
+            this.payloads.timed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_exactWindowSize() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::exactWindowSize, this.description("exactWindowSize"));
+            this.payloads.exactWindowSize.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeFlatMapCompletes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeFlatMapCompletes, this.description("takeFlatMapCompletes"));
+            this.payloads.takeFlatMapCompletes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timespanTimeskipCustomSchedulerBufferSize() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timespanTimeskipCustomSchedulerBufferSize, this.description("timespanTimeskipCustomSchedulerBufferSize"));
+            this.payloads.timespanTimeskipCustomSchedulerBufferSize.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timespanDefaultSchedulerSize() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timespanDefaultSchedulerSize, this.description("timespanDefaultSchedulerSize"));
+            this.payloads.timespanDefaultSchedulerSize.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timespanDefaultSchedulerSizeRestart() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timespanDefaultSchedulerSizeRestart, this.description("timespanDefaultSchedulerSizeRestart"));
+            this.payloads.timespanDefaultSchedulerSizeRestart.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_invalidSpan() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::invalidSpan, this.description("invalidSpan"));
+            this.payloads.invalidSpan.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timespanTimeskipDefaultScheduler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timespanTimeskipDefaultScheduler, this.description("timespanTimeskipDefaultScheduler"));
+            this.payloads.timespanTimeskipDefaultScheduler.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timespanTimeskipCustomScheduler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timespanTimeskipCustomScheduler, this.description("timespanTimeskipCustomScheduler"));
+            this.payloads.timespanTimeskipCustomScheduler.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeskipJustOverlap() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeskipJustOverlap, this.description("timeskipJustOverlap"));
+            this.payloads.timeskipJustOverlap.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeskipJustSkip() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeskipJustSkip, this.description("timeskipJustSkip"));
+            this.payloads.timeskipJustSkip.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeskipSkipping() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeskipSkipping, this.description("timeskipSkipping"));
+            this.payloads.timeskipSkipping.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeskipOverlapping() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeskipOverlapping, this.description("timeskipOverlapping"));
+            this.payloads.timeskipOverlapping.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_exactOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::exactOnError, this.description("exactOnError"));
+            this.payloads.exactOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_overlappingOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::overlappingOnError, this.description("overlappingOnError"));
+            this.payloads.overlappingOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipOnError, this.description("skipOnError"));
+            this.payloads.skipOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_exactBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::exactBackpressure, this.description("exactBackpressure"));
+            this.payloads.exactBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipBackpressure, this.description("skipBackpressure"));
+            this.payloads.skipBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_overlapBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::overlapBackpressure, this.description("overlapBackpressure"));
+            this.payloads.overlapBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_exactBackpressure2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::exactBackpressure2, this.description("exactBackpressure2"));
+            this.payloads.exactBackpressure2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipBackpressure2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipBackpressure2, this.description("skipBackpressure2"));
+            this.payloads.skipBackpressure2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_overlapBackpressure2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::overlapBackpressure2, this.description("overlapBackpressure2"));
+            this.payloads.overlapBackpressure2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_restartTimer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::restartTimer, this.description("restartTimer"));
+            this.payloads.restartTimer.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_exactBoundaryError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::exactBoundaryError, this.description("exactBoundaryError"));
+            this.payloads.exactBoundaryError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_restartTimerMany() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::restartTimerMany, this.description("restartTimerMany"));
+            this.payloads.restartTimerMany.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_exactUnboundedReentrant() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::exactUnboundedReentrant, this.description("exactUnboundedReentrant"));
+            this.payloads.exactUnboundedReentrant.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_exactBoundedReentrant() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::exactBoundedReentrant, this.description("exactBoundedReentrant"));
+            this.payloads.exactBoundedReentrant.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_exactBoundedReentrant2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::exactBoundedReentrant2, this.description("exactBoundedReentrant2"));
+            this.payloads.exactBoundedReentrant2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipReentrant() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipReentrant, this.description("skipReentrant"));
+            this.payloads.skipReentrant.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sizeTimeTimeout() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sizeTimeTimeout, this.description("sizeTimeTimeout"));
+            this.payloads.sizeTimeTimeout.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_periodicWindowCompletion() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::periodicWindowCompletion, this.description("periodicWindowCompletion"));
+            this.payloads.periodicWindowCompletion.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_periodicWindowCompletionRestartTimer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::periodicWindowCompletionRestartTimer, this.description("periodicWindowCompletionRestartTimer"));
+            this.payloads.periodicWindowCompletionRestartTimer.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_periodicWindowCompletionBounded() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::periodicWindowCompletionBounded, this.description("periodicWindowCompletionBounded"));
+            this.payloads.periodicWindowCompletionBounded.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_periodicWindowCompletionRestartTimerBounded() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::periodicWindowCompletionRestartTimerBounded, this.description("periodicWindowCompletionRestartTimerBounded"));
+            this.payloads.periodicWindowCompletionRestartTimerBounded.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_periodicWindowCompletionRestartTimerBoundedSomeData() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::periodicWindowCompletionRestartTimerBoundedSomeData, this.description("periodicWindowCompletionRestartTimerBoundedSomeData"));
+            this.payloads.periodicWindowCompletionRestartTimerBoundedSomeData.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_countRestartsOnTimeTick() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::countRestartsOnTimeTick, this.description("countRestartsOnTimeTick"));
+            this.payloads.countRestartsOnTimeTick.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstWindowMissingBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstWindowMissingBackpressure, this.description("firstWindowMissingBackpressure"));
+            this.payloads.firstWindowMissingBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nextWindowMissingBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nextWindowMissingBackpressure, this.description("nextWindowMissingBackpressure"));
+            this.payloads.nextWindowMissingBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelUpfront() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelUpfront, this.description("cancelUpfront"));
+            this.payloads.cancelUpfront.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nextWindowMissingBackpressureDrainOnSize() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nextWindowMissingBackpressureDrainOnSize, this.description("nextWindowMissingBackpressureDrainOnSize"));
+            this.payloads.nextWindowMissingBackpressureDrainOnSize.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nextWindowMissingBackpressureDrainOnTime() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nextWindowMissingBackpressureDrainOnTime, this.description("nextWindowMissingBackpressureDrainOnTime"));
+            this.payloads.nextWindowMissingBackpressureDrainOnTime.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_exactTimeBoundNoInterruptWindowOutputOnComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::exactTimeBoundNoInterruptWindowOutputOnComplete, this.description("exactTimeBoundNoInterruptWindowOutputOnComplete"));
+            this.payloads.exactTimeBoundNoInterruptWindowOutputOnComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_exactTimeBoundNoInterruptWindowOutputOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::exactTimeBoundNoInterruptWindowOutputOnError, this.description("exactTimeBoundNoInterruptWindowOutputOnError"));
+            this.payloads.exactTimeBoundNoInterruptWindowOutputOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_exactTimeAndSizeBoundNoInterruptWindowOutputOnComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::exactTimeAndSizeBoundNoInterruptWindowOutputOnComplete, this.description("exactTimeAndSizeBoundNoInterruptWindowOutputOnComplete"));
+            this.payloads.exactTimeAndSizeBoundNoInterruptWindowOutputOnComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_exactTimeAndSizeBoundNoInterruptWindowOutputOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::exactTimeAndSizeBoundNoInterruptWindowOutputOnError, this.description("exactTimeAndSizeBoundNoInterruptWindowOutputOnError"));
+            this.payloads.exactTimeAndSizeBoundNoInterruptWindowOutputOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipTimeAndSizeBoundNoInterruptWindowOutputOnComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipTimeAndSizeBoundNoInterruptWindowOutputOnComplete, this.description("skipTimeAndSizeBoundNoInterruptWindowOutputOnComplete"));
+            this.payloads.skipTimeAndSizeBoundNoInterruptWindowOutputOnComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipTimeAndSizeBoundNoInterruptWindowOutputOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipTimeAndSizeBoundNoInterruptWindowOutputOnError, this.description("skipTimeAndSizeBoundNoInterruptWindowOutputOnError"));
+            this.payloads.skipTimeAndSizeBoundNoInterruptWindowOutputOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancellingWindowCancelsUpstreamExactTime() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancellingWindowCancelsUpstreamExactTime, this.description("cancellingWindowCancelsUpstreamExactTime"));
+            this.payloads.cancellingWindowCancelsUpstreamExactTime.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowAbandonmentCancelsUpstreamExactTime() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::windowAbandonmentCancelsUpstreamExactTime, this.description("windowAbandonmentCancelsUpstreamExactTime"));
+            this.payloads.windowAbandonmentCancelsUpstreamExactTime.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancellingWindowCancelsUpstreamExactTimeAndSize() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancellingWindowCancelsUpstreamExactTimeAndSize, this.description("cancellingWindowCancelsUpstreamExactTimeAndSize"));
+            this.payloads.cancellingWindowCancelsUpstreamExactTimeAndSize.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowAbandonmentCancelsUpstreamExactTimeAndSize() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::windowAbandonmentCancelsUpstreamExactTimeAndSize, this.description("windowAbandonmentCancelsUpstreamExactTimeAndSize"));
+            this.payloads.windowAbandonmentCancelsUpstreamExactTimeAndSize.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancellingWindowCancelsUpstreamExactTimeSkip() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancellingWindowCancelsUpstreamExactTimeSkip, this.description("cancellingWindowCancelsUpstreamExactTimeSkip"));
+            this.payloads.cancellingWindowCancelsUpstreamExactTimeSkip.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowAbandonmentCancelsUpstreamExactTimeSkip() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::windowAbandonmentCancelsUpstreamExactTimeSkip, this.description("windowAbandonmentCancelsUpstreamExactTimeSkip"));
+            this.payloads.windowAbandonmentCancelsUpstreamExactTimeSkip.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequest, this.description("badRequest"));
+            this.payloads.badRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timedBoundarySignalAndDisposeRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timedBoundarySignalAndDisposeRace, this.description("timedBoundarySignalAndDisposeRace"));
+            this.payloads.timedBoundarySignalAndDisposeRace.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().before();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableWindowWithTimeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableWindowWithTimeTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.before();
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private FlowableWindowWithTimeTest implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableWindowWithTimeTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableWindowWithTimeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableWindowWithTimeTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableWindowWithTimeTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableWindowWithTimeTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableWindowWithTimeTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableWindowWithTimeTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public FlowableWindowWithTimeTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement timedAndCount;
+
+            public org.junit.runners.model.Statement timed;
+
+            public org.junit.runners.model.Statement exactWindowSize;
+
+            public org.junit.runners.model.Statement takeFlatMapCompletes;
+
+            public org.junit.runners.model.Statement timespanTimeskipCustomSchedulerBufferSize;
+
+            public org.junit.runners.model.Statement timespanDefaultSchedulerSize;
+
+            public org.junit.runners.model.Statement timespanDefaultSchedulerSizeRestart;
+
+            public org.junit.runners.model.Statement invalidSpan;
+
+            public org.junit.runners.model.Statement timespanTimeskipDefaultScheduler;
+
+            public org.junit.runners.model.Statement timespanTimeskipCustomScheduler;
+
+            public org.junit.runners.model.Statement timeskipJustOverlap;
+
+            public org.junit.runners.model.Statement timeskipJustSkip;
+
+            public org.junit.runners.model.Statement timeskipSkipping;
+
+            public org.junit.runners.model.Statement timeskipOverlapping;
+
+            public org.junit.runners.model.Statement exactOnError;
+
+            public org.junit.runners.model.Statement overlappingOnError;
+
+            public org.junit.runners.model.Statement skipOnError;
+
+            public org.junit.runners.model.Statement exactBackpressure;
+
+            public org.junit.runners.model.Statement skipBackpressure;
+
+            public org.junit.runners.model.Statement overlapBackpressure;
+
+            public org.junit.runners.model.Statement exactBackpressure2;
+
+            public org.junit.runners.model.Statement skipBackpressure2;
+
+            public org.junit.runners.model.Statement overlapBackpressure2;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement restartTimer;
+
+            public org.junit.runners.model.Statement exactBoundaryError;
+
+            public org.junit.runners.model.Statement restartTimerMany;
+
+            public org.junit.runners.model.Statement exactUnboundedReentrant;
+
+            public org.junit.runners.model.Statement exactBoundedReentrant;
+
+            public org.junit.runners.model.Statement exactBoundedReentrant2;
+
+            public org.junit.runners.model.Statement skipReentrant;
+
+            public org.junit.runners.model.Statement sizeTimeTimeout;
+
+            public org.junit.runners.model.Statement periodicWindowCompletion;
+
+            public org.junit.runners.model.Statement periodicWindowCompletionRestartTimer;
+
+            public org.junit.runners.model.Statement periodicWindowCompletionBounded;
+
+            public org.junit.runners.model.Statement periodicWindowCompletionRestartTimerBounded;
+
+            public org.junit.runners.model.Statement periodicWindowCompletionRestartTimerBoundedSomeData;
+
+            public org.junit.runners.model.Statement countRestartsOnTimeTick;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement firstWindowMissingBackpressure;
+
+            public org.junit.runners.model.Statement nextWindowMissingBackpressure;
+
+            public org.junit.runners.model.Statement cancelUpfront;
+
+            public org.junit.runners.model.Statement nextWindowMissingBackpressureDrainOnSize;
+
+            public org.junit.runners.model.Statement nextWindowMissingBackpressureDrainOnTime;
+
+            public org.junit.runners.model.Statement exactTimeBoundNoInterruptWindowOutputOnComplete;
+
+            public org.junit.runners.model.Statement exactTimeBoundNoInterruptWindowOutputOnError;
+
+            public org.junit.runners.model.Statement exactTimeAndSizeBoundNoInterruptWindowOutputOnComplete;
+
+            public org.junit.runners.model.Statement exactTimeAndSizeBoundNoInterruptWindowOutputOnError;
+
+            public org.junit.runners.model.Statement skipTimeAndSizeBoundNoInterruptWindowOutputOnComplete;
+
+            public org.junit.runners.model.Statement skipTimeAndSizeBoundNoInterruptWindowOutputOnError;
+
+            public org.junit.runners.model.Statement cancellingWindowCancelsUpstreamExactTime;
+
+            public org.junit.runners.model.Statement windowAbandonmentCancelsUpstreamExactTime;
+
+            public org.junit.runners.model.Statement cancellingWindowCancelsUpstreamExactTimeAndSize;
+
+            public org.junit.runners.model.Statement windowAbandonmentCancelsUpstreamExactTimeAndSize;
+
+            public org.junit.runners.model.Statement cancellingWindowCancelsUpstreamExactTimeSkip;
+
+            public org.junit.runners.model.Statement windowAbandonmentCancelsUpstreamExactTimeSkip;
+
+            public org.junit.runners.model.Statement badRequest;
+
+            public org.junit.runners.model.Statement timedBoundarySignalAndDisposeRace;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.timedAndCount = _ClassStatement.forPayload(FlowableWindowWithTimeTest::timedAndCount, "timedAndCount", this);
+            this.payloads.timed = _ClassStatement.forPayload(FlowableWindowWithTimeTest::timed, "timed", this);
+            this.payloads.exactWindowSize = _ClassStatement.forPayload(FlowableWindowWithTimeTest::exactWindowSize, "exactWindowSize", this);
+            this.payloads.takeFlatMapCompletes = _ClassStatement.forPayload(FlowableWindowWithTimeTest::takeFlatMapCompletes, "takeFlatMapCompletes", this);
+            this.payloads.timespanTimeskipCustomSchedulerBufferSize = _ClassStatement.forPayload(FlowableWindowWithTimeTest::timespanTimeskipCustomSchedulerBufferSize, "timespanTimeskipCustomSchedulerBufferSize", this);
+            this.payloads.timespanDefaultSchedulerSize = _ClassStatement.forPayload(FlowableWindowWithTimeTest::timespanDefaultSchedulerSize, "timespanDefaultSchedulerSize", this);
+            this.payloads.timespanDefaultSchedulerSizeRestart = _ClassStatement.forPayload(FlowableWindowWithTimeTest::timespanDefaultSchedulerSizeRestart, "timespanDefaultSchedulerSizeRestart", this);
+            this.payloads.invalidSpan = _ClassStatement.forPayload(FlowableWindowWithTimeTest::invalidSpan, "invalidSpan", this);
+            this.payloads.timespanTimeskipDefaultScheduler = _ClassStatement.forPayload(FlowableWindowWithTimeTest::timespanTimeskipDefaultScheduler, "timespanTimeskipDefaultScheduler", this);
+            this.payloads.timespanTimeskipCustomScheduler = _ClassStatement.forPayload(FlowableWindowWithTimeTest::timespanTimeskipCustomScheduler, "timespanTimeskipCustomScheduler", this);
+            this.payloads.timeskipJustOverlap = _ClassStatement.forPayload(FlowableWindowWithTimeTest::timeskipJustOverlap, "timeskipJustOverlap", this);
+            this.payloads.timeskipJustSkip = _ClassStatement.forPayload(FlowableWindowWithTimeTest::timeskipJustSkip, "timeskipJustSkip", this);
+            this.payloads.timeskipSkipping = _ClassStatement.forPayload(FlowableWindowWithTimeTest::timeskipSkipping, "timeskipSkipping", this);
+            this.payloads.timeskipOverlapping = _ClassStatement.forPayload(FlowableWindowWithTimeTest::timeskipOverlapping, "timeskipOverlapping", this);
+            this.payloads.exactOnError = _ClassStatement.forPayload(FlowableWindowWithTimeTest::exactOnError, "exactOnError", this);
+            this.payloads.overlappingOnError = _ClassStatement.forPayload(FlowableWindowWithTimeTest::overlappingOnError, "overlappingOnError", this);
+            this.payloads.skipOnError = _ClassStatement.forPayload(FlowableWindowWithTimeTest::skipOnError, "skipOnError", this);
+            this.payloads.exactBackpressure = _ClassStatement.forPayload(FlowableWindowWithTimeTest::exactBackpressure, "exactBackpressure", this);
+            this.payloads.skipBackpressure = _ClassStatement.forPayload(FlowableWindowWithTimeTest::skipBackpressure, "skipBackpressure", this);
+            this.payloads.overlapBackpressure = _ClassStatement.forPayload(FlowableWindowWithTimeTest::overlapBackpressure, "overlapBackpressure", this);
+            this.payloads.exactBackpressure2 = _ClassStatement.forPayload(FlowableWindowWithTimeTest::exactBackpressure2, "exactBackpressure2", this);
+            this.payloads.skipBackpressure2 = _ClassStatement.forPayload(FlowableWindowWithTimeTest::skipBackpressure2, "skipBackpressure2", this);
+            this.payloads.overlapBackpressure2 = _ClassStatement.forPayload(FlowableWindowWithTimeTest::overlapBackpressure2, "overlapBackpressure2", this);
+            this.payloads.dispose = _ClassStatement.forPayload(FlowableWindowWithTimeTest::dispose, "dispose", this);
+            this.payloads.restartTimer = _ClassStatement.forPayload(FlowableWindowWithTimeTest::restartTimer, "restartTimer", this);
+            this.payloads.exactBoundaryError = _ClassStatement.forPayload(FlowableWindowWithTimeTest::exactBoundaryError, "exactBoundaryError", this);
+            this.payloads.restartTimerMany = _ClassStatement.forPayload(FlowableWindowWithTimeTest::restartTimerMany, "restartTimerMany", this);
+            this.payloads.exactUnboundedReentrant = _ClassStatement.forPayload(FlowableWindowWithTimeTest::exactUnboundedReentrant, "exactUnboundedReentrant", this);
+            this.payloads.exactBoundedReentrant = _ClassStatement.forPayload(FlowableWindowWithTimeTest::exactBoundedReentrant, "exactBoundedReentrant", this);
+            this.payloads.exactBoundedReentrant2 = _ClassStatement.forPayload(FlowableWindowWithTimeTest::exactBoundedReentrant2, "exactBoundedReentrant2", this);
+            this.payloads.skipReentrant = _ClassStatement.forPayload(FlowableWindowWithTimeTest::skipReentrant, "skipReentrant", this);
+            this.payloads.sizeTimeTimeout = _ClassStatement.forPayload(FlowableWindowWithTimeTest::sizeTimeTimeout, "sizeTimeTimeout", this);
+            this.payloads.periodicWindowCompletion = _ClassStatement.forPayload(FlowableWindowWithTimeTest::periodicWindowCompletion, "periodicWindowCompletion", this);
+            this.payloads.periodicWindowCompletionRestartTimer = _ClassStatement.forPayload(FlowableWindowWithTimeTest::periodicWindowCompletionRestartTimer, "periodicWindowCompletionRestartTimer", this);
+            this.payloads.periodicWindowCompletionBounded = _ClassStatement.forPayload(FlowableWindowWithTimeTest::periodicWindowCompletionBounded, "periodicWindowCompletionBounded", this);
+            this.payloads.periodicWindowCompletionRestartTimerBounded = _ClassStatement.forPayload(FlowableWindowWithTimeTest::periodicWindowCompletionRestartTimerBounded, "periodicWindowCompletionRestartTimerBounded", this);
+            this.payloads.periodicWindowCompletionRestartTimerBoundedSomeData = _ClassStatement.forPayload(FlowableWindowWithTimeTest::periodicWindowCompletionRestartTimerBoundedSomeData, "periodicWindowCompletionRestartTimerBoundedSomeData", this);
+            this.payloads.countRestartsOnTimeTick = _ClassStatement.forPayload(FlowableWindowWithTimeTest::countRestartsOnTimeTick, "countRestartsOnTimeTick", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableWindowWithTimeTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.firstWindowMissingBackpressure = _ClassStatement.forPayload(FlowableWindowWithTimeTest::firstWindowMissingBackpressure, "firstWindowMissingBackpressure", this);
+            this.payloads.nextWindowMissingBackpressure = _ClassStatement.forPayload(FlowableWindowWithTimeTest::nextWindowMissingBackpressure, "nextWindowMissingBackpressure", this);
+            this.payloads.cancelUpfront = _ClassStatement.forPayload(FlowableWindowWithTimeTest::cancelUpfront, "cancelUpfront", this);
+            this.payloads.nextWindowMissingBackpressureDrainOnSize = _ClassStatement.forPayload(FlowableWindowWithTimeTest::nextWindowMissingBackpressureDrainOnSize, "nextWindowMissingBackpressureDrainOnSize", this);
+            this.payloads.nextWindowMissingBackpressureDrainOnTime = _ClassStatement.forPayload(FlowableWindowWithTimeTest::nextWindowMissingBackpressureDrainOnTime, "nextWindowMissingBackpressureDrainOnTime", this);
+            this.payloads.exactTimeBoundNoInterruptWindowOutputOnComplete = _ClassStatement.forPayload(FlowableWindowWithTimeTest::exactTimeBoundNoInterruptWindowOutputOnComplete, "exactTimeBoundNoInterruptWindowOutputOnComplete", this);
+            this.payloads.exactTimeBoundNoInterruptWindowOutputOnError = _ClassStatement.forPayload(FlowableWindowWithTimeTest::exactTimeBoundNoInterruptWindowOutputOnError, "exactTimeBoundNoInterruptWindowOutputOnError", this);
+            this.payloads.exactTimeAndSizeBoundNoInterruptWindowOutputOnComplete = _ClassStatement.forPayload(FlowableWindowWithTimeTest::exactTimeAndSizeBoundNoInterruptWindowOutputOnComplete, "exactTimeAndSizeBoundNoInterruptWindowOutputOnComplete", this);
+            this.payloads.exactTimeAndSizeBoundNoInterruptWindowOutputOnError = _ClassStatement.forPayload(FlowableWindowWithTimeTest::exactTimeAndSizeBoundNoInterruptWindowOutputOnError, "exactTimeAndSizeBoundNoInterruptWindowOutputOnError", this);
+            this.payloads.skipTimeAndSizeBoundNoInterruptWindowOutputOnComplete = _ClassStatement.forPayload(FlowableWindowWithTimeTest::skipTimeAndSizeBoundNoInterruptWindowOutputOnComplete, "skipTimeAndSizeBoundNoInterruptWindowOutputOnComplete", this);
+            this.payloads.skipTimeAndSizeBoundNoInterruptWindowOutputOnError = _ClassStatement.forPayload(FlowableWindowWithTimeTest::skipTimeAndSizeBoundNoInterruptWindowOutputOnError, "skipTimeAndSizeBoundNoInterruptWindowOutputOnError", this);
+            this.payloads.cancellingWindowCancelsUpstreamExactTime = _ClassStatement.forPayload(FlowableWindowWithTimeTest::cancellingWindowCancelsUpstreamExactTime, "cancellingWindowCancelsUpstreamExactTime", this);
+            this.payloads.windowAbandonmentCancelsUpstreamExactTime = _ClassStatement.forPayload(FlowableWindowWithTimeTest::windowAbandonmentCancelsUpstreamExactTime, "windowAbandonmentCancelsUpstreamExactTime", this);
+            this.payloads.cancellingWindowCancelsUpstreamExactTimeAndSize = _ClassStatement.forPayload(FlowableWindowWithTimeTest::cancellingWindowCancelsUpstreamExactTimeAndSize, "cancellingWindowCancelsUpstreamExactTimeAndSize", this);
+            this.payloads.windowAbandonmentCancelsUpstreamExactTimeAndSize = _ClassStatement.forPayload(FlowableWindowWithTimeTest::windowAbandonmentCancelsUpstreamExactTimeAndSize, "windowAbandonmentCancelsUpstreamExactTimeAndSize", this);
+            this.payloads.cancellingWindowCancelsUpstreamExactTimeSkip = _ClassStatement.forPayload(FlowableWindowWithTimeTest::cancellingWindowCancelsUpstreamExactTimeSkip, "cancellingWindowCancelsUpstreamExactTimeSkip", this);
+            this.payloads.windowAbandonmentCancelsUpstreamExactTimeSkip = _ClassStatement.forPayload(FlowableWindowWithTimeTest::windowAbandonmentCancelsUpstreamExactTimeSkip, "windowAbandonmentCancelsUpstreamExactTimeSkip", this);
+            this.payloads.badRequest = _ClassStatement.forPayload(FlowableWindowWithTimeTest::badRequest, "badRequest", this);
+            this.payloads.timedBoundarySignalAndDisposeRace = _ClassStatement.forPayload(FlowableWindowWithTimeTest::timedBoundarySignalAndDisposeRace, "timedBoundarySignalAndDisposeRace", this);
         }
     }
 }

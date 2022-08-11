@@ -136,90 +136,173 @@ public class CompletableAndThenCompletableTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private CompletableAndThenCompletableTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_andThenCompletableCompleteComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::andThenCompletableCompleteComplete, this.description("andThenCompletableCompleteComplete"));
+            this.payloads.andThenCompletableCompleteComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_andThenCompletableCompleteError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::andThenCompletableCompleteError, this.description("andThenCompletableCompleteError"));
+            this.payloads.andThenCompletableCompleteError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_andThenCompletableCompleteNever() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::andThenCompletableCompleteNever, this.description("andThenCompletableCompleteNever"));
+            this.payloads.andThenCompletableCompleteNever.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_andThenCompletableErrorComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::andThenCompletableErrorComplete, this.description("andThenCompletableErrorComplete"));
+            this.payloads.andThenCompletableErrorComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_andThenCompletableErrorNever() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::andThenCompletableErrorNever, this.description("andThenCompletableErrorNever"));
+            this.payloads.andThenCompletableErrorNever.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_andThenCompletableErrorError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::andThenCompletableErrorError, this.description("andThenCompletableErrorError"));
+            this.payloads.andThenCompletableErrorError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_andThenCanceled() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::andThenCanceled, this.description("andThenCanceled"));
+            this.payloads.andThenCanceled.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_andThenFirstCancels() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::andThenFirstCancels, this.description("andThenFirstCancels"));
+            this.payloads.andThenFirstCancels.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_andThenSecondCancels() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::andThenSecondCancels, this.description("andThenSecondCancels"));
+            this.payloads.andThenSecondCancels.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_andThenDisposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::andThenDisposed, this.description("andThenDisposed"));
+            this.payloads.andThenDisposed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_andThenNoInterrupt() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::andThenNoInterrupt, this.description("andThenNoInterrupt"));
+            this.payloads.andThenNoInterrupt.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
-        private CompletableAndThenCompletableTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new CompletableAndThenCompletableTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableAndThenCompletableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableAndThenCompletableTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public CompletableAndThenCompletableTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableAndThenCompletableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableAndThenCompletableTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new CompletableAndThenCompletableTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableAndThenCompletableTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(CompletableAndThenCompletableTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(CompletableAndThenCompletableTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement andThenCompletableCompleteComplete;
+
+            public org.junit.runners.model.Statement andThenCompletableCompleteError;
+
+            public org.junit.runners.model.Statement andThenCompletableCompleteNever;
+
+            public org.junit.runners.model.Statement andThenCompletableErrorComplete;
+
+            public org.junit.runners.model.Statement andThenCompletableErrorNever;
+
+            public org.junit.runners.model.Statement andThenCompletableErrorError;
+
+            public org.junit.runners.model.Statement andThenCanceled;
+
+            public org.junit.runners.model.Statement andThenFirstCancels;
+
+            public org.junit.runners.model.Statement andThenSecondCancels;
+
+            public org.junit.runners.model.Statement andThenDisposed;
+
+            public org.junit.runners.model.Statement andThenNoInterrupt;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.andThenCompletableCompleteComplete = _ClassStatement.forPayload(CompletableAndThenCompletableTest::andThenCompletableCompleteComplete, "andThenCompletableCompleteComplete", this);
+            this.payloads.andThenCompletableCompleteError = _ClassStatement.forPayload(CompletableAndThenCompletableTest::andThenCompletableCompleteError, "andThenCompletableCompleteError", this);
+            this.payloads.andThenCompletableCompleteNever = _ClassStatement.forPayload(CompletableAndThenCompletableTest::andThenCompletableCompleteNever, "andThenCompletableCompleteNever", this);
+            this.payloads.andThenCompletableErrorComplete = _ClassStatement.forPayload(CompletableAndThenCompletableTest::andThenCompletableErrorComplete, "andThenCompletableErrorComplete", this);
+            this.payloads.andThenCompletableErrorNever = _ClassStatement.forPayload(CompletableAndThenCompletableTest::andThenCompletableErrorNever, "andThenCompletableErrorNever", this);
+            this.payloads.andThenCompletableErrorError = _ClassStatement.forPayload(CompletableAndThenCompletableTest::andThenCompletableErrorError, "andThenCompletableErrorError", this);
+            this.payloads.andThenCanceled = _ClassStatement.forPayload(CompletableAndThenCompletableTest::andThenCanceled, "andThenCanceled", this);
+            this.payloads.andThenFirstCancels = _ClassStatement.forPayload(CompletableAndThenCompletableTest::andThenFirstCancels, "andThenFirstCancels", this);
+            this.payloads.andThenSecondCancels = _ClassStatement.forPayload(CompletableAndThenCompletableTest::andThenSecondCancels, "andThenSecondCancels", this);
+            this.payloads.andThenDisposed = _ClassStatement.forPayload(CompletableAndThenCompletableTest::andThenDisposed, "andThenDisposed", this);
+            this.payloads.andThenNoInterrupt = _ClassStatement.forPayload(CompletableAndThenCompletableTest::andThenNoInterrupt, "andThenNoInterrupt", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(CompletableAndThenCompletableTest::doubleOnSubscribe, "doubleOnSubscribe", this);
         }
     }
 }

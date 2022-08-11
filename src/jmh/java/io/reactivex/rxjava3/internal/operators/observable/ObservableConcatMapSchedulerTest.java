@@ -921,384 +921,511 @@ public class ObservableConcatMapSchedulerTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableConcatMapSchedulerTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundaryFusion() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundaryFusion, this.description("boundaryFusion"));
+            this.runBenchmark(this.payloads.boundaryFusion);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundaryFusionDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundaryFusionDelayError, this.description("boundaryFusionDelayError"));
+            this.runBenchmark(this.payloads.boundaryFusionDelayError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_pollThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::pollThrows, this.description("pollThrows"));
+            this.runBenchmark(this.payloads.pollThrows);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_pollThrowsDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::pollThrowsDelayError, this.description("pollThrowsDelayError"));
+            this.runBenchmark(this.payloads.pollThrowsDelayError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noCancelPrevious() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noCancelPrevious, this.description("noCancelPrevious"));
+            this.runBenchmark(this.payloads.noCancelPrevious);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayErrorCallableTillTheEnd() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayErrorCallableTillTheEnd, this.description("delayErrorCallableTillTheEnd"));
+            this.runBenchmark(this.payloads.delayErrorCallableTillTheEnd);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayErrorCallableEager() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayErrorCallableEager, this.description("delayErrorCallableEager"));
+            this.runBenchmark(this.payloads.delayErrorCallableEager);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperScheduled() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperScheduled, this.description("mapperScheduled"));
+            this.runBenchmark(this.payloads.mapperScheduled);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperScheduledHidden() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperScheduledHidden, this.description("mapperScheduledHidden"));
+            this.runBenchmark(this.payloads.mapperScheduledHidden);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperDelayErrorScheduled() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperDelayErrorScheduled, this.description("mapperDelayErrorScheduled"));
+            this.runBenchmark(this.payloads.mapperDelayErrorScheduled);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperDelayErrorScheduledHidden() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperDelayErrorScheduledHidden, this.description("mapperDelayErrorScheduledHidden"));
+            this.runBenchmark(this.payloads.mapperDelayErrorScheduledHidden);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperDelayError2Scheduled() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperDelayError2Scheduled, this.description("mapperDelayError2Scheduled"));
+            this.runBenchmark(this.payloads.mapperDelayError2Scheduled);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperDelayError2ScheduledHidden() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperDelayError2ScheduledHidden, this.description("mapperDelayError2ScheduledHidden"));
+            this.runBenchmark(this.payloads.mapperDelayError2ScheduledHidden);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_issue2890NoStackoverflow() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::issue2890NoStackoverflow, this.description("issue2890NoStackoverflow"));
+            this.runBenchmark(this.payloads.issue2890NoStackoverflow);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapRangeAsyncLoopIssue2876() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapRangeAsyncLoopIssue2876, this.description("concatMapRangeAsyncLoopIssue2876"));
+            this.runBenchmark(this.payloads.concatMapRangeAsyncLoopIssue2876);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatArray() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatArray, this.description("concatArray"));
+            this.runBenchmark(this.payloads.concatArray);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapJustJust() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapJustJust, this.description("concatMapJustJust"));
+            this.runBenchmark(this.payloads.concatMapJustJust);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapJustRange() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapJustRange, this.description("concatMapJustRange"));
+            this.runBenchmark(this.payloads.concatMapJustRange);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapDelayErrorJustJust() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapDelayErrorJustJust, this.description("concatMapDelayErrorJustJust"));
+            this.runBenchmark(this.payloads.concatMapDelayErrorJustJust);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapDelayErrorJustRange() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapDelayErrorJustRange, this.description("concatMapDelayErrorJustRange"));
+            this.runBenchmark(this.payloads.concatMapDelayErrorJustRange);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_startWithArray() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::startWithArray, this.description("startWithArray"));
+            this.runBenchmark(this.payloads.startWithArray);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapDelayError, this.description("concatMapDelayError"));
+            this.runBenchmark(this.payloads.concatMapDelayError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapDelayErrorJustSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapDelayErrorJustSource, this.description("concatMapDelayErrorJustSource"));
+            this.runBenchmark(this.payloads.concatMapDelayErrorJustSource);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapJustSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapJustSource, this.description("concatMapJustSource"));
+            this.runBenchmark(this.payloads.concatMapJustSource);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapJustSourceDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapJustSourceDelayError, this.description("concatMapJustSourceDelayError"));
+            this.runBenchmark(this.payloads.concatMapJustSourceDelayError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapEmpty, this.description("concatMapEmpty"));
+            this.runBenchmark(this.payloads.concatMapEmpty);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapEmptyDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapEmptyDelayError, this.description("concatMapEmptyDelayError"));
+            this.runBenchmark(this.payloads.concatMapEmptyDelayError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.runBenchmark(this.payloads.doubleOnSubscribe);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_immediateInnerNextOuterError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::immediateInnerNextOuterError, this.description("immediateInnerNextOuterError"));
+            this.runBenchmark(this.payloads.immediateInnerNextOuterError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_immediateInnerNextOuterError2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::immediateInnerNextOuterError2, this.description("immediateInnerNextOuterError2"));
+            this.runBenchmark(this.payloads.immediateInnerNextOuterError2);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapInnerError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapInnerError, this.description("concatMapInnerError"));
+            this.runBenchmark(this.payloads.concatMapInnerError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapInnerErrorDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapInnerErrorDelayError, this.description("concatMapInnerErrorDelayError"));
+            this.runBenchmark(this.payloads.concatMapInnerErrorDelayError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSource, this.description("badSource"));
+            this.runBenchmark(this.payloads.badSource);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badInnerSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badInnerSource, this.description("badInnerSource"));
+            this.runBenchmark(this.payloads.badInnerSource);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badInnerSourceDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badInnerSourceDelayError, this.description("badInnerSourceDelayError"));
+            this.runBenchmark(this.payloads.badInnerSourceDelayError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSourceDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSourceDelayError, this.description("badSourceDelayError"));
+            this.runBenchmark(this.payloads.badSourceDelayError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedCrash, this.description("fusedCrash"));
+            this.runBenchmark(this.payloads.fusedCrash);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedCrashDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedCrashDelayError, this.description("fusedCrashDelayError"));
+            this.runBenchmark(this.payloads.fusedCrashDelayError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_callableCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::callableCrash, this.description("callableCrash"));
+            this.runBenchmark(this.payloads.callableCrash);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_callableCrashDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::callableCrashDelayError, this.description("callableCrashDelayError"));
+            this.runBenchmark(this.payloads.callableCrashDelayError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.runBenchmark(this.payloads.dispose);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_notVeryEnd() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::notVeryEnd, this.description("notVeryEnd"));
+            this.runBenchmark(this.payloads.notVeryEnd);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.runBenchmark(this.payloads.error);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperThrows, this.description("mapperThrows"));
+            this.runBenchmark(this.payloads.mapperThrows);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainErrors() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainErrors, this.description("mainErrors"));
+            this.runBenchmark(this.payloads.mainErrors);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerErrors() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerErrors, this.description("innerErrors"));
+            this.runBenchmark(this.payloads.innerErrors);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleInnerErrors() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleInnerErrors, this.description("singleInnerErrors"));
+            this.runBenchmark(this.payloads.singleInnerErrors);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerNull, this.description("innerNull"));
+            this.runBenchmark(this.payloads.innerNull);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerThrows, this.description("innerThrows"));
+            this.runBenchmark(this.payloads.innerThrows);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerWithEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerWithEmpty, this.description("innerWithEmpty"));
+            this.runBenchmark(this.payloads.innerWithEmpty);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerWithScalar() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerWithScalar, this.description("innerWithScalar"));
+            this.runBenchmark(this.payloads.innerWithScalar);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperScheduledLong() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperScheduledLong, this.description("mapperScheduledLong"));
+            this.runBenchmark(this.payloads.mapperScheduledLong);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperDelayErrorScheduledLong() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperDelayErrorScheduledLong, this.description("mapperDelayErrorScheduledLong"));
+            this.runBenchmark(this.payloads.mapperDelayErrorScheduledLong);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperDelayError2ScheduledLong() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperDelayError2ScheduledLong, this.description("mapperDelayError2ScheduledLong"));
+            this.runBenchmark(this.payloads.mapperDelayError2ScheduledLong);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_undeliverableUponCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::undeliverableUponCancel, this.description("undeliverableUponCancel"));
+            this.runBenchmark(this.payloads.undeliverableUponCancel);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_undeliverableUponCancelDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::undeliverableUponCancelDelayError, this.description("undeliverableUponCancelDelayError"));
+            this.runBenchmark(this.payloads.undeliverableUponCancelDelayError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_undeliverableUponCancelDelayErrorTillEnd() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::undeliverableUponCancelDelayErrorTillEnd, this.description("undeliverableUponCancelDelayErrorTillEnd"));
+            this.runBenchmark(this.payloads.undeliverableUponCancelDelayErrorTillEnd);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusionRejected() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusionRejected, this.description("fusionRejected"));
+            this.runBenchmark(this.payloads.fusionRejected);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusionRejectedDelayErrorr() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusionRejectedDelayErrorr, this.description("fusionRejectedDelayErrorr"));
+            this.runBenchmark(this.payloads.fusionRejectedDelayErrorr);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scalarInnerJustDisposeDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scalarInnerJustDisposeDelayError, this.description("scalarInnerJustDisposeDelayError"));
+            this.runBenchmark(this.payloads.scalarInnerJustDisposeDelayError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scalarInnerEmptyDisposeDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scalarInnerEmptyDisposeDelayError, this.description("scalarInnerEmptyDisposeDelayError"));
+            this.runBenchmark(this.payloads.scalarInnerEmptyDisposeDelayError);
         }
 
-        private ObservableConcatMapSchedulerTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableConcatMapSchedulerTest();
+        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> payload) throws java.lang.Throwable {
+            this.instance = new ObservableConcatMapSchedulerTest();
+            payload.accept(this.instance);
         }
 
-        @java.lang.Override
-        public ObservableConcatMapSchedulerTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> boundaryFusion;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> boundaryFusionDelayError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> pollThrows;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> pollThrowsDelayError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> noCancelPrevious;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> delayErrorCallableTillTheEnd;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> delayErrorCallableEager;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> mapperScheduled;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> mapperScheduledHidden;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> mapperDelayErrorScheduled;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> mapperDelayErrorScheduledHidden;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> mapperDelayError2Scheduled;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> mapperDelayError2ScheduledHidden;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> issue2890NoStackoverflow;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> concatMapRangeAsyncLoopIssue2876;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> concatArray;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> concatMapJustJust;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> concatMapJustRange;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> concatMapDelayErrorJustJust;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> concatMapDelayErrorJustRange;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> startWithArray;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> concatMapDelayError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> concatMapDelayErrorJustSource;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> concatMapJustSource;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> concatMapJustSourceDelayError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> concatMapEmpty;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> concatMapEmptyDelayError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> doubleOnSubscribe;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> immediateInnerNextOuterError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> immediateInnerNextOuterError2;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> concatMapInnerError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> concatMapInnerErrorDelayError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> badSource;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> badInnerSource;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> badInnerSourceDelayError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> badSourceDelayError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> fusedCrash;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> fusedCrashDelayError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> callableCrash;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> callableCrashDelayError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> dispose;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> notVeryEnd;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> error;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> mapperThrows;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> mainErrors;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> innerErrors;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> singleInnerErrors;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> innerNull;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> innerThrows;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> innerWithEmpty;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> innerWithScalar;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> mapperScheduledLong;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> mapperDelayErrorScheduledLong;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> mapperDelayError2ScheduledLong;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> undeliverableUponCancel;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> undeliverableUponCancelDelayError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> undeliverableUponCancelDelayErrorTillEnd;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> fusionRejected;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> fusionRejectedDelayErrorr;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> scalarInnerJustDisposeDelayError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> scalarInnerEmptyDisposeDelayError;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.boundaryFusion = ObservableConcatMapSchedulerTest::boundaryFusion;
+            this.payloads.boundaryFusionDelayError = ObservableConcatMapSchedulerTest::boundaryFusionDelayError;
+            this.payloads.pollThrows = ObservableConcatMapSchedulerTest::pollThrows;
+            this.payloads.pollThrowsDelayError = ObservableConcatMapSchedulerTest::pollThrowsDelayError;
+            this.payloads.noCancelPrevious = ObservableConcatMapSchedulerTest::noCancelPrevious;
+            this.payloads.delayErrorCallableTillTheEnd = ObservableConcatMapSchedulerTest::delayErrorCallableTillTheEnd;
+            this.payloads.delayErrorCallableEager = ObservableConcatMapSchedulerTest::delayErrorCallableEager;
+            this.payloads.mapperScheduled = ObservableConcatMapSchedulerTest::mapperScheduled;
+            this.payloads.mapperScheduledHidden = ObservableConcatMapSchedulerTest::mapperScheduledHidden;
+            this.payloads.mapperDelayErrorScheduled = ObservableConcatMapSchedulerTest::mapperDelayErrorScheduled;
+            this.payloads.mapperDelayErrorScheduledHidden = ObservableConcatMapSchedulerTest::mapperDelayErrorScheduledHidden;
+            this.payloads.mapperDelayError2Scheduled = ObservableConcatMapSchedulerTest::mapperDelayError2Scheduled;
+            this.payloads.mapperDelayError2ScheduledHidden = ObservableConcatMapSchedulerTest::mapperDelayError2ScheduledHidden;
+            this.payloads.issue2890NoStackoverflow = ObservableConcatMapSchedulerTest::issue2890NoStackoverflow;
+            this.payloads.concatMapRangeAsyncLoopIssue2876 = ObservableConcatMapSchedulerTest::concatMapRangeAsyncLoopIssue2876;
+            this.payloads.concatArray = ObservableConcatMapSchedulerTest::concatArray;
+            this.payloads.concatMapJustJust = ObservableConcatMapSchedulerTest::concatMapJustJust;
+            this.payloads.concatMapJustRange = ObservableConcatMapSchedulerTest::concatMapJustRange;
+            this.payloads.concatMapDelayErrorJustJust = ObservableConcatMapSchedulerTest::concatMapDelayErrorJustJust;
+            this.payloads.concatMapDelayErrorJustRange = ObservableConcatMapSchedulerTest::concatMapDelayErrorJustRange;
+            this.payloads.startWithArray = ObservableConcatMapSchedulerTest::startWithArray;
+            this.payloads.concatMapDelayError = ObservableConcatMapSchedulerTest::concatMapDelayError;
+            this.payloads.concatMapDelayErrorJustSource = ObservableConcatMapSchedulerTest::concatMapDelayErrorJustSource;
+            this.payloads.concatMapJustSource = ObservableConcatMapSchedulerTest::concatMapJustSource;
+            this.payloads.concatMapJustSourceDelayError = ObservableConcatMapSchedulerTest::concatMapJustSourceDelayError;
+            this.payloads.concatMapEmpty = ObservableConcatMapSchedulerTest::concatMapEmpty;
+            this.payloads.concatMapEmptyDelayError = ObservableConcatMapSchedulerTest::concatMapEmptyDelayError;
+            this.payloads.doubleOnSubscribe = ObservableConcatMapSchedulerTest::doubleOnSubscribe;
+            this.payloads.immediateInnerNextOuterError = ObservableConcatMapSchedulerTest::immediateInnerNextOuterError;
+            this.payloads.immediateInnerNextOuterError2 = ObservableConcatMapSchedulerTest::immediateInnerNextOuterError2;
+            this.payloads.concatMapInnerError = ObservableConcatMapSchedulerTest::concatMapInnerError;
+            this.payloads.concatMapInnerErrorDelayError = ObservableConcatMapSchedulerTest::concatMapInnerErrorDelayError;
+            this.payloads.badSource = ObservableConcatMapSchedulerTest::badSource;
+            this.payloads.badInnerSource = ObservableConcatMapSchedulerTest::badInnerSource;
+            this.payloads.badInnerSourceDelayError = ObservableConcatMapSchedulerTest::badInnerSourceDelayError;
+            this.payloads.badSourceDelayError = ObservableConcatMapSchedulerTest::badSourceDelayError;
+            this.payloads.fusedCrash = ObservableConcatMapSchedulerTest::fusedCrash;
+            this.payloads.fusedCrashDelayError = ObservableConcatMapSchedulerTest::fusedCrashDelayError;
+            this.payloads.callableCrash = ObservableConcatMapSchedulerTest::callableCrash;
+            this.payloads.callableCrashDelayError = ObservableConcatMapSchedulerTest::callableCrashDelayError;
+            this.payloads.dispose = ObservableConcatMapSchedulerTest::dispose;
+            this.payloads.notVeryEnd = ObservableConcatMapSchedulerTest::notVeryEnd;
+            this.payloads.error = ObservableConcatMapSchedulerTest::error;
+            this.payloads.mapperThrows = ObservableConcatMapSchedulerTest::mapperThrows;
+            this.payloads.mainErrors = ObservableConcatMapSchedulerTest::mainErrors;
+            this.payloads.innerErrors = ObservableConcatMapSchedulerTest::innerErrors;
+            this.payloads.singleInnerErrors = ObservableConcatMapSchedulerTest::singleInnerErrors;
+            this.payloads.innerNull = ObservableConcatMapSchedulerTest::innerNull;
+            this.payloads.innerThrows = ObservableConcatMapSchedulerTest::innerThrows;
+            this.payloads.innerWithEmpty = ObservableConcatMapSchedulerTest::innerWithEmpty;
+            this.payloads.innerWithScalar = ObservableConcatMapSchedulerTest::innerWithScalar;
+            this.payloads.mapperScheduledLong = ObservableConcatMapSchedulerTest::mapperScheduledLong;
+            this.payloads.mapperDelayErrorScheduledLong = ObservableConcatMapSchedulerTest::mapperDelayErrorScheduledLong;
+            this.payloads.mapperDelayError2ScheduledLong = ObservableConcatMapSchedulerTest::mapperDelayError2ScheduledLong;
+            this.payloads.undeliverableUponCancel = ObservableConcatMapSchedulerTest::undeliverableUponCancel;
+            this.payloads.undeliverableUponCancelDelayError = ObservableConcatMapSchedulerTest::undeliverableUponCancelDelayError;
+            this.payloads.undeliverableUponCancelDelayErrorTillEnd = ObservableConcatMapSchedulerTest::undeliverableUponCancelDelayErrorTillEnd;
+            this.payloads.fusionRejected = ObservableConcatMapSchedulerTest::fusionRejected;
+            this.payloads.fusionRejectedDelayErrorr = ObservableConcatMapSchedulerTest::fusionRejectedDelayErrorr;
+            this.payloads.scalarInnerJustDisposeDelayError = ObservableConcatMapSchedulerTest::scalarInnerJustDisposeDelayError;
+            this.payloads.scalarInnerEmptyDisposeDelayError = ObservableConcatMapSchedulerTest::scalarInnerEmptyDisposeDelayError;
         }
     }
 }

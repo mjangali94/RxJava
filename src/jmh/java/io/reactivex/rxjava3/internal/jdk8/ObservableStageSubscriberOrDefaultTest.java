@@ -327,180 +327,293 @@ public class ObservableStageSubscriberOrDefaultTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableStageSubscriberOrDefaultTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstJust() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstJust, this.description("firstJust"));
+            this.payloads.firstJust.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstEmpty, this.description("firstEmpty"));
+            this.payloads.firstEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstCancels() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstCancels, this.description("firstCancels"));
+            this.payloads.firstCancels.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstCompletableFutureCancels() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstCompletableFutureCancels, this.description("firstCompletableFutureCancels"));
+            this.payloads.firstCompletableFutureCancels.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstCompletableManualCompleteCancels() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstCompletableManualCompleteCancels, this.description("firstCompletableManualCompleteCancels"));
+            this.payloads.firstCompletableManualCompleteCancels.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstCompletableManualCompleteExceptionallyCancels() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstCompletableManualCompleteExceptionallyCancels, this.description("firstCompletableManualCompleteExceptionallyCancels"));
+            this.payloads.firstCompletableManualCompleteExceptionallyCancels.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstError, this.description("firstError"));
+            this.payloads.firstError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstSourceIgnoresCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstSourceIgnoresCancel, this.description("firstSourceIgnoresCancel"));
+            this.payloads.firstSourceIgnoresCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstDoubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstDoubleOnSubscribe, this.description("firstDoubleOnSubscribe"));
+            this.payloads.firstDoubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleJust() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleJust, this.description("singleJust"));
+            this.payloads.singleJust.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleEmpty, this.description("singleEmpty"));
+            this.payloads.singleEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleTooManyCancels() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleTooManyCancels, this.description("singleTooManyCancels"));
+            this.payloads.singleTooManyCancels.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleCompletableFutureCancels() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleCompletableFutureCancels, this.description("singleCompletableFutureCancels"));
+            this.payloads.singleCompletableFutureCancels.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleCompletableManualCompleteCancels() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleCompletableManualCompleteCancels, this.description("singleCompletableManualCompleteCancels"));
+            this.payloads.singleCompletableManualCompleteCancels.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleCompletableManualCompleteExceptionallyCancels() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleCompletableManualCompleteExceptionallyCancels, this.description("singleCompletableManualCompleteExceptionallyCancels"));
+            this.payloads.singleCompletableManualCompleteExceptionallyCancels.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleError, this.description("singleError"));
+            this.payloads.singleError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleSourceIgnoresCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleSourceIgnoresCancel, this.description("singleSourceIgnoresCancel"));
+            this.payloads.singleSourceIgnoresCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleDoubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleDoubleOnSubscribe, this.description("singleDoubleOnSubscribe"));
+            this.payloads.singleDoubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lastJust() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lastJust, this.description("lastJust"));
+            this.payloads.lastJust.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lastRange() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lastRange, this.description("lastRange"));
+            this.payloads.lastRange.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lastEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lastEmpty, this.description("lastEmpty"));
+            this.payloads.lastEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lastCompletableFutureCancels() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lastCompletableFutureCancels, this.description("lastCompletableFutureCancels"));
+            this.payloads.lastCompletableFutureCancels.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lastCompletableManualCompleteCancels() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lastCompletableManualCompleteCancels, this.description("lastCompletableManualCompleteCancels"));
+            this.payloads.lastCompletableManualCompleteCancels.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lastCompletableManualCompleteExceptionallyCancels() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lastCompletableManualCompleteExceptionallyCancels, this.description("lastCompletableManualCompleteExceptionallyCancels"));
+            this.payloads.lastCompletableManualCompleteExceptionallyCancels.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lastError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lastError, this.description("lastError"));
+            this.payloads.lastError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lastSourceIgnoresCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lastSourceIgnoresCancel, this.description("lastSourceIgnoresCancel"));
+            this.payloads.lastSourceIgnoresCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lastDoubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lastDoubleOnSubscribe, this.description("lastDoubleOnSubscribe"));
+            this.payloads.lastDoubleOnSubscribe.evaluate();
         }
 
-        private ObservableStageSubscriberOrDefaultTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableStageSubscriberOrDefaultTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableStageSubscriberOrDefaultTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableStageSubscriberOrDefaultTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservableStageSubscriberOrDefaultTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableStageSubscriberOrDefaultTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableStageSubscriberOrDefaultTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableStageSubscriberOrDefaultTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableStageSubscriberOrDefaultTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableStageSubscriberOrDefaultTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableStageSubscriberOrDefaultTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement firstJust;
+
+            public org.junit.runners.model.Statement firstEmpty;
+
+            public org.junit.runners.model.Statement firstCancels;
+
+            public org.junit.runners.model.Statement firstCompletableFutureCancels;
+
+            public org.junit.runners.model.Statement firstCompletableManualCompleteCancels;
+
+            public org.junit.runners.model.Statement firstCompletableManualCompleteExceptionallyCancels;
+
+            public org.junit.runners.model.Statement firstError;
+
+            public org.junit.runners.model.Statement firstSourceIgnoresCancel;
+
+            public org.junit.runners.model.Statement firstDoubleOnSubscribe;
+
+            public org.junit.runners.model.Statement singleJust;
+
+            public org.junit.runners.model.Statement singleEmpty;
+
+            public org.junit.runners.model.Statement singleTooManyCancels;
+
+            public org.junit.runners.model.Statement singleCompletableFutureCancels;
+
+            public org.junit.runners.model.Statement singleCompletableManualCompleteCancels;
+
+            public org.junit.runners.model.Statement singleCompletableManualCompleteExceptionallyCancels;
+
+            public org.junit.runners.model.Statement singleError;
+
+            public org.junit.runners.model.Statement singleSourceIgnoresCancel;
+
+            public org.junit.runners.model.Statement singleDoubleOnSubscribe;
+
+            public org.junit.runners.model.Statement lastJust;
+
+            public org.junit.runners.model.Statement lastRange;
+
+            public org.junit.runners.model.Statement lastEmpty;
+
+            public org.junit.runners.model.Statement lastCompletableFutureCancels;
+
+            public org.junit.runners.model.Statement lastCompletableManualCompleteCancels;
+
+            public org.junit.runners.model.Statement lastCompletableManualCompleteExceptionallyCancels;
+
+            public org.junit.runners.model.Statement lastError;
+
+            public org.junit.runners.model.Statement lastSourceIgnoresCancel;
+
+            public org.junit.runners.model.Statement lastDoubleOnSubscribe;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.firstJust = _ClassStatement.forPayload(ObservableStageSubscriberOrDefaultTest::firstJust, "firstJust", this);
+            this.payloads.firstEmpty = _ClassStatement.forPayload(ObservableStageSubscriberOrDefaultTest::firstEmpty, "firstEmpty", this);
+            this.payloads.firstCancels = _ClassStatement.forPayload(ObservableStageSubscriberOrDefaultTest::firstCancels, "firstCancels", this);
+            this.payloads.firstCompletableFutureCancels = _ClassStatement.forPayload(ObservableStageSubscriberOrDefaultTest::firstCompletableFutureCancels, "firstCompletableFutureCancels", this);
+            this.payloads.firstCompletableManualCompleteCancels = _ClassStatement.forPayload(ObservableStageSubscriberOrDefaultTest::firstCompletableManualCompleteCancels, "firstCompletableManualCompleteCancels", this);
+            this.payloads.firstCompletableManualCompleteExceptionallyCancels = _ClassStatement.forPayload(ObservableStageSubscriberOrDefaultTest::firstCompletableManualCompleteExceptionallyCancels, "firstCompletableManualCompleteExceptionallyCancels", this);
+            this.payloads.firstError = _ClassStatement.forPayload(ObservableStageSubscriberOrDefaultTest::firstError, "firstError", this);
+            this.payloads.firstSourceIgnoresCancel = _ClassStatement.forPayload(ObservableStageSubscriberOrDefaultTest::firstSourceIgnoresCancel, "firstSourceIgnoresCancel", this);
+            this.payloads.firstDoubleOnSubscribe = _ClassStatement.forPayload(ObservableStageSubscriberOrDefaultTest::firstDoubleOnSubscribe, "firstDoubleOnSubscribe", this);
+            this.payloads.singleJust = _ClassStatement.forPayload(ObservableStageSubscriberOrDefaultTest::singleJust, "singleJust", this);
+            this.payloads.singleEmpty = _ClassStatement.forPayload(ObservableStageSubscriberOrDefaultTest::singleEmpty, "singleEmpty", this);
+            this.payloads.singleTooManyCancels = _ClassStatement.forPayload(ObservableStageSubscriberOrDefaultTest::singleTooManyCancels, "singleTooManyCancels", this);
+            this.payloads.singleCompletableFutureCancels = _ClassStatement.forPayload(ObservableStageSubscriberOrDefaultTest::singleCompletableFutureCancels, "singleCompletableFutureCancels", this);
+            this.payloads.singleCompletableManualCompleteCancels = _ClassStatement.forPayload(ObservableStageSubscriberOrDefaultTest::singleCompletableManualCompleteCancels, "singleCompletableManualCompleteCancels", this);
+            this.payloads.singleCompletableManualCompleteExceptionallyCancels = _ClassStatement.forPayload(ObservableStageSubscriberOrDefaultTest::singleCompletableManualCompleteExceptionallyCancels, "singleCompletableManualCompleteExceptionallyCancels", this);
+            this.payloads.singleError = _ClassStatement.forPayload(ObservableStageSubscriberOrDefaultTest::singleError, "singleError", this);
+            this.payloads.singleSourceIgnoresCancel = _ClassStatement.forPayload(ObservableStageSubscriberOrDefaultTest::singleSourceIgnoresCancel, "singleSourceIgnoresCancel", this);
+            this.payloads.singleDoubleOnSubscribe = _ClassStatement.forPayload(ObservableStageSubscriberOrDefaultTest::singleDoubleOnSubscribe, "singleDoubleOnSubscribe", this);
+            this.payloads.lastJust = _ClassStatement.forPayload(ObservableStageSubscriberOrDefaultTest::lastJust, "lastJust", this);
+            this.payloads.lastRange = _ClassStatement.forPayload(ObservableStageSubscriberOrDefaultTest::lastRange, "lastRange", this);
+            this.payloads.lastEmpty = _ClassStatement.forPayload(ObservableStageSubscriberOrDefaultTest::lastEmpty, "lastEmpty", this);
+            this.payloads.lastCompletableFutureCancels = _ClassStatement.forPayload(ObservableStageSubscriberOrDefaultTest::lastCompletableFutureCancels, "lastCompletableFutureCancels", this);
+            this.payloads.lastCompletableManualCompleteCancels = _ClassStatement.forPayload(ObservableStageSubscriberOrDefaultTest::lastCompletableManualCompleteCancels, "lastCompletableManualCompleteCancels", this);
+            this.payloads.lastCompletableManualCompleteExceptionallyCancels = _ClassStatement.forPayload(ObservableStageSubscriberOrDefaultTest::lastCompletableManualCompleteExceptionallyCancels, "lastCompletableManualCompleteExceptionallyCancels", this);
+            this.payloads.lastError = _ClassStatement.forPayload(ObservableStageSubscriberOrDefaultTest::lastError, "lastError", this);
+            this.payloads.lastSourceIgnoresCancel = _ClassStatement.forPayload(ObservableStageSubscriberOrDefaultTest::lastSourceIgnoresCancel, "lastSourceIgnoresCancel", this);
+            this.payloads.lastDoubleOnSubscribe = _ClassStatement.forPayload(ObservableStageSubscriberOrDefaultTest::lastDoubleOnSubscribe, "lastDoubleOnSubscribe", this);
         }
     }
 }

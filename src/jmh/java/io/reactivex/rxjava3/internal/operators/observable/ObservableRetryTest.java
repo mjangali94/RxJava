@@ -1110,222 +1110,349 @@ public class ObservableRetryTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableRetryTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_iterativeBackoff() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::iterativeBackoff, this.description("iterativeBackoff"));
+            this.payloads.iterativeBackoff.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_retryIndefinitely() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::retryIndefinitely, this.description("retryIndefinitely"));
+            this.payloads.retryIndefinitely.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_schedulingNotificationHandler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::schedulingNotificationHandler, this.description("schedulingNotificationHandler"));
+            this.payloads.schedulingNotificationHandler.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onNextFromNotificationHandler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onNextFromNotificationHandler, this.description("onNextFromNotificationHandler"));
+            this.payloads.onNextFromNotificationHandler.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onCompletedFromNotificationHandler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompletedFromNotificationHandler, this.description("onCompletedFromNotificationHandler"));
+            this.payloads.onCompletedFromNotificationHandler.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorFromNotificationHandler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorFromNotificationHandler, this.description("onErrorFromNotificationHandler"));
+            this.payloads.onErrorFromNotificationHandler.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleSubscriptionOnFirst() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleSubscriptionOnFirst, this.description("singleSubscriptionOnFirst"));
+            this.payloads.singleSubscriptionOnFirst.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_originFails() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::originFails, this.description("originFails"));
+            this.payloads.originFails.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_retryFail() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::retryFail, this.description("retryFail"));
+            this.payloads.retryFail.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_retrySuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::retrySuccess, this.description("retrySuccess"));
+            this.payloads.retrySuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_infiniteRetry() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::infiniteRetry, this.description("infiniteRetry"));
+            this.payloads.infiniteRetry.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_retrySubscribesAgainAfterError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::retrySubscribesAgainAfterError, this.description("retrySubscribesAgainAfterError"));
+            this.payloads.retrySubscribesAgainAfterError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribeFromRetry() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribeFromRetry, this.description("unsubscribeFromRetry"));
+            this.payloads.unsubscribeFromRetry.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_retryAllowsSubscriptionAfterAllSubscriptionsUnsubscribed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::retryAllowsSubscriptionAfterAllSubscriptionsUnsubscribed, this.description("retryAllowsSubscriptionAfterAllSubscriptionsUnsubscribed"));
+            this.payloads.retryAllowsSubscriptionAfterAllSubscriptionsUnsubscribed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sourceObservableCallsUnsubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sourceObservableCallsUnsubscribe, this.description("sourceObservableCallsUnsubscribe"));
+            this.payloads.sourceObservableCallsUnsubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sourceObservableRetry1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sourceObservableRetry1, this.description("sourceObservableRetry1"));
+            this.payloads.sourceObservableRetry1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sourceObservableRetry0() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sourceObservableRetry0, this.description("sourceObservableRetry0"));
+            this.payloads.sourceObservableRetry0.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribeAfterError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribeAfterError, this.description("unsubscribeAfterError"));
+            this.payloads.unsubscribeAfterError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeoutWithRetry() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeoutWithRetry, this.description("timeoutWithRetry"));
+            this.payloads.timeoutWithRetry.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_retryWithBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::retryWithBackpressure, this.description("retryWithBackpressure"));
+            this.payloads.retryWithBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_retryWithBackpressureParallel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::retryWithBackpressureParallel, this.description("retryWithBackpressureParallel"));
+            this.payloads.retryWithBackpressureParallel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_issue1900() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::issue1900, this.description("issue1900"));
+            this.payloads.issue1900.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_issue1900SourceNotSupportingBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::issue1900SourceNotSupportingBackpressure, this.description("issue1900SourceNotSupportingBackpressure"));
+            this.payloads.issue1900SourceNotSupportingBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_retryPredicate() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::retryPredicate, this.description("retryPredicate"));
+            this.payloads.retryPredicate.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_retryUntil() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::retryUntil, this.description("retryUntil"));
+            this.payloads.retryUntil.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_retryLongPredicateInvalid() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::retryLongPredicateInvalid, this.description("retryLongPredicateInvalid"));
+            this.payloads.retryLongPredicateInvalid.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_shouldDisposeInnerObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::shouldDisposeInnerObservable, this.description("shouldDisposeInnerObservable"));
+            this.payloads.shouldDisposeInnerObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noCancelPreviousRetry() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noCancelPreviousRetry, this.description("noCancelPreviousRetry"));
+            this.payloads.noCancelPreviousRetry.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noCancelPreviousRetryWhile() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noCancelPreviousRetryWhile, this.description("noCancelPreviousRetryWhile"));
+            this.payloads.noCancelPreviousRetryWhile.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noCancelPreviousRetryWhile2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noCancelPreviousRetryWhile2, this.description("noCancelPreviousRetryWhile2"));
+            this.payloads.noCancelPreviousRetryWhile2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noCancelPreviousRetryUntil() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noCancelPreviousRetryUntil, this.description("noCancelPreviousRetryUntil"));
+            this.payloads.noCancelPreviousRetryUntil.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noCancelPreviousRepeatWhen() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noCancelPreviousRepeatWhen, this.description("noCancelPreviousRepeatWhen"));
+            this.payloads.noCancelPreviousRepeatWhen.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noCancelPreviousRepeatWhen2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noCancelPreviousRepeatWhen2, this.description("noCancelPreviousRepeatWhen2"));
+            this.payloads.noCancelPreviousRepeatWhen2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_repeatFloodNoSubscriptionError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::repeatFloodNoSubscriptionError, this.description("repeatFloodNoSubscriptionError"));
+            this.payloads.repeatFloodNoSubscriptionError.evaluate();
         }
 
-        private ObservableRetryTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableRetryTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableRetryTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableRetryTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservableRetryTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableRetryTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableRetryTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableRetryTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableRetryTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableRetryTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableRetryTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement iterativeBackoff;
+
+            public org.junit.runners.model.Statement retryIndefinitely;
+
+            public org.junit.runners.model.Statement schedulingNotificationHandler;
+
+            public org.junit.runners.model.Statement onNextFromNotificationHandler;
+
+            public org.junit.runners.model.Statement onCompletedFromNotificationHandler;
+
+            public org.junit.runners.model.Statement onErrorFromNotificationHandler;
+
+            public org.junit.runners.model.Statement singleSubscriptionOnFirst;
+
+            public org.junit.runners.model.Statement originFails;
+
+            public org.junit.runners.model.Statement retryFail;
+
+            public org.junit.runners.model.Statement retrySuccess;
+
+            public org.junit.runners.model.Statement infiniteRetry;
+
+            public org.junit.runners.model.Statement retrySubscribesAgainAfterError;
+
+            public org.junit.runners.model.Statement unsubscribeFromRetry;
+
+            public org.junit.runners.model.Statement retryAllowsSubscriptionAfterAllSubscriptionsUnsubscribed;
+
+            public org.junit.runners.model.Statement sourceObservableCallsUnsubscribe;
+
+            public org.junit.runners.model.Statement sourceObservableRetry1;
+
+            public org.junit.runners.model.Statement sourceObservableRetry0;
+
+            public org.junit.runners.model.Statement unsubscribeAfterError;
+
+            public org.junit.runners.model.Statement timeoutWithRetry;
+
+            public org.junit.runners.model.Statement retryWithBackpressure;
+
+            public org.junit.runners.model.Statement retryWithBackpressureParallel;
+
+            public org.junit.runners.model.Statement issue1900;
+
+            public org.junit.runners.model.Statement issue1900SourceNotSupportingBackpressure;
+
+            public org.junit.runners.model.Statement retryPredicate;
+
+            public org.junit.runners.model.Statement retryUntil;
+
+            public org.junit.runners.model.Statement retryLongPredicateInvalid;
+
+            public org.junit.runners.model.Statement shouldDisposeInnerObservable;
+
+            public org.junit.runners.model.Statement noCancelPreviousRetry;
+
+            public org.junit.runners.model.Statement noCancelPreviousRetryWhile;
+
+            public org.junit.runners.model.Statement noCancelPreviousRetryWhile2;
+
+            public org.junit.runners.model.Statement noCancelPreviousRetryUntil;
+
+            public org.junit.runners.model.Statement noCancelPreviousRepeatWhen;
+
+            public org.junit.runners.model.Statement noCancelPreviousRepeatWhen2;
+
+            public org.junit.runners.model.Statement repeatFloodNoSubscriptionError;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.iterativeBackoff = _ClassStatement.forPayload(ObservableRetryTest::iterativeBackoff, "iterativeBackoff", this);
+            this.payloads.retryIndefinitely = _ClassStatement.forPayload(ObservableRetryTest::retryIndefinitely, "retryIndefinitely", this);
+            this.payloads.schedulingNotificationHandler = _ClassStatement.forPayload(ObservableRetryTest::schedulingNotificationHandler, "schedulingNotificationHandler", this);
+            this.payloads.onNextFromNotificationHandler = _ClassStatement.forPayload(ObservableRetryTest::onNextFromNotificationHandler, "onNextFromNotificationHandler", this);
+            this.payloads.onCompletedFromNotificationHandler = _ClassStatement.forPayload(ObservableRetryTest::onCompletedFromNotificationHandler, "onCompletedFromNotificationHandler", this);
+            this.payloads.onErrorFromNotificationHandler = _ClassStatement.forPayload(ObservableRetryTest::onErrorFromNotificationHandler, "onErrorFromNotificationHandler", this);
+            this.payloads.singleSubscriptionOnFirst = _ClassStatement.forPayload(ObservableRetryTest::singleSubscriptionOnFirst, "singleSubscriptionOnFirst", this);
+            this.payloads.originFails = _ClassStatement.forPayload(ObservableRetryTest::originFails, "originFails", this);
+            this.payloads.retryFail = _ClassStatement.forPayload(ObservableRetryTest::retryFail, "retryFail", this);
+            this.payloads.retrySuccess = _ClassStatement.forPayload(ObservableRetryTest::retrySuccess, "retrySuccess", this);
+            this.payloads.infiniteRetry = _ClassStatement.forPayload(ObservableRetryTest::infiniteRetry, "infiniteRetry", this);
+            this.payloads.retrySubscribesAgainAfterError = _ClassStatement.forPayload(ObservableRetryTest::retrySubscribesAgainAfterError, "retrySubscribesAgainAfterError", this);
+            this.payloads.unsubscribeFromRetry = _ClassStatement.forPayload(ObservableRetryTest::unsubscribeFromRetry, "unsubscribeFromRetry", this);
+            this.payloads.retryAllowsSubscriptionAfterAllSubscriptionsUnsubscribed = _ClassStatement.forPayload(ObservableRetryTest::retryAllowsSubscriptionAfterAllSubscriptionsUnsubscribed, "retryAllowsSubscriptionAfterAllSubscriptionsUnsubscribed", this);
+            this.payloads.sourceObservableCallsUnsubscribe = _ClassStatement.forPayload(ObservableRetryTest::sourceObservableCallsUnsubscribe, "sourceObservableCallsUnsubscribe", this);
+            this.payloads.sourceObservableRetry1 = _ClassStatement.forPayload(ObservableRetryTest::sourceObservableRetry1, "sourceObservableRetry1", this);
+            this.payloads.sourceObservableRetry0 = _ClassStatement.forPayload(ObservableRetryTest::sourceObservableRetry0, "sourceObservableRetry0", this);
+            this.payloads.unsubscribeAfterError = _ClassStatement.forPayload(ObservableRetryTest::unsubscribeAfterError, "unsubscribeAfterError", this);
+            this.payloads.timeoutWithRetry = _ClassStatement.forPayload(ObservableRetryTest::timeoutWithRetry, "timeoutWithRetry", this);
+            this.payloads.retryWithBackpressure = _ClassStatement.forPayload(ObservableRetryTest::retryWithBackpressure, "retryWithBackpressure", this);
+            this.payloads.retryWithBackpressureParallel = _ClassStatement.forPayload(ObservableRetryTest::retryWithBackpressureParallel, "retryWithBackpressureParallel", this);
+            this.payloads.issue1900 = _ClassStatement.forPayload(ObservableRetryTest::issue1900, "issue1900", this);
+            this.payloads.issue1900SourceNotSupportingBackpressure = _ClassStatement.forPayload(ObservableRetryTest::issue1900SourceNotSupportingBackpressure, "issue1900SourceNotSupportingBackpressure", this);
+            this.payloads.retryPredicate = _ClassStatement.forPayload(ObservableRetryTest::retryPredicate, "retryPredicate", this);
+            this.payloads.retryUntil = _ClassStatement.forPayload(ObservableRetryTest::retryUntil, "retryUntil", this);
+            this.payloads.retryLongPredicateInvalid = _ClassStatement.forPayload(ObservableRetryTest::retryLongPredicateInvalid, "retryLongPredicateInvalid", this);
+            this.payloads.shouldDisposeInnerObservable = _ClassStatement.forPayload(ObservableRetryTest::shouldDisposeInnerObservable, "shouldDisposeInnerObservable", this);
+            this.payloads.noCancelPreviousRetry = _ClassStatement.forPayload(ObservableRetryTest::noCancelPreviousRetry, "noCancelPreviousRetry", this);
+            this.payloads.noCancelPreviousRetryWhile = _ClassStatement.forPayload(ObservableRetryTest::noCancelPreviousRetryWhile, "noCancelPreviousRetryWhile", this);
+            this.payloads.noCancelPreviousRetryWhile2 = _ClassStatement.forPayload(ObservableRetryTest::noCancelPreviousRetryWhile2, "noCancelPreviousRetryWhile2", this);
+            this.payloads.noCancelPreviousRetryUntil = _ClassStatement.forPayload(ObservableRetryTest::noCancelPreviousRetryUntil, "noCancelPreviousRetryUntil", this);
+            this.payloads.noCancelPreviousRepeatWhen = _ClassStatement.forPayload(ObservableRetryTest::noCancelPreviousRepeatWhen, "noCancelPreviousRepeatWhen", this);
+            this.payloads.noCancelPreviousRepeatWhen2 = _ClassStatement.forPayload(ObservableRetryTest::noCancelPreviousRepeatWhen2, "noCancelPreviousRepeatWhen2", this);
+            this.payloads.repeatFloodNoSubscriptionError = _ClassStatement.forPayload(ObservableRetryTest::repeatFloodNoSubscriptionError, "repeatFloodNoSubscriptionError", this);
         }
     }
 }

@@ -183,96 +183,181 @@ public class FlowableThrottleLatestTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableThrottleLatestTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_just() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::just, this.description("just"));
+            this.payloads.just.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_range() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::range, this.description("range"));
+            this.payloads.range.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rangeEmitLatest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rangeEmitLatest, this.description("rangeEmitLatest"));
+            this.payloads.rangeEmitLatest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequest, this.description("badRequest"));
+            this.payloads.badRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normal, this.description("normal"));
+            this.payloads.normal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalEmitLast() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalEmitLast, this.description("normalEmitLast"));
+            this.payloads.normalEmitLast.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_missingBackpressureExceptionFirst() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::missingBackpressureExceptionFirst, this.description("missingBackpressureExceptionFirst"));
+            this.payloads.missingBackpressureExceptionFirst.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_missingBackpressureExceptionLatest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::missingBackpressureExceptionLatest, this.description("missingBackpressureExceptionLatest"));
+            this.payloads.missingBackpressureExceptionLatest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_missingBackpressureExceptionLatestComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::missingBackpressureExceptionLatestComplete, this.description("missingBackpressureExceptionLatestComplete"));
+            this.payloads.missingBackpressureExceptionLatestComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_take() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::take, this.description("take"));
+            this.payloads.take.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_reentrantComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::reentrantComplete, this.description("reentrantComplete"));
+            this.payloads.reentrantComplete.evaluate();
         }
 
-        private FlowableThrottleLatestTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableThrottleLatestTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableThrottleLatestTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableThrottleLatestTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableThrottleLatestTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableThrottleLatestTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableThrottleLatestTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableThrottleLatestTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableThrottleLatestTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableThrottleLatestTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableThrottleLatestTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement just;
+
+            public org.junit.runners.model.Statement range;
+
+            public org.junit.runners.model.Statement rangeEmitLatest;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement badRequest;
+
+            public org.junit.runners.model.Statement normal;
+
+            public org.junit.runners.model.Statement normalEmitLast;
+
+            public org.junit.runners.model.Statement missingBackpressureExceptionFirst;
+
+            public org.junit.runners.model.Statement missingBackpressureExceptionLatest;
+
+            public org.junit.runners.model.Statement missingBackpressureExceptionLatestComplete;
+
+            public org.junit.runners.model.Statement take;
+
+            public org.junit.runners.model.Statement reentrantComplete;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.just = _ClassStatement.forPayload(FlowableThrottleLatestTest::just, "just", this);
+            this.payloads.range = _ClassStatement.forPayload(FlowableThrottleLatestTest::range, "range", this);
+            this.payloads.rangeEmitLatest = _ClassStatement.forPayload(FlowableThrottleLatestTest::rangeEmitLatest, "rangeEmitLatest", this);
+            this.payloads.error = _ClassStatement.forPayload(FlowableThrottleLatestTest::error, "error", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableThrottleLatestTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.badRequest = _ClassStatement.forPayload(FlowableThrottleLatestTest::badRequest, "badRequest", this);
+            this.payloads.normal = _ClassStatement.forPayload(FlowableThrottleLatestTest::normal, "normal", this);
+            this.payloads.normalEmitLast = _ClassStatement.forPayload(FlowableThrottleLatestTest::normalEmitLast, "normalEmitLast", this);
+            this.payloads.missingBackpressureExceptionFirst = _ClassStatement.forPayload(FlowableThrottleLatestTest::missingBackpressureExceptionFirst, "missingBackpressureExceptionFirst", this);
+            this.payloads.missingBackpressureExceptionLatest = _ClassStatement.forPayload(FlowableThrottleLatestTest::missingBackpressureExceptionLatest, "missingBackpressureExceptionLatest", this);
+            this.payloads.missingBackpressureExceptionLatestComplete = _ClassStatement.forPayload(FlowableThrottleLatestTest::missingBackpressureExceptionLatestComplete, "missingBackpressureExceptionLatestComplete", this);
+            this.payloads.take = _ClassStatement.forPayload(FlowableThrottleLatestTest::take, "take", this);
+            this.payloads.reentrantComplete = _ClassStatement.forPayload(FlowableThrottleLatestTest::reentrantComplete, "reentrantComplete", this);
         }
     }
 }

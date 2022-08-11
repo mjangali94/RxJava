@@ -63,32 +63,4 @@ public class ObservableThrottleWithTimeoutTests extends RxJavaTest {
     public void throttleFirstDefaultScheduler() {
         Observable.just(1).throttleWithTimeout(100, TimeUnit.MILLISECONDS).test().awaitDone(5, TimeUnit.SECONDS).assertResult(1);
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_throttle() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::throttle, this.description("throttle"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_throttleFirstDefaultScheduler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::throttleFirstDefaultScheduler, this.description("throttleFirstDefaultScheduler"));
-        }
-
-        private ObservableThrottleWithTimeoutTests implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableThrottleWithTimeoutTests();
-        }
-
-        @java.lang.Override
-        public ObservableThrottleWithTimeoutTests implementation() {
-            return this.implementation;
-        }
-    }
 }

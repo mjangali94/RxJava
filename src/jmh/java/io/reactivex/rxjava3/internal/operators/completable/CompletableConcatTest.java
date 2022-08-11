@@ -265,114 +265,205 @@ public class CompletableConcatTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private CompletableConcatTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_overflowReported() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::overflowReported, this.description("overflowReported"));
+            this.payloads.overflowReported.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_invalidPrefetch() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::invalidPrefetch, this.description("invalidPrefetch"));
+            this.payloads.invalidPrefetch.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorRace, this.description("errorRace"));
+            this.payloads.errorRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_synchronousFusedCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::synchronousFusedCrash, this.description("synchronousFusedCrash"));
+            this.payloads.synchronousFusedCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unboundedIn() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unboundedIn, this.description("unboundedIn"));
+            this.payloads.unboundedIn.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_syncFusedUnboundedIn() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::syncFusedUnboundedIn, this.description("syncFusedUnboundedIn"));
+            this.payloads.syncFusedUnboundedIn.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncFusedUnboundedIn() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncFusedUnboundedIn, this.description("asyncFusedUnboundedIn"));
+            this.payloads.asyncFusedUnboundedIn.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_arrayCancelled() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::arrayCancelled, this.description("arrayCancelled"));
+            this.payloads.arrayCancelled.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_arrayFirstCancels() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::arrayFirstCancels, this.description("arrayFirstCancels"));
+            this.payloads.arrayFirstCancels.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_iterableCancelled() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::iterableCancelled, this.description("iterableCancelled"));
+            this.payloads.iterableCancelled.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_iterableFirstCancels() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::iterableFirstCancels, this.description("iterableFirstCancels"));
+            this.payloads.iterableFirstCancels.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_arrayCancelRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::arrayCancelRace, this.description("arrayCancelRace"));
+            this.payloads.arrayCancelRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_iterableCancelRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::iterableCancelRace, this.description("iterableCancelRace"));
+            this.payloads.iterableCancelRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noInterrupt() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noInterrupt, this.description("noInterrupt"));
+            this.payloads.noInterrupt.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
-        private CompletableConcatTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new CompletableConcatTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableConcatTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableConcatTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public CompletableConcatTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableConcatTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableConcatTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new CompletableConcatTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableConcatTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(CompletableConcatTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(CompletableConcatTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement overflowReported;
+
+            public org.junit.runners.model.Statement invalidPrefetch;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement errorRace;
+
+            public org.junit.runners.model.Statement synchronousFusedCrash;
+
+            public org.junit.runners.model.Statement unboundedIn;
+
+            public org.junit.runners.model.Statement syncFusedUnboundedIn;
+
+            public org.junit.runners.model.Statement asyncFusedUnboundedIn;
+
+            public org.junit.runners.model.Statement arrayCancelled;
+
+            public org.junit.runners.model.Statement arrayFirstCancels;
+
+            public org.junit.runners.model.Statement iterableCancelled;
+
+            public org.junit.runners.model.Statement iterableFirstCancels;
+
+            public org.junit.runners.model.Statement arrayCancelRace;
+
+            public org.junit.runners.model.Statement iterableCancelRace;
+
+            public org.junit.runners.model.Statement noInterrupt;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.overflowReported = _ClassStatement.forPayload(CompletableConcatTest::overflowReported, "overflowReported", this);
+            this.payloads.invalidPrefetch = _ClassStatement.forPayload(CompletableConcatTest::invalidPrefetch, "invalidPrefetch", this);
+            this.payloads.dispose = _ClassStatement.forPayload(CompletableConcatTest::dispose, "dispose", this);
+            this.payloads.errorRace = _ClassStatement.forPayload(CompletableConcatTest::errorRace, "errorRace", this);
+            this.payloads.synchronousFusedCrash = _ClassStatement.forPayload(CompletableConcatTest::synchronousFusedCrash, "synchronousFusedCrash", this);
+            this.payloads.unboundedIn = _ClassStatement.forPayload(CompletableConcatTest::unboundedIn, "unboundedIn", this);
+            this.payloads.syncFusedUnboundedIn = _ClassStatement.forPayload(CompletableConcatTest::syncFusedUnboundedIn, "syncFusedUnboundedIn", this);
+            this.payloads.asyncFusedUnboundedIn = _ClassStatement.forPayload(CompletableConcatTest::asyncFusedUnboundedIn, "asyncFusedUnboundedIn", this);
+            this.payloads.arrayCancelled = _ClassStatement.forPayload(CompletableConcatTest::arrayCancelled, "arrayCancelled", this);
+            this.payloads.arrayFirstCancels = _ClassStatement.forPayload(CompletableConcatTest::arrayFirstCancels, "arrayFirstCancels", this);
+            this.payloads.iterableCancelled = _ClassStatement.forPayload(CompletableConcatTest::iterableCancelled, "iterableCancelled", this);
+            this.payloads.iterableFirstCancels = _ClassStatement.forPayload(CompletableConcatTest::iterableFirstCancels, "iterableFirstCancels", this);
+            this.payloads.arrayCancelRace = _ClassStatement.forPayload(CompletableConcatTest::arrayCancelRace, "arrayCancelRace", this);
+            this.payloads.iterableCancelRace = _ClassStatement.forPayload(CompletableConcatTest::iterableCancelRace, "iterableCancelRace", this);
+            this.payloads.noInterrupt = _ClassStatement.forPayload(CompletableConcatTest::noInterrupt, "noInterrupt", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(CompletableConcatTest::doubleOnSubscribe, "doubleOnSubscribe", this);
         }
     }
 }

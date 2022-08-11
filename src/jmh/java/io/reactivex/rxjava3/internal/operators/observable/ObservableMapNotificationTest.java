@@ -87,44 +87,4 @@ public class ObservableMapNotificationTest extends RxJavaTest {
         TestHelper.assertError(to, 0, TestException.class, "Outer");
         TestHelper.assertError(to, 1, TestException.class, "Inner");
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_just() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::just, this.description("just"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_onErrorCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorCrash, this.description("onErrorCrash"));
-        }
-
-        private ObservableMapNotificationTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableMapNotificationTest();
-        }
-
-        @java.lang.Override
-        public ObservableMapNotificationTest implementation() {
-            return this.implementation;
-        }
-    }
 }

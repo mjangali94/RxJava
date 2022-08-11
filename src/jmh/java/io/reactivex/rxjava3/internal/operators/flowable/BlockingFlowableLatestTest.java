@@ -179,96 +179,181 @@ public class BlockingFlowableLatestTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private BlockingFlowableLatestTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_simple() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::simple, this.description("simple"));
+            this.payloads.simple.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sameSourceMultipleIterators() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sameSourceMultipleIterators, this.description("sameSourceMultipleIterators"));
+            this.payloads.sameSourceMultipleIterators.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_empty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::empty, this.description("empty"), java.util.NoSuchElementException.class);
+            this.payloads.empty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_simpleJustNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::simpleJustNext, this.description("simpleJustNext"), java.util.NoSuchElementException.class);
+            this.payloads.simpleJustNext.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_hasNextThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::hasNextThrows, this.description("hasNextThrows"), java.lang.RuntimeException.class);
+            this.payloads.hasNextThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nextThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::nextThrows, this.description("nextThrows"), java.lang.RuntimeException.class);
+            this.payloads.nextThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fasterSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fasterSource, this.description("fasterSource"));
+            this.payloads.fasterSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_remove() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::remove, this.description("remove"), java.lang.UnsupportedOperationException.class);
+            this.payloads.remove.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_interrupted() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::interrupted, this.description("interrupted"));
+            this.payloads.interrupted.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_empty2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::empty2, this.description("empty2"), java.util.NoSuchElementException.class);
+            this.payloads.empty2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::error, this.description("error"), io.reactivex.rxjava3.exceptions.TestException.class);
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error2, this.description("error2"));
+            this.payloads.error2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onError, this.description("onError"));
+            this.payloads.onError.evaluate();
         }
 
-        private BlockingFlowableLatestTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new BlockingFlowableLatestTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<BlockingFlowableLatestTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<BlockingFlowableLatestTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public BlockingFlowableLatestTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<BlockingFlowableLatestTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<BlockingFlowableLatestTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new BlockingFlowableLatestTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<BlockingFlowableLatestTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(BlockingFlowableLatestTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(BlockingFlowableLatestTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement simple;
+
+            public org.junit.runners.model.Statement sameSourceMultipleIterators;
+
+            public org.junit.runners.model.Statement empty;
+
+            public org.junit.runners.model.Statement simpleJustNext;
+
+            public org.junit.runners.model.Statement hasNextThrows;
+
+            public org.junit.runners.model.Statement nextThrows;
+
+            public org.junit.runners.model.Statement fasterSource;
+
+            public org.junit.runners.model.Statement remove;
+
+            public org.junit.runners.model.Statement interrupted;
+
+            public org.junit.runners.model.Statement empty2;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement error2;
+
+            public org.junit.runners.model.Statement onError;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.simple = _ClassStatement.forPayload(BlockingFlowableLatestTest::simple, "simple", this);
+            this.payloads.sameSourceMultipleIterators = _ClassStatement.forPayload(BlockingFlowableLatestTest::sameSourceMultipleIterators, "sameSourceMultipleIterators", this);
+            this.payloads.empty = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(BlockingFlowableLatestTest::empty, java.util.NoSuchElementException.class), "empty", this);
+            this.payloads.simpleJustNext = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(BlockingFlowableLatestTest::simpleJustNext, java.util.NoSuchElementException.class), "simpleJustNext", this);
+            this.payloads.hasNextThrows = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(BlockingFlowableLatestTest::hasNextThrows, java.lang.RuntimeException.class), "hasNextThrows", this);
+            this.payloads.nextThrows = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(BlockingFlowableLatestTest::nextThrows, java.lang.RuntimeException.class), "nextThrows", this);
+            this.payloads.fasterSource = _ClassStatement.forPayload(BlockingFlowableLatestTest::fasterSource, "fasterSource", this);
+            this.payloads.remove = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(BlockingFlowableLatestTest::remove, java.lang.UnsupportedOperationException.class), "remove", this);
+            this.payloads.interrupted = _ClassStatement.forPayload(BlockingFlowableLatestTest::interrupted, "interrupted", this);
+            this.payloads.empty2 = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(BlockingFlowableLatestTest::empty2, java.util.NoSuchElementException.class), "empty2", this);
+            this.payloads.error = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(BlockingFlowableLatestTest::error, io.reactivex.rxjava3.exceptions.TestException.class), "error", this);
+            this.payloads.error2 = _ClassStatement.forPayload(BlockingFlowableLatestTest::error2, "error2", this);
+            this.payloads.onError = _ClassStatement.forPayload(BlockingFlowableLatestTest::onError, "onError", this);
         }
     }
 }

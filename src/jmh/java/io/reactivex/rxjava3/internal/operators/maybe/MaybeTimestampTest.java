@@ -74,72 +74,95 @@ public class MaybeTimestampTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private MaybeTimestampTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_just() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::just, this.description("just"));
+            this.runBenchmark(this.payloads.just);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_empty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::empty, this.description("empty"));
+            this.runBenchmark(this.payloads.empty);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.runBenchmark(this.payloads.error);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_justSeconds() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::justSeconds, this.description("justSeconds"));
+            this.runBenchmark(this.payloads.justSeconds);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_justScheduler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::justScheduler, this.description("justScheduler"));
+            this.runBenchmark(this.payloads.justScheduler);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_justSecondsScheduler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::justSecondsScheduler, this.description("justSecondsScheduler"));
+            this.runBenchmark(this.payloads.justSecondsScheduler);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.runBenchmark(this.payloads.doubleOnSubscribe);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.runBenchmark(this.payloads.dispose);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeInfo() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeInfo, this.description("timeInfo"));
+            this.runBenchmark(this.payloads.timeInfo);
         }
 
-        private MaybeTimestampTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeTimestampTest();
+        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeTimestampTest> payload) throws java.lang.Throwable {
+            this.instance = new MaybeTimestampTest();
+            payload.accept(this.instance);
         }
 
-        @java.lang.Override
-        public MaybeTimestampTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeTimestampTest> just;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeTimestampTest> empty;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeTimestampTest> error;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeTimestampTest> justSeconds;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeTimestampTest> justScheduler;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeTimestampTest> justSecondsScheduler;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeTimestampTest> doubleOnSubscribe;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeTimestampTest> dispose;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeTimestampTest> timeInfo;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.just = MaybeTimestampTest::just;
+            this.payloads.empty = MaybeTimestampTest::empty;
+            this.payloads.error = MaybeTimestampTest::error;
+            this.payloads.justSeconds = MaybeTimestampTest::justSeconds;
+            this.payloads.justScheduler = MaybeTimestampTest::justScheduler;
+            this.payloads.justSecondsScheduler = MaybeTimestampTest::justSecondsScheduler;
+            this.payloads.doubleOnSubscribe = MaybeTimestampTest::doubleOnSubscribe;
+            this.payloads.dispose = MaybeTimestampTest::dispose;
+            this.payloads.timeInfo = MaybeTimestampTest::timeInfo;
         }
     }
 }

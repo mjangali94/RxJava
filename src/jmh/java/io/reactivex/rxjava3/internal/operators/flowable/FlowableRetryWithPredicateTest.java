@@ -467,126 +467,221 @@ public class FlowableRetryWithPredicateTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableRetryWithPredicateTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withNothingToRetry() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withNothingToRetry, this.description("withNothingToRetry"));
+            this.payloads.withNothingToRetry.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_retryTwice() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::retryTwice, this.description("retryTwice"));
+            this.payloads.retryTwice.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_retryTwiceAndGiveUp() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::retryTwiceAndGiveUp, this.description("retryTwiceAndGiveUp"));
+            this.payloads.retryTwiceAndGiveUp.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_retryOnSpecificException() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::retryOnSpecificException, this.description("retryOnSpecificException"));
+            this.payloads.retryOnSpecificException.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_retryOnSpecificExceptionAndNotOther() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::retryOnSpecificExceptionAndNotOther, this.description("retryOnSpecificExceptionAndNotOther"));
+            this.payloads.retryOnSpecificExceptionAndNotOther.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribeFromRetry() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribeFromRetry, this.description("unsubscribeFromRetry"));
+            this.payloads.unsubscribeFromRetry.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribeAfterError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribeAfterError, this.description("unsubscribeAfterError"));
+            this.payloads.unsubscribeAfterError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeoutWithRetry() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeoutWithRetry, this.description("timeoutWithRetry"));
+            this.payloads.timeoutWithRetry.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_issue2826() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::issue2826, this.description("issue2826"));
+            this.payloads.issue2826.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_justAndRetry() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::justAndRetry, this.description("justAndRetry"));
+            this.payloads.justAndRetry.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_issue3008RetryWithPredicate() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::issue3008RetryWithPredicate, this.description("issue3008RetryWithPredicate"));
+            this.payloads.issue3008RetryWithPredicate.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_issue3008RetryInfinite() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::issue3008RetryInfinite, this.description("issue3008RetryInfinite"));
+            this.payloads.issue3008RetryInfinite.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressure, this.description("backpressure"));
+            this.payloads.backpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_predicateThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::predicateThrows, this.description("predicateThrows"));
+            this.payloads.predicateThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dontRetry() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dontRetry, this.description("dontRetry"));
+            this.payloads.dontRetry.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_retryDisposeRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::retryDisposeRace, this.description("retryDisposeRace"));
+            this.payloads.retryDisposeRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bipredicateThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bipredicateThrows, this.description("bipredicateThrows"));
+            this.payloads.bipredicateThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_retryBiPredicateDisposeRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::retryBiPredicateDisposeRace, this.description("retryBiPredicateDisposeRace"));
+            this.payloads.retryBiPredicateDisposeRace.evaluate();
         }
 
-        private FlowableRetryWithPredicateTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableRetryWithPredicateTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRetryWithPredicateTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRetryWithPredicateTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableRetryWithPredicateTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRetryWithPredicateTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRetryWithPredicateTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableRetryWithPredicateTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRetryWithPredicateTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableRetryWithPredicateTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableRetryWithPredicateTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement withNothingToRetry;
+
+            public org.junit.runners.model.Statement retryTwice;
+
+            public org.junit.runners.model.Statement retryTwiceAndGiveUp;
+
+            public org.junit.runners.model.Statement retryOnSpecificException;
+
+            public org.junit.runners.model.Statement retryOnSpecificExceptionAndNotOther;
+
+            public org.junit.runners.model.Statement unsubscribeFromRetry;
+
+            public org.junit.runners.model.Statement unsubscribeAfterError;
+
+            public org.junit.runners.model.Statement timeoutWithRetry;
+
+            public org.junit.runners.model.Statement issue2826;
+
+            public org.junit.runners.model.Statement justAndRetry;
+
+            public org.junit.runners.model.Statement issue3008RetryWithPredicate;
+
+            public org.junit.runners.model.Statement issue3008RetryInfinite;
+
+            public org.junit.runners.model.Statement backpressure;
+
+            public org.junit.runners.model.Statement predicateThrows;
+
+            public org.junit.runners.model.Statement dontRetry;
+
+            public org.junit.runners.model.Statement retryDisposeRace;
+
+            public org.junit.runners.model.Statement bipredicateThrows;
+
+            public org.junit.runners.model.Statement retryBiPredicateDisposeRace;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.withNothingToRetry = _ClassStatement.forPayload(FlowableRetryWithPredicateTest::withNothingToRetry, "withNothingToRetry", this);
+            this.payloads.retryTwice = _ClassStatement.forPayload(FlowableRetryWithPredicateTest::retryTwice, "retryTwice", this);
+            this.payloads.retryTwiceAndGiveUp = _ClassStatement.forPayload(FlowableRetryWithPredicateTest::retryTwiceAndGiveUp, "retryTwiceAndGiveUp", this);
+            this.payloads.retryOnSpecificException = _ClassStatement.forPayload(FlowableRetryWithPredicateTest::retryOnSpecificException, "retryOnSpecificException", this);
+            this.payloads.retryOnSpecificExceptionAndNotOther = _ClassStatement.forPayload(FlowableRetryWithPredicateTest::retryOnSpecificExceptionAndNotOther, "retryOnSpecificExceptionAndNotOther", this);
+            this.payloads.unsubscribeFromRetry = _ClassStatement.forPayload(FlowableRetryWithPredicateTest::unsubscribeFromRetry, "unsubscribeFromRetry", this);
+            this.payloads.unsubscribeAfterError = _ClassStatement.forPayload(FlowableRetryWithPredicateTest::unsubscribeAfterError, "unsubscribeAfterError", this);
+            this.payloads.timeoutWithRetry = _ClassStatement.forPayload(FlowableRetryWithPredicateTest::timeoutWithRetry, "timeoutWithRetry", this);
+            this.payloads.issue2826 = _ClassStatement.forPayload(FlowableRetryWithPredicateTest::issue2826, "issue2826", this);
+            this.payloads.justAndRetry = _ClassStatement.forPayload(FlowableRetryWithPredicateTest::justAndRetry, "justAndRetry", this);
+            this.payloads.issue3008RetryWithPredicate = _ClassStatement.forPayload(FlowableRetryWithPredicateTest::issue3008RetryWithPredicate, "issue3008RetryWithPredicate", this);
+            this.payloads.issue3008RetryInfinite = _ClassStatement.forPayload(FlowableRetryWithPredicateTest::issue3008RetryInfinite, "issue3008RetryInfinite", this);
+            this.payloads.backpressure = _ClassStatement.forPayload(FlowableRetryWithPredicateTest::backpressure, "backpressure", this);
+            this.payloads.predicateThrows = _ClassStatement.forPayload(FlowableRetryWithPredicateTest::predicateThrows, "predicateThrows", this);
+            this.payloads.dontRetry = _ClassStatement.forPayload(FlowableRetryWithPredicateTest::dontRetry, "dontRetry", this);
+            this.payloads.retryDisposeRace = _ClassStatement.forPayload(FlowableRetryWithPredicateTest::retryDisposeRace, "retryDisposeRace", this);
+            this.payloads.bipredicateThrows = _ClassStatement.forPayload(FlowableRetryWithPredicateTest::bipredicateThrows, "bipredicateThrows", this);
+            this.payloads.retryBiPredicateDisposeRace = _ClassStatement.forPayload(FlowableRetryWithPredicateTest::retryBiPredicateDisposeRace, "retryBiPredicateDisposeRace", this);
         }
     }
 }

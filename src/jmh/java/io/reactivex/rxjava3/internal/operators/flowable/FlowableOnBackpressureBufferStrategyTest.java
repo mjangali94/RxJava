@@ -198,108 +198,197 @@ public class FlowableOnBackpressureBufferStrategyTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableOnBackpressureBufferStrategyTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureWithBufferDropOldest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureWithBufferDropOldest, this.description("backpressureWithBufferDropOldest"));
+            this.payloads.backpressureWithBufferDropOldest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureWithBufferDropLatest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureWithBufferDropLatest, this.description("backpressureWithBufferDropLatest"));
+            this.payloads.backpressureWithBufferDropLatest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureBufferNegativeCapacity() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::backpressureBufferNegativeCapacity, this.description("backpressureBufferNegativeCapacity"), java.lang.IllegalArgumentException.class);
+            this.payloads.backpressureBufferNegativeCapacity.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureBufferZeroCapacity() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::backpressureBufferZeroCapacity, this.description("backpressureBufferZeroCapacity"), java.lang.IllegalArgumentException.class);
+            this.payloads.backpressureBufferZeroCapacity.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_overflowError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::overflowError, this.description("overflowError"));
+            this.payloads.overflowError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSource, this.description("badSource"));
+            this.payloads.badSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_overflowCrashes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::overflowCrashes, this.description("overflowCrashes"));
+            this.payloads.overflowCrashes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequest, this.description("badRequest"));
+            this.payloads.badRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_empty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::empty, this.description("empty"));
+            this.payloads.empty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_justTake() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::justTake, this.description("justTake"));
+            this.payloads.justTake.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_overflowNullAction() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::overflowNullAction, this.description("overflowNullAction"));
+            this.payloads.overflowNullAction.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelOnDrain() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelOnDrain, this.description("cancelOnDrain"));
+            this.payloads.cancelOnDrain.evaluate();
         }
 
-        private FlowableOnBackpressureBufferStrategyTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableOnBackpressureBufferStrategyTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnBackpressureBufferStrategyTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnBackpressureBufferStrategyTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableOnBackpressureBufferStrategyTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnBackpressureBufferStrategyTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnBackpressureBufferStrategyTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableOnBackpressureBufferStrategyTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnBackpressureBufferStrategyTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableOnBackpressureBufferStrategyTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableOnBackpressureBufferStrategyTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement backpressureWithBufferDropOldest;
+
+            public org.junit.runners.model.Statement backpressureWithBufferDropLatest;
+
+            public org.junit.runners.model.Statement backpressureBufferNegativeCapacity;
+
+            public org.junit.runners.model.Statement backpressureBufferZeroCapacity;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement overflowError;
+
+            public org.junit.runners.model.Statement badSource;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement overflowCrashes;
+
+            public org.junit.runners.model.Statement badRequest;
+
+            public org.junit.runners.model.Statement empty;
+
+            public org.junit.runners.model.Statement justTake;
+
+            public org.junit.runners.model.Statement overflowNullAction;
+
+            public org.junit.runners.model.Statement cancelOnDrain;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.backpressureWithBufferDropOldest = _ClassStatement.forPayload(FlowableOnBackpressureBufferStrategyTest::backpressureWithBufferDropOldest, "backpressureWithBufferDropOldest", this);
+            this.payloads.backpressureWithBufferDropLatest = _ClassStatement.forPayload(FlowableOnBackpressureBufferStrategyTest::backpressureWithBufferDropLatest, "backpressureWithBufferDropLatest", this);
+            this.payloads.backpressureBufferNegativeCapacity = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableOnBackpressureBufferStrategyTest::backpressureBufferNegativeCapacity, java.lang.IllegalArgumentException.class), "backpressureBufferNegativeCapacity", this);
+            this.payloads.backpressureBufferZeroCapacity = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableOnBackpressureBufferStrategyTest::backpressureBufferZeroCapacity, java.lang.IllegalArgumentException.class), "backpressureBufferZeroCapacity", this);
+            this.payloads.dispose = _ClassStatement.forPayload(FlowableOnBackpressureBufferStrategyTest::dispose, "dispose", this);
+            this.payloads.error = _ClassStatement.forPayload(FlowableOnBackpressureBufferStrategyTest::error, "error", this);
+            this.payloads.overflowError = _ClassStatement.forPayload(FlowableOnBackpressureBufferStrategyTest::overflowError, "overflowError", this);
+            this.payloads.badSource = _ClassStatement.forPayload(FlowableOnBackpressureBufferStrategyTest::badSource, "badSource", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableOnBackpressureBufferStrategyTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.overflowCrashes = _ClassStatement.forPayload(FlowableOnBackpressureBufferStrategyTest::overflowCrashes, "overflowCrashes", this);
+            this.payloads.badRequest = _ClassStatement.forPayload(FlowableOnBackpressureBufferStrategyTest::badRequest, "badRequest", this);
+            this.payloads.empty = _ClassStatement.forPayload(FlowableOnBackpressureBufferStrategyTest::empty, "empty", this);
+            this.payloads.justTake = _ClassStatement.forPayload(FlowableOnBackpressureBufferStrategyTest::justTake, "justTake", this);
+            this.payloads.overflowNullAction = _ClassStatement.forPayload(FlowableOnBackpressureBufferStrategyTest::overflowNullAction, "overflowNullAction", this);
+            this.payloads.cancelOnDrain = _ClassStatement.forPayload(FlowableOnBackpressureBufferStrategyTest::cancelOnDrain, "cancelOnDrain", this);
         }
     }
 }

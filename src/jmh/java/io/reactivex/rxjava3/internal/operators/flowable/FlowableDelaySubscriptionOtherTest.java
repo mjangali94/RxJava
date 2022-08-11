@@ -274,102 +274,189 @@ public class FlowableDelaySubscriptionOtherTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableDelaySubscriptionOtherTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noPrematureSubscription() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noPrematureSubscription, this.description("noPrematureSubscription"));
+            this.payloads.noPrematureSubscription.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noMultipleSubscriptions() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noMultipleSubscriptions, this.description("noMultipleSubscriptions"));
+            this.payloads.noMultipleSubscriptions.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_completeTriggersSubscription() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::completeTriggersSubscription, this.description("completeTriggersSubscription"));
+            this.payloads.completeTriggersSubscription.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noPrematureSubscriptionToError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noPrematureSubscriptionToError, this.description("noPrematureSubscriptionToError"));
+            this.payloads.noPrematureSubscriptionToError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noSubscriptionIfOtherErrors() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noSubscriptionIfOtherErrors, this.description("noSubscriptionIfOtherErrors"));
+            this.payloads.noSubscriptionIfOtherErrors.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressurePassesThrough() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressurePassesThrough, this.description("backpressurePassesThrough"));
+            this.payloads.backpressurePassesThrough.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscriptionPropagatesBeforeSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscriptionPropagatesBeforeSubscribe, this.description("unsubscriptionPropagatesBeforeSubscribe"));
+            this.payloads.unsubscriptionPropagatesBeforeSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscriptionPropagatesAfterSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscriptionPropagatesAfterSubscribe, this.description("unsubscriptionPropagatesAfterSubscribe"));
+            this.payloads.unsubscriptionPropagatesAfterSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayAndTakeUntilNeverSubscribeToSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayAndTakeUntilNeverSubscribeToSource, this.description("delayAndTakeUntilNeverSubscribeToSource"));
+            this.payloads.delayAndTakeUntilNeverSubscribeToSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSourceOther() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSourceOther, this.description("badSourceOther"));
+            this.payloads.badSourceOther.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_afterDelayNoInterrupt() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::afterDelayNoInterrupt, this.description("afterDelayNoInterrupt"));
+            this.payloads.afterDelayNoInterrupt.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribeMain() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribeMain, this.description("doubleOnSubscribeMain"));
+            this.payloads.doubleOnSubscribeMain.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribeOther() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribeOther, this.description("doubleOnSubscribeOther"));
+            this.payloads.doubleOnSubscribeOther.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequest, this.description("badRequest"));
+            this.payloads.badRequest.evaluate();
         }
 
-        private FlowableDelaySubscriptionOtherTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableDelaySubscriptionOtherTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableDelaySubscriptionOtherTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableDelaySubscriptionOtherTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableDelaySubscriptionOtherTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableDelaySubscriptionOtherTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableDelaySubscriptionOtherTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableDelaySubscriptionOtherTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableDelaySubscriptionOtherTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableDelaySubscriptionOtherTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableDelaySubscriptionOtherTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement noPrematureSubscription;
+
+            public org.junit.runners.model.Statement noMultipleSubscriptions;
+
+            public org.junit.runners.model.Statement completeTriggersSubscription;
+
+            public org.junit.runners.model.Statement noPrematureSubscriptionToError;
+
+            public org.junit.runners.model.Statement noSubscriptionIfOtherErrors;
+
+            public org.junit.runners.model.Statement backpressurePassesThrough;
+
+            public org.junit.runners.model.Statement unsubscriptionPropagatesBeforeSubscribe;
+
+            public org.junit.runners.model.Statement unsubscriptionPropagatesAfterSubscribe;
+
+            public org.junit.runners.model.Statement delayAndTakeUntilNeverSubscribeToSource;
+
+            public org.junit.runners.model.Statement badSourceOther;
+
+            public org.junit.runners.model.Statement afterDelayNoInterrupt;
+
+            public org.junit.runners.model.Statement doubleOnSubscribeMain;
+
+            public org.junit.runners.model.Statement doubleOnSubscribeOther;
+
+            public org.junit.runners.model.Statement badRequest;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.noPrematureSubscription = _ClassStatement.forPayload(FlowableDelaySubscriptionOtherTest::noPrematureSubscription, "noPrematureSubscription", this);
+            this.payloads.noMultipleSubscriptions = _ClassStatement.forPayload(FlowableDelaySubscriptionOtherTest::noMultipleSubscriptions, "noMultipleSubscriptions", this);
+            this.payloads.completeTriggersSubscription = _ClassStatement.forPayload(FlowableDelaySubscriptionOtherTest::completeTriggersSubscription, "completeTriggersSubscription", this);
+            this.payloads.noPrematureSubscriptionToError = _ClassStatement.forPayload(FlowableDelaySubscriptionOtherTest::noPrematureSubscriptionToError, "noPrematureSubscriptionToError", this);
+            this.payloads.noSubscriptionIfOtherErrors = _ClassStatement.forPayload(FlowableDelaySubscriptionOtherTest::noSubscriptionIfOtherErrors, "noSubscriptionIfOtherErrors", this);
+            this.payloads.backpressurePassesThrough = _ClassStatement.forPayload(FlowableDelaySubscriptionOtherTest::backpressurePassesThrough, "backpressurePassesThrough", this);
+            this.payloads.unsubscriptionPropagatesBeforeSubscribe = _ClassStatement.forPayload(FlowableDelaySubscriptionOtherTest::unsubscriptionPropagatesBeforeSubscribe, "unsubscriptionPropagatesBeforeSubscribe", this);
+            this.payloads.unsubscriptionPropagatesAfterSubscribe = _ClassStatement.forPayload(FlowableDelaySubscriptionOtherTest::unsubscriptionPropagatesAfterSubscribe, "unsubscriptionPropagatesAfterSubscribe", this);
+            this.payloads.delayAndTakeUntilNeverSubscribeToSource = _ClassStatement.forPayload(FlowableDelaySubscriptionOtherTest::delayAndTakeUntilNeverSubscribeToSource, "delayAndTakeUntilNeverSubscribeToSource", this);
+            this.payloads.badSourceOther = _ClassStatement.forPayload(FlowableDelaySubscriptionOtherTest::badSourceOther, "badSourceOther", this);
+            this.payloads.afterDelayNoInterrupt = _ClassStatement.forPayload(FlowableDelaySubscriptionOtherTest::afterDelayNoInterrupt, "afterDelayNoInterrupt", this);
+            this.payloads.doubleOnSubscribeMain = _ClassStatement.forPayload(FlowableDelaySubscriptionOtherTest::doubleOnSubscribeMain, "doubleOnSubscribeMain", this);
+            this.payloads.doubleOnSubscribeOther = _ClassStatement.forPayload(FlowableDelaySubscriptionOtherTest::doubleOnSubscribeOther, "doubleOnSubscribeOther", this);
+            this.payloads.badRequest = _ClassStatement.forPayload(FlowableDelaySubscriptionOtherTest::badRequest, "badRequest", this);
         }
     }
 }

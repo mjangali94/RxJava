@@ -33,32 +33,4 @@ public class CompletableSubscribeTest extends RxJavaTest {
         ps.ignoreElements().test(false);
         assertTrue(ps.hasObservers());
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_subscribeAlreadyCancelled() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscribeAlreadyCancelled, this.description("subscribeAlreadyCancelled"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_methodTestNoCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::methodTestNoCancel, this.description("methodTestNoCancel"));
-        }
-
-        private CompletableSubscribeTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new CompletableSubscribeTest();
-        }
-
-        @java.lang.Override
-        public CompletableSubscribeTest implementation() {
-            return this.implementation;
-        }
-    }
 }

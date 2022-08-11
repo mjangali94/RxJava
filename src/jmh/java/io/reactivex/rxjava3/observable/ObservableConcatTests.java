@@ -141,60 +141,133 @@ public class ObservableConcatTests extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableConcatTests instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatSimple() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatSimple, this.description("concatSimple"));
+            this.payloads.concatSimple.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatWithObservableOfObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatWithObservableOfObservable, this.description("concatWithObservableOfObservable"));
+            this.payloads.concatWithObservableOfObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatWithIterableOfObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatWithIterableOfObservable, this.description("concatWithIterableOfObservable"));
+            this.payloads.concatWithIterableOfObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatCovariance() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatCovariance, this.description("concatCovariance"));
+            this.payloads.concatCovariance.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatCovariance2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatCovariance2, this.description("concatCovariance2"));
+            this.payloads.concatCovariance2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatCovariance3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatCovariance3, this.description("concatCovariance3"));
+            this.payloads.concatCovariance3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatCovariance4() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatCovariance4, this.description("concatCovariance4"));
+            this.payloads.concatCovariance4.evaluate();
         }
 
-        private ObservableConcatTests implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableConcatTests();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatTests> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatTests> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservableConcatTests implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatTests> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatTests> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableConcatTests();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatTests> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableConcatTests.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableConcatTests.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement concatSimple;
+
+            public org.junit.runners.model.Statement concatWithObservableOfObservable;
+
+            public org.junit.runners.model.Statement concatWithIterableOfObservable;
+
+            public org.junit.runners.model.Statement concatCovariance;
+
+            public org.junit.runners.model.Statement concatCovariance2;
+
+            public org.junit.runners.model.Statement concatCovariance3;
+
+            public org.junit.runners.model.Statement concatCovariance4;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.concatSimple = _ClassStatement.forPayload(ObservableConcatTests::concatSimple, "concatSimple", this);
+            this.payloads.concatWithObservableOfObservable = _ClassStatement.forPayload(ObservableConcatTests::concatWithObservableOfObservable, "concatWithObservableOfObservable", this);
+            this.payloads.concatWithIterableOfObservable = _ClassStatement.forPayload(ObservableConcatTests::concatWithIterableOfObservable, "concatWithIterableOfObservable", this);
+            this.payloads.concatCovariance = _ClassStatement.forPayload(ObservableConcatTests::concatCovariance, "concatCovariance", this);
+            this.payloads.concatCovariance2 = _ClassStatement.forPayload(ObservableConcatTests::concatCovariance2, "concatCovariance2", this);
+            this.payloads.concatCovariance3 = _ClassStatement.forPayload(ObservableConcatTests::concatCovariance3, "concatCovariance3", this);
+            this.payloads.concatCovariance4 = _ClassStatement.forPayload(ObservableConcatTests::concatCovariance4, "concatCovariance4", this);
         }
     }
 }

@@ -328,168 +328,277 @@ public class MaybeFlattenStreamAsFlowableTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private MaybeFlattenStreamAsFlowableTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_successJust() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::successJust, this.description("successJust"));
+            this.payloads.successJust.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_successEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::successEmpty, this.description("successEmpty"));
+            this.payloads.successEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_successMany() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::successMany, this.description("successMany"));
+            this.payloads.successMany.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_successManyTake() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::successManyTake, this.description("successManyTake"));
+            this.payloads.successManyTake.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_empty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::empty, this.description("empty"));
+            this.payloads.empty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperCrash, this.description("mapperCrash"));
+            this.payloads.mapperCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequest, this.description("badRequest"));
+            this.payloads.badRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedEmpty, this.description("fusedEmpty"));
+            this.payloads.fusedEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedJust() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedJust, this.description("fusedJust"));
+            this.payloads.fusedJust.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedMany() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedMany, this.description("fusedMany"));
+            this.payloads.fusedMany.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedManyRejected() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedManyRejected, this.description("fusedManyRejected"));
+            this.payloads.fusedManyRejected.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_manyBackpressured() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::manyBackpressured, this.description("manyBackpressured"));
+            this.payloads.manyBackpressured.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_manyBackpressured2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::manyBackpressured2, this.description("manyBackpressured2"));
+            this.payloads.manyBackpressured2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedStreamAvailableLater() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedStreamAvailableLater, this.description("fusedStreamAvailableLater"));
+            this.payloads.fusedStreamAvailableLater.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fused() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fused, this.description("fused"));
+            this.payloads.fused.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestOneByOne() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestOneByOne, this.description("requestOneByOne"));
+            this.payloads.requestOneByOne.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_streamCloseCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::streamCloseCrash, this.description("streamCloseCrash"));
+            this.payloads.streamCloseCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_hasNextThrowsInDrain() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::hasNextThrowsInDrain, this.description("hasNextThrowsInDrain"));
+            this.payloads.hasNextThrowsInDrain.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nextThrowsInDrain() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nextThrowsInDrain, this.description("nextThrowsInDrain"));
+            this.payloads.nextThrowsInDrain.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelAfterHasNextInDrain() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelAfterHasNextInDrain, this.description("cancelAfterHasNextInDrain"));
+            this.payloads.cancelAfterHasNextInDrain.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelAfterNextInDrain() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelAfterNextInDrain, this.description("cancelAfterNextInDrain"));
+            this.payloads.cancelAfterNextInDrain.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestSuccessRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestSuccessRace, this.description("requestSuccessRace"));
+            this.payloads.requestSuccessRace.evaluate();
         }
 
-        private MaybeFlattenStreamAsFlowableTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeFlattenStreamAsFlowableTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeFlattenStreamAsFlowableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeFlattenStreamAsFlowableTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public MaybeFlattenStreamAsFlowableTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeFlattenStreamAsFlowableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeFlattenStreamAsFlowableTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new MaybeFlattenStreamAsFlowableTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeFlattenStreamAsFlowableTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(MaybeFlattenStreamAsFlowableTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(MaybeFlattenStreamAsFlowableTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement successJust;
+
+            public org.junit.runners.model.Statement successEmpty;
+
+            public org.junit.runners.model.Statement successMany;
+
+            public org.junit.runners.model.Statement successManyTake;
+
+            public org.junit.runners.model.Statement empty;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement mapperCrash;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement badRequest;
+
+            public org.junit.runners.model.Statement fusedEmpty;
+
+            public org.junit.runners.model.Statement fusedJust;
+
+            public org.junit.runners.model.Statement fusedMany;
+
+            public org.junit.runners.model.Statement fusedManyRejected;
+
+            public org.junit.runners.model.Statement manyBackpressured;
+
+            public org.junit.runners.model.Statement manyBackpressured2;
+
+            public org.junit.runners.model.Statement fusedStreamAvailableLater;
+
+            public org.junit.runners.model.Statement fused;
+
+            public org.junit.runners.model.Statement requestOneByOne;
+
+            public org.junit.runners.model.Statement streamCloseCrash;
+
+            public org.junit.runners.model.Statement hasNextThrowsInDrain;
+
+            public org.junit.runners.model.Statement nextThrowsInDrain;
+
+            public org.junit.runners.model.Statement cancelAfterHasNextInDrain;
+
+            public org.junit.runners.model.Statement cancelAfterNextInDrain;
+
+            public org.junit.runners.model.Statement requestSuccessRace;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.successJust = _ClassStatement.forPayload(MaybeFlattenStreamAsFlowableTest::successJust, "successJust", this);
+            this.payloads.successEmpty = _ClassStatement.forPayload(MaybeFlattenStreamAsFlowableTest::successEmpty, "successEmpty", this);
+            this.payloads.successMany = _ClassStatement.forPayload(MaybeFlattenStreamAsFlowableTest::successMany, "successMany", this);
+            this.payloads.successManyTake = _ClassStatement.forPayload(MaybeFlattenStreamAsFlowableTest::successManyTake, "successManyTake", this);
+            this.payloads.empty = _ClassStatement.forPayload(MaybeFlattenStreamAsFlowableTest::empty, "empty", this);
+            this.payloads.error = _ClassStatement.forPayload(MaybeFlattenStreamAsFlowableTest::error, "error", this);
+            this.payloads.mapperCrash = _ClassStatement.forPayload(MaybeFlattenStreamAsFlowableTest::mapperCrash, "mapperCrash", this);
+            this.payloads.dispose = _ClassStatement.forPayload(MaybeFlattenStreamAsFlowableTest::dispose, "dispose", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(MaybeFlattenStreamAsFlowableTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.badRequest = _ClassStatement.forPayload(MaybeFlattenStreamAsFlowableTest::badRequest, "badRequest", this);
+            this.payloads.fusedEmpty = _ClassStatement.forPayload(MaybeFlattenStreamAsFlowableTest::fusedEmpty, "fusedEmpty", this);
+            this.payloads.fusedJust = _ClassStatement.forPayload(MaybeFlattenStreamAsFlowableTest::fusedJust, "fusedJust", this);
+            this.payloads.fusedMany = _ClassStatement.forPayload(MaybeFlattenStreamAsFlowableTest::fusedMany, "fusedMany", this);
+            this.payloads.fusedManyRejected = _ClassStatement.forPayload(MaybeFlattenStreamAsFlowableTest::fusedManyRejected, "fusedManyRejected", this);
+            this.payloads.manyBackpressured = _ClassStatement.forPayload(MaybeFlattenStreamAsFlowableTest::manyBackpressured, "manyBackpressured", this);
+            this.payloads.manyBackpressured2 = _ClassStatement.forPayload(MaybeFlattenStreamAsFlowableTest::manyBackpressured2, "manyBackpressured2", this);
+            this.payloads.fusedStreamAvailableLater = _ClassStatement.forPayload(MaybeFlattenStreamAsFlowableTest::fusedStreamAvailableLater, "fusedStreamAvailableLater", this);
+            this.payloads.fused = _ClassStatement.forPayload(MaybeFlattenStreamAsFlowableTest::fused, "fused", this);
+            this.payloads.requestOneByOne = _ClassStatement.forPayload(MaybeFlattenStreamAsFlowableTest::requestOneByOne, "requestOneByOne", this);
+            this.payloads.streamCloseCrash = _ClassStatement.forPayload(MaybeFlattenStreamAsFlowableTest::streamCloseCrash, "streamCloseCrash", this);
+            this.payloads.hasNextThrowsInDrain = _ClassStatement.forPayload(MaybeFlattenStreamAsFlowableTest::hasNextThrowsInDrain, "hasNextThrowsInDrain", this);
+            this.payloads.nextThrowsInDrain = _ClassStatement.forPayload(MaybeFlattenStreamAsFlowableTest::nextThrowsInDrain, "nextThrowsInDrain", this);
+            this.payloads.cancelAfterHasNextInDrain = _ClassStatement.forPayload(MaybeFlattenStreamAsFlowableTest::cancelAfterHasNextInDrain, "cancelAfterHasNextInDrain", this);
+            this.payloads.cancelAfterNextInDrain = _ClassStatement.forPayload(MaybeFlattenStreamAsFlowableTest::cancelAfterNextInDrain, "cancelAfterNextInDrain", this);
+            this.payloads.requestSuccessRace = _ClassStatement.forPayload(MaybeFlattenStreamAsFlowableTest::requestSuccessRace, "requestSuccessRace", this);
         }
     }
 }

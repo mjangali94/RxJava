@@ -478,180 +478,293 @@ public class FlowableFilterTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableFilterTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_filter() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::filter, this.description("filter"));
+            this.payloads.filter.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withBackpressure, this.description("withBackpressure"));
+            this.payloads.withBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withBackpressure2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withBackpressure2, this.description("withBackpressure2"));
+            this.payloads.withBackpressure2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_functionCrashUnsubscribes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::functionCrashUnsubscribes, this.description("functionCrashUnsubscribes"));
+            this.payloads.functionCrashUnsubscribes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doesntRequestOnItsOwn() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doesntRequestOnItsOwn, this.description("doesntRequestOnItsOwn"));
+            this.payloads.doesntRequestOnItsOwn.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_conditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::conditional, this.description("conditional"));
+            this.payloads.conditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_conditionalNone() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::conditionalNone, this.description("conditionalNone"));
+            this.payloads.conditionalNone.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_conditionalNone2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::conditionalNone2, this.description("conditionalNone2"));
+            this.payloads.conditionalNone2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_conditionalFusedSync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::conditionalFusedSync, this.description("conditionalFusedSync"));
+            this.payloads.conditionalFusedSync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_conditionalFusedSync2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::conditionalFusedSync2, this.description("conditionalFusedSync2"));
+            this.payloads.conditionalFusedSync2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_conditionalFusedAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::conditionalFusedAsync, this.description("conditionalFusedAsync"));
+            this.payloads.conditionalFusedAsync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_conditionalFusedNoneAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::conditionalFusedNoneAsync, this.description("conditionalFusedNoneAsync"));
+            this.payloads.conditionalFusedNoneAsync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_conditionalFusedNoneAsync2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::conditionalFusedNoneAsync2, this.description("conditionalFusedNoneAsync2"));
+            this.payloads.conditionalFusedNoneAsync2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sourceIgnoresCancelConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sourceIgnoresCancelConditional, this.description("sourceIgnoresCancelConditional"));
+            this.payloads.sourceIgnoresCancelConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapCrashesBeforeFilter() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapCrashesBeforeFilter, this.description("mapCrashesBeforeFilter"));
+            this.payloads.mapCrashesBeforeFilter.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_syncFused() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::syncFused, this.description("syncFused"));
+            this.payloads.syncFused.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_syncNoneFused() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::syncNoneFused, this.description("syncNoneFused"));
+            this.payloads.syncNoneFused.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_syncNoneFused2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::syncNoneFused2, this.description("syncNoneFused2"));
+            this.payloads.syncNoneFused2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sourceIgnoresCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sourceIgnoresCancel, this.description("sourceIgnoresCancel"));
+            this.payloads.sourceIgnoresCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sourceIgnoresCancel2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sourceIgnoresCancel2, this.description("sourceIgnoresCancel2"));
+            this.payloads.sourceIgnoresCancel2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sourceIgnoresCancelConditional2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sourceIgnoresCancelConditional2, this.description("sourceIgnoresCancelConditional2"));
+            this.payloads.sourceIgnoresCancelConditional2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedSync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedSync, this.description("fusedSync"));
+            this.payloads.fusedSync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedAsync, this.description("fusedAsync"));
+            this.payloads.fusedAsync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedReject() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedReject, this.description("fusedReject"));
+            this.payloads.fusedReject.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_filterThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::filterThrows, this.description("filterThrows"));
+            this.payloads.filterThrows.evaluate();
         }
 
-        private FlowableFilterTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableFilterTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFilterTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFilterTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableFilterTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFilterTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFilterTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableFilterTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFilterTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableFilterTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableFilterTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement filter;
+
+            public org.junit.runners.model.Statement withBackpressure;
+
+            public org.junit.runners.model.Statement withBackpressure2;
+
+            public org.junit.runners.model.Statement functionCrashUnsubscribes;
+
+            public org.junit.runners.model.Statement doesntRequestOnItsOwn;
+
+            public org.junit.runners.model.Statement conditional;
+
+            public org.junit.runners.model.Statement conditionalNone;
+
+            public org.junit.runners.model.Statement conditionalNone2;
+
+            public org.junit.runners.model.Statement conditionalFusedSync;
+
+            public org.junit.runners.model.Statement conditionalFusedSync2;
+
+            public org.junit.runners.model.Statement conditionalFusedAsync;
+
+            public org.junit.runners.model.Statement conditionalFusedNoneAsync;
+
+            public org.junit.runners.model.Statement conditionalFusedNoneAsync2;
+
+            public org.junit.runners.model.Statement sourceIgnoresCancelConditional;
+
+            public org.junit.runners.model.Statement mapCrashesBeforeFilter;
+
+            public org.junit.runners.model.Statement syncFused;
+
+            public org.junit.runners.model.Statement syncNoneFused;
+
+            public org.junit.runners.model.Statement syncNoneFused2;
+
+            public org.junit.runners.model.Statement sourceIgnoresCancel;
+
+            public org.junit.runners.model.Statement sourceIgnoresCancel2;
+
+            public org.junit.runners.model.Statement sourceIgnoresCancelConditional2;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement fusedSync;
+
+            public org.junit.runners.model.Statement fusedAsync;
+
+            public org.junit.runners.model.Statement fusedReject;
+
+            public org.junit.runners.model.Statement filterThrows;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.filter = _ClassStatement.forPayload(FlowableFilterTest::filter, "filter", this);
+            this.payloads.withBackpressure = _ClassStatement.forPayload(FlowableFilterTest::withBackpressure, "withBackpressure", this);
+            this.payloads.withBackpressure2 = _ClassStatement.forPayload(FlowableFilterTest::withBackpressure2, "withBackpressure2", this);
+            this.payloads.functionCrashUnsubscribes = _ClassStatement.forPayload(FlowableFilterTest::functionCrashUnsubscribes, "functionCrashUnsubscribes", this);
+            this.payloads.doesntRequestOnItsOwn = _ClassStatement.forPayload(FlowableFilterTest::doesntRequestOnItsOwn, "doesntRequestOnItsOwn", this);
+            this.payloads.conditional = _ClassStatement.forPayload(FlowableFilterTest::conditional, "conditional", this);
+            this.payloads.conditionalNone = _ClassStatement.forPayload(FlowableFilterTest::conditionalNone, "conditionalNone", this);
+            this.payloads.conditionalNone2 = _ClassStatement.forPayload(FlowableFilterTest::conditionalNone2, "conditionalNone2", this);
+            this.payloads.conditionalFusedSync = _ClassStatement.forPayload(FlowableFilterTest::conditionalFusedSync, "conditionalFusedSync", this);
+            this.payloads.conditionalFusedSync2 = _ClassStatement.forPayload(FlowableFilterTest::conditionalFusedSync2, "conditionalFusedSync2", this);
+            this.payloads.conditionalFusedAsync = _ClassStatement.forPayload(FlowableFilterTest::conditionalFusedAsync, "conditionalFusedAsync", this);
+            this.payloads.conditionalFusedNoneAsync = _ClassStatement.forPayload(FlowableFilterTest::conditionalFusedNoneAsync, "conditionalFusedNoneAsync", this);
+            this.payloads.conditionalFusedNoneAsync2 = _ClassStatement.forPayload(FlowableFilterTest::conditionalFusedNoneAsync2, "conditionalFusedNoneAsync2", this);
+            this.payloads.sourceIgnoresCancelConditional = _ClassStatement.forPayload(FlowableFilterTest::sourceIgnoresCancelConditional, "sourceIgnoresCancelConditional", this);
+            this.payloads.mapCrashesBeforeFilter = _ClassStatement.forPayload(FlowableFilterTest::mapCrashesBeforeFilter, "mapCrashesBeforeFilter", this);
+            this.payloads.syncFused = _ClassStatement.forPayload(FlowableFilterTest::syncFused, "syncFused", this);
+            this.payloads.syncNoneFused = _ClassStatement.forPayload(FlowableFilterTest::syncNoneFused, "syncNoneFused", this);
+            this.payloads.syncNoneFused2 = _ClassStatement.forPayload(FlowableFilterTest::syncNoneFused2, "syncNoneFused2", this);
+            this.payloads.sourceIgnoresCancel = _ClassStatement.forPayload(FlowableFilterTest::sourceIgnoresCancel, "sourceIgnoresCancel", this);
+            this.payloads.sourceIgnoresCancel2 = _ClassStatement.forPayload(FlowableFilterTest::sourceIgnoresCancel2, "sourceIgnoresCancel2", this);
+            this.payloads.sourceIgnoresCancelConditional2 = _ClassStatement.forPayload(FlowableFilterTest::sourceIgnoresCancelConditional2, "sourceIgnoresCancelConditional2", this);
+            this.payloads.dispose = _ClassStatement.forPayload(FlowableFilterTest::dispose, "dispose", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableFilterTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.fusedSync = _ClassStatement.forPayload(FlowableFilterTest::fusedSync, "fusedSync", this);
+            this.payloads.fusedAsync = _ClassStatement.forPayload(FlowableFilterTest::fusedAsync, "fusedAsync", this);
+            this.payloads.fusedReject = _ClassStatement.forPayload(FlowableFilterTest::fusedReject, "fusedReject", this);
+            this.payloads.filterThrows = _ClassStatement.forPayload(FlowableFilterTest::filterThrows, "filterThrows", this);
         }
     }
 }

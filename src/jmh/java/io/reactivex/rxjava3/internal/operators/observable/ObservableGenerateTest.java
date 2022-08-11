@@ -198,78 +198,157 @@ public class ObservableGenerateTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableGenerateTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_statefulBiconsumer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::statefulBiconsumer, this.description("statefulBiconsumer"));
+            this.payloads.statefulBiconsumer.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_stateSupplierThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::stateSupplierThrows, this.description("stateSupplierThrows"));
+            this.payloads.stateSupplierThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_generatorThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::generatorThrows, this.description("generatorThrows"));
+            this.payloads.generatorThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposerThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposerThrows, this.description("disposerThrows"));
+            this.payloads.disposerThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nullError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nullError, this.description("nullError"));
+            this.payloads.nullError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_multipleOnNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::multipleOnNext, this.description("multipleOnNext"));
+            this.payloads.multipleOnNext.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_multipleOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::multipleOnError, this.description("multipleOnError"));
+            this.payloads.multipleOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_multipleOnComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::multipleOnComplete, this.description("multipleOnComplete"));
+            this.payloads.multipleOnComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onNextAfterOnComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onNextAfterOnComplete, this.description("onNextAfterOnComplete"));
+            this.payloads.onNextAfterOnComplete.evaluate();
         }
 
-        private ObservableGenerateTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableGenerateTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableGenerateTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableGenerateTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservableGenerateTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableGenerateTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableGenerateTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableGenerateTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableGenerateTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableGenerateTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableGenerateTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement statefulBiconsumer;
+
+            public org.junit.runners.model.Statement stateSupplierThrows;
+
+            public org.junit.runners.model.Statement generatorThrows;
+
+            public org.junit.runners.model.Statement disposerThrows;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement nullError;
+
+            public org.junit.runners.model.Statement multipleOnNext;
+
+            public org.junit.runners.model.Statement multipleOnError;
+
+            public org.junit.runners.model.Statement multipleOnComplete;
+
+            public org.junit.runners.model.Statement onNextAfterOnComplete;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.statefulBiconsumer = _ClassStatement.forPayload(ObservableGenerateTest::statefulBiconsumer, "statefulBiconsumer", this);
+            this.payloads.stateSupplierThrows = _ClassStatement.forPayload(ObservableGenerateTest::stateSupplierThrows, "stateSupplierThrows", this);
+            this.payloads.generatorThrows = _ClassStatement.forPayload(ObservableGenerateTest::generatorThrows, "generatorThrows", this);
+            this.payloads.disposerThrows = _ClassStatement.forPayload(ObservableGenerateTest::disposerThrows, "disposerThrows", this);
+            this.payloads.dispose = _ClassStatement.forPayload(ObservableGenerateTest::dispose, "dispose", this);
+            this.payloads.nullError = _ClassStatement.forPayload(ObservableGenerateTest::nullError, "nullError", this);
+            this.payloads.multipleOnNext = _ClassStatement.forPayload(ObservableGenerateTest::multipleOnNext, "multipleOnNext", this);
+            this.payloads.multipleOnError = _ClassStatement.forPayload(ObservableGenerateTest::multipleOnError, "multipleOnError", this);
+            this.payloads.multipleOnComplete = _ClassStatement.forPayload(ObservableGenerateTest::multipleOnComplete, "multipleOnComplete", this);
+            this.payloads.onNextAfterOnComplete = _ClassStatement.forPayload(ObservableGenerateTest::onNextAfterOnComplete, "onNextAfterOnComplete", this);
         }
     }
 }

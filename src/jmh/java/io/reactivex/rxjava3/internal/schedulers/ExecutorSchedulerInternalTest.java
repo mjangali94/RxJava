@@ -21,26 +21,4 @@ public class ExecutorSchedulerInternalTest {
     public void helperHolder() {
         assertNotNull(new ExecutorScheduler.SingleHolder());
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_helperHolder() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::helperHolder, this.description("helperHolder"));
-        }
-
-        private ExecutorSchedulerInternalTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ExecutorSchedulerInternalTest();
-        }
-
-        @java.lang.Override
-        public ExecutorSchedulerInternalTest implementation() {
-            return this.implementation;
-        }
-    }
 }

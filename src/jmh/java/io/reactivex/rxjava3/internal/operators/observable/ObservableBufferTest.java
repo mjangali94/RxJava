@@ -1421,540 +1421,766 @@ public class ObservableBufferTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableBufferTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_complete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::complete, this.description("complete"));
+            this.payloads.complete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipAndCountOverlappingBuffers() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipAndCountOverlappingBuffers, this.description("skipAndCountOverlappingBuffers"));
+            this.payloads.skipAndCountOverlappingBuffers.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipAndCountGaplessBuffers() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipAndCountGaplessBuffers, this.description("skipAndCountGaplessBuffers"));
+            this.payloads.skipAndCountGaplessBuffers.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipAndCountBuffersWithGaps() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipAndCountBuffersWithGaps, this.description("skipAndCountBuffersWithGaps"));
+            this.payloads.skipAndCountBuffersWithGaps.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timedAndCount() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timedAndCount, this.description("timedAndCount"));
+            this.payloads.timedAndCount.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timed, this.description("timed"));
+            this.payloads.timed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observableBasedOpenerAndCloser() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observableBasedOpenerAndCloser, this.description("observableBasedOpenerAndCloser"));
+            this.payloads.observableBasedOpenerAndCloser.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_longTimeAction() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::longTimeAction, this.description("longTimeAction"));
+            this.payloads.longTimeAction.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferStopsWhenUnsubscribed1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferStopsWhenUnsubscribed1, this.description("bufferStopsWhenUnsubscribed1"));
+            this.payloads.bufferStopsWhenUnsubscribed1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferWithBONormal1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferWithBONormal1, this.description("bufferWithBONormal1"));
+            this.payloads.bufferWithBONormal1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferWithBOEmptyLastViaBoundary() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferWithBOEmptyLastViaBoundary, this.description("bufferWithBOEmptyLastViaBoundary"));
+            this.payloads.bufferWithBOEmptyLastViaBoundary.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferWithBOEmptyLastViaSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferWithBOEmptyLastViaSource, this.description("bufferWithBOEmptyLastViaSource"));
+            this.payloads.bufferWithBOEmptyLastViaSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferWithBOEmptyLastViaBoth() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferWithBOEmptyLastViaBoth, this.description("bufferWithBOEmptyLastViaBoth"));
+            this.payloads.bufferWithBOEmptyLastViaBoth.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferWithBOSourceThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferWithBOSourceThrows, this.description("bufferWithBOSourceThrows"));
+            this.payloads.bufferWithBOSourceThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferWithBOBoundaryThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferWithBOBoundaryThrows, this.description("bufferWithBOBoundaryThrows"));
+            this.payloads.bufferWithBOBoundaryThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferWithSizeTake1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferWithSizeTake1, this.description("bufferWithSizeTake1"));
+            this.payloads.bufferWithSizeTake1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferWithSizeSkipTake1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferWithSizeSkipTake1, this.description("bufferWithSizeSkipTake1"));
+            this.payloads.bufferWithSizeSkipTake1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferWithTimeTake1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferWithTimeTake1, this.description("bufferWithTimeTake1"));
+            this.payloads.bufferWithTimeTake1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferWithTimeSkipTake2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferWithTimeSkipTake2, this.description("bufferWithTimeSkipTake2"));
+            this.payloads.bufferWithTimeSkipTake2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferWithBoundaryTake2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferWithBoundaryTake2, this.description("bufferWithBoundaryTake2"));
+            this.payloads.bufferWithBoundaryTake2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferWithStartEndBoundaryTake2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferWithStartEndBoundaryTake2, this.description("bufferWithStartEndBoundaryTake2"));
+            this.payloads.bufferWithStartEndBoundaryTake2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferWithSizeThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferWithSizeThrows, this.description("bufferWithSizeThrows"));
+            this.payloads.bufferWithSizeThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferWithTimeThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferWithTimeThrows, this.description("bufferWithTimeThrows"));
+            this.payloads.bufferWithTimeThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferWithTimeAndSize() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferWithTimeAndSize, this.description("bufferWithTimeAndSize"));
+            this.payloads.bufferWithTimeAndSize.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferWithStartEndStartThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferWithStartEndStartThrows, this.description("bufferWithStartEndStartThrows"));
+            this.payloads.bufferWithStartEndStartThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferWithStartEndEndFunctionThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferWithStartEndEndFunctionThrows, this.description("bufferWithStartEndEndFunctionThrows"));
+            this.payloads.bufferWithStartEndEndFunctionThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferWithStartEndEndThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferWithStartEndEndThrows, this.description("bufferWithStartEndEndThrows"));
+            this.payloads.bufferWithStartEndEndThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferWithTimeDoesntUnsubscribeDownstream() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferWithTimeDoesntUnsubscribeDownstream, this.description("bufferWithTimeDoesntUnsubscribeDownstream"));
+            this.payloads.bufferWithTimeDoesntUnsubscribeDownstream.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferTimeSkipDefault() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferTimeSkipDefault, this.description("bufferTimeSkipDefault"));
+            this.payloads.bufferTimeSkipDefault.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferBoundaryHint() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferBoundaryHint, this.description("bufferBoundaryHint"));
+            this.payloads.bufferBoundaryHint.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferIntoCustomCollection() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferIntoCustomCollection, this.description("bufferIntoCustomCollection"));
+            this.payloads.bufferIntoCustomCollection.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferSkipIntoCustomCollection() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferSkipIntoCustomCollection, this.description("bufferSkipIntoCustomCollection"));
+            this.payloads.bufferSkipIntoCustomCollection.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_supplierThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::supplierThrows, this.description("supplierThrows"));
+            this.payloads.supplierThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_supplierThrows2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::supplierThrows2, this.description("supplierThrows2"));
+            this.payloads.supplierThrows2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_supplierThrows3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::supplierThrows3, this.description("supplierThrows3"));
+            this.payloads.supplierThrows3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_supplierThrows4() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::supplierThrows4, this.description("supplierThrows4"));
+            this.payloads.supplierThrows4.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_supplierThrows5() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::supplierThrows5, this.description("supplierThrows5"));
+            this.payloads.supplierThrows5.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_supplierThrows6() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::supplierThrows6, this.description("supplierThrows6"));
+            this.payloads.supplierThrows6.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_supplierReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::supplierReturnsNull, this.description("supplierReturnsNull"));
+            this.payloads.supplierReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_supplierReturnsNull2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::supplierReturnsNull2, this.description("supplierReturnsNull2"));
+            this.payloads.supplierReturnsNull2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_supplierReturnsNull3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::supplierReturnsNull3, this.description("supplierReturnsNull3"));
+            this.payloads.supplierReturnsNull3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_restartTimer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::restartTimer, this.description("restartTimer"));
+            this.payloads.restartTimer.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferSupplierCrash2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferSupplierCrash2, this.description("bufferSupplierCrash2"));
+            this.payloads.bufferSupplierCrash2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferSkipSupplierCrash2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferSkipSupplierCrash2, this.description("bufferSkipSupplierCrash2"));
+            this.payloads.bufferSkipSupplierCrash2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferSkipError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferSkipError, this.description("bufferSkipError"));
+            this.payloads.bufferSkipError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferSkipOverlap() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferSkipOverlap, this.description("bufferSkipOverlap"));
+            this.payloads.bufferSkipOverlap.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferTimedExactError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferTimedExactError, this.description("bufferTimedExactError"));
+            this.payloads.bufferTimedExactError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferTimedSkipError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferTimedSkipError, this.description("bufferTimedSkipError"));
+            this.payloads.bufferTimedSkipError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferTimedOverlapError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferTimedOverlapError, this.description("bufferTimedOverlapError"));
+            this.payloads.bufferTimedOverlapError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferTimedExactEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferTimedExactEmpty, this.description("bufferTimedExactEmpty"));
+            this.payloads.bufferTimedExactEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferTimedSkipEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferTimedSkipEmpty, this.description("bufferTimedSkipEmpty"));
+            this.payloads.bufferTimedSkipEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferTimedOverlapEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferTimedOverlapEmpty, this.description("bufferTimedOverlapEmpty"));
+            this.payloads.bufferTimedOverlapEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferTimedExactSupplierCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferTimedExactSupplierCrash, this.description("bufferTimedExactSupplierCrash"));
+            this.payloads.bufferTimedExactSupplierCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferTimedExactBoundedError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferTimedExactBoundedError, this.description("bufferTimedExactBoundedError"));
+            this.payloads.bufferTimedExactBoundedError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withTimeAndSizeCapacityRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withTimeAndSizeCapacityRace, this.description("withTimeAndSizeCapacityRace"));
+            this.payloads.withTimeAndSizeCapacityRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noCompletionCancelExact() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noCompletionCancelExact, this.description("noCompletionCancelExact"));
+            this.payloads.noCompletionCancelExact.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noCompletionCancelSkip() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noCompletionCancelSkip, this.description("noCompletionCancelSkip"));
+            this.payloads.noCompletionCancelSkip.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noCompletionCancelOverlap() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noCompletionCancelOverlap, this.description("noCompletionCancelOverlap"));
+            this.payloads.noCompletionCancelOverlap.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundaryOpenCloseDisposedOnComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundaryOpenCloseDisposedOnComplete, this.description("boundaryOpenCloseDisposedOnComplete"));
+            this.payloads.boundaryOpenCloseDisposedOnComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferedCanCompleteIfOpenNeverCompletesDropping() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferedCanCompleteIfOpenNeverCompletesDropping, this.description("bufferedCanCompleteIfOpenNeverCompletesDropping"));
+            this.payloads.bufferedCanCompleteIfOpenNeverCompletesDropping.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferedCanCompleteIfOpenNeverCompletesOverlapping() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferedCanCompleteIfOpenNeverCompletesOverlapping, this.description("bufferedCanCompleteIfOpenNeverCompletesOverlapping"));
+            this.payloads.bufferedCanCompleteIfOpenNeverCompletesOverlapping.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_openClosemainError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::openClosemainError, this.description("openClosemainError"));
+            this.payloads.openClosemainError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_openClosebadSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::openClosebadSource, this.description("openClosebadSource"));
+            this.payloads.openClosebadSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_openCloseOpenCompletes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::openCloseOpenCompletes, this.description("openCloseOpenCompletes"));
+            this.payloads.openCloseOpenCompletes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_openCloseOpenCompletesNoBuffers() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::openCloseOpenCompletesNoBuffers, this.description("openCloseOpenCompletesNoBuffers"));
+            this.payloads.openCloseOpenCompletesNoBuffers.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_openCloseTake() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::openCloseTake, this.description("openCloseTake"));
+            this.payloads.openCloseTake.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_openCloseBadOpen() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::openCloseBadOpen, this.description("openCloseBadOpen"));
+            this.payloads.openCloseBadOpen.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_openCloseBadClose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::openCloseBadClose, this.description("openCloseBadClose"));
+            this.payloads.openCloseBadClose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferExactBoundaryDoubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferExactBoundaryDoubleOnSubscribe, this.description("bufferExactBoundaryDoubleOnSubscribe"));
+            this.payloads.bufferExactBoundaryDoubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferExactBoundarySecondBufferCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferExactBoundarySecondBufferCrash, this.description("bufferExactBoundarySecondBufferCrash"));
+            this.payloads.bufferExactBoundarySecondBufferCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferExactBoundaryBadSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferExactBoundaryBadSource, this.description("bufferExactBoundaryBadSource"));
+            this.payloads.bufferExactBoundaryBadSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timedDoubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timedDoubleOnSubscribe, this.description("timedDoubleOnSubscribe"));
+            this.payloads.timedDoubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timedCancelledUpfront() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timedCancelledUpfront, this.description("timedCancelledUpfront"));
+            this.payloads.timedCancelledUpfront.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timedInternalState() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timedInternalState, this.description("timedInternalState"));
+            this.payloads.timedInternalState.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timedSkipDoubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timedSkipDoubleOnSubscribe, this.description("timedSkipDoubleOnSubscribe"));
+            this.payloads.timedSkipDoubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timedSizedDoubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timedSizedDoubleOnSubscribe, this.description("timedSizedDoubleOnSubscribe"));
+            this.payloads.timedSizedDoubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timedSkipInternalState() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timedSkipInternalState, this.description("timedSkipInternalState"));
+            this.payloads.timedSkipInternalState.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timedSkipCancelWhenSecondBuffer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timedSkipCancelWhenSecondBuffer, this.description("timedSkipCancelWhenSecondBuffer"));
+            this.payloads.timedSkipCancelWhenSecondBuffer.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timedSizeBufferAlreadyCleared() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timedSizeBufferAlreadyCleared, this.description("timedSizeBufferAlreadyCleared"));
+            this.payloads.timedSizeBufferAlreadyCleared.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferExactDoubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferExactDoubleOnSubscribe, this.description("bufferExactDoubleOnSubscribe"));
+            this.payloads.bufferExactDoubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferExactState() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferExactState, this.description("bufferExactState"));
+            this.payloads.bufferExactState.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferSkipDoubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferSkipDoubleOnSubscribe, this.description("bufferSkipDoubleOnSubscribe"));
+            this.payloads.bufferSkipDoubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferExactFailingSupplier() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bufferExactFailingSupplier, this.description("bufferExactFailingSupplier"));
+            this.payloads.bufferExactFailingSupplier.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timedUnboundedCancelUpfront() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timedUnboundedCancelUpfront, this.description("timedUnboundedCancelUpfront"));
+            this.payloads.timedUnboundedCancelUpfront.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundaryCloseCompleteRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundaryCloseCompleteRace, this.description("boundaryCloseCompleteRace"));
+            this.payloads.boundaryCloseCompleteRace.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().before();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableBufferTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableBufferTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.before();
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private ObservableBufferTest implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableBufferTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableBufferTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableBufferTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableBufferTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableBufferTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableBufferTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableBufferTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public ObservableBufferTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement complete;
+
+            public org.junit.runners.model.Statement skipAndCountOverlappingBuffers;
+
+            public org.junit.runners.model.Statement skipAndCountGaplessBuffers;
+
+            public org.junit.runners.model.Statement skipAndCountBuffersWithGaps;
+
+            public org.junit.runners.model.Statement timedAndCount;
+
+            public org.junit.runners.model.Statement timed;
+
+            public org.junit.runners.model.Statement observableBasedOpenerAndCloser;
+
+            public org.junit.runners.model.Statement longTimeAction;
+
+            public org.junit.runners.model.Statement bufferStopsWhenUnsubscribed1;
+
+            public org.junit.runners.model.Statement bufferWithBONormal1;
+
+            public org.junit.runners.model.Statement bufferWithBOEmptyLastViaBoundary;
+
+            public org.junit.runners.model.Statement bufferWithBOEmptyLastViaSource;
+
+            public org.junit.runners.model.Statement bufferWithBOEmptyLastViaBoth;
+
+            public org.junit.runners.model.Statement bufferWithBOSourceThrows;
+
+            public org.junit.runners.model.Statement bufferWithBOBoundaryThrows;
+
+            public org.junit.runners.model.Statement bufferWithSizeTake1;
+
+            public org.junit.runners.model.Statement bufferWithSizeSkipTake1;
+
+            public org.junit.runners.model.Statement bufferWithTimeTake1;
+
+            public org.junit.runners.model.Statement bufferWithTimeSkipTake2;
+
+            public org.junit.runners.model.Statement bufferWithBoundaryTake2;
+
+            public org.junit.runners.model.Statement bufferWithStartEndBoundaryTake2;
+
+            public org.junit.runners.model.Statement bufferWithSizeThrows;
+
+            public org.junit.runners.model.Statement bufferWithTimeThrows;
+
+            public org.junit.runners.model.Statement bufferWithTimeAndSize;
+
+            public org.junit.runners.model.Statement bufferWithStartEndStartThrows;
+
+            public org.junit.runners.model.Statement bufferWithStartEndEndFunctionThrows;
+
+            public org.junit.runners.model.Statement bufferWithStartEndEndThrows;
+
+            public org.junit.runners.model.Statement bufferWithTimeDoesntUnsubscribeDownstream;
+
+            public org.junit.runners.model.Statement bufferTimeSkipDefault;
+
+            public org.junit.runners.model.Statement bufferBoundaryHint;
+
+            public org.junit.runners.model.Statement bufferIntoCustomCollection;
+
+            public org.junit.runners.model.Statement bufferSkipIntoCustomCollection;
+
+            public org.junit.runners.model.Statement supplierThrows;
+
+            public org.junit.runners.model.Statement supplierThrows2;
+
+            public org.junit.runners.model.Statement supplierThrows3;
+
+            public org.junit.runners.model.Statement supplierThrows4;
+
+            public org.junit.runners.model.Statement supplierThrows5;
+
+            public org.junit.runners.model.Statement supplierThrows6;
+
+            public org.junit.runners.model.Statement supplierReturnsNull;
+
+            public org.junit.runners.model.Statement supplierReturnsNull2;
+
+            public org.junit.runners.model.Statement supplierReturnsNull3;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement restartTimer;
+
+            public org.junit.runners.model.Statement bufferSupplierCrash2;
+
+            public org.junit.runners.model.Statement bufferSkipSupplierCrash2;
+
+            public org.junit.runners.model.Statement bufferSkipError;
+
+            public org.junit.runners.model.Statement bufferSkipOverlap;
+
+            public org.junit.runners.model.Statement bufferTimedExactError;
+
+            public org.junit.runners.model.Statement bufferTimedSkipError;
+
+            public org.junit.runners.model.Statement bufferTimedOverlapError;
+
+            public org.junit.runners.model.Statement bufferTimedExactEmpty;
+
+            public org.junit.runners.model.Statement bufferTimedSkipEmpty;
+
+            public org.junit.runners.model.Statement bufferTimedOverlapEmpty;
+
+            public org.junit.runners.model.Statement bufferTimedExactSupplierCrash;
+
+            public org.junit.runners.model.Statement bufferTimedExactBoundedError;
+
+            public org.junit.runners.model.Statement withTimeAndSizeCapacityRace;
+
+            public org.junit.runners.model.Statement noCompletionCancelExact;
+
+            public org.junit.runners.model.Statement noCompletionCancelSkip;
+
+            public org.junit.runners.model.Statement noCompletionCancelOverlap;
+
+            public org.junit.runners.model.Statement boundaryOpenCloseDisposedOnComplete;
+
+            public org.junit.runners.model.Statement bufferedCanCompleteIfOpenNeverCompletesDropping;
+
+            public org.junit.runners.model.Statement bufferedCanCompleteIfOpenNeverCompletesOverlapping;
+
+            public org.junit.runners.model.Statement openClosemainError;
+
+            public org.junit.runners.model.Statement openClosebadSource;
+
+            public org.junit.runners.model.Statement openCloseOpenCompletes;
+
+            public org.junit.runners.model.Statement openCloseOpenCompletesNoBuffers;
+
+            public org.junit.runners.model.Statement openCloseTake;
+
+            public org.junit.runners.model.Statement openCloseBadOpen;
+
+            public org.junit.runners.model.Statement openCloseBadClose;
+
+            public org.junit.runners.model.Statement bufferExactBoundaryDoubleOnSubscribe;
+
+            public org.junit.runners.model.Statement bufferExactBoundarySecondBufferCrash;
+
+            public org.junit.runners.model.Statement bufferExactBoundaryBadSource;
+
+            public org.junit.runners.model.Statement timedDoubleOnSubscribe;
+
+            public org.junit.runners.model.Statement timedCancelledUpfront;
+
+            public org.junit.runners.model.Statement timedInternalState;
+
+            public org.junit.runners.model.Statement timedSkipDoubleOnSubscribe;
+
+            public org.junit.runners.model.Statement timedSizedDoubleOnSubscribe;
+
+            public org.junit.runners.model.Statement timedSkipInternalState;
+
+            public org.junit.runners.model.Statement timedSkipCancelWhenSecondBuffer;
+
+            public org.junit.runners.model.Statement timedSizeBufferAlreadyCleared;
+
+            public org.junit.runners.model.Statement bufferExactDoubleOnSubscribe;
+
+            public org.junit.runners.model.Statement bufferExactState;
+
+            public org.junit.runners.model.Statement bufferSkipDoubleOnSubscribe;
+
+            public org.junit.runners.model.Statement bufferExactFailingSupplier;
+
+            public org.junit.runners.model.Statement timedUnboundedCancelUpfront;
+
+            public org.junit.runners.model.Statement boundaryCloseCompleteRace;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.complete = _ClassStatement.forPayload(ObservableBufferTest::complete, "complete", this);
+            this.payloads.skipAndCountOverlappingBuffers = _ClassStatement.forPayload(ObservableBufferTest::skipAndCountOverlappingBuffers, "skipAndCountOverlappingBuffers", this);
+            this.payloads.skipAndCountGaplessBuffers = _ClassStatement.forPayload(ObservableBufferTest::skipAndCountGaplessBuffers, "skipAndCountGaplessBuffers", this);
+            this.payloads.skipAndCountBuffersWithGaps = _ClassStatement.forPayload(ObservableBufferTest::skipAndCountBuffersWithGaps, "skipAndCountBuffersWithGaps", this);
+            this.payloads.timedAndCount = _ClassStatement.forPayload(ObservableBufferTest::timedAndCount, "timedAndCount", this);
+            this.payloads.timed = _ClassStatement.forPayload(ObservableBufferTest::timed, "timed", this);
+            this.payloads.observableBasedOpenerAndCloser = _ClassStatement.forPayload(ObservableBufferTest::observableBasedOpenerAndCloser, "observableBasedOpenerAndCloser", this);
+            this.payloads.longTimeAction = _ClassStatement.forPayload(ObservableBufferTest::longTimeAction, "longTimeAction", this);
+            this.payloads.bufferStopsWhenUnsubscribed1 = _ClassStatement.forPayload(ObservableBufferTest::bufferStopsWhenUnsubscribed1, "bufferStopsWhenUnsubscribed1", this);
+            this.payloads.bufferWithBONormal1 = _ClassStatement.forPayload(ObservableBufferTest::bufferWithBONormal1, "bufferWithBONormal1", this);
+            this.payloads.bufferWithBOEmptyLastViaBoundary = _ClassStatement.forPayload(ObservableBufferTest::bufferWithBOEmptyLastViaBoundary, "bufferWithBOEmptyLastViaBoundary", this);
+            this.payloads.bufferWithBOEmptyLastViaSource = _ClassStatement.forPayload(ObservableBufferTest::bufferWithBOEmptyLastViaSource, "bufferWithBOEmptyLastViaSource", this);
+            this.payloads.bufferWithBOEmptyLastViaBoth = _ClassStatement.forPayload(ObservableBufferTest::bufferWithBOEmptyLastViaBoth, "bufferWithBOEmptyLastViaBoth", this);
+            this.payloads.bufferWithBOSourceThrows = _ClassStatement.forPayload(ObservableBufferTest::bufferWithBOSourceThrows, "bufferWithBOSourceThrows", this);
+            this.payloads.bufferWithBOBoundaryThrows = _ClassStatement.forPayload(ObservableBufferTest::bufferWithBOBoundaryThrows, "bufferWithBOBoundaryThrows", this);
+            this.payloads.bufferWithSizeTake1 = _ClassStatement.forPayload(ObservableBufferTest::bufferWithSizeTake1, "bufferWithSizeTake1", this);
+            this.payloads.bufferWithSizeSkipTake1 = _ClassStatement.forPayload(ObservableBufferTest::bufferWithSizeSkipTake1, "bufferWithSizeSkipTake1", this);
+            this.payloads.bufferWithTimeTake1 = _ClassStatement.forPayload(ObservableBufferTest::bufferWithTimeTake1, "bufferWithTimeTake1", this);
+            this.payloads.bufferWithTimeSkipTake2 = _ClassStatement.forPayload(ObservableBufferTest::bufferWithTimeSkipTake2, "bufferWithTimeSkipTake2", this);
+            this.payloads.bufferWithBoundaryTake2 = _ClassStatement.forPayload(ObservableBufferTest::bufferWithBoundaryTake2, "bufferWithBoundaryTake2", this);
+            this.payloads.bufferWithStartEndBoundaryTake2 = _ClassStatement.forPayload(ObservableBufferTest::bufferWithStartEndBoundaryTake2, "bufferWithStartEndBoundaryTake2", this);
+            this.payloads.bufferWithSizeThrows = _ClassStatement.forPayload(ObservableBufferTest::bufferWithSizeThrows, "bufferWithSizeThrows", this);
+            this.payloads.bufferWithTimeThrows = _ClassStatement.forPayload(ObservableBufferTest::bufferWithTimeThrows, "bufferWithTimeThrows", this);
+            this.payloads.bufferWithTimeAndSize = _ClassStatement.forPayload(ObservableBufferTest::bufferWithTimeAndSize, "bufferWithTimeAndSize", this);
+            this.payloads.bufferWithStartEndStartThrows = _ClassStatement.forPayload(ObservableBufferTest::bufferWithStartEndStartThrows, "bufferWithStartEndStartThrows", this);
+            this.payloads.bufferWithStartEndEndFunctionThrows = _ClassStatement.forPayload(ObservableBufferTest::bufferWithStartEndEndFunctionThrows, "bufferWithStartEndEndFunctionThrows", this);
+            this.payloads.bufferWithStartEndEndThrows = _ClassStatement.forPayload(ObservableBufferTest::bufferWithStartEndEndThrows, "bufferWithStartEndEndThrows", this);
+            this.payloads.bufferWithTimeDoesntUnsubscribeDownstream = _ClassStatement.forPayload(ObservableBufferTest::bufferWithTimeDoesntUnsubscribeDownstream, "bufferWithTimeDoesntUnsubscribeDownstream", this);
+            this.payloads.bufferTimeSkipDefault = _ClassStatement.forPayload(ObservableBufferTest::bufferTimeSkipDefault, "bufferTimeSkipDefault", this);
+            this.payloads.bufferBoundaryHint = _ClassStatement.forPayload(ObservableBufferTest::bufferBoundaryHint, "bufferBoundaryHint", this);
+            this.payloads.bufferIntoCustomCollection = _ClassStatement.forPayload(ObservableBufferTest::bufferIntoCustomCollection, "bufferIntoCustomCollection", this);
+            this.payloads.bufferSkipIntoCustomCollection = _ClassStatement.forPayload(ObservableBufferTest::bufferSkipIntoCustomCollection, "bufferSkipIntoCustomCollection", this);
+            this.payloads.supplierThrows = _ClassStatement.forPayload(ObservableBufferTest::supplierThrows, "supplierThrows", this);
+            this.payloads.supplierThrows2 = _ClassStatement.forPayload(ObservableBufferTest::supplierThrows2, "supplierThrows2", this);
+            this.payloads.supplierThrows3 = _ClassStatement.forPayload(ObservableBufferTest::supplierThrows3, "supplierThrows3", this);
+            this.payloads.supplierThrows4 = _ClassStatement.forPayload(ObservableBufferTest::supplierThrows4, "supplierThrows4", this);
+            this.payloads.supplierThrows5 = _ClassStatement.forPayload(ObservableBufferTest::supplierThrows5, "supplierThrows5", this);
+            this.payloads.supplierThrows6 = _ClassStatement.forPayload(ObservableBufferTest::supplierThrows6, "supplierThrows6", this);
+            this.payloads.supplierReturnsNull = _ClassStatement.forPayload(ObservableBufferTest::supplierReturnsNull, "supplierReturnsNull", this);
+            this.payloads.supplierReturnsNull2 = _ClassStatement.forPayload(ObservableBufferTest::supplierReturnsNull2, "supplierReturnsNull2", this);
+            this.payloads.supplierReturnsNull3 = _ClassStatement.forPayload(ObservableBufferTest::supplierReturnsNull3, "supplierReturnsNull3", this);
+            this.payloads.dispose = _ClassStatement.forPayload(ObservableBufferTest::dispose, "dispose", this);
+            this.payloads.restartTimer = _ClassStatement.forPayload(ObservableBufferTest::restartTimer, "restartTimer", this);
+            this.payloads.bufferSupplierCrash2 = _ClassStatement.forPayload(ObservableBufferTest::bufferSupplierCrash2, "bufferSupplierCrash2", this);
+            this.payloads.bufferSkipSupplierCrash2 = _ClassStatement.forPayload(ObservableBufferTest::bufferSkipSupplierCrash2, "bufferSkipSupplierCrash2", this);
+            this.payloads.bufferSkipError = _ClassStatement.forPayload(ObservableBufferTest::bufferSkipError, "bufferSkipError", this);
+            this.payloads.bufferSkipOverlap = _ClassStatement.forPayload(ObservableBufferTest::bufferSkipOverlap, "bufferSkipOverlap", this);
+            this.payloads.bufferTimedExactError = _ClassStatement.forPayload(ObservableBufferTest::bufferTimedExactError, "bufferTimedExactError", this);
+            this.payloads.bufferTimedSkipError = _ClassStatement.forPayload(ObservableBufferTest::bufferTimedSkipError, "bufferTimedSkipError", this);
+            this.payloads.bufferTimedOverlapError = _ClassStatement.forPayload(ObservableBufferTest::bufferTimedOverlapError, "bufferTimedOverlapError", this);
+            this.payloads.bufferTimedExactEmpty = _ClassStatement.forPayload(ObservableBufferTest::bufferTimedExactEmpty, "bufferTimedExactEmpty", this);
+            this.payloads.bufferTimedSkipEmpty = _ClassStatement.forPayload(ObservableBufferTest::bufferTimedSkipEmpty, "bufferTimedSkipEmpty", this);
+            this.payloads.bufferTimedOverlapEmpty = _ClassStatement.forPayload(ObservableBufferTest::bufferTimedOverlapEmpty, "bufferTimedOverlapEmpty", this);
+            this.payloads.bufferTimedExactSupplierCrash = _ClassStatement.forPayload(ObservableBufferTest::bufferTimedExactSupplierCrash, "bufferTimedExactSupplierCrash", this);
+            this.payloads.bufferTimedExactBoundedError = _ClassStatement.forPayload(ObservableBufferTest::bufferTimedExactBoundedError, "bufferTimedExactBoundedError", this);
+            this.payloads.withTimeAndSizeCapacityRace = _ClassStatement.forPayload(ObservableBufferTest::withTimeAndSizeCapacityRace, "withTimeAndSizeCapacityRace", this);
+            this.payloads.noCompletionCancelExact = _ClassStatement.forPayload(ObservableBufferTest::noCompletionCancelExact, "noCompletionCancelExact", this);
+            this.payloads.noCompletionCancelSkip = _ClassStatement.forPayload(ObservableBufferTest::noCompletionCancelSkip, "noCompletionCancelSkip", this);
+            this.payloads.noCompletionCancelOverlap = _ClassStatement.forPayload(ObservableBufferTest::noCompletionCancelOverlap, "noCompletionCancelOverlap", this);
+            this.payloads.boundaryOpenCloseDisposedOnComplete = _ClassStatement.forPayload(ObservableBufferTest::boundaryOpenCloseDisposedOnComplete, "boundaryOpenCloseDisposedOnComplete", this);
+            this.payloads.bufferedCanCompleteIfOpenNeverCompletesDropping = _ClassStatement.forPayload(ObservableBufferTest::bufferedCanCompleteIfOpenNeverCompletesDropping, "bufferedCanCompleteIfOpenNeverCompletesDropping", this);
+            this.payloads.bufferedCanCompleteIfOpenNeverCompletesOverlapping = _ClassStatement.forPayload(ObservableBufferTest::bufferedCanCompleteIfOpenNeverCompletesOverlapping, "bufferedCanCompleteIfOpenNeverCompletesOverlapping", this);
+            this.payloads.openClosemainError = _ClassStatement.forPayload(ObservableBufferTest::openClosemainError, "openClosemainError", this);
+            this.payloads.openClosebadSource = _ClassStatement.forPayload(ObservableBufferTest::openClosebadSource, "openClosebadSource", this);
+            this.payloads.openCloseOpenCompletes = _ClassStatement.forPayload(ObservableBufferTest::openCloseOpenCompletes, "openCloseOpenCompletes", this);
+            this.payloads.openCloseOpenCompletesNoBuffers = _ClassStatement.forPayload(ObservableBufferTest::openCloseOpenCompletesNoBuffers, "openCloseOpenCompletesNoBuffers", this);
+            this.payloads.openCloseTake = _ClassStatement.forPayload(ObservableBufferTest::openCloseTake, "openCloseTake", this);
+            this.payloads.openCloseBadOpen = _ClassStatement.forPayload(ObservableBufferTest::openCloseBadOpen, "openCloseBadOpen", this);
+            this.payloads.openCloseBadClose = _ClassStatement.forPayload(ObservableBufferTest::openCloseBadClose, "openCloseBadClose", this);
+            this.payloads.bufferExactBoundaryDoubleOnSubscribe = _ClassStatement.forPayload(ObservableBufferTest::bufferExactBoundaryDoubleOnSubscribe, "bufferExactBoundaryDoubleOnSubscribe", this);
+            this.payloads.bufferExactBoundarySecondBufferCrash = _ClassStatement.forPayload(ObservableBufferTest::bufferExactBoundarySecondBufferCrash, "bufferExactBoundarySecondBufferCrash", this);
+            this.payloads.bufferExactBoundaryBadSource = _ClassStatement.forPayload(ObservableBufferTest::bufferExactBoundaryBadSource, "bufferExactBoundaryBadSource", this);
+            this.payloads.timedDoubleOnSubscribe = _ClassStatement.forPayload(ObservableBufferTest::timedDoubleOnSubscribe, "timedDoubleOnSubscribe", this);
+            this.payloads.timedCancelledUpfront = _ClassStatement.forPayload(ObservableBufferTest::timedCancelledUpfront, "timedCancelledUpfront", this);
+            this.payloads.timedInternalState = _ClassStatement.forPayload(ObservableBufferTest::timedInternalState, "timedInternalState", this);
+            this.payloads.timedSkipDoubleOnSubscribe = _ClassStatement.forPayload(ObservableBufferTest::timedSkipDoubleOnSubscribe, "timedSkipDoubleOnSubscribe", this);
+            this.payloads.timedSizedDoubleOnSubscribe = _ClassStatement.forPayload(ObservableBufferTest::timedSizedDoubleOnSubscribe, "timedSizedDoubleOnSubscribe", this);
+            this.payloads.timedSkipInternalState = _ClassStatement.forPayload(ObservableBufferTest::timedSkipInternalState, "timedSkipInternalState", this);
+            this.payloads.timedSkipCancelWhenSecondBuffer = _ClassStatement.forPayload(ObservableBufferTest::timedSkipCancelWhenSecondBuffer, "timedSkipCancelWhenSecondBuffer", this);
+            this.payloads.timedSizeBufferAlreadyCleared = _ClassStatement.forPayload(ObservableBufferTest::timedSizeBufferAlreadyCleared, "timedSizeBufferAlreadyCleared", this);
+            this.payloads.bufferExactDoubleOnSubscribe = _ClassStatement.forPayload(ObservableBufferTest::bufferExactDoubleOnSubscribe, "bufferExactDoubleOnSubscribe", this);
+            this.payloads.bufferExactState = _ClassStatement.forPayload(ObservableBufferTest::bufferExactState, "bufferExactState", this);
+            this.payloads.bufferSkipDoubleOnSubscribe = _ClassStatement.forPayload(ObservableBufferTest::bufferSkipDoubleOnSubscribe, "bufferSkipDoubleOnSubscribe", this);
+            this.payloads.bufferExactFailingSupplier = _ClassStatement.forPayload(ObservableBufferTest::bufferExactFailingSupplier, "bufferExactFailingSupplier", this);
+            this.payloads.timedUnboundedCancelUpfront = _ClassStatement.forPayload(ObservableBufferTest::timedUnboundedCancelUpfront, "timedUnboundedCancelUpfront", this);
+            this.payloads.boundaryCloseCompleteRace = _ClassStatement.forPayload(ObservableBufferTest::boundaryCloseCompleteRace, "boundaryCloseCompleteRace", this);
         }
     }
 }

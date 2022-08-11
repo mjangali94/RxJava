@@ -149,90 +149,173 @@ public class ObservableRangeTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableRangeTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rangeStartAt2Count3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rangeStartAt2Count3, this.description("rangeStartAt2Count3"));
+            this.payloads.rangeStartAt2Count3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rangeUnsubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rangeUnsubscribe, this.description("rangeUnsubscribe"));
+            this.payloads.rangeUnsubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rangeWithZero() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rangeWithZero, this.description("rangeWithZero"));
+            this.payloads.rangeWithZero.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rangeWithOverflow2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rangeWithOverflow2, this.description("rangeWithOverflow2"));
+            this.payloads.rangeWithOverflow2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rangeWithOverflow3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rangeWithOverflow3, this.description("rangeWithOverflow3"));
+            this.payloads.rangeWithOverflow3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rangeWithOverflow4() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::rangeWithOverflow4, this.description("rangeWithOverflow4"), java.lang.IllegalArgumentException.class);
+            this.payloads.rangeWithOverflow4.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rangeWithOverflow5() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rangeWithOverflow5, this.description("rangeWithOverflow5"));
+            this.payloads.rangeWithOverflow5.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noBackpressure, this.description("noBackpressure"));
+            this.payloads.noBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyRangeSendsOnCompleteEagerlyWithRequestZero() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyRangeSendsOnCompleteEagerlyWithRequestZero, this.description("emptyRangeSendsOnCompleteEagerlyWithRequestZero"));
+            this.payloads.emptyRangeSendsOnCompleteEagerlyWithRequestZero.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nearMaxValueWithoutBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nearMaxValueWithoutBackpressure, this.description("nearMaxValueWithoutBackpressure"));
+            this.payloads.nearMaxValueWithoutBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_negativeCount() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::negativeCount, this.description("negativeCount"));
+            this.payloads.negativeCount.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestWrongFusion() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestWrongFusion, this.description("requestWrongFusion"));
+            this.payloads.requestWrongFusion.evaluate();
         }
 
-        private ObservableRangeTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableRangeTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableRangeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableRangeTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservableRangeTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableRangeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableRangeTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableRangeTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableRangeTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableRangeTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableRangeTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement rangeStartAt2Count3;
+
+            public org.junit.runners.model.Statement rangeUnsubscribe;
+
+            public org.junit.runners.model.Statement rangeWithZero;
+
+            public org.junit.runners.model.Statement rangeWithOverflow2;
+
+            public org.junit.runners.model.Statement rangeWithOverflow3;
+
+            public org.junit.runners.model.Statement rangeWithOverflow4;
+
+            public org.junit.runners.model.Statement rangeWithOverflow5;
+
+            public org.junit.runners.model.Statement noBackpressure;
+
+            public org.junit.runners.model.Statement emptyRangeSendsOnCompleteEagerlyWithRequestZero;
+
+            public org.junit.runners.model.Statement nearMaxValueWithoutBackpressure;
+
+            public org.junit.runners.model.Statement negativeCount;
+
+            public org.junit.runners.model.Statement requestWrongFusion;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.rangeStartAt2Count3 = _ClassStatement.forPayload(ObservableRangeTest::rangeStartAt2Count3, "rangeStartAt2Count3", this);
+            this.payloads.rangeUnsubscribe = _ClassStatement.forPayload(ObservableRangeTest::rangeUnsubscribe, "rangeUnsubscribe", this);
+            this.payloads.rangeWithZero = _ClassStatement.forPayload(ObservableRangeTest::rangeWithZero, "rangeWithZero", this);
+            this.payloads.rangeWithOverflow2 = _ClassStatement.forPayload(ObservableRangeTest::rangeWithOverflow2, "rangeWithOverflow2", this);
+            this.payloads.rangeWithOverflow3 = _ClassStatement.forPayload(ObservableRangeTest::rangeWithOverflow3, "rangeWithOverflow3", this);
+            this.payloads.rangeWithOverflow4 = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(ObservableRangeTest::rangeWithOverflow4, java.lang.IllegalArgumentException.class), "rangeWithOverflow4", this);
+            this.payloads.rangeWithOverflow5 = _ClassStatement.forPayload(ObservableRangeTest::rangeWithOverflow5, "rangeWithOverflow5", this);
+            this.payloads.noBackpressure = _ClassStatement.forPayload(ObservableRangeTest::noBackpressure, "noBackpressure", this);
+            this.payloads.emptyRangeSendsOnCompleteEagerlyWithRequestZero = _ClassStatement.forPayload(ObservableRangeTest::emptyRangeSendsOnCompleteEagerlyWithRequestZero, "emptyRangeSendsOnCompleteEagerlyWithRequestZero", this);
+            this.payloads.nearMaxValueWithoutBackpressure = _ClassStatement.forPayload(ObservableRangeTest::nearMaxValueWithoutBackpressure, "nearMaxValueWithoutBackpressure", this);
+            this.payloads.negativeCount = _ClassStatement.forPayload(ObservableRangeTest::negativeCount, "negativeCount", this);
+            this.payloads.requestWrongFusion = _ClassStatement.forPayload(ObservableRangeTest::requestWrongFusion, "requestWrongFusion", this);
         }
     }
 }

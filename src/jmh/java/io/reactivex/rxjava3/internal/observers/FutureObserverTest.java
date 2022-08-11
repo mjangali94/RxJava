@@ -352,138 +352,230 @@ public class FutureObserverTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FutureObserverTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancel2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancel2, this.description("cancel2"));
+            this.payloads.cancel2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancel, this.description("cancel"));
+            this.payloads.cancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onError, this.description("onError"));
+            this.payloads.onError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onNext, this.description("onNext"));
+            this.payloads.onNext.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onSubscribe, this.description("onSubscribe"));
+            this.payloads.onSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelRace, this.description("cancelRace"));
+            this.payloads.cancelRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_await() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::await, this.description("await"));
+            this.payloads.await.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorCancelRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorCancelRace, this.description("onErrorCancelRace"));
+            this.payloads.onErrorCancelRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onCompleteCancelRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompleteCancelRace, this.description("onCompleteCancelRace"));
+            this.payloads.onCompleteCancelRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorOnComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorOnComplete, this.description("onErrorOnComplete"));
+            this.payloads.onErrorOnComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onCompleteOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompleteOnError, this.description("onCompleteOnError"));
+            this.payloads.onCompleteOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onNextCompleteOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onNextCompleteOnError, this.description("onNextCompleteOnError"));
+            this.payloads.onNextCompleteOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelOnError, this.description("cancelOnError"));
+            this.payloads.cancelOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelOnComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelOnComplete, this.description("cancelOnComplete"));
+            this.payloads.cancelOnComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onNextThenOnCompleteTwice() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onNextThenOnCompleteTwice, this.description("onNextThenOnCompleteTwice"));
+            this.payloads.onNextThenOnCompleteTwice.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_getInterrupted() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::getInterrupted, this.description("getInterrupted"), java.lang.InterruptedException.class);
+            this.payloads.getInterrupted.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_completeAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::completeAsync, this.description("completeAsync"));
+            this.payloads.completeAsync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_getTimedOut() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::getTimedOut, this.description("getTimedOut"));
+            this.payloads.getTimedOut.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelOnSubscribeRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelOnSubscribeRace, this.description("cancelOnSubscribeRace"));
+            this.payloads.cancelOnSubscribeRace.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().before();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FutureObserverTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FutureObserverTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.before();
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private FutureObserverTest implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FutureObserverTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FutureObserverTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FutureObserverTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FutureObserverTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FutureObserverTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FutureObserverTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FutureObserverTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public FutureObserverTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement cancel2;
+
+            public org.junit.runners.model.Statement cancel;
+
+            public org.junit.runners.model.Statement onError;
+
+            public org.junit.runners.model.Statement onNext;
+
+            public org.junit.runners.model.Statement onSubscribe;
+
+            public org.junit.runners.model.Statement cancelRace;
+
+            public org.junit.runners.model.Statement await;
+
+            public org.junit.runners.model.Statement onErrorCancelRace;
+
+            public org.junit.runners.model.Statement onCompleteCancelRace;
+
+            public org.junit.runners.model.Statement onErrorOnComplete;
+
+            public org.junit.runners.model.Statement onCompleteOnError;
+
+            public org.junit.runners.model.Statement onNextCompleteOnError;
+
+            public org.junit.runners.model.Statement cancelOnError;
+
+            public org.junit.runners.model.Statement cancelOnComplete;
+
+            public org.junit.runners.model.Statement onNextThenOnCompleteTwice;
+
+            public org.junit.runners.model.Statement getInterrupted;
+
+            public org.junit.runners.model.Statement completeAsync;
+
+            public org.junit.runners.model.Statement getTimedOut;
+
+            public org.junit.runners.model.Statement cancelOnSubscribeRace;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.cancel2 = _ClassStatement.forPayload(FutureObserverTest::cancel2, "cancel2", this);
+            this.payloads.cancel = _ClassStatement.forPayload(FutureObserverTest::cancel, "cancel", this);
+            this.payloads.onError = _ClassStatement.forPayload(FutureObserverTest::onError, "onError", this);
+            this.payloads.onNext = _ClassStatement.forPayload(FutureObserverTest::onNext, "onNext", this);
+            this.payloads.onSubscribe = _ClassStatement.forPayload(FutureObserverTest::onSubscribe, "onSubscribe", this);
+            this.payloads.cancelRace = _ClassStatement.forPayload(FutureObserverTest::cancelRace, "cancelRace", this);
+            this.payloads.await = _ClassStatement.forPayload(FutureObserverTest::await, "await", this);
+            this.payloads.onErrorCancelRace = _ClassStatement.forPayload(FutureObserverTest::onErrorCancelRace, "onErrorCancelRace", this);
+            this.payloads.onCompleteCancelRace = _ClassStatement.forPayload(FutureObserverTest::onCompleteCancelRace, "onCompleteCancelRace", this);
+            this.payloads.onErrorOnComplete = _ClassStatement.forPayload(FutureObserverTest::onErrorOnComplete, "onErrorOnComplete", this);
+            this.payloads.onCompleteOnError = _ClassStatement.forPayload(FutureObserverTest::onCompleteOnError, "onCompleteOnError", this);
+            this.payloads.onNextCompleteOnError = _ClassStatement.forPayload(FutureObserverTest::onNextCompleteOnError, "onNextCompleteOnError", this);
+            this.payloads.cancelOnError = _ClassStatement.forPayload(FutureObserverTest::cancelOnError, "cancelOnError", this);
+            this.payloads.cancelOnComplete = _ClassStatement.forPayload(FutureObserverTest::cancelOnComplete, "cancelOnComplete", this);
+            this.payloads.onNextThenOnCompleteTwice = _ClassStatement.forPayload(FutureObserverTest::onNextThenOnCompleteTwice, "onNextThenOnCompleteTwice", this);
+            this.payloads.getInterrupted = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FutureObserverTest::getInterrupted, java.lang.InterruptedException.class), "getInterrupted", this);
+            this.payloads.completeAsync = _ClassStatement.forPayload(FutureObserverTest::completeAsync, "completeAsync", this);
+            this.payloads.getTimedOut = _ClassStatement.forPayload(FutureObserverTest::getTimedOut, "getTimedOut", this);
+            this.payloads.cancelOnSubscribeRace = _ClassStatement.forPayload(FutureObserverTest::cancelOnSubscribeRace, "cancelOnSubscribeRace", this);
         }
     }
 }

@@ -613,168 +613,277 @@ public class FlowableUsingTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableUsingTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_using() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::using, this.description("using"));
+            this.payloads.using.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_usingEagerly() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::usingEagerly, this.description("usingEagerly"));
+            this.payloads.usingEagerly.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_usingWithSubscribingTwice() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::usingWithSubscribingTwice, this.description("usingWithSubscribingTwice"));
+            this.payloads.usingWithSubscribingTwice.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_usingWithSubscribingTwiceDisposeEagerly() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::usingWithSubscribingTwiceDisposeEagerly, this.description("usingWithSubscribingTwiceDisposeEagerly"));
+            this.payloads.usingWithSubscribingTwiceDisposeEagerly.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_usingWithResourceFactoryError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::usingWithResourceFactoryError, this.description("usingWithResourceFactoryError"), io.reactivex.rxjava3.exceptions.TestException.class);
+            this.payloads.usingWithResourceFactoryError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_usingWithResourceFactoryErrorDisposeEagerly() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::usingWithResourceFactoryErrorDisposeEagerly, this.description("usingWithResourceFactoryErrorDisposeEagerly"), io.reactivex.rxjava3.exceptions.TestException.class);
+            this.payloads.usingWithResourceFactoryErrorDisposeEagerly.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_usingWithFlowableFactoryError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::usingWithFlowableFactoryError, this.description("usingWithFlowableFactoryError"));
+            this.payloads.usingWithFlowableFactoryError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_usingWithFlowableFactoryErrorDisposeEagerly() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::usingWithFlowableFactoryErrorDisposeEagerly, this.description("usingWithFlowableFactoryErrorDisposeEagerly"));
+            this.payloads.usingWithFlowableFactoryErrorDisposeEagerly.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_usingDisposesEagerlyBeforeCompletion() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::usingDisposesEagerlyBeforeCompletion, this.description("usingDisposesEagerlyBeforeCompletion"));
+            this.payloads.usingDisposesEagerlyBeforeCompletion.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_usingDoesNotDisposesEagerlyBeforeCompletion() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::usingDoesNotDisposesEagerlyBeforeCompletion, this.description("usingDoesNotDisposesEagerlyBeforeCompletion"));
+            this.payloads.usingDoesNotDisposesEagerlyBeforeCompletion.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_usingDisposesEagerlyBeforeError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::usingDisposesEagerlyBeforeError, this.description("usingDisposesEagerlyBeforeError"));
+            this.payloads.usingDisposesEagerlyBeforeError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_usingDoesNotDisposesEagerlyBeforeError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::usingDoesNotDisposesEagerlyBeforeError, this.description("usingDoesNotDisposesEagerlyBeforeError"));
+            this.payloads.usingDoesNotDisposesEagerlyBeforeError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_factoryThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::factoryThrows, this.description("factoryThrows"));
+            this.payloads.factoryThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nonEagerTermination() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nonEagerTermination, this.description("nonEagerTermination"));
+            this.payloads.nonEagerTermination.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_supplierDisposerCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::supplierDisposerCrash, this.description("supplierDisposerCrash"));
+            this.payloads.supplierDisposerCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_eagerOnErrorDisposerCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::eagerOnErrorDisposerCrash, this.description("eagerOnErrorDisposerCrash"));
+            this.payloads.eagerOnErrorDisposerCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_eagerOnCompleteDisposerCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::eagerOnCompleteDisposerCrash, this.description("eagerOnCompleteDisposerCrash"));
+            this.payloads.eagerOnCompleteDisposerCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nonEagerDisposerCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nonEagerDisposerCrash, this.description("nonEagerDisposerCrash"));
+            this.payloads.nonEagerDisposerCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sourceSupplierReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sourceSupplierReturnsNull, this.description("sourceSupplierReturnsNull"));
+            this.payloads.sourceSupplierReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_eagerDisposedOnComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::eagerDisposedOnComplete, this.description("eagerDisposedOnComplete"));
+            this.payloads.eagerDisposedOnComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_eagerDisposedOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::eagerDisposedOnError, this.description("eagerDisposedOnError"));
+            this.payloads.eagerDisposedOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_eagerDisposeResourceThenDisposeUpstream() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::eagerDisposeResourceThenDisposeUpstream, this.description("eagerDisposeResourceThenDisposeUpstream"));
+            this.payloads.eagerDisposeResourceThenDisposeUpstream.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nonEagerDisposeUpstreamThenDisposeResource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nonEagerDisposeUpstreamThenDisposeResource, this.description("nonEagerDisposeUpstreamThenDisposeResource"));
+            this.payloads.nonEagerDisposeUpstreamThenDisposeResource.evaluate();
         }
 
-        private FlowableUsingTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableUsingTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableUsingTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableUsingTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableUsingTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableUsingTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableUsingTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableUsingTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableUsingTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableUsingTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableUsingTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement using;
+
+            public org.junit.runners.model.Statement usingEagerly;
+
+            public org.junit.runners.model.Statement usingWithSubscribingTwice;
+
+            public org.junit.runners.model.Statement usingWithSubscribingTwiceDisposeEagerly;
+
+            public org.junit.runners.model.Statement usingWithResourceFactoryError;
+
+            public org.junit.runners.model.Statement usingWithResourceFactoryErrorDisposeEagerly;
+
+            public org.junit.runners.model.Statement usingWithFlowableFactoryError;
+
+            public org.junit.runners.model.Statement usingWithFlowableFactoryErrorDisposeEagerly;
+
+            public org.junit.runners.model.Statement usingDisposesEagerlyBeforeCompletion;
+
+            public org.junit.runners.model.Statement usingDoesNotDisposesEagerlyBeforeCompletion;
+
+            public org.junit.runners.model.Statement usingDisposesEagerlyBeforeError;
+
+            public org.junit.runners.model.Statement usingDoesNotDisposesEagerlyBeforeError;
+
+            public org.junit.runners.model.Statement factoryThrows;
+
+            public org.junit.runners.model.Statement nonEagerTermination;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement supplierDisposerCrash;
+
+            public org.junit.runners.model.Statement eagerOnErrorDisposerCrash;
+
+            public org.junit.runners.model.Statement eagerOnCompleteDisposerCrash;
+
+            public org.junit.runners.model.Statement nonEagerDisposerCrash;
+
+            public org.junit.runners.model.Statement sourceSupplierReturnsNull;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement eagerDisposedOnComplete;
+
+            public org.junit.runners.model.Statement eagerDisposedOnError;
+
+            public org.junit.runners.model.Statement eagerDisposeResourceThenDisposeUpstream;
+
+            public org.junit.runners.model.Statement nonEagerDisposeUpstreamThenDisposeResource;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.using = _ClassStatement.forPayload(FlowableUsingTest::using, "using", this);
+            this.payloads.usingEagerly = _ClassStatement.forPayload(FlowableUsingTest::usingEagerly, "usingEagerly", this);
+            this.payloads.usingWithSubscribingTwice = _ClassStatement.forPayload(FlowableUsingTest::usingWithSubscribingTwice, "usingWithSubscribingTwice", this);
+            this.payloads.usingWithSubscribingTwiceDisposeEagerly = _ClassStatement.forPayload(FlowableUsingTest::usingWithSubscribingTwiceDisposeEagerly, "usingWithSubscribingTwiceDisposeEagerly", this);
+            this.payloads.usingWithResourceFactoryError = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableUsingTest::usingWithResourceFactoryError, io.reactivex.rxjava3.exceptions.TestException.class), "usingWithResourceFactoryError", this);
+            this.payloads.usingWithResourceFactoryErrorDisposeEagerly = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableUsingTest::usingWithResourceFactoryErrorDisposeEagerly, io.reactivex.rxjava3.exceptions.TestException.class), "usingWithResourceFactoryErrorDisposeEagerly", this);
+            this.payloads.usingWithFlowableFactoryError = _ClassStatement.forPayload(FlowableUsingTest::usingWithFlowableFactoryError, "usingWithFlowableFactoryError", this);
+            this.payloads.usingWithFlowableFactoryErrorDisposeEagerly = _ClassStatement.forPayload(FlowableUsingTest::usingWithFlowableFactoryErrorDisposeEagerly, "usingWithFlowableFactoryErrorDisposeEagerly", this);
+            this.payloads.usingDisposesEagerlyBeforeCompletion = _ClassStatement.forPayload(FlowableUsingTest::usingDisposesEagerlyBeforeCompletion, "usingDisposesEagerlyBeforeCompletion", this);
+            this.payloads.usingDoesNotDisposesEagerlyBeforeCompletion = _ClassStatement.forPayload(FlowableUsingTest::usingDoesNotDisposesEagerlyBeforeCompletion, "usingDoesNotDisposesEagerlyBeforeCompletion", this);
+            this.payloads.usingDisposesEagerlyBeforeError = _ClassStatement.forPayload(FlowableUsingTest::usingDisposesEagerlyBeforeError, "usingDisposesEagerlyBeforeError", this);
+            this.payloads.usingDoesNotDisposesEagerlyBeforeError = _ClassStatement.forPayload(FlowableUsingTest::usingDoesNotDisposesEagerlyBeforeError, "usingDoesNotDisposesEagerlyBeforeError", this);
+            this.payloads.factoryThrows = _ClassStatement.forPayload(FlowableUsingTest::factoryThrows, "factoryThrows", this);
+            this.payloads.nonEagerTermination = _ClassStatement.forPayload(FlowableUsingTest::nonEagerTermination, "nonEagerTermination", this);
+            this.payloads.dispose = _ClassStatement.forPayload(FlowableUsingTest::dispose, "dispose", this);
+            this.payloads.supplierDisposerCrash = _ClassStatement.forPayload(FlowableUsingTest::supplierDisposerCrash, "supplierDisposerCrash", this);
+            this.payloads.eagerOnErrorDisposerCrash = _ClassStatement.forPayload(FlowableUsingTest::eagerOnErrorDisposerCrash, "eagerOnErrorDisposerCrash", this);
+            this.payloads.eagerOnCompleteDisposerCrash = _ClassStatement.forPayload(FlowableUsingTest::eagerOnCompleteDisposerCrash, "eagerOnCompleteDisposerCrash", this);
+            this.payloads.nonEagerDisposerCrash = _ClassStatement.forPayload(FlowableUsingTest::nonEagerDisposerCrash, "nonEagerDisposerCrash", this);
+            this.payloads.sourceSupplierReturnsNull = _ClassStatement.forPayload(FlowableUsingTest::sourceSupplierReturnsNull, "sourceSupplierReturnsNull", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableUsingTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.eagerDisposedOnComplete = _ClassStatement.forPayload(FlowableUsingTest::eagerDisposedOnComplete, "eagerDisposedOnComplete", this);
+            this.payloads.eagerDisposedOnError = _ClassStatement.forPayload(FlowableUsingTest::eagerDisposedOnError, "eagerDisposedOnError", this);
+            this.payloads.eagerDisposeResourceThenDisposeUpstream = _ClassStatement.forPayload(FlowableUsingTest::eagerDisposeResourceThenDisposeUpstream, "eagerDisposeResourceThenDisposeUpstream", this);
+            this.payloads.nonEagerDisposeUpstreamThenDisposeResource = _ClassStatement.forPayload(FlowableUsingTest::nonEagerDisposeUpstreamThenDisposeResource, "nonEagerDisposeUpstreamThenDisposeResource", this);
         }
     }
 }

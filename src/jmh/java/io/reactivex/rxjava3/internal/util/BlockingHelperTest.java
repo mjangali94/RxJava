@@ -55,38 +55,4 @@ public class BlockingHelperTest extends RxJavaTest {
         BlockingHelper.awaitForComplete(cdl, d);
         assertFalse(d.isDisposed());
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_emptyEnum() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyEnum, this.description("emptyEnum"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_interrupted() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::interrupted, this.description("interrupted"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_unblock() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unblock, this.description("unblock"));
-        }
-
-        private BlockingHelperTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new BlockingHelperTest();
-        }
-
-        @java.lang.Override
-        public BlockingHelperTest implementation() {
-            return this.implementation;
-        }
-    }
 }

@@ -43,44 +43,4 @@ public class ParallelFlatMapIterableTest extends RxJavaTest {
             Flowable.range(1, 1000).parallel(i).flatMapIterable(v -> v % 2 == 0 ? Arrays.asList(v) : Arrays.asList()).sequential().test().withTag("Parallelism: " + i).assertValueCount(500).assertNoErrors().assertComplete();
         }
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_subscriberCount() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscriberCount, this.description("subscriberCount"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_normal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normal, this.description("normal"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_none() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::none, this.description("none"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_mixed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mixed, this.description("mixed"));
-        }
-
-        private ParallelFlatMapIterableTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ParallelFlatMapIterableTest();
-        }
-
-        @java.lang.Override
-        public ParallelFlatMapIterableTest implementation() {
-            return this.implementation;
-        }
-    }
 }

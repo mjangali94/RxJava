@@ -34,36 +34,47 @@ public class CompletableSequenceEqualTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private CompletableSequenceEqualTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bothComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bothComplete, this.description("bothComplete"));
+            this.runBenchmark(this.payloads.bothComplete);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstFails() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstFails, this.description("firstFails"));
+            this.runBenchmark(this.payloads.firstFails);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_secondFails() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::secondFails, this.description("secondFails"));
+            this.runBenchmark(this.payloads.secondFails);
         }
 
-        private CompletableSequenceEqualTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new CompletableSequenceEqualTest();
+        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableSequenceEqualTest> payload) throws java.lang.Throwable {
+            this.instance = new CompletableSequenceEqualTest();
+            payload.accept(this.instance);
         }
 
-        @java.lang.Override
-        public CompletableSequenceEqualTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableSequenceEqualTest> bothComplete;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableSequenceEqualTest> firstFails;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableSequenceEqualTest> secondFails;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.bothComplete = CompletableSequenceEqualTest::bothComplete;
+            this.payloads.firstFails = CompletableSequenceEqualTest::firstFails;
+            this.payloads.secondFails = CompletableSequenceEqualTest::secondFails;
         }
     }
 }

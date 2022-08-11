@@ -49,48 +49,63 @@ public class CompletableStartWithTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private CompletableStartWithTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleNormal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleNormal, this.description("singleNormal"));
+            this.runBenchmark(this.payloads.singleNormal);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleError, this.description("singleError"));
+            this.runBenchmark(this.payloads.singleError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maybeNormal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::maybeNormal, this.description("maybeNormal"));
+            this.runBenchmark(this.payloads.maybeNormal);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maybeEmptyNormal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::maybeEmptyNormal, this.description("maybeEmptyNormal"));
+            this.runBenchmark(this.payloads.maybeEmptyNormal);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maybeError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::maybeError, this.description("maybeError"));
+            this.runBenchmark(this.payloads.maybeError);
         }
 
-        private CompletableStartWithTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new CompletableStartWithTest();
+        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableStartWithTest> payload) throws java.lang.Throwable {
+            this.instance = new CompletableStartWithTest();
+            payload.accept(this.instance);
         }
 
-        @java.lang.Override
-        public CompletableStartWithTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableStartWithTest> singleNormal;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableStartWithTest> singleError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableStartWithTest> maybeNormal;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableStartWithTest> maybeEmptyNormal;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableStartWithTest> maybeError;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.singleNormal = CompletableStartWithTest::singleNormal;
+            this.payloads.singleError = CompletableStartWithTest::singleError;
+            this.payloads.maybeNormal = CompletableStartWithTest::maybeNormal;
+            this.payloads.maybeEmptyNormal = CompletableStartWithTest::maybeEmptyNormal;
+            this.payloads.maybeError = CompletableStartWithTest::maybeError;
         }
     }
 }

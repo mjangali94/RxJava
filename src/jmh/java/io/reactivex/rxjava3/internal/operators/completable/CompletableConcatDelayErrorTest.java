@@ -49,36 +49,47 @@ public class CompletableConcatDelayErrorTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private CompletableConcatDelayErrorTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalIterable, this.description("normalIterable"));
+            this.runBenchmark(this.payloads.normalIterable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalPublisher() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalPublisher, this.description("normalPublisher"));
+            this.runBenchmark(this.payloads.normalPublisher);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalPublisherPrefetch() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalPublisherPrefetch, this.description("normalPublisherPrefetch"));
+            this.runBenchmark(this.payloads.normalPublisherPrefetch);
         }
 
-        private CompletableConcatDelayErrorTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new CompletableConcatDelayErrorTest();
+        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableConcatDelayErrorTest> payload) throws java.lang.Throwable {
+            this.instance = new CompletableConcatDelayErrorTest();
+            payload.accept(this.instance);
         }
 
-        @java.lang.Override
-        public CompletableConcatDelayErrorTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableConcatDelayErrorTest> normalIterable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableConcatDelayErrorTest> normalPublisher;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableConcatDelayErrorTest> normalPublisherPrefetch;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.normalIterable = CompletableConcatDelayErrorTest::normalIterable;
+            this.payloads.normalPublisher = CompletableConcatDelayErrorTest::normalPublisher;
+            this.payloads.normalPublisherPrefetch = CompletableConcatDelayErrorTest::normalPublisherPrefetch;
         }
     }
 }

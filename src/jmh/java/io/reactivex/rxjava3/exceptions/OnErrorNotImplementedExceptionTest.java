@@ -114,120 +114,202 @@ public class OnErrorNotImplementedExceptionTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private OnErrorNotImplementedExceptionTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flowableSubscribe0() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flowableSubscribe0, this.description("flowableSubscribe0"));
+            this.payloads.flowableSubscribe0.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flowableSubscribe1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flowableSubscribe1, this.description("flowableSubscribe1"));
+            this.payloads.flowableSubscribe1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flowableForEachWhile() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flowableForEachWhile, this.description("flowableForEachWhile"));
+            this.payloads.flowableForEachWhile.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flowableBlockingSubscribe1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flowableBlockingSubscribe1, this.description("flowableBlockingSubscribe1"));
+            this.payloads.flowableBlockingSubscribe1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flowableBoundedBlockingSubscribe1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flowableBoundedBlockingSubscribe1, this.description("flowableBoundedBlockingSubscribe1"));
+            this.payloads.flowableBoundedBlockingSubscribe1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observableSubscribe0() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observableSubscribe0, this.description("observableSubscribe0"));
+            this.payloads.observableSubscribe0.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observableSubscribe1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observableSubscribe1, this.description("observableSubscribe1"));
+            this.payloads.observableSubscribe1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observableForEachWhile() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observableForEachWhile, this.description("observableForEachWhile"));
+            this.payloads.observableForEachWhile.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observableBlockingSubscribe1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observableBlockingSubscribe1, this.description("observableBlockingSubscribe1"));
+            this.payloads.observableBlockingSubscribe1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleSubscribe0() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleSubscribe0, this.description("singleSubscribe0"));
+            this.payloads.singleSubscribe0.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleSubscribe1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleSubscribe1, this.description("singleSubscribe1"));
+            this.payloads.singleSubscribe1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maybeSubscribe0() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::maybeSubscribe0, this.description("maybeSubscribe0"));
+            this.payloads.maybeSubscribe0.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maybeSubscribe1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::maybeSubscribe1, this.description("maybeSubscribe1"));
+            this.payloads.maybeSubscribe1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_completableSubscribe0() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::completableSubscribe0, this.description("completableSubscribe0"));
+            this.payloads.completableSubscribe0.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_completableSubscribe1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::completableSubscribe1, this.description("completableSubscribe1"));
+            this.payloads.completableSubscribe1.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().before();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<OnErrorNotImplementedExceptionTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<OnErrorNotImplementedExceptionTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.before();
+                try {
+                    this.payload.accept(this.benchmark.instance);
+                } finally {
+                    this.benchmark.instance.after();
+                }
+            }
         }
 
-        @java.lang.Override
-        public void after() throws java.lang.Throwable {
-            this.implementation().after();
-            super.after();
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<OnErrorNotImplementedExceptionTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<OnErrorNotImplementedExceptionTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new OnErrorNotImplementedExceptionTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<OnErrorNotImplementedExceptionTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(OnErrorNotImplementedExceptionTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(OnErrorNotImplementedExceptionTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        private OnErrorNotImplementedExceptionTest implementation;
+        private static class _Payloads {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new OnErrorNotImplementedExceptionTest();
+            public org.junit.runners.model.Statement flowableSubscribe0;
+
+            public org.junit.runners.model.Statement flowableSubscribe1;
+
+            public org.junit.runners.model.Statement flowableForEachWhile;
+
+            public org.junit.runners.model.Statement flowableBlockingSubscribe1;
+
+            public org.junit.runners.model.Statement flowableBoundedBlockingSubscribe1;
+
+            public org.junit.runners.model.Statement observableSubscribe0;
+
+            public org.junit.runners.model.Statement observableSubscribe1;
+
+            public org.junit.runners.model.Statement observableForEachWhile;
+
+            public org.junit.runners.model.Statement observableBlockingSubscribe1;
+
+            public org.junit.runners.model.Statement singleSubscribe0;
+
+            public org.junit.runners.model.Statement singleSubscribe1;
+
+            public org.junit.runners.model.Statement maybeSubscribe0;
+
+            public org.junit.runners.model.Statement maybeSubscribe1;
+
+            public org.junit.runners.model.Statement completableSubscribe0;
+
+            public org.junit.runners.model.Statement completableSubscribe1;
         }
 
-        @java.lang.Override
-        public OnErrorNotImplementedExceptionTest implementation() {
-            return this.implementation;
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.flowableSubscribe0 = _ClassStatement.forPayload(OnErrorNotImplementedExceptionTest::flowableSubscribe0, "flowableSubscribe0", this);
+            this.payloads.flowableSubscribe1 = _ClassStatement.forPayload(OnErrorNotImplementedExceptionTest::flowableSubscribe1, "flowableSubscribe1", this);
+            this.payloads.flowableForEachWhile = _ClassStatement.forPayload(OnErrorNotImplementedExceptionTest::flowableForEachWhile, "flowableForEachWhile", this);
+            this.payloads.flowableBlockingSubscribe1 = _ClassStatement.forPayload(OnErrorNotImplementedExceptionTest::flowableBlockingSubscribe1, "flowableBlockingSubscribe1", this);
+            this.payloads.flowableBoundedBlockingSubscribe1 = _ClassStatement.forPayload(OnErrorNotImplementedExceptionTest::flowableBoundedBlockingSubscribe1, "flowableBoundedBlockingSubscribe1", this);
+            this.payloads.observableSubscribe0 = _ClassStatement.forPayload(OnErrorNotImplementedExceptionTest::observableSubscribe0, "observableSubscribe0", this);
+            this.payloads.observableSubscribe1 = _ClassStatement.forPayload(OnErrorNotImplementedExceptionTest::observableSubscribe1, "observableSubscribe1", this);
+            this.payloads.observableForEachWhile = _ClassStatement.forPayload(OnErrorNotImplementedExceptionTest::observableForEachWhile, "observableForEachWhile", this);
+            this.payloads.observableBlockingSubscribe1 = _ClassStatement.forPayload(OnErrorNotImplementedExceptionTest::observableBlockingSubscribe1, "observableBlockingSubscribe1", this);
+            this.payloads.singleSubscribe0 = _ClassStatement.forPayload(OnErrorNotImplementedExceptionTest::singleSubscribe0, "singleSubscribe0", this);
+            this.payloads.singleSubscribe1 = _ClassStatement.forPayload(OnErrorNotImplementedExceptionTest::singleSubscribe1, "singleSubscribe1", this);
+            this.payloads.maybeSubscribe0 = _ClassStatement.forPayload(OnErrorNotImplementedExceptionTest::maybeSubscribe0, "maybeSubscribe0", this);
+            this.payloads.maybeSubscribe1 = _ClassStatement.forPayload(OnErrorNotImplementedExceptionTest::maybeSubscribe1, "maybeSubscribe1", this);
+            this.payloads.completableSubscribe0 = _ClassStatement.forPayload(OnErrorNotImplementedExceptionTest::completableSubscribe0, "completableSubscribe0", this);
+            this.payloads.completableSubscribe1 = _ClassStatement.forPayload(OnErrorNotImplementedExceptionTest::completableSubscribe1, "completableSubscribe1", this);
         }
     }
 }

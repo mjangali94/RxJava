@@ -229,96 +229,181 @@ public class FlowableConcatDelayErrorTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableConcatDelayErrorTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainCompletes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainCompletes, this.description("mainCompletes"));
+            this.payloads.mainCompletes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainErrors() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainErrors, this.description("mainErrors"));
+            this.payloads.mainErrors.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerErrors() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerErrors, this.description("innerErrors"));
+            this.payloads.innerErrors.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleInnerErrors() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleInnerErrors, this.description("singleInnerErrors"));
+            this.payloads.singleInnerErrors.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerNull, this.description("innerNull"));
+            this.payloads.innerNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerThrows, this.description("innerThrows"));
+            this.payloads.innerThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerWithEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerWithEmpty, this.description("innerWithEmpty"));
+            this.payloads.innerWithEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerWithScalar() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerWithScalar, this.description("innerWithScalar"));
+            this.payloads.innerWithScalar.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressure, this.description("backpressure"));
+            this.payloads.backpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatDelayErrorFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatDelayErrorFlowable, this.description("concatDelayErrorFlowable"));
+            this.payloads.concatDelayErrorFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatDelayErrorFlowableError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatDelayErrorFlowableError, this.description("concatDelayErrorFlowableError"));
+            this.payloads.concatDelayErrorFlowableError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatDelayErrorIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatDelayErrorIterable, this.description("concatDelayErrorIterable"));
+            this.payloads.concatDelayErrorIterable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatDelayErrorIterableError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatDelayErrorIterableError, this.description("concatDelayErrorIterableError"));
+            this.payloads.concatDelayErrorIterableError.evaluate();
         }
 
-        private FlowableConcatDelayErrorTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableConcatDelayErrorTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatDelayErrorTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatDelayErrorTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableConcatDelayErrorTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatDelayErrorTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatDelayErrorTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableConcatDelayErrorTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatDelayErrorTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableConcatDelayErrorTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableConcatDelayErrorTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement mainCompletes;
+
+            public org.junit.runners.model.Statement mainErrors;
+
+            public org.junit.runners.model.Statement innerErrors;
+
+            public org.junit.runners.model.Statement singleInnerErrors;
+
+            public org.junit.runners.model.Statement innerNull;
+
+            public org.junit.runners.model.Statement innerThrows;
+
+            public org.junit.runners.model.Statement innerWithEmpty;
+
+            public org.junit.runners.model.Statement innerWithScalar;
+
+            public org.junit.runners.model.Statement backpressure;
+
+            public org.junit.runners.model.Statement concatDelayErrorFlowable;
+
+            public org.junit.runners.model.Statement concatDelayErrorFlowableError;
+
+            public org.junit.runners.model.Statement concatDelayErrorIterable;
+
+            public org.junit.runners.model.Statement concatDelayErrorIterableError;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.mainCompletes = _ClassStatement.forPayload(FlowableConcatDelayErrorTest::mainCompletes, "mainCompletes", this);
+            this.payloads.mainErrors = _ClassStatement.forPayload(FlowableConcatDelayErrorTest::mainErrors, "mainErrors", this);
+            this.payloads.innerErrors = _ClassStatement.forPayload(FlowableConcatDelayErrorTest::innerErrors, "innerErrors", this);
+            this.payloads.singleInnerErrors = _ClassStatement.forPayload(FlowableConcatDelayErrorTest::singleInnerErrors, "singleInnerErrors", this);
+            this.payloads.innerNull = _ClassStatement.forPayload(FlowableConcatDelayErrorTest::innerNull, "innerNull", this);
+            this.payloads.innerThrows = _ClassStatement.forPayload(FlowableConcatDelayErrorTest::innerThrows, "innerThrows", this);
+            this.payloads.innerWithEmpty = _ClassStatement.forPayload(FlowableConcatDelayErrorTest::innerWithEmpty, "innerWithEmpty", this);
+            this.payloads.innerWithScalar = _ClassStatement.forPayload(FlowableConcatDelayErrorTest::innerWithScalar, "innerWithScalar", this);
+            this.payloads.backpressure = _ClassStatement.forPayload(FlowableConcatDelayErrorTest::backpressure, "backpressure", this);
+            this.payloads.concatDelayErrorFlowable = _ClassStatement.forPayload(FlowableConcatDelayErrorTest::concatDelayErrorFlowable, "concatDelayErrorFlowable", this);
+            this.payloads.concatDelayErrorFlowableError = _ClassStatement.forPayload(FlowableConcatDelayErrorTest::concatDelayErrorFlowableError, "concatDelayErrorFlowableError", this);
+            this.payloads.concatDelayErrorIterable = _ClassStatement.forPayload(FlowableConcatDelayErrorTest::concatDelayErrorIterable, "concatDelayErrorIterable", this);
+            this.payloads.concatDelayErrorIterableError = _ClassStatement.forPayload(FlowableConcatDelayErrorTest::concatDelayErrorIterableError, "concatDelayErrorIterableError", this);
         }
     }
 }

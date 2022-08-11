@@ -1240,426 +1240,621 @@ public class FlowableFlatMapTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableFlatMapTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normal, this.description("normal"));
+            this.payloads.normal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectionFunctionThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectionFunctionThrows, this.description("collectionFunctionThrows"));
+            this.payloads.collectionFunctionThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_resultFunctionThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::resultFunctionThrows, this.description("resultFunctionThrows"));
+            this.payloads.resultFunctionThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeError, this.description("mergeError"));
+            this.payloads.mergeError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapTransformsNormal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapTransformsNormal, this.description("flatMapTransformsNormal"));
+            this.payloads.flatMapTransformsNormal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapTransformsException() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapTransformsException, this.description("flatMapTransformsException"));
+            this.payloads.flatMapTransformsException.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapTransformsOnNextFuncThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapTransformsOnNextFuncThrows, this.description("flatMapTransformsOnNextFuncThrows"));
+            this.payloads.flatMapTransformsOnNextFuncThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapTransformsOnErrorFuncThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapTransformsOnErrorFuncThrows, this.description("flatMapTransformsOnErrorFuncThrows"));
+            this.payloads.flatMapTransformsOnErrorFuncThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapTransformsOnCompletedFuncThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapTransformsOnCompletedFuncThrows, this.description("flatMapTransformsOnCompletedFuncThrows"));
+            this.payloads.flatMapTransformsOnCompletedFuncThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapTransformsMergeException() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapTransformsMergeException, this.description("flatMapTransformsMergeException"));
+            this.payloads.flatMapTransformsMergeException.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapMaxConcurrent() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapMaxConcurrent, this.description("flatMapMaxConcurrent"));
+            this.payloads.flatMapMaxConcurrent.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapSelectorMaxConcurrent() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapSelectorMaxConcurrent, this.description("flatMapSelectorMaxConcurrent"));
+            this.payloads.flatMapSelectorMaxConcurrent.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapTransformsMaxConcurrentNormalLoop() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapTransformsMaxConcurrentNormalLoop, this.description("flatMapTransformsMaxConcurrentNormalLoop"));
+            this.payloads.flatMapTransformsMaxConcurrentNormalLoop.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapTransformsMaxConcurrentNormal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapTransformsMaxConcurrentNormal, this.description("flatMapTransformsMaxConcurrentNormal"));
+            this.payloads.flatMapTransformsMaxConcurrentNormal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapRangeMixedAsyncLoop() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapRangeMixedAsyncLoop, this.description("flatMapRangeMixedAsyncLoop"));
+            this.payloads.flatMapRangeMixedAsyncLoop.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapIntPassthruAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapIntPassthruAsync, this.description("flatMapIntPassthruAsync"));
+            this.payloads.flatMapIntPassthruAsync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapTwoNestedSync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapTwoNestedSync, this.description("flatMapTwoNestedSync"));
+            this.payloads.flatMapTwoNestedSync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_justEmptyMixture() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::justEmptyMixture, this.description("justEmptyMixture"));
+            this.payloads.justEmptyMixture.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rangeEmptyMixture() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rangeEmptyMixture, this.description("rangeEmptyMixture"));
+            this.payloads.rangeEmptyMixture.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_justEmptyMixtureMaxConcurrent() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::justEmptyMixtureMaxConcurrent, this.description("justEmptyMixtureMaxConcurrent"));
+            this.payloads.justEmptyMixtureMaxConcurrent.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rangeEmptyMixtureMaxConcurrent() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rangeEmptyMixtureMaxConcurrent, this.description("rangeEmptyMixtureMaxConcurrent"));
+            this.payloads.rangeEmptyMixtureMaxConcurrent.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_castCrashUnsubscribes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::castCrashUnsubscribes, this.description("castCrashUnsubscribes"));
+            this.payloads.castCrashUnsubscribes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapBiMapper() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapBiMapper, this.description("flatMapBiMapper"));
+            this.payloads.flatMapBiMapper.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapBiMapperWithError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapBiMapperWithError, this.description("flatMapBiMapperWithError"));
+            this.payloads.flatMapBiMapperWithError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapBiMapperMaxConcurrency() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapBiMapperMaxConcurrency, this.description("flatMapBiMapperMaxConcurrency"));
+            this.payloads.flatMapBiMapperMaxConcurrency.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapEmpty, this.description("flatMapEmpty"));
+            this.payloads.flatMapEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeScalar() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeScalar, this.description("mergeScalar"));
+            this.payloads.mergeScalar.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeScalar2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeScalar2, this.description("mergeScalar2"));
+            this.payloads.mergeScalar2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeScalarEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeScalarEmpty, this.description("mergeScalarEmpty"));
+            this.payloads.mergeScalarEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeScalarError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeScalarError, this.description("mergeScalarError"));
+            this.payloads.mergeScalarError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scalarReentrant() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scalarReentrant, this.description("scalarReentrant"));
+            this.payloads.scalarReentrant.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scalarReentrant2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scalarReentrant2, this.description("scalarReentrant2"));
+            this.payloads.scalarReentrant2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerCompleteCancelRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerCompleteCancelRace, this.description("innerCompleteCancelRace"));
+            this.payloads.innerCompleteCancelRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedInnerThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedInnerThrows, this.description("fusedInnerThrows"));
+            this.payloads.fusedInnerThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedInnerThrows2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedInnerThrows2, this.description("fusedInnerThrows2"));
+            this.payloads.fusedInnerThrows2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scalarXMap() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scalarXMap, this.description("scalarXMap"));
+            this.payloads.scalarXMap.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noCrossBoundaryFusion() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noCrossBoundaryFusion, this.description("noCrossBoundaryFusion"));
+            this.payloads.noCrossBoundaryFusion.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelScalarDrainRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelScalarDrainRace, this.description("cancelScalarDrainRace"));
+            this.payloads.cancelScalarDrainRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelDrainRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelDrainRace, this.description("cancelDrainRace"));
+            this.payloads.cancelDrainRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_iterableMapperFunctionReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::iterableMapperFunctionReturnsNull, this.description("iterableMapperFunctionReturnsNull"));
+            this.payloads.iterableMapperFunctionReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combinerMapperFunctionReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::combinerMapperFunctionReturnsNull, this.description("combinerMapperFunctionReturnsNull"));
+            this.payloads.combinerMapperFunctionReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_failingFusedInnerCancelsSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::failingFusedInnerCancelsSource, this.description("failingFusedInnerCancelsSource"));
+            this.payloads.failingFusedInnerCancelsSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maxConcurrencySustained() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::maxConcurrencySustained, this.description("maxConcurrencySustained"));
+            this.payloads.maxConcurrencySustained.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_undeliverableUponCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::undeliverableUponCancel, this.description("undeliverableUponCancel"));
+            this.payloads.undeliverableUponCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_undeliverableUponCancelDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::undeliverableUponCancelDelayError, this.description("undeliverableUponCancelDelayError"));
+            this.payloads.undeliverableUponCancelDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainErrorsInnerCancelled() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainErrorsInnerCancelled, this.description("mainErrorsInnerCancelled"));
+            this.payloads.mainErrorsInnerCancelled.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerErrorsMainCancelled() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerErrorsMainCancelled, this.description("innerErrorsMainCancelled"));
+            this.payloads.innerErrorsMainCancelled.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerIsDisposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerIsDisposed, this.description("innerIsDisposed"));
+            this.payloads.innerIsDisposed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequest, this.description("badRequest"));
+            this.payloads.badRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_signalsAfterMapperCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::signalsAfterMapperCrash, this.description("signalsAfterMapperCrash"));
+            this.payloads.signalsAfterMapperCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scalarQueueTerminate() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scalarQueueTerminate, this.description("scalarQueueTerminate"));
+            this.payloads.scalarQueueTerminate.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scalarQueueCompleteMain() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scalarQueueCompleteMain, this.description("scalarQueueCompleteMain"));
+            this.payloads.scalarQueueCompleteMain.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedInnerCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedInnerCrash, this.description("fusedInnerCrash"));
+            this.payloads.fusedInnerCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedInnerCrash2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedInnerCrash2, this.description("fusedInnerCrash2"));
+            this.payloads.fusedInnerCrash2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_allConcurrency() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::allConcurrency, this.description("allConcurrency"));
+            this.payloads.allConcurrency.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_allConcurrencyScalarInner() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::allConcurrencyScalarInner, this.description("allConcurrencyScalarInner"));
+            this.payloads.allConcurrencyScalarInner.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_allConcurrencyScalarInnerEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::allConcurrencyScalarInnerEmpty, this.description("allConcurrencyScalarInnerEmpty"));
+            this.payloads.allConcurrencyScalarInnerEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_someConcurrencyScalarInnerCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::someConcurrencyScalarInnerCancel, this.description("someConcurrencyScalarInnerCancel"));
+            this.payloads.someConcurrencyScalarInnerCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_allConcurrencyBackpressured() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::allConcurrencyBackpressured, this.description("allConcurrencyBackpressured"));
+            this.payloads.allConcurrencyBackpressured.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_someConcurrencyInnerScalarCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::someConcurrencyInnerScalarCancel, this.description("someConcurrencyInnerScalarCancel"));
+            this.payloads.someConcurrencyInnerScalarCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scalarInnerOuterOverflow() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scalarInnerOuterOverflow, this.description("scalarInnerOuterOverflow"));
+            this.payloads.scalarInnerOuterOverflow.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scalarInnerOuterOverflowSlowPath() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scalarInnerOuterOverflowSlowPath, this.description("scalarInnerOuterOverflowSlowPath"));
+            this.payloads.scalarInnerOuterOverflowSlowPath.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerFastPathEmitOverflow() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerFastPathEmitOverflow, this.description("innerFastPathEmitOverflow"));
+            this.payloads.innerFastPathEmitOverflow.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeFromScalarQueue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeFromScalarQueue, this.description("takeFromScalarQueue"));
+            this.payloads.takeFromScalarQueue.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scalarInnerQueueEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scalarInnerQueueEmpty, this.description("scalarInnerQueueEmpty"));
+            this.payloads.scalarInnerQueueEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerCompletesAfterOnNextInDrainThenCancels() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerCompletesAfterOnNextInDrainThenCancels, this.description("innerCompletesAfterOnNextInDrainThenCancels"));
+            this.payloads.innerCompletesAfterOnNextInDrainThenCancels.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mixedScalarAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mixedScalarAsync, this.description("mixedScalarAsync"));
+            this.payloads.mixedScalarAsync.evaluate();
         }
 
-        private FlowableFlatMapTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableFlatMapTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFlatMapTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFlatMapTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableFlatMapTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFlatMapTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFlatMapTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableFlatMapTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFlatMapTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableFlatMapTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableFlatMapTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement normal;
+
+            public org.junit.runners.model.Statement collectionFunctionThrows;
+
+            public org.junit.runners.model.Statement resultFunctionThrows;
+
+            public org.junit.runners.model.Statement mergeError;
+
+            public org.junit.runners.model.Statement flatMapTransformsNormal;
+
+            public org.junit.runners.model.Statement flatMapTransformsException;
+
+            public org.junit.runners.model.Statement flatMapTransformsOnNextFuncThrows;
+
+            public org.junit.runners.model.Statement flatMapTransformsOnErrorFuncThrows;
+
+            public org.junit.runners.model.Statement flatMapTransformsOnCompletedFuncThrows;
+
+            public org.junit.runners.model.Statement flatMapTransformsMergeException;
+
+            public org.junit.runners.model.Statement flatMapMaxConcurrent;
+
+            public org.junit.runners.model.Statement flatMapSelectorMaxConcurrent;
+
+            public org.junit.runners.model.Statement flatMapTransformsMaxConcurrentNormalLoop;
+
+            public org.junit.runners.model.Statement flatMapTransformsMaxConcurrentNormal;
+
+            public org.junit.runners.model.Statement flatMapRangeMixedAsyncLoop;
+
+            public org.junit.runners.model.Statement flatMapIntPassthruAsync;
+
+            public org.junit.runners.model.Statement flatMapTwoNestedSync;
+
+            public org.junit.runners.model.Statement justEmptyMixture;
+
+            public org.junit.runners.model.Statement rangeEmptyMixture;
+
+            public org.junit.runners.model.Statement justEmptyMixtureMaxConcurrent;
+
+            public org.junit.runners.model.Statement rangeEmptyMixtureMaxConcurrent;
+
+            public org.junit.runners.model.Statement castCrashUnsubscribes;
+
+            public org.junit.runners.model.Statement flatMapBiMapper;
+
+            public org.junit.runners.model.Statement flatMapBiMapperWithError;
+
+            public org.junit.runners.model.Statement flatMapBiMapperMaxConcurrency;
+
+            public org.junit.runners.model.Statement flatMapEmpty;
+
+            public org.junit.runners.model.Statement mergeScalar;
+
+            public org.junit.runners.model.Statement mergeScalar2;
+
+            public org.junit.runners.model.Statement mergeScalarEmpty;
+
+            public org.junit.runners.model.Statement mergeScalarError;
+
+            public org.junit.runners.model.Statement scalarReentrant;
+
+            public org.junit.runners.model.Statement scalarReentrant2;
+
+            public org.junit.runners.model.Statement innerCompleteCancelRace;
+
+            public org.junit.runners.model.Statement fusedInnerThrows;
+
+            public org.junit.runners.model.Statement fusedInnerThrows2;
+
+            public org.junit.runners.model.Statement scalarXMap;
+
+            public org.junit.runners.model.Statement noCrossBoundaryFusion;
+
+            public org.junit.runners.model.Statement cancelScalarDrainRace;
+
+            public org.junit.runners.model.Statement cancelDrainRace;
+
+            public org.junit.runners.model.Statement iterableMapperFunctionReturnsNull;
+
+            public org.junit.runners.model.Statement combinerMapperFunctionReturnsNull;
+
+            public org.junit.runners.model.Statement failingFusedInnerCancelsSource;
+
+            public org.junit.runners.model.Statement maxConcurrencySustained;
+
+            public org.junit.runners.model.Statement undeliverableUponCancel;
+
+            public org.junit.runners.model.Statement undeliverableUponCancelDelayError;
+
+            public org.junit.runners.model.Statement mainErrorsInnerCancelled;
+
+            public org.junit.runners.model.Statement innerErrorsMainCancelled;
+
+            public org.junit.runners.model.Statement innerIsDisposed;
+
+            public org.junit.runners.model.Statement badRequest;
+
+            public org.junit.runners.model.Statement signalsAfterMapperCrash;
+
+            public org.junit.runners.model.Statement scalarQueueTerminate;
+
+            public org.junit.runners.model.Statement scalarQueueCompleteMain;
+
+            public org.junit.runners.model.Statement fusedInnerCrash;
+
+            public org.junit.runners.model.Statement fusedInnerCrash2;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement allConcurrency;
+
+            public org.junit.runners.model.Statement allConcurrencyScalarInner;
+
+            public org.junit.runners.model.Statement allConcurrencyScalarInnerEmpty;
+
+            public org.junit.runners.model.Statement someConcurrencyScalarInnerCancel;
+
+            public org.junit.runners.model.Statement allConcurrencyBackpressured;
+
+            public org.junit.runners.model.Statement someConcurrencyInnerScalarCancel;
+
+            public org.junit.runners.model.Statement scalarInnerOuterOverflow;
+
+            public org.junit.runners.model.Statement scalarInnerOuterOverflowSlowPath;
+
+            public org.junit.runners.model.Statement innerFastPathEmitOverflow;
+
+            public org.junit.runners.model.Statement takeFromScalarQueue;
+
+            public org.junit.runners.model.Statement scalarInnerQueueEmpty;
+
+            public org.junit.runners.model.Statement innerCompletesAfterOnNextInDrainThenCancels;
+
+            public org.junit.runners.model.Statement mixedScalarAsync;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.normal = _ClassStatement.forPayload(FlowableFlatMapTest::normal, "normal", this);
+            this.payloads.collectionFunctionThrows = _ClassStatement.forPayload(FlowableFlatMapTest::collectionFunctionThrows, "collectionFunctionThrows", this);
+            this.payloads.resultFunctionThrows = _ClassStatement.forPayload(FlowableFlatMapTest::resultFunctionThrows, "resultFunctionThrows", this);
+            this.payloads.mergeError = _ClassStatement.forPayload(FlowableFlatMapTest::mergeError, "mergeError", this);
+            this.payloads.flatMapTransformsNormal = _ClassStatement.forPayload(FlowableFlatMapTest::flatMapTransformsNormal, "flatMapTransformsNormal", this);
+            this.payloads.flatMapTransformsException = _ClassStatement.forPayload(FlowableFlatMapTest::flatMapTransformsException, "flatMapTransformsException", this);
+            this.payloads.flatMapTransformsOnNextFuncThrows = _ClassStatement.forPayload(FlowableFlatMapTest::flatMapTransformsOnNextFuncThrows, "flatMapTransformsOnNextFuncThrows", this);
+            this.payloads.flatMapTransformsOnErrorFuncThrows = _ClassStatement.forPayload(FlowableFlatMapTest::flatMapTransformsOnErrorFuncThrows, "flatMapTransformsOnErrorFuncThrows", this);
+            this.payloads.flatMapTransformsOnCompletedFuncThrows = _ClassStatement.forPayload(FlowableFlatMapTest::flatMapTransformsOnCompletedFuncThrows, "flatMapTransformsOnCompletedFuncThrows", this);
+            this.payloads.flatMapTransformsMergeException = _ClassStatement.forPayload(FlowableFlatMapTest::flatMapTransformsMergeException, "flatMapTransformsMergeException", this);
+            this.payloads.flatMapMaxConcurrent = _ClassStatement.forPayload(FlowableFlatMapTest::flatMapMaxConcurrent, "flatMapMaxConcurrent", this);
+            this.payloads.flatMapSelectorMaxConcurrent = _ClassStatement.forPayload(FlowableFlatMapTest::flatMapSelectorMaxConcurrent, "flatMapSelectorMaxConcurrent", this);
+            this.payloads.flatMapTransformsMaxConcurrentNormalLoop = _ClassStatement.forPayload(FlowableFlatMapTest::flatMapTransformsMaxConcurrentNormalLoop, "flatMapTransformsMaxConcurrentNormalLoop", this);
+            this.payloads.flatMapTransformsMaxConcurrentNormal = _ClassStatement.forPayload(FlowableFlatMapTest::flatMapTransformsMaxConcurrentNormal, "flatMapTransformsMaxConcurrentNormal", this);
+            this.payloads.flatMapRangeMixedAsyncLoop = _ClassStatement.forPayload(FlowableFlatMapTest::flatMapRangeMixedAsyncLoop, "flatMapRangeMixedAsyncLoop", this);
+            this.payloads.flatMapIntPassthruAsync = _ClassStatement.forPayload(FlowableFlatMapTest::flatMapIntPassthruAsync, "flatMapIntPassthruAsync", this);
+            this.payloads.flatMapTwoNestedSync = _ClassStatement.forPayload(FlowableFlatMapTest::flatMapTwoNestedSync, "flatMapTwoNestedSync", this);
+            this.payloads.justEmptyMixture = _ClassStatement.forPayload(FlowableFlatMapTest::justEmptyMixture, "justEmptyMixture", this);
+            this.payloads.rangeEmptyMixture = _ClassStatement.forPayload(FlowableFlatMapTest::rangeEmptyMixture, "rangeEmptyMixture", this);
+            this.payloads.justEmptyMixtureMaxConcurrent = _ClassStatement.forPayload(FlowableFlatMapTest::justEmptyMixtureMaxConcurrent, "justEmptyMixtureMaxConcurrent", this);
+            this.payloads.rangeEmptyMixtureMaxConcurrent = _ClassStatement.forPayload(FlowableFlatMapTest::rangeEmptyMixtureMaxConcurrent, "rangeEmptyMixtureMaxConcurrent", this);
+            this.payloads.castCrashUnsubscribes = _ClassStatement.forPayload(FlowableFlatMapTest::castCrashUnsubscribes, "castCrashUnsubscribes", this);
+            this.payloads.flatMapBiMapper = _ClassStatement.forPayload(FlowableFlatMapTest::flatMapBiMapper, "flatMapBiMapper", this);
+            this.payloads.flatMapBiMapperWithError = _ClassStatement.forPayload(FlowableFlatMapTest::flatMapBiMapperWithError, "flatMapBiMapperWithError", this);
+            this.payloads.flatMapBiMapperMaxConcurrency = _ClassStatement.forPayload(FlowableFlatMapTest::flatMapBiMapperMaxConcurrency, "flatMapBiMapperMaxConcurrency", this);
+            this.payloads.flatMapEmpty = _ClassStatement.forPayload(FlowableFlatMapTest::flatMapEmpty, "flatMapEmpty", this);
+            this.payloads.mergeScalar = _ClassStatement.forPayload(FlowableFlatMapTest::mergeScalar, "mergeScalar", this);
+            this.payloads.mergeScalar2 = _ClassStatement.forPayload(FlowableFlatMapTest::mergeScalar2, "mergeScalar2", this);
+            this.payloads.mergeScalarEmpty = _ClassStatement.forPayload(FlowableFlatMapTest::mergeScalarEmpty, "mergeScalarEmpty", this);
+            this.payloads.mergeScalarError = _ClassStatement.forPayload(FlowableFlatMapTest::mergeScalarError, "mergeScalarError", this);
+            this.payloads.scalarReentrant = _ClassStatement.forPayload(FlowableFlatMapTest::scalarReentrant, "scalarReentrant", this);
+            this.payloads.scalarReentrant2 = _ClassStatement.forPayload(FlowableFlatMapTest::scalarReentrant2, "scalarReentrant2", this);
+            this.payloads.innerCompleteCancelRace = _ClassStatement.forPayload(FlowableFlatMapTest::innerCompleteCancelRace, "innerCompleteCancelRace", this);
+            this.payloads.fusedInnerThrows = _ClassStatement.forPayload(FlowableFlatMapTest::fusedInnerThrows, "fusedInnerThrows", this);
+            this.payloads.fusedInnerThrows2 = _ClassStatement.forPayload(FlowableFlatMapTest::fusedInnerThrows2, "fusedInnerThrows2", this);
+            this.payloads.scalarXMap = _ClassStatement.forPayload(FlowableFlatMapTest::scalarXMap, "scalarXMap", this);
+            this.payloads.noCrossBoundaryFusion = _ClassStatement.forPayload(FlowableFlatMapTest::noCrossBoundaryFusion, "noCrossBoundaryFusion", this);
+            this.payloads.cancelScalarDrainRace = _ClassStatement.forPayload(FlowableFlatMapTest::cancelScalarDrainRace, "cancelScalarDrainRace", this);
+            this.payloads.cancelDrainRace = _ClassStatement.forPayload(FlowableFlatMapTest::cancelDrainRace, "cancelDrainRace", this);
+            this.payloads.iterableMapperFunctionReturnsNull = _ClassStatement.forPayload(FlowableFlatMapTest::iterableMapperFunctionReturnsNull, "iterableMapperFunctionReturnsNull", this);
+            this.payloads.combinerMapperFunctionReturnsNull = _ClassStatement.forPayload(FlowableFlatMapTest::combinerMapperFunctionReturnsNull, "combinerMapperFunctionReturnsNull", this);
+            this.payloads.failingFusedInnerCancelsSource = _ClassStatement.forPayload(FlowableFlatMapTest::failingFusedInnerCancelsSource, "failingFusedInnerCancelsSource", this);
+            this.payloads.maxConcurrencySustained = _ClassStatement.forPayload(FlowableFlatMapTest::maxConcurrencySustained, "maxConcurrencySustained", this);
+            this.payloads.undeliverableUponCancel = _ClassStatement.forPayload(FlowableFlatMapTest::undeliverableUponCancel, "undeliverableUponCancel", this);
+            this.payloads.undeliverableUponCancelDelayError = _ClassStatement.forPayload(FlowableFlatMapTest::undeliverableUponCancelDelayError, "undeliverableUponCancelDelayError", this);
+            this.payloads.mainErrorsInnerCancelled = _ClassStatement.forPayload(FlowableFlatMapTest::mainErrorsInnerCancelled, "mainErrorsInnerCancelled", this);
+            this.payloads.innerErrorsMainCancelled = _ClassStatement.forPayload(FlowableFlatMapTest::innerErrorsMainCancelled, "innerErrorsMainCancelled", this);
+            this.payloads.innerIsDisposed = _ClassStatement.forPayload(FlowableFlatMapTest::innerIsDisposed, "innerIsDisposed", this);
+            this.payloads.badRequest = _ClassStatement.forPayload(FlowableFlatMapTest::badRequest, "badRequest", this);
+            this.payloads.signalsAfterMapperCrash = _ClassStatement.forPayload(FlowableFlatMapTest::signalsAfterMapperCrash, "signalsAfterMapperCrash", this);
+            this.payloads.scalarQueueTerminate = _ClassStatement.forPayload(FlowableFlatMapTest::scalarQueueTerminate, "scalarQueueTerminate", this);
+            this.payloads.scalarQueueCompleteMain = _ClassStatement.forPayload(FlowableFlatMapTest::scalarQueueCompleteMain, "scalarQueueCompleteMain", this);
+            this.payloads.fusedInnerCrash = _ClassStatement.forPayload(FlowableFlatMapTest::fusedInnerCrash, "fusedInnerCrash", this);
+            this.payloads.fusedInnerCrash2 = _ClassStatement.forPayload(FlowableFlatMapTest::fusedInnerCrash2, "fusedInnerCrash2", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableFlatMapTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.allConcurrency = _ClassStatement.forPayload(FlowableFlatMapTest::allConcurrency, "allConcurrency", this);
+            this.payloads.allConcurrencyScalarInner = _ClassStatement.forPayload(FlowableFlatMapTest::allConcurrencyScalarInner, "allConcurrencyScalarInner", this);
+            this.payloads.allConcurrencyScalarInnerEmpty = _ClassStatement.forPayload(FlowableFlatMapTest::allConcurrencyScalarInnerEmpty, "allConcurrencyScalarInnerEmpty", this);
+            this.payloads.someConcurrencyScalarInnerCancel = _ClassStatement.forPayload(FlowableFlatMapTest::someConcurrencyScalarInnerCancel, "someConcurrencyScalarInnerCancel", this);
+            this.payloads.allConcurrencyBackpressured = _ClassStatement.forPayload(FlowableFlatMapTest::allConcurrencyBackpressured, "allConcurrencyBackpressured", this);
+            this.payloads.someConcurrencyInnerScalarCancel = _ClassStatement.forPayload(FlowableFlatMapTest::someConcurrencyInnerScalarCancel, "someConcurrencyInnerScalarCancel", this);
+            this.payloads.scalarInnerOuterOverflow = _ClassStatement.forPayload(FlowableFlatMapTest::scalarInnerOuterOverflow, "scalarInnerOuterOverflow", this);
+            this.payloads.scalarInnerOuterOverflowSlowPath = _ClassStatement.forPayload(FlowableFlatMapTest::scalarInnerOuterOverflowSlowPath, "scalarInnerOuterOverflowSlowPath", this);
+            this.payloads.innerFastPathEmitOverflow = _ClassStatement.forPayload(FlowableFlatMapTest::innerFastPathEmitOverflow, "innerFastPathEmitOverflow", this);
+            this.payloads.takeFromScalarQueue = _ClassStatement.forPayload(FlowableFlatMapTest::takeFromScalarQueue, "takeFromScalarQueue", this);
+            this.payloads.scalarInnerQueueEmpty = _ClassStatement.forPayload(FlowableFlatMapTest::scalarInnerQueueEmpty, "scalarInnerQueueEmpty", this);
+            this.payloads.innerCompletesAfterOnNextInDrainThenCancels = _ClassStatement.forPayload(FlowableFlatMapTest::innerCompletesAfterOnNextInDrainThenCancels, "innerCompletesAfterOnNextInDrainThenCancels", this);
+            this.payloads.mixedScalarAsync = _ClassStatement.forPayload(FlowableFlatMapTest::mixedScalarAsync, "mixedScalarAsync", this);
         }
     }
 }

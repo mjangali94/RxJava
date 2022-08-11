@@ -56,32 +56,4 @@ public class SingleTimerTest extends RxJavaTest {
             exec.shutdown();
         }
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_disposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposed, this.description("disposed"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_timerInterruptible() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timerInterruptible, this.description("timerInterruptible"));
-        }
-
-        private SingleTimerTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SingleTimerTest();
-        }
-
-        @java.lang.Override
-        public SingleTimerTest implementation() {
-            return this.implementation;
-        }
-    }
 }

@@ -196,72 +196,149 @@ public class FlowableSwitchIfEmptyTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableSwitchIfEmptyTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_switchWhenNotEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::switchWhenNotEmpty, this.description("switchWhenNotEmpty"));
+            this.payloads.switchWhenNotEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_switchWhenEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::switchWhenEmpty, this.description("switchWhenEmpty"));
+            this.payloads.switchWhenEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_switchWithProducer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::switchWithProducer, this.description("switchWithProducer"));
+            this.payloads.switchWithProducer.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_switchTriggerUnsubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::switchTriggerUnsubscribe, this.description("switchTriggerUnsubscribe"));
+            this.payloads.switchTriggerUnsubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_switchShouldNotTriggerUnsubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::switchShouldNotTriggerUnsubscribe, this.description("switchShouldNotTriggerUnsubscribe"));
+            this.payloads.switchShouldNotTriggerUnsubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_switchRequestAlternativeObservableWithBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::switchRequestAlternativeObservableWithBackpressure, this.description("switchRequestAlternativeObservableWithBackpressure"));
+            this.payloads.switchRequestAlternativeObservableWithBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureNoRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureNoRequest, this.description("backpressureNoRequest"));
+            this.payloads.backpressureNoRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureOnFirstObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureOnFirstObservable, this.description("backpressureOnFirstObservable"));
+            this.payloads.backpressureOnFirstObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestsNotLost() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestsNotLost, this.description("requestsNotLost"));
+            this.payloads.requestsNotLost.evaluate();
         }
 
-        private FlowableSwitchIfEmptyTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableSwitchIfEmptyTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSwitchIfEmptyTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSwitchIfEmptyTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableSwitchIfEmptyTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSwitchIfEmptyTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSwitchIfEmptyTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableSwitchIfEmptyTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSwitchIfEmptyTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableSwitchIfEmptyTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableSwitchIfEmptyTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement switchWhenNotEmpty;
+
+            public org.junit.runners.model.Statement switchWhenEmpty;
+
+            public org.junit.runners.model.Statement switchWithProducer;
+
+            public org.junit.runners.model.Statement switchTriggerUnsubscribe;
+
+            public org.junit.runners.model.Statement switchShouldNotTriggerUnsubscribe;
+
+            public org.junit.runners.model.Statement switchRequestAlternativeObservableWithBackpressure;
+
+            public org.junit.runners.model.Statement backpressureNoRequest;
+
+            public org.junit.runners.model.Statement backpressureOnFirstObservable;
+
+            public org.junit.runners.model.Statement requestsNotLost;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.switchWhenNotEmpty = _ClassStatement.forPayload(FlowableSwitchIfEmptyTest::switchWhenNotEmpty, "switchWhenNotEmpty", this);
+            this.payloads.switchWhenEmpty = _ClassStatement.forPayload(FlowableSwitchIfEmptyTest::switchWhenEmpty, "switchWhenEmpty", this);
+            this.payloads.switchWithProducer = _ClassStatement.forPayload(FlowableSwitchIfEmptyTest::switchWithProducer, "switchWithProducer", this);
+            this.payloads.switchTriggerUnsubscribe = _ClassStatement.forPayload(FlowableSwitchIfEmptyTest::switchTriggerUnsubscribe, "switchTriggerUnsubscribe", this);
+            this.payloads.switchShouldNotTriggerUnsubscribe = _ClassStatement.forPayload(FlowableSwitchIfEmptyTest::switchShouldNotTriggerUnsubscribe, "switchShouldNotTriggerUnsubscribe", this);
+            this.payloads.switchRequestAlternativeObservableWithBackpressure = _ClassStatement.forPayload(FlowableSwitchIfEmptyTest::switchRequestAlternativeObservableWithBackpressure, "switchRequestAlternativeObservableWithBackpressure", this);
+            this.payloads.backpressureNoRequest = _ClassStatement.forPayload(FlowableSwitchIfEmptyTest::backpressureNoRequest, "backpressureNoRequest", this);
+            this.payloads.backpressureOnFirstObservable = _ClassStatement.forPayload(FlowableSwitchIfEmptyTest::backpressureOnFirstObservable, "backpressureOnFirstObservable", this);
+            this.payloads.requestsNotLost = _ClassStatement.forPayload(FlowableSwitchIfEmptyTest::requestsNotLost, "requestsNotLost", this);
         }
     }
 }

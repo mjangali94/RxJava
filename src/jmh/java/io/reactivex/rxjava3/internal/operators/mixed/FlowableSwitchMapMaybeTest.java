@@ -550,168 +550,277 @@ public class FlowableSwitchMapMaybeTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableSwitchMapMaybeTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_simple() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::simple, this.description("simple"));
+            this.payloads.simple.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_simpleEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::simpleEmpty, this.description("simpleEmpty"));
+            this.payloads.simpleEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_simpleMixed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::simpleMixed, this.description("simpleMixed"));
+            this.payloads.simpleMixed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressured() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressured, this.description("backpressured"));
+            this.payloads.backpressured.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainError, this.description("mainError"));
+            this.payloads.mainError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerError, this.description("innerError"));
+            this.payloads.innerError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_limit() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::limit, this.description("limit"));
+            this.payloads.limit.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_switchOver() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::switchOver, this.description("switchOver"));
+            this.payloads.switchOver.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_switchOverDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::switchOverDelayError, this.description("switchOverDelayError"));
+            this.payloads.switchOverDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainErrorInnerCompleteDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainErrorInnerCompleteDelayError, this.description("mainErrorInnerCompleteDelayError"));
+            this.payloads.mainErrorInnerCompleteDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainErrorInnerSuccessDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainErrorInnerSuccessDelayError, this.description("mainErrorInnerSuccessDelayError"));
+            this.payloads.mainErrorInnerSuccessDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperCrash, this.description("mapperCrash"));
+            this.payloads.mapperCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeBeforeSwitchInOnNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeBeforeSwitchInOnNext, this.description("disposeBeforeSwitchInOnNext"));
+            this.payloads.disposeBeforeSwitchInOnNext.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeOnNextAfterFirst() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeOnNextAfterFirst, this.description("disposeOnNextAfterFirst"));
+            this.payloads.disposeOnNextAfterFirst.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancel, this.description("cancel"));
+            this.payloads.cancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainErrorAfterTermination() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainErrorAfterTermination, this.description("mainErrorAfterTermination"));
+            this.payloads.mainErrorAfterTermination.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerErrorAfterTermination() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerErrorAfterTermination, this.description("innerErrorAfterTermination"));
+            this.payloads.innerErrorAfterTermination.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nextCancelRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nextCancelRace, this.description("nextCancelRace"));
+            this.payloads.nextCancelRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nextInnerErrorRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nextInnerErrorRace, this.description("nextInnerErrorRace"));
+            this.payloads.nextInnerErrorRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainErrorInnerErrorRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainErrorInnerErrorRace, this.description("mainErrorInnerErrorRace"));
+            this.payloads.mainErrorInnerErrorRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nextInnerSuccessRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nextInnerSuccessRace, this.description("nextInnerSuccessRace"));
+            this.payloads.nextInnerSuccessRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestMoreOnNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestMoreOnNext, this.description("requestMoreOnNext"));
+            this.payloads.requestMoreOnNext.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_undeliverableUponCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::undeliverableUponCancel, this.description("undeliverableUponCancel"));
+            this.payloads.undeliverableUponCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_undeliverableUponCancelDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::undeliverableUponCancelDelayError, this.description("undeliverableUponCancelDelayError"));
+            this.payloads.undeliverableUponCancelDelayError.evaluate();
         }
 
-        private FlowableSwitchMapMaybeTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableSwitchMapMaybeTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSwitchMapMaybeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSwitchMapMaybeTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableSwitchMapMaybeTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSwitchMapMaybeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSwitchMapMaybeTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableSwitchMapMaybeTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSwitchMapMaybeTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableSwitchMapMaybeTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableSwitchMapMaybeTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement simple;
+
+            public org.junit.runners.model.Statement simpleEmpty;
+
+            public org.junit.runners.model.Statement simpleMixed;
+
+            public org.junit.runners.model.Statement backpressured;
+
+            public org.junit.runners.model.Statement mainError;
+
+            public org.junit.runners.model.Statement innerError;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement limit;
+
+            public org.junit.runners.model.Statement switchOver;
+
+            public org.junit.runners.model.Statement switchOverDelayError;
+
+            public org.junit.runners.model.Statement mainErrorInnerCompleteDelayError;
+
+            public org.junit.runners.model.Statement mainErrorInnerSuccessDelayError;
+
+            public org.junit.runners.model.Statement mapperCrash;
+
+            public org.junit.runners.model.Statement disposeBeforeSwitchInOnNext;
+
+            public org.junit.runners.model.Statement disposeOnNextAfterFirst;
+
+            public org.junit.runners.model.Statement cancel;
+
+            public org.junit.runners.model.Statement mainErrorAfterTermination;
+
+            public org.junit.runners.model.Statement innerErrorAfterTermination;
+
+            public org.junit.runners.model.Statement nextCancelRace;
+
+            public org.junit.runners.model.Statement nextInnerErrorRace;
+
+            public org.junit.runners.model.Statement mainErrorInnerErrorRace;
+
+            public org.junit.runners.model.Statement nextInnerSuccessRace;
+
+            public org.junit.runners.model.Statement requestMoreOnNext;
+
+            public org.junit.runners.model.Statement undeliverableUponCancel;
+
+            public org.junit.runners.model.Statement undeliverableUponCancelDelayError;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.simple = _ClassStatement.forPayload(FlowableSwitchMapMaybeTest::simple, "simple", this);
+            this.payloads.simpleEmpty = _ClassStatement.forPayload(FlowableSwitchMapMaybeTest::simpleEmpty, "simpleEmpty", this);
+            this.payloads.simpleMixed = _ClassStatement.forPayload(FlowableSwitchMapMaybeTest::simpleMixed, "simpleMixed", this);
+            this.payloads.backpressured = _ClassStatement.forPayload(FlowableSwitchMapMaybeTest::backpressured, "backpressured", this);
+            this.payloads.mainError = _ClassStatement.forPayload(FlowableSwitchMapMaybeTest::mainError, "mainError", this);
+            this.payloads.innerError = _ClassStatement.forPayload(FlowableSwitchMapMaybeTest::innerError, "innerError", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableSwitchMapMaybeTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.limit = _ClassStatement.forPayload(FlowableSwitchMapMaybeTest::limit, "limit", this);
+            this.payloads.switchOver = _ClassStatement.forPayload(FlowableSwitchMapMaybeTest::switchOver, "switchOver", this);
+            this.payloads.switchOverDelayError = _ClassStatement.forPayload(FlowableSwitchMapMaybeTest::switchOverDelayError, "switchOverDelayError", this);
+            this.payloads.mainErrorInnerCompleteDelayError = _ClassStatement.forPayload(FlowableSwitchMapMaybeTest::mainErrorInnerCompleteDelayError, "mainErrorInnerCompleteDelayError", this);
+            this.payloads.mainErrorInnerSuccessDelayError = _ClassStatement.forPayload(FlowableSwitchMapMaybeTest::mainErrorInnerSuccessDelayError, "mainErrorInnerSuccessDelayError", this);
+            this.payloads.mapperCrash = _ClassStatement.forPayload(FlowableSwitchMapMaybeTest::mapperCrash, "mapperCrash", this);
+            this.payloads.disposeBeforeSwitchInOnNext = _ClassStatement.forPayload(FlowableSwitchMapMaybeTest::disposeBeforeSwitchInOnNext, "disposeBeforeSwitchInOnNext", this);
+            this.payloads.disposeOnNextAfterFirst = _ClassStatement.forPayload(FlowableSwitchMapMaybeTest::disposeOnNextAfterFirst, "disposeOnNextAfterFirst", this);
+            this.payloads.cancel = _ClassStatement.forPayload(FlowableSwitchMapMaybeTest::cancel, "cancel", this);
+            this.payloads.mainErrorAfterTermination = _ClassStatement.forPayload(FlowableSwitchMapMaybeTest::mainErrorAfterTermination, "mainErrorAfterTermination", this);
+            this.payloads.innerErrorAfterTermination = _ClassStatement.forPayload(FlowableSwitchMapMaybeTest::innerErrorAfterTermination, "innerErrorAfterTermination", this);
+            this.payloads.nextCancelRace = _ClassStatement.forPayload(FlowableSwitchMapMaybeTest::nextCancelRace, "nextCancelRace", this);
+            this.payloads.nextInnerErrorRace = _ClassStatement.forPayload(FlowableSwitchMapMaybeTest::nextInnerErrorRace, "nextInnerErrorRace", this);
+            this.payloads.mainErrorInnerErrorRace = _ClassStatement.forPayload(FlowableSwitchMapMaybeTest::mainErrorInnerErrorRace, "mainErrorInnerErrorRace", this);
+            this.payloads.nextInnerSuccessRace = _ClassStatement.forPayload(FlowableSwitchMapMaybeTest::nextInnerSuccessRace, "nextInnerSuccessRace", this);
+            this.payloads.requestMoreOnNext = _ClassStatement.forPayload(FlowableSwitchMapMaybeTest::requestMoreOnNext, "requestMoreOnNext", this);
+            this.payloads.undeliverableUponCancel = _ClassStatement.forPayload(FlowableSwitchMapMaybeTest::undeliverableUponCancel, "undeliverableUponCancel", this);
+            this.payloads.undeliverableUponCancelDelayError = _ClassStatement.forPayload(FlowableSwitchMapMaybeTest::undeliverableUponCancelDelayError, "undeliverableUponCancelDelayError", this);
         }
     }
 }

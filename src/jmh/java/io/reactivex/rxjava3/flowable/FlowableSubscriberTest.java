@@ -751,180 +751,239 @@ public class FlowableSubscriberTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableSubscriberTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestFromFinalSubscribeWithRequestValue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestFromFinalSubscribeWithRequestValue, this.description("requestFromFinalSubscribeWithRequestValue"));
+            this.runBenchmark(this.payloads.requestFromFinalSubscribeWithRequestValue);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestFromFinalSubscribeWithoutRequestValue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestFromFinalSubscribeWithoutRequestValue, this.description("requestFromFinalSubscribeWithoutRequestValue"));
+            this.runBenchmark(this.payloads.requestFromFinalSubscribeWithoutRequestValue);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestFromChainedOperator() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestFromChainedOperator, this.description("requestFromChainedOperator"));
+            this.runBenchmark(this.payloads.requestFromChainedOperator);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestFromDecoupledOperator() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestFromDecoupledOperator, this.description("requestFromDecoupledOperator"));
+            this.runBenchmark(this.payloads.requestFromDecoupledOperator);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestFromDecoupledOperatorThatRequestsN() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestFromDecoupledOperatorThatRequestsN, this.description("requestFromDecoupledOperatorThatRequestsN"));
+            this.runBenchmark(this.payloads.requestFromDecoupledOperatorThatRequestsN);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestToFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestToFlowable, this.description("requestToFlowable"));
+            this.runBenchmark(this.payloads.requestToFlowable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestThroughMap() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestThroughMap, this.description("requestThroughMap"));
+            this.runBenchmark(this.payloads.requestThroughMap);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestThroughTakeThatReducesRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestThroughTakeThatReducesRequest, this.description("requestThroughTakeThatReducesRequest"));
+            this.runBenchmark(this.payloads.requestThroughTakeThatReducesRequest);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestThroughTakeWhereRequestIsSmallerThanTake() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestThroughTakeWhereRequestIsSmallerThanTake, this.description("requestThroughTakeWhereRequestIsSmallerThanTake"));
+            this.runBenchmark(this.payloads.requestThroughTakeWhereRequestIsSmallerThanTake);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onStartCalledOnceViaSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onStartCalledOnceViaSubscribe, this.description("onStartCalledOnceViaSubscribe"));
+            this.runBenchmark(this.payloads.onStartCalledOnceViaSubscribe);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onStartCalledOnceViaUnsafeSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onStartCalledOnceViaUnsafeSubscribe, this.description("onStartCalledOnceViaUnsafeSubscribe"));
+            this.runBenchmark(this.payloads.onStartCalledOnceViaUnsafeSubscribe);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onStartCalledOnceViaLift() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onStartCalledOnceViaLift, this.description("onStartCalledOnceViaLift"));
+            this.runBenchmark(this.payloads.onStartCalledOnceViaLift);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onStartRequestsAreAdditive() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onStartRequestsAreAdditive, this.description("onStartRequestsAreAdditive"));
+            this.runBenchmark(this.payloads.onStartRequestsAreAdditive);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onStartRequestsAreAdditiveAndOverflowBecomesMaxValue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onStartRequestsAreAdditiveAndOverflowBecomesMaxValue, this.description("onStartRequestsAreAdditiveAndOverflowBecomesMaxValue"));
+            this.runBenchmark(this.payloads.onStartRequestsAreAdditiveAndOverflowBecomesMaxValue);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_forEachWhile() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::forEachWhile, this.description("forEachWhile"));
+            this.runBenchmark(this.payloads.forEachWhile);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleSubscribe, this.description("doubleSubscribe"));
+            this.runBenchmark(this.payloads.doubleSubscribe);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_suppressAfterCompleteEvents() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::suppressAfterCompleteEvents, this.description("suppressAfterCompleteEvents"));
+            this.runBenchmark(this.payloads.suppressAfterCompleteEvents);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onNextCrashes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onNextCrashes, this.description("onNextCrashes"));
+            this.runBenchmark(this.payloads.onNextCrashes);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorThrows, this.description("onErrorThrows"));
+            this.runBenchmark(this.payloads.onErrorThrows);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onCompleteThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompleteThrows, this.description("onCompleteThrows"));
+            this.runBenchmark(this.payloads.onCompleteThrows);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_subscribeConsumerConsumerWithError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscribeConsumerConsumerWithError, this.description("subscribeConsumerConsumerWithError"));
+            this.runBenchmark(this.payloads.subscribeConsumerConsumerWithError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_methodTestCancelled() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::methodTestCancelled, this.description("methodTestCancelled"));
+            this.runBenchmark(this.payloads.methodTestCancelled);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_safeSubscriberAlreadySafe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::safeSubscriberAlreadySafe, this.description("safeSubscriberAlreadySafe"));
+            this.runBenchmark(this.payloads.safeSubscriberAlreadySafe);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_methodTestNoCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::methodTestNoCancel, this.description("methodTestNoCancel"));
+            this.runBenchmark(this.payloads.methodTestNoCancel);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_subscribeConsumerConsumer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscribeConsumerConsumer, this.description("subscribeConsumerConsumer"));
+            this.runBenchmark(this.payloads.subscribeConsumerConsumer);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_pluginNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::pluginNull, this.description("pluginNull"));
+            this.runBenchmark(this.payloads.pluginNull);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_subscribeActualThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscribeActualThrows, this.description("subscribeActualThrows"));
+            this.runBenchmark(this.payloads.subscribeActualThrows);
         }
 
-        private FlowableSubscriberTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableSubscriberTest();
+        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscriberTest> payload) throws java.lang.Throwable {
+            this.instance = new FlowableSubscriberTest();
+            payload.accept(this.instance);
         }
 
-        @java.lang.Override
-        public FlowableSubscriberTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscriberTest> requestFromFinalSubscribeWithRequestValue;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscriberTest> requestFromFinalSubscribeWithoutRequestValue;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscriberTest> requestFromChainedOperator;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscriberTest> requestFromDecoupledOperator;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscriberTest> requestFromDecoupledOperatorThatRequestsN;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscriberTest> requestToFlowable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscriberTest> requestThroughMap;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscriberTest> requestThroughTakeThatReducesRequest;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscriberTest> requestThroughTakeWhereRequestIsSmallerThanTake;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscriberTest> onStartCalledOnceViaSubscribe;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscriberTest> onStartCalledOnceViaUnsafeSubscribe;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscriberTest> onStartCalledOnceViaLift;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscriberTest> onStartRequestsAreAdditive;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscriberTest> onStartRequestsAreAdditiveAndOverflowBecomesMaxValue;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscriberTest> forEachWhile;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscriberTest> doubleSubscribe;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscriberTest> suppressAfterCompleteEvents;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscriberTest> onNextCrashes;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscriberTest> onErrorThrows;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscriberTest> onCompleteThrows;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscriberTest> subscribeConsumerConsumerWithError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscriberTest> methodTestCancelled;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscriberTest> safeSubscriberAlreadySafe;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscriberTest> methodTestNoCancel;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscriberTest> subscribeConsumerConsumer;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscriberTest> pluginNull;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSubscriberTest> subscribeActualThrows;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.requestFromFinalSubscribeWithRequestValue = FlowableSubscriberTest::requestFromFinalSubscribeWithRequestValue;
+            this.payloads.requestFromFinalSubscribeWithoutRequestValue = FlowableSubscriberTest::requestFromFinalSubscribeWithoutRequestValue;
+            this.payloads.requestFromChainedOperator = FlowableSubscriberTest::requestFromChainedOperator;
+            this.payloads.requestFromDecoupledOperator = FlowableSubscriberTest::requestFromDecoupledOperator;
+            this.payloads.requestFromDecoupledOperatorThatRequestsN = FlowableSubscriberTest::requestFromDecoupledOperatorThatRequestsN;
+            this.payloads.requestToFlowable = FlowableSubscriberTest::requestToFlowable;
+            this.payloads.requestThroughMap = FlowableSubscriberTest::requestThroughMap;
+            this.payloads.requestThroughTakeThatReducesRequest = FlowableSubscriberTest::requestThroughTakeThatReducesRequest;
+            this.payloads.requestThroughTakeWhereRequestIsSmallerThanTake = FlowableSubscriberTest::requestThroughTakeWhereRequestIsSmallerThanTake;
+            this.payloads.onStartCalledOnceViaSubscribe = FlowableSubscriberTest::onStartCalledOnceViaSubscribe;
+            this.payloads.onStartCalledOnceViaUnsafeSubscribe = FlowableSubscriberTest::onStartCalledOnceViaUnsafeSubscribe;
+            this.payloads.onStartCalledOnceViaLift = FlowableSubscriberTest::onStartCalledOnceViaLift;
+            this.payloads.onStartRequestsAreAdditive = FlowableSubscriberTest::onStartRequestsAreAdditive;
+            this.payloads.onStartRequestsAreAdditiveAndOverflowBecomesMaxValue = FlowableSubscriberTest::onStartRequestsAreAdditiveAndOverflowBecomesMaxValue;
+            this.payloads.forEachWhile = FlowableSubscriberTest::forEachWhile;
+            this.payloads.doubleSubscribe = FlowableSubscriberTest::doubleSubscribe;
+            this.payloads.suppressAfterCompleteEvents = FlowableSubscriberTest::suppressAfterCompleteEvents;
+            this.payloads.onNextCrashes = FlowableSubscriberTest::onNextCrashes;
+            this.payloads.onErrorThrows = FlowableSubscriberTest::onErrorThrows;
+            this.payloads.onCompleteThrows = FlowableSubscriberTest::onCompleteThrows;
+            this.payloads.subscribeConsumerConsumerWithError = FlowableSubscriberTest::subscribeConsumerConsumerWithError;
+            this.payloads.methodTestCancelled = FlowableSubscriberTest::methodTestCancelled;
+            this.payloads.safeSubscriberAlreadySafe = FlowableSubscriberTest::safeSubscriberAlreadySafe;
+            this.payloads.methodTestNoCancel = FlowableSubscriberTest::methodTestNoCancel;
+            this.payloads.subscribeConsumerConsumer = FlowableSubscriberTest::subscribeConsumerConsumer;
+            this.payloads.pluginNull = FlowableSubscriberTest::pluginNull;
+            this.payloads.subscribeActualThrows = FlowableSubscriberTest::subscribeActualThrows;
         }
     }
 }

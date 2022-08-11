@@ -424,48 +424,110 @@ public class FlowableSerializeTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableSerializeTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleThreadedBasic() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleThreadedBasic, this.description("singleThreadedBasic"));
+            this.payloads.singleThreadedBasic.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_multiThreadedBasic() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::multiThreadedBasic, this.description("multiThreadedBasic"));
+            this.payloads.multiThreadedBasic.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_multiThreadedWithNPEFlaky() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::multiThreadedWithNPEFlaky, this.description("multiThreadedWithNPEFlaky"));
+            this.payloads.multiThreadedWithNPEFlaky.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_multiThreadedWithNPEinMiddleFlaky() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::multiThreadedWithNPEinMiddleFlaky, this.description("multiThreadedWithNPEinMiddleFlaky"));
+            this.payloads.multiThreadedWithNPEinMiddleFlaky.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().before();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSerializeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSerializeTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.before();
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private FlowableSerializeTest implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableSerializeTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSerializeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSerializeTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableSerializeTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSerializeTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableSerializeTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableSerializeTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public FlowableSerializeTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement singleThreadedBasic;
+
+            public org.junit.runners.model.Statement multiThreadedBasic;
+
+            public org.junit.runners.model.Statement multiThreadedWithNPEFlaky;
+
+            public org.junit.runners.model.Statement multiThreadedWithNPEinMiddleFlaky;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.singleThreadedBasic = _ClassStatement.forPayload(FlowableSerializeTest::singleThreadedBasic, "singleThreadedBasic", this);
+            this.payloads.multiThreadedBasic = _ClassStatement.forPayload(FlowableSerializeTest::multiThreadedBasic, "multiThreadedBasic", this);
+            this.payloads.multiThreadedWithNPEFlaky = _ClassStatement.forPayload(FlowableSerializeTest::multiThreadedWithNPEFlaky, "multiThreadedWithNPEFlaky", this);
+            this.payloads.multiThreadedWithNPEinMiddleFlaky = _ClassStatement.forPayload(FlowableSerializeTest::multiThreadedWithNPEinMiddleFlaky, "multiThreadedWithNPEinMiddleFlaky", this);
         }
     }
 }

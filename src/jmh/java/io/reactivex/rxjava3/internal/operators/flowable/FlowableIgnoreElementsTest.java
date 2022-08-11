@@ -299,132 +299,229 @@ public class FlowableIgnoreElementsTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableIgnoreElementsTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withEmptyFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withEmptyFlowable, this.description("withEmptyFlowable"));
+            this.payloads.withEmptyFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withNonEmptyFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withNonEmptyFlowable, this.description("withNonEmptyFlowable"));
+            this.payloads.withNonEmptyFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_upstreamIsProcessedButIgnoredFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::upstreamIsProcessedButIgnoredFlowable, this.description("upstreamIsProcessedButIgnoredFlowable"));
+            this.payloads.upstreamIsProcessedButIgnoredFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_completedOkFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::completedOkFlowable, this.description("completedOkFlowable"));
+            this.payloads.completedOkFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorReceivedFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorReceivedFlowable, this.description("errorReceivedFlowable"));
+            this.payloads.errorReceivedFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribesFromUpstreamFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribesFromUpstreamFlowable, this.description("unsubscribesFromUpstreamFlowable"));
+            this.payloads.unsubscribesFromUpstreamFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doesNotHangAndProcessesAllUsingBackpressureFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doesNotHangAndProcessesAllUsingBackpressureFlowable, this.description("doesNotHangAndProcessesAllUsingBackpressureFlowable"));
+            this.payloads.doesNotHangAndProcessesAllUsingBackpressureFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withEmpty, this.description("withEmpty"));
+            this.payloads.withEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withNonEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withNonEmpty, this.description("withNonEmpty"));
+            this.payloads.withNonEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_upstreamIsProcessedButIgnored() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::upstreamIsProcessedButIgnored, this.description("upstreamIsProcessedButIgnored"));
+            this.payloads.upstreamIsProcessedButIgnored.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_completedOk() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::completedOk, this.description("completedOk"));
+            this.payloads.completedOk.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorReceived() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorReceived, this.description("errorReceived"));
+            this.payloads.errorReceived.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribesFromUpstream() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribesFromUpstream, this.description("unsubscribesFromUpstream"));
+            this.payloads.unsubscribesFromUpstream.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doesNotHangAndProcessesAllUsingBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doesNotHangAndProcessesAllUsingBackpressure, this.description("doesNotHangAndProcessesAllUsingBackpressure"));
+            this.payloads.doesNotHangAndProcessesAllUsingBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancel, this.description("cancel"));
+            this.payloads.cancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fused() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fused, this.description("fused"));
+            this.payloads.fused.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedAPICalls() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedAPICalls, this.description("fusedAPICalls"));
+            this.payloads.fusedAPICalls.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
-        private FlowableIgnoreElementsTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableIgnoreElementsTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableIgnoreElementsTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableIgnoreElementsTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableIgnoreElementsTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableIgnoreElementsTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableIgnoreElementsTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableIgnoreElementsTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableIgnoreElementsTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableIgnoreElementsTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableIgnoreElementsTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement withEmptyFlowable;
+
+            public org.junit.runners.model.Statement withNonEmptyFlowable;
+
+            public org.junit.runners.model.Statement upstreamIsProcessedButIgnoredFlowable;
+
+            public org.junit.runners.model.Statement completedOkFlowable;
+
+            public org.junit.runners.model.Statement errorReceivedFlowable;
+
+            public org.junit.runners.model.Statement unsubscribesFromUpstreamFlowable;
+
+            public org.junit.runners.model.Statement doesNotHangAndProcessesAllUsingBackpressureFlowable;
+
+            public org.junit.runners.model.Statement withEmpty;
+
+            public org.junit.runners.model.Statement withNonEmpty;
+
+            public org.junit.runners.model.Statement upstreamIsProcessedButIgnored;
+
+            public org.junit.runners.model.Statement completedOk;
+
+            public org.junit.runners.model.Statement errorReceived;
+
+            public org.junit.runners.model.Statement unsubscribesFromUpstream;
+
+            public org.junit.runners.model.Statement doesNotHangAndProcessesAllUsingBackpressure;
+
+            public org.junit.runners.model.Statement cancel;
+
+            public org.junit.runners.model.Statement fused;
+
+            public org.junit.runners.model.Statement fusedAPICalls;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.withEmptyFlowable = _ClassStatement.forPayload(FlowableIgnoreElementsTest::withEmptyFlowable, "withEmptyFlowable", this);
+            this.payloads.withNonEmptyFlowable = _ClassStatement.forPayload(FlowableIgnoreElementsTest::withNonEmptyFlowable, "withNonEmptyFlowable", this);
+            this.payloads.upstreamIsProcessedButIgnoredFlowable = _ClassStatement.forPayload(FlowableIgnoreElementsTest::upstreamIsProcessedButIgnoredFlowable, "upstreamIsProcessedButIgnoredFlowable", this);
+            this.payloads.completedOkFlowable = _ClassStatement.forPayload(FlowableIgnoreElementsTest::completedOkFlowable, "completedOkFlowable", this);
+            this.payloads.errorReceivedFlowable = _ClassStatement.forPayload(FlowableIgnoreElementsTest::errorReceivedFlowable, "errorReceivedFlowable", this);
+            this.payloads.unsubscribesFromUpstreamFlowable = _ClassStatement.forPayload(FlowableIgnoreElementsTest::unsubscribesFromUpstreamFlowable, "unsubscribesFromUpstreamFlowable", this);
+            this.payloads.doesNotHangAndProcessesAllUsingBackpressureFlowable = _ClassStatement.forPayload(FlowableIgnoreElementsTest::doesNotHangAndProcessesAllUsingBackpressureFlowable, "doesNotHangAndProcessesAllUsingBackpressureFlowable", this);
+            this.payloads.withEmpty = _ClassStatement.forPayload(FlowableIgnoreElementsTest::withEmpty, "withEmpty", this);
+            this.payloads.withNonEmpty = _ClassStatement.forPayload(FlowableIgnoreElementsTest::withNonEmpty, "withNonEmpty", this);
+            this.payloads.upstreamIsProcessedButIgnored = _ClassStatement.forPayload(FlowableIgnoreElementsTest::upstreamIsProcessedButIgnored, "upstreamIsProcessedButIgnored", this);
+            this.payloads.completedOk = _ClassStatement.forPayload(FlowableIgnoreElementsTest::completedOk, "completedOk", this);
+            this.payloads.errorReceived = _ClassStatement.forPayload(FlowableIgnoreElementsTest::errorReceived, "errorReceived", this);
+            this.payloads.unsubscribesFromUpstream = _ClassStatement.forPayload(FlowableIgnoreElementsTest::unsubscribesFromUpstream, "unsubscribesFromUpstream", this);
+            this.payloads.doesNotHangAndProcessesAllUsingBackpressure = _ClassStatement.forPayload(FlowableIgnoreElementsTest::doesNotHangAndProcessesAllUsingBackpressure, "doesNotHangAndProcessesAllUsingBackpressure", this);
+            this.payloads.cancel = _ClassStatement.forPayload(FlowableIgnoreElementsTest::cancel, "cancel", this);
+            this.payloads.fused = _ClassStatement.forPayload(FlowableIgnoreElementsTest::fused, "fused", this);
+            this.payloads.fusedAPICalls = _ClassStatement.forPayload(FlowableIgnoreElementsTest::fusedAPICalls, "fusedAPICalls", this);
+            this.payloads.dispose = _ClassStatement.forPayload(FlowableIgnoreElementsTest::dispose, "dispose", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableIgnoreElementsTest::doubleOnSubscribe, "doubleOnSubscribe", this);
         }
     }
 }

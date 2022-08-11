@@ -199,102 +199,189 @@ public class MaybeZipArrayTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private MaybeZipArrayTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstError, this.description("firstError"));
+            this.payloads.firstError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_secondError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::secondError, this.description("secondError"));
+            this.payloads.secondError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipperThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zipperThrows, this.description("zipperThrows"));
+            this.payloads.zipperThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipperReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zipperReturnsNull, this.description("zipperReturnsNull"));
+            this.payloads.zipperReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_middleError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::middleError, this.description("middleError"));
+            this.payloads.middleError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerErrorRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerErrorRace, this.description("innerErrorRace"));
+            this.payloads.innerErrorRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipArrayOneIsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::zipArrayOneIsNull, this.description("zipArrayOneIsNull"), java.lang.NullPointerException.class);
+            this.payloads.zipArrayOneIsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleSourceZipperReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleSourceZipperReturnsNull, this.description("singleSourceZipperReturnsNull"));
+            this.payloads.singleSourceZipperReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose2, this.description("dispose2"));
+            this.payloads.dispose2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bothComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bothComplete, this.description("bothComplete"));
+            this.payloads.bothComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bothSucceed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bothSucceed, this.description("bothSucceed"));
+            this.payloads.bothSucceed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_oneSourceOnly() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::oneSourceOnly, this.description("oneSourceOnly"));
+            this.payloads.oneSourceOnly.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onSuccessAfterDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onSuccessAfterDispose, this.description("onSuccessAfterDispose"));
+            this.payloads.onSuccessAfterDispose.evaluate();
         }
 
-        private MaybeZipArrayTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeZipArrayTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeZipArrayTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeZipArrayTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public MaybeZipArrayTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeZipArrayTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeZipArrayTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new MaybeZipArrayTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeZipArrayTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(MaybeZipArrayTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(MaybeZipArrayTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement firstError;
+
+            public org.junit.runners.model.Statement secondError;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement zipperThrows;
+
+            public org.junit.runners.model.Statement zipperReturnsNull;
+
+            public org.junit.runners.model.Statement middleError;
+
+            public org.junit.runners.model.Statement innerErrorRace;
+
+            public org.junit.runners.model.Statement zipArrayOneIsNull;
+
+            public org.junit.runners.model.Statement singleSourceZipperReturnsNull;
+
+            public org.junit.runners.model.Statement dispose2;
+
+            public org.junit.runners.model.Statement bothComplete;
+
+            public org.junit.runners.model.Statement bothSucceed;
+
+            public org.junit.runners.model.Statement oneSourceOnly;
+
+            public org.junit.runners.model.Statement onSuccessAfterDispose;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.firstError = _ClassStatement.forPayload(MaybeZipArrayTest::firstError, "firstError", this);
+            this.payloads.secondError = _ClassStatement.forPayload(MaybeZipArrayTest::secondError, "secondError", this);
+            this.payloads.dispose = _ClassStatement.forPayload(MaybeZipArrayTest::dispose, "dispose", this);
+            this.payloads.zipperThrows = _ClassStatement.forPayload(MaybeZipArrayTest::zipperThrows, "zipperThrows", this);
+            this.payloads.zipperReturnsNull = _ClassStatement.forPayload(MaybeZipArrayTest::zipperReturnsNull, "zipperReturnsNull", this);
+            this.payloads.middleError = _ClassStatement.forPayload(MaybeZipArrayTest::middleError, "middleError", this);
+            this.payloads.innerErrorRace = _ClassStatement.forPayload(MaybeZipArrayTest::innerErrorRace, "innerErrorRace", this);
+            this.payloads.zipArrayOneIsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(MaybeZipArrayTest::zipArrayOneIsNull, java.lang.NullPointerException.class), "zipArrayOneIsNull", this);
+            this.payloads.singleSourceZipperReturnsNull = _ClassStatement.forPayload(MaybeZipArrayTest::singleSourceZipperReturnsNull, "singleSourceZipperReturnsNull", this);
+            this.payloads.dispose2 = _ClassStatement.forPayload(MaybeZipArrayTest::dispose2, "dispose2", this);
+            this.payloads.bothComplete = _ClassStatement.forPayload(MaybeZipArrayTest::bothComplete, "bothComplete", this);
+            this.payloads.bothSucceed = _ClassStatement.forPayload(MaybeZipArrayTest::bothSucceed, "bothSucceed", this);
+            this.payloads.oneSourceOnly = _ClassStatement.forPayload(MaybeZipArrayTest::oneSourceOnly, "oneSourceOnly", this);
+            this.payloads.onSuccessAfterDispose = _ClassStatement.forPayload(MaybeZipArrayTest::onSuccessAfterDispose, "onSuccessAfterDispose", this);
         }
     }
 }

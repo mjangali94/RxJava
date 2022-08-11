@@ -126,32 +126,4 @@ public class SchedulerWorkerTest extends RxJavaTest {
             w.dispose();
         }
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_currentTimeDriftBackwards() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::currentTimeDriftBackwards, this.description("currentTimeDriftBackwards"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_currentTimeDriftForwards() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::currentTimeDriftForwards, this.description("currentTimeDriftForwards"));
-        }
-
-        private SchedulerWorkerTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SchedulerWorkerTest();
-        }
-
-        @java.lang.Override
-        public SchedulerWorkerTest implementation() {
-            return this.implementation;
-        }
-    }
 }

@@ -46,42 +46,109 @@ public class ParallelFlatMapStreamTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ParallelFlatMapStreamTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_subscriberCount() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscriberCount, this.description("subscriberCount"));
+            this.payloads.subscriberCount.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normal, this.description("normal"));
+            this.payloads.normal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_none() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::none, this.description("none"));
+            this.payloads.none.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mixed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mixed, this.description("mixed"));
+            this.payloads.mixed.evaluate();
         }
 
-        private ParallelFlatMapStreamTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ParallelFlatMapStreamTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ParallelFlatMapStreamTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ParallelFlatMapStreamTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ParallelFlatMapStreamTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ParallelFlatMapStreamTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ParallelFlatMapStreamTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ParallelFlatMapStreamTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ParallelFlatMapStreamTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ParallelFlatMapStreamTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ParallelFlatMapStreamTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement subscriberCount;
+
+            public org.junit.runners.model.Statement normal;
+
+            public org.junit.runners.model.Statement none;
+
+            public org.junit.runners.model.Statement mixed;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.subscriberCount = _ClassStatement.forPayload(ParallelFlatMapStreamTest::subscriberCount, "subscriberCount", this);
+            this.payloads.normal = _ClassStatement.forPayload(ParallelFlatMapStreamTest::normal, "normal", this);
+            this.payloads.none = _ClassStatement.forPayload(ParallelFlatMapStreamTest::none, "none", this);
+            this.payloads.mixed = _ClassStatement.forPayload(ParallelFlatMapStreamTest::mixed, "mixed", this);
         }
     }
 }

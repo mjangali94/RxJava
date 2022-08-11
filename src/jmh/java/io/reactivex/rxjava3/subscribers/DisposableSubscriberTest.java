@@ -96,38 +96,4 @@ public class DisposableSubscriberTest extends RxJavaTest {
         assertTrue(bs.isCancelled());
         assertEquals(0, tc.start);
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_normal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normal, this.description("normal"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_startOnce() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::startOnce, this.description("startOnce"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
-        }
-
-        private DisposableSubscriberTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new DisposableSubscriberTest();
-        }
-
-        @java.lang.Override
-        public DisposableSubscriberTest implementation() {
-            return this.implementation;
-        }
-    }
 }

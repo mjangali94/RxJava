@@ -21,26 +21,4 @@ public class MaybeMergeWithTest extends RxJavaTest {
     public void normal() {
         Maybe.just(1).mergeWith(Maybe.just(2)).test().assertResult(1, 2);
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_normal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normal, this.description("normal"));
-        }
-
-        private MaybeMergeWithTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeMergeWithTest();
-        }
-
-        @java.lang.Override
-        public MaybeMergeWithTest implementation() {
-            return this.implementation;
-        }
-    }
 }

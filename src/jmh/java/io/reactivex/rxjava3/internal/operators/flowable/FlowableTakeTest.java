@@ -456,168 +456,277 @@ public class FlowableTakeTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableTakeTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_take1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::take1, this.description("take1"));
+            this.payloads.take1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_take2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::take2, this.description("take2"));
+            this.payloads.take2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeWithError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::takeWithError, this.description("takeWithError"), java.lang.IllegalArgumentException.class);
+            this.payloads.takeWithError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeWithErrorHappeningInOnNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeWithErrorHappeningInOnNext, this.description("takeWithErrorHappeningInOnNext"));
+            this.payloads.takeWithErrorHappeningInOnNext.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeWithErrorHappeningInTheLastOnNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeWithErrorHappeningInTheLastOnNext, this.description("takeWithErrorHappeningInTheLastOnNext"));
+            this.payloads.takeWithErrorHappeningInTheLastOnNext.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeDoesntLeakErrors() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeDoesntLeakErrors, this.description("takeDoesntLeakErrors"));
+            this.payloads.takeDoesntLeakErrors.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeEmitsErrors() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeEmitsErrors, this.description("takeEmitsErrors"));
+            this.payloads.takeEmitsErrors.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeRequestOverflow() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeRequestOverflow, this.description("takeRequestOverflow"));
+            this.payloads.takeRequestOverflow.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribeAfterTake() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribeAfterTake, this.description("unsubscribeAfterTake"));
+            this.payloads.unsubscribeAfterTake.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribeFromSynchronousInfiniteFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribeFromSynchronousInfiniteFlowable, this.description("unsubscribeFromSynchronousInfiniteFlowable"));
+            this.payloads.unsubscribeFromSynchronousInfiniteFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_multiTake() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::multiTake, this.description("multiTake"));
+            this.payloads.multiTake.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeObserveOn() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeObserveOn, this.description("takeObserveOn"));
+            this.payloads.takeObserveOn.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_producerRequestThroughTake() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::producerRequestThroughTake, this.description("producerRequestThroughTake"));
+            this.payloads.producerRequestThroughTake.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_producerRequestThroughTakeIsModified() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::producerRequestThroughTakeIsModified, this.description("producerRequestThroughTakeIsModified"));
+            this.payloads.producerRequestThroughTakeIsModified.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_interrupt() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::interrupt, this.description("interrupt"));
+            this.payloads.interrupt.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doesntRequestMoreThanNeededFromUpstream() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doesntRequestMoreThanNeededFromUpstream, this.description("doesntRequestMoreThanNeededFromUpstream"));
+            this.payloads.doesntRequestMoreThanNeededFromUpstream.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeFinalValueThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeFinalValueThrows, this.description("takeFinalValueThrows"));
+            this.payloads.takeFinalValueThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_reentrantTake() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::reentrantTake, this.description("reentrantTake"));
+            this.payloads.reentrantTake.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeNegative() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeNegative, this.description("takeNegative"));
+            this.payloads.takeNegative.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeZero() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeZero, this.description("takeZero"));
+            this.payloads.takeZero.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequest, this.description("badRequest"));
+            this.payloads.badRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestRace, this.description("requestRace"));
+            this.payloads.requestRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorAfterLimitReached() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorAfterLimitReached, this.description("errorAfterLimitReached"));
+            this.payloads.errorAfterLimitReached.evaluate();
         }
 
-        private FlowableTakeTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableTakeTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTakeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTakeTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableTakeTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTakeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTakeTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableTakeTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTakeTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableTakeTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableTakeTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement take1;
+
+            public org.junit.runners.model.Statement take2;
+
+            public org.junit.runners.model.Statement takeWithError;
+
+            public org.junit.runners.model.Statement takeWithErrorHappeningInOnNext;
+
+            public org.junit.runners.model.Statement takeWithErrorHappeningInTheLastOnNext;
+
+            public org.junit.runners.model.Statement takeDoesntLeakErrors;
+
+            public org.junit.runners.model.Statement takeEmitsErrors;
+
+            public org.junit.runners.model.Statement takeRequestOverflow;
+
+            public org.junit.runners.model.Statement unsubscribeAfterTake;
+
+            public org.junit.runners.model.Statement unsubscribeFromSynchronousInfiniteFlowable;
+
+            public org.junit.runners.model.Statement multiTake;
+
+            public org.junit.runners.model.Statement takeObserveOn;
+
+            public org.junit.runners.model.Statement producerRequestThroughTake;
+
+            public org.junit.runners.model.Statement producerRequestThroughTakeIsModified;
+
+            public org.junit.runners.model.Statement interrupt;
+
+            public org.junit.runners.model.Statement doesntRequestMoreThanNeededFromUpstream;
+
+            public org.junit.runners.model.Statement takeFinalValueThrows;
+
+            public org.junit.runners.model.Statement reentrantTake;
+
+            public org.junit.runners.model.Statement takeNegative;
+
+            public org.junit.runners.model.Statement takeZero;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement badRequest;
+
+            public org.junit.runners.model.Statement requestRace;
+
+            public org.junit.runners.model.Statement errorAfterLimitReached;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.take1 = _ClassStatement.forPayload(FlowableTakeTest::take1, "take1", this);
+            this.payloads.take2 = _ClassStatement.forPayload(FlowableTakeTest::take2, "take2", this);
+            this.payloads.takeWithError = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableTakeTest::takeWithError, java.lang.IllegalArgumentException.class), "takeWithError", this);
+            this.payloads.takeWithErrorHappeningInOnNext = _ClassStatement.forPayload(FlowableTakeTest::takeWithErrorHappeningInOnNext, "takeWithErrorHappeningInOnNext", this);
+            this.payloads.takeWithErrorHappeningInTheLastOnNext = _ClassStatement.forPayload(FlowableTakeTest::takeWithErrorHappeningInTheLastOnNext, "takeWithErrorHappeningInTheLastOnNext", this);
+            this.payloads.takeDoesntLeakErrors = _ClassStatement.forPayload(FlowableTakeTest::takeDoesntLeakErrors, "takeDoesntLeakErrors", this);
+            this.payloads.takeEmitsErrors = _ClassStatement.forPayload(FlowableTakeTest::takeEmitsErrors, "takeEmitsErrors", this);
+            this.payloads.takeRequestOverflow = _ClassStatement.forPayload(FlowableTakeTest::takeRequestOverflow, "takeRequestOverflow", this);
+            this.payloads.unsubscribeAfterTake = _ClassStatement.forPayload(FlowableTakeTest::unsubscribeAfterTake, "unsubscribeAfterTake", this);
+            this.payloads.unsubscribeFromSynchronousInfiniteFlowable = _ClassStatement.forPayload(FlowableTakeTest::unsubscribeFromSynchronousInfiniteFlowable, "unsubscribeFromSynchronousInfiniteFlowable", this);
+            this.payloads.multiTake = _ClassStatement.forPayload(FlowableTakeTest::multiTake, "multiTake", this);
+            this.payloads.takeObserveOn = _ClassStatement.forPayload(FlowableTakeTest::takeObserveOn, "takeObserveOn", this);
+            this.payloads.producerRequestThroughTake = _ClassStatement.forPayload(FlowableTakeTest::producerRequestThroughTake, "producerRequestThroughTake", this);
+            this.payloads.producerRequestThroughTakeIsModified = _ClassStatement.forPayload(FlowableTakeTest::producerRequestThroughTakeIsModified, "producerRequestThroughTakeIsModified", this);
+            this.payloads.interrupt = _ClassStatement.forPayload(FlowableTakeTest::interrupt, "interrupt", this);
+            this.payloads.doesntRequestMoreThanNeededFromUpstream = _ClassStatement.forPayload(FlowableTakeTest::doesntRequestMoreThanNeededFromUpstream, "doesntRequestMoreThanNeededFromUpstream", this);
+            this.payloads.takeFinalValueThrows = _ClassStatement.forPayload(FlowableTakeTest::takeFinalValueThrows, "takeFinalValueThrows", this);
+            this.payloads.reentrantTake = _ClassStatement.forPayload(FlowableTakeTest::reentrantTake, "reentrantTake", this);
+            this.payloads.takeNegative = _ClassStatement.forPayload(FlowableTakeTest::takeNegative, "takeNegative", this);
+            this.payloads.takeZero = _ClassStatement.forPayload(FlowableTakeTest::takeZero, "takeZero", this);
+            this.payloads.dispose = _ClassStatement.forPayload(FlowableTakeTest::dispose, "dispose", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableTakeTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.badRequest = _ClassStatement.forPayload(FlowableTakeTest::badRequest, "badRequest", this);
+            this.payloads.requestRace = _ClassStatement.forPayload(FlowableTakeTest::requestRace, "requestRace", this);
+            this.payloads.errorAfterLimitReached = _ClassStatement.forPayload(FlowableTakeTest::errorAfterLimitReached, "errorAfterLimitReached", this);
         }
     }
 }

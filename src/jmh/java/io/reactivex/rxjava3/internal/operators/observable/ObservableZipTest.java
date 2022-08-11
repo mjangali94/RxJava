@@ -1240,330 +1240,486 @@ public class ObservableZipTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableZipTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectionSizeDifferentThanFunction() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectionSizeDifferentThanFunction, this.description("collectionSizeDifferentThanFunction"));
+            this.payloads.collectionSizeDifferentThanFunction.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_startpingDifferentLengthObservableSequences1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::startpingDifferentLengthObservableSequences1, this.description("startpingDifferentLengthObservableSequences1"));
+            this.payloads.startpingDifferentLengthObservableSequences1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_startpingDifferentLengthObservableSequences2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::startpingDifferentLengthObservableSequences2, this.description("startpingDifferentLengthObservableSequences2"));
+            this.payloads.startpingDifferentLengthObservableSequences2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_aggregatorSimple() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::aggregatorSimple, this.description("aggregatorSimple"));
+            this.payloads.aggregatorSimple.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_aggregatorDifferentSizedResultsWithOnComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::aggregatorDifferentSizedResultsWithOnComplete, this.description("aggregatorDifferentSizedResultsWithOnComplete"));
+            this.payloads.aggregatorDifferentSizedResultsWithOnComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_aggregateMultipleTypes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::aggregateMultipleTypes, this.description("aggregateMultipleTypes"));
+            this.payloads.aggregateMultipleTypes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_aggregate3Types() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::aggregate3Types, this.description("aggregate3Types"));
+            this.payloads.aggregate3Types.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_aggregatorsWithDifferentSizesAndTiming() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::aggregatorsWithDifferentSizesAndTiming, this.description("aggregatorsWithDifferentSizesAndTiming"));
+            this.payloads.aggregatorsWithDifferentSizesAndTiming.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_aggregatorError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::aggregatorError, this.description("aggregatorError"));
+            this.payloads.aggregatorError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_aggregatorUnsubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::aggregatorUnsubscribe, this.description("aggregatorUnsubscribe"));
+            this.payloads.aggregatorUnsubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_aggregatorEarlyCompletion() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::aggregatorEarlyCompletion, this.description("aggregatorEarlyCompletion"));
+            this.payloads.aggregatorEarlyCompletion.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_start2Types() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::start2Types, this.description("start2Types"));
+            this.payloads.start2Types.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_start3Types() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::start3Types, this.description("start3Types"));
+            this.payloads.start3Types.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onNextExceptionInvokesOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onNextExceptionInvokesOnError, this.description("onNextExceptionInvokesOnError"));
+            this.payloads.onNextExceptionInvokesOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onFirstCompletion() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onFirstCompletion, this.description("onFirstCompletion"));
+            this.payloads.onFirstCompletion.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorTermination() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorTermination, this.description("onErrorTermination"));
+            this.payloads.onErrorTermination.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstCompletesThenSecondInfinite() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstCompletesThenSecondInfinite, this.description("firstCompletesThenSecondInfinite"));
+            this.payloads.firstCompletesThenSecondInfinite.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_secondInfiniteThenFirstCompletes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::secondInfiniteThenFirstCompletes, this.description("secondInfiniteThenFirstCompletes"));
+            this.payloads.secondInfiniteThenFirstCompletes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_secondCompletesThenFirstInfinite() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::secondCompletesThenFirstInfinite, this.description("secondCompletesThenFirstInfinite"));
+            this.payloads.secondCompletesThenFirstInfinite.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstInfiniteThenSecondCompletes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstInfiniteThenSecondCompletes, this.description("firstInfiniteThenSecondCompletes"));
+            this.payloads.firstInfiniteThenSecondCompletes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstFails() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstFails, this.description("firstFails"));
+            this.payloads.firstFails.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_secondFails() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::secondFails, this.description("secondFails"));
+            this.payloads.secondFails.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_startWithOnCompletedTwice() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::startWithOnCompletedTwice, this.description("startWithOnCompletedTwice"));
+            this.payloads.startWithOnCompletedTwice.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_start() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::start, this.description("start"));
+            this.payloads.start.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_startAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::startAsync, this.description("startAsync"));
+            this.payloads.startAsync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_startInfiniteAndFinite() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::startInfiniteAndFinite, this.description("startInfiniteAndFinite"));
+            this.payloads.startInfiniteAndFinite.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emitMaterializedNotifications() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emitMaterializedNotifications, this.description("emitMaterializedNotifications"));
+            this.payloads.emitMaterializedNotifications.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_startEmptyObservables() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::startEmptyObservables, this.description("startEmptyObservables"));
+            this.payloads.startEmptyObservables.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_startEmptyList() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::startEmptyList, this.description("startEmptyList"));
+            this.payloads.startEmptyList.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_startEmptyListBlocking() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::startEmptyListBlocking, this.description("startEmptyListBlocking"), java.util.NoSuchElementException.class);
+            this.payloads.startEmptyListBlocking.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_downstreamBackpressureRequestsWithFiniteSyncObservables() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::downstreamBackpressureRequestsWithFiniteSyncObservables, this.description("downstreamBackpressureRequestsWithFiniteSyncObservables"));
+            this.payloads.downstreamBackpressureRequestsWithFiniteSyncObservables.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_issue1812() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::issue1812, this.description("issue1812"));
+            this.payloads.issue1812.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zipRace, this.description("zipRace"));
+            this.payloads.zipRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zip2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zip2, this.description("zip2"));
+            this.payloads.zip2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zip3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zip3, this.description("zip3"));
+            this.payloads.zip3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zip4() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zip4, this.description("zip4"));
+            this.payloads.zip4.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zip5() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zip5, this.description("zip5"));
+            this.payloads.zip5.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zip6() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zip6, this.description("zip6"));
+            this.payloads.zip6.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zip7() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zip7, this.description("zip7"));
+            this.payloads.zip7.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zip8() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zip8, this.description("zip8"));
+            this.payloads.zip8.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zip9() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zip9, this.description("zip9"));
+            this.payloads.zip9.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zip2DelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zip2DelayError, this.description("zip2DelayError"));
+            this.payloads.zip2DelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zip2Prefetch() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zip2Prefetch, this.description("zip2Prefetch"));
+            this.payloads.zip2Prefetch.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zip2DelayErrorPrefetch() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zip2DelayErrorPrefetch, this.description("zip2DelayErrorPrefetch"));
+            this.payloads.zip2DelayErrorPrefetch.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipArrayEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zipArrayEmpty, this.description("zipArrayEmpty"));
+            this.payloads.zipArrayEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipArrayMany() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zipArrayMany, this.description("zipArrayMany"));
+            this.payloads.zipArrayMany.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noCrossBoundaryFusion() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noCrossBoundaryFusion, this.description("noCrossBoundaryFusion"));
+            this.payloads.noCrossBoundaryFusion.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_eagerDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::eagerDispose, this.description("eagerDispose"));
+            this.payloads.eagerDispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstErrorPreventsSecondSubscription() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstErrorPreventsSecondSubscription, this.description("firstErrorPreventsSecondSubscription"));
+            this.payloads.firstErrorPreventsSecondSubscription.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observableSourcesInIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observableSourcesInIterable, this.description("observableSourcesInIterable"));
+            this.payloads.observableSourcesInIterable.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().setUp();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableZipTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableZipTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.setUp();
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private ObservableZipTest implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableZipTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableZipTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableZipTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableZipTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableZipTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableZipTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableZipTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public ObservableZipTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement collectionSizeDifferentThanFunction;
+
+            public org.junit.runners.model.Statement startpingDifferentLengthObservableSequences1;
+
+            public org.junit.runners.model.Statement startpingDifferentLengthObservableSequences2;
+
+            public org.junit.runners.model.Statement aggregatorSimple;
+
+            public org.junit.runners.model.Statement aggregatorDifferentSizedResultsWithOnComplete;
+
+            public org.junit.runners.model.Statement aggregateMultipleTypes;
+
+            public org.junit.runners.model.Statement aggregate3Types;
+
+            public org.junit.runners.model.Statement aggregatorsWithDifferentSizesAndTiming;
+
+            public org.junit.runners.model.Statement aggregatorError;
+
+            public org.junit.runners.model.Statement aggregatorUnsubscribe;
+
+            public org.junit.runners.model.Statement aggregatorEarlyCompletion;
+
+            public org.junit.runners.model.Statement start2Types;
+
+            public org.junit.runners.model.Statement start3Types;
+
+            public org.junit.runners.model.Statement onNextExceptionInvokesOnError;
+
+            public org.junit.runners.model.Statement onFirstCompletion;
+
+            public org.junit.runners.model.Statement onErrorTermination;
+
+            public org.junit.runners.model.Statement firstCompletesThenSecondInfinite;
+
+            public org.junit.runners.model.Statement secondInfiniteThenFirstCompletes;
+
+            public org.junit.runners.model.Statement secondCompletesThenFirstInfinite;
+
+            public org.junit.runners.model.Statement firstInfiniteThenSecondCompletes;
+
+            public org.junit.runners.model.Statement firstFails;
+
+            public org.junit.runners.model.Statement secondFails;
+
+            public org.junit.runners.model.Statement startWithOnCompletedTwice;
+
+            public org.junit.runners.model.Statement start;
+
+            public org.junit.runners.model.Statement startAsync;
+
+            public org.junit.runners.model.Statement startInfiniteAndFinite;
+
+            public org.junit.runners.model.Statement emitMaterializedNotifications;
+
+            public org.junit.runners.model.Statement startEmptyObservables;
+
+            public org.junit.runners.model.Statement startEmptyList;
+
+            public org.junit.runners.model.Statement startEmptyListBlocking;
+
+            public org.junit.runners.model.Statement downstreamBackpressureRequestsWithFiniteSyncObservables;
+
+            public org.junit.runners.model.Statement issue1812;
+
+            public org.junit.runners.model.Statement zipRace;
+
+            public org.junit.runners.model.Statement zip2;
+
+            public org.junit.runners.model.Statement zip3;
+
+            public org.junit.runners.model.Statement zip4;
+
+            public org.junit.runners.model.Statement zip5;
+
+            public org.junit.runners.model.Statement zip6;
+
+            public org.junit.runners.model.Statement zip7;
+
+            public org.junit.runners.model.Statement zip8;
+
+            public org.junit.runners.model.Statement zip9;
+
+            public org.junit.runners.model.Statement zip2DelayError;
+
+            public org.junit.runners.model.Statement zip2Prefetch;
+
+            public org.junit.runners.model.Statement zip2DelayErrorPrefetch;
+
+            public org.junit.runners.model.Statement zipArrayEmpty;
+
+            public org.junit.runners.model.Statement zipArrayMany;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement noCrossBoundaryFusion;
+
+            public org.junit.runners.model.Statement eagerDispose;
+
+            public org.junit.runners.model.Statement firstErrorPreventsSecondSubscription;
+
+            public org.junit.runners.model.Statement observableSourcesInIterable;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.collectionSizeDifferentThanFunction = _ClassStatement.forPayload(ObservableZipTest::collectionSizeDifferentThanFunction, "collectionSizeDifferentThanFunction", this);
+            this.payloads.startpingDifferentLengthObservableSequences1 = _ClassStatement.forPayload(ObservableZipTest::startpingDifferentLengthObservableSequences1, "startpingDifferentLengthObservableSequences1", this);
+            this.payloads.startpingDifferentLengthObservableSequences2 = _ClassStatement.forPayload(ObservableZipTest::startpingDifferentLengthObservableSequences2, "startpingDifferentLengthObservableSequences2", this);
+            this.payloads.aggregatorSimple = _ClassStatement.forPayload(ObservableZipTest::aggregatorSimple, "aggregatorSimple", this);
+            this.payloads.aggregatorDifferentSizedResultsWithOnComplete = _ClassStatement.forPayload(ObservableZipTest::aggregatorDifferentSizedResultsWithOnComplete, "aggregatorDifferentSizedResultsWithOnComplete", this);
+            this.payloads.aggregateMultipleTypes = _ClassStatement.forPayload(ObservableZipTest::aggregateMultipleTypes, "aggregateMultipleTypes", this);
+            this.payloads.aggregate3Types = _ClassStatement.forPayload(ObservableZipTest::aggregate3Types, "aggregate3Types", this);
+            this.payloads.aggregatorsWithDifferentSizesAndTiming = _ClassStatement.forPayload(ObservableZipTest::aggregatorsWithDifferentSizesAndTiming, "aggregatorsWithDifferentSizesAndTiming", this);
+            this.payloads.aggregatorError = _ClassStatement.forPayload(ObservableZipTest::aggregatorError, "aggregatorError", this);
+            this.payloads.aggregatorUnsubscribe = _ClassStatement.forPayload(ObservableZipTest::aggregatorUnsubscribe, "aggregatorUnsubscribe", this);
+            this.payloads.aggregatorEarlyCompletion = _ClassStatement.forPayload(ObservableZipTest::aggregatorEarlyCompletion, "aggregatorEarlyCompletion", this);
+            this.payloads.start2Types = _ClassStatement.forPayload(ObservableZipTest::start2Types, "start2Types", this);
+            this.payloads.start3Types = _ClassStatement.forPayload(ObservableZipTest::start3Types, "start3Types", this);
+            this.payloads.onNextExceptionInvokesOnError = _ClassStatement.forPayload(ObservableZipTest::onNextExceptionInvokesOnError, "onNextExceptionInvokesOnError", this);
+            this.payloads.onFirstCompletion = _ClassStatement.forPayload(ObservableZipTest::onFirstCompletion, "onFirstCompletion", this);
+            this.payloads.onErrorTermination = _ClassStatement.forPayload(ObservableZipTest::onErrorTermination, "onErrorTermination", this);
+            this.payloads.firstCompletesThenSecondInfinite = _ClassStatement.forPayload(ObservableZipTest::firstCompletesThenSecondInfinite, "firstCompletesThenSecondInfinite", this);
+            this.payloads.secondInfiniteThenFirstCompletes = _ClassStatement.forPayload(ObservableZipTest::secondInfiniteThenFirstCompletes, "secondInfiniteThenFirstCompletes", this);
+            this.payloads.secondCompletesThenFirstInfinite = _ClassStatement.forPayload(ObservableZipTest::secondCompletesThenFirstInfinite, "secondCompletesThenFirstInfinite", this);
+            this.payloads.firstInfiniteThenSecondCompletes = _ClassStatement.forPayload(ObservableZipTest::firstInfiniteThenSecondCompletes, "firstInfiniteThenSecondCompletes", this);
+            this.payloads.firstFails = _ClassStatement.forPayload(ObservableZipTest::firstFails, "firstFails", this);
+            this.payloads.secondFails = _ClassStatement.forPayload(ObservableZipTest::secondFails, "secondFails", this);
+            this.payloads.startWithOnCompletedTwice = _ClassStatement.forPayload(ObservableZipTest::startWithOnCompletedTwice, "startWithOnCompletedTwice", this);
+            this.payloads.start = _ClassStatement.forPayload(ObservableZipTest::start, "start", this);
+            this.payloads.startAsync = _ClassStatement.forPayload(ObservableZipTest::startAsync, "startAsync", this);
+            this.payloads.startInfiniteAndFinite = _ClassStatement.forPayload(ObservableZipTest::startInfiniteAndFinite, "startInfiniteAndFinite", this);
+            this.payloads.emitMaterializedNotifications = _ClassStatement.forPayload(ObservableZipTest::emitMaterializedNotifications, "emitMaterializedNotifications", this);
+            this.payloads.startEmptyObservables = _ClassStatement.forPayload(ObservableZipTest::startEmptyObservables, "startEmptyObservables", this);
+            this.payloads.startEmptyList = _ClassStatement.forPayload(ObservableZipTest::startEmptyList, "startEmptyList", this);
+            this.payloads.startEmptyListBlocking = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(ObservableZipTest::startEmptyListBlocking, java.util.NoSuchElementException.class), "startEmptyListBlocking", this);
+            this.payloads.downstreamBackpressureRequestsWithFiniteSyncObservables = _ClassStatement.forPayload(ObservableZipTest::downstreamBackpressureRequestsWithFiniteSyncObservables, "downstreamBackpressureRequestsWithFiniteSyncObservables", this);
+            this.payloads.issue1812 = _ClassStatement.forPayload(ObservableZipTest::issue1812, "issue1812", this);
+            this.payloads.zipRace = _ClassStatement.forPayload(ObservableZipTest::zipRace, "zipRace", this);
+            this.payloads.zip2 = _ClassStatement.forPayload(ObservableZipTest::zip2, "zip2", this);
+            this.payloads.zip3 = _ClassStatement.forPayload(ObservableZipTest::zip3, "zip3", this);
+            this.payloads.zip4 = _ClassStatement.forPayload(ObservableZipTest::zip4, "zip4", this);
+            this.payloads.zip5 = _ClassStatement.forPayload(ObservableZipTest::zip5, "zip5", this);
+            this.payloads.zip6 = _ClassStatement.forPayload(ObservableZipTest::zip6, "zip6", this);
+            this.payloads.zip7 = _ClassStatement.forPayload(ObservableZipTest::zip7, "zip7", this);
+            this.payloads.zip8 = _ClassStatement.forPayload(ObservableZipTest::zip8, "zip8", this);
+            this.payloads.zip9 = _ClassStatement.forPayload(ObservableZipTest::zip9, "zip9", this);
+            this.payloads.zip2DelayError = _ClassStatement.forPayload(ObservableZipTest::zip2DelayError, "zip2DelayError", this);
+            this.payloads.zip2Prefetch = _ClassStatement.forPayload(ObservableZipTest::zip2Prefetch, "zip2Prefetch", this);
+            this.payloads.zip2DelayErrorPrefetch = _ClassStatement.forPayload(ObservableZipTest::zip2DelayErrorPrefetch, "zip2DelayErrorPrefetch", this);
+            this.payloads.zipArrayEmpty = _ClassStatement.forPayload(ObservableZipTest::zipArrayEmpty, "zipArrayEmpty", this);
+            this.payloads.zipArrayMany = _ClassStatement.forPayload(ObservableZipTest::zipArrayMany, "zipArrayMany", this);
+            this.payloads.dispose = _ClassStatement.forPayload(ObservableZipTest::dispose, "dispose", this);
+            this.payloads.noCrossBoundaryFusion = _ClassStatement.forPayload(ObservableZipTest::noCrossBoundaryFusion, "noCrossBoundaryFusion", this);
+            this.payloads.eagerDispose = _ClassStatement.forPayload(ObservableZipTest::eagerDispose, "eagerDispose", this);
+            this.payloads.firstErrorPreventsSecondSubscription = _ClassStatement.forPayload(ObservableZipTest::firstErrorPreventsSecondSubscription, "firstErrorPreventsSecondSubscription", this);
+            this.payloads.observableSourcesInIterable = _ClassStatement.forPayload(ObservableZipTest::observableSourcesInIterable, "observableSourcesInIterable", this);
         }
     }
 }

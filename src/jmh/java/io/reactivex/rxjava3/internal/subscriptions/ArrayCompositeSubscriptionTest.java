@@ -97,44 +97,4 @@ public class ArrayCompositeSubscriptionTest extends RxJavaTest {
             TestHelper.race(r1, r2);
         }
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_set() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::set, this.description("set"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_replace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::replace, this.description("replace"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_disposeRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeRace, this.description("disposeRace"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_setReplaceRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::setReplaceRace, this.description("setReplaceRace"));
-        }
-
-        private ArrayCompositeSubscriptionTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ArrayCompositeSubscriptionTest();
-        }
-
-        @java.lang.Override
-        public ArrayCompositeSubscriptionTest implementation() {
-            return this.implementation;
-        }
-    }
 }

@@ -215,84 +215,165 @@ public class ObservableConcatMapCompletableTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableConcatMapCompletableTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncFused() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncFused, this.description("asyncFused"));
+            this.payloads.asyncFused.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_notFused() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::notFused, this.description("notFused"));
+            this.payloads.notFused.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainError, this.description("mainError"));
+            this.payloads.mainError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerError, this.description("innerError"));
+            this.payloads.innerError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSource, this.description("badSource"));
+            this.payloads.badSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorRace, this.description("onErrorRace"));
+            this.payloads.onErrorRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperThrows, this.description("mapperThrows"));
+            this.payloads.mapperThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedPollThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedPollThrows, this.description("fusedPollThrows"));
+            this.payloads.fusedPollThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatReportsDisposedOnComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatReportsDisposedOnComplete, this.description("concatReportsDisposedOnComplete"));
+            this.payloads.concatReportsDisposedOnComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatReportsDisposedOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatReportsDisposedOnError, this.description("concatReportsDisposedOnError"));
+            this.payloads.concatReportsDisposedOnError.evaluate();
         }
 
-        private ObservableConcatMapCompletableTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableConcatMapCompletableTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapCompletableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapCompletableTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservableConcatMapCompletableTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapCompletableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapCompletableTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableConcatMapCompletableTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapCompletableTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableConcatMapCompletableTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableConcatMapCompletableTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement asyncFused;
+
+            public org.junit.runners.model.Statement notFused;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement mainError;
+
+            public org.junit.runners.model.Statement innerError;
+
+            public org.junit.runners.model.Statement badSource;
+
+            public org.junit.runners.model.Statement onErrorRace;
+
+            public org.junit.runners.model.Statement mapperThrows;
+
+            public org.junit.runners.model.Statement fusedPollThrows;
+
+            public org.junit.runners.model.Statement concatReportsDisposedOnComplete;
+
+            public org.junit.runners.model.Statement concatReportsDisposedOnError;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.asyncFused = _ClassStatement.forPayload(ObservableConcatMapCompletableTest::asyncFused, "asyncFused", this);
+            this.payloads.notFused = _ClassStatement.forPayload(ObservableConcatMapCompletableTest::notFused, "notFused", this);
+            this.payloads.dispose = _ClassStatement.forPayload(ObservableConcatMapCompletableTest::dispose, "dispose", this);
+            this.payloads.mainError = _ClassStatement.forPayload(ObservableConcatMapCompletableTest::mainError, "mainError", this);
+            this.payloads.innerError = _ClassStatement.forPayload(ObservableConcatMapCompletableTest::innerError, "innerError", this);
+            this.payloads.badSource = _ClassStatement.forPayload(ObservableConcatMapCompletableTest::badSource, "badSource", this);
+            this.payloads.onErrorRace = _ClassStatement.forPayload(ObservableConcatMapCompletableTest::onErrorRace, "onErrorRace", this);
+            this.payloads.mapperThrows = _ClassStatement.forPayload(ObservableConcatMapCompletableTest::mapperThrows, "mapperThrows", this);
+            this.payloads.fusedPollThrows = _ClassStatement.forPayload(ObservableConcatMapCompletableTest::fusedPollThrows, "fusedPollThrows", this);
+            this.payloads.concatReportsDisposedOnComplete = _ClassStatement.forPayload(ObservableConcatMapCompletableTest::concatReportsDisposedOnComplete, "concatReportsDisposedOnComplete", this);
+            this.payloads.concatReportsDisposedOnError = _ClassStatement.forPayload(ObservableConcatMapCompletableTest::concatReportsDisposedOnError, "concatReportsDisposedOnError", this);
         }
     }
 }

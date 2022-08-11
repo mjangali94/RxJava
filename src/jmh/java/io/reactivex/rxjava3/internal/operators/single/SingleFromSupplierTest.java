@@ -224,90 +224,173 @@ public class SingleFromSupplierTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private SingleFromSupplierTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromSupplierValue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromSupplierValue, this.description("fromSupplierValue"));
+            this.payloads.fromSupplierValue.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromSupplierError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromSupplierError, this.description("fromSupplierError"));
+            this.payloads.fromSupplierError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromSupplierNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromSupplierNull, this.description("fromSupplierNull"));
+            this.payloads.fromSupplierNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromSupplierTwice() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromSupplierTwice, this.description("fromSupplierTwice"));
+            this.payloads.fromSupplierTwice.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_shouldNotInvokeFuncUntilSubscription() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::shouldNotInvokeFuncUntilSubscription, this.description("shouldNotInvokeFuncUntilSubscription"));
+            this.payloads.shouldNotInvokeFuncUntilSubscription.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noErrorLoss() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noErrorLoss, this.description("noErrorLoss"));
+            this.payloads.noErrorLoss.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_shouldNotDeliverResultIfSubscriberUnsubscribedBeforeEmission() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::shouldNotDeliverResultIfSubscriberUnsubscribedBeforeEmission, this.description("shouldNotDeliverResultIfSubscriberUnsubscribedBeforeEmission"));
+            this.payloads.shouldNotDeliverResultIfSubscriberUnsubscribedBeforeEmission.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_shouldAllowToThrowCheckedException() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::shouldAllowToThrowCheckedException, this.description("shouldAllowToThrowCheckedException"));
+            this.payloads.shouldAllowToThrowCheckedException.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposedOnArrival() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposedOnArrival, this.description("disposedOnArrival"));
+            this.payloads.disposedOnArrival.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposedOnCall() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposedOnCall, this.description("disposedOnCall"));
+            this.payloads.disposedOnCall.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toObservableTake() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toObservableTake, this.description("toObservableTake"));
+            this.payloads.toObservableTake.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toObservableAndBack() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toObservableAndBack, this.description("toObservableAndBack"));
+            this.payloads.toObservableAndBack.evaluate();
         }
 
-        private SingleFromSupplierTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SingleFromSupplierTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<SingleFromSupplierTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleFromSupplierTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public SingleFromSupplierTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<SingleFromSupplierTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleFromSupplierTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new SingleFromSupplierTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleFromSupplierTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(SingleFromSupplierTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(SingleFromSupplierTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement fromSupplierValue;
+
+            public org.junit.runners.model.Statement fromSupplierError;
+
+            public org.junit.runners.model.Statement fromSupplierNull;
+
+            public org.junit.runners.model.Statement fromSupplierTwice;
+
+            public org.junit.runners.model.Statement shouldNotInvokeFuncUntilSubscription;
+
+            public org.junit.runners.model.Statement noErrorLoss;
+
+            public org.junit.runners.model.Statement shouldNotDeliverResultIfSubscriberUnsubscribedBeforeEmission;
+
+            public org.junit.runners.model.Statement shouldAllowToThrowCheckedException;
+
+            public org.junit.runners.model.Statement disposedOnArrival;
+
+            public org.junit.runners.model.Statement disposedOnCall;
+
+            public org.junit.runners.model.Statement toObservableTake;
+
+            public org.junit.runners.model.Statement toObservableAndBack;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.fromSupplierValue = _ClassStatement.forPayload(SingleFromSupplierTest::fromSupplierValue, "fromSupplierValue", this);
+            this.payloads.fromSupplierError = _ClassStatement.forPayload(SingleFromSupplierTest::fromSupplierError, "fromSupplierError", this);
+            this.payloads.fromSupplierNull = _ClassStatement.forPayload(SingleFromSupplierTest::fromSupplierNull, "fromSupplierNull", this);
+            this.payloads.fromSupplierTwice = _ClassStatement.forPayload(SingleFromSupplierTest::fromSupplierTwice, "fromSupplierTwice", this);
+            this.payloads.shouldNotInvokeFuncUntilSubscription = _ClassStatement.forPayload(SingleFromSupplierTest::shouldNotInvokeFuncUntilSubscription, "shouldNotInvokeFuncUntilSubscription", this);
+            this.payloads.noErrorLoss = _ClassStatement.forPayload(SingleFromSupplierTest::noErrorLoss, "noErrorLoss", this);
+            this.payloads.shouldNotDeliverResultIfSubscriberUnsubscribedBeforeEmission = _ClassStatement.forPayload(SingleFromSupplierTest::shouldNotDeliverResultIfSubscriberUnsubscribedBeforeEmission, "shouldNotDeliverResultIfSubscriberUnsubscribedBeforeEmission", this);
+            this.payloads.shouldAllowToThrowCheckedException = _ClassStatement.forPayload(SingleFromSupplierTest::shouldAllowToThrowCheckedException, "shouldAllowToThrowCheckedException", this);
+            this.payloads.disposedOnArrival = _ClassStatement.forPayload(SingleFromSupplierTest::disposedOnArrival, "disposedOnArrival", this);
+            this.payloads.disposedOnCall = _ClassStatement.forPayload(SingleFromSupplierTest::disposedOnCall, "disposedOnCall", this);
+            this.payloads.toObservableTake = _ClassStatement.forPayload(SingleFromSupplierTest::toObservableTake, "toObservableTake", this);
+            this.payloads.toObservableAndBack = _ClassStatement.forPayload(SingleFromSupplierTest::toObservableAndBack, "toObservableAndBack", this);
         }
     }
 }

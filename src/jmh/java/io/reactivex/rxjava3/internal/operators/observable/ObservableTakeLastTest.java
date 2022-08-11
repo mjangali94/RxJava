@@ -181,96 +181,181 @@ public class ObservableTakeLastTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableTakeLastTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeLastEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeLastEmpty, this.description("takeLastEmpty"));
+            this.payloads.takeLastEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeLast1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeLast1, this.description("takeLast1"));
+            this.payloads.takeLast1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeLast2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeLast2, this.description("takeLast2"));
+            this.payloads.takeLast2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeLastWithZeroCount() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeLastWithZeroCount, this.description("takeLastWithZeroCount"));
+            this.payloads.takeLastWithZeroCount.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeLastWithNegativeCount() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::takeLastWithNegativeCount, this.description("takeLastWithNegativeCount"), java.lang.IllegalArgumentException.class);
+            this.payloads.takeLastWithNegativeCount.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressure1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressure1, this.description("backpressure1"));
+            this.payloads.backpressure1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressure2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressure2, this.description("backpressure2"));
+            this.payloads.backpressure2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_issue1522() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::issue1522, this.description("issue1522"));
+            this.payloads.issue1522.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribeTakesEffectEarlyOnFastPath() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribeTakesEffectEarlyOnFastPath, this.description("unsubscribeTakesEffectEarlyOnFastPath"));
+            this.payloads.unsubscribeTakesEffectEarlyOnFastPath.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeLastTake() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeLastTake, this.description("takeLastTake"));
+            this.payloads.takeLastTake.evaluate();
         }
 
-        private ObservableTakeLastTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableTakeLastTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableTakeLastTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableTakeLastTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservableTakeLastTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableTakeLastTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableTakeLastTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableTakeLastTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableTakeLastTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableTakeLastTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableTakeLastTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement takeLastEmpty;
+
+            public org.junit.runners.model.Statement takeLast1;
+
+            public org.junit.runners.model.Statement takeLast2;
+
+            public org.junit.runners.model.Statement takeLastWithZeroCount;
+
+            public org.junit.runners.model.Statement takeLastWithNegativeCount;
+
+            public org.junit.runners.model.Statement backpressure1;
+
+            public org.junit.runners.model.Statement backpressure2;
+
+            public org.junit.runners.model.Statement issue1522;
+
+            public org.junit.runners.model.Statement unsubscribeTakesEffectEarlyOnFastPath;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement takeLastTake;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.takeLastEmpty = _ClassStatement.forPayload(ObservableTakeLastTest::takeLastEmpty, "takeLastEmpty", this);
+            this.payloads.takeLast1 = _ClassStatement.forPayload(ObservableTakeLastTest::takeLast1, "takeLast1", this);
+            this.payloads.takeLast2 = _ClassStatement.forPayload(ObservableTakeLastTest::takeLast2, "takeLast2", this);
+            this.payloads.takeLastWithZeroCount = _ClassStatement.forPayload(ObservableTakeLastTest::takeLastWithZeroCount, "takeLastWithZeroCount", this);
+            this.payloads.takeLastWithNegativeCount = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(ObservableTakeLastTest::takeLastWithNegativeCount, java.lang.IllegalArgumentException.class), "takeLastWithNegativeCount", this);
+            this.payloads.backpressure1 = _ClassStatement.forPayload(ObservableTakeLastTest::backpressure1, "backpressure1", this);
+            this.payloads.backpressure2 = _ClassStatement.forPayload(ObservableTakeLastTest::backpressure2, "backpressure2", this);
+            this.payloads.issue1522 = _ClassStatement.forPayload(ObservableTakeLastTest::issue1522, "issue1522", this);
+            this.payloads.unsubscribeTakesEffectEarlyOnFastPath = _ClassStatement.forPayload(ObservableTakeLastTest::unsubscribeTakesEffectEarlyOnFastPath, "unsubscribeTakesEffectEarlyOnFastPath", this);
+            this.payloads.dispose = _ClassStatement.forPayload(ObservableTakeLastTest::dispose, "dispose", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(ObservableTakeLastTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.error = _ClassStatement.forPayload(ObservableTakeLastTest::error, "error", this);
+            this.payloads.takeLastTake = _ClassStatement.forPayload(ObservableTakeLastTest::takeLastTake, "takeLastTake", this);
         }
     }
 }

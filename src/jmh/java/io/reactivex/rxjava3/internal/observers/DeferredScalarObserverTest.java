@@ -417,126 +417,221 @@ public class DeferredScalarObserverTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private DeferredScalarObserverTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normal, this.description("normal"));
+            this.payloads.normal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_complete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::complete, this.description("complete"));
+            this.payloads.complete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fused() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fused, this.description("fused"));
+            this.payloads.fused.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedReject() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedReject, this.description("fusedReject"));
+            this.payloads.fusedReject.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nonfusedTerminateMore() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nonfusedTerminateMore, this.description("nonfusedTerminateMore"));
+            this.payloads.nonfusedTerminateMore.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nonfusedError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nonfusedError, this.description("nonfusedError"));
+            this.payloads.nonfusedError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedTerminateMore() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedTerminateMore, this.description("fusedTerminateMore"));
+            this.payloads.fusedTerminateMore.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedError, this.description("fusedError"));
+            this.payloads.fusedError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposed, this.description("disposed"));
+            this.payloads.disposed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposedAfterOnNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposedAfterOnNext, this.description("disposedAfterOnNext"));
+            this.payloads.disposedAfterOnNext.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedEmpty, this.description("fusedEmpty"));
+            this.payloads.fusedEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nonfusedEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nonfusedEmpty, this.description("nonfusedEmpty"));
+            this.payloads.nonfusedEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_customFusion() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::customFusion, this.description("customFusion"));
+            this.payloads.customFusion.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_customFusionClear() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::customFusionClear, this.description("customFusionClear"));
+            this.payloads.customFusionClear.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_offerThrow() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::offerThrow, this.description("offerThrow"));
+            this.payloads.offerThrow.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_customFusionDontConsume() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::customFusionDontConsume, this.description("customFusionDontConsume"));
+            this.payloads.customFusionDontConsume.evaluate();
         }
 
-        private DeferredScalarObserverTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new DeferredScalarObserverTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<DeferredScalarObserverTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<DeferredScalarObserverTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public DeferredScalarObserverTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<DeferredScalarObserverTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<DeferredScalarObserverTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new DeferredScalarObserverTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<DeferredScalarObserverTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(DeferredScalarObserverTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(DeferredScalarObserverTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement normal;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement complete;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement fused;
+
+            public org.junit.runners.model.Statement fusedReject;
+
+            public org.junit.runners.model.Statement nonfusedTerminateMore;
+
+            public org.junit.runners.model.Statement nonfusedError;
+
+            public org.junit.runners.model.Statement fusedTerminateMore;
+
+            public org.junit.runners.model.Statement fusedError;
+
+            public org.junit.runners.model.Statement disposed;
+
+            public org.junit.runners.model.Statement disposedAfterOnNext;
+
+            public org.junit.runners.model.Statement fusedEmpty;
+
+            public org.junit.runners.model.Statement nonfusedEmpty;
+
+            public org.junit.runners.model.Statement customFusion;
+
+            public org.junit.runners.model.Statement customFusionClear;
+
+            public org.junit.runners.model.Statement offerThrow;
+
+            public org.junit.runners.model.Statement customFusionDontConsume;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.normal = _ClassStatement.forPayload(DeferredScalarObserverTest::normal, "normal", this);
+            this.payloads.error = _ClassStatement.forPayload(DeferredScalarObserverTest::error, "error", this);
+            this.payloads.complete = _ClassStatement.forPayload(DeferredScalarObserverTest::complete, "complete", this);
+            this.payloads.dispose = _ClassStatement.forPayload(DeferredScalarObserverTest::dispose, "dispose", this);
+            this.payloads.fused = _ClassStatement.forPayload(DeferredScalarObserverTest::fused, "fused", this);
+            this.payloads.fusedReject = _ClassStatement.forPayload(DeferredScalarObserverTest::fusedReject, "fusedReject", this);
+            this.payloads.nonfusedTerminateMore = _ClassStatement.forPayload(DeferredScalarObserverTest::nonfusedTerminateMore, "nonfusedTerminateMore", this);
+            this.payloads.nonfusedError = _ClassStatement.forPayload(DeferredScalarObserverTest::nonfusedError, "nonfusedError", this);
+            this.payloads.fusedTerminateMore = _ClassStatement.forPayload(DeferredScalarObserverTest::fusedTerminateMore, "fusedTerminateMore", this);
+            this.payloads.fusedError = _ClassStatement.forPayload(DeferredScalarObserverTest::fusedError, "fusedError", this);
+            this.payloads.disposed = _ClassStatement.forPayload(DeferredScalarObserverTest::disposed, "disposed", this);
+            this.payloads.disposedAfterOnNext = _ClassStatement.forPayload(DeferredScalarObserverTest::disposedAfterOnNext, "disposedAfterOnNext", this);
+            this.payloads.fusedEmpty = _ClassStatement.forPayload(DeferredScalarObserverTest::fusedEmpty, "fusedEmpty", this);
+            this.payloads.nonfusedEmpty = _ClassStatement.forPayload(DeferredScalarObserverTest::nonfusedEmpty, "nonfusedEmpty", this);
+            this.payloads.customFusion = _ClassStatement.forPayload(DeferredScalarObserverTest::customFusion, "customFusion", this);
+            this.payloads.customFusionClear = _ClassStatement.forPayload(DeferredScalarObserverTest::customFusionClear, "customFusionClear", this);
+            this.payloads.offerThrow = _ClassStatement.forPayload(DeferredScalarObserverTest::offerThrow, "offerThrow", this);
+            this.payloads.customFusionDontConsume = _ClassStatement.forPayload(DeferredScalarObserverTest::customFusionDontConsume, "customFusionDontConsume", this);
         }
     }
 }

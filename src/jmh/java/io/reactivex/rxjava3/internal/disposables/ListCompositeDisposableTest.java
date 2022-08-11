@@ -345,120 +345,213 @@ public class ListCompositeDisposableTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ListCompositeDisposableTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_constructorAndAddVarargs() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::constructorAndAddVarargs, this.description("constructorAndAddVarargs"));
+            this.payloads.constructorAndAddVarargs.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_constructorIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::constructorIterable, this.description("constructorIterable"));
+            this.payloads.constructorIterable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_empty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::empty, this.description("empty"));
+            this.payloads.empty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_afterDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::afterDispose, this.description("afterDispose"));
+            this.payloads.afterDispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeThrows, this.description("disposeThrows"));
+            this.payloads.disposeThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_remove() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::remove, this.description("remove"));
+            this.payloads.remove.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeRace, this.description("disposeRace"));
+            this.payloads.disposeRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_addRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::addRace, this.description("addRace"));
+            this.payloads.addRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_addAllRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::addAllRace, this.description("addAllRace"));
+            this.payloads.addAllRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_removeRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::removeRace, this.description("removeRace"));
+            this.payloads.removeRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_deleteRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::deleteRace, this.description("deleteRace"));
+            this.payloads.deleteRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_clearRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::clearRace, this.description("clearRace"));
+            this.payloads.clearRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_addDisposeRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::addDisposeRace, this.description("addDisposeRace"));
+            this.payloads.addDisposeRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_addAllDisposeRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::addAllDisposeRace, this.description("addAllDisposeRace"));
+            this.payloads.addAllDisposeRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_removeDisposeRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::removeDisposeRace, this.description("removeDisposeRace"));
+            this.payloads.removeDisposeRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_deleteDisposeRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::deleteDisposeRace, this.description("deleteDisposeRace"));
+            this.payloads.deleteDisposeRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_clearDisposeRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::clearDisposeRace, this.description("clearDisposeRace"));
+            this.payloads.clearDisposeRace.evaluate();
         }
 
-        private ListCompositeDisposableTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ListCompositeDisposableTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ListCompositeDisposableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ListCompositeDisposableTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ListCompositeDisposableTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ListCompositeDisposableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ListCompositeDisposableTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ListCompositeDisposableTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ListCompositeDisposableTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ListCompositeDisposableTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ListCompositeDisposableTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement constructorAndAddVarargs;
+
+            public org.junit.runners.model.Statement constructorIterable;
+
+            public org.junit.runners.model.Statement empty;
+
+            public org.junit.runners.model.Statement afterDispose;
+
+            public org.junit.runners.model.Statement disposeThrows;
+
+            public org.junit.runners.model.Statement remove;
+
+            public org.junit.runners.model.Statement disposeRace;
+
+            public org.junit.runners.model.Statement addRace;
+
+            public org.junit.runners.model.Statement addAllRace;
+
+            public org.junit.runners.model.Statement removeRace;
+
+            public org.junit.runners.model.Statement deleteRace;
+
+            public org.junit.runners.model.Statement clearRace;
+
+            public org.junit.runners.model.Statement addDisposeRace;
+
+            public org.junit.runners.model.Statement addAllDisposeRace;
+
+            public org.junit.runners.model.Statement removeDisposeRace;
+
+            public org.junit.runners.model.Statement deleteDisposeRace;
+
+            public org.junit.runners.model.Statement clearDisposeRace;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.constructorAndAddVarargs = _ClassStatement.forPayload(ListCompositeDisposableTest::constructorAndAddVarargs, "constructorAndAddVarargs", this);
+            this.payloads.constructorIterable = _ClassStatement.forPayload(ListCompositeDisposableTest::constructorIterable, "constructorIterable", this);
+            this.payloads.empty = _ClassStatement.forPayload(ListCompositeDisposableTest::empty, "empty", this);
+            this.payloads.afterDispose = _ClassStatement.forPayload(ListCompositeDisposableTest::afterDispose, "afterDispose", this);
+            this.payloads.disposeThrows = _ClassStatement.forPayload(ListCompositeDisposableTest::disposeThrows, "disposeThrows", this);
+            this.payloads.remove = _ClassStatement.forPayload(ListCompositeDisposableTest::remove, "remove", this);
+            this.payloads.disposeRace = _ClassStatement.forPayload(ListCompositeDisposableTest::disposeRace, "disposeRace", this);
+            this.payloads.addRace = _ClassStatement.forPayload(ListCompositeDisposableTest::addRace, "addRace", this);
+            this.payloads.addAllRace = _ClassStatement.forPayload(ListCompositeDisposableTest::addAllRace, "addAllRace", this);
+            this.payloads.removeRace = _ClassStatement.forPayload(ListCompositeDisposableTest::removeRace, "removeRace", this);
+            this.payloads.deleteRace = _ClassStatement.forPayload(ListCompositeDisposableTest::deleteRace, "deleteRace", this);
+            this.payloads.clearRace = _ClassStatement.forPayload(ListCompositeDisposableTest::clearRace, "clearRace", this);
+            this.payloads.addDisposeRace = _ClassStatement.forPayload(ListCompositeDisposableTest::addDisposeRace, "addDisposeRace", this);
+            this.payloads.addAllDisposeRace = _ClassStatement.forPayload(ListCompositeDisposableTest::addAllDisposeRace, "addAllDisposeRace", this);
+            this.payloads.removeDisposeRace = _ClassStatement.forPayload(ListCompositeDisposableTest::removeDisposeRace, "removeDisposeRace", this);
+            this.payloads.deleteDisposeRace = _ClassStatement.forPayload(ListCompositeDisposableTest::deleteDisposeRace, "deleteDisposeRace", this);
+            this.payloads.clearDisposeRace = _ClassStatement.forPayload(ListCompositeDisposableTest::clearDisposeRace, "clearDisposeRace", this);
         }
     }
 }

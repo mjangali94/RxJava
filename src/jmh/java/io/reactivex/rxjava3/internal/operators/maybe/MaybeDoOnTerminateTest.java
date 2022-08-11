@@ -99,54 +99,125 @@ public class MaybeDoOnTerminateTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private MaybeDoOnTerminateTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnTerminateSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnTerminateSuccess, this.description("doOnTerminateSuccess"));
+            this.payloads.doOnTerminateSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnTerminateError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnTerminateError, this.description("doOnTerminateError"));
+            this.payloads.doOnTerminateError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnTerminateComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnTerminateComplete, this.description("doOnTerminateComplete"));
+            this.payloads.doOnTerminateComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnTerminateSuccessCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnTerminateSuccessCrash, this.description("doOnTerminateSuccessCrash"));
+            this.payloads.doOnTerminateSuccessCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnTerminateErrorCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnTerminateErrorCrash, this.description("doOnTerminateErrorCrash"));
+            this.payloads.doOnTerminateErrorCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnTerminateCompleteCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnTerminateCompleteCrash, this.description("doOnTerminateCompleteCrash"));
+            this.payloads.doOnTerminateCompleteCrash.evaluate();
         }
 
-        private MaybeDoOnTerminateTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeDoOnTerminateTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeDoOnTerminateTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeDoOnTerminateTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public MaybeDoOnTerminateTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeDoOnTerminateTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeDoOnTerminateTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new MaybeDoOnTerminateTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeDoOnTerminateTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(MaybeDoOnTerminateTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(MaybeDoOnTerminateTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement doOnTerminateSuccess;
+
+            public org.junit.runners.model.Statement doOnTerminateError;
+
+            public org.junit.runners.model.Statement doOnTerminateComplete;
+
+            public org.junit.runners.model.Statement doOnTerminateSuccessCrash;
+
+            public org.junit.runners.model.Statement doOnTerminateErrorCrash;
+
+            public org.junit.runners.model.Statement doOnTerminateCompleteCrash;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.doOnTerminateSuccess = _ClassStatement.forPayload(MaybeDoOnTerminateTest::doOnTerminateSuccess, "doOnTerminateSuccess", this);
+            this.payloads.doOnTerminateError = _ClassStatement.forPayload(MaybeDoOnTerminateTest::doOnTerminateError, "doOnTerminateError", this);
+            this.payloads.doOnTerminateComplete = _ClassStatement.forPayload(MaybeDoOnTerminateTest::doOnTerminateComplete, "doOnTerminateComplete", this);
+            this.payloads.doOnTerminateSuccessCrash = _ClassStatement.forPayload(MaybeDoOnTerminateTest::doOnTerminateSuccessCrash, "doOnTerminateSuccessCrash", this);
+            this.payloads.doOnTerminateErrorCrash = _ClassStatement.forPayload(MaybeDoOnTerminateTest::doOnTerminateErrorCrash, "doOnTerminateErrorCrash", this);
+            this.payloads.doOnTerminateCompleteCrash = _ClassStatement.forPayload(MaybeDoOnTerminateTest::doOnTerminateCompleteCrash, "doOnTerminateCompleteCrash", this);
         }
     }
 }

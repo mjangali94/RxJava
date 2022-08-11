@@ -319,90 +319,173 @@ public class MaybeCreateTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private MaybeCreateTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_callbackThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::callbackThrows, this.description("callbackThrows"));
+            this.payloads.callbackThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onSuccessNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onSuccessNull, this.description("onSuccessNull"));
+            this.payloads.onSuccessNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorNull, this.description("onErrorNull"));
+            this.payloads.onErrorNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onSuccessThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onSuccessThrows, this.description("onSuccessThrows"));
+            this.payloads.onSuccessThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorThrows, this.description("onErrorThrows"));
+            this.payloads.onErrorThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onCompleteThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompleteThrows, this.description("onCompleteThrows"));
+            this.payloads.onCompleteThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onSuccessThrows2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onSuccessThrows2, this.description("onSuccessThrows2"));
+            this.payloads.onSuccessThrows2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorThrows2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorThrows2, this.description("onErrorThrows2"));
+            this.payloads.onErrorThrows2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onCompleteThrows2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompleteThrows2, this.description("onCompleteThrows2"));
+            this.payloads.onCompleteThrows2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_tryOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tryOnError, this.description("tryOnError"));
+            this.payloads.tryOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emitterHasToString() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emitterHasToString, this.description("emitterHasToString"));
+            this.payloads.emitterHasToString.evaluate();
         }
 
-        private MaybeCreateTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeCreateTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeCreateTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeCreateTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public MaybeCreateTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeCreateTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeCreateTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new MaybeCreateTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeCreateTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(MaybeCreateTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(MaybeCreateTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement callbackThrows;
+
+            public org.junit.runners.model.Statement onSuccessNull;
+
+            public org.junit.runners.model.Statement onErrorNull;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement onSuccessThrows;
+
+            public org.junit.runners.model.Statement onErrorThrows;
+
+            public org.junit.runners.model.Statement onCompleteThrows;
+
+            public org.junit.runners.model.Statement onSuccessThrows2;
+
+            public org.junit.runners.model.Statement onErrorThrows2;
+
+            public org.junit.runners.model.Statement onCompleteThrows2;
+
+            public org.junit.runners.model.Statement tryOnError;
+
+            public org.junit.runners.model.Statement emitterHasToString;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.callbackThrows = _ClassStatement.forPayload(MaybeCreateTest::callbackThrows, "callbackThrows", this);
+            this.payloads.onSuccessNull = _ClassStatement.forPayload(MaybeCreateTest::onSuccessNull, "onSuccessNull", this);
+            this.payloads.onErrorNull = _ClassStatement.forPayload(MaybeCreateTest::onErrorNull, "onErrorNull", this);
+            this.payloads.dispose = _ClassStatement.forPayload(MaybeCreateTest::dispose, "dispose", this);
+            this.payloads.onSuccessThrows = _ClassStatement.forPayload(MaybeCreateTest::onSuccessThrows, "onSuccessThrows", this);
+            this.payloads.onErrorThrows = _ClassStatement.forPayload(MaybeCreateTest::onErrorThrows, "onErrorThrows", this);
+            this.payloads.onCompleteThrows = _ClassStatement.forPayload(MaybeCreateTest::onCompleteThrows, "onCompleteThrows", this);
+            this.payloads.onSuccessThrows2 = _ClassStatement.forPayload(MaybeCreateTest::onSuccessThrows2, "onSuccessThrows2", this);
+            this.payloads.onErrorThrows2 = _ClassStatement.forPayload(MaybeCreateTest::onErrorThrows2, "onErrorThrows2", this);
+            this.payloads.onCompleteThrows2 = _ClassStatement.forPayload(MaybeCreateTest::onCompleteThrows2, "onCompleteThrows2", this);
+            this.payloads.tryOnError = _ClassStatement.forPayload(MaybeCreateTest::tryOnError, "tryOnError", this);
+            this.payloads.emitterHasToString = _ClassStatement.forPayload(MaybeCreateTest::emitterHasToString, "emitterHasToString", this);
         }
     }
 }

@@ -671,222 +671,349 @@ public class ObservableObserveOnTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableObserveOnTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observeOn() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observeOn, this.description("observeOn"));
+            this.payloads.observeOn.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ordering() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ordering, this.description("ordering"));
+            this.payloads.ordering.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_threadName() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::threadName, this.description("threadName"));
+            this.payloads.threadName.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observeOnTheSameSchedulerTwice() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observeOnTheSameSchedulerTwice, this.description("observeOnTheSameSchedulerTwice"));
+            this.payloads.observeOnTheSameSchedulerTwice.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observeSameOnMultipleSchedulers() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observeSameOnMultipleSchedulers, this.description("observeSameOnMultipleSchedulers"));
+            this.payloads.observeSameOnMultipleSchedulers.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observeOnWithNewThreadScheduler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observeOnWithNewThreadScheduler, this.description("observeOnWithNewThreadScheduler"));
+            this.payloads.observeOnWithNewThreadScheduler.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observeOnWithThreadPoolScheduler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observeOnWithThreadPoolScheduler, this.description("observeOnWithThreadPoolScheduler"));
+            this.payloads.observeOnWithThreadPoolScheduler.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observeOnOrderingConcurrency() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observeOnOrderingConcurrency, this.description("observeOnOrderingConcurrency"));
+            this.payloads.observeOnOrderingConcurrency.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nonBlockingOuterWhileBlockingOnNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nonBlockingOuterWhileBlockingOnNext, this.description("nonBlockingOuterWhileBlockingOnNext"));
+            this.payloads.nonBlockingOuterWhileBlockingOnNext.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayedErrorDeliveryWhenSafeSubscriberUnsubscribes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayedErrorDeliveryWhenSafeSubscriberUnsubscribes, this.description("delayedErrorDeliveryWhenSafeSubscriberUnsubscribes"));
+            this.payloads.delayedErrorDeliveryWhenSafeSubscriberUnsubscribes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_afterUnsubscribeCalledThenObserverOnNextNeverCalled() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::afterUnsubscribeCalledThenObserverOnNextNeverCalled, this.description("afterUnsubscribeCalledThenObserverOnNextNeverCalled"));
+            this.payloads.afterUnsubscribeCalledThenObserverOnNextNeverCalled.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureWithTakeBefore() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureWithTakeBefore, this.description("backpressureWithTakeBefore"));
+            this.payloads.backpressureWithTakeBefore.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncChild() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncChild, this.description("asyncChild"));
+            this.payloads.asyncChild.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayError, this.description("delayError"));
+            this.payloads.delayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_trampolineScheduler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::trampolineScheduler, this.description("trampolineScheduler"));
+            this.payloads.trampolineScheduler.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSource, this.description("badSource"));
+            this.payloads.badSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_inputSyncFused() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::inputSyncFused, this.description("inputSyncFused"));
+            this.payloads.inputSyncFused.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_inputAsyncFused() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::inputAsyncFused, this.description("inputAsyncFused"));
+            this.payloads.inputAsyncFused.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_inputAsyncFusedError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::inputAsyncFusedError, this.description("inputAsyncFusedError"));
+            this.payloads.inputAsyncFusedError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_inputAsyncFusedErrorDelayed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::inputAsyncFusedErrorDelayed, this.description("inputAsyncFusedErrorDelayed"));
+            this.payloads.inputAsyncFusedErrorDelayed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_outputFused() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::outputFused, this.description("outputFused"));
+            this.payloads.outputFused.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_outputFusedReject() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::outputFusedReject, this.description("outputFusedReject"));
+            this.payloads.outputFusedReject.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_inputOutputAsyncFusedError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::inputOutputAsyncFusedError, this.description("inputOutputAsyncFusedError"));
+            this.payloads.inputOutputAsyncFusedError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_inputOutputAsyncFusedErrorDelayed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::inputOutputAsyncFusedErrorDelayed, this.description("inputOutputAsyncFusedErrorDelayed"));
+            this.payloads.inputOutputAsyncFusedErrorDelayed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_outputFusedCancelReentrant() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::outputFusedCancelReentrant, this.description("outputFusedCancelReentrant"));
+            this.payloads.outputFusedCancelReentrant.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nonFusedPollThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nonFusedPollThrows, this.description("nonFusedPollThrows"));
+            this.payloads.nonFusedPollThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_outputFusedOneSignal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::outputFusedOneSignal, this.description("outputFusedOneSignal"));
+            this.payloads.outputFusedOneSignal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_workerNotDisposedPrematurelyNormalInNormalOut() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::workerNotDisposedPrematurelyNormalInNormalOut, this.description("workerNotDisposedPrematurelyNormalInNormalOut"));
+            this.payloads.workerNotDisposedPrematurelyNormalInNormalOut.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_workerNotDisposedPrematurelySyncInNormalOut() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::workerNotDisposedPrematurelySyncInNormalOut, this.description("workerNotDisposedPrematurelySyncInNormalOut"));
+            this.payloads.workerNotDisposedPrematurelySyncInNormalOut.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_workerNotDisposedPrematurelyAsyncInNormalOut() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::workerNotDisposedPrematurelyAsyncInNormalOut, this.description("workerNotDisposedPrematurelyAsyncInNormalOut"));
+            this.payloads.workerNotDisposedPrematurelyAsyncInNormalOut.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_workerNotDisposedPrematurelyNormalInAsyncOut() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::workerNotDisposedPrematurelyNormalInAsyncOut, this.description("workerNotDisposedPrematurelyNormalInAsyncOut"));
+            this.payloads.workerNotDisposedPrematurelyNormalInAsyncOut.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedNoConcurrentCleanDueToCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedNoConcurrentCleanDueToCancel, this.description("fusedNoConcurrentCleanDueToCancel"));
+            this.payloads.fusedNoConcurrentCleanDueToCancel.evaluate();
         }
 
-        private ObservableObserveOnTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableObserveOnTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableObserveOnTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableObserveOnTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservableObserveOnTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableObserveOnTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableObserveOnTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableObserveOnTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableObserveOnTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableObserveOnTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableObserveOnTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement observeOn;
+
+            public org.junit.runners.model.Statement ordering;
+
+            public org.junit.runners.model.Statement threadName;
+
+            public org.junit.runners.model.Statement observeOnTheSameSchedulerTwice;
+
+            public org.junit.runners.model.Statement observeSameOnMultipleSchedulers;
+
+            public org.junit.runners.model.Statement observeOnWithNewThreadScheduler;
+
+            public org.junit.runners.model.Statement observeOnWithThreadPoolScheduler;
+
+            public org.junit.runners.model.Statement observeOnOrderingConcurrency;
+
+            public org.junit.runners.model.Statement nonBlockingOuterWhileBlockingOnNext;
+
+            public org.junit.runners.model.Statement delayedErrorDeliveryWhenSafeSubscriberUnsubscribes;
+
+            public org.junit.runners.model.Statement afterUnsubscribeCalledThenObserverOnNextNeverCalled;
+
+            public org.junit.runners.model.Statement backpressureWithTakeBefore;
+
+            public org.junit.runners.model.Statement asyncChild;
+
+            public org.junit.runners.model.Statement delayError;
+
+            public org.junit.runners.model.Statement trampolineScheduler;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement badSource;
+
+            public org.junit.runners.model.Statement inputSyncFused;
+
+            public org.junit.runners.model.Statement inputAsyncFused;
+
+            public org.junit.runners.model.Statement inputAsyncFusedError;
+
+            public org.junit.runners.model.Statement inputAsyncFusedErrorDelayed;
+
+            public org.junit.runners.model.Statement outputFused;
+
+            public org.junit.runners.model.Statement outputFusedReject;
+
+            public org.junit.runners.model.Statement inputOutputAsyncFusedError;
+
+            public org.junit.runners.model.Statement inputOutputAsyncFusedErrorDelayed;
+
+            public org.junit.runners.model.Statement outputFusedCancelReentrant;
+
+            public org.junit.runners.model.Statement nonFusedPollThrows;
+
+            public org.junit.runners.model.Statement outputFusedOneSignal;
+
+            public org.junit.runners.model.Statement workerNotDisposedPrematurelyNormalInNormalOut;
+
+            public org.junit.runners.model.Statement workerNotDisposedPrematurelySyncInNormalOut;
+
+            public org.junit.runners.model.Statement workerNotDisposedPrematurelyAsyncInNormalOut;
+
+            public org.junit.runners.model.Statement workerNotDisposedPrematurelyNormalInAsyncOut;
+
+            public org.junit.runners.model.Statement fusedNoConcurrentCleanDueToCancel;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.observeOn = _ClassStatement.forPayload(ObservableObserveOnTest::observeOn, "observeOn", this);
+            this.payloads.ordering = _ClassStatement.forPayload(ObservableObserveOnTest::ordering, "ordering", this);
+            this.payloads.threadName = _ClassStatement.forPayload(ObservableObserveOnTest::threadName, "threadName", this);
+            this.payloads.observeOnTheSameSchedulerTwice = _ClassStatement.forPayload(ObservableObserveOnTest::observeOnTheSameSchedulerTwice, "observeOnTheSameSchedulerTwice", this);
+            this.payloads.observeSameOnMultipleSchedulers = _ClassStatement.forPayload(ObservableObserveOnTest::observeSameOnMultipleSchedulers, "observeSameOnMultipleSchedulers", this);
+            this.payloads.observeOnWithNewThreadScheduler = _ClassStatement.forPayload(ObservableObserveOnTest::observeOnWithNewThreadScheduler, "observeOnWithNewThreadScheduler", this);
+            this.payloads.observeOnWithThreadPoolScheduler = _ClassStatement.forPayload(ObservableObserveOnTest::observeOnWithThreadPoolScheduler, "observeOnWithThreadPoolScheduler", this);
+            this.payloads.observeOnOrderingConcurrency = _ClassStatement.forPayload(ObservableObserveOnTest::observeOnOrderingConcurrency, "observeOnOrderingConcurrency", this);
+            this.payloads.nonBlockingOuterWhileBlockingOnNext = _ClassStatement.forPayload(ObservableObserveOnTest::nonBlockingOuterWhileBlockingOnNext, "nonBlockingOuterWhileBlockingOnNext", this);
+            this.payloads.delayedErrorDeliveryWhenSafeSubscriberUnsubscribes = _ClassStatement.forPayload(ObservableObserveOnTest::delayedErrorDeliveryWhenSafeSubscriberUnsubscribes, "delayedErrorDeliveryWhenSafeSubscriberUnsubscribes", this);
+            this.payloads.afterUnsubscribeCalledThenObserverOnNextNeverCalled = _ClassStatement.forPayload(ObservableObserveOnTest::afterUnsubscribeCalledThenObserverOnNextNeverCalled, "afterUnsubscribeCalledThenObserverOnNextNeverCalled", this);
+            this.payloads.backpressureWithTakeBefore = _ClassStatement.forPayload(ObservableObserveOnTest::backpressureWithTakeBefore, "backpressureWithTakeBefore", this);
+            this.payloads.asyncChild = _ClassStatement.forPayload(ObservableObserveOnTest::asyncChild, "asyncChild", this);
+            this.payloads.delayError = _ClassStatement.forPayload(ObservableObserveOnTest::delayError, "delayError", this);
+            this.payloads.trampolineScheduler = _ClassStatement.forPayload(ObservableObserveOnTest::trampolineScheduler, "trampolineScheduler", this);
+            this.payloads.dispose = _ClassStatement.forPayload(ObservableObserveOnTest::dispose, "dispose", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(ObservableObserveOnTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.badSource = _ClassStatement.forPayload(ObservableObserveOnTest::badSource, "badSource", this);
+            this.payloads.inputSyncFused = _ClassStatement.forPayload(ObservableObserveOnTest::inputSyncFused, "inputSyncFused", this);
+            this.payloads.inputAsyncFused = _ClassStatement.forPayload(ObservableObserveOnTest::inputAsyncFused, "inputAsyncFused", this);
+            this.payloads.inputAsyncFusedError = _ClassStatement.forPayload(ObservableObserveOnTest::inputAsyncFusedError, "inputAsyncFusedError", this);
+            this.payloads.inputAsyncFusedErrorDelayed = _ClassStatement.forPayload(ObservableObserveOnTest::inputAsyncFusedErrorDelayed, "inputAsyncFusedErrorDelayed", this);
+            this.payloads.outputFused = _ClassStatement.forPayload(ObservableObserveOnTest::outputFused, "outputFused", this);
+            this.payloads.outputFusedReject = _ClassStatement.forPayload(ObservableObserveOnTest::outputFusedReject, "outputFusedReject", this);
+            this.payloads.inputOutputAsyncFusedError = _ClassStatement.forPayload(ObservableObserveOnTest::inputOutputAsyncFusedError, "inputOutputAsyncFusedError", this);
+            this.payloads.inputOutputAsyncFusedErrorDelayed = _ClassStatement.forPayload(ObservableObserveOnTest::inputOutputAsyncFusedErrorDelayed, "inputOutputAsyncFusedErrorDelayed", this);
+            this.payloads.outputFusedCancelReentrant = _ClassStatement.forPayload(ObservableObserveOnTest::outputFusedCancelReentrant, "outputFusedCancelReentrant", this);
+            this.payloads.nonFusedPollThrows = _ClassStatement.forPayload(ObservableObserveOnTest::nonFusedPollThrows, "nonFusedPollThrows", this);
+            this.payloads.outputFusedOneSignal = _ClassStatement.forPayload(ObservableObserveOnTest::outputFusedOneSignal, "outputFusedOneSignal", this);
+            this.payloads.workerNotDisposedPrematurelyNormalInNormalOut = _ClassStatement.forPayload(ObservableObserveOnTest::workerNotDisposedPrematurelyNormalInNormalOut, "workerNotDisposedPrematurelyNormalInNormalOut", this);
+            this.payloads.workerNotDisposedPrematurelySyncInNormalOut = _ClassStatement.forPayload(ObservableObserveOnTest::workerNotDisposedPrematurelySyncInNormalOut, "workerNotDisposedPrematurelySyncInNormalOut", this);
+            this.payloads.workerNotDisposedPrematurelyAsyncInNormalOut = _ClassStatement.forPayload(ObservableObserveOnTest::workerNotDisposedPrematurelyAsyncInNormalOut, "workerNotDisposedPrematurelyAsyncInNormalOut", this);
+            this.payloads.workerNotDisposedPrematurelyNormalInAsyncOut = _ClassStatement.forPayload(ObservableObserveOnTest::workerNotDisposedPrematurelyNormalInAsyncOut, "workerNotDisposedPrematurelyNormalInAsyncOut", this);
+            this.payloads.fusedNoConcurrentCleanDueToCancel = _ClassStatement.forPayload(ObservableObserveOnTest::fusedNoConcurrentCleanDueToCancel, "fusedNoConcurrentCleanDueToCancel", this);
         }
     }
 }

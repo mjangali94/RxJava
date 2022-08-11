@@ -39,26 +39,4 @@ public class DisposeTaskTest extends RxJavaTest {
             assertTrue(worker.isDisposed());
         });
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_runnableThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::runnableThrows, this.description("runnableThrows"));
-        }
-
-        private DisposeTaskTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new DisposeTaskTest();
-        }
-
-        @java.lang.Override
-        public DisposeTaskTest implementation() {
-            return this.implementation;
-        }
-    }
 }

@@ -413,126 +413,210 @@ public class EndConsumerHelperTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private EndConsumerHelperTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_utilityClass() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::utilityClass, this.description("utilityClass"));
+            this.payloads.utilityClass.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkDoubleDefaultSubscriber() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkDoubleDefaultSubscriber, this.description("checkDoubleDefaultSubscriber"));
+            this.payloads.checkDoubleDefaultSubscriber.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkDoubleDefaultSubscriberNonAnonymous() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkDoubleDefaultSubscriberNonAnonymous, this.description("checkDoubleDefaultSubscriberNonAnonymous"));
+            this.payloads.checkDoubleDefaultSubscriberNonAnonymous.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkDoubleDisposableSubscriber() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkDoubleDisposableSubscriber, this.description("checkDoubleDisposableSubscriber"));
+            this.payloads.checkDoubleDisposableSubscriber.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkDoubleResourceSubscriber() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkDoubleResourceSubscriber, this.description("checkDoubleResourceSubscriber"));
+            this.payloads.checkDoubleResourceSubscriber.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkDoubleDefaultObserver() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkDoubleDefaultObserver, this.description("checkDoubleDefaultObserver"));
+            this.payloads.checkDoubleDefaultObserver.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkDoubleDisposableObserver() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkDoubleDisposableObserver, this.description("checkDoubleDisposableObserver"));
+            this.payloads.checkDoubleDisposableObserver.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkDoubleResourceObserver() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkDoubleResourceObserver, this.description("checkDoubleResourceObserver"));
+            this.payloads.checkDoubleResourceObserver.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkDoubleDisposableSingleObserver() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkDoubleDisposableSingleObserver, this.description("checkDoubleDisposableSingleObserver"));
+            this.payloads.checkDoubleDisposableSingleObserver.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkDoubleResourceSingleObserver() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkDoubleResourceSingleObserver, this.description("checkDoubleResourceSingleObserver"));
+            this.payloads.checkDoubleResourceSingleObserver.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkDoubleDisposableMaybeObserver() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkDoubleDisposableMaybeObserver, this.description("checkDoubleDisposableMaybeObserver"));
+            this.payloads.checkDoubleDisposableMaybeObserver.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkDoubleResourceMaybeObserver() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkDoubleResourceMaybeObserver, this.description("checkDoubleResourceMaybeObserver"));
+            this.payloads.checkDoubleResourceMaybeObserver.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkDoubleDisposableCompletableObserver() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkDoubleDisposableCompletableObserver, this.description("checkDoubleDisposableCompletableObserver"));
+            this.payloads.checkDoubleDisposableCompletableObserver.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkDoubleResourceCompletableObserver() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkDoubleResourceCompletableObserver, this.description("checkDoubleResourceCompletableObserver"));
+            this.payloads.checkDoubleResourceCompletableObserver.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_validateDisposable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::validateDisposable, this.description("validateDisposable"));
+            this.payloads.validateDisposable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_validateSubscription() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::validateSubscription, this.description("validateSubscription"));
+            this.payloads.validateSubscription.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().before();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<EndConsumerHelperTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<EndConsumerHelperTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.before();
+                try {
+                    this.payload.accept(this.benchmark.instance);
+                } finally {
+                    this.benchmark.instance.after();
+                }
+            }
         }
 
-        @java.lang.Override
-        public void after() throws java.lang.Throwable {
-            this.implementation().after();
-            super.after();
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<EndConsumerHelperTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<EndConsumerHelperTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new EndConsumerHelperTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<EndConsumerHelperTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(EndConsumerHelperTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(EndConsumerHelperTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        private EndConsumerHelperTest implementation;
+        private static class _Payloads {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new EndConsumerHelperTest();
+            public org.junit.runners.model.Statement utilityClass;
+
+            public org.junit.runners.model.Statement checkDoubleDefaultSubscriber;
+
+            public org.junit.runners.model.Statement checkDoubleDefaultSubscriberNonAnonymous;
+
+            public org.junit.runners.model.Statement checkDoubleDisposableSubscriber;
+
+            public org.junit.runners.model.Statement checkDoubleResourceSubscriber;
+
+            public org.junit.runners.model.Statement checkDoubleDefaultObserver;
+
+            public org.junit.runners.model.Statement checkDoubleDisposableObserver;
+
+            public org.junit.runners.model.Statement checkDoubleResourceObserver;
+
+            public org.junit.runners.model.Statement checkDoubleDisposableSingleObserver;
+
+            public org.junit.runners.model.Statement checkDoubleResourceSingleObserver;
+
+            public org.junit.runners.model.Statement checkDoubleDisposableMaybeObserver;
+
+            public org.junit.runners.model.Statement checkDoubleResourceMaybeObserver;
+
+            public org.junit.runners.model.Statement checkDoubleDisposableCompletableObserver;
+
+            public org.junit.runners.model.Statement checkDoubleResourceCompletableObserver;
+
+            public org.junit.runners.model.Statement validateDisposable;
+
+            public org.junit.runners.model.Statement validateSubscription;
         }
 
-        @java.lang.Override
-        public EndConsumerHelperTest implementation() {
-            return this.implementation;
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.utilityClass = _ClassStatement.forPayload(EndConsumerHelperTest::utilityClass, "utilityClass", this);
+            this.payloads.checkDoubleDefaultSubscriber = _ClassStatement.forPayload(EndConsumerHelperTest::checkDoubleDefaultSubscriber, "checkDoubleDefaultSubscriber", this);
+            this.payloads.checkDoubleDefaultSubscriberNonAnonymous = _ClassStatement.forPayload(EndConsumerHelperTest::checkDoubleDefaultSubscriberNonAnonymous, "checkDoubleDefaultSubscriberNonAnonymous", this);
+            this.payloads.checkDoubleDisposableSubscriber = _ClassStatement.forPayload(EndConsumerHelperTest::checkDoubleDisposableSubscriber, "checkDoubleDisposableSubscriber", this);
+            this.payloads.checkDoubleResourceSubscriber = _ClassStatement.forPayload(EndConsumerHelperTest::checkDoubleResourceSubscriber, "checkDoubleResourceSubscriber", this);
+            this.payloads.checkDoubleDefaultObserver = _ClassStatement.forPayload(EndConsumerHelperTest::checkDoubleDefaultObserver, "checkDoubleDefaultObserver", this);
+            this.payloads.checkDoubleDisposableObserver = _ClassStatement.forPayload(EndConsumerHelperTest::checkDoubleDisposableObserver, "checkDoubleDisposableObserver", this);
+            this.payloads.checkDoubleResourceObserver = _ClassStatement.forPayload(EndConsumerHelperTest::checkDoubleResourceObserver, "checkDoubleResourceObserver", this);
+            this.payloads.checkDoubleDisposableSingleObserver = _ClassStatement.forPayload(EndConsumerHelperTest::checkDoubleDisposableSingleObserver, "checkDoubleDisposableSingleObserver", this);
+            this.payloads.checkDoubleResourceSingleObserver = _ClassStatement.forPayload(EndConsumerHelperTest::checkDoubleResourceSingleObserver, "checkDoubleResourceSingleObserver", this);
+            this.payloads.checkDoubleDisposableMaybeObserver = _ClassStatement.forPayload(EndConsumerHelperTest::checkDoubleDisposableMaybeObserver, "checkDoubleDisposableMaybeObserver", this);
+            this.payloads.checkDoubleResourceMaybeObserver = _ClassStatement.forPayload(EndConsumerHelperTest::checkDoubleResourceMaybeObserver, "checkDoubleResourceMaybeObserver", this);
+            this.payloads.checkDoubleDisposableCompletableObserver = _ClassStatement.forPayload(EndConsumerHelperTest::checkDoubleDisposableCompletableObserver, "checkDoubleDisposableCompletableObserver", this);
+            this.payloads.checkDoubleResourceCompletableObserver = _ClassStatement.forPayload(EndConsumerHelperTest::checkDoubleResourceCompletableObserver, "checkDoubleResourceCompletableObserver", this);
+            this.payloads.validateDisposable = _ClassStatement.forPayload(EndConsumerHelperTest::validateDisposable, "validateDisposable", this);
+            this.payloads.validateSubscription = _ClassStatement.forPayload(EndConsumerHelperTest::validateSubscription, "validateSubscription", this);
         }
     }
 }

@@ -176,54 +176,125 @@ public class ObservableMaterializeTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableMaterializeTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_materialize1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::materialize1, this.description("materialize1"));
+            this.payloads.materialize1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_materialize2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::materialize2, this.description("materialize2"));
+            this.payloads.materialize2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_multipleSubscribes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::multipleSubscribes, this.description("multipleSubscribes"));
+            this.payloads.multipleSubscribes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withCompletionCausingError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withCompletionCausingError, this.description("withCompletionCausingError"));
+            this.payloads.withCompletionCausingError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
-        private ObservableMaterializeTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableMaterializeTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableMaterializeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableMaterializeTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservableMaterializeTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableMaterializeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableMaterializeTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableMaterializeTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableMaterializeTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableMaterializeTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableMaterializeTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement materialize1;
+
+            public org.junit.runners.model.Statement materialize2;
+
+            public org.junit.runners.model.Statement multipleSubscribes;
+
+            public org.junit.runners.model.Statement withCompletionCausingError;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.materialize1 = _ClassStatement.forPayload(ObservableMaterializeTest::materialize1, "materialize1", this);
+            this.payloads.materialize2 = _ClassStatement.forPayload(ObservableMaterializeTest::materialize2, "materialize2", this);
+            this.payloads.multipleSubscribes = _ClassStatement.forPayload(ObservableMaterializeTest::multipleSubscribes, "multipleSubscribes", this);
+            this.payloads.withCompletionCausingError = _ClassStatement.forPayload(ObservableMaterializeTest::withCompletionCausingError, "withCompletionCausingError", this);
+            this.payloads.dispose = _ClassStatement.forPayload(ObservableMaterializeTest::dispose, "dispose", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(ObservableMaterializeTest::doubleOnSubscribe, "doubleOnSubscribe", this);
         }
     }
 }

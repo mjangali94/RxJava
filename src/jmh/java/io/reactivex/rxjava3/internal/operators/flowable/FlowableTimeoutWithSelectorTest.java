@@ -753,192 +753,309 @@ public class FlowableTimeoutWithSelectorTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableTimeoutWithSelectorTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeoutSelectorNormal1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeoutSelectorNormal1, this.description("timeoutSelectorNormal1"));
+            this.payloads.timeoutSelectorNormal1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeoutSelectorTimeoutFirst() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeoutSelectorTimeoutFirst, this.description("timeoutSelectorTimeoutFirst"));
+            this.payloads.timeoutSelectorTimeoutFirst.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeoutSelectorFirstThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeoutSelectorFirstThrows, this.description("timeoutSelectorFirstThrows"));
+            this.payloads.timeoutSelectorFirstThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeoutSelectorSubsequentThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeoutSelectorSubsequentThrows, this.description("timeoutSelectorSubsequentThrows"));
+            this.payloads.timeoutSelectorSubsequentThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeoutSelectorFirstFlowableThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeoutSelectorFirstFlowableThrows, this.description("timeoutSelectorFirstFlowableThrows"));
+            this.payloads.timeoutSelectorFirstFlowableThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeoutSelectorSubsequentFlowableThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeoutSelectorSubsequentFlowableThrows, this.description("timeoutSelectorSubsequentFlowableThrows"));
+            this.payloads.timeoutSelectorSubsequentFlowableThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeoutSelectorWithFirstTimeoutFirstAndNoOtherFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeoutSelectorWithFirstTimeoutFirstAndNoOtherFlowable, this.description("timeoutSelectorWithFirstTimeoutFirstAndNoOtherFlowable"));
+            this.payloads.timeoutSelectorWithFirstTimeoutFirstAndNoOtherFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeoutSelectorWithTimeoutFirstAndNoOtherFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeoutSelectorWithTimeoutFirstAndNoOtherFlowable, this.description("timeoutSelectorWithTimeoutFirstAndNoOtherFlowable"));
+            this.payloads.timeoutSelectorWithTimeoutFirstAndNoOtherFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeoutSelectorWithTimeoutAndOnNextRaceCondition() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeoutSelectorWithTimeoutAndOnNextRaceCondition, this.description("timeoutSelectorWithTimeoutAndOnNextRaceCondition"));
+            this.payloads.timeoutSelectorWithTimeoutAndOnNextRaceCondition.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_empty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::empty, this.description("empty"));
+            this.payloads.empty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyInner() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyInner, this.description("emptyInner"));
+            this.payloads.emptyInner.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badInnerSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badInnerSource, this.description("badInnerSource"));
+            this.payloads.badInnerSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badInnerSourceOther() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badInnerSourceOther, this.description("badInnerSourceOther"));
+            this.payloads.badInnerSourceOther.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withOtherMainError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withOtherMainError, this.description("withOtherMainError"));
+            this.payloads.withOtherMainError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSourceTimeout() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSourceTimeout, this.description("badSourceTimeout"));
+            this.payloads.badSourceTimeout.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_selectorTake() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::selectorTake, this.description("selectorTake"));
+            this.payloads.selectorTake.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_selectorFallbackTake() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::selectorFallbackTake, this.description("selectorFallbackTake"));
+            this.payloads.selectorFallbackTake.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lateOnTimeoutError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lateOnTimeoutError, this.description("lateOnTimeoutError"));
+            this.payloads.lateOnTimeoutError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lateOnTimeoutFallbackRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lateOnTimeoutFallbackRace, this.description("lateOnTimeoutFallbackRace"));
+            this.payloads.lateOnTimeoutFallbackRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorOnTimeoutRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorOnTimeoutRace, this.description("onErrorOnTimeoutRace"));
+            this.payloads.onErrorOnTimeoutRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onCompleteOnTimeoutRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompleteOnTimeoutRace, this.description("onCompleteOnTimeoutRace"));
+            this.payloads.onCompleteOnTimeoutRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onCompleteOnTimeoutRaceFallback() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompleteOnTimeoutRaceFallback, this.description("onCompleteOnTimeoutRaceFallback"));
+            this.payloads.onCompleteOnTimeoutRaceFallback.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposedUpfront() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposedUpfront, this.description("disposedUpfront"));
+            this.payloads.disposedUpfront.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposedUpfrontFallback() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposedUpfrontFallback, this.description("disposedUpfrontFallback"));
+            this.payloads.disposedUpfrontFallback.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeoutConsumerDoubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeoutConsumerDoubleOnSubscribe, this.description("timeoutConsumerDoubleOnSubscribe"));
+            this.payloads.timeoutConsumerDoubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeoutConsumerIsDisposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeoutConsumerIsDisposed, this.description("timeoutConsumerIsDisposed"));
+            this.payloads.timeoutConsumerIsDisposed.evaluate();
         }
 
-        private FlowableTimeoutWithSelectorTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableTimeoutWithSelectorTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTimeoutWithSelectorTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTimeoutWithSelectorTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableTimeoutWithSelectorTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTimeoutWithSelectorTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTimeoutWithSelectorTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableTimeoutWithSelectorTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTimeoutWithSelectorTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableTimeoutWithSelectorTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableTimeoutWithSelectorTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement timeoutSelectorNormal1;
+
+            public org.junit.runners.model.Statement timeoutSelectorTimeoutFirst;
+
+            public org.junit.runners.model.Statement timeoutSelectorFirstThrows;
+
+            public org.junit.runners.model.Statement timeoutSelectorSubsequentThrows;
+
+            public org.junit.runners.model.Statement timeoutSelectorFirstFlowableThrows;
+
+            public org.junit.runners.model.Statement timeoutSelectorSubsequentFlowableThrows;
+
+            public org.junit.runners.model.Statement timeoutSelectorWithFirstTimeoutFirstAndNoOtherFlowable;
+
+            public org.junit.runners.model.Statement timeoutSelectorWithTimeoutFirstAndNoOtherFlowable;
+
+            public org.junit.runners.model.Statement timeoutSelectorWithTimeoutAndOnNextRaceCondition;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement empty;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement emptyInner;
+
+            public org.junit.runners.model.Statement badInnerSource;
+
+            public org.junit.runners.model.Statement badInnerSourceOther;
+
+            public org.junit.runners.model.Statement withOtherMainError;
+
+            public org.junit.runners.model.Statement badSourceTimeout;
+
+            public org.junit.runners.model.Statement selectorTake;
+
+            public org.junit.runners.model.Statement selectorFallbackTake;
+
+            public org.junit.runners.model.Statement lateOnTimeoutError;
+
+            public org.junit.runners.model.Statement lateOnTimeoutFallbackRace;
+
+            public org.junit.runners.model.Statement onErrorOnTimeoutRace;
+
+            public org.junit.runners.model.Statement onCompleteOnTimeoutRace;
+
+            public org.junit.runners.model.Statement onCompleteOnTimeoutRaceFallback;
+
+            public org.junit.runners.model.Statement disposedUpfront;
+
+            public org.junit.runners.model.Statement disposedUpfrontFallback;
+
+            public org.junit.runners.model.Statement timeoutConsumerDoubleOnSubscribe;
+
+            public org.junit.runners.model.Statement timeoutConsumerIsDisposed;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.timeoutSelectorNormal1 = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::timeoutSelectorNormal1, "timeoutSelectorNormal1", this);
+            this.payloads.timeoutSelectorTimeoutFirst = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::timeoutSelectorTimeoutFirst, "timeoutSelectorTimeoutFirst", this);
+            this.payloads.timeoutSelectorFirstThrows = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::timeoutSelectorFirstThrows, "timeoutSelectorFirstThrows", this);
+            this.payloads.timeoutSelectorSubsequentThrows = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::timeoutSelectorSubsequentThrows, "timeoutSelectorSubsequentThrows", this);
+            this.payloads.timeoutSelectorFirstFlowableThrows = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::timeoutSelectorFirstFlowableThrows, "timeoutSelectorFirstFlowableThrows", this);
+            this.payloads.timeoutSelectorSubsequentFlowableThrows = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::timeoutSelectorSubsequentFlowableThrows, "timeoutSelectorSubsequentFlowableThrows", this);
+            this.payloads.timeoutSelectorWithFirstTimeoutFirstAndNoOtherFlowable = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::timeoutSelectorWithFirstTimeoutFirstAndNoOtherFlowable, "timeoutSelectorWithFirstTimeoutFirstAndNoOtherFlowable", this);
+            this.payloads.timeoutSelectorWithTimeoutFirstAndNoOtherFlowable = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::timeoutSelectorWithTimeoutFirstAndNoOtherFlowable, "timeoutSelectorWithTimeoutFirstAndNoOtherFlowable", this);
+            this.payloads.timeoutSelectorWithTimeoutAndOnNextRaceCondition = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::timeoutSelectorWithTimeoutAndOnNextRaceCondition, "timeoutSelectorWithTimeoutAndOnNextRaceCondition", this);
+            this.payloads.dispose = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::dispose, "dispose", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.empty = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::empty, "empty", this);
+            this.payloads.error = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::error, "error", this);
+            this.payloads.emptyInner = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::emptyInner, "emptyInner", this);
+            this.payloads.badInnerSource = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::badInnerSource, "badInnerSource", this);
+            this.payloads.badInnerSourceOther = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::badInnerSourceOther, "badInnerSourceOther", this);
+            this.payloads.withOtherMainError = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::withOtherMainError, "withOtherMainError", this);
+            this.payloads.badSourceTimeout = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::badSourceTimeout, "badSourceTimeout", this);
+            this.payloads.selectorTake = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::selectorTake, "selectorTake", this);
+            this.payloads.selectorFallbackTake = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::selectorFallbackTake, "selectorFallbackTake", this);
+            this.payloads.lateOnTimeoutError = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::lateOnTimeoutError, "lateOnTimeoutError", this);
+            this.payloads.lateOnTimeoutFallbackRace = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::lateOnTimeoutFallbackRace, "lateOnTimeoutFallbackRace", this);
+            this.payloads.onErrorOnTimeoutRace = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::onErrorOnTimeoutRace, "onErrorOnTimeoutRace", this);
+            this.payloads.onCompleteOnTimeoutRace = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::onCompleteOnTimeoutRace, "onCompleteOnTimeoutRace", this);
+            this.payloads.onCompleteOnTimeoutRaceFallback = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::onCompleteOnTimeoutRaceFallback, "onCompleteOnTimeoutRaceFallback", this);
+            this.payloads.disposedUpfront = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::disposedUpfront, "disposedUpfront", this);
+            this.payloads.disposedUpfrontFallback = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::disposedUpfrontFallback, "disposedUpfrontFallback", this);
+            this.payloads.timeoutConsumerDoubleOnSubscribe = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::timeoutConsumerDoubleOnSubscribe, "timeoutConsumerDoubleOnSubscribe", this);
+            this.payloads.timeoutConsumerIsDisposed = _ClassStatement.forPayload(FlowableTimeoutWithSelectorTest::timeoutConsumerIsDisposed, "timeoutConsumerIsDisposed", this);
         }
     }
 }

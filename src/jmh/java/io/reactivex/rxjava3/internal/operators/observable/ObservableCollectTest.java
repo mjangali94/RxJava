@@ -346,108 +346,197 @@ public final class ObservableCollectTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableCollectTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectToListObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectToListObservable, this.description("collectToListObservable"));
+            this.payloads.collectToListObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectToStringObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectToStringObservable, this.description("collectToStringObservable"));
+            this.payloads.collectToStringObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectorFailureDoesNotResultInTwoErrorEmissionsObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectorFailureDoesNotResultInTwoErrorEmissionsObservable, this.description("collectorFailureDoesNotResultInTwoErrorEmissionsObservable"));
+            this.payloads.collectorFailureDoesNotResultInTwoErrorEmissionsObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectorFailureDoesNotResultInErrorAndCompletedEmissionsObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectorFailureDoesNotResultInErrorAndCompletedEmissionsObservable, this.description("collectorFailureDoesNotResultInErrorAndCompletedEmissionsObservable"));
+            this.payloads.collectorFailureDoesNotResultInErrorAndCompletedEmissionsObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectorFailureDoesNotResultInErrorAndOnNextEmissionsObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectorFailureDoesNotResultInErrorAndOnNextEmissionsObservable, this.description("collectorFailureDoesNotResultInErrorAndOnNextEmissionsObservable"));
+            this.payloads.collectorFailureDoesNotResultInErrorAndOnNextEmissionsObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectIntoObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectIntoObservable, this.description("collectIntoObservable"));
+            this.payloads.collectIntoObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectToList() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectToList, this.description("collectToList"));
+            this.payloads.collectToList.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectToString() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectToString, this.description("collectToString"));
+            this.payloads.collectToString.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectorFailureDoesNotResultInTwoErrorEmissions() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectorFailureDoesNotResultInTwoErrorEmissions, this.description("collectorFailureDoesNotResultInTwoErrorEmissions"));
+            this.payloads.collectorFailureDoesNotResultInTwoErrorEmissions.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectorFailureDoesNotResultInErrorAndCompletedEmissions() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectorFailureDoesNotResultInErrorAndCompletedEmissions, this.description("collectorFailureDoesNotResultInErrorAndCompletedEmissions"));
+            this.payloads.collectorFailureDoesNotResultInErrorAndCompletedEmissions.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectorFailureDoesNotResultInErrorAndOnNextEmissions() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectorFailureDoesNotResultInErrorAndOnNextEmissions, this.description("collectorFailureDoesNotResultInErrorAndOnNextEmissions"));
+            this.payloads.collectorFailureDoesNotResultInErrorAndOnNextEmissions.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectInto() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectInto, this.description("collectInto"));
+            this.payloads.collectInto.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSource, this.description("badSource"));
+            this.payloads.badSource.evaluate();
         }
 
-        private ObservableCollectTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableCollectTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableCollectTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableCollectTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservableCollectTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableCollectTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableCollectTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableCollectTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableCollectTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableCollectTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableCollectTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement collectToListObservable;
+
+            public org.junit.runners.model.Statement collectToStringObservable;
+
+            public org.junit.runners.model.Statement collectorFailureDoesNotResultInTwoErrorEmissionsObservable;
+
+            public org.junit.runners.model.Statement collectorFailureDoesNotResultInErrorAndCompletedEmissionsObservable;
+
+            public org.junit.runners.model.Statement collectorFailureDoesNotResultInErrorAndOnNextEmissionsObservable;
+
+            public org.junit.runners.model.Statement collectIntoObservable;
+
+            public org.junit.runners.model.Statement collectToList;
+
+            public org.junit.runners.model.Statement collectToString;
+
+            public org.junit.runners.model.Statement collectorFailureDoesNotResultInTwoErrorEmissions;
+
+            public org.junit.runners.model.Statement collectorFailureDoesNotResultInErrorAndCompletedEmissions;
+
+            public org.junit.runners.model.Statement collectorFailureDoesNotResultInErrorAndOnNextEmissions;
+
+            public org.junit.runners.model.Statement collectInto;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement badSource;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.collectToListObservable = _ClassStatement.forPayload(ObservableCollectTest::collectToListObservable, "collectToListObservable", this);
+            this.payloads.collectToStringObservable = _ClassStatement.forPayload(ObservableCollectTest::collectToStringObservable, "collectToStringObservable", this);
+            this.payloads.collectorFailureDoesNotResultInTwoErrorEmissionsObservable = _ClassStatement.forPayload(ObservableCollectTest::collectorFailureDoesNotResultInTwoErrorEmissionsObservable, "collectorFailureDoesNotResultInTwoErrorEmissionsObservable", this);
+            this.payloads.collectorFailureDoesNotResultInErrorAndCompletedEmissionsObservable = _ClassStatement.forPayload(ObservableCollectTest::collectorFailureDoesNotResultInErrorAndCompletedEmissionsObservable, "collectorFailureDoesNotResultInErrorAndCompletedEmissionsObservable", this);
+            this.payloads.collectorFailureDoesNotResultInErrorAndOnNextEmissionsObservable = _ClassStatement.forPayload(ObservableCollectTest::collectorFailureDoesNotResultInErrorAndOnNextEmissionsObservable, "collectorFailureDoesNotResultInErrorAndOnNextEmissionsObservable", this);
+            this.payloads.collectIntoObservable = _ClassStatement.forPayload(ObservableCollectTest::collectIntoObservable, "collectIntoObservable", this);
+            this.payloads.collectToList = _ClassStatement.forPayload(ObservableCollectTest::collectToList, "collectToList", this);
+            this.payloads.collectToString = _ClassStatement.forPayload(ObservableCollectTest::collectToString, "collectToString", this);
+            this.payloads.collectorFailureDoesNotResultInTwoErrorEmissions = _ClassStatement.forPayload(ObservableCollectTest::collectorFailureDoesNotResultInTwoErrorEmissions, "collectorFailureDoesNotResultInTwoErrorEmissions", this);
+            this.payloads.collectorFailureDoesNotResultInErrorAndCompletedEmissions = _ClassStatement.forPayload(ObservableCollectTest::collectorFailureDoesNotResultInErrorAndCompletedEmissions, "collectorFailureDoesNotResultInErrorAndCompletedEmissions", this);
+            this.payloads.collectorFailureDoesNotResultInErrorAndOnNextEmissions = _ClassStatement.forPayload(ObservableCollectTest::collectorFailureDoesNotResultInErrorAndOnNextEmissions, "collectorFailureDoesNotResultInErrorAndOnNextEmissions", this);
+            this.payloads.collectInto = _ClassStatement.forPayload(ObservableCollectTest::collectInto, "collectInto", this);
+            this.payloads.dispose = _ClassStatement.forPayload(ObservableCollectTest::dispose, "dispose", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(ObservableCollectTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.badSource = _ClassStatement.forPayload(ObservableCollectTest::badSource, "badSource", this);
         }
     }
 }

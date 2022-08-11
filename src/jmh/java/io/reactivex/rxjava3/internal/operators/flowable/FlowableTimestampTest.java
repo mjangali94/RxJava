@@ -119,48 +119,110 @@ public class FlowableTimestampTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableTimestampTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timestampWithScheduler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timestampWithScheduler, this.description("timestampWithScheduler"));
+            this.payloads.timestampWithScheduler.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timestampWithScheduler2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timestampWithScheduler2, this.description("timestampWithScheduler2"));
+            this.payloads.timestampWithScheduler2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeIntervalDefault() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeIntervalDefault, this.description("timeIntervalDefault"));
+            this.payloads.timeIntervalDefault.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeIntervalDefaultSchedulerCustomUnit() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeIntervalDefaultSchedulerCustomUnit, this.description("timeIntervalDefaultSchedulerCustomUnit"));
+            this.payloads.timeIntervalDefaultSchedulerCustomUnit.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().before();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTimestampTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTimestampTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.before();
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private FlowableTimestampTest implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableTimestampTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTimestampTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTimestampTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableTimestampTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTimestampTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableTimestampTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableTimestampTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public FlowableTimestampTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement timestampWithScheduler;
+
+            public org.junit.runners.model.Statement timestampWithScheduler2;
+
+            public org.junit.runners.model.Statement timeIntervalDefault;
+
+            public org.junit.runners.model.Statement timeIntervalDefaultSchedulerCustomUnit;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.timestampWithScheduler = _ClassStatement.forPayload(FlowableTimestampTest::timestampWithScheduler, "timestampWithScheduler", this);
+            this.payloads.timestampWithScheduler2 = _ClassStatement.forPayload(FlowableTimestampTest::timestampWithScheduler2, "timestampWithScheduler2", this);
+            this.payloads.timeIntervalDefault = _ClassStatement.forPayload(FlowableTimestampTest::timeIntervalDefault, "timeIntervalDefault", this);
+            this.payloads.timeIntervalDefaultSchedulerCustomUnit = _ClassStatement.forPayload(FlowableTimestampTest::timeIntervalDefaultSchedulerCustomUnit, "timeIntervalDefaultSchedulerCustomUnit", this);
         }
     }
 }

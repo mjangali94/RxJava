@@ -124,72 +124,149 @@ public class DisposableHelperTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private DisposableHelperTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_enumMethods() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::enumMethods, this.description("enumMethods"));
+            this.payloads.enumMethods.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerDisposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerDisposed, this.description("innerDisposed"));
+            this.payloads.innerDisposed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_validationNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::validationNull, this.description("validationNull"));
+            this.payloads.validationNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeRace, this.description("disposeRace"));
+            this.payloads.disposeRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_setReplace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::setReplace, this.description("setReplace"));
+            this.payloads.setReplace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_setRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::setRace, this.description("setRace"));
+            this.payloads.setRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_setReplaceNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::setReplaceNull, this.description("setReplaceNull"));
+            this.payloads.setReplaceNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_trySet() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::trySet, this.description("trySet"));
+            this.payloads.trySet.evaluate();
         }
 
-        private DisposableHelperTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new DisposableHelperTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<DisposableHelperTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<DisposableHelperTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public DisposableHelperTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<DisposableHelperTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<DisposableHelperTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new DisposableHelperTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<DisposableHelperTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(DisposableHelperTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(DisposableHelperTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement enumMethods;
+
+            public org.junit.runners.model.Statement innerDisposed;
+
+            public org.junit.runners.model.Statement validationNull;
+
+            public org.junit.runners.model.Statement disposeRace;
+
+            public org.junit.runners.model.Statement setReplace;
+
+            public org.junit.runners.model.Statement setRace;
+
+            public org.junit.runners.model.Statement setReplaceNull;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement trySet;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.enumMethods = _ClassStatement.forPayload(DisposableHelperTest::enumMethods, "enumMethods", this);
+            this.payloads.innerDisposed = _ClassStatement.forPayload(DisposableHelperTest::innerDisposed, "innerDisposed", this);
+            this.payloads.validationNull = _ClassStatement.forPayload(DisposableHelperTest::validationNull, "validationNull", this);
+            this.payloads.disposeRace = _ClassStatement.forPayload(DisposableHelperTest::disposeRace, "disposeRace", this);
+            this.payloads.setReplace = _ClassStatement.forPayload(DisposableHelperTest::setReplace, "setReplace", this);
+            this.payloads.setRace = _ClassStatement.forPayload(DisposableHelperTest::setRace, "setRace", this);
+            this.payloads.setReplaceNull = _ClassStatement.forPayload(DisposableHelperTest::setReplaceNull, "setReplaceNull", this);
+            this.payloads.dispose = _ClassStatement.forPayload(DisposableHelperTest::dispose, "dispose", this);
+            this.payloads.trySet = _ClassStatement.forPayload(DisposableHelperTest::trySet, "trySet", this);
         }
     }
 }

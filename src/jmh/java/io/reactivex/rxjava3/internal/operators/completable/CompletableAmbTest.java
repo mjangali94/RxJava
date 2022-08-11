@@ -264,114 +264,205 @@ public class CompletableAmbTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private CompletableAmbTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambLots() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambLots, this.description("ambLots"));
+            this.payloads.ambLots.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambFirstDone() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambFirstDone, this.description("ambFirstDone"));
+            this.payloads.ambFirstDone.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerErrorRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerErrorRace, this.description("innerErrorRace"));
+            this.payloads.innerErrorRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nullSourceSuccessRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nullSourceSuccessRace, this.description("nullSourceSuccessRace"));
+            this.payloads.nullSourceSuccessRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambWithOrder() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambWithOrder, this.description("ambWithOrder"));
+            this.payloads.ambWithOrder.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambIterableOrder() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambIterableOrder, this.description("ambIterableOrder"));
+            this.payloads.ambIterableOrder.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambArrayOrder() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambArrayOrder, this.description("ambArrayOrder"));
+            this.payloads.ambArrayOrder.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambRace, this.description("ambRace"));
+            this.payloads.ambRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_untilCompletableMainComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::untilCompletableMainComplete, this.description("untilCompletableMainComplete"));
+            this.payloads.untilCompletableMainComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_untilCompletableMainError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::untilCompletableMainError, this.description("untilCompletableMainError"));
+            this.payloads.untilCompletableMainError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_untilCompletableOtherOnComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::untilCompletableOtherOnComplete, this.description("untilCompletableOtherOnComplete"));
+            this.payloads.untilCompletableOtherOnComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_untilCompletableOtherError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::untilCompletableOtherError, this.description("untilCompletableOtherError"));
+            this.payloads.untilCompletableOtherError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noWinnerErrorDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noWinnerErrorDispose, this.description("noWinnerErrorDispose"));
+            this.payloads.noWinnerErrorDispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noWinnerCompleteDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noWinnerCompleteDispose, this.description("noWinnerCompleteDispose"));
+            this.payloads.noWinnerCompleteDispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_completableSourcesInIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::completableSourcesInIterable, this.description("completableSourcesInIterable"));
+            this.payloads.completableSourcesInIterable.evaluate();
         }
 
-        private CompletableAmbTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new CompletableAmbTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableAmbTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableAmbTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public CompletableAmbTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableAmbTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableAmbTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new CompletableAmbTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableAmbTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(CompletableAmbTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(CompletableAmbTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement ambLots;
+
+            public org.junit.runners.model.Statement ambFirstDone;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement innerErrorRace;
+
+            public org.junit.runners.model.Statement nullSourceSuccessRace;
+
+            public org.junit.runners.model.Statement ambWithOrder;
+
+            public org.junit.runners.model.Statement ambIterableOrder;
+
+            public org.junit.runners.model.Statement ambArrayOrder;
+
+            public org.junit.runners.model.Statement ambRace;
+
+            public org.junit.runners.model.Statement untilCompletableMainComplete;
+
+            public org.junit.runners.model.Statement untilCompletableMainError;
+
+            public org.junit.runners.model.Statement untilCompletableOtherOnComplete;
+
+            public org.junit.runners.model.Statement untilCompletableOtherError;
+
+            public org.junit.runners.model.Statement noWinnerErrorDispose;
+
+            public org.junit.runners.model.Statement noWinnerCompleteDispose;
+
+            public org.junit.runners.model.Statement completableSourcesInIterable;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.ambLots = _ClassStatement.forPayload(CompletableAmbTest::ambLots, "ambLots", this);
+            this.payloads.ambFirstDone = _ClassStatement.forPayload(CompletableAmbTest::ambFirstDone, "ambFirstDone", this);
+            this.payloads.dispose = _ClassStatement.forPayload(CompletableAmbTest::dispose, "dispose", this);
+            this.payloads.innerErrorRace = _ClassStatement.forPayload(CompletableAmbTest::innerErrorRace, "innerErrorRace", this);
+            this.payloads.nullSourceSuccessRace = _ClassStatement.forPayload(CompletableAmbTest::nullSourceSuccessRace, "nullSourceSuccessRace", this);
+            this.payloads.ambWithOrder = _ClassStatement.forPayload(CompletableAmbTest::ambWithOrder, "ambWithOrder", this);
+            this.payloads.ambIterableOrder = _ClassStatement.forPayload(CompletableAmbTest::ambIterableOrder, "ambIterableOrder", this);
+            this.payloads.ambArrayOrder = _ClassStatement.forPayload(CompletableAmbTest::ambArrayOrder, "ambArrayOrder", this);
+            this.payloads.ambRace = _ClassStatement.forPayload(CompletableAmbTest::ambRace, "ambRace", this);
+            this.payloads.untilCompletableMainComplete = _ClassStatement.forPayload(CompletableAmbTest::untilCompletableMainComplete, "untilCompletableMainComplete", this);
+            this.payloads.untilCompletableMainError = _ClassStatement.forPayload(CompletableAmbTest::untilCompletableMainError, "untilCompletableMainError", this);
+            this.payloads.untilCompletableOtherOnComplete = _ClassStatement.forPayload(CompletableAmbTest::untilCompletableOtherOnComplete, "untilCompletableOtherOnComplete", this);
+            this.payloads.untilCompletableOtherError = _ClassStatement.forPayload(CompletableAmbTest::untilCompletableOtherError, "untilCompletableOtherError", this);
+            this.payloads.noWinnerErrorDispose = _ClassStatement.forPayload(CompletableAmbTest::noWinnerErrorDispose, "noWinnerErrorDispose", this);
+            this.payloads.noWinnerCompleteDispose = _ClassStatement.forPayload(CompletableAmbTest::noWinnerCompleteDispose, "noWinnerCompleteDispose", this);
+            this.payloads.completableSourcesInIterable = _ClassStatement.forPayload(CompletableAmbTest::completableSourcesInIterable, "completableSourcesInIterable", this);
         }
     }
 }

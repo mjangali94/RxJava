@@ -37,26 +37,4 @@ public class IoScheduledReleaseTest extends RxJavaTest {
             IoScheduler.USE_SCHEDULED_RELEASE = savedScheduledRelease;
         }
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_scheduledRelease() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scheduledRelease, this.description("scheduledRelease"));
-        }
-
-        private IoScheduledReleaseTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new IoScheduledReleaseTest();
-        }
-
-        @java.lang.Override
-        public IoScheduledReleaseTest implementation() {
-            return this.implementation;
-        }
-    }
 }

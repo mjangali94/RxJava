@@ -33,32 +33,4 @@ public class MaybeConcatPublisherTest extends RxJavaTest {
             }
         })).test().assertResult(1);
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_scalar() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scalar, this.description("scalar"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_callable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::callable, this.description("callable"));
-        }
-
-        private MaybeConcatPublisherTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeConcatPublisherTest();
-        }
-
-        @java.lang.Override
-        public MaybeConcatPublisherTest implementation() {
-            return this.implementation;
-        }
-    }
 }

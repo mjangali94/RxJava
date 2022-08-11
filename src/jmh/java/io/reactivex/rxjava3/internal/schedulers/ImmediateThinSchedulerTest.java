@@ -70,54 +70,125 @@ public class ImmediateThinSchedulerTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ImmediateThinSchedulerTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scheduleDirect() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scheduleDirect, this.description("scheduleDirect"));
+            this.payloads.scheduleDirect.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scheduleDirectTimed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::scheduleDirectTimed, this.description("scheduleDirectTimed"), java.lang.UnsupportedOperationException.class);
+            this.payloads.scheduleDirectTimed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scheduleDirectPeriodic() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::scheduleDirectPeriodic, this.description("scheduleDirectPeriodic"), java.lang.UnsupportedOperationException.class);
+            this.payloads.scheduleDirectPeriodic.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_schedule() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::schedule, this.description("schedule"));
+            this.payloads.schedule.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scheduleTimed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::scheduleTimed, this.description("scheduleTimed"), java.lang.UnsupportedOperationException.class);
+            this.payloads.scheduleTimed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_schedulePeriodic() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::schedulePeriodic, this.description("schedulePeriodic"), java.lang.UnsupportedOperationException.class);
+            this.payloads.schedulePeriodic.evaluate();
         }
 
-        private ImmediateThinSchedulerTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ImmediateThinSchedulerTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ImmediateThinSchedulerTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ImmediateThinSchedulerTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ImmediateThinSchedulerTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ImmediateThinSchedulerTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ImmediateThinSchedulerTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ImmediateThinSchedulerTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ImmediateThinSchedulerTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ImmediateThinSchedulerTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ImmediateThinSchedulerTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement scheduleDirect;
+
+            public org.junit.runners.model.Statement scheduleDirectTimed;
+
+            public org.junit.runners.model.Statement scheduleDirectPeriodic;
+
+            public org.junit.runners.model.Statement schedule;
+
+            public org.junit.runners.model.Statement scheduleTimed;
+
+            public org.junit.runners.model.Statement schedulePeriodic;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.scheduleDirect = _ClassStatement.forPayload(ImmediateThinSchedulerTest::scheduleDirect, "scheduleDirect", this);
+            this.payloads.scheduleDirectTimed = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(ImmediateThinSchedulerTest::scheduleDirectTimed, java.lang.UnsupportedOperationException.class), "scheduleDirectTimed", this);
+            this.payloads.scheduleDirectPeriodic = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(ImmediateThinSchedulerTest::scheduleDirectPeriodic, java.lang.UnsupportedOperationException.class), "scheduleDirectPeriodic", this);
+            this.payloads.schedule = _ClassStatement.forPayload(ImmediateThinSchedulerTest::schedule, "schedule", this);
+            this.payloads.scheduleTimed = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(ImmediateThinSchedulerTest::scheduleTimed, java.lang.UnsupportedOperationException.class), "scheduleTimed", this);
+            this.payloads.schedulePeriodic = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(ImmediateThinSchedulerTest::schedulePeriodic, java.lang.UnsupportedOperationException.class), "schedulePeriodic", this);
         }
     }
 }

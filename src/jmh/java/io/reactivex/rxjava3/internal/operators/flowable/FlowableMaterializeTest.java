@@ -281,108 +281,197 @@ public class FlowableMaterializeTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableMaterializeTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_materialize1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::materialize1, this.description("materialize1"));
+            this.payloads.materialize1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_materialize2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::materialize2, this.description("materialize2"));
+            this.payloads.materialize2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_multipleSubscribes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::multipleSubscribes, this.description("multipleSubscribes"));
+            this.payloads.multipleSubscribes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureOnEmptyStream() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureOnEmptyStream, this.description("backpressureOnEmptyStream"));
+            this.payloads.backpressureOnEmptyStream.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureNoError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureNoError, this.description("backpressureNoError"));
+            this.payloads.backpressureNoError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureNoErrorAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureNoErrorAsync, this.description("backpressureNoErrorAsync"));
+            this.payloads.backpressureNoErrorAsync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureWithError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureWithError, this.description("backpressureWithError"));
+            this.payloads.backpressureWithError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureWithEmissionThenError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureWithEmissionThenError, this.description("backpressureWithEmissionThenError"));
+            this.payloads.backpressureWithEmissionThenError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withCompletionCausingError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withCompletionCausingError, this.description("withCompletionCausingError"));
+            this.payloads.withCompletionCausingError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribeJustBeforeCompletionNotificationShouldPreventThatNotificationArriving() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribeJustBeforeCompletionNotificationShouldPreventThatNotificationArriving, this.description("unsubscribeJustBeforeCompletionNotificationShouldPreventThatNotificationArriving"));
+            this.payloads.unsubscribeJustBeforeCompletionNotificationShouldPreventThatNotificationArriving.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressure, this.description("backpressure"));
+            this.payloads.backpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSource, this.description("badSource"));
+            this.payloads.badSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequest, this.description("badRequest"));
+            this.payloads.badRequest.evaluate();
         }
 
-        private FlowableMaterializeTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableMaterializeTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableMaterializeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableMaterializeTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableMaterializeTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableMaterializeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableMaterializeTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableMaterializeTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableMaterializeTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableMaterializeTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableMaterializeTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement materialize1;
+
+            public org.junit.runners.model.Statement materialize2;
+
+            public org.junit.runners.model.Statement multipleSubscribes;
+
+            public org.junit.runners.model.Statement backpressureOnEmptyStream;
+
+            public org.junit.runners.model.Statement backpressureNoError;
+
+            public org.junit.runners.model.Statement backpressureNoErrorAsync;
+
+            public org.junit.runners.model.Statement backpressureWithError;
+
+            public org.junit.runners.model.Statement backpressureWithEmissionThenError;
+
+            public org.junit.runners.model.Statement withCompletionCausingError;
+
+            public org.junit.runners.model.Statement unsubscribeJustBeforeCompletionNotificationShouldPreventThatNotificationArriving;
+
+            public org.junit.runners.model.Statement backpressure;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement badSource;
+
+            public org.junit.runners.model.Statement badRequest;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.materialize1 = _ClassStatement.forPayload(FlowableMaterializeTest::materialize1, "materialize1", this);
+            this.payloads.materialize2 = _ClassStatement.forPayload(FlowableMaterializeTest::materialize2, "materialize2", this);
+            this.payloads.multipleSubscribes = _ClassStatement.forPayload(FlowableMaterializeTest::multipleSubscribes, "multipleSubscribes", this);
+            this.payloads.backpressureOnEmptyStream = _ClassStatement.forPayload(FlowableMaterializeTest::backpressureOnEmptyStream, "backpressureOnEmptyStream", this);
+            this.payloads.backpressureNoError = _ClassStatement.forPayload(FlowableMaterializeTest::backpressureNoError, "backpressureNoError", this);
+            this.payloads.backpressureNoErrorAsync = _ClassStatement.forPayload(FlowableMaterializeTest::backpressureNoErrorAsync, "backpressureNoErrorAsync", this);
+            this.payloads.backpressureWithError = _ClassStatement.forPayload(FlowableMaterializeTest::backpressureWithError, "backpressureWithError", this);
+            this.payloads.backpressureWithEmissionThenError = _ClassStatement.forPayload(FlowableMaterializeTest::backpressureWithEmissionThenError, "backpressureWithEmissionThenError", this);
+            this.payloads.withCompletionCausingError = _ClassStatement.forPayload(FlowableMaterializeTest::withCompletionCausingError, "withCompletionCausingError", this);
+            this.payloads.unsubscribeJustBeforeCompletionNotificationShouldPreventThatNotificationArriving = _ClassStatement.forPayload(FlowableMaterializeTest::unsubscribeJustBeforeCompletionNotificationShouldPreventThatNotificationArriving, "unsubscribeJustBeforeCompletionNotificationShouldPreventThatNotificationArriving", this);
+            this.payloads.backpressure = _ClassStatement.forPayload(FlowableMaterializeTest::backpressure, "backpressure", this);
+            this.payloads.dispose = _ClassStatement.forPayload(FlowableMaterializeTest::dispose, "dispose", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableMaterializeTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.badSource = _ClassStatement.forPayload(FlowableMaterializeTest::badSource, "badSource", this);
+            this.payloads.badRequest = _ClassStatement.forPayload(FlowableMaterializeTest::badRequest, "badRequest", this);
         }
     }
 }

@@ -75,84 +75,111 @@ public class SingleConcatEagerTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private SingleConcatEagerTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_iterableNormal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::iterableNormal, this.description("iterableNormal"));
+            this.runBenchmark(this.payloads.iterableNormal);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_iterableNormalMaxConcurrency() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::iterableNormalMaxConcurrency, this.description("iterableNormalMaxConcurrency"));
+            this.runBenchmark(this.payloads.iterableNormalMaxConcurrency);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_iterableError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::iterableError, this.description("iterableError"));
+            this.runBenchmark(this.payloads.iterableError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_iterableErrorMaxConcurrency() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::iterableErrorMaxConcurrency, this.description("iterableErrorMaxConcurrency"));
+            this.runBenchmark(this.payloads.iterableErrorMaxConcurrency);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_publisherNormal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::publisherNormal, this.description("publisherNormal"));
+            this.runBenchmark(this.payloads.publisherNormal);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_publisherNormalMaxConcurrency() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::publisherNormalMaxConcurrency, this.description("publisherNormalMaxConcurrency"));
+            this.runBenchmark(this.payloads.publisherNormalMaxConcurrency);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_publisherError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::publisherError, this.description("publisherError"));
+            this.runBenchmark(this.payloads.publisherError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_iterableDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::iterableDelayError, this.description("iterableDelayError"));
+            this.runBenchmark(this.payloads.iterableDelayError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_iterableDelayErrorMaxConcurrency() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::iterableDelayErrorMaxConcurrency, this.description("iterableDelayErrorMaxConcurrency"));
+            this.runBenchmark(this.payloads.iterableDelayErrorMaxConcurrency);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_publisherDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::publisherDelayError, this.description("publisherDelayError"));
+            this.runBenchmark(this.payloads.publisherDelayError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_publisherDelayErrorMaxConcurrency() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::publisherDelayErrorMaxConcurrency, this.description("publisherDelayErrorMaxConcurrency"));
+            this.runBenchmark(this.payloads.publisherDelayErrorMaxConcurrency);
         }
 
-        private SingleConcatEagerTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SingleConcatEagerTest();
+        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleConcatEagerTest> payload) throws java.lang.Throwable {
+            this.instance = new SingleConcatEagerTest();
+            payload.accept(this.instance);
         }
 
-        @java.lang.Override
-        public SingleConcatEagerTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleConcatEagerTest> iterableNormal;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleConcatEagerTest> iterableNormalMaxConcurrency;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleConcatEagerTest> iterableError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleConcatEagerTest> iterableErrorMaxConcurrency;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleConcatEagerTest> publisherNormal;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleConcatEagerTest> publisherNormalMaxConcurrency;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleConcatEagerTest> publisherError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleConcatEagerTest> iterableDelayError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleConcatEagerTest> iterableDelayErrorMaxConcurrency;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleConcatEagerTest> publisherDelayError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleConcatEagerTest> publisherDelayErrorMaxConcurrency;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.iterableNormal = SingleConcatEagerTest::iterableNormal;
+            this.payloads.iterableNormalMaxConcurrency = SingleConcatEagerTest::iterableNormalMaxConcurrency;
+            this.payloads.iterableError = SingleConcatEagerTest::iterableError;
+            this.payloads.iterableErrorMaxConcurrency = SingleConcatEagerTest::iterableErrorMaxConcurrency;
+            this.payloads.publisherNormal = SingleConcatEagerTest::publisherNormal;
+            this.payloads.publisherNormalMaxConcurrency = SingleConcatEagerTest::publisherNormalMaxConcurrency;
+            this.payloads.publisherError = SingleConcatEagerTest::publisherError;
+            this.payloads.iterableDelayError = SingleConcatEagerTest::iterableDelayError;
+            this.payloads.iterableDelayErrorMaxConcurrency = SingleConcatEagerTest::iterableDelayErrorMaxConcurrency;
+            this.payloads.publisherDelayError = SingleConcatEagerTest::publisherDelayError;
+            this.payloads.publisherDelayErrorMaxConcurrency = SingleConcatEagerTest::publisherDelayErrorMaxConcurrency;
         }
     }
 }

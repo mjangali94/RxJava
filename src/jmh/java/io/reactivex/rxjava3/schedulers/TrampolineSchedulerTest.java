@@ -142,38 +142,4 @@ public class TrampolineSchedulerTest extends AbstractSchedulerTests {
             }
         };
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.schedulers.AbstractSchedulerTests._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_mergeWithCurrentThreadScheduler1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeWithCurrentThreadScheduler1, this.description("mergeWithCurrentThreadScheduler1"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_nestedTrampolineWithUnsubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nestedTrampolineWithUnsubscribe, this.description("nestedTrampolineWithUnsubscribe"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_trampolineWorkerHandlesConcurrentScheduling() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::trampolineWorkerHandlesConcurrentScheduling, this.description("trampolineWorkerHandlesConcurrentScheduling"));
-        }
-
-        private TrampolineSchedulerTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new TrampolineSchedulerTest();
-        }
-
-        @java.lang.Override
-        public TrampolineSchedulerTest implementation() {
-            return this.implementation;
-        }
-    }
 }

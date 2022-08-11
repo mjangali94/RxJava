@@ -200,72 +200,149 @@ public class FlowableToFutureTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableToFutureTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_success() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::success, this.description("success"));
+            this.payloads.success.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_successOperatesOnSuppliedScheduler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::successOperatesOnSuppliedScheduler, this.description("successOperatesOnSuppliedScheduler"));
+            this.payloads.successOperatesOnSuppliedScheduler.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_failure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::failure, this.description("failure"));
+            this.payloads.failure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelledBeforeSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelledBeforeSubscribe, this.description("cancelledBeforeSubscribe"));
+            this.payloads.cancelledBeforeSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancellationDuringFutureGet() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancellationDuringFutureGet, this.description("cancellationDuringFutureGet"));
+            this.payloads.cancellationDuringFutureGet.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressure, this.description("backpressure"));
+            this.payloads.backpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withTimeoutNoTimeout() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withTimeoutNoTimeout, this.description("withTimeoutNoTimeout"));
+            this.payloads.withTimeoutNoTimeout.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withTimeoutTimeout() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withTimeoutTimeout, this.description("withTimeoutTimeout"));
+            this.payloads.withTimeoutTimeout.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withTimeoutNoTimeoutScheduler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withTimeoutNoTimeoutScheduler, this.description("withTimeoutNoTimeoutScheduler"));
+            this.payloads.withTimeoutNoTimeoutScheduler.evaluate();
         }
 
-        private FlowableToFutureTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableToFutureTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableToFutureTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableToFutureTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableToFutureTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableToFutureTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableToFutureTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableToFutureTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableToFutureTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableToFutureTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableToFutureTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement success;
+
+            public org.junit.runners.model.Statement successOperatesOnSuppliedScheduler;
+
+            public org.junit.runners.model.Statement failure;
+
+            public org.junit.runners.model.Statement cancelledBeforeSubscribe;
+
+            public org.junit.runners.model.Statement cancellationDuringFutureGet;
+
+            public org.junit.runners.model.Statement backpressure;
+
+            public org.junit.runners.model.Statement withTimeoutNoTimeout;
+
+            public org.junit.runners.model.Statement withTimeoutTimeout;
+
+            public org.junit.runners.model.Statement withTimeoutNoTimeoutScheduler;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.success = _ClassStatement.forPayload(FlowableToFutureTest::success, "success", this);
+            this.payloads.successOperatesOnSuppliedScheduler = _ClassStatement.forPayload(FlowableToFutureTest::successOperatesOnSuppliedScheduler, "successOperatesOnSuppliedScheduler", this);
+            this.payloads.failure = _ClassStatement.forPayload(FlowableToFutureTest::failure, "failure", this);
+            this.payloads.cancelledBeforeSubscribe = _ClassStatement.forPayload(FlowableToFutureTest::cancelledBeforeSubscribe, "cancelledBeforeSubscribe", this);
+            this.payloads.cancellationDuringFutureGet = _ClassStatement.forPayload(FlowableToFutureTest::cancellationDuringFutureGet, "cancellationDuringFutureGet", this);
+            this.payloads.backpressure = _ClassStatement.forPayload(FlowableToFutureTest::backpressure, "backpressure", this);
+            this.payloads.withTimeoutNoTimeout = _ClassStatement.forPayload(FlowableToFutureTest::withTimeoutNoTimeout, "withTimeoutNoTimeout", this);
+            this.payloads.withTimeoutTimeout = _ClassStatement.forPayload(FlowableToFutureTest::withTimeoutTimeout, "withTimeoutTimeout", this);
+            this.payloads.withTimeoutNoTimeoutScheduler = _ClassStatement.forPayload(FlowableToFutureTest::withTimeoutNoTimeoutScheduler, "withTimeoutNoTimeoutScheduler", this);
         }
     }
 }

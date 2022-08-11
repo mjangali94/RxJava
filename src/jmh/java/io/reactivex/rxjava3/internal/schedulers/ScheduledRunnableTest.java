@@ -383,144 +383,245 @@ public class ScheduledRunnableTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ScheduledRunnableTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeRun() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeRun, this.description("disposeRun"));
+            this.payloads.disposeRun.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_setFutureCancelRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::setFutureCancelRace, this.description("setFutureCancelRace"));
+            this.payloads.setFutureCancelRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_setFutureRunRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::setFutureRunRace, this.description("setFutureRunRace"));
+            this.payloads.setFutureRunRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeRace, this.description("disposeRace"));
+            this.payloads.disposeRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_runDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::runDispose, this.description("runDispose"));
+            this.payloads.runDispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_pluginCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::pluginCrash, this.description("pluginCrash"));
+            this.payloads.pluginCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_crashReported() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::crashReported, this.description("crashReported"));
+            this.payloads.crashReported.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withoutParentDisposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withoutParentDisposed, this.description("withoutParentDisposed"));
+            this.payloads.withoutParentDisposed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withParentDisposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withParentDisposed, this.description("withParentDisposed"));
+            this.payloads.withParentDisposed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withFutureDisposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withFutureDisposed, this.description("withFutureDisposed"));
+            this.payloads.withFutureDisposed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withFutureDisposed2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withFutureDisposed2, this.description("withFutureDisposed2"));
+            this.payloads.withFutureDisposed2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withFutureDisposed3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withFutureDisposed3, this.description("withFutureDisposed3"));
+            this.payloads.withFutureDisposed3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_runFuture() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::runFuture, this.description("runFuture"));
+            this.payloads.runFuture.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_syncWorkerCancelRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::syncWorkerCancelRace, this.description("syncWorkerCancelRace"));
+            this.payloads.syncWorkerCancelRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeAfterRun() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeAfterRun, this.description("disposeAfterRun"));
+            this.payloads.disposeAfterRun.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_syncDisposeIdempotent() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::syncDisposeIdempotent, this.description("syncDisposeIdempotent"));
+            this.payloads.syncDisposeIdempotent.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncDisposeIdempotent() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncDisposeIdempotent, this.description("asyncDisposeIdempotent"));
+            this.payloads.asyncDisposeIdempotent.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noParentIsDisposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noParentIsDisposed, this.description("noParentIsDisposed"));
+            this.payloads.noParentIsDisposed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withParentIsDisposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withParentIsDisposed, this.description("withParentIsDisposed"));
+            this.payloads.withParentIsDisposed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toStringStates() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toStringStates, this.description("toStringStates"));
+            this.payloads.toStringStates.evaluate();
         }
 
-        private ScheduledRunnableTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ScheduledRunnableTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ScheduledRunnableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ScheduledRunnableTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ScheduledRunnableTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ScheduledRunnableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ScheduledRunnableTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ScheduledRunnableTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ScheduledRunnableTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ScheduledRunnableTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ScheduledRunnableTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement disposeRun;
+
+            public org.junit.runners.model.Statement setFutureCancelRace;
+
+            public org.junit.runners.model.Statement setFutureRunRace;
+
+            public org.junit.runners.model.Statement disposeRace;
+
+            public org.junit.runners.model.Statement runDispose;
+
+            public org.junit.runners.model.Statement pluginCrash;
+
+            public org.junit.runners.model.Statement crashReported;
+
+            public org.junit.runners.model.Statement withoutParentDisposed;
+
+            public org.junit.runners.model.Statement withParentDisposed;
+
+            public org.junit.runners.model.Statement withFutureDisposed;
+
+            public org.junit.runners.model.Statement withFutureDisposed2;
+
+            public org.junit.runners.model.Statement withFutureDisposed3;
+
+            public org.junit.runners.model.Statement runFuture;
+
+            public org.junit.runners.model.Statement syncWorkerCancelRace;
+
+            public org.junit.runners.model.Statement disposeAfterRun;
+
+            public org.junit.runners.model.Statement syncDisposeIdempotent;
+
+            public org.junit.runners.model.Statement asyncDisposeIdempotent;
+
+            public org.junit.runners.model.Statement noParentIsDisposed;
+
+            public org.junit.runners.model.Statement withParentIsDisposed;
+
+            public org.junit.runners.model.Statement toStringStates;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.dispose = _ClassStatement.forPayload(ScheduledRunnableTest::dispose, "dispose", this);
+            this.payloads.disposeRun = _ClassStatement.forPayload(ScheduledRunnableTest::disposeRun, "disposeRun", this);
+            this.payloads.setFutureCancelRace = _ClassStatement.forPayload(ScheduledRunnableTest::setFutureCancelRace, "setFutureCancelRace", this);
+            this.payloads.setFutureRunRace = _ClassStatement.forPayload(ScheduledRunnableTest::setFutureRunRace, "setFutureRunRace", this);
+            this.payloads.disposeRace = _ClassStatement.forPayload(ScheduledRunnableTest::disposeRace, "disposeRace", this);
+            this.payloads.runDispose = _ClassStatement.forPayload(ScheduledRunnableTest::runDispose, "runDispose", this);
+            this.payloads.pluginCrash = _ClassStatement.forPayload(ScheduledRunnableTest::pluginCrash, "pluginCrash", this);
+            this.payloads.crashReported = _ClassStatement.forPayload(ScheduledRunnableTest::crashReported, "crashReported", this);
+            this.payloads.withoutParentDisposed = _ClassStatement.forPayload(ScheduledRunnableTest::withoutParentDisposed, "withoutParentDisposed", this);
+            this.payloads.withParentDisposed = _ClassStatement.forPayload(ScheduledRunnableTest::withParentDisposed, "withParentDisposed", this);
+            this.payloads.withFutureDisposed = _ClassStatement.forPayload(ScheduledRunnableTest::withFutureDisposed, "withFutureDisposed", this);
+            this.payloads.withFutureDisposed2 = _ClassStatement.forPayload(ScheduledRunnableTest::withFutureDisposed2, "withFutureDisposed2", this);
+            this.payloads.withFutureDisposed3 = _ClassStatement.forPayload(ScheduledRunnableTest::withFutureDisposed3, "withFutureDisposed3", this);
+            this.payloads.runFuture = _ClassStatement.forPayload(ScheduledRunnableTest::runFuture, "runFuture", this);
+            this.payloads.syncWorkerCancelRace = _ClassStatement.forPayload(ScheduledRunnableTest::syncWorkerCancelRace, "syncWorkerCancelRace", this);
+            this.payloads.disposeAfterRun = _ClassStatement.forPayload(ScheduledRunnableTest::disposeAfterRun, "disposeAfterRun", this);
+            this.payloads.syncDisposeIdempotent = _ClassStatement.forPayload(ScheduledRunnableTest::syncDisposeIdempotent, "syncDisposeIdempotent", this);
+            this.payloads.asyncDisposeIdempotent = _ClassStatement.forPayload(ScheduledRunnableTest::asyncDisposeIdempotent, "asyncDisposeIdempotent", this);
+            this.payloads.noParentIsDisposed = _ClassStatement.forPayload(ScheduledRunnableTest::noParentIsDisposed, "noParentIsDisposed", this);
+            this.payloads.withParentIsDisposed = _ClassStatement.forPayload(ScheduledRunnableTest::withParentIsDisposed, "withParentIsDisposed", this);
+            this.payloads.toStringStates = _ClassStatement.forPayload(ScheduledRunnableTest::toStringStates, "toStringStates", this);
         }
     }
 }

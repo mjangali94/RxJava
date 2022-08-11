@@ -45,32 +45,4 @@ public class CompletablePeekTest extends RxJavaTest {
     public void disposed() {
         TestHelper.checkDisposed(CompletableSubject.create().doOnComplete(Functions.EMPTY_ACTION));
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_onAfterTerminateCrashes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onAfterTerminateCrashes, this.description("onAfterTerminateCrashes"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_disposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposed, this.description("disposed"));
-        }
-
-        private CompletablePeekTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new CompletablePeekTest();
-        }
-
-        @java.lang.Override
-        public CompletablePeekTest implementation() {
-            return this.implementation;
-        }
-    }
 }

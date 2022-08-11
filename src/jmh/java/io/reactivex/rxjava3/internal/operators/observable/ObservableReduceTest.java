@@ -337,138 +337,230 @@ public class ObservableReduceTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableReduceTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_aggregateAsIntSumObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::aggregateAsIntSumObservable, this.description("aggregateAsIntSumObservable"));
+            this.payloads.aggregateAsIntSumObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_aggregateAsIntSumSourceThrowsObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::aggregateAsIntSumSourceThrowsObservable, this.description("aggregateAsIntSumSourceThrowsObservable"));
+            this.payloads.aggregateAsIntSumSourceThrowsObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_aggregateAsIntSumAccumulatorThrowsObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::aggregateAsIntSumAccumulatorThrowsObservable, this.description("aggregateAsIntSumAccumulatorThrowsObservable"));
+            this.payloads.aggregateAsIntSumAccumulatorThrowsObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_aggregateAsIntSumResultSelectorThrowsObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::aggregateAsIntSumResultSelectorThrowsObservable, this.description("aggregateAsIntSumResultSelectorThrowsObservable"));
+            this.payloads.aggregateAsIntSumResultSelectorThrowsObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureWithNoInitialValueObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureWithNoInitialValueObservable, this.description("backpressureWithNoInitialValueObservable"));
+            this.payloads.backpressureWithNoInitialValueObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureWithInitialValueObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureWithInitialValueObservable, this.description("backpressureWithInitialValueObservable"));
+            this.payloads.backpressureWithInitialValueObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_aggregateAsIntSum() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::aggregateAsIntSum, this.description("aggregateAsIntSum"));
+            this.payloads.aggregateAsIntSum.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_aggregateAsIntSumSourceThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::aggregateAsIntSumSourceThrows, this.description("aggregateAsIntSumSourceThrows"));
+            this.payloads.aggregateAsIntSumSourceThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_aggregateAsIntSumAccumulatorThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::aggregateAsIntSumAccumulatorThrows, this.description("aggregateAsIntSumAccumulatorThrows"));
+            this.payloads.aggregateAsIntSumAccumulatorThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_aggregateAsIntSumResultSelectorThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::aggregateAsIntSumResultSelectorThrows, this.description("aggregateAsIntSumResultSelectorThrows"));
+            this.payloads.aggregateAsIntSumResultSelectorThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureWithNoInitialValue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureWithNoInitialValue, this.description("backpressureWithNoInitialValue"));
+            this.payloads.backpressureWithNoInitialValue.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureWithInitialValue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureWithInitialValue, this.description("backpressureWithInitialValue"));
+            this.payloads.backpressureWithInitialValue.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_reduceWithSingle() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::reduceWithSingle, this.description("reduceWithSingle"));
+            this.payloads.reduceWithSingle.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_reduceMaybeDoubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::reduceMaybeDoubleOnSubscribe, this.description("reduceMaybeDoubleOnSubscribe"));
+            this.payloads.reduceMaybeDoubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_reduceMaybeCheckDisposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::reduceMaybeCheckDisposed, this.description("reduceMaybeCheckDisposed"));
+            this.payloads.reduceMaybeCheckDisposed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_reduceMaybeBadSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::reduceMaybeBadSource, this.description("reduceMaybeBadSource"));
+            this.payloads.reduceMaybeBadSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_seedDoubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::seedDoubleOnSubscribe, this.description("seedDoubleOnSubscribe"));
+            this.payloads.seedDoubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_seedDisposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::seedDisposed, this.description("seedDisposed"));
+            this.payloads.seedDisposed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_seedBadSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::seedBadSource, this.description("seedBadSource"));
+            this.payloads.seedBadSource.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().before();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableReduceTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableReduceTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.before();
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private ObservableReduceTest implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableReduceTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableReduceTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableReduceTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableReduceTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableReduceTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableReduceTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableReduceTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public ObservableReduceTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement aggregateAsIntSumObservable;
+
+            public org.junit.runners.model.Statement aggregateAsIntSumSourceThrowsObservable;
+
+            public org.junit.runners.model.Statement aggregateAsIntSumAccumulatorThrowsObservable;
+
+            public org.junit.runners.model.Statement aggregateAsIntSumResultSelectorThrowsObservable;
+
+            public org.junit.runners.model.Statement backpressureWithNoInitialValueObservable;
+
+            public org.junit.runners.model.Statement backpressureWithInitialValueObservable;
+
+            public org.junit.runners.model.Statement aggregateAsIntSum;
+
+            public org.junit.runners.model.Statement aggregateAsIntSumSourceThrows;
+
+            public org.junit.runners.model.Statement aggregateAsIntSumAccumulatorThrows;
+
+            public org.junit.runners.model.Statement aggregateAsIntSumResultSelectorThrows;
+
+            public org.junit.runners.model.Statement backpressureWithNoInitialValue;
+
+            public org.junit.runners.model.Statement backpressureWithInitialValue;
+
+            public org.junit.runners.model.Statement reduceWithSingle;
+
+            public org.junit.runners.model.Statement reduceMaybeDoubleOnSubscribe;
+
+            public org.junit.runners.model.Statement reduceMaybeCheckDisposed;
+
+            public org.junit.runners.model.Statement reduceMaybeBadSource;
+
+            public org.junit.runners.model.Statement seedDoubleOnSubscribe;
+
+            public org.junit.runners.model.Statement seedDisposed;
+
+            public org.junit.runners.model.Statement seedBadSource;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.aggregateAsIntSumObservable = _ClassStatement.forPayload(ObservableReduceTest::aggregateAsIntSumObservable, "aggregateAsIntSumObservable", this);
+            this.payloads.aggregateAsIntSumSourceThrowsObservable = _ClassStatement.forPayload(ObservableReduceTest::aggregateAsIntSumSourceThrowsObservable, "aggregateAsIntSumSourceThrowsObservable", this);
+            this.payloads.aggregateAsIntSumAccumulatorThrowsObservable = _ClassStatement.forPayload(ObservableReduceTest::aggregateAsIntSumAccumulatorThrowsObservable, "aggregateAsIntSumAccumulatorThrowsObservable", this);
+            this.payloads.aggregateAsIntSumResultSelectorThrowsObservable = _ClassStatement.forPayload(ObservableReduceTest::aggregateAsIntSumResultSelectorThrowsObservable, "aggregateAsIntSumResultSelectorThrowsObservable", this);
+            this.payloads.backpressureWithNoInitialValueObservable = _ClassStatement.forPayload(ObservableReduceTest::backpressureWithNoInitialValueObservable, "backpressureWithNoInitialValueObservable", this);
+            this.payloads.backpressureWithInitialValueObservable = _ClassStatement.forPayload(ObservableReduceTest::backpressureWithInitialValueObservable, "backpressureWithInitialValueObservable", this);
+            this.payloads.aggregateAsIntSum = _ClassStatement.forPayload(ObservableReduceTest::aggregateAsIntSum, "aggregateAsIntSum", this);
+            this.payloads.aggregateAsIntSumSourceThrows = _ClassStatement.forPayload(ObservableReduceTest::aggregateAsIntSumSourceThrows, "aggregateAsIntSumSourceThrows", this);
+            this.payloads.aggregateAsIntSumAccumulatorThrows = _ClassStatement.forPayload(ObservableReduceTest::aggregateAsIntSumAccumulatorThrows, "aggregateAsIntSumAccumulatorThrows", this);
+            this.payloads.aggregateAsIntSumResultSelectorThrows = _ClassStatement.forPayload(ObservableReduceTest::aggregateAsIntSumResultSelectorThrows, "aggregateAsIntSumResultSelectorThrows", this);
+            this.payloads.backpressureWithNoInitialValue = _ClassStatement.forPayload(ObservableReduceTest::backpressureWithNoInitialValue, "backpressureWithNoInitialValue", this);
+            this.payloads.backpressureWithInitialValue = _ClassStatement.forPayload(ObservableReduceTest::backpressureWithInitialValue, "backpressureWithInitialValue", this);
+            this.payloads.reduceWithSingle = _ClassStatement.forPayload(ObservableReduceTest::reduceWithSingle, "reduceWithSingle", this);
+            this.payloads.reduceMaybeDoubleOnSubscribe = _ClassStatement.forPayload(ObservableReduceTest::reduceMaybeDoubleOnSubscribe, "reduceMaybeDoubleOnSubscribe", this);
+            this.payloads.reduceMaybeCheckDisposed = _ClassStatement.forPayload(ObservableReduceTest::reduceMaybeCheckDisposed, "reduceMaybeCheckDisposed", this);
+            this.payloads.reduceMaybeBadSource = _ClassStatement.forPayload(ObservableReduceTest::reduceMaybeBadSource, "reduceMaybeBadSource", this);
+            this.payloads.seedDoubleOnSubscribe = _ClassStatement.forPayload(ObservableReduceTest::seedDoubleOnSubscribe, "seedDoubleOnSubscribe", this);
+            this.payloads.seedDisposed = _ClassStatement.forPayload(ObservableReduceTest::seedDisposed, "seedDisposed", this);
+            this.payloads.seedBadSource = _ClassStatement.forPayload(ObservableReduceTest::seedBadSource, "seedBadSource", this);
         }
     }
 }

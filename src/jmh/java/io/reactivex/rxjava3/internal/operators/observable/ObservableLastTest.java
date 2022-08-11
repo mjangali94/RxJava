@@ -309,168 +309,277 @@ public class ObservableLastTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableLastTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lastWithElements() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lastWithElements, this.description("lastWithElements"));
+            this.payloads.lastWithElements.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lastWithNoElements() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lastWithNoElements, this.description("lastWithNoElements"));
+            this.payloads.lastWithNoElements.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lastMultiSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lastMultiSubscribe, this.description("lastMultiSubscribe"));
+            this.payloads.lastMultiSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lastViaObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lastViaObservable, this.description("lastViaObservable"));
+            this.payloads.lastViaObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_last() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::last, this.description("last"));
+            this.payloads.last.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lastWithOneElement() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lastWithOneElement, this.description("lastWithOneElement"));
+            this.payloads.lastWithOneElement.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lastWithEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lastWithEmpty, this.description("lastWithEmpty"));
+            this.payloads.lastWithEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lastWithPredicate() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lastWithPredicate, this.description("lastWithPredicate"));
+            this.payloads.lastWithPredicate.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lastWithPredicateAndOneElement() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lastWithPredicateAndOneElement, this.description("lastWithPredicateAndOneElement"));
+            this.payloads.lastWithPredicateAndOneElement.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lastWithPredicateAndEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lastWithPredicateAndEmpty, this.description("lastWithPredicateAndEmpty"));
+            this.payloads.lastWithPredicateAndEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lastOrDefault() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lastOrDefault, this.description("lastOrDefault"));
+            this.payloads.lastOrDefault.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lastOrDefaultWithOneElement() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lastOrDefaultWithOneElement, this.description("lastOrDefaultWithOneElement"));
+            this.payloads.lastOrDefaultWithOneElement.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lastOrDefaultWithEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lastOrDefaultWithEmpty, this.description("lastOrDefaultWithEmpty"));
+            this.payloads.lastOrDefaultWithEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lastOrDefaultWithPredicate() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lastOrDefaultWithPredicate, this.description("lastOrDefaultWithPredicate"));
+            this.payloads.lastOrDefaultWithPredicate.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lastOrDefaultWithPredicateAndOneElement() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lastOrDefaultWithPredicateAndOneElement, this.description("lastOrDefaultWithPredicateAndOneElement"));
+            this.payloads.lastOrDefaultWithPredicateAndOneElement.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lastOrDefaultWithPredicateAndEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lastOrDefaultWithPredicateAndEmpty, this.description("lastOrDefaultWithPredicateAndEmpty"));
+            this.payloads.lastOrDefaultWithPredicateAndEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lastOrErrorNoElement() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lastOrErrorNoElement, this.description("lastOrErrorNoElement"));
+            this.payloads.lastOrErrorNoElement.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lastOrErrorOneElement() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lastOrErrorOneElement, this.description("lastOrErrorOneElement"));
+            this.payloads.lastOrErrorOneElement.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lastOrErrorMultipleElements() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lastOrErrorMultipleElements, this.description("lastOrErrorMultipleElements"));
+            this.payloads.lastOrErrorMultipleElements.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_lastOrErrorError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::lastOrErrorError, this.description("lastOrErrorError"));
+            this.payloads.lastOrErrorError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorLastOrErrorObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorLastOrErrorObservable, this.description("errorLastOrErrorObservable"));
+            this.payloads.errorLastOrErrorObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyLastOrErrorObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyLastOrErrorObservable, this.description("emptyLastOrErrorObservable"));
+            this.payloads.emptyLastOrErrorObservable.evaluate();
         }
 
-        private ObservableLastTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableLastTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableLastTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableLastTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservableLastTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableLastTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableLastTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableLastTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableLastTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableLastTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableLastTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement lastWithElements;
+
+            public org.junit.runners.model.Statement lastWithNoElements;
+
+            public org.junit.runners.model.Statement lastMultiSubscribe;
+
+            public org.junit.runners.model.Statement lastViaObservable;
+
+            public org.junit.runners.model.Statement last;
+
+            public org.junit.runners.model.Statement lastWithOneElement;
+
+            public org.junit.runners.model.Statement lastWithEmpty;
+
+            public org.junit.runners.model.Statement lastWithPredicate;
+
+            public org.junit.runners.model.Statement lastWithPredicateAndOneElement;
+
+            public org.junit.runners.model.Statement lastWithPredicateAndEmpty;
+
+            public org.junit.runners.model.Statement lastOrDefault;
+
+            public org.junit.runners.model.Statement lastOrDefaultWithOneElement;
+
+            public org.junit.runners.model.Statement lastOrDefaultWithEmpty;
+
+            public org.junit.runners.model.Statement lastOrDefaultWithPredicate;
+
+            public org.junit.runners.model.Statement lastOrDefaultWithPredicateAndOneElement;
+
+            public org.junit.runners.model.Statement lastOrDefaultWithPredicateAndEmpty;
+
+            public org.junit.runners.model.Statement lastOrErrorNoElement;
+
+            public org.junit.runners.model.Statement lastOrErrorOneElement;
+
+            public org.junit.runners.model.Statement lastOrErrorMultipleElements;
+
+            public org.junit.runners.model.Statement lastOrErrorError;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement errorLastOrErrorObservable;
+
+            public org.junit.runners.model.Statement emptyLastOrErrorObservable;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.lastWithElements = _ClassStatement.forPayload(ObservableLastTest::lastWithElements, "lastWithElements", this);
+            this.payloads.lastWithNoElements = _ClassStatement.forPayload(ObservableLastTest::lastWithNoElements, "lastWithNoElements", this);
+            this.payloads.lastMultiSubscribe = _ClassStatement.forPayload(ObservableLastTest::lastMultiSubscribe, "lastMultiSubscribe", this);
+            this.payloads.lastViaObservable = _ClassStatement.forPayload(ObservableLastTest::lastViaObservable, "lastViaObservable", this);
+            this.payloads.last = _ClassStatement.forPayload(ObservableLastTest::last, "last", this);
+            this.payloads.lastWithOneElement = _ClassStatement.forPayload(ObservableLastTest::lastWithOneElement, "lastWithOneElement", this);
+            this.payloads.lastWithEmpty = _ClassStatement.forPayload(ObservableLastTest::lastWithEmpty, "lastWithEmpty", this);
+            this.payloads.lastWithPredicate = _ClassStatement.forPayload(ObservableLastTest::lastWithPredicate, "lastWithPredicate", this);
+            this.payloads.lastWithPredicateAndOneElement = _ClassStatement.forPayload(ObservableLastTest::lastWithPredicateAndOneElement, "lastWithPredicateAndOneElement", this);
+            this.payloads.lastWithPredicateAndEmpty = _ClassStatement.forPayload(ObservableLastTest::lastWithPredicateAndEmpty, "lastWithPredicateAndEmpty", this);
+            this.payloads.lastOrDefault = _ClassStatement.forPayload(ObservableLastTest::lastOrDefault, "lastOrDefault", this);
+            this.payloads.lastOrDefaultWithOneElement = _ClassStatement.forPayload(ObservableLastTest::lastOrDefaultWithOneElement, "lastOrDefaultWithOneElement", this);
+            this.payloads.lastOrDefaultWithEmpty = _ClassStatement.forPayload(ObservableLastTest::lastOrDefaultWithEmpty, "lastOrDefaultWithEmpty", this);
+            this.payloads.lastOrDefaultWithPredicate = _ClassStatement.forPayload(ObservableLastTest::lastOrDefaultWithPredicate, "lastOrDefaultWithPredicate", this);
+            this.payloads.lastOrDefaultWithPredicateAndOneElement = _ClassStatement.forPayload(ObservableLastTest::lastOrDefaultWithPredicateAndOneElement, "lastOrDefaultWithPredicateAndOneElement", this);
+            this.payloads.lastOrDefaultWithPredicateAndEmpty = _ClassStatement.forPayload(ObservableLastTest::lastOrDefaultWithPredicateAndEmpty, "lastOrDefaultWithPredicateAndEmpty", this);
+            this.payloads.lastOrErrorNoElement = _ClassStatement.forPayload(ObservableLastTest::lastOrErrorNoElement, "lastOrErrorNoElement", this);
+            this.payloads.lastOrErrorOneElement = _ClassStatement.forPayload(ObservableLastTest::lastOrErrorOneElement, "lastOrErrorOneElement", this);
+            this.payloads.lastOrErrorMultipleElements = _ClassStatement.forPayload(ObservableLastTest::lastOrErrorMultipleElements, "lastOrErrorMultipleElements", this);
+            this.payloads.lastOrErrorError = _ClassStatement.forPayload(ObservableLastTest::lastOrErrorError, "lastOrErrorError", this);
+            this.payloads.dispose = _ClassStatement.forPayload(ObservableLastTest::dispose, "dispose", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(ObservableLastTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.error = _ClassStatement.forPayload(ObservableLastTest::error, "error", this);
+            this.payloads.errorLastOrErrorObservable = _ClassStatement.forPayload(ObservableLastTest::errorLastOrErrorObservable, "errorLastOrErrorObservable", this);
+            this.payloads.emptyLastOrErrorObservable = _ClassStatement.forPayload(ObservableLastTest::emptyLastOrErrorObservable, "emptyLastOrErrorObservable", this);
         }
     }
 }

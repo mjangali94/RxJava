@@ -581,240 +581,373 @@ public class ObservableConcatMapTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableConcatMapTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncFused() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncFused, this.description("asyncFused"));
+            this.payloads.asyncFused.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose2, this.description("dispose2"));
+            this.payloads.dispose2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainError, this.description("mainError"));
+            this.payloads.mainError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerError, this.description("innerError"));
+            this.payloads.innerError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainErrorDelayed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainErrorDelayed, this.description("mainErrorDelayed"));
+            this.payloads.mainErrorDelayed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerErrorDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerErrorDelayError, this.description("innerErrorDelayError"));
+            this.payloads.innerErrorDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerErrorDelayError2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerErrorDelayError2, this.description("innerErrorDelayError2"));
+            this.payloads.innerErrorDelayError2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSource, this.description("badSource"));
+            this.payloads.badSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSourceDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSourceDelayError, this.description("badSourceDelayError"));
+            this.payloads.badSourceDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalDelayErrors() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalDelayErrors, this.description("normalDelayErrors"));
+            this.payloads.normalDelayErrors.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalDelayErrorsTillTheEnd() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalDelayErrorsTillTheEnd, this.description("normalDelayErrorsTillTheEnd"));
+            this.payloads.normalDelayErrorsTillTheEnd.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorRace, this.description("onErrorRace"));
+            this.payloads.onErrorRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperThrows, this.description("mapperThrows"));
+            this.payloads.mapperThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedPollThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedPollThrows, this.description("fusedPollThrows"));
+            this.payloads.fusedPollThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedPollThrowsDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedPollThrowsDelayError, this.description("fusedPollThrowsDelayError"));
+            this.payloads.fusedPollThrowsDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperThrowsDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperThrowsDelayError, this.description("mapperThrowsDelayError"));
+            this.payloads.mapperThrowsDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badInnerDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badInnerDelayError, this.description("badInnerDelayError"));
+            this.payloads.badInnerDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatReportsDisposedOnComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatReportsDisposedOnComplete, this.description("concatReportsDisposedOnComplete"));
+            this.payloads.concatReportsDisposedOnComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatReportsDisposedOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatReportsDisposedOnError, this.description("concatReportsDisposedOnError"));
+            this.payloads.concatReportsDisposedOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_reentrantNoOverflow() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::reentrantNoOverflow, this.description("reentrantNoOverflow"));
+            this.payloads.reentrantNoOverflow.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_reentrantNoOverflowHidden() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::reentrantNoOverflowHidden, this.description("reentrantNoOverflowHidden"));
+            this.payloads.reentrantNoOverflowHidden.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noCancelPrevious() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noCancelPrevious, this.description("noCancelPrevious"));
+            this.payloads.noCancelPrevious.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_undeliverableUponCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::undeliverableUponCancel, this.description("undeliverableUponCancel"));
+            this.payloads.undeliverableUponCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_undeliverableUponCancelDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::undeliverableUponCancelDelayError, this.description("undeliverableUponCancelDelayError"));
+            this.payloads.undeliverableUponCancelDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_undeliverableUponCancelDelayErrorTillEnd() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::undeliverableUponCancelDelayErrorTillEnd, this.description("undeliverableUponCancelDelayErrorTillEnd"));
+            this.payloads.undeliverableUponCancelDelayErrorTillEnd.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribeDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribeDelayError, this.description("doubleOnSubscribeDelayError"));
+            this.payloads.doubleOnSubscribeDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scalarXMap() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scalarXMap, this.description("scalarXMap"));
+            this.payloads.scalarXMap.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rejectedFusion() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rejectedFusion, this.description("rejectedFusion"));
+            this.payloads.rejectedFusion.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rejectedFusionDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rejectedFusionDelayError, this.description("rejectedFusionDelayError"));
+            this.payloads.rejectedFusionDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncFusedDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncFusedDelayError, this.description("asyncFusedDelayError"));
+            this.payloads.asyncFusedDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scalarInnerJustDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scalarInnerJustDelayError, this.description("scalarInnerJustDelayError"));
+            this.payloads.scalarInnerJustDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scalarInnerEmptyDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scalarInnerEmptyDelayError, this.description("scalarInnerEmptyDelayError"));
+            this.payloads.scalarInnerEmptyDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scalarInnerJustDisposeDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scalarInnerJustDisposeDelayError, this.description("scalarInnerJustDisposeDelayError"));
+            this.payloads.scalarInnerJustDisposeDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scalarInnerEmptyDisposeDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scalarInnerEmptyDisposeDelayError, this.description("scalarInnerEmptyDisposeDelayError"));
+            this.payloads.scalarInnerEmptyDisposeDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayErrorInnerActive() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayErrorInnerActive, this.description("delayErrorInnerActive"));
+            this.payloads.delayErrorInnerActive.evaluate();
         }
 
-        private ObservableConcatMapTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableConcatMapTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservableConcatMapTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableConcatMapTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableConcatMapTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableConcatMapTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement asyncFused;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement dispose2;
+
+            public org.junit.runners.model.Statement mainError;
+
+            public org.junit.runners.model.Statement innerError;
+
+            public org.junit.runners.model.Statement mainErrorDelayed;
+
+            public org.junit.runners.model.Statement innerErrorDelayError;
+
+            public org.junit.runners.model.Statement innerErrorDelayError2;
+
+            public org.junit.runners.model.Statement badSource;
+
+            public org.junit.runners.model.Statement badSourceDelayError;
+
+            public org.junit.runners.model.Statement normalDelayErrors;
+
+            public org.junit.runners.model.Statement normalDelayErrorsTillTheEnd;
+
+            public org.junit.runners.model.Statement onErrorRace;
+
+            public org.junit.runners.model.Statement mapperThrows;
+
+            public org.junit.runners.model.Statement fusedPollThrows;
+
+            public org.junit.runners.model.Statement fusedPollThrowsDelayError;
+
+            public org.junit.runners.model.Statement mapperThrowsDelayError;
+
+            public org.junit.runners.model.Statement badInnerDelayError;
+
+            public org.junit.runners.model.Statement concatReportsDisposedOnComplete;
+
+            public org.junit.runners.model.Statement concatReportsDisposedOnError;
+
+            public org.junit.runners.model.Statement reentrantNoOverflow;
+
+            public org.junit.runners.model.Statement reentrantNoOverflowHidden;
+
+            public org.junit.runners.model.Statement noCancelPrevious;
+
+            public org.junit.runners.model.Statement undeliverableUponCancel;
+
+            public org.junit.runners.model.Statement undeliverableUponCancelDelayError;
+
+            public org.junit.runners.model.Statement undeliverableUponCancelDelayErrorTillEnd;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement doubleOnSubscribeDelayError;
+
+            public org.junit.runners.model.Statement scalarXMap;
+
+            public org.junit.runners.model.Statement rejectedFusion;
+
+            public org.junit.runners.model.Statement rejectedFusionDelayError;
+
+            public org.junit.runners.model.Statement asyncFusedDelayError;
+
+            public org.junit.runners.model.Statement scalarInnerJustDelayError;
+
+            public org.junit.runners.model.Statement scalarInnerEmptyDelayError;
+
+            public org.junit.runners.model.Statement scalarInnerJustDisposeDelayError;
+
+            public org.junit.runners.model.Statement scalarInnerEmptyDisposeDelayError;
+
+            public org.junit.runners.model.Statement delayErrorInnerActive;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.asyncFused = _ClassStatement.forPayload(ObservableConcatMapTest::asyncFused, "asyncFused", this);
+            this.payloads.dispose = _ClassStatement.forPayload(ObservableConcatMapTest::dispose, "dispose", this);
+            this.payloads.dispose2 = _ClassStatement.forPayload(ObservableConcatMapTest::dispose2, "dispose2", this);
+            this.payloads.mainError = _ClassStatement.forPayload(ObservableConcatMapTest::mainError, "mainError", this);
+            this.payloads.innerError = _ClassStatement.forPayload(ObservableConcatMapTest::innerError, "innerError", this);
+            this.payloads.mainErrorDelayed = _ClassStatement.forPayload(ObservableConcatMapTest::mainErrorDelayed, "mainErrorDelayed", this);
+            this.payloads.innerErrorDelayError = _ClassStatement.forPayload(ObservableConcatMapTest::innerErrorDelayError, "innerErrorDelayError", this);
+            this.payloads.innerErrorDelayError2 = _ClassStatement.forPayload(ObservableConcatMapTest::innerErrorDelayError2, "innerErrorDelayError2", this);
+            this.payloads.badSource = _ClassStatement.forPayload(ObservableConcatMapTest::badSource, "badSource", this);
+            this.payloads.badSourceDelayError = _ClassStatement.forPayload(ObservableConcatMapTest::badSourceDelayError, "badSourceDelayError", this);
+            this.payloads.normalDelayErrors = _ClassStatement.forPayload(ObservableConcatMapTest::normalDelayErrors, "normalDelayErrors", this);
+            this.payloads.normalDelayErrorsTillTheEnd = _ClassStatement.forPayload(ObservableConcatMapTest::normalDelayErrorsTillTheEnd, "normalDelayErrorsTillTheEnd", this);
+            this.payloads.onErrorRace = _ClassStatement.forPayload(ObservableConcatMapTest::onErrorRace, "onErrorRace", this);
+            this.payloads.mapperThrows = _ClassStatement.forPayload(ObservableConcatMapTest::mapperThrows, "mapperThrows", this);
+            this.payloads.fusedPollThrows = _ClassStatement.forPayload(ObservableConcatMapTest::fusedPollThrows, "fusedPollThrows", this);
+            this.payloads.fusedPollThrowsDelayError = _ClassStatement.forPayload(ObservableConcatMapTest::fusedPollThrowsDelayError, "fusedPollThrowsDelayError", this);
+            this.payloads.mapperThrowsDelayError = _ClassStatement.forPayload(ObservableConcatMapTest::mapperThrowsDelayError, "mapperThrowsDelayError", this);
+            this.payloads.badInnerDelayError = _ClassStatement.forPayload(ObservableConcatMapTest::badInnerDelayError, "badInnerDelayError", this);
+            this.payloads.concatReportsDisposedOnComplete = _ClassStatement.forPayload(ObservableConcatMapTest::concatReportsDisposedOnComplete, "concatReportsDisposedOnComplete", this);
+            this.payloads.concatReportsDisposedOnError = _ClassStatement.forPayload(ObservableConcatMapTest::concatReportsDisposedOnError, "concatReportsDisposedOnError", this);
+            this.payloads.reentrantNoOverflow = _ClassStatement.forPayload(ObservableConcatMapTest::reentrantNoOverflow, "reentrantNoOverflow", this);
+            this.payloads.reentrantNoOverflowHidden = _ClassStatement.forPayload(ObservableConcatMapTest::reentrantNoOverflowHidden, "reentrantNoOverflowHidden", this);
+            this.payloads.noCancelPrevious = _ClassStatement.forPayload(ObservableConcatMapTest::noCancelPrevious, "noCancelPrevious", this);
+            this.payloads.undeliverableUponCancel = _ClassStatement.forPayload(ObservableConcatMapTest::undeliverableUponCancel, "undeliverableUponCancel", this);
+            this.payloads.undeliverableUponCancelDelayError = _ClassStatement.forPayload(ObservableConcatMapTest::undeliverableUponCancelDelayError, "undeliverableUponCancelDelayError", this);
+            this.payloads.undeliverableUponCancelDelayErrorTillEnd = _ClassStatement.forPayload(ObservableConcatMapTest::undeliverableUponCancelDelayErrorTillEnd, "undeliverableUponCancelDelayErrorTillEnd", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(ObservableConcatMapTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.doubleOnSubscribeDelayError = _ClassStatement.forPayload(ObservableConcatMapTest::doubleOnSubscribeDelayError, "doubleOnSubscribeDelayError", this);
+            this.payloads.scalarXMap = _ClassStatement.forPayload(ObservableConcatMapTest::scalarXMap, "scalarXMap", this);
+            this.payloads.rejectedFusion = _ClassStatement.forPayload(ObservableConcatMapTest::rejectedFusion, "rejectedFusion", this);
+            this.payloads.rejectedFusionDelayError = _ClassStatement.forPayload(ObservableConcatMapTest::rejectedFusionDelayError, "rejectedFusionDelayError", this);
+            this.payloads.asyncFusedDelayError = _ClassStatement.forPayload(ObservableConcatMapTest::asyncFusedDelayError, "asyncFusedDelayError", this);
+            this.payloads.scalarInnerJustDelayError = _ClassStatement.forPayload(ObservableConcatMapTest::scalarInnerJustDelayError, "scalarInnerJustDelayError", this);
+            this.payloads.scalarInnerEmptyDelayError = _ClassStatement.forPayload(ObservableConcatMapTest::scalarInnerEmptyDelayError, "scalarInnerEmptyDelayError", this);
+            this.payloads.scalarInnerJustDisposeDelayError = _ClassStatement.forPayload(ObservableConcatMapTest::scalarInnerJustDisposeDelayError, "scalarInnerJustDisposeDelayError", this);
+            this.payloads.scalarInnerEmptyDisposeDelayError = _ClassStatement.forPayload(ObservableConcatMapTest::scalarInnerEmptyDisposeDelayError, "scalarInnerEmptyDisposeDelayError", this);
+            this.payloads.delayErrorInnerActive = _ClassStatement.forPayload(ObservableConcatMapTest::delayErrorInnerActive, "delayErrorInnerActive", this);
         }
     }
 }

@@ -218,84 +218,165 @@ public class ExceptionsTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ExceptionsTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_constructorShouldBePrivate() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::constructorShouldBePrivate, this.description("constructorShouldBePrivate"));
+            this.payloads.constructorShouldBePrivate.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorNotImplementedIsThrown() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorNotImplementedIsThrown, this.description("onErrorNotImplementedIsThrown"));
+            this.payloads.onErrorNotImplementedIsThrown.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_stackOverflowWouldOccur() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::stackOverflowWouldOccur, this.description("stackOverflowWouldOccur"));
+            this.payloads.stackOverflowWouldOccur.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_stackOverflowErrorIsThrown() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::stackOverflowErrorIsThrown, this.description("stackOverflowErrorIsThrown"), java.lang.StackOverflowError.class);
+            this.payloads.stackOverflowErrorIsThrown.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_threadDeathIsThrown() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::threadDeathIsThrown, this.description("threadDeathIsThrown"), java.lang.ThreadDeath.class);
+            this.payloads.threadDeathIsThrown.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_utilityClass() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::utilityClass, this.description("utilityClass"));
+            this.payloads.utilityClass.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_manualThrowIfFatal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::manualThrowIfFatal, this.description("manualThrowIfFatal"));
+            this.payloads.manualThrowIfFatal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_manualPropagate() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::manualPropagate, this.description("manualPropagate"));
+            this.payloads.manualPropagate.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorNotImplementedNull1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorNotImplementedNull1, this.description("errorNotImplementedNull1"));
+            this.payloads.errorNotImplementedNull1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorNotImplementedNull2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorNotImplementedNull2, this.description("errorNotImplementedNull2"));
+            this.payloads.errorNotImplementedNull2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorNotImplementedWithCause() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorNotImplementedWithCause, this.description("errorNotImplementedWithCause"));
+            this.payloads.errorNotImplementedWithCause.evaluate();
         }
 
-        private ExceptionsTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ExceptionsTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ExceptionsTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ExceptionsTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ExceptionsTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ExceptionsTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ExceptionsTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ExceptionsTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ExceptionsTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ExceptionsTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ExceptionsTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement constructorShouldBePrivate;
+
+            public org.junit.runners.model.Statement onErrorNotImplementedIsThrown;
+
+            public org.junit.runners.model.Statement stackOverflowWouldOccur;
+
+            public org.junit.runners.model.Statement stackOverflowErrorIsThrown;
+
+            public org.junit.runners.model.Statement threadDeathIsThrown;
+
+            public org.junit.runners.model.Statement utilityClass;
+
+            public org.junit.runners.model.Statement manualThrowIfFatal;
+
+            public org.junit.runners.model.Statement manualPropagate;
+
+            public org.junit.runners.model.Statement errorNotImplementedNull1;
+
+            public org.junit.runners.model.Statement errorNotImplementedNull2;
+
+            public org.junit.runners.model.Statement errorNotImplementedWithCause;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.constructorShouldBePrivate = _ClassStatement.forPayload(ExceptionsTest::constructorShouldBePrivate, "constructorShouldBePrivate", this);
+            this.payloads.onErrorNotImplementedIsThrown = _ClassStatement.forPayload(ExceptionsTest::onErrorNotImplementedIsThrown, "onErrorNotImplementedIsThrown", this);
+            this.payloads.stackOverflowWouldOccur = _ClassStatement.forPayload(ExceptionsTest::stackOverflowWouldOccur, "stackOverflowWouldOccur", this);
+            this.payloads.stackOverflowErrorIsThrown = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(ExceptionsTest::stackOverflowErrorIsThrown, java.lang.StackOverflowError.class), "stackOverflowErrorIsThrown", this);
+            this.payloads.threadDeathIsThrown = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(ExceptionsTest::threadDeathIsThrown, java.lang.ThreadDeath.class), "threadDeathIsThrown", this);
+            this.payloads.utilityClass = _ClassStatement.forPayload(ExceptionsTest::utilityClass, "utilityClass", this);
+            this.payloads.manualThrowIfFatal = _ClassStatement.forPayload(ExceptionsTest::manualThrowIfFatal, "manualThrowIfFatal", this);
+            this.payloads.manualPropagate = _ClassStatement.forPayload(ExceptionsTest::manualPropagate, "manualPropagate", this);
+            this.payloads.errorNotImplementedNull1 = _ClassStatement.forPayload(ExceptionsTest::errorNotImplementedNull1, "errorNotImplementedNull1", this);
+            this.payloads.errorNotImplementedNull2 = _ClassStatement.forPayload(ExceptionsTest::errorNotImplementedNull2, "errorNotImplementedNull2", this);
+            this.payloads.errorNotImplementedWithCause = _ClassStatement.forPayload(ExceptionsTest::errorNotImplementedWithCause, "errorNotImplementedWithCause", this);
         }
     }
 }

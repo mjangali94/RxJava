@@ -161,84 +161,165 @@ public class FlowableSkipTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableSkipTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipNegativeElements() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::skipNegativeElements, this.description("skipNegativeElements"), java.lang.IllegalArgumentException.class);
+            this.payloads.skipNegativeElements.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipZeroElements() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipZeroElements, this.description("skipZeroElements"));
+            this.payloads.skipZeroElements.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipOneElement() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipOneElement, this.description("skipOneElement"));
+            this.payloads.skipOneElement.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipTwoElements() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipTwoElements, this.description("skipTwoElements"));
+            this.payloads.skipTwoElements.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipEmptyStream() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipEmptyStream, this.description("skipEmptyStream"));
+            this.payloads.skipEmptyStream.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipMultipleObservers() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipMultipleObservers, this.description("skipMultipleObservers"));
+            this.payloads.skipMultipleObservers.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipError, this.description("skipError"));
+            this.payloads.skipError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureMultipleSmallAsyncRequests() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureMultipleSmallAsyncRequests, this.description("backpressureMultipleSmallAsyncRequests"));
+            this.payloads.backpressureMultipleSmallAsyncRequests.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestOverflowDoesNotOccur() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestOverflowDoesNotOccur, this.description("requestOverflowDoesNotOccur"));
+            this.payloads.requestOverflowDoesNotOccur.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
-        private FlowableSkipTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableSkipTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSkipTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSkipTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableSkipTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSkipTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSkipTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableSkipTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSkipTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableSkipTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableSkipTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement skipNegativeElements;
+
+            public org.junit.runners.model.Statement skipZeroElements;
+
+            public org.junit.runners.model.Statement skipOneElement;
+
+            public org.junit.runners.model.Statement skipTwoElements;
+
+            public org.junit.runners.model.Statement skipEmptyStream;
+
+            public org.junit.runners.model.Statement skipMultipleObservers;
+
+            public org.junit.runners.model.Statement skipError;
+
+            public org.junit.runners.model.Statement backpressureMultipleSmallAsyncRequests;
+
+            public org.junit.runners.model.Statement requestOverflowDoesNotOccur;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.skipNegativeElements = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableSkipTest::skipNegativeElements, java.lang.IllegalArgumentException.class), "skipNegativeElements", this);
+            this.payloads.skipZeroElements = _ClassStatement.forPayload(FlowableSkipTest::skipZeroElements, "skipZeroElements", this);
+            this.payloads.skipOneElement = _ClassStatement.forPayload(FlowableSkipTest::skipOneElement, "skipOneElement", this);
+            this.payloads.skipTwoElements = _ClassStatement.forPayload(FlowableSkipTest::skipTwoElements, "skipTwoElements", this);
+            this.payloads.skipEmptyStream = _ClassStatement.forPayload(FlowableSkipTest::skipEmptyStream, "skipEmptyStream", this);
+            this.payloads.skipMultipleObservers = _ClassStatement.forPayload(FlowableSkipTest::skipMultipleObservers, "skipMultipleObservers", this);
+            this.payloads.skipError = _ClassStatement.forPayload(FlowableSkipTest::skipError, "skipError", this);
+            this.payloads.backpressureMultipleSmallAsyncRequests = _ClassStatement.forPayload(FlowableSkipTest::backpressureMultipleSmallAsyncRequests, "backpressureMultipleSmallAsyncRequests", this);
+            this.payloads.requestOverflowDoesNotOccur = _ClassStatement.forPayload(FlowableSkipTest::requestOverflowDoesNotOccur, "requestOverflowDoesNotOccur", this);
+            this.payloads.dispose = _ClassStatement.forPayload(FlowableSkipTest::dispose, "dispose", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableSkipTest::doubleOnSubscribe, "doubleOnSubscribe", this);
         }
     }
 }

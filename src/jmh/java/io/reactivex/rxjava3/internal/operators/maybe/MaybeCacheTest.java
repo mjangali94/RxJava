@@ -226,90 +226,173 @@ public class MaybeCacheTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private MaybeCacheTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_offlineSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::offlineSuccess, this.description("offlineSuccess"));
+            this.payloads.offlineSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_offlineError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::offlineError, this.description("offlineError"));
+            this.payloads.offlineError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_offlineComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::offlineComplete, this.description("offlineComplete"));
+            this.payloads.offlineComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onlineSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onlineSuccess, this.description("onlineSuccess"));
+            this.payloads.onlineSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onlineError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onlineError, this.description("onlineError"));
+            this.payloads.onlineError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onlineComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onlineComplete, this.description("onlineComplete"));
+            this.payloads.onlineComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_crossCancelOnSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::crossCancelOnSuccess, this.description("crossCancelOnSuccess"));
+            this.payloads.crossCancelOnSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_crossCancelOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::crossCancelOnError, this.description("crossCancelOnError"));
+            this.payloads.crossCancelOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_crossCancelOnComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::crossCancelOnComplete, this.description("crossCancelOnComplete"));
+            this.payloads.crossCancelOnComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_addAddRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::addAddRace, this.description("addAddRace"));
+            this.payloads.addAddRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_removeRemoveRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::removeRemoveRace, this.description("removeRemoveRace"));
+            this.payloads.removeRemoveRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleDispose, this.description("doubleDispose"));
+            this.payloads.doubleDispose.evaluate();
         }
 
-        private MaybeCacheTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeCacheTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeCacheTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeCacheTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public MaybeCacheTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeCacheTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeCacheTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new MaybeCacheTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeCacheTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(MaybeCacheTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(MaybeCacheTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement offlineSuccess;
+
+            public org.junit.runners.model.Statement offlineError;
+
+            public org.junit.runners.model.Statement offlineComplete;
+
+            public org.junit.runners.model.Statement onlineSuccess;
+
+            public org.junit.runners.model.Statement onlineError;
+
+            public org.junit.runners.model.Statement onlineComplete;
+
+            public org.junit.runners.model.Statement crossCancelOnSuccess;
+
+            public org.junit.runners.model.Statement crossCancelOnError;
+
+            public org.junit.runners.model.Statement crossCancelOnComplete;
+
+            public org.junit.runners.model.Statement addAddRace;
+
+            public org.junit.runners.model.Statement removeRemoveRace;
+
+            public org.junit.runners.model.Statement doubleDispose;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.offlineSuccess = _ClassStatement.forPayload(MaybeCacheTest::offlineSuccess, "offlineSuccess", this);
+            this.payloads.offlineError = _ClassStatement.forPayload(MaybeCacheTest::offlineError, "offlineError", this);
+            this.payloads.offlineComplete = _ClassStatement.forPayload(MaybeCacheTest::offlineComplete, "offlineComplete", this);
+            this.payloads.onlineSuccess = _ClassStatement.forPayload(MaybeCacheTest::onlineSuccess, "onlineSuccess", this);
+            this.payloads.onlineError = _ClassStatement.forPayload(MaybeCacheTest::onlineError, "onlineError", this);
+            this.payloads.onlineComplete = _ClassStatement.forPayload(MaybeCacheTest::onlineComplete, "onlineComplete", this);
+            this.payloads.crossCancelOnSuccess = _ClassStatement.forPayload(MaybeCacheTest::crossCancelOnSuccess, "crossCancelOnSuccess", this);
+            this.payloads.crossCancelOnError = _ClassStatement.forPayload(MaybeCacheTest::crossCancelOnError, "crossCancelOnError", this);
+            this.payloads.crossCancelOnComplete = _ClassStatement.forPayload(MaybeCacheTest::crossCancelOnComplete, "crossCancelOnComplete", this);
+            this.payloads.addAddRace = _ClassStatement.forPayload(MaybeCacheTest::addAddRace, "addAddRace", this);
+            this.payloads.removeRemoveRace = _ClassStatement.forPayload(MaybeCacheTest::removeRemoveRace, "removeRemoveRace", this);
+            this.payloads.doubleDispose = _ClassStatement.forPayload(MaybeCacheTest::doubleDispose, "doubleDispose", this);
         }
     }
 }

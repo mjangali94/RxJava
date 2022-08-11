@@ -429,180 +429,239 @@ public class FlowableRepeatTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableRepeatTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_repetition() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::repetition, this.description("repetition"));
+            this.runBenchmark(this.payloads.repetition);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_repeatTake() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::repeatTake, this.description("repeatTake"));
+            this.runBenchmark(this.payloads.repeatTake);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noStackOverFlow() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noStackOverFlow, this.description("noStackOverFlow"));
+            this.runBenchmark(this.payloads.noStackOverFlow);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_repeatTakeWithSubscribeOn() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::repeatTakeWithSubscribeOn, this.description("repeatTakeWithSubscribeOn"));
+            this.runBenchmark(this.payloads.repeatTakeWithSubscribeOn);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_repeatAndTake() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::repeatAndTake, this.description("repeatAndTake"));
+            this.runBenchmark(this.payloads.repeatAndTake);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_repeatLimited() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::repeatLimited, this.description("repeatLimited"));
+            this.runBenchmark(this.payloads.repeatLimited);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_repeatError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::repeatError, this.description("repeatError"));
+            this.runBenchmark(this.payloads.repeatError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_repeatZero() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::repeatZero, this.description("repeatZero"));
+            this.runBenchmark(this.payloads.repeatZero);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_repeatOne() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::repeatOne, this.description("repeatOne"));
+            this.runBenchmark(this.payloads.repeatOne);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_repeatAndDistinctUnbounded() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::repeatAndDistinctUnbounded, this.description("repeatAndDistinctUnbounded"));
+            this.runBenchmark(this.payloads.repeatAndDistinctUnbounded);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_repeatRetarget() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::repeatRetarget, this.description("repeatRetarget"));
+            this.runBenchmark(this.payloads.repeatRetarget);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_repeatScheduled() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::repeatScheduled, this.description("repeatScheduled"));
+            this.runBenchmark(this.payloads.repeatScheduled);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_repeatWhenDefaultScheduler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::repeatWhenDefaultScheduler, this.description("repeatWhenDefaultScheduler"));
+            this.runBenchmark(this.payloads.repeatWhenDefaultScheduler);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_repeatWhenTrampolineScheduler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::repeatWhenTrampolineScheduler, this.description("repeatWhenTrampolineScheduler"));
+            this.runBenchmark(this.payloads.repeatWhenTrampolineScheduler);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_repeatUntil() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::repeatUntil, this.description("repeatUntil"));
+            this.runBenchmark(this.payloads.repeatUntil);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_repeatUntilCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::repeatUntilCancel, this.description("repeatUntilCancel"));
+            this.runBenchmark(this.payloads.repeatUntilCancel);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_repeatLongPredicateInvalid() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::repeatLongPredicateInvalid, this.description("repeatLongPredicateInvalid"));
+            this.runBenchmark(this.payloads.repeatLongPredicateInvalid);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_repeatUntilError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::repeatUntilError, this.description("repeatUntilError"));
+            this.runBenchmark(this.payloads.repeatUntilError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_repeatUntilFalse() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::repeatUntilFalse, this.description("repeatUntilFalse"));
+            this.runBenchmark(this.payloads.repeatUntilFalse);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_repeatUntilSupplierCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::repeatUntilSupplierCrash, this.description("repeatUntilSupplierCrash"));
+            this.runBenchmark(this.payloads.repeatUntilSupplierCrash);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_shouldDisposeInnerObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::shouldDisposeInnerObservable, this.description("shouldDisposeInnerObservable"));
+            this.runBenchmark(this.payloads.shouldDisposeInnerObservable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_repeatWhen() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::repeatWhen, this.description("repeatWhen"));
+            this.runBenchmark(this.payloads.repeatWhen);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_whenTake() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::whenTake, this.description("whenTake"));
+            this.runBenchmark(this.payloads.whenTake);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noCancelPreviousRepeat() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noCancelPreviousRepeat, this.description("noCancelPreviousRepeat"));
+            this.runBenchmark(this.payloads.noCancelPreviousRepeat);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noCancelPreviousRepeatUntil() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noCancelPreviousRepeatUntil, this.description("noCancelPreviousRepeatUntil"));
+            this.runBenchmark(this.payloads.noCancelPreviousRepeatUntil);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noCancelPreviousRepeatWhen() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noCancelPreviousRepeatWhen, this.description("noCancelPreviousRepeatWhen"));
+            this.runBenchmark(this.payloads.noCancelPreviousRepeatWhen);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_repeatFloodNoSubscriptionError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::repeatFloodNoSubscriptionError, this.description("repeatFloodNoSubscriptionError"));
+            this.runBenchmark(this.payloads.repeatFloodNoSubscriptionError);
         }
 
-        private FlowableRepeatTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableRepeatTest();
+        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> payload) throws java.lang.Throwable {
+            this.instance = new FlowableRepeatTest();
+            payload.accept(this.instance);
         }
 
-        @java.lang.Override
-        public FlowableRepeatTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> repetition;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> repeatTake;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> noStackOverFlow;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> repeatTakeWithSubscribeOn;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> repeatAndTake;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> repeatLimited;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> repeatError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> repeatZero;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> repeatOne;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> repeatAndDistinctUnbounded;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> repeatRetarget;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> repeatScheduled;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> repeatWhenDefaultScheduler;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> repeatWhenTrampolineScheduler;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> repeatUntil;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> repeatUntilCancel;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> repeatLongPredicateInvalid;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> repeatUntilError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> repeatUntilFalse;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> repeatUntilSupplierCrash;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> shouldDisposeInnerObservable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> repeatWhen;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> whenTake;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> noCancelPreviousRepeat;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> noCancelPreviousRepeatUntil;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> noCancelPreviousRepeatWhen;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> repeatFloodNoSubscriptionError;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.repetition = FlowableRepeatTest::repetition;
+            this.payloads.repeatTake = FlowableRepeatTest::repeatTake;
+            this.payloads.noStackOverFlow = FlowableRepeatTest::noStackOverFlow;
+            this.payloads.repeatTakeWithSubscribeOn = FlowableRepeatTest::repeatTakeWithSubscribeOn;
+            this.payloads.repeatAndTake = FlowableRepeatTest::repeatAndTake;
+            this.payloads.repeatLimited = FlowableRepeatTest::repeatLimited;
+            this.payloads.repeatError = FlowableRepeatTest::repeatError;
+            this.payloads.repeatZero = FlowableRepeatTest::repeatZero;
+            this.payloads.repeatOne = FlowableRepeatTest::repeatOne;
+            this.payloads.repeatAndDistinctUnbounded = FlowableRepeatTest::repeatAndDistinctUnbounded;
+            this.payloads.repeatRetarget = FlowableRepeatTest::repeatRetarget;
+            this.payloads.repeatScheduled = FlowableRepeatTest::repeatScheduled;
+            this.payloads.repeatWhenDefaultScheduler = FlowableRepeatTest::repeatWhenDefaultScheduler;
+            this.payloads.repeatWhenTrampolineScheduler = FlowableRepeatTest::repeatWhenTrampolineScheduler;
+            this.payloads.repeatUntil = FlowableRepeatTest::repeatUntil;
+            this.payloads.repeatUntilCancel = FlowableRepeatTest::repeatUntilCancel;
+            this.payloads.repeatLongPredicateInvalid = FlowableRepeatTest::repeatLongPredicateInvalid;
+            this.payloads.repeatUntilError = FlowableRepeatTest::repeatUntilError;
+            this.payloads.repeatUntilFalse = FlowableRepeatTest::repeatUntilFalse;
+            this.payloads.repeatUntilSupplierCrash = FlowableRepeatTest::repeatUntilSupplierCrash;
+            this.payloads.shouldDisposeInnerObservable = FlowableRepeatTest::shouldDisposeInnerObservable;
+            this.payloads.repeatWhen = FlowableRepeatTest::repeatWhen;
+            this.payloads.whenTake = FlowableRepeatTest::whenTake;
+            this.payloads.noCancelPreviousRepeat = FlowableRepeatTest::noCancelPreviousRepeat;
+            this.payloads.noCancelPreviousRepeatUntil = FlowableRepeatTest::noCancelPreviousRepeatUntil;
+            this.payloads.noCancelPreviousRepeatWhen = FlowableRepeatTest::noCancelPreviousRepeatWhen;
+            this.payloads.repeatFloodNoSubscriptionError = FlowableRepeatTest::repeatFloodNoSubscriptionError;
         }
     }
 }

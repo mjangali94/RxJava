@@ -41,38 +41,4 @@ public class ObservableIntervalTest extends RxJavaTest {
         is.run();
         to.assertEmpty();
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_cancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancel, this.description("cancel"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_cancelledOnRun() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelledOnRun, this.description("cancelledOnRun"));
-        }
-
-        private ObservableIntervalTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableIntervalTest();
-        }
-
-        @java.lang.Override
-        public ObservableIntervalTest implementation() {
-            return this.implementation;
-        }
-    }
 }

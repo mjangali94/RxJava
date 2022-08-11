@@ -330,102 +330,189 @@ public class ObservableFromIterableTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableFromIterableTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_listIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::listIterable, this.description("listIterable"));
+            this.payloads.listIterable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rawIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rawIterable, this.description("rawIterable"));
+            this.payloads.rawIterable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observableFromIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observableFromIterable, this.description("observableFromIterable"));
+            this.payloads.observableFromIterable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noBackpressure, this.description("noBackpressure"));
+            this.payloads.noBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_subscribeMultipleTimes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscribeMultipleTimes, this.description("subscribeMultipleTimes"));
+            this.payloads.subscribeMultipleTimes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doesNotCallIteratorHasNextMoreThanRequiredWithBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doesNotCallIteratorHasNextMoreThanRequiredWithBackpressure, this.description("doesNotCallIteratorHasNextMoreThanRequiredWithBackpressure"));
+            this.payloads.doesNotCallIteratorHasNextMoreThanRequiredWithBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doesNotCallIteratorHasNextMoreThanRequiredFastPath() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doesNotCallIteratorHasNextMoreThanRequiredFastPath, this.description("doesNotCallIteratorHasNextMoreThanRequiredFastPath"));
+            this.payloads.doesNotCallIteratorHasNextMoreThanRequiredFastPath.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusionWithConcatMap() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusionWithConcatMap, this.description("fusionWithConcatMap"));
+            this.payloads.fusionWithConcatMap.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_iteratorThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::iteratorThrows, this.description("iteratorThrows"));
+            this.payloads.iteratorThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_hasNext2Throws() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::hasNext2Throws, this.description("hasNext2Throws"));
+            this.payloads.hasNext2Throws.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_hasNextCancels() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::hasNextCancels, this.description("hasNextCancels"));
+            this.payloads.hasNextCancels.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusionRejected() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusionRejected, this.description("fusionRejected"));
+            this.payloads.fusionRejected.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusionClear() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusionClear, this.description("fusionClear"));
+            this.payloads.fusionClear.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeAfterHasNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeAfterHasNext, this.description("disposeAfterHasNext"));
+            this.payloads.disposeAfterHasNext.evaluate();
         }
 
-        private ObservableFromIterableTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableFromIterableTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableFromIterableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableFromIterableTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservableFromIterableTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableFromIterableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableFromIterableTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableFromIterableTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableFromIterableTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableFromIterableTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableFromIterableTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement listIterable;
+
+            public org.junit.runners.model.Statement rawIterable;
+
+            public org.junit.runners.model.Statement observableFromIterable;
+
+            public org.junit.runners.model.Statement noBackpressure;
+
+            public org.junit.runners.model.Statement subscribeMultipleTimes;
+
+            public org.junit.runners.model.Statement doesNotCallIteratorHasNextMoreThanRequiredWithBackpressure;
+
+            public org.junit.runners.model.Statement doesNotCallIteratorHasNextMoreThanRequiredFastPath;
+
+            public org.junit.runners.model.Statement fusionWithConcatMap;
+
+            public org.junit.runners.model.Statement iteratorThrows;
+
+            public org.junit.runners.model.Statement hasNext2Throws;
+
+            public org.junit.runners.model.Statement hasNextCancels;
+
+            public org.junit.runners.model.Statement fusionRejected;
+
+            public org.junit.runners.model.Statement fusionClear;
+
+            public org.junit.runners.model.Statement disposeAfterHasNext;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.listIterable = _ClassStatement.forPayload(ObservableFromIterableTest::listIterable, "listIterable", this);
+            this.payloads.rawIterable = _ClassStatement.forPayload(ObservableFromIterableTest::rawIterable, "rawIterable", this);
+            this.payloads.observableFromIterable = _ClassStatement.forPayload(ObservableFromIterableTest::observableFromIterable, "observableFromIterable", this);
+            this.payloads.noBackpressure = _ClassStatement.forPayload(ObservableFromIterableTest::noBackpressure, "noBackpressure", this);
+            this.payloads.subscribeMultipleTimes = _ClassStatement.forPayload(ObservableFromIterableTest::subscribeMultipleTimes, "subscribeMultipleTimes", this);
+            this.payloads.doesNotCallIteratorHasNextMoreThanRequiredWithBackpressure = _ClassStatement.forPayload(ObservableFromIterableTest::doesNotCallIteratorHasNextMoreThanRequiredWithBackpressure, "doesNotCallIteratorHasNextMoreThanRequiredWithBackpressure", this);
+            this.payloads.doesNotCallIteratorHasNextMoreThanRequiredFastPath = _ClassStatement.forPayload(ObservableFromIterableTest::doesNotCallIteratorHasNextMoreThanRequiredFastPath, "doesNotCallIteratorHasNextMoreThanRequiredFastPath", this);
+            this.payloads.fusionWithConcatMap = _ClassStatement.forPayload(ObservableFromIterableTest::fusionWithConcatMap, "fusionWithConcatMap", this);
+            this.payloads.iteratorThrows = _ClassStatement.forPayload(ObservableFromIterableTest::iteratorThrows, "iteratorThrows", this);
+            this.payloads.hasNext2Throws = _ClassStatement.forPayload(ObservableFromIterableTest::hasNext2Throws, "hasNext2Throws", this);
+            this.payloads.hasNextCancels = _ClassStatement.forPayload(ObservableFromIterableTest::hasNextCancels, "hasNextCancels", this);
+            this.payloads.fusionRejected = _ClassStatement.forPayload(ObservableFromIterableTest::fusionRejected, "fusionRejected", this);
+            this.payloads.fusionClear = _ClassStatement.forPayload(ObservableFromIterableTest::fusionClear, "fusionClear", this);
+            this.payloads.disposeAfterHasNext = _ClassStatement.forPayload(ObservableFromIterableTest::disposeAfterHasNext, "disposeAfterHasNext", this);
         }
     }
 }

@@ -199,66 +199,141 @@ public class FlowableOnBackpressureDropTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableOnBackpressureDropTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noBackpressureSupport() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noBackpressureSupport, this.description("noBackpressureSupport"));
+            this.payloads.noBackpressureSupport.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withObserveOn() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withObserveOn, this.description("withObserveOn"));
+            this.payloads.withObserveOn.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fixBackpressureWithBuffer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fixBackpressureWithBuffer, this.description("fixBackpressureWithBuffer"));
+            this.payloads.fixBackpressureWithBuffer.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestOverflow() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestOverflow, this.description("requestOverflow"));
+            this.payloads.requestOverflow.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nonFatalExceptionFromOverflowActionIsNotReportedFromUpstreamOperator() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nonFatalExceptionFromOverflowActionIsNotReportedFromUpstreamOperator, this.description("nonFatalExceptionFromOverflowActionIsNotReportedFromUpstreamOperator"));
+            this.payloads.nonFatalExceptionFromOverflowActionIsNotReportedFromUpstreamOperator.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSource, this.description("badSource"));
+            this.payloads.badSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequest, this.description("badRequest"));
+            this.payloads.badRequest.evaluate();
         }
 
-        private FlowableOnBackpressureDropTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableOnBackpressureDropTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnBackpressureDropTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnBackpressureDropTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableOnBackpressureDropTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnBackpressureDropTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnBackpressureDropTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableOnBackpressureDropTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnBackpressureDropTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableOnBackpressureDropTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableOnBackpressureDropTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement noBackpressureSupport;
+
+            public org.junit.runners.model.Statement withObserveOn;
+
+            public org.junit.runners.model.Statement fixBackpressureWithBuffer;
+
+            public org.junit.runners.model.Statement requestOverflow;
+
+            public org.junit.runners.model.Statement nonFatalExceptionFromOverflowActionIsNotReportedFromUpstreamOperator;
+
+            public org.junit.runners.model.Statement badSource;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement badRequest;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.noBackpressureSupport = _ClassStatement.forPayload(FlowableOnBackpressureDropTest::noBackpressureSupport, "noBackpressureSupport", this);
+            this.payloads.withObserveOn = _ClassStatement.forPayload(FlowableOnBackpressureDropTest::withObserveOn, "withObserveOn", this);
+            this.payloads.fixBackpressureWithBuffer = _ClassStatement.forPayload(FlowableOnBackpressureDropTest::fixBackpressureWithBuffer, "fixBackpressureWithBuffer", this);
+            this.payloads.requestOverflow = _ClassStatement.forPayload(FlowableOnBackpressureDropTest::requestOverflow, "requestOverflow", this);
+            this.payloads.nonFatalExceptionFromOverflowActionIsNotReportedFromUpstreamOperator = _ClassStatement.forPayload(FlowableOnBackpressureDropTest::nonFatalExceptionFromOverflowActionIsNotReportedFromUpstreamOperator, "nonFatalExceptionFromOverflowActionIsNotReportedFromUpstreamOperator", this);
+            this.payloads.badSource = _ClassStatement.forPayload(FlowableOnBackpressureDropTest::badSource, "badSource", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableOnBackpressureDropTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.badRequest = _ClassStatement.forPayload(FlowableOnBackpressureDropTest::badRequest, "badRequest", this);
         }
     }
 }

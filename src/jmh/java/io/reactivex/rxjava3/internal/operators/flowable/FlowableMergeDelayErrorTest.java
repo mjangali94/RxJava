@@ -611,204 +611,318 @@ public class FlowableMergeDelayErrorTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableMergeDelayErrorTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorDelayed1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorDelayed1, this.description("errorDelayed1"));
+            this.payloads.errorDelayed1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorDelayed2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorDelayed2, this.description("errorDelayed2"));
+            this.payloads.errorDelayed2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorDelayed3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorDelayed3, this.description("errorDelayed3"));
+            this.payloads.errorDelayed3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorDelayed4() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorDelayed4, this.description("errorDelayed4"));
+            this.payloads.errorDelayed4.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorDelayed4WithThreading() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorDelayed4WithThreading, this.description("errorDelayed4WithThreading"));
+            this.payloads.errorDelayed4WithThreading.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_compositeErrorDelayed1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::compositeErrorDelayed1, this.description("compositeErrorDelayed1"));
+            this.payloads.compositeErrorDelayed1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_compositeErrorDelayed2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::compositeErrorDelayed2, this.description("compositeErrorDelayed2"));
+            this.payloads.compositeErrorDelayed2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeFlowableOfFlowables() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeFlowableOfFlowables, this.description("mergeFlowableOfFlowables"));
+            this.payloads.mergeFlowableOfFlowables.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeArray() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeArray, this.description("mergeArray"));
+            this.payloads.mergeArray.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeList() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeList, this.description("mergeList"));
+            this.payloads.mergeList.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeArrayWithThreading() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeArrayWithThreading, this.description("mergeArrayWithThreading"));
+            this.payloads.mergeArrayWithThreading.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_synchronousError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::synchronousError, this.description("synchronousError"));
+            this.payloads.synchronousError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorInParentFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorInParentFlowable, this.description("errorInParentFlowable"));
+            this.payloads.errorInParentFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorInParentFlowableDelayed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorInParentFlowableDelayed, this.description("errorInParentFlowableDelayed"));
+            this.payloads.errorInParentFlowableDelayed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayErrorMaxConcurrent() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayErrorMaxConcurrent, this.description("delayErrorMaxConcurrent"));
+            this.payloads.delayErrorMaxConcurrent.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeIterable, this.description("mergeIterable"));
+            this.payloads.mergeIterable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_iterableMaxConcurrent() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::iterableMaxConcurrent, this.description("iterableMaxConcurrent"));
+            this.payloads.iterableMaxConcurrent.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_iterableMaxConcurrentError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::iterableMaxConcurrentError, this.description("iterableMaxConcurrentError"));
+            this.payloads.iterableMaxConcurrentError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_array() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::array, this.description("array"));
+            this.payloads.array.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeArrayDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeArrayDelayError, this.description("mergeArrayDelayError"));
+            this.payloads.mergeArrayDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeIterableDelayErrorWithError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeIterableDelayErrorWithError, this.description("mergeIterableDelayErrorWithError"));
+            this.payloads.mergeIterableDelayErrorWithError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeDelayError, this.description("mergeDelayError"));
+            this.payloads.mergeDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeDelayErrorWithError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeDelayErrorWithError, this.description("mergeDelayErrorWithError"));
+            this.payloads.mergeDelayErrorWithError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeDelayErrorMaxConcurrency() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeDelayErrorMaxConcurrency, this.description("mergeDelayErrorMaxConcurrency"));
+            this.payloads.mergeDelayErrorMaxConcurrency.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeDelayErrorWithErrorMaxConcurrency() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeDelayErrorWithErrorMaxConcurrency, this.description("mergeDelayErrorWithErrorMaxConcurrency"));
+            this.payloads.mergeDelayErrorWithErrorMaxConcurrency.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeIterableDelayErrorMaxConcurrency() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeIterableDelayErrorMaxConcurrency, this.description("mergeIterableDelayErrorMaxConcurrency"));
+            this.payloads.mergeIterableDelayErrorMaxConcurrency.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeIterableDelayErrorWithErrorMaxConcurrency() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeIterableDelayErrorWithErrorMaxConcurrency, this.description("mergeIterableDelayErrorWithErrorMaxConcurrency"));
+            this.payloads.mergeIterableDelayErrorWithErrorMaxConcurrency.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeDelayError3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeDelayError3, this.description("mergeDelayError3"));
+            this.payloads.mergeDelayError3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeDelayError3WithError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeDelayError3WithError, this.description("mergeDelayError3WithError"));
+            this.payloads.mergeDelayError3WithError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeIterableDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeIterableDelayError, this.description("mergeIterableDelayError"));
+            this.payloads.mergeIterableDelayError.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().before();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableMergeDelayErrorTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableMergeDelayErrorTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.before();
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private FlowableMergeDelayErrorTest implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableMergeDelayErrorTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableMergeDelayErrorTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableMergeDelayErrorTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableMergeDelayErrorTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableMergeDelayErrorTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableMergeDelayErrorTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableMergeDelayErrorTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public FlowableMergeDelayErrorTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement errorDelayed1;
+
+            public org.junit.runners.model.Statement errorDelayed2;
+
+            public org.junit.runners.model.Statement errorDelayed3;
+
+            public org.junit.runners.model.Statement errorDelayed4;
+
+            public org.junit.runners.model.Statement errorDelayed4WithThreading;
+
+            public org.junit.runners.model.Statement compositeErrorDelayed1;
+
+            public org.junit.runners.model.Statement compositeErrorDelayed2;
+
+            public org.junit.runners.model.Statement mergeFlowableOfFlowables;
+
+            public org.junit.runners.model.Statement mergeArray;
+
+            public org.junit.runners.model.Statement mergeList;
+
+            public org.junit.runners.model.Statement mergeArrayWithThreading;
+
+            public org.junit.runners.model.Statement synchronousError;
+
+            public org.junit.runners.model.Statement errorInParentFlowable;
+
+            public org.junit.runners.model.Statement errorInParentFlowableDelayed;
+
+            public org.junit.runners.model.Statement delayErrorMaxConcurrent;
+
+            public org.junit.runners.model.Statement mergeIterable;
+
+            public org.junit.runners.model.Statement iterableMaxConcurrent;
+
+            public org.junit.runners.model.Statement iterableMaxConcurrentError;
+
+            public org.junit.runners.model.Statement array;
+
+            public org.junit.runners.model.Statement mergeArrayDelayError;
+
+            public org.junit.runners.model.Statement mergeIterableDelayErrorWithError;
+
+            public org.junit.runners.model.Statement mergeDelayError;
+
+            public org.junit.runners.model.Statement mergeDelayErrorWithError;
+
+            public org.junit.runners.model.Statement mergeDelayErrorMaxConcurrency;
+
+            public org.junit.runners.model.Statement mergeDelayErrorWithErrorMaxConcurrency;
+
+            public org.junit.runners.model.Statement mergeIterableDelayErrorMaxConcurrency;
+
+            public org.junit.runners.model.Statement mergeIterableDelayErrorWithErrorMaxConcurrency;
+
+            public org.junit.runners.model.Statement mergeDelayError3;
+
+            public org.junit.runners.model.Statement mergeDelayError3WithError;
+
+            public org.junit.runners.model.Statement mergeIterableDelayError;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.errorDelayed1 = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::errorDelayed1, "errorDelayed1", this);
+            this.payloads.errorDelayed2 = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::errorDelayed2, "errorDelayed2", this);
+            this.payloads.errorDelayed3 = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::errorDelayed3, "errorDelayed3", this);
+            this.payloads.errorDelayed4 = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::errorDelayed4, "errorDelayed4", this);
+            this.payloads.errorDelayed4WithThreading = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::errorDelayed4WithThreading, "errorDelayed4WithThreading", this);
+            this.payloads.compositeErrorDelayed1 = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::compositeErrorDelayed1, "compositeErrorDelayed1", this);
+            this.payloads.compositeErrorDelayed2 = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::compositeErrorDelayed2, "compositeErrorDelayed2", this);
+            this.payloads.mergeFlowableOfFlowables = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::mergeFlowableOfFlowables, "mergeFlowableOfFlowables", this);
+            this.payloads.mergeArray = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::mergeArray, "mergeArray", this);
+            this.payloads.mergeList = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::mergeList, "mergeList", this);
+            this.payloads.mergeArrayWithThreading = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::mergeArrayWithThreading, "mergeArrayWithThreading", this);
+            this.payloads.synchronousError = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::synchronousError, "synchronousError", this);
+            this.payloads.errorInParentFlowable = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::errorInParentFlowable, "errorInParentFlowable", this);
+            this.payloads.errorInParentFlowableDelayed = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::errorInParentFlowableDelayed, "errorInParentFlowableDelayed", this);
+            this.payloads.delayErrorMaxConcurrent = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::delayErrorMaxConcurrent, "delayErrorMaxConcurrent", this);
+            this.payloads.mergeIterable = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::mergeIterable, "mergeIterable", this);
+            this.payloads.iterableMaxConcurrent = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::iterableMaxConcurrent, "iterableMaxConcurrent", this);
+            this.payloads.iterableMaxConcurrentError = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::iterableMaxConcurrentError, "iterableMaxConcurrentError", this);
+            this.payloads.array = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::array, "array", this);
+            this.payloads.mergeArrayDelayError = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::mergeArrayDelayError, "mergeArrayDelayError", this);
+            this.payloads.mergeIterableDelayErrorWithError = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::mergeIterableDelayErrorWithError, "mergeIterableDelayErrorWithError", this);
+            this.payloads.mergeDelayError = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::mergeDelayError, "mergeDelayError", this);
+            this.payloads.mergeDelayErrorWithError = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::mergeDelayErrorWithError, "mergeDelayErrorWithError", this);
+            this.payloads.mergeDelayErrorMaxConcurrency = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::mergeDelayErrorMaxConcurrency, "mergeDelayErrorMaxConcurrency", this);
+            this.payloads.mergeDelayErrorWithErrorMaxConcurrency = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::mergeDelayErrorWithErrorMaxConcurrency, "mergeDelayErrorWithErrorMaxConcurrency", this);
+            this.payloads.mergeIterableDelayErrorMaxConcurrency = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::mergeIterableDelayErrorMaxConcurrency, "mergeIterableDelayErrorMaxConcurrency", this);
+            this.payloads.mergeIterableDelayErrorWithErrorMaxConcurrency = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::mergeIterableDelayErrorWithErrorMaxConcurrency, "mergeIterableDelayErrorWithErrorMaxConcurrency", this);
+            this.payloads.mergeDelayError3 = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::mergeDelayError3, "mergeDelayError3", this);
+            this.payloads.mergeDelayError3WithError = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::mergeDelayError3WithError, "mergeDelayError3WithError", this);
+            this.payloads.mergeIterableDelayError = _ClassStatement.forPayload(FlowableMergeDelayErrorTest::mergeIterableDelayError, "mergeIterableDelayError", this);
         }
     }
 }

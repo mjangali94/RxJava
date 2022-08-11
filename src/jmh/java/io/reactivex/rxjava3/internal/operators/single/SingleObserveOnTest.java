@@ -42,38 +42,4 @@ public class SingleObserveOnTest extends RxJavaTest {
     public void error() {
         Single.error(new TestException()).observeOn(Schedulers.single()).test().awaitDone(5, TimeUnit.SECONDS).assertFailure(TestException.class);
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
-        }
-
-        private SingleObserveOnTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SingleObserveOnTest();
-        }
-
-        @java.lang.Override
-        public SingleObserveOnTest implementation() {
-            return this.implementation;
-        }
-    }
 }

@@ -80,38 +80,4 @@ public class SingleCacheTest extends RxJavaTest {
         cached.test();
         cached.subscribe(doubleDisposer);
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_cancelImmediately() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelImmediately, this.description("cancelImmediately"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_addRemoveRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::addRemoveRace, this.description("addRemoveRace"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_doubleDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleDispose, this.description("doubleDispose"));
-        }
-
-        private SingleCacheTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SingleCacheTest();
-        }
-
-        @java.lang.Override
-        public SingleCacheTest implementation() {
-            return this.implementation;
-        }
-    }
 }

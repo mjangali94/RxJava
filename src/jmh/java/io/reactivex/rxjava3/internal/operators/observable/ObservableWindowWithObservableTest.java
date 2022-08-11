@@ -597,132 +597,229 @@ public class ObservableWindowWithObservableTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableWindowWithObservableTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowViaObservableNormal1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::windowViaObservableNormal1, this.description("windowViaObservableNormal1"));
+            this.payloads.windowViaObservableNormal1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowViaObservableBoundaryCompletes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::windowViaObservableBoundaryCompletes, this.description("windowViaObservableBoundaryCompletes"));
+            this.payloads.windowViaObservableBoundaryCompletes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowViaObservableBoundaryThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::windowViaObservableBoundaryThrows, this.description("windowViaObservableBoundaryThrows"));
+            this.payloads.windowViaObservableBoundaryThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowViaObservableSourceThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::windowViaObservableSourceThrows, this.description("windowViaObservableSourceThrows"));
+            this.payloads.windowViaObservableSourceThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundaryDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundaryDispose, this.description("boundaryDispose"));
+            this.payloads.boundaryDispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundaryOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundaryOnError, this.description("boundaryOnError"));
+            this.payloads.boundaryOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerBadSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerBadSource, this.description("innerBadSource"));
+            this.payloads.innerBadSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_reentrant() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::reentrant, this.description("reentrant"));
+            this.payloads.reentrant.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSource, this.description("badSource"));
+            this.payloads.badSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundaryDirectDoubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundaryDirectDoubleOnSubscribe, this.description("boundaryDirectDoubleOnSubscribe"));
+            this.payloads.boundaryDirectDoubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_upstreamDisposedWhenOutputsDisposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::upstreamDisposedWhenOutputsDisposed, this.description("upstreamDisposedWhenOutputsDisposed"));
+            this.payloads.upstreamDisposedWhenOutputsDisposed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainAndBoundaryBothError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainAndBoundaryBothError, this.description("mainAndBoundaryBothError"));
+            this.payloads.mainAndBoundaryBothError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainCompleteBoundaryErrorRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainCompleteBoundaryErrorRace, this.description("mainCompleteBoundaryErrorRace"));
+            this.payloads.mainCompleteBoundaryErrorRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainNextBoundaryNextRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainNextBoundaryNextRace, this.description("mainNextBoundaryNextRace"));
+            this.payloads.mainNextBoundaryNextRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeOneAnotherBoundary() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeOneAnotherBoundary, this.description("takeOneAnotherBoundary"));
+            this.payloads.takeOneAnotherBoundary.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeMainBoundaryCompleteRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeMainBoundaryCompleteRace, this.description("disposeMainBoundaryCompleteRace"));
+            this.payloads.disposeMainBoundaryCompleteRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeMainBoundaryErrorRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeMainBoundaryErrorRace, this.description("disposeMainBoundaryErrorRace"));
+            this.payloads.disposeMainBoundaryErrorRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancellingWindowCancelsUpstream() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancellingWindowCancelsUpstream, this.description("cancellingWindowCancelsUpstream"));
+            this.payloads.cancellingWindowCancelsUpstream.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowAbandonmentCancelsUpstream() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::windowAbandonmentCancelsUpstream, this.description("windowAbandonmentCancelsUpstream"));
+            this.payloads.windowAbandonmentCancelsUpstream.evaluate();
         }
 
-        private ObservableWindowWithObservableTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableWindowWithObservableTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableWindowWithObservableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableWindowWithObservableTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservableWindowWithObservableTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableWindowWithObservableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableWindowWithObservableTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableWindowWithObservableTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableWindowWithObservableTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableWindowWithObservableTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableWindowWithObservableTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement windowViaObservableNormal1;
+
+            public org.junit.runners.model.Statement windowViaObservableBoundaryCompletes;
+
+            public org.junit.runners.model.Statement windowViaObservableBoundaryThrows;
+
+            public org.junit.runners.model.Statement windowViaObservableSourceThrows;
+
+            public org.junit.runners.model.Statement boundaryDispose;
+
+            public org.junit.runners.model.Statement boundaryOnError;
+
+            public org.junit.runners.model.Statement innerBadSource;
+
+            public org.junit.runners.model.Statement reentrant;
+
+            public org.junit.runners.model.Statement badSource;
+
+            public org.junit.runners.model.Statement boundaryDirectDoubleOnSubscribe;
+
+            public org.junit.runners.model.Statement upstreamDisposedWhenOutputsDisposed;
+
+            public org.junit.runners.model.Statement mainAndBoundaryBothError;
+
+            public org.junit.runners.model.Statement mainCompleteBoundaryErrorRace;
+
+            public org.junit.runners.model.Statement mainNextBoundaryNextRace;
+
+            public org.junit.runners.model.Statement takeOneAnotherBoundary;
+
+            public org.junit.runners.model.Statement disposeMainBoundaryCompleteRace;
+
+            public org.junit.runners.model.Statement disposeMainBoundaryErrorRace;
+
+            public org.junit.runners.model.Statement cancellingWindowCancelsUpstream;
+
+            public org.junit.runners.model.Statement windowAbandonmentCancelsUpstream;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.windowViaObservableNormal1 = _ClassStatement.forPayload(ObservableWindowWithObservableTest::windowViaObservableNormal1, "windowViaObservableNormal1", this);
+            this.payloads.windowViaObservableBoundaryCompletes = _ClassStatement.forPayload(ObservableWindowWithObservableTest::windowViaObservableBoundaryCompletes, "windowViaObservableBoundaryCompletes", this);
+            this.payloads.windowViaObservableBoundaryThrows = _ClassStatement.forPayload(ObservableWindowWithObservableTest::windowViaObservableBoundaryThrows, "windowViaObservableBoundaryThrows", this);
+            this.payloads.windowViaObservableSourceThrows = _ClassStatement.forPayload(ObservableWindowWithObservableTest::windowViaObservableSourceThrows, "windowViaObservableSourceThrows", this);
+            this.payloads.boundaryDispose = _ClassStatement.forPayload(ObservableWindowWithObservableTest::boundaryDispose, "boundaryDispose", this);
+            this.payloads.boundaryOnError = _ClassStatement.forPayload(ObservableWindowWithObservableTest::boundaryOnError, "boundaryOnError", this);
+            this.payloads.innerBadSource = _ClassStatement.forPayload(ObservableWindowWithObservableTest::innerBadSource, "innerBadSource", this);
+            this.payloads.reentrant = _ClassStatement.forPayload(ObservableWindowWithObservableTest::reentrant, "reentrant", this);
+            this.payloads.badSource = _ClassStatement.forPayload(ObservableWindowWithObservableTest::badSource, "badSource", this);
+            this.payloads.boundaryDirectDoubleOnSubscribe = _ClassStatement.forPayload(ObservableWindowWithObservableTest::boundaryDirectDoubleOnSubscribe, "boundaryDirectDoubleOnSubscribe", this);
+            this.payloads.upstreamDisposedWhenOutputsDisposed = _ClassStatement.forPayload(ObservableWindowWithObservableTest::upstreamDisposedWhenOutputsDisposed, "upstreamDisposedWhenOutputsDisposed", this);
+            this.payloads.mainAndBoundaryBothError = _ClassStatement.forPayload(ObservableWindowWithObservableTest::mainAndBoundaryBothError, "mainAndBoundaryBothError", this);
+            this.payloads.mainCompleteBoundaryErrorRace = _ClassStatement.forPayload(ObservableWindowWithObservableTest::mainCompleteBoundaryErrorRace, "mainCompleteBoundaryErrorRace", this);
+            this.payloads.mainNextBoundaryNextRace = _ClassStatement.forPayload(ObservableWindowWithObservableTest::mainNextBoundaryNextRace, "mainNextBoundaryNextRace", this);
+            this.payloads.takeOneAnotherBoundary = _ClassStatement.forPayload(ObservableWindowWithObservableTest::takeOneAnotherBoundary, "takeOneAnotherBoundary", this);
+            this.payloads.disposeMainBoundaryCompleteRace = _ClassStatement.forPayload(ObservableWindowWithObservableTest::disposeMainBoundaryCompleteRace, "disposeMainBoundaryCompleteRace", this);
+            this.payloads.disposeMainBoundaryErrorRace = _ClassStatement.forPayload(ObservableWindowWithObservableTest::disposeMainBoundaryErrorRace, "disposeMainBoundaryErrorRace", this);
+            this.payloads.cancellingWindowCancelsUpstream = _ClassStatement.forPayload(ObservableWindowWithObservableTest::cancellingWindowCancelsUpstream, "cancellingWindowCancelsUpstream", this);
+            this.payloads.windowAbandonmentCancelsUpstream = _ClassStatement.forPayload(ObservableWindowWithObservableTest::windowAbandonmentCancelsUpstream, "windowAbandonmentCancelsUpstream", this);
         }
     }
 }

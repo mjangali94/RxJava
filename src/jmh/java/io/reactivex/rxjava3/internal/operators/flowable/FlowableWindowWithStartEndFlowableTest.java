@@ -569,168 +569,270 @@ public class FlowableWindowWithStartEndFlowableTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableWindowWithStartEndFlowableTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flowableBasedOpenerAndCloser() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flowableBasedOpenerAndCloser, this.description("flowableBasedOpenerAndCloser"));
+            this.payloads.flowableBasedOpenerAndCloser.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noUnsubscribeAndNoLeak() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noUnsubscribeAndNoLeak, this.description("noUnsubscribeAndNoLeak"));
+            this.payloads.noUnsubscribeAndNoLeak.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribeAll() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribeAll, this.description("unsubscribeAll"));
+            this.payloads.unsubscribeAll.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_reentrant() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::reentrant, this.description("reentrant"));
+            this.payloads.reentrant.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundarySelectorNormal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundarySelectorNormal, this.description("boundarySelectorNormal"));
+            this.payloads.boundarySelectorNormal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_startError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::startError, this.description("startError"));
+            this.payloads.startError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_endError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::endError, this.description("endError"));
+            this.payloads.endError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainError, this.description("mainError"));
+            this.payloads.mainError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowCloseIngoresCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::windowCloseIngoresCancel, this.description("windowCloseIngoresCancel"));
+            this.payloads.windowCloseIngoresCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainAndBoundaryDisposeOnNoWindows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainAndBoundaryDisposeOnNoWindows, this.description("mainAndBoundaryDisposeOnNoWindows"));
+            this.payloads.mainAndBoundaryDisposeOnNoWindows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainWindowMissingBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainWindowMissingBackpressure, this.description("mainWindowMissingBackpressure"));
+            this.payloads.mainWindowMissingBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancellingWindowCancelsUpstream() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancellingWindowCancelsUpstream, this.description("cancellingWindowCancelsUpstream"));
+            this.payloads.cancellingWindowCancelsUpstream.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowAbandonmentCancelsUpstream() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::windowAbandonmentCancelsUpstream, this.description("windowAbandonmentCancelsUpstream"));
+            this.payloads.windowAbandonmentCancelsUpstream.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_closingIndicatorFunctionCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::closingIndicatorFunctionCrash, this.description("closingIndicatorFunctionCrash"));
+            this.payloads.closingIndicatorFunctionCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_openError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::openError, this.description("openError"));
+            this.payloads.openError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_closeError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::closeError, this.description("closeError"));
+            this.payloads.closeError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_upstreamFailsBeforeFirstWindow() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::upstreamFailsBeforeFirstWindow, this.description("upstreamFailsBeforeFirstWindow"));
+            this.payloads.upstreamFailsBeforeFirstWindow.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowOpenMainCompletes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::windowOpenMainCompletes, this.description("windowOpenMainCompletes"));
+            this.payloads.windowOpenMainCompletes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowOpenMainError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::windowOpenMainError, this.description("windowOpenMainError"));
+            this.payloads.windowOpenMainError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowOpenIgnoresDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::windowOpenIgnoresDispose, this.description("windowOpenIgnoresDispose"));
+            this.payloads.windowOpenIgnoresDispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequest, this.description("badRequest"));
+            this.payloads.badRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainIgnoresCancelBeforeOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainIgnoresCancelBeforeOnError, this.description("mainIgnoresCancelBeforeOnError"));
+            this.payloads.mainIgnoresCancelBeforeOnError.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().before();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableWindowWithStartEndFlowableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableWindowWithStartEndFlowableTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.before();
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private FlowableWindowWithStartEndFlowableTest implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableWindowWithStartEndFlowableTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableWindowWithStartEndFlowableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableWindowWithStartEndFlowableTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableWindowWithStartEndFlowableTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableWindowWithStartEndFlowableTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableWindowWithStartEndFlowableTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableWindowWithStartEndFlowableTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public FlowableWindowWithStartEndFlowableTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement flowableBasedOpenerAndCloser;
+
+            public org.junit.runners.model.Statement noUnsubscribeAndNoLeak;
+
+            public org.junit.runners.model.Statement unsubscribeAll;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement reentrant;
+
+            public org.junit.runners.model.Statement boundarySelectorNormal;
+
+            public org.junit.runners.model.Statement startError;
+
+            public org.junit.runners.model.Statement endError;
+
+            public org.junit.runners.model.Statement mainError;
+
+            public org.junit.runners.model.Statement windowCloseIngoresCancel;
+
+            public org.junit.runners.model.Statement mainAndBoundaryDisposeOnNoWindows;
+
+            public org.junit.runners.model.Statement mainWindowMissingBackpressure;
+
+            public org.junit.runners.model.Statement cancellingWindowCancelsUpstream;
+
+            public org.junit.runners.model.Statement windowAbandonmentCancelsUpstream;
+
+            public org.junit.runners.model.Statement closingIndicatorFunctionCrash;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement openError;
+
+            public org.junit.runners.model.Statement closeError;
+
+            public org.junit.runners.model.Statement upstreamFailsBeforeFirstWindow;
+
+            public org.junit.runners.model.Statement windowOpenMainCompletes;
+
+            public org.junit.runners.model.Statement windowOpenMainError;
+
+            public org.junit.runners.model.Statement windowOpenIgnoresDispose;
+
+            public org.junit.runners.model.Statement badRequest;
+
+            public org.junit.runners.model.Statement mainIgnoresCancelBeforeOnError;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.flowableBasedOpenerAndCloser = _ClassStatement.forPayload(FlowableWindowWithStartEndFlowableTest::flowableBasedOpenerAndCloser, "flowableBasedOpenerAndCloser", this);
+            this.payloads.noUnsubscribeAndNoLeak = _ClassStatement.forPayload(FlowableWindowWithStartEndFlowableTest::noUnsubscribeAndNoLeak, "noUnsubscribeAndNoLeak", this);
+            this.payloads.unsubscribeAll = _ClassStatement.forPayload(FlowableWindowWithStartEndFlowableTest::unsubscribeAll, "unsubscribeAll", this);
+            this.payloads.dispose = _ClassStatement.forPayload(FlowableWindowWithStartEndFlowableTest::dispose, "dispose", this);
+            this.payloads.reentrant = _ClassStatement.forPayload(FlowableWindowWithStartEndFlowableTest::reentrant, "reentrant", this);
+            this.payloads.boundarySelectorNormal = _ClassStatement.forPayload(FlowableWindowWithStartEndFlowableTest::boundarySelectorNormal, "boundarySelectorNormal", this);
+            this.payloads.startError = _ClassStatement.forPayload(FlowableWindowWithStartEndFlowableTest::startError, "startError", this);
+            this.payloads.endError = _ClassStatement.forPayload(FlowableWindowWithStartEndFlowableTest::endError, "endError", this);
+            this.payloads.mainError = _ClassStatement.forPayload(FlowableWindowWithStartEndFlowableTest::mainError, "mainError", this);
+            this.payloads.windowCloseIngoresCancel = _ClassStatement.forPayload(FlowableWindowWithStartEndFlowableTest::windowCloseIngoresCancel, "windowCloseIngoresCancel", this);
+            this.payloads.mainAndBoundaryDisposeOnNoWindows = _ClassStatement.forPayload(FlowableWindowWithStartEndFlowableTest::mainAndBoundaryDisposeOnNoWindows, "mainAndBoundaryDisposeOnNoWindows", this);
+            this.payloads.mainWindowMissingBackpressure = _ClassStatement.forPayload(FlowableWindowWithStartEndFlowableTest::mainWindowMissingBackpressure, "mainWindowMissingBackpressure", this);
+            this.payloads.cancellingWindowCancelsUpstream = _ClassStatement.forPayload(FlowableWindowWithStartEndFlowableTest::cancellingWindowCancelsUpstream, "cancellingWindowCancelsUpstream", this);
+            this.payloads.windowAbandonmentCancelsUpstream = _ClassStatement.forPayload(FlowableWindowWithStartEndFlowableTest::windowAbandonmentCancelsUpstream, "windowAbandonmentCancelsUpstream", this);
+            this.payloads.closingIndicatorFunctionCrash = _ClassStatement.forPayload(FlowableWindowWithStartEndFlowableTest::closingIndicatorFunctionCrash, "closingIndicatorFunctionCrash", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableWindowWithStartEndFlowableTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.openError = _ClassStatement.forPayload(FlowableWindowWithStartEndFlowableTest::openError, "openError", this);
+            this.payloads.closeError = _ClassStatement.forPayload(FlowableWindowWithStartEndFlowableTest::closeError, "closeError", this);
+            this.payloads.upstreamFailsBeforeFirstWindow = _ClassStatement.forPayload(FlowableWindowWithStartEndFlowableTest::upstreamFailsBeforeFirstWindow, "upstreamFailsBeforeFirstWindow", this);
+            this.payloads.windowOpenMainCompletes = _ClassStatement.forPayload(FlowableWindowWithStartEndFlowableTest::windowOpenMainCompletes, "windowOpenMainCompletes", this);
+            this.payloads.windowOpenMainError = _ClassStatement.forPayload(FlowableWindowWithStartEndFlowableTest::windowOpenMainError, "windowOpenMainError", this);
+            this.payloads.windowOpenIgnoresDispose = _ClassStatement.forPayload(FlowableWindowWithStartEndFlowableTest::windowOpenIgnoresDispose, "windowOpenIgnoresDispose", this);
+            this.payloads.badRequest = _ClassStatement.forPayload(FlowableWindowWithStartEndFlowableTest::badRequest, "badRequest", this);
+            this.payloads.mainIgnoresCancelBeforeOnError = _ClassStatement.forPayload(FlowableWindowWithStartEndFlowableTest::mainIgnoresCancelBeforeOnError, "mainIgnoresCancelBeforeOnError", this);
         }
     }
 }

@@ -679,276 +679,421 @@ public class FlowableSingleTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableSingleTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleFlowable, this.description("singleFlowable"));
+            this.payloads.singleFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleWithTooManyElementsFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleWithTooManyElementsFlowable, this.description("singleWithTooManyElementsFlowable"));
+            this.payloads.singleWithTooManyElementsFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleWithEmptyFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleWithEmptyFlowable, this.description("singleWithEmptyFlowable"));
+            this.payloads.singleWithEmptyFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleDoesNotRequestMoreThanItNeedsIf1Then2RequestedFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleDoesNotRequestMoreThanItNeedsIf1Then2RequestedFlowable, this.description("singleDoesNotRequestMoreThanItNeedsIf1Then2RequestedFlowable"));
+            this.payloads.singleDoesNotRequestMoreThanItNeedsIf1Then2RequestedFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleDoesNotRequestMoreThanItNeedsIf3RequestedFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleDoesNotRequestMoreThanItNeedsIf3RequestedFlowable, this.description("singleDoesNotRequestMoreThanItNeedsIf3RequestedFlowable"));
+            this.payloads.singleDoesNotRequestMoreThanItNeedsIf3RequestedFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleRequestsExactlyWhatItNeedsIf1RequestedFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleRequestsExactlyWhatItNeedsIf1RequestedFlowable, this.description("singleRequestsExactlyWhatItNeedsIf1RequestedFlowable"));
+            this.payloads.singleRequestsExactlyWhatItNeedsIf1RequestedFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleWithPredicateFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleWithPredicateFlowable, this.description("singleWithPredicateFlowable"));
+            this.payloads.singleWithPredicateFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleWithPredicateAndTooManyElementsFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleWithPredicateAndTooManyElementsFlowable, this.description("singleWithPredicateAndTooManyElementsFlowable"));
+            this.payloads.singleWithPredicateAndTooManyElementsFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleWithPredicateAndEmptyFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleWithPredicateAndEmptyFlowable, this.description("singleWithPredicateAndEmptyFlowable"));
+            this.payloads.singleWithPredicateAndEmptyFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleOrDefaultFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleOrDefaultFlowable, this.description("singleOrDefaultFlowable"));
+            this.payloads.singleOrDefaultFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleOrDefaultWithTooManyElementsFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleOrDefaultWithTooManyElementsFlowable, this.description("singleOrDefaultWithTooManyElementsFlowable"));
+            this.payloads.singleOrDefaultWithTooManyElementsFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleOrDefaultWithEmptyFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleOrDefaultWithEmptyFlowable, this.description("singleOrDefaultWithEmptyFlowable"));
+            this.payloads.singleOrDefaultWithEmptyFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleOrDefaultWithPredicateFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleOrDefaultWithPredicateFlowable, this.description("singleOrDefaultWithPredicateFlowable"));
+            this.payloads.singleOrDefaultWithPredicateFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleOrDefaultWithPredicateAndTooManyElementsFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleOrDefaultWithPredicateAndTooManyElementsFlowable, this.description("singleOrDefaultWithPredicateAndTooManyElementsFlowable"));
+            this.payloads.singleOrDefaultWithPredicateAndTooManyElementsFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleOrDefaultWithPredicateAndEmptyFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleOrDefaultWithPredicateAndEmptyFlowable, this.description("singleOrDefaultWithPredicateAndEmptyFlowable"));
+            this.payloads.singleOrDefaultWithPredicateAndEmptyFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleWithBackpressureFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleWithBackpressureFlowable, this.description("singleWithBackpressureFlowable"));
+            this.payloads.singleWithBackpressureFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_single() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::single, this.description("single"));
+            this.payloads.single.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleWithTooManyElements() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleWithTooManyElements, this.description("singleWithTooManyElements"));
+            this.payloads.singleWithTooManyElements.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleWithEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleWithEmpty, this.description("singleWithEmpty"));
+            this.payloads.singleWithEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleDoesNotRequestMoreThanItNeedsToEmitItem() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleDoesNotRequestMoreThanItNeedsToEmitItem, this.description("singleDoesNotRequestMoreThanItNeedsToEmitItem"));
+            this.payloads.singleDoesNotRequestMoreThanItNeedsToEmitItem.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleDoesNotRequestMoreThanItNeedsToEmitErrorFromEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleDoesNotRequestMoreThanItNeedsToEmitErrorFromEmpty, this.description("singleDoesNotRequestMoreThanItNeedsToEmitErrorFromEmpty"));
+            this.payloads.singleDoesNotRequestMoreThanItNeedsToEmitErrorFromEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleDoesNotRequestMoreThanItNeedsToEmitErrorFromMoreThanOne() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleDoesNotRequestMoreThanItNeedsToEmitErrorFromMoreThanOne, this.description("singleDoesNotRequestMoreThanItNeedsToEmitErrorFromMoreThanOne"));
+            this.payloads.singleDoesNotRequestMoreThanItNeedsToEmitErrorFromMoreThanOne.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleWithPredicate() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleWithPredicate, this.description("singleWithPredicate"));
+            this.payloads.singleWithPredicate.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleWithPredicateAndTooManyElements() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleWithPredicateAndTooManyElements, this.description("singleWithPredicateAndTooManyElements"));
+            this.payloads.singleWithPredicateAndTooManyElements.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleWithPredicateAndEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleWithPredicateAndEmpty, this.description("singleWithPredicateAndEmpty"));
+            this.payloads.singleWithPredicateAndEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleOrDefault() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleOrDefault, this.description("singleOrDefault"));
+            this.payloads.singleOrDefault.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleOrDefaultWithTooManyElements() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleOrDefaultWithTooManyElements, this.description("singleOrDefaultWithTooManyElements"));
+            this.payloads.singleOrDefaultWithTooManyElements.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleOrDefaultWithEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleOrDefaultWithEmpty, this.description("singleOrDefaultWithEmpty"));
+            this.payloads.singleOrDefaultWithEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleOrDefaultWithPredicate() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleOrDefaultWithPredicate, this.description("singleOrDefaultWithPredicate"));
+            this.payloads.singleOrDefaultWithPredicate.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleOrDefaultWithPredicateAndTooManyElements() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleOrDefaultWithPredicateAndTooManyElements, this.description("singleOrDefaultWithPredicateAndTooManyElements"));
+            this.payloads.singleOrDefaultWithPredicateAndTooManyElements.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleOrDefaultWithPredicateAndEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleOrDefaultWithPredicateAndEmpty, this.description("singleOrDefaultWithPredicateAndEmpty"));
+            this.payloads.singleOrDefaultWithPredicateAndEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_issue1527() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::issue1527, this.description("issue1527"));
+            this.payloads.issue1527.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleOrErrorNoElement() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleOrErrorNoElement, this.description("singleOrErrorNoElement"));
+            this.payloads.singleOrErrorNoElement.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleOrErrorOneElement() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleOrErrorOneElement, this.description("singleOrErrorOneElement"));
+            this.payloads.singleOrErrorOneElement.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleOrErrorMultipleElements() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleOrErrorMultipleElements, this.description("singleOrErrorMultipleElements"));
+            this.payloads.singleOrErrorMultipleElements.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleOrErrorError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleOrErrorError, this.description("singleOrErrorError"));
+            this.payloads.singleOrErrorError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_issue1527Flowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::issue1527Flowable, this.description("issue1527Flowable"));
+            this.payloads.issue1527Flowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleElementOperatorDoNotSwallowExceptionWhenDone() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleElementOperatorDoNotSwallowExceptionWhenDone, this.description("singleElementOperatorDoNotSwallowExceptionWhenDone"));
+            this.payloads.singleElementOperatorDoNotSwallowExceptionWhenDone.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSource, this.description("badSource"));
+            this.payloads.badSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelAsFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelAsFlowable, this.description("cancelAsFlowable"));
+            this.payloads.cancelAsFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleOrError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleOrError, this.description("singleOrError"));
+            this.payloads.singleOrError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
-        private FlowableSingleTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableSingleTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSingleTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSingleTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableSingleTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSingleTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSingleTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableSingleTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSingleTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableSingleTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableSingleTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement singleFlowable;
+
+            public org.junit.runners.model.Statement singleWithTooManyElementsFlowable;
+
+            public org.junit.runners.model.Statement singleWithEmptyFlowable;
+
+            public org.junit.runners.model.Statement singleDoesNotRequestMoreThanItNeedsIf1Then2RequestedFlowable;
+
+            public org.junit.runners.model.Statement singleDoesNotRequestMoreThanItNeedsIf3RequestedFlowable;
+
+            public org.junit.runners.model.Statement singleRequestsExactlyWhatItNeedsIf1RequestedFlowable;
+
+            public org.junit.runners.model.Statement singleWithPredicateFlowable;
+
+            public org.junit.runners.model.Statement singleWithPredicateAndTooManyElementsFlowable;
+
+            public org.junit.runners.model.Statement singleWithPredicateAndEmptyFlowable;
+
+            public org.junit.runners.model.Statement singleOrDefaultFlowable;
+
+            public org.junit.runners.model.Statement singleOrDefaultWithTooManyElementsFlowable;
+
+            public org.junit.runners.model.Statement singleOrDefaultWithEmptyFlowable;
+
+            public org.junit.runners.model.Statement singleOrDefaultWithPredicateFlowable;
+
+            public org.junit.runners.model.Statement singleOrDefaultWithPredicateAndTooManyElementsFlowable;
+
+            public org.junit.runners.model.Statement singleOrDefaultWithPredicateAndEmptyFlowable;
+
+            public org.junit.runners.model.Statement singleWithBackpressureFlowable;
+
+            public org.junit.runners.model.Statement single;
+
+            public org.junit.runners.model.Statement singleWithTooManyElements;
+
+            public org.junit.runners.model.Statement singleWithEmpty;
+
+            public org.junit.runners.model.Statement singleDoesNotRequestMoreThanItNeedsToEmitItem;
+
+            public org.junit.runners.model.Statement singleDoesNotRequestMoreThanItNeedsToEmitErrorFromEmpty;
+
+            public org.junit.runners.model.Statement singleDoesNotRequestMoreThanItNeedsToEmitErrorFromMoreThanOne;
+
+            public org.junit.runners.model.Statement singleWithPredicate;
+
+            public org.junit.runners.model.Statement singleWithPredicateAndTooManyElements;
+
+            public org.junit.runners.model.Statement singleWithPredicateAndEmpty;
+
+            public org.junit.runners.model.Statement singleOrDefault;
+
+            public org.junit.runners.model.Statement singleOrDefaultWithTooManyElements;
+
+            public org.junit.runners.model.Statement singleOrDefaultWithEmpty;
+
+            public org.junit.runners.model.Statement singleOrDefaultWithPredicate;
+
+            public org.junit.runners.model.Statement singleOrDefaultWithPredicateAndTooManyElements;
+
+            public org.junit.runners.model.Statement singleOrDefaultWithPredicateAndEmpty;
+
+            public org.junit.runners.model.Statement issue1527;
+
+            public org.junit.runners.model.Statement singleOrErrorNoElement;
+
+            public org.junit.runners.model.Statement singleOrErrorOneElement;
+
+            public org.junit.runners.model.Statement singleOrErrorMultipleElements;
+
+            public org.junit.runners.model.Statement singleOrErrorError;
+
+            public org.junit.runners.model.Statement issue1527Flowable;
+
+            public org.junit.runners.model.Statement singleElementOperatorDoNotSwallowExceptionWhenDone;
+
+            public org.junit.runners.model.Statement badSource;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement cancelAsFlowable;
+
+            public org.junit.runners.model.Statement singleOrError;
+
+            public org.junit.runners.model.Statement dispose;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.singleFlowable = _ClassStatement.forPayload(FlowableSingleTest::singleFlowable, "singleFlowable", this);
+            this.payloads.singleWithTooManyElementsFlowable = _ClassStatement.forPayload(FlowableSingleTest::singleWithTooManyElementsFlowable, "singleWithTooManyElementsFlowable", this);
+            this.payloads.singleWithEmptyFlowable = _ClassStatement.forPayload(FlowableSingleTest::singleWithEmptyFlowable, "singleWithEmptyFlowable", this);
+            this.payloads.singleDoesNotRequestMoreThanItNeedsIf1Then2RequestedFlowable = _ClassStatement.forPayload(FlowableSingleTest::singleDoesNotRequestMoreThanItNeedsIf1Then2RequestedFlowable, "singleDoesNotRequestMoreThanItNeedsIf1Then2RequestedFlowable", this);
+            this.payloads.singleDoesNotRequestMoreThanItNeedsIf3RequestedFlowable = _ClassStatement.forPayload(FlowableSingleTest::singleDoesNotRequestMoreThanItNeedsIf3RequestedFlowable, "singleDoesNotRequestMoreThanItNeedsIf3RequestedFlowable", this);
+            this.payloads.singleRequestsExactlyWhatItNeedsIf1RequestedFlowable = _ClassStatement.forPayload(FlowableSingleTest::singleRequestsExactlyWhatItNeedsIf1RequestedFlowable, "singleRequestsExactlyWhatItNeedsIf1RequestedFlowable", this);
+            this.payloads.singleWithPredicateFlowable = _ClassStatement.forPayload(FlowableSingleTest::singleWithPredicateFlowable, "singleWithPredicateFlowable", this);
+            this.payloads.singleWithPredicateAndTooManyElementsFlowable = _ClassStatement.forPayload(FlowableSingleTest::singleWithPredicateAndTooManyElementsFlowable, "singleWithPredicateAndTooManyElementsFlowable", this);
+            this.payloads.singleWithPredicateAndEmptyFlowable = _ClassStatement.forPayload(FlowableSingleTest::singleWithPredicateAndEmptyFlowable, "singleWithPredicateAndEmptyFlowable", this);
+            this.payloads.singleOrDefaultFlowable = _ClassStatement.forPayload(FlowableSingleTest::singleOrDefaultFlowable, "singleOrDefaultFlowable", this);
+            this.payloads.singleOrDefaultWithTooManyElementsFlowable = _ClassStatement.forPayload(FlowableSingleTest::singleOrDefaultWithTooManyElementsFlowable, "singleOrDefaultWithTooManyElementsFlowable", this);
+            this.payloads.singleOrDefaultWithEmptyFlowable = _ClassStatement.forPayload(FlowableSingleTest::singleOrDefaultWithEmptyFlowable, "singleOrDefaultWithEmptyFlowable", this);
+            this.payloads.singleOrDefaultWithPredicateFlowable = _ClassStatement.forPayload(FlowableSingleTest::singleOrDefaultWithPredicateFlowable, "singleOrDefaultWithPredicateFlowable", this);
+            this.payloads.singleOrDefaultWithPredicateAndTooManyElementsFlowable = _ClassStatement.forPayload(FlowableSingleTest::singleOrDefaultWithPredicateAndTooManyElementsFlowable, "singleOrDefaultWithPredicateAndTooManyElementsFlowable", this);
+            this.payloads.singleOrDefaultWithPredicateAndEmptyFlowable = _ClassStatement.forPayload(FlowableSingleTest::singleOrDefaultWithPredicateAndEmptyFlowable, "singleOrDefaultWithPredicateAndEmptyFlowable", this);
+            this.payloads.singleWithBackpressureFlowable = _ClassStatement.forPayload(FlowableSingleTest::singleWithBackpressureFlowable, "singleWithBackpressureFlowable", this);
+            this.payloads.single = _ClassStatement.forPayload(FlowableSingleTest::single, "single", this);
+            this.payloads.singleWithTooManyElements = _ClassStatement.forPayload(FlowableSingleTest::singleWithTooManyElements, "singleWithTooManyElements", this);
+            this.payloads.singleWithEmpty = _ClassStatement.forPayload(FlowableSingleTest::singleWithEmpty, "singleWithEmpty", this);
+            this.payloads.singleDoesNotRequestMoreThanItNeedsToEmitItem = _ClassStatement.forPayload(FlowableSingleTest::singleDoesNotRequestMoreThanItNeedsToEmitItem, "singleDoesNotRequestMoreThanItNeedsToEmitItem", this);
+            this.payloads.singleDoesNotRequestMoreThanItNeedsToEmitErrorFromEmpty = _ClassStatement.forPayload(FlowableSingleTest::singleDoesNotRequestMoreThanItNeedsToEmitErrorFromEmpty, "singleDoesNotRequestMoreThanItNeedsToEmitErrorFromEmpty", this);
+            this.payloads.singleDoesNotRequestMoreThanItNeedsToEmitErrorFromMoreThanOne = _ClassStatement.forPayload(FlowableSingleTest::singleDoesNotRequestMoreThanItNeedsToEmitErrorFromMoreThanOne, "singleDoesNotRequestMoreThanItNeedsToEmitErrorFromMoreThanOne", this);
+            this.payloads.singleWithPredicate = _ClassStatement.forPayload(FlowableSingleTest::singleWithPredicate, "singleWithPredicate", this);
+            this.payloads.singleWithPredicateAndTooManyElements = _ClassStatement.forPayload(FlowableSingleTest::singleWithPredicateAndTooManyElements, "singleWithPredicateAndTooManyElements", this);
+            this.payloads.singleWithPredicateAndEmpty = _ClassStatement.forPayload(FlowableSingleTest::singleWithPredicateAndEmpty, "singleWithPredicateAndEmpty", this);
+            this.payloads.singleOrDefault = _ClassStatement.forPayload(FlowableSingleTest::singleOrDefault, "singleOrDefault", this);
+            this.payloads.singleOrDefaultWithTooManyElements = _ClassStatement.forPayload(FlowableSingleTest::singleOrDefaultWithTooManyElements, "singleOrDefaultWithTooManyElements", this);
+            this.payloads.singleOrDefaultWithEmpty = _ClassStatement.forPayload(FlowableSingleTest::singleOrDefaultWithEmpty, "singleOrDefaultWithEmpty", this);
+            this.payloads.singleOrDefaultWithPredicate = _ClassStatement.forPayload(FlowableSingleTest::singleOrDefaultWithPredicate, "singleOrDefaultWithPredicate", this);
+            this.payloads.singleOrDefaultWithPredicateAndTooManyElements = _ClassStatement.forPayload(FlowableSingleTest::singleOrDefaultWithPredicateAndTooManyElements, "singleOrDefaultWithPredicateAndTooManyElements", this);
+            this.payloads.singleOrDefaultWithPredicateAndEmpty = _ClassStatement.forPayload(FlowableSingleTest::singleOrDefaultWithPredicateAndEmpty, "singleOrDefaultWithPredicateAndEmpty", this);
+            this.payloads.issue1527 = _ClassStatement.forPayload(FlowableSingleTest::issue1527, "issue1527", this);
+            this.payloads.singleOrErrorNoElement = _ClassStatement.forPayload(FlowableSingleTest::singleOrErrorNoElement, "singleOrErrorNoElement", this);
+            this.payloads.singleOrErrorOneElement = _ClassStatement.forPayload(FlowableSingleTest::singleOrErrorOneElement, "singleOrErrorOneElement", this);
+            this.payloads.singleOrErrorMultipleElements = _ClassStatement.forPayload(FlowableSingleTest::singleOrErrorMultipleElements, "singleOrErrorMultipleElements", this);
+            this.payloads.singleOrErrorError = _ClassStatement.forPayload(FlowableSingleTest::singleOrErrorError, "singleOrErrorError", this);
+            this.payloads.issue1527Flowable = _ClassStatement.forPayload(FlowableSingleTest::issue1527Flowable, "issue1527Flowable", this);
+            this.payloads.singleElementOperatorDoNotSwallowExceptionWhenDone = _ClassStatement.forPayload(FlowableSingleTest::singleElementOperatorDoNotSwallowExceptionWhenDone, "singleElementOperatorDoNotSwallowExceptionWhenDone", this);
+            this.payloads.badSource = _ClassStatement.forPayload(FlowableSingleTest::badSource, "badSource", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableSingleTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.cancelAsFlowable = _ClassStatement.forPayload(FlowableSingleTest::cancelAsFlowable, "cancelAsFlowable", this);
+            this.payloads.singleOrError = _ClassStatement.forPayload(FlowableSingleTest::singleOrError, "singleOrError", this);
+            this.payloads.dispose = _ClassStatement.forPayload(FlowableSingleTest::dispose, "dispose", this);
         }
     }
 }

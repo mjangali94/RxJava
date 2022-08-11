@@ -27,26 +27,4 @@ public class RxThreadFactoryTest extends RxJavaTest {
         assertTrue(t.isDaemon());
         assertEquals(1, t.getPriority());
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_normal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normal, this.description("normal"));
-        }
-
-        private RxThreadFactoryTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new RxThreadFactoryTest();
-        }
-
-        @java.lang.Override
-        public RxThreadFactoryTest implementation() {
-            return this.implementation;
-        }
-    }
 }

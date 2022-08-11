@@ -183,78 +183,157 @@ public class FlowablePublishMulticastTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowablePublishMulticastTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncFusedInput() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncFusedInput, this.description("asyncFusedInput"));
+            this.payloads.asyncFusedInput.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusionRejectedInput() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusionRejectedInput, this.description("fusionRejectedInput"));
+            this.payloads.fusionRejectedInput.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_addRemoveRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::addRemoveRace, this.description("addRemoveRace"));
+            this.payloads.addRemoveRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_removeNotFound() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::removeNotFound, this.description("removeNotFound"));
+            this.payloads.removeNotFound.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorAllCancelled() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorAllCancelled, this.description("errorAllCancelled"));
+            this.payloads.errorAllCancelled.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_completeAllCancelled() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::completeAllCancelled, this.description("completeAllCancelled"));
+            this.payloads.completeAllCancelled.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelledWhileFindingRequests() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelledWhileFindingRequests, this.description("cancelledWhileFindingRequests"));
+            this.payloads.cancelledWhileFindingRequests.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_negativeRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::negativeRequest, this.description("negativeRequest"));
+            this.payloads.negativeRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_outputCancellerDoubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::outputCancellerDoubleOnSubscribe, this.description("outputCancellerDoubleOnSubscribe"));
+            this.payloads.outputCancellerDoubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dontDropItemsWhenNoReadyConsumers() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dontDropItemsWhenNoReadyConsumers, this.description("dontDropItemsWhenNoReadyConsumers"));
+            this.payloads.dontDropItemsWhenNoReadyConsumers.evaluate();
         }
 
-        private FlowablePublishMulticastTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowablePublishMulticastTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowablePublishMulticastTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowablePublishMulticastTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowablePublishMulticastTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowablePublishMulticastTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowablePublishMulticastTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowablePublishMulticastTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowablePublishMulticastTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowablePublishMulticastTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowablePublishMulticastTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement asyncFusedInput;
+
+            public org.junit.runners.model.Statement fusionRejectedInput;
+
+            public org.junit.runners.model.Statement addRemoveRace;
+
+            public org.junit.runners.model.Statement removeNotFound;
+
+            public org.junit.runners.model.Statement errorAllCancelled;
+
+            public org.junit.runners.model.Statement completeAllCancelled;
+
+            public org.junit.runners.model.Statement cancelledWhileFindingRequests;
+
+            public org.junit.runners.model.Statement negativeRequest;
+
+            public org.junit.runners.model.Statement outputCancellerDoubleOnSubscribe;
+
+            public org.junit.runners.model.Statement dontDropItemsWhenNoReadyConsumers;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.asyncFusedInput = _ClassStatement.forPayload(FlowablePublishMulticastTest::asyncFusedInput, "asyncFusedInput", this);
+            this.payloads.fusionRejectedInput = _ClassStatement.forPayload(FlowablePublishMulticastTest::fusionRejectedInput, "fusionRejectedInput", this);
+            this.payloads.addRemoveRace = _ClassStatement.forPayload(FlowablePublishMulticastTest::addRemoveRace, "addRemoveRace", this);
+            this.payloads.removeNotFound = _ClassStatement.forPayload(FlowablePublishMulticastTest::removeNotFound, "removeNotFound", this);
+            this.payloads.errorAllCancelled = _ClassStatement.forPayload(FlowablePublishMulticastTest::errorAllCancelled, "errorAllCancelled", this);
+            this.payloads.completeAllCancelled = _ClassStatement.forPayload(FlowablePublishMulticastTest::completeAllCancelled, "completeAllCancelled", this);
+            this.payloads.cancelledWhileFindingRequests = _ClassStatement.forPayload(FlowablePublishMulticastTest::cancelledWhileFindingRequests, "cancelledWhileFindingRequests", this);
+            this.payloads.negativeRequest = _ClassStatement.forPayload(FlowablePublishMulticastTest::negativeRequest, "negativeRequest", this);
+            this.payloads.outputCancellerDoubleOnSubscribe = _ClassStatement.forPayload(FlowablePublishMulticastTest::outputCancellerDoubleOnSubscribe, "outputCancellerDoubleOnSubscribe", this);
+            this.payloads.dontDropItemsWhenNoReadyConsumers = _ClassStatement.forPayload(FlowablePublishMulticastTest::dontDropItemsWhenNoReadyConsumers, "dontDropItemsWhenNoReadyConsumers", this);
         }
     }
 }

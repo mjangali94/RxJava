@@ -54,54 +54,125 @@ public class ObservableToXTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableToXTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toFlowableBuffer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toFlowableBuffer, this.description("toFlowableBuffer"));
+            this.payloads.toFlowableBuffer.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toFlowableDrop() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toFlowableDrop, this.description("toFlowableDrop"));
+            this.payloads.toFlowableDrop.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toFlowableLatest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toFlowableLatest, this.description("toFlowableLatest"));
+            this.payloads.toFlowableLatest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toFlowableError1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toFlowableError1, this.description("toFlowableError1"));
+            this.payloads.toFlowableError1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toFlowableError2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toFlowableError2, this.description("toFlowableError2"));
+            this.payloads.toFlowableError2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toFlowableMissing() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toFlowableMissing, this.description("toFlowableMissing"));
+            this.payloads.toFlowableMissing.evaluate();
         }
 
-        private ObservableToXTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableToXTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableToXTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableToXTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservableToXTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableToXTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableToXTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableToXTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableToXTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableToXTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableToXTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement toFlowableBuffer;
+
+            public org.junit.runners.model.Statement toFlowableDrop;
+
+            public org.junit.runners.model.Statement toFlowableLatest;
+
+            public org.junit.runners.model.Statement toFlowableError1;
+
+            public org.junit.runners.model.Statement toFlowableError2;
+
+            public org.junit.runners.model.Statement toFlowableMissing;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.toFlowableBuffer = _ClassStatement.forPayload(ObservableToXTest::toFlowableBuffer, "toFlowableBuffer", this);
+            this.payloads.toFlowableDrop = _ClassStatement.forPayload(ObservableToXTest::toFlowableDrop, "toFlowableDrop", this);
+            this.payloads.toFlowableLatest = _ClassStatement.forPayload(ObservableToXTest::toFlowableLatest, "toFlowableLatest", this);
+            this.payloads.toFlowableError1 = _ClassStatement.forPayload(ObservableToXTest::toFlowableError1, "toFlowableError1", this);
+            this.payloads.toFlowableError2 = _ClassStatement.forPayload(ObservableToXTest::toFlowableError2, "toFlowableError2", this);
+            this.payloads.toFlowableMissing = _ClassStatement.forPayload(ObservableToXTest::toFlowableMissing, "toFlowableMissing", this);
         }
     }
 }

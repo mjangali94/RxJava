@@ -60,48 +60,63 @@ public class PublicFinalMethods {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private PublicFinalMethods instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flowable, this.description("flowable"));
+            this.runBenchmark(this.payloads.flowable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observable, this.description("observable"));
+            this.runBenchmark(this.payloads.observable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_single() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::single, this.description("single"));
+            this.runBenchmark(this.payloads.single);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_completable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::completable, this.description("completable"));
+            this.runBenchmark(this.payloads.completable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maybe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::maybe, this.description("maybe"));
+            this.runBenchmark(this.payloads.maybe);
         }
 
-        private PublicFinalMethods implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new PublicFinalMethods();
+        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<PublicFinalMethods> payload) throws java.lang.Throwable {
+            this.instance = new PublicFinalMethods();
+            payload.accept(this.instance);
         }
 
-        @java.lang.Override
-        public PublicFinalMethods implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<PublicFinalMethods> flowable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<PublicFinalMethods> observable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<PublicFinalMethods> single;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<PublicFinalMethods> completable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<PublicFinalMethods> maybe;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.flowable = PublicFinalMethods::flowable;
+            this.payloads.observable = PublicFinalMethods::observable;
+            this.payloads.single = PublicFinalMethods::single;
+            this.payloads.completable = PublicFinalMethods::completable;
+            this.payloads.maybe = PublicFinalMethods::maybe;
         }
     }
 }

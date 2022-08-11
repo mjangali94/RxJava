@@ -44,26 +44,4 @@ public class SingleLiftTest extends RxJavaTest {
             }
         }).test().assertResult(2);
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_normal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normal, this.description("normal"));
-        }
-
-        private SingleLiftTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SingleLiftTest();
-        }
-
-        @java.lang.Override
-        public SingleLiftTest implementation() {
-            return this.implementation;
-        }
-    }
 }

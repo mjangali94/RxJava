@@ -408,150 +408,253 @@ public class FlowableAllTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableAllTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_all() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::all, this.description("all"));
+            this.payloads.all.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_notAll() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::notAll, this.description("notAll"));
+            this.payloads.notAll.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_empty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::empty, this.description("empty"));
+            this.payloads.empty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_followingFirst() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::followingFirst, this.description("followingFirst"));
+            this.payloads.followingFirst.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_issue1935NoUnsubscribeDownstream() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::issue1935NoUnsubscribeDownstream, this.description("issue1935NoUnsubscribeDownstream"));
+            this.payloads.issue1935NoUnsubscribeDownstream.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureIfOneRequestedOneShouldBeDelivered() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureIfOneRequestedOneShouldBeDelivered, this.description("backpressureIfOneRequestedOneShouldBeDelivered"));
+            this.payloads.backpressureIfOneRequestedOneShouldBeDelivered.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_predicateThrowsExceptionAndValueInCauseMessage() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::predicateThrowsExceptionAndValueInCauseMessage, this.description("predicateThrowsExceptionAndValueInCauseMessage"));
+            this.payloads.predicateThrowsExceptionAndValueInCauseMessage.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_allFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::allFlowable, this.description("allFlowable"));
+            this.payloads.allFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_notAllFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::notAllFlowable, this.description("notAllFlowable"));
+            this.payloads.notAllFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyFlowable, this.description("emptyFlowable"));
+            this.payloads.emptyFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorFlowable, this.description("errorFlowable"));
+            this.payloads.errorFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_followingFirstFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::followingFirstFlowable, this.description("followingFirstFlowable"));
+            this.payloads.followingFirstFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_issue1935NoUnsubscribeDownstreamFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::issue1935NoUnsubscribeDownstreamFlowable, this.description("issue1935NoUnsubscribeDownstreamFlowable"));
+            this.payloads.issue1935NoUnsubscribeDownstreamFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureIfNoneRequestedNoneShouldBeDeliveredFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureIfNoneRequestedNoneShouldBeDeliveredFlowable, this.description("backpressureIfNoneRequestedNoneShouldBeDeliveredFlowable"));
+            this.payloads.backpressureIfNoneRequestedNoneShouldBeDeliveredFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureIfOneRequestedOneShouldBeDeliveredFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureIfOneRequestedOneShouldBeDeliveredFlowable, this.description("backpressureIfOneRequestedOneShouldBeDeliveredFlowable"));
+            this.payloads.backpressureIfOneRequestedOneShouldBeDeliveredFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_predicateThrowsExceptionAndValueInCauseMessageFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::predicateThrowsExceptionAndValueInCauseMessageFlowable, this.description("predicateThrowsExceptionAndValueInCauseMessageFlowable"));
+            this.payloads.predicateThrowsExceptionAndValueInCauseMessageFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_predicateThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::predicateThrows, this.description("predicateThrows"));
+            this.payloads.predicateThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_predicateThrowsObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::predicateThrowsObservable, this.description("predicateThrowsObservable"));
+            this.payloads.predicateThrowsObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSource, this.description("badSource"));
+            this.payloads.badSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
-        private FlowableAllTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableAllTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableAllTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableAllTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableAllTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableAllTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableAllTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableAllTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableAllTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableAllTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableAllTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement all;
+
+            public org.junit.runners.model.Statement notAll;
+
+            public org.junit.runners.model.Statement empty;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement followingFirst;
+
+            public org.junit.runners.model.Statement issue1935NoUnsubscribeDownstream;
+
+            public org.junit.runners.model.Statement backpressureIfOneRequestedOneShouldBeDelivered;
+
+            public org.junit.runners.model.Statement predicateThrowsExceptionAndValueInCauseMessage;
+
+            public org.junit.runners.model.Statement allFlowable;
+
+            public org.junit.runners.model.Statement notAllFlowable;
+
+            public org.junit.runners.model.Statement emptyFlowable;
+
+            public org.junit.runners.model.Statement errorFlowable;
+
+            public org.junit.runners.model.Statement followingFirstFlowable;
+
+            public org.junit.runners.model.Statement issue1935NoUnsubscribeDownstreamFlowable;
+
+            public org.junit.runners.model.Statement backpressureIfNoneRequestedNoneShouldBeDeliveredFlowable;
+
+            public org.junit.runners.model.Statement backpressureIfOneRequestedOneShouldBeDeliveredFlowable;
+
+            public org.junit.runners.model.Statement predicateThrowsExceptionAndValueInCauseMessageFlowable;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement predicateThrows;
+
+            public org.junit.runners.model.Statement predicateThrowsObservable;
+
+            public org.junit.runners.model.Statement badSource;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.all = _ClassStatement.forPayload(FlowableAllTest::all, "all", this);
+            this.payloads.notAll = _ClassStatement.forPayload(FlowableAllTest::notAll, "notAll", this);
+            this.payloads.empty = _ClassStatement.forPayload(FlowableAllTest::empty, "empty", this);
+            this.payloads.error = _ClassStatement.forPayload(FlowableAllTest::error, "error", this);
+            this.payloads.followingFirst = _ClassStatement.forPayload(FlowableAllTest::followingFirst, "followingFirst", this);
+            this.payloads.issue1935NoUnsubscribeDownstream = _ClassStatement.forPayload(FlowableAllTest::issue1935NoUnsubscribeDownstream, "issue1935NoUnsubscribeDownstream", this);
+            this.payloads.backpressureIfOneRequestedOneShouldBeDelivered = _ClassStatement.forPayload(FlowableAllTest::backpressureIfOneRequestedOneShouldBeDelivered, "backpressureIfOneRequestedOneShouldBeDelivered", this);
+            this.payloads.predicateThrowsExceptionAndValueInCauseMessage = _ClassStatement.forPayload(FlowableAllTest::predicateThrowsExceptionAndValueInCauseMessage, "predicateThrowsExceptionAndValueInCauseMessage", this);
+            this.payloads.allFlowable = _ClassStatement.forPayload(FlowableAllTest::allFlowable, "allFlowable", this);
+            this.payloads.notAllFlowable = _ClassStatement.forPayload(FlowableAllTest::notAllFlowable, "notAllFlowable", this);
+            this.payloads.emptyFlowable = _ClassStatement.forPayload(FlowableAllTest::emptyFlowable, "emptyFlowable", this);
+            this.payloads.errorFlowable = _ClassStatement.forPayload(FlowableAllTest::errorFlowable, "errorFlowable", this);
+            this.payloads.followingFirstFlowable = _ClassStatement.forPayload(FlowableAllTest::followingFirstFlowable, "followingFirstFlowable", this);
+            this.payloads.issue1935NoUnsubscribeDownstreamFlowable = _ClassStatement.forPayload(FlowableAllTest::issue1935NoUnsubscribeDownstreamFlowable, "issue1935NoUnsubscribeDownstreamFlowable", this);
+            this.payloads.backpressureIfNoneRequestedNoneShouldBeDeliveredFlowable = _ClassStatement.forPayload(FlowableAllTest::backpressureIfNoneRequestedNoneShouldBeDeliveredFlowable, "backpressureIfNoneRequestedNoneShouldBeDeliveredFlowable", this);
+            this.payloads.backpressureIfOneRequestedOneShouldBeDeliveredFlowable = _ClassStatement.forPayload(FlowableAllTest::backpressureIfOneRequestedOneShouldBeDeliveredFlowable, "backpressureIfOneRequestedOneShouldBeDeliveredFlowable", this);
+            this.payloads.predicateThrowsExceptionAndValueInCauseMessageFlowable = _ClassStatement.forPayload(FlowableAllTest::predicateThrowsExceptionAndValueInCauseMessageFlowable, "predicateThrowsExceptionAndValueInCauseMessageFlowable", this);
+            this.payloads.dispose = _ClassStatement.forPayload(FlowableAllTest::dispose, "dispose", this);
+            this.payloads.predicateThrows = _ClassStatement.forPayload(FlowableAllTest::predicateThrows, "predicateThrows", this);
+            this.payloads.predicateThrowsObservable = _ClassStatement.forPayload(FlowableAllTest::predicateThrowsObservable, "predicateThrowsObservable", this);
+            this.payloads.badSource = _ClassStatement.forPayload(FlowableAllTest::badSource, "badSource", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableAllTest::doubleOnSubscribe, "doubleOnSubscribe", this);
         }
     }
 }

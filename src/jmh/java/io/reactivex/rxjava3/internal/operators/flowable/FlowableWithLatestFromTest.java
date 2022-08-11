@@ -678,216 +678,341 @@ public class FlowableWithLatestFromTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableWithLatestFromTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_simple() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::simple, this.description("simple"));
+            this.payloads.simple.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptySource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptySource, this.description("emptySource"));
+            this.payloads.emptySource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyOther() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyOther, this.description("emptyOther"));
+            this.payloads.emptyOther.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscription() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscription, this.description("unsubscription"));
+            this.payloads.unsubscription.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sourceThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sourceThrows, this.description("sourceThrows"));
+            this.payloads.sourceThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_otherThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::otherThrows, this.description("otherThrows"));
+            this.payloads.otherThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_functionThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::functionThrows, this.description("functionThrows"));
+            this.payloads.functionThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noDownstreamUnsubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noDownstreamUnsubscribe, this.description("noDownstreamUnsubscribe"));
+            this.payloads.noDownstreamUnsubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressure, this.description("backpressure"));
+            this.payloads.backpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_manySources() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::manySources, this.description("manySources"));
+            this.payloads.manySources.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_manySourcesIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::manySourcesIterable, this.description("manySourcesIterable"));
+            this.payloads.manySourcesIterable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_manySourcesIterableSweep() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::manySourcesIterableSweep, this.description("manySourcesIterableSweep"));
+            this.payloads.manySourcesIterableSweep.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureNoSignal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureNoSignal, this.description("backpressureNoSignal"));
+            this.payloads.backpressureNoSignal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureWithSignal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureWithSignal, this.description("backpressureWithSignal"));
+            this.payloads.backpressureWithSignal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withEmpty, this.description("withEmpty"));
+            this.payloads.withEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withError, this.description("withError"));
+            this.payloads.withError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withMainError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withMainError, this.description("withMainError"));
+            this.payloads.withMainError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_with2Others() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::with2Others, this.description("with2Others"));
+            this.payloads.with2Others.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_with3Others() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::with3Others, this.description("with3Others"));
+            this.payloads.with3Others.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_with4Others() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::with4Others, this.description("with4Others"));
+            this.payloads.with4Others.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_manyIteratorThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::manyIteratorThrows, this.description("manyIteratorThrows"));
+            this.payloads.manyIteratorThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_manyCombinerThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::manyCombinerThrows, this.description("manyCombinerThrows"));
+            this.payloads.manyCombinerThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_manyErrors() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::manyErrors, this.description("manyErrors"));
+            this.payloads.manyErrors.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_otherErrors() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::otherErrors, this.description("otherErrors"));
+            this.payloads.otherErrors.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combineToNull1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::combineToNull1, this.description("combineToNull1"));
+            this.payloads.combineToNull1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combineToNull2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::combineToNull2, this.description("combineToNull2"));
+            this.payloads.combineToNull2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zeroOtherCombinerReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zeroOtherCombinerReturnsNull, this.description("zeroOtherCombinerReturnsNull"));
+            this.payloads.zeroOtherCombinerReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleRequestNotForgottenWhenNoData() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleRequestNotForgottenWhenNoData, this.description("singleRequestNotForgottenWhenNoData"));
+            this.payloads.singleRequestNotForgottenWhenNoData.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_coldSourceConsumedWithoutOther() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::coldSourceConsumedWithoutOther, this.description("coldSourceConsumedWithoutOther"));
+            this.payloads.coldSourceConsumedWithoutOther.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_coldSourceConsumedWithoutManyOthers() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::coldSourceConsumedWithoutManyOthers, this.description("coldSourceConsumedWithoutManyOthers"));
+            this.payloads.coldSourceConsumedWithoutManyOthers.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_otherOnSubscribeRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::otherOnSubscribeRace, this.description("otherOnSubscribeRace"));
+            this.payloads.otherOnSubscribeRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_otherCompleteRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::otherCompleteRace, this.description("otherCompleteRace"));
+            this.payloads.otherCompleteRace.evaluate();
         }
 
-        private FlowableWithLatestFromTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableWithLatestFromTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableWithLatestFromTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableWithLatestFromTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableWithLatestFromTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableWithLatestFromTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableWithLatestFromTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableWithLatestFromTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableWithLatestFromTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableWithLatestFromTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableWithLatestFromTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement simple;
+
+            public org.junit.runners.model.Statement emptySource;
+
+            public org.junit.runners.model.Statement emptyOther;
+
+            public org.junit.runners.model.Statement unsubscription;
+
+            public org.junit.runners.model.Statement sourceThrows;
+
+            public org.junit.runners.model.Statement otherThrows;
+
+            public org.junit.runners.model.Statement functionThrows;
+
+            public org.junit.runners.model.Statement noDownstreamUnsubscribe;
+
+            public org.junit.runners.model.Statement backpressure;
+
+            public org.junit.runners.model.Statement manySources;
+
+            public org.junit.runners.model.Statement manySourcesIterable;
+
+            public org.junit.runners.model.Statement manySourcesIterableSweep;
+
+            public org.junit.runners.model.Statement backpressureNoSignal;
+
+            public org.junit.runners.model.Statement backpressureWithSignal;
+
+            public org.junit.runners.model.Statement withEmpty;
+
+            public org.junit.runners.model.Statement withError;
+
+            public org.junit.runners.model.Statement withMainError;
+
+            public org.junit.runners.model.Statement with2Others;
+
+            public org.junit.runners.model.Statement with3Others;
+
+            public org.junit.runners.model.Statement with4Others;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement manyIteratorThrows;
+
+            public org.junit.runners.model.Statement manyCombinerThrows;
+
+            public org.junit.runners.model.Statement manyErrors;
+
+            public org.junit.runners.model.Statement otherErrors;
+
+            public org.junit.runners.model.Statement combineToNull1;
+
+            public org.junit.runners.model.Statement combineToNull2;
+
+            public org.junit.runners.model.Statement zeroOtherCombinerReturnsNull;
+
+            public org.junit.runners.model.Statement singleRequestNotForgottenWhenNoData;
+
+            public org.junit.runners.model.Statement coldSourceConsumedWithoutOther;
+
+            public org.junit.runners.model.Statement coldSourceConsumedWithoutManyOthers;
+
+            public org.junit.runners.model.Statement otherOnSubscribeRace;
+
+            public org.junit.runners.model.Statement otherCompleteRace;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.simple = _ClassStatement.forPayload(FlowableWithLatestFromTest::simple, "simple", this);
+            this.payloads.emptySource = _ClassStatement.forPayload(FlowableWithLatestFromTest::emptySource, "emptySource", this);
+            this.payloads.emptyOther = _ClassStatement.forPayload(FlowableWithLatestFromTest::emptyOther, "emptyOther", this);
+            this.payloads.unsubscription = _ClassStatement.forPayload(FlowableWithLatestFromTest::unsubscription, "unsubscription", this);
+            this.payloads.sourceThrows = _ClassStatement.forPayload(FlowableWithLatestFromTest::sourceThrows, "sourceThrows", this);
+            this.payloads.otherThrows = _ClassStatement.forPayload(FlowableWithLatestFromTest::otherThrows, "otherThrows", this);
+            this.payloads.functionThrows = _ClassStatement.forPayload(FlowableWithLatestFromTest::functionThrows, "functionThrows", this);
+            this.payloads.noDownstreamUnsubscribe = _ClassStatement.forPayload(FlowableWithLatestFromTest::noDownstreamUnsubscribe, "noDownstreamUnsubscribe", this);
+            this.payloads.backpressure = _ClassStatement.forPayload(FlowableWithLatestFromTest::backpressure, "backpressure", this);
+            this.payloads.manySources = _ClassStatement.forPayload(FlowableWithLatestFromTest::manySources, "manySources", this);
+            this.payloads.manySourcesIterable = _ClassStatement.forPayload(FlowableWithLatestFromTest::manySourcesIterable, "manySourcesIterable", this);
+            this.payloads.manySourcesIterableSweep = _ClassStatement.forPayload(FlowableWithLatestFromTest::manySourcesIterableSweep, "manySourcesIterableSweep", this);
+            this.payloads.backpressureNoSignal = _ClassStatement.forPayload(FlowableWithLatestFromTest::backpressureNoSignal, "backpressureNoSignal", this);
+            this.payloads.backpressureWithSignal = _ClassStatement.forPayload(FlowableWithLatestFromTest::backpressureWithSignal, "backpressureWithSignal", this);
+            this.payloads.withEmpty = _ClassStatement.forPayload(FlowableWithLatestFromTest::withEmpty, "withEmpty", this);
+            this.payloads.withError = _ClassStatement.forPayload(FlowableWithLatestFromTest::withError, "withError", this);
+            this.payloads.withMainError = _ClassStatement.forPayload(FlowableWithLatestFromTest::withMainError, "withMainError", this);
+            this.payloads.with2Others = _ClassStatement.forPayload(FlowableWithLatestFromTest::with2Others, "with2Others", this);
+            this.payloads.with3Others = _ClassStatement.forPayload(FlowableWithLatestFromTest::with3Others, "with3Others", this);
+            this.payloads.with4Others = _ClassStatement.forPayload(FlowableWithLatestFromTest::with4Others, "with4Others", this);
+            this.payloads.dispose = _ClassStatement.forPayload(FlowableWithLatestFromTest::dispose, "dispose", this);
+            this.payloads.manyIteratorThrows = _ClassStatement.forPayload(FlowableWithLatestFromTest::manyIteratorThrows, "manyIteratorThrows", this);
+            this.payloads.manyCombinerThrows = _ClassStatement.forPayload(FlowableWithLatestFromTest::manyCombinerThrows, "manyCombinerThrows", this);
+            this.payloads.manyErrors = _ClassStatement.forPayload(FlowableWithLatestFromTest::manyErrors, "manyErrors", this);
+            this.payloads.otherErrors = _ClassStatement.forPayload(FlowableWithLatestFromTest::otherErrors, "otherErrors", this);
+            this.payloads.combineToNull1 = _ClassStatement.forPayload(FlowableWithLatestFromTest::combineToNull1, "combineToNull1", this);
+            this.payloads.combineToNull2 = _ClassStatement.forPayload(FlowableWithLatestFromTest::combineToNull2, "combineToNull2", this);
+            this.payloads.zeroOtherCombinerReturnsNull = _ClassStatement.forPayload(FlowableWithLatestFromTest::zeroOtherCombinerReturnsNull, "zeroOtherCombinerReturnsNull", this);
+            this.payloads.singleRequestNotForgottenWhenNoData = _ClassStatement.forPayload(FlowableWithLatestFromTest::singleRequestNotForgottenWhenNoData, "singleRequestNotForgottenWhenNoData", this);
+            this.payloads.coldSourceConsumedWithoutOther = _ClassStatement.forPayload(FlowableWithLatestFromTest::coldSourceConsumedWithoutOther, "coldSourceConsumedWithoutOther", this);
+            this.payloads.coldSourceConsumedWithoutManyOthers = _ClassStatement.forPayload(FlowableWithLatestFromTest::coldSourceConsumedWithoutManyOthers, "coldSourceConsumedWithoutManyOthers", this);
+            this.payloads.otherOnSubscribeRace = _ClassStatement.forPayload(FlowableWithLatestFromTest::otherOnSubscribeRace, "otherOnSubscribeRace", this);
+            this.payloads.otherCompleteRace = _ClassStatement.forPayload(FlowableWithLatestFromTest::otherCompleteRace, "otherCompleteRace", this);
         }
     }
 }

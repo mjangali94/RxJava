@@ -346,240 +346,319 @@ public class BaseTypeAnnotations {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private BaseTypeAnnotations instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkReturnValueFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkReturnValueFlowable, this.description("checkReturnValueFlowable"));
+            this.runBenchmark(this.payloads.checkReturnValueFlowable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkReturnValueObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkReturnValueObservable, this.description("checkReturnValueObservable"));
+            this.runBenchmark(this.payloads.checkReturnValueObservable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkReturnValueSingle() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkReturnValueSingle, this.description("checkReturnValueSingle"));
+            this.runBenchmark(this.payloads.checkReturnValueSingle);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkReturnValueCompletable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkReturnValueCompletable, this.description("checkReturnValueCompletable"));
+            this.runBenchmark(this.payloads.checkReturnValueCompletable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkReturnValueMaybe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkReturnValueMaybe, this.description("checkReturnValueMaybe"));
+            this.runBenchmark(this.payloads.checkReturnValueMaybe);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkReturnValueConnectableObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkReturnValueConnectableObservable, this.description("checkReturnValueConnectableObservable"));
+            this.runBenchmark(this.payloads.checkReturnValueConnectableObservable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkReturnValueConnectableFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkReturnValueConnectableFlowable, this.description("checkReturnValueConnectableFlowable"));
+            this.runBenchmark(this.payloads.checkReturnValueConnectableFlowable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkReturnValueParallelFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkReturnValueParallelFlowable, this.description("checkReturnValueParallelFlowable"));
+            this.runBenchmark(this.payloads.checkReturnValueParallelFlowable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkReturnValueAsyncSubject() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkReturnValueAsyncSubject, this.description("checkReturnValueAsyncSubject"));
+            this.runBenchmark(this.payloads.checkReturnValueAsyncSubject);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkReturnValueBehaviorSubject() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkReturnValueBehaviorSubject, this.description("checkReturnValueBehaviorSubject"));
+            this.runBenchmark(this.payloads.checkReturnValueBehaviorSubject);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkReturnValuePublishSubject() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkReturnValuePublishSubject, this.description("checkReturnValuePublishSubject"));
+            this.runBenchmark(this.payloads.checkReturnValuePublishSubject);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkReturnValueReplaySubject() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkReturnValueReplaySubject, this.description("checkReturnValueReplaySubject"));
+            this.runBenchmark(this.payloads.checkReturnValueReplaySubject);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkReturnValueUnicastSubject() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkReturnValueUnicastSubject, this.description("checkReturnValueUnicastSubject"));
+            this.runBenchmark(this.payloads.checkReturnValueUnicastSubject);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkReturnValueAsyncProcessor() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkReturnValueAsyncProcessor, this.description("checkReturnValueAsyncProcessor"));
+            this.runBenchmark(this.payloads.checkReturnValueAsyncProcessor);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkReturnValueBehaviorProcessor() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkReturnValueBehaviorProcessor, this.description("checkReturnValueBehaviorProcessor"));
+            this.runBenchmark(this.payloads.checkReturnValueBehaviorProcessor);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkReturnValuePublishProcessor() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkReturnValuePublishProcessor, this.description("checkReturnValuePublishProcessor"));
+            this.runBenchmark(this.payloads.checkReturnValuePublishProcessor);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkReturnValueReplayProcessor() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkReturnValueReplayProcessor, this.description("checkReturnValueReplayProcessor"));
+            this.runBenchmark(this.payloads.checkReturnValueReplayProcessor);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkReturnValueUnicastProcessor() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkReturnValueUnicastProcessor, this.description("checkReturnValueUnicastProcessor"));
+            this.runBenchmark(this.payloads.checkReturnValueUnicastProcessor);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkReturnValueMulticastProcessor() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkReturnValueMulticastProcessor, this.description("checkReturnValueMulticastProcessor"));
+            this.runBenchmark(this.payloads.checkReturnValueMulticastProcessor);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkReturnValueSubject() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkReturnValueSubject, this.description("checkReturnValueSubject"));
+            this.runBenchmark(this.payloads.checkReturnValueSubject);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkReturnValueFlowableProcessor() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkReturnValueFlowableProcessor, this.description("checkReturnValueFlowableProcessor"));
+            this.runBenchmark(this.payloads.checkReturnValueFlowableProcessor);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_schedulerSupportFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::schedulerSupportFlowable, this.description("schedulerSupportFlowable"));
+            this.runBenchmark(this.payloads.schedulerSupportFlowable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_schedulerSupportObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::schedulerSupportObservable, this.description("schedulerSupportObservable"));
+            this.runBenchmark(this.payloads.schedulerSupportObservable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_schedulerSupportSingle() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::schedulerSupportSingle, this.description("schedulerSupportSingle"));
+            this.runBenchmark(this.payloads.schedulerSupportSingle);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_schedulerSupportCompletable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::schedulerSupportCompletable, this.description("schedulerSupportCompletable"));
+            this.runBenchmark(this.payloads.schedulerSupportCompletable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_schedulerSupportMaybe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::schedulerSupportMaybe, this.description("schedulerSupportMaybe"));
+            this.runBenchmark(this.payloads.schedulerSupportMaybe);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_schedulerSupportConnectableObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::schedulerSupportConnectableObservable, this.description("schedulerSupportConnectableObservable"));
+            this.runBenchmark(this.payloads.schedulerSupportConnectableObservable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_schedulerSupportConnectableFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::schedulerSupportConnectableFlowable, this.description("schedulerSupportConnectableFlowable"));
+            this.runBenchmark(this.payloads.schedulerSupportConnectableFlowable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_schedulerSupportParallelFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::schedulerSupportParallelFlowable, this.description("schedulerSupportParallelFlowable"));
+            this.runBenchmark(this.payloads.schedulerSupportParallelFlowable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureSupportFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureSupportFlowable, this.description("backpressureSupportFlowable"));
+            this.runBenchmark(this.payloads.backpressureSupportFlowable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureSupportObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureSupportObservable, this.description("backpressureSupportObservable"));
+            this.runBenchmark(this.payloads.backpressureSupportObservable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureSupportSingle() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureSupportSingle, this.description("backpressureSupportSingle"));
+            this.runBenchmark(this.payloads.backpressureSupportSingle);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureSupportCompletable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureSupportCompletable, this.description("backpressureSupportCompletable"));
+            this.runBenchmark(this.payloads.backpressureSupportCompletable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureSupportMaybe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureSupportMaybe, this.description("backpressureSupportMaybe"));
+            this.runBenchmark(this.payloads.backpressureSupportMaybe);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureSupportConnectableFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureSupportConnectableFlowable, this.description("backpressureSupportConnectableFlowable"));
+            this.runBenchmark(this.payloads.backpressureSupportConnectableFlowable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureSupportConnectableObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureSupportConnectableObservable, this.description("backpressureSupportConnectableObservable"));
+            this.runBenchmark(this.payloads.backpressureSupportConnectableObservable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureSupportParallelFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureSupportParallelFlowable, this.description("backpressureSupportParallelFlowable"));
+            this.runBenchmark(this.payloads.backpressureSupportParallelFlowable);
         }
 
-        private BaseTypeAnnotations implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new BaseTypeAnnotations();
+        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> payload) throws java.lang.Throwable {
+            this.instance = new BaseTypeAnnotations();
+            payload.accept(this.instance);
         }
 
-        @java.lang.Override
-        public BaseTypeAnnotations implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> checkReturnValueFlowable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> checkReturnValueObservable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> checkReturnValueSingle;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> checkReturnValueCompletable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> checkReturnValueMaybe;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> checkReturnValueConnectableObservable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> checkReturnValueConnectableFlowable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> checkReturnValueParallelFlowable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> checkReturnValueAsyncSubject;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> checkReturnValueBehaviorSubject;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> checkReturnValuePublishSubject;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> checkReturnValueReplaySubject;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> checkReturnValueUnicastSubject;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> checkReturnValueAsyncProcessor;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> checkReturnValueBehaviorProcessor;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> checkReturnValuePublishProcessor;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> checkReturnValueReplayProcessor;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> checkReturnValueUnicastProcessor;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> checkReturnValueMulticastProcessor;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> checkReturnValueSubject;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> checkReturnValueFlowableProcessor;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> schedulerSupportFlowable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> schedulerSupportObservable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> schedulerSupportSingle;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> schedulerSupportCompletable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> schedulerSupportMaybe;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> schedulerSupportConnectableObservable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> schedulerSupportConnectableFlowable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> schedulerSupportParallelFlowable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> backpressureSupportFlowable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> backpressureSupportObservable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> backpressureSupportSingle;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> backpressureSupportCompletable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> backpressureSupportMaybe;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> backpressureSupportConnectableFlowable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> backpressureSupportConnectableObservable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<BaseTypeAnnotations> backpressureSupportParallelFlowable;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.checkReturnValueFlowable = BaseTypeAnnotations::checkReturnValueFlowable;
+            this.payloads.checkReturnValueObservable = BaseTypeAnnotations::checkReturnValueObservable;
+            this.payloads.checkReturnValueSingle = BaseTypeAnnotations::checkReturnValueSingle;
+            this.payloads.checkReturnValueCompletable = BaseTypeAnnotations::checkReturnValueCompletable;
+            this.payloads.checkReturnValueMaybe = BaseTypeAnnotations::checkReturnValueMaybe;
+            this.payloads.checkReturnValueConnectableObservable = BaseTypeAnnotations::checkReturnValueConnectableObservable;
+            this.payloads.checkReturnValueConnectableFlowable = BaseTypeAnnotations::checkReturnValueConnectableFlowable;
+            this.payloads.checkReturnValueParallelFlowable = BaseTypeAnnotations::checkReturnValueParallelFlowable;
+            this.payloads.checkReturnValueAsyncSubject = BaseTypeAnnotations::checkReturnValueAsyncSubject;
+            this.payloads.checkReturnValueBehaviorSubject = BaseTypeAnnotations::checkReturnValueBehaviorSubject;
+            this.payloads.checkReturnValuePublishSubject = BaseTypeAnnotations::checkReturnValuePublishSubject;
+            this.payloads.checkReturnValueReplaySubject = BaseTypeAnnotations::checkReturnValueReplaySubject;
+            this.payloads.checkReturnValueUnicastSubject = BaseTypeAnnotations::checkReturnValueUnicastSubject;
+            this.payloads.checkReturnValueAsyncProcessor = BaseTypeAnnotations::checkReturnValueAsyncProcessor;
+            this.payloads.checkReturnValueBehaviorProcessor = BaseTypeAnnotations::checkReturnValueBehaviorProcessor;
+            this.payloads.checkReturnValuePublishProcessor = BaseTypeAnnotations::checkReturnValuePublishProcessor;
+            this.payloads.checkReturnValueReplayProcessor = BaseTypeAnnotations::checkReturnValueReplayProcessor;
+            this.payloads.checkReturnValueUnicastProcessor = BaseTypeAnnotations::checkReturnValueUnicastProcessor;
+            this.payloads.checkReturnValueMulticastProcessor = BaseTypeAnnotations::checkReturnValueMulticastProcessor;
+            this.payloads.checkReturnValueSubject = BaseTypeAnnotations::checkReturnValueSubject;
+            this.payloads.checkReturnValueFlowableProcessor = BaseTypeAnnotations::checkReturnValueFlowableProcessor;
+            this.payloads.schedulerSupportFlowable = BaseTypeAnnotations::schedulerSupportFlowable;
+            this.payloads.schedulerSupportObservable = BaseTypeAnnotations::schedulerSupportObservable;
+            this.payloads.schedulerSupportSingle = BaseTypeAnnotations::schedulerSupportSingle;
+            this.payloads.schedulerSupportCompletable = BaseTypeAnnotations::schedulerSupportCompletable;
+            this.payloads.schedulerSupportMaybe = BaseTypeAnnotations::schedulerSupportMaybe;
+            this.payloads.schedulerSupportConnectableObservable = BaseTypeAnnotations::schedulerSupportConnectableObservable;
+            this.payloads.schedulerSupportConnectableFlowable = BaseTypeAnnotations::schedulerSupportConnectableFlowable;
+            this.payloads.schedulerSupportParallelFlowable = BaseTypeAnnotations::schedulerSupportParallelFlowable;
+            this.payloads.backpressureSupportFlowable = BaseTypeAnnotations::backpressureSupportFlowable;
+            this.payloads.backpressureSupportObservable = BaseTypeAnnotations::backpressureSupportObservable;
+            this.payloads.backpressureSupportSingle = BaseTypeAnnotations::backpressureSupportSingle;
+            this.payloads.backpressureSupportCompletable = BaseTypeAnnotations::backpressureSupportCompletable;
+            this.payloads.backpressureSupportMaybe = BaseTypeAnnotations::backpressureSupportMaybe;
+            this.payloads.backpressureSupportConnectableFlowable = BaseTypeAnnotations::backpressureSupportConnectableFlowable;
+            this.payloads.backpressureSupportConnectableObservable = BaseTypeAnnotations::backpressureSupportConnectableObservable;
+            this.payloads.backpressureSupportParallelFlowable = BaseTypeAnnotations::backpressureSupportParallelFlowable;
         }
     }
 }

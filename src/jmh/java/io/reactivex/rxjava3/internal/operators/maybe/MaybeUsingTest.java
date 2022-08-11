@@ -603,144 +603,245 @@ public class MaybeUsingTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private MaybeUsingTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_resourceSupplierThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::resourceSupplierThrows, this.description("resourceSupplierThrows"));
+            this.payloads.resourceSupplierThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorEager() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorEager, this.description("errorEager"));
+            this.payloads.errorEager.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyEager() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyEager, this.description("emptyEager"));
+            this.payloads.emptyEager.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorNonEager() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorNonEager, this.description("errorNonEager"));
+            this.payloads.errorNonEager.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyNonEager() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyNonEager, this.description("emptyNonEager"));
+            this.payloads.emptyNonEager.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_supplierCrashEager() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::supplierCrashEager, this.description("supplierCrashEager"));
+            this.payloads.supplierCrashEager.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_supplierCrashNonEager() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::supplierCrashNonEager, this.description("supplierCrashNonEager"));
+            this.payloads.supplierCrashNonEager.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_supplierAndDisposerCrashEager() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::supplierAndDisposerCrashEager, this.description("supplierAndDisposerCrashEager"));
+            this.payloads.supplierAndDisposerCrashEager.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_supplierAndDisposerCrashNonEager() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::supplierAndDisposerCrashNonEager, this.description("supplierAndDisposerCrashNonEager"));
+            this.payloads.supplierAndDisposerCrashNonEager.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeCrashes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeCrashes, this.description("disposeCrashes"));
+            this.payloads.disposeCrashes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_isDisposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::isDisposed, this.description("isDisposed"));
+            this.payloads.isDisposed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_justDisposerCrashes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::justDisposerCrashes, this.description("justDisposerCrashes"));
+            this.payloads.justDisposerCrashes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyDisposerCrashes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyDisposerCrashes, this.description("emptyDisposerCrashes"));
+            this.payloads.emptyDisposerCrashes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorDisposerCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorDisposerCrash, this.description("errorDisposerCrash"));
+            this.payloads.errorDisposerCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_successDisposeRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::successDisposeRace, this.description("successDisposeRace"));
+            this.payloads.successDisposeRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorDisposeRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorDisposeRace, this.description("errorDisposeRace"));
+            this.payloads.errorDisposeRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyDisposeRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyDisposeRace, this.description("emptyDisposeRace"));
+            this.payloads.emptyDisposeRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_eagerDisposeResourceThenDisposeUpstream() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::eagerDisposeResourceThenDisposeUpstream, this.description("eagerDisposeResourceThenDisposeUpstream"));
+            this.payloads.eagerDisposeResourceThenDisposeUpstream.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nonEagerDisposeUpstreamThenDisposeResource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nonEagerDisposeUpstreamThenDisposeResource, this.description("nonEagerDisposeUpstreamThenDisposeResource"));
+            this.payloads.nonEagerDisposeUpstreamThenDisposeResource.evaluate();
         }
 
-        private MaybeUsingTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeUsingTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeUsingTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeUsingTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public MaybeUsingTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeUsingTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeUsingTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new MaybeUsingTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeUsingTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(MaybeUsingTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(MaybeUsingTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement resourceSupplierThrows;
+
+            public org.junit.runners.model.Statement errorEager;
+
+            public org.junit.runners.model.Statement emptyEager;
+
+            public org.junit.runners.model.Statement errorNonEager;
+
+            public org.junit.runners.model.Statement emptyNonEager;
+
+            public org.junit.runners.model.Statement supplierCrashEager;
+
+            public org.junit.runners.model.Statement supplierCrashNonEager;
+
+            public org.junit.runners.model.Statement supplierAndDisposerCrashEager;
+
+            public org.junit.runners.model.Statement supplierAndDisposerCrashNonEager;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement disposeCrashes;
+
+            public org.junit.runners.model.Statement isDisposed;
+
+            public org.junit.runners.model.Statement justDisposerCrashes;
+
+            public org.junit.runners.model.Statement emptyDisposerCrashes;
+
+            public org.junit.runners.model.Statement errorDisposerCrash;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement successDisposeRace;
+
+            public org.junit.runners.model.Statement errorDisposeRace;
+
+            public org.junit.runners.model.Statement emptyDisposeRace;
+
+            public org.junit.runners.model.Statement eagerDisposeResourceThenDisposeUpstream;
+
+            public org.junit.runners.model.Statement nonEagerDisposeUpstreamThenDisposeResource;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.resourceSupplierThrows = _ClassStatement.forPayload(MaybeUsingTest::resourceSupplierThrows, "resourceSupplierThrows", this);
+            this.payloads.errorEager = _ClassStatement.forPayload(MaybeUsingTest::errorEager, "errorEager", this);
+            this.payloads.emptyEager = _ClassStatement.forPayload(MaybeUsingTest::emptyEager, "emptyEager", this);
+            this.payloads.errorNonEager = _ClassStatement.forPayload(MaybeUsingTest::errorNonEager, "errorNonEager", this);
+            this.payloads.emptyNonEager = _ClassStatement.forPayload(MaybeUsingTest::emptyNonEager, "emptyNonEager", this);
+            this.payloads.supplierCrashEager = _ClassStatement.forPayload(MaybeUsingTest::supplierCrashEager, "supplierCrashEager", this);
+            this.payloads.supplierCrashNonEager = _ClassStatement.forPayload(MaybeUsingTest::supplierCrashNonEager, "supplierCrashNonEager", this);
+            this.payloads.supplierAndDisposerCrashEager = _ClassStatement.forPayload(MaybeUsingTest::supplierAndDisposerCrashEager, "supplierAndDisposerCrashEager", this);
+            this.payloads.supplierAndDisposerCrashNonEager = _ClassStatement.forPayload(MaybeUsingTest::supplierAndDisposerCrashNonEager, "supplierAndDisposerCrashNonEager", this);
+            this.payloads.dispose = _ClassStatement.forPayload(MaybeUsingTest::dispose, "dispose", this);
+            this.payloads.disposeCrashes = _ClassStatement.forPayload(MaybeUsingTest::disposeCrashes, "disposeCrashes", this);
+            this.payloads.isDisposed = _ClassStatement.forPayload(MaybeUsingTest::isDisposed, "isDisposed", this);
+            this.payloads.justDisposerCrashes = _ClassStatement.forPayload(MaybeUsingTest::justDisposerCrashes, "justDisposerCrashes", this);
+            this.payloads.emptyDisposerCrashes = _ClassStatement.forPayload(MaybeUsingTest::emptyDisposerCrashes, "emptyDisposerCrashes", this);
+            this.payloads.errorDisposerCrash = _ClassStatement.forPayload(MaybeUsingTest::errorDisposerCrash, "errorDisposerCrash", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(MaybeUsingTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.successDisposeRace = _ClassStatement.forPayload(MaybeUsingTest::successDisposeRace, "successDisposeRace", this);
+            this.payloads.errorDisposeRace = _ClassStatement.forPayload(MaybeUsingTest::errorDisposeRace, "errorDisposeRace", this);
+            this.payloads.emptyDisposeRace = _ClassStatement.forPayload(MaybeUsingTest::emptyDisposeRace, "emptyDisposeRace", this);
+            this.payloads.eagerDisposeResourceThenDisposeUpstream = _ClassStatement.forPayload(MaybeUsingTest::eagerDisposeResourceThenDisposeUpstream, "eagerDisposeResourceThenDisposeUpstream", this);
+            this.payloads.nonEagerDisposeUpstreamThenDisposeResource = _ClassStatement.forPayload(MaybeUsingTest::nonEagerDisposeUpstreamThenDisposeResource, "nonEagerDisposeUpstreamThenDisposeResource", this);
         }
     }
 }

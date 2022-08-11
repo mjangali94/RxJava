@@ -1452,732 +1452,1029 @@ public class FlowableNullTests extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableNullTests instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambVarargsOneIsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::ambVarargsOneIsNull, this.description("ambVarargsOneIsNull"), java.lang.NullPointerException.class);
+            this.payloads.ambVarargsOneIsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambIterableIteratorNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambIterableIteratorNull, this.description("ambIterableIteratorNull"));
+            this.payloads.ambIterableIteratorNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambIterableOneIsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambIterableOneIsNull, this.description("ambIterableOneIsNull"));
+            this.payloads.ambIterableOneIsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combineLatestIterableIteratorNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::combineLatestIterableIteratorNull, this.description("combineLatestIterableIteratorNull"), java.lang.NullPointerException.class);
+            this.payloads.combineLatestIterableIteratorNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combineLatestIterableOneIsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::combineLatestIterableOneIsNull, this.description("combineLatestIterableOneIsNull"), java.lang.NullPointerException.class);
+            this.payloads.combineLatestIterableOneIsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combineLatestIterableFunctionReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::combineLatestIterableFunctionReturnsNull, this.description("combineLatestIterableFunctionReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.combineLatestIterableFunctionReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatIterableIteratorNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::concatIterableIteratorNull, this.description("concatIterableIteratorNull"), java.lang.NullPointerException.class);
+            this.payloads.concatIterableIteratorNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatIterableOneIsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::concatIterableOneIsNull, this.description("concatIterableOneIsNull"), java.lang.NullPointerException.class);
+            this.payloads.concatIterableOneIsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatArrayOneIsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::concatArrayOneIsNull, this.description("concatArrayOneIsNull"), java.lang.NullPointerException.class);
+            this.payloads.concatArrayOneIsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_deferFunctionReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::deferFunctionReturnsNull, this.description("deferFunctionReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.deferFunctionReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorFunctionReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::errorFunctionReturnsNull, this.description("errorFunctionReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.errorFunctionReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromArrayOneIsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::fromArrayOneIsNull, this.description("fromArrayOneIsNull"), java.lang.NullPointerException.class);
+            this.payloads.fromArrayOneIsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromCallableReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::fromCallableReturnsNull, this.description("fromCallableReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.fromCallableReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromFutureReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromFutureReturnsNull, this.description("fromFutureReturnsNull"));
+            this.payloads.fromFutureReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromFutureTimedReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::fromFutureTimedReturnsNull, this.description("fromFutureTimedReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.fromFutureTimedReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromIterableIteratorNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::fromIterableIteratorNull, this.description("fromIterableIteratorNull"), java.lang.NullPointerException.class);
+            this.payloads.fromIterableIteratorNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromIterableValueNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::fromIterableValueNull, this.description("fromIterableValueNull"), java.lang.NullPointerException.class);
+            this.payloads.fromIterableValueNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_generateConsumerEmitsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::generateConsumerEmitsNull, this.description("generateConsumerEmitsNull"), java.lang.NullPointerException.class);
+            this.payloads.generateConsumerEmitsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_generateStateConsumerInitialStateNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::generateStateConsumerInitialStateNull, this.description("generateStateConsumerInitialStateNull"), java.lang.NullPointerException.class);
+            this.payloads.generateStateConsumerInitialStateNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_generateStateFunctionInitialStateNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::generateStateFunctionInitialStateNull, this.description("generateStateFunctionInitialStateNull"), java.lang.NullPointerException.class);
+            this.payloads.generateStateFunctionInitialStateNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_generateStateConsumerNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::generateStateConsumerNull, this.description("generateStateConsumerNull"), java.lang.NullPointerException.class);
+            this.payloads.generateStateConsumerNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_generateConsumerStateNullAllowed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::generateConsumerStateNullAllowed, this.description("generateConsumerStateNullAllowed"));
+            this.payloads.generateConsumerStateNullAllowed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_generateFunctionStateNullAllowed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::generateFunctionStateNullAllowed, this.description("generateFunctionStateNullAllowed"));
+            this.payloads.generateFunctionStateNullAllowed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_justNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::justNull, this.description("justNull"));
+            this.payloads.justNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeIterableIteratorNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::mergeIterableIteratorNull, this.description("mergeIterableIteratorNull"), java.lang.NullPointerException.class);
+            this.payloads.mergeIterableIteratorNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeIterableOneIsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::mergeIterableOneIsNull, this.description("mergeIterableOneIsNull"), java.lang.NullPointerException.class);
+            this.payloads.mergeIterableOneIsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeArrayOneIsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::mergeArrayOneIsNull, this.description("mergeArrayOneIsNull"), java.lang.NullPointerException.class);
+            this.payloads.mergeArrayOneIsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeDelayErrorIterableIteratorNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::mergeDelayErrorIterableIteratorNull, this.description("mergeDelayErrorIterableIteratorNull"), java.lang.NullPointerException.class);
+            this.payloads.mergeDelayErrorIterableIteratorNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeDelayErrorIterableOneIsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::mergeDelayErrorIterableOneIsNull, this.description("mergeDelayErrorIterableOneIsNull"), java.lang.NullPointerException.class);
+            this.payloads.mergeDelayErrorIterableOneIsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeDelayErrorArrayOneIsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::mergeDelayErrorArrayOneIsNull, this.description("mergeDelayErrorArrayOneIsNull"), java.lang.NullPointerException.class);
+            this.payloads.mergeDelayErrorArrayOneIsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_usingFlowableSupplierReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::usingFlowableSupplierReturnsNull, this.description("usingFlowableSupplierReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.usingFlowableSupplierReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipIterableIteratorNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::zipIterableIteratorNull, this.description("zipIterableIteratorNull"), java.lang.NullPointerException.class);
+            this.payloads.zipIterableIteratorNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipIterableFunctionReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::zipIterableFunctionReturnsNull, this.description("zipIterableFunctionReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.zipIterableFunctionReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipIterable2Null() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::zipIterable2Null, this.description("zipIterable2Null"), java.lang.NullPointerException.class);
+            this.payloads.zipIterable2Null.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipIterable2IteratorNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::zipIterable2IteratorNull, this.description("zipIterable2IteratorNull"), java.lang.NullPointerException.class);
+            this.payloads.zipIterable2IteratorNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipIterable2FunctionReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::zipIterable2FunctionReturnsNull, this.description("zipIterable2FunctionReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.zipIterable2FunctionReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferSupplierReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::bufferSupplierReturnsNull, this.description("bufferSupplierReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.bufferSupplierReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferTimedSupplierReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::bufferTimedSupplierReturnsNull, this.description("bufferTimedSupplierReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.bufferTimedSupplierReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferOpenCloseCloseReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::bufferOpenCloseCloseReturnsNull, this.description("bufferOpenCloseCloseReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.bufferOpenCloseCloseReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bufferBoundarySupplierReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::bufferBoundarySupplierReturnsNull, this.description("bufferBoundarySupplierReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.bufferBoundarySupplierReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectInitialSupplierReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::collectInitialSupplierReturnsNull, this.description("collectInitialSupplierReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.collectInitialSupplierReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::concatMapReturnsNull, this.description("concatMapReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.concatMapReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapIterableReturnNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::concatMapIterableReturnNull, this.description("concatMapIterableReturnNull"), java.lang.NullPointerException.class);
+            this.payloads.concatMapIterableReturnNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapIterableIteratorNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::concatMapIterableIteratorNull, this.description("concatMapIterableIteratorNull"), java.lang.NullPointerException.class);
+            this.payloads.concatMapIterableIteratorNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_debounceFunctionReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::debounceFunctionReturnsNull, this.description("debounceFunctionReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.debounceFunctionReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayWithFunctionReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::delayWithFunctionReturnsNull, this.description("delayWithFunctionReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.delayWithFunctionReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayBothItemSupplierReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::delayBothItemSupplierReturnsNull, this.description("delayBothItemSupplierReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.delayBothItemSupplierReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_distinctSupplierReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::distinctSupplierReturnsNull, this.description("distinctSupplierReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.distinctSupplierReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_distinctFunctionReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::distinctFunctionReturnsNull, this.description("distinctFunctionReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.distinctFunctionReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_distinctUntilChangedFunctionReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::distinctUntilChangedFunctionReturnsNull, this.description("distinctUntilChangedFunctionReturnsNull"));
+            this.payloads.distinctUntilChangedFunctionReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapFunctionReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::flatMapFunctionReturnsNull, this.description("flatMapFunctionReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.flatMapFunctionReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapNotificationOnNextReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::flatMapNotificationOnNextReturnsNull, this.description("flatMapNotificationOnNextReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.flatMapNotificationOnNextReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapNotificationOnCompleteReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::flatMapNotificationOnCompleteReturnsNull, this.description("flatMapNotificationOnCompleteReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.flatMapNotificationOnCompleteReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapCombinerMapperReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::flatMapCombinerMapperReturnsNull, this.description("flatMapCombinerMapperReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.flatMapCombinerMapperReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapCombinerCombinerReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::flatMapCombinerCombinerReturnsNull, this.description("flatMapCombinerCombinerReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.flatMapCombinerCombinerReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapIterableMapperReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::flatMapIterableMapperReturnsNull, this.description("flatMapIterableMapperReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.flatMapIterableMapperReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapIterableMapperIteratorNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::flatMapIterableMapperIteratorNull, this.description("flatMapIterableMapperIteratorNull"), java.lang.NullPointerException.class);
+            this.payloads.flatMapIterableMapperIteratorNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapIterableMapperIterableOneNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::flatMapIterableMapperIterableOneNull, this.description("flatMapIterableMapperIterableOneNull"), java.lang.NullPointerException.class);
+            this.payloads.flatMapIterableMapperIterableOneNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapIterableCombinerReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::flatMapIterableCombinerReturnsNull, this.description("flatMapIterableCombinerReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.flatMapIterableCombinerReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_groupByValueReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::groupByValueReturnsNull, this.description("groupByValueReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.groupByValueReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_liftReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::liftReturnsNull, this.description("liftReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.liftReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::mapReturnsNull, this.description("mapReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.mapReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorResumeNextFunctionReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorResumeNextFunctionReturnsNull, this.description("onErrorResumeNextFunctionReturnsNull"));
+            this.payloads.onErrorResumeNextFunctionReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorReturnFunctionReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorReturnFunctionReturnsNull, this.description("onErrorReturnFunctionReturnsNull"));
+            this.payloads.onErrorReturnFunctionReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_publishFunctionReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::publishFunctionReturnsNull, this.description("publishFunctionReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.publishFunctionReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_reduceFunctionReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::reduceFunctionReturnsNull, this.description("reduceFunctionReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.reduceFunctionReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_reduceSeedFunctionReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::reduceSeedFunctionReturnsNull, this.description("reduceSeedFunctionReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.reduceSeedFunctionReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_reduceWithSeedNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::reduceWithSeedNull, this.description("reduceWithSeedNull"), java.lang.NullPointerException.class);
+            this.payloads.reduceWithSeedNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_reduceWithSeedReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::reduceWithSeedReturnsNull, this.description("reduceWithSeedReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.reduceWithSeedReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_repeatWhenFunctionReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::repeatWhenFunctionReturnsNull, this.description("repeatWhenFunctionReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.repeatWhenFunctionReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_replaySelectorNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::replaySelectorNull, this.description("replaySelectorNull"), java.lang.NullPointerException.class);
+            this.payloads.replaySelectorNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_replaySelectorReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::replaySelectorReturnsNull, this.description("replaySelectorReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.replaySelectorReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_replayBoundedSelectorReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::replayBoundedSelectorReturnsNull, this.description("replayBoundedSelectorReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.replayBoundedSelectorReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_replayTimeBoundedSelectorReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::replayTimeBoundedSelectorReturnsNull, this.description("replayTimeBoundedSelectorReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.replayTimeBoundedSelectorReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_retryWhenFunctionReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::retryWhenFunctionReturnsNull, this.description("retryWhenFunctionReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.retryWhenFunctionReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scanFunctionReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::scanFunctionReturnsNull, this.description("scanFunctionReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.scanFunctionReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scanSeedNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::scanSeedNull, this.description("scanSeedNull"), java.lang.NullPointerException.class);
+            this.payloads.scanSeedNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scanSeedFunctionReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::scanSeedFunctionReturnsNull, this.description("scanSeedFunctionReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.scanSeedFunctionReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scanSeedSupplierReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::scanSeedSupplierReturnsNull, this.description("scanSeedSupplierReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.scanSeedSupplierReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scanSeedSupplierFunctionReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::scanSeedSupplierFunctionReturnsNull, this.description("scanSeedSupplierFunctionReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.scanSeedSupplierFunctionReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_startWithIterableIteratorNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::startWithIterableIteratorNull, this.description("startWithIterableIteratorNull"), java.lang.NullPointerException.class);
+            this.payloads.startWithIterableIteratorNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_startWithIterableOneNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::startWithIterableOneNull, this.description("startWithIterableOneNull"), java.lang.NullPointerException.class);
+            this.payloads.startWithIterableOneNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_startWithArrayOneNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::startWithArrayOneNull, this.description("startWithArrayOneNull"), java.lang.NullPointerException.class);
+            this.payloads.startWithArrayOneNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_switchMapFunctionReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::switchMapFunctionReturnsNull, this.description("switchMapFunctionReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.switchMapFunctionReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeoutSelectorReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::timeoutSelectorReturnsNull, this.description("timeoutSelectorReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.timeoutSelectorReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeoutSelectorOtherNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::timeoutSelectorOtherNull, this.description("timeoutSelectorOtherNull"), java.lang.NullPointerException.class);
+            this.payloads.timeoutSelectorOtherNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeoutFirstItemReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::timeoutFirstItemReturnsNull, this.description("timeoutFirstItemReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.timeoutFirstItemReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timestampUnitNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::timestampUnitNull, this.description("timestampUnitNull"), java.lang.NullPointerException.class);
+            this.payloads.timestampUnitNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timestampSchedulerNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::timestampSchedulerNull, this.description("timestampSchedulerNull"), java.lang.NullPointerException.class);
+            this.payloads.timestampSchedulerNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toListSupplierReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::toListSupplierReturnsNull, this.description("toListSupplierReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.toListSupplierReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toListSupplierReturnsNullSingle() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::toListSupplierReturnsNullSingle, this.description("toListSupplierReturnsNullSingle"), java.lang.NullPointerException.class);
+            this.payloads.toListSupplierReturnsNullSingle.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMapValueSelectorReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMapValueSelectorReturnsNull, this.description("toMapValueSelectorReturnsNull"));
+            this.payloads.toMapValueSelectorReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMapMapSupplierReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::toMapMapSupplierReturnsNull, this.description("toMapMapSupplierReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.toMapMapSupplierReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultiMapValueSelectorReturnsNullAllowed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultiMapValueSelectorReturnsNullAllowed, this.description("toMultiMapValueSelectorReturnsNullAllowed"));
+            this.payloads.toMultiMapValueSelectorReturnsNullAllowed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapMapSupplierReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::toMultimapMapSupplierReturnsNull, this.description("toMultimapMapSupplierReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.toMultimapMapSupplierReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapMapCollectionSupplierReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::toMultimapMapCollectionSupplierReturnsNull, this.description("toMultimapMapCollectionSupplierReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.toMultimapMapCollectionSupplierReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowOpenCloseOpenNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::windowOpenCloseOpenNull, this.description("windowOpenCloseOpenNull"), java.lang.NullPointerException.class);
+            this.payloads.windowOpenCloseOpenNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowOpenCloseCloseReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::windowOpenCloseCloseReturnsNull, this.description("windowOpenCloseCloseReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.windowOpenCloseCloseReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withLatestFromOtherNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::withLatestFromOtherNull, this.description("withLatestFromOtherNull"), java.lang.NullPointerException.class);
+            this.payloads.withLatestFromOtherNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withLatestFromCombinerReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::withLatestFromCombinerReturnsNull, this.description("withLatestFromCombinerReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.withLatestFromCombinerReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipWithIterableNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::zipWithIterableNull, this.description("zipWithIterableNull"), java.lang.NullPointerException.class);
+            this.payloads.zipWithIterableNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipWithIterableCombinerReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::zipWithIterableCombinerReturnsNull, this.description("zipWithIterableCombinerReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.zipWithIterableCombinerReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipWithIterableIteratorNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::zipWithIterableIteratorNull, this.description("zipWithIterableIteratorNull"), java.lang.NullPointerException.class);
+            this.payloads.zipWithIterableIteratorNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipWithIterableOneIsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::zipWithIterableOneIsNull, this.description("zipWithIterableOneIsNull"), java.lang.NullPointerException.class);
+            this.payloads.zipWithIterableOneIsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipWithPublisherNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::zipWithPublisherNull, this.description("zipWithPublisherNull"), java.lang.NullPointerException.class);
+            this.payloads.zipWithPublisherNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipWithCombinerReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::zipWithCombinerReturnsNull, this.description("zipWithCombinerReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.zipWithCombinerReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncSubjectOnNextNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::asyncSubjectOnNextNull, this.description("asyncSubjectOnNextNull"), java.lang.NullPointerException.class);
+            this.payloads.asyncSubjectOnNextNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncSubjectOnErrorNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::asyncSubjectOnErrorNull, this.description("asyncSubjectOnErrorNull"), java.lang.NullPointerException.class);
+            this.payloads.asyncSubjectOnErrorNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_behaviorSubjectOnNextNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::behaviorSubjectOnNextNull, this.description("behaviorSubjectOnNextNull"), java.lang.NullPointerException.class);
+            this.payloads.behaviorSubjectOnNextNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_behaviorSubjectOnErrorNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::behaviorSubjectOnErrorNull, this.description("behaviorSubjectOnErrorNull"), java.lang.NullPointerException.class);
+            this.payloads.behaviorSubjectOnErrorNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_publishSubjectOnNextNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::publishSubjectOnNextNull, this.description("publishSubjectOnNextNull"), java.lang.NullPointerException.class);
+            this.payloads.publishSubjectOnNextNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_publishSubjectOnErrorNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::publishSubjectOnErrorNull, this.description("publishSubjectOnErrorNull"), java.lang.NullPointerException.class);
+            this.payloads.publishSubjectOnErrorNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_replaycSubjectOnNextNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::replaycSubjectOnNextNull, this.description("replaycSubjectOnNextNull"), java.lang.NullPointerException.class);
+            this.payloads.replaycSubjectOnNextNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_replaySubjectOnErrorNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::replaySubjectOnErrorNull, this.description("replaySubjectOnErrorNull"), java.lang.NullPointerException.class);
+            this.payloads.replaySubjectOnErrorNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_serializedcSubjectOnNextNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::serializedcSubjectOnNextNull, this.description("serializedcSubjectOnNextNull"), java.lang.NullPointerException.class);
+            this.payloads.serializedcSubjectOnNextNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_serializedSubjectOnErrorNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::serializedSubjectOnErrorNull, this.description("serializedSubjectOnErrorNull"), java.lang.NullPointerException.class);
+            this.payloads.serializedSubjectOnErrorNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combineLatestDelayErrorIterableFunctionReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::combineLatestDelayErrorIterableFunctionReturnsNull, this.description("combineLatestDelayErrorIterableFunctionReturnsNull"), java.lang.NullPointerException.class);
+            this.payloads.combineLatestDelayErrorIterableFunctionReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combineLatestDelayErrorIterableIteratorNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::combineLatestDelayErrorIterableIteratorNull, this.description("combineLatestDelayErrorIterableIteratorNull"), java.lang.NullPointerException.class);
+            this.payloads.combineLatestDelayErrorIterableIteratorNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combineLatestDelayErrorIterableOneIsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::combineLatestDelayErrorIterableOneIsNull, this.description("combineLatestDelayErrorIterableOneIsNull"), java.lang.NullPointerException.class);
+            this.payloads.combineLatestDelayErrorIterableOneIsNull.evaluate();
         }
 
-        private FlowableNullTests implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableNullTests();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableNullTests> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableNullTests> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableNullTests implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableNullTests> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableNullTests> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableNullTests();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableNullTests> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableNullTests.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableNullTests.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement ambVarargsOneIsNull;
+
+            public org.junit.runners.model.Statement ambIterableIteratorNull;
+
+            public org.junit.runners.model.Statement ambIterableOneIsNull;
+
+            public org.junit.runners.model.Statement combineLatestIterableIteratorNull;
+
+            public org.junit.runners.model.Statement combineLatestIterableOneIsNull;
+
+            public org.junit.runners.model.Statement combineLatestIterableFunctionReturnsNull;
+
+            public org.junit.runners.model.Statement concatIterableIteratorNull;
+
+            public org.junit.runners.model.Statement concatIterableOneIsNull;
+
+            public org.junit.runners.model.Statement concatArrayOneIsNull;
+
+            public org.junit.runners.model.Statement deferFunctionReturnsNull;
+
+            public org.junit.runners.model.Statement errorFunctionReturnsNull;
+
+            public org.junit.runners.model.Statement fromArrayOneIsNull;
+
+            public org.junit.runners.model.Statement fromCallableReturnsNull;
+
+            public org.junit.runners.model.Statement fromFutureReturnsNull;
+
+            public org.junit.runners.model.Statement fromFutureTimedReturnsNull;
+
+            public org.junit.runners.model.Statement fromIterableIteratorNull;
+
+            public org.junit.runners.model.Statement fromIterableValueNull;
+
+            public org.junit.runners.model.Statement generateConsumerEmitsNull;
+
+            public org.junit.runners.model.Statement generateStateConsumerInitialStateNull;
+
+            public org.junit.runners.model.Statement generateStateFunctionInitialStateNull;
+
+            public org.junit.runners.model.Statement generateStateConsumerNull;
+
+            public org.junit.runners.model.Statement generateConsumerStateNullAllowed;
+
+            public org.junit.runners.model.Statement generateFunctionStateNullAllowed;
+
+            public org.junit.runners.model.Statement justNull;
+
+            public org.junit.runners.model.Statement mergeIterableIteratorNull;
+
+            public org.junit.runners.model.Statement mergeIterableOneIsNull;
+
+            public org.junit.runners.model.Statement mergeArrayOneIsNull;
+
+            public org.junit.runners.model.Statement mergeDelayErrorIterableIteratorNull;
+
+            public org.junit.runners.model.Statement mergeDelayErrorIterableOneIsNull;
+
+            public org.junit.runners.model.Statement mergeDelayErrorArrayOneIsNull;
+
+            public org.junit.runners.model.Statement usingFlowableSupplierReturnsNull;
+
+            public org.junit.runners.model.Statement zipIterableIteratorNull;
+
+            public org.junit.runners.model.Statement zipIterableFunctionReturnsNull;
+
+            public org.junit.runners.model.Statement zipIterable2Null;
+
+            public org.junit.runners.model.Statement zipIterable2IteratorNull;
+
+            public org.junit.runners.model.Statement zipIterable2FunctionReturnsNull;
+
+            public org.junit.runners.model.Statement bufferSupplierReturnsNull;
+
+            public org.junit.runners.model.Statement bufferTimedSupplierReturnsNull;
+
+            public org.junit.runners.model.Statement bufferOpenCloseCloseReturnsNull;
+
+            public org.junit.runners.model.Statement bufferBoundarySupplierReturnsNull;
+
+            public org.junit.runners.model.Statement collectInitialSupplierReturnsNull;
+
+            public org.junit.runners.model.Statement concatMapReturnsNull;
+
+            public org.junit.runners.model.Statement concatMapIterableReturnNull;
+
+            public org.junit.runners.model.Statement concatMapIterableIteratorNull;
+
+            public org.junit.runners.model.Statement debounceFunctionReturnsNull;
+
+            public org.junit.runners.model.Statement delayWithFunctionReturnsNull;
+
+            public org.junit.runners.model.Statement delayBothItemSupplierReturnsNull;
+
+            public org.junit.runners.model.Statement distinctSupplierReturnsNull;
+
+            public org.junit.runners.model.Statement distinctFunctionReturnsNull;
+
+            public org.junit.runners.model.Statement distinctUntilChangedFunctionReturnsNull;
+
+            public org.junit.runners.model.Statement flatMapFunctionReturnsNull;
+
+            public org.junit.runners.model.Statement flatMapNotificationOnNextReturnsNull;
+
+            public org.junit.runners.model.Statement flatMapNotificationOnCompleteReturnsNull;
+
+            public org.junit.runners.model.Statement flatMapCombinerMapperReturnsNull;
+
+            public org.junit.runners.model.Statement flatMapCombinerCombinerReturnsNull;
+
+            public org.junit.runners.model.Statement flatMapIterableMapperReturnsNull;
+
+            public org.junit.runners.model.Statement flatMapIterableMapperIteratorNull;
+
+            public org.junit.runners.model.Statement flatMapIterableMapperIterableOneNull;
+
+            public org.junit.runners.model.Statement flatMapIterableCombinerReturnsNull;
+
+            public org.junit.runners.model.Statement groupByValueReturnsNull;
+
+            public org.junit.runners.model.Statement liftReturnsNull;
+
+            public org.junit.runners.model.Statement mapReturnsNull;
+
+            public org.junit.runners.model.Statement onErrorResumeNextFunctionReturnsNull;
+
+            public org.junit.runners.model.Statement onErrorReturnFunctionReturnsNull;
+
+            public org.junit.runners.model.Statement publishFunctionReturnsNull;
+
+            public org.junit.runners.model.Statement reduceFunctionReturnsNull;
+
+            public org.junit.runners.model.Statement reduceSeedFunctionReturnsNull;
+
+            public org.junit.runners.model.Statement reduceWithSeedNull;
+
+            public org.junit.runners.model.Statement reduceWithSeedReturnsNull;
+
+            public org.junit.runners.model.Statement repeatWhenFunctionReturnsNull;
+
+            public org.junit.runners.model.Statement replaySelectorNull;
+
+            public org.junit.runners.model.Statement replaySelectorReturnsNull;
+
+            public org.junit.runners.model.Statement replayBoundedSelectorReturnsNull;
+
+            public org.junit.runners.model.Statement replayTimeBoundedSelectorReturnsNull;
+
+            public org.junit.runners.model.Statement retryWhenFunctionReturnsNull;
+
+            public org.junit.runners.model.Statement scanFunctionReturnsNull;
+
+            public org.junit.runners.model.Statement scanSeedNull;
+
+            public org.junit.runners.model.Statement scanSeedFunctionReturnsNull;
+
+            public org.junit.runners.model.Statement scanSeedSupplierReturnsNull;
+
+            public org.junit.runners.model.Statement scanSeedSupplierFunctionReturnsNull;
+
+            public org.junit.runners.model.Statement startWithIterableIteratorNull;
+
+            public org.junit.runners.model.Statement startWithIterableOneNull;
+
+            public org.junit.runners.model.Statement startWithArrayOneNull;
+
+            public org.junit.runners.model.Statement switchMapFunctionReturnsNull;
+
+            public org.junit.runners.model.Statement timeoutSelectorReturnsNull;
+
+            public org.junit.runners.model.Statement timeoutSelectorOtherNull;
+
+            public org.junit.runners.model.Statement timeoutFirstItemReturnsNull;
+
+            public org.junit.runners.model.Statement timestampUnitNull;
+
+            public org.junit.runners.model.Statement timestampSchedulerNull;
+
+            public org.junit.runners.model.Statement toListSupplierReturnsNull;
+
+            public org.junit.runners.model.Statement toListSupplierReturnsNullSingle;
+
+            public org.junit.runners.model.Statement toMapValueSelectorReturnsNull;
+
+            public org.junit.runners.model.Statement toMapMapSupplierReturnsNull;
+
+            public org.junit.runners.model.Statement toMultiMapValueSelectorReturnsNullAllowed;
+
+            public org.junit.runners.model.Statement toMultimapMapSupplierReturnsNull;
+
+            public org.junit.runners.model.Statement toMultimapMapCollectionSupplierReturnsNull;
+
+            public org.junit.runners.model.Statement windowOpenCloseOpenNull;
+
+            public org.junit.runners.model.Statement windowOpenCloseCloseReturnsNull;
+
+            public org.junit.runners.model.Statement withLatestFromOtherNull;
+
+            public org.junit.runners.model.Statement withLatestFromCombinerReturnsNull;
+
+            public org.junit.runners.model.Statement zipWithIterableNull;
+
+            public org.junit.runners.model.Statement zipWithIterableCombinerReturnsNull;
+
+            public org.junit.runners.model.Statement zipWithIterableIteratorNull;
+
+            public org.junit.runners.model.Statement zipWithIterableOneIsNull;
+
+            public org.junit.runners.model.Statement zipWithPublisherNull;
+
+            public org.junit.runners.model.Statement zipWithCombinerReturnsNull;
+
+            public org.junit.runners.model.Statement asyncSubjectOnNextNull;
+
+            public org.junit.runners.model.Statement asyncSubjectOnErrorNull;
+
+            public org.junit.runners.model.Statement behaviorSubjectOnNextNull;
+
+            public org.junit.runners.model.Statement behaviorSubjectOnErrorNull;
+
+            public org.junit.runners.model.Statement publishSubjectOnNextNull;
+
+            public org.junit.runners.model.Statement publishSubjectOnErrorNull;
+
+            public org.junit.runners.model.Statement replaycSubjectOnNextNull;
+
+            public org.junit.runners.model.Statement replaySubjectOnErrorNull;
+
+            public org.junit.runners.model.Statement serializedcSubjectOnNextNull;
+
+            public org.junit.runners.model.Statement serializedSubjectOnErrorNull;
+
+            public org.junit.runners.model.Statement combineLatestDelayErrorIterableFunctionReturnsNull;
+
+            public org.junit.runners.model.Statement combineLatestDelayErrorIterableIteratorNull;
+
+            public org.junit.runners.model.Statement combineLatestDelayErrorIterableOneIsNull;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.ambVarargsOneIsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::ambVarargsOneIsNull, java.lang.NullPointerException.class), "ambVarargsOneIsNull", this);
+            this.payloads.ambIterableIteratorNull = _ClassStatement.forPayload(FlowableNullTests::ambIterableIteratorNull, "ambIterableIteratorNull", this);
+            this.payloads.ambIterableOneIsNull = _ClassStatement.forPayload(FlowableNullTests::ambIterableOneIsNull, "ambIterableOneIsNull", this);
+            this.payloads.combineLatestIterableIteratorNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::combineLatestIterableIteratorNull, java.lang.NullPointerException.class), "combineLatestIterableIteratorNull", this);
+            this.payloads.combineLatestIterableOneIsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::combineLatestIterableOneIsNull, java.lang.NullPointerException.class), "combineLatestIterableOneIsNull", this);
+            this.payloads.combineLatestIterableFunctionReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::combineLatestIterableFunctionReturnsNull, java.lang.NullPointerException.class), "combineLatestIterableFunctionReturnsNull", this);
+            this.payloads.concatIterableIteratorNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::concatIterableIteratorNull, java.lang.NullPointerException.class), "concatIterableIteratorNull", this);
+            this.payloads.concatIterableOneIsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::concatIterableOneIsNull, java.lang.NullPointerException.class), "concatIterableOneIsNull", this);
+            this.payloads.concatArrayOneIsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::concatArrayOneIsNull, java.lang.NullPointerException.class), "concatArrayOneIsNull", this);
+            this.payloads.deferFunctionReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::deferFunctionReturnsNull, java.lang.NullPointerException.class), "deferFunctionReturnsNull", this);
+            this.payloads.errorFunctionReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::errorFunctionReturnsNull, java.lang.NullPointerException.class), "errorFunctionReturnsNull", this);
+            this.payloads.fromArrayOneIsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::fromArrayOneIsNull, java.lang.NullPointerException.class), "fromArrayOneIsNull", this);
+            this.payloads.fromCallableReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::fromCallableReturnsNull, java.lang.NullPointerException.class), "fromCallableReturnsNull", this);
+            this.payloads.fromFutureReturnsNull = _ClassStatement.forPayload(FlowableNullTests::fromFutureReturnsNull, "fromFutureReturnsNull", this);
+            this.payloads.fromFutureTimedReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::fromFutureTimedReturnsNull, java.lang.NullPointerException.class), "fromFutureTimedReturnsNull", this);
+            this.payloads.fromIterableIteratorNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::fromIterableIteratorNull, java.lang.NullPointerException.class), "fromIterableIteratorNull", this);
+            this.payloads.fromIterableValueNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::fromIterableValueNull, java.lang.NullPointerException.class), "fromIterableValueNull", this);
+            this.payloads.generateConsumerEmitsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::generateConsumerEmitsNull, java.lang.NullPointerException.class), "generateConsumerEmitsNull", this);
+            this.payloads.generateStateConsumerInitialStateNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::generateStateConsumerInitialStateNull, java.lang.NullPointerException.class), "generateStateConsumerInitialStateNull", this);
+            this.payloads.generateStateFunctionInitialStateNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::generateStateFunctionInitialStateNull, java.lang.NullPointerException.class), "generateStateFunctionInitialStateNull", this);
+            this.payloads.generateStateConsumerNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::generateStateConsumerNull, java.lang.NullPointerException.class), "generateStateConsumerNull", this);
+            this.payloads.generateConsumerStateNullAllowed = _ClassStatement.forPayload(FlowableNullTests::generateConsumerStateNullAllowed, "generateConsumerStateNullAllowed", this);
+            this.payloads.generateFunctionStateNullAllowed = _ClassStatement.forPayload(FlowableNullTests::generateFunctionStateNullAllowed, "generateFunctionStateNullAllowed", this);
+            this.payloads.justNull = _ClassStatement.forPayload(FlowableNullTests::justNull, "justNull", this);
+            this.payloads.mergeIterableIteratorNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::mergeIterableIteratorNull, java.lang.NullPointerException.class), "mergeIterableIteratorNull", this);
+            this.payloads.mergeIterableOneIsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::mergeIterableOneIsNull, java.lang.NullPointerException.class), "mergeIterableOneIsNull", this);
+            this.payloads.mergeArrayOneIsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::mergeArrayOneIsNull, java.lang.NullPointerException.class), "mergeArrayOneIsNull", this);
+            this.payloads.mergeDelayErrorIterableIteratorNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::mergeDelayErrorIterableIteratorNull, java.lang.NullPointerException.class), "mergeDelayErrorIterableIteratorNull", this);
+            this.payloads.mergeDelayErrorIterableOneIsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::mergeDelayErrorIterableOneIsNull, java.lang.NullPointerException.class), "mergeDelayErrorIterableOneIsNull", this);
+            this.payloads.mergeDelayErrorArrayOneIsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::mergeDelayErrorArrayOneIsNull, java.lang.NullPointerException.class), "mergeDelayErrorArrayOneIsNull", this);
+            this.payloads.usingFlowableSupplierReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::usingFlowableSupplierReturnsNull, java.lang.NullPointerException.class), "usingFlowableSupplierReturnsNull", this);
+            this.payloads.zipIterableIteratorNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::zipIterableIteratorNull, java.lang.NullPointerException.class), "zipIterableIteratorNull", this);
+            this.payloads.zipIterableFunctionReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::zipIterableFunctionReturnsNull, java.lang.NullPointerException.class), "zipIterableFunctionReturnsNull", this);
+            this.payloads.zipIterable2Null = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::zipIterable2Null, java.lang.NullPointerException.class), "zipIterable2Null", this);
+            this.payloads.zipIterable2IteratorNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::zipIterable2IteratorNull, java.lang.NullPointerException.class), "zipIterable2IteratorNull", this);
+            this.payloads.zipIterable2FunctionReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::zipIterable2FunctionReturnsNull, java.lang.NullPointerException.class), "zipIterable2FunctionReturnsNull", this);
+            this.payloads.bufferSupplierReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::bufferSupplierReturnsNull, java.lang.NullPointerException.class), "bufferSupplierReturnsNull", this);
+            this.payloads.bufferTimedSupplierReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::bufferTimedSupplierReturnsNull, java.lang.NullPointerException.class), "bufferTimedSupplierReturnsNull", this);
+            this.payloads.bufferOpenCloseCloseReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::bufferOpenCloseCloseReturnsNull, java.lang.NullPointerException.class), "bufferOpenCloseCloseReturnsNull", this);
+            this.payloads.bufferBoundarySupplierReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::bufferBoundarySupplierReturnsNull, java.lang.NullPointerException.class), "bufferBoundarySupplierReturnsNull", this);
+            this.payloads.collectInitialSupplierReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::collectInitialSupplierReturnsNull, java.lang.NullPointerException.class), "collectInitialSupplierReturnsNull", this);
+            this.payloads.concatMapReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::concatMapReturnsNull, java.lang.NullPointerException.class), "concatMapReturnsNull", this);
+            this.payloads.concatMapIterableReturnNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::concatMapIterableReturnNull, java.lang.NullPointerException.class), "concatMapIterableReturnNull", this);
+            this.payloads.concatMapIterableIteratorNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::concatMapIterableIteratorNull, java.lang.NullPointerException.class), "concatMapIterableIteratorNull", this);
+            this.payloads.debounceFunctionReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::debounceFunctionReturnsNull, java.lang.NullPointerException.class), "debounceFunctionReturnsNull", this);
+            this.payloads.delayWithFunctionReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::delayWithFunctionReturnsNull, java.lang.NullPointerException.class), "delayWithFunctionReturnsNull", this);
+            this.payloads.delayBothItemSupplierReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::delayBothItemSupplierReturnsNull, java.lang.NullPointerException.class), "delayBothItemSupplierReturnsNull", this);
+            this.payloads.distinctSupplierReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::distinctSupplierReturnsNull, java.lang.NullPointerException.class), "distinctSupplierReturnsNull", this);
+            this.payloads.distinctFunctionReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::distinctFunctionReturnsNull, java.lang.NullPointerException.class), "distinctFunctionReturnsNull", this);
+            this.payloads.distinctUntilChangedFunctionReturnsNull = _ClassStatement.forPayload(FlowableNullTests::distinctUntilChangedFunctionReturnsNull, "distinctUntilChangedFunctionReturnsNull", this);
+            this.payloads.flatMapFunctionReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::flatMapFunctionReturnsNull, java.lang.NullPointerException.class), "flatMapFunctionReturnsNull", this);
+            this.payloads.flatMapNotificationOnNextReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::flatMapNotificationOnNextReturnsNull, java.lang.NullPointerException.class), "flatMapNotificationOnNextReturnsNull", this);
+            this.payloads.flatMapNotificationOnCompleteReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::flatMapNotificationOnCompleteReturnsNull, java.lang.NullPointerException.class), "flatMapNotificationOnCompleteReturnsNull", this);
+            this.payloads.flatMapCombinerMapperReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::flatMapCombinerMapperReturnsNull, java.lang.NullPointerException.class), "flatMapCombinerMapperReturnsNull", this);
+            this.payloads.flatMapCombinerCombinerReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::flatMapCombinerCombinerReturnsNull, java.lang.NullPointerException.class), "flatMapCombinerCombinerReturnsNull", this);
+            this.payloads.flatMapIterableMapperReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::flatMapIterableMapperReturnsNull, java.lang.NullPointerException.class), "flatMapIterableMapperReturnsNull", this);
+            this.payloads.flatMapIterableMapperIteratorNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::flatMapIterableMapperIteratorNull, java.lang.NullPointerException.class), "flatMapIterableMapperIteratorNull", this);
+            this.payloads.flatMapIterableMapperIterableOneNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::flatMapIterableMapperIterableOneNull, java.lang.NullPointerException.class), "flatMapIterableMapperIterableOneNull", this);
+            this.payloads.flatMapIterableCombinerReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::flatMapIterableCombinerReturnsNull, java.lang.NullPointerException.class), "flatMapIterableCombinerReturnsNull", this);
+            this.payloads.groupByValueReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::groupByValueReturnsNull, java.lang.NullPointerException.class), "groupByValueReturnsNull", this);
+            this.payloads.liftReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::liftReturnsNull, java.lang.NullPointerException.class), "liftReturnsNull", this);
+            this.payloads.mapReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::mapReturnsNull, java.lang.NullPointerException.class), "mapReturnsNull", this);
+            this.payloads.onErrorResumeNextFunctionReturnsNull = _ClassStatement.forPayload(FlowableNullTests::onErrorResumeNextFunctionReturnsNull, "onErrorResumeNextFunctionReturnsNull", this);
+            this.payloads.onErrorReturnFunctionReturnsNull = _ClassStatement.forPayload(FlowableNullTests::onErrorReturnFunctionReturnsNull, "onErrorReturnFunctionReturnsNull", this);
+            this.payloads.publishFunctionReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::publishFunctionReturnsNull, java.lang.NullPointerException.class), "publishFunctionReturnsNull", this);
+            this.payloads.reduceFunctionReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::reduceFunctionReturnsNull, java.lang.NullPointerException.class), "reduceFunctionReturnsNull", this);
+            this.payloads.reduceSeedFunctionReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::reduceSeedFunctionReturnsNull, java.lang.NullPointerException.class), "reduceSeedFunctionReturnsNull", this);
+            this.payloads.reduceWithSeedNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::reduceWithSeedNull, java.lang.NullPointerException.class), "reduceWithSeedNull", this);
+            this.payloads.reduceWithSeedReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::reduceWithSeedReturnsNull, java.lang.NullPointerException.class), "reduceWithSeedReturnsNull", this);
+            this.payloads.repeatWhenFunctionReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::repeatWhenFunctionReturnsNull, java.lang.NullPointerException.class), "repeatWhenFunctionReturnsNull", this);
+            this.payloads.replaySelectorNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::replaySelectorNull, java.lang.NullPointerException.class), "replaySelectorNull", this);
+            this.payloads.replaySelectorReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::replaySelectorReturnsNull, java.lang.NullPointerException.class), "replaySelectorReturnsNull", this);
+            this.payloads.replayBoundedSelectorReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::replayBoundedSelectorReturnsNull, java.lang.NullPointerException.class), "replayBoundedSelectorReturnsNull", this);
+            this.payloads.replayTimeBoundedSelectorReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::replayTimeBoundedSelectorReturnsNull, java.lang.NullPointerException.class), "replayTimeBoundedSelectorReturnsNull", this);
+            this.payloads.retryWhenFunctionReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::retryWhenFunctionReturnsNull, java.lang.NullPointerException.class), "retryWhenFunctionReturnsNull", this);
+            this.payloads.scanFunctionReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::scanFunctionReturnsNull, java.lang.NullPointerException.class), "scanFunctionReturnsNull", this);
+            this.payloads.scanSeedNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::scanSeedNull, java.lang.NullPointerException.class), "scanSeedNull", this);
+            this.payloads.scanSeedFunctionReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::scanSeedFunctionReturnsNull, java.lang.NullPointerException.class), "scanSeedFunctionReturnsNull", this);
+            this.payloads.scanSeedSupplierReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::scanSeedSupplierReturnsNull, java.lang.NullPointerException.class), "scanSeedSupplierReturnsNull", this);
+            this.payloads.scanSeedSupplierFunctionReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::scanSeedSupplierFunctionReturnsNull, java.lang.NullPointerException.class), "scanSeedSupplierFunctionReturnsNull", this);
+            this.payloads.startWithIterableIteratorNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::startWithIterableIteratorNull, java.lang.NullPointerException.class), "startWithIterableIteratorNull", this);
+            this.payloads.startWithIterableOneNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::startWithIterableOneNull, java.lang.NullPointerException.class), "startWithIterableOneNull", this);
+            this.payloads.startWithArrayOneNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::startWithArrayOneNull, java.lang.NullPointerException.class), "startWithArrayOneNull", this);
+            this.payloads.switchMapFunctionReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::switchMapFunctionReturnsNull, java.lang.NullPointerException.class), "switchMapFunctionReturnsNull", this);
+            this.payloads.timeoutSelectorReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::timeoutSelectorReturnsNull, java.lang.NullPointerException.class), "timeoutSelectorReturnsNull", this);
+            this.payloads.timeoutSelectorOtherNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::timeoutSelectorOtherNull, java.lang.NullPointerException.class), "timeoutSelectorOtherNull", this);
+            this.payloads.timeoutFirstItemReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::timeoutFirstItemReturnsNull, java.lang.NullPointerException.class), "timeoutFirstItemReturnsNull", this);
+            this.payloads.timestampUnitNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::timestampUnitNull, java.lang.NullPointerException.class), "timestampUnitNull", this);
+            this.payloads.timestampSchedulerNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::timestampSchedulerNull, java.lang.NullPointerException.class), "timestampSchedulerNull", this);
+            this.payloads.toListSupplierReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::toListSupplierReturnsNull, java.lang.NullPointerException.class), "toListSupplierReturnsNull", this);
+            this.payloads.toListSupplierReturnsNullSingle = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::toListSupplierReturnsNullSingle, java.lang.NullPointerException.class), "toListSupplierReturnsNullSingle", this);
+            this.payloads.toMapValueSelectorReturnsNull = _ClassStatement.forPayload(FlowableNullTests::toMapValueSelectorReturnsNull, "toMapValueSelectorReturnsNull", this);
+            this.payloads.toMapMapSupplierReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::toMapMapSupplierReturnsNull, java.lang.NullPointerException.class), "toMapMapSupplierReturnsNull", this);
+            this.payloads.toMultiMapValueSelectorReturnsNullAllowed = _ClassStatement.forPayload(FlowableNullTests::toMultiMapValueSelectorReturnsNullAllowed, "toMultiMapValueSelectorReturnsNullAllowed", this);
+            this.payloads.toMultimapMapSupplierReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::toMultimapMapSupplierReturnsNull, java.lang.NullPointerException.class), "toMultimapMapSupplierReturnsNull", this);
+            this.payloads.toMultimapMapCollectionSupplierReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::toMultimapMapCollectionSupplierReturnsNull, java.lang.NullPointerException.class), "toMultimapMapCollectionSupplierReturnsNull", this);
+            this.payloads.windowOpenCloseOpenNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::windowOpenCloseOpenNull, java.lang.NullPointerException.class), "windowOpenCloseOpenNull", this);
+            this.payloads.windowOpenCloseCloseReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::windowOpenCloseCloseReturnsNull, java.lang.NullPointerException.class), "windowOpenCloseCloseReturnsNull", this);
+            this.payloads.withLatestFromOtherNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::withLatestFromOtherNull, java.lang.NullPointerException.class), "withLatestFromOtherNull", this);
+            this.payloads.withLatestFromCombinerReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::withLatestFromCombinerReturnsNull, java.lang.NullPointerException.class), "withLatestFromCombinerReturnsNull", this);
+            this.payloads.zipWithIterableNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::zipWithIterableNull, java.lang.NullPointerException.class), "zipWithIterableNull", this);
+            this.payloads.zipWithIterableCombinerReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::zipWithIterableCombinerReturnsNull, java.lang.NullPointerException.class), "zipWithIterableCombinerReturnsNull", this);
+            this.payloads.zipWithIterableIteratorNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::zipWithIterableIteratorNull, java.lang.NullPointerException.class), "zipWithIterableIteratorNull", this);
+            this.payloads.zipWithIterableOneIsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::zipWithIterableOneIsNull, java.lang.NullPointerException.class), "zipWithIterableOneIsNull", this);
+            this.payloads.zipWithPublisherNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::zipWithPublisherNull, java.lang.NullPointerException.class), "zipWithPublisherNull", this);
+            this.payloads.zipWithCombinerReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::zipWithCombinerReturnsNull, java.lang.NullPointerException.class), "zipWithCombinerReturnsNull", this);
+            this.payloads.asyncSubjectOnNextNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::asyncSubjectOnNextNull, java.lang.NullPointerException.class), "asyncSubjectOnNextNull", this);
+            this.payloads.asyncSubjectOnErrorNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::asyncSubjectOnErrorNull, java.lang.NullPointerException.class), "asyncSubjectOnErrorNull", this);
+            this.payloads.behaviorSubjectOnNextNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::behaviorSubjectOnNextNull, java.lang.NullPointerException.class), "behaviorSubjectOnNextNull", this);
+            this.payloads.behaviorSubjectOnErrorNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::behaviorSubjectOnErrorNull, java.lang.NullPointerException.class), "behaviorSubjectOnErrorNull", this);
+            this.payloads.publishSubjectOnNextNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::publishSubjectOnNextNull, java.lang.NullPointerException.class), "publishSubjectOnNextNull", this);
+            this.payloads.publishSubjectOnErrorNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::publishSubjectOnErrorNull, java.lang.NullPointerException.class), "publishSubjectOnErrorNull", this);
+            this.payloads.replaycSubjectOnNextNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::replaycSubjectOnNextNull, java.lang.NullPointerException.class), "replaycSubjectOnNextNull", this);
+            this.payloads.replaySubjectOnErrorNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::replaySubjectOnErrorNull, java.lang.NullPointerException.class), "replaySubjectOnErrorNull", this);
+            this.payloads.serializedcSubjectOnNextNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::serializedcSubjectOnNextNull, java.lang.NullPointerException.class), "serializedcSubjectOnNextNull", this);
+            this.payloads.serializedSubjectOnErrorNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::serializedSubjectOnErrorNull, java.lang.NullPointerException.class), "serializedSubjectOnErrorNull", this);
+            this.payloads.combineLatestDelayErrorIterableFunctionReturnsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::combineLatestDelayErrorIterableFunctionReturnsNull, java.lang.NullPointerException.class), "combineLatestDelayErrorIterableFunctionReturnsNull", this);
+            this.payloads.combineLatestDelayErrorIterableIteratorNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::combineLatestDelayErrorIterableIteratorNull, java.lang.NullPointerException.class), "combineLatestDelayErrorIterableIteratorNull", this);
+            this.payloads.combineLatestDelayErrorIterableOneIsNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNullTests::combineLatestDelayErrorIterableOneIsNull, java.lang.NullPointerException.class), "combineLatestDelayErrorIterableOneIsNull", this);
         }
     }
 }

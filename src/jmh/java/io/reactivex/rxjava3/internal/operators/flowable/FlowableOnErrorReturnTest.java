@@ -250,72 +250,149 @@ public class FlowableOnErrorReturnTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableOnErrorReturnTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_resumeNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::resumeNext, this.description("resumeNext"));
+            this.payloads.resumeNext.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_functionThrowsError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::functionThrowsError, this.description("functionThrowsError"));
+            this.payloads.functionThrowsError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapResumeAsyncNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapResumeAsyncNext, this.description("mapResumeAsyncNext"));
+            this.payloads.mapResumeAsyncNext.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressure, this.description("backpressure"));
+            this.payloads.backpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalBackpressure, this.description("normalBackpressure"));
+            this.payloads.normalBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_returnItem() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::returnItem, this.description("returnItem"));
+            this.payloads.returnItem.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnError, this.description("doubleOnError"));
+            this.payloads.doubleOnError.evaluate();
         }
 
-        private FlowableOnErrorReturnTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableOnErrorReturnTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnErrorReturnTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnErrorReturnTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableOnErrorReturnTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnErrorReturnTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnErrorReturnTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableOnErrorReturnTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnErrorReturnTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableOnErrorReturnTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableOnErrorReturnTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement resumeNext;
+
+            public org.junit.runners.model.Statement functionThrowsError;
+
+            public org.junit.runners.model.Statement mapResumeAsyncNext;
+
+            public org.junit.runners.model.Statement backpressure;
+
+            public org.junit.runners.model.Statement normalBackpressure;
+
+            public org.junit.runners.model.Statement returnItem;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement doubleOnError;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.resumeNext = _ClassStatement.forPayload(FlowableOnErrorReturnTest::resumeNext, "resumeNext", this);
+            this.payloads.functionThrowsError = _ClassStatement.forPayload(FlowableOnErrorReturnTest::functionThrowsError, "functionThrowsError", this);
+            this.payloads.mapResumeAsyncNext = _ClassStatement.forPayload(FlowableOnErrorReturnTest::mapResumeAsyncNext, "mapResumeAsyncNext", this);
+            this.payloads.backpressure = _ClassStatement.forPayload(FlowableOnErrorReturnTest::backpressure, "backpressure", this);
+            this.payloads.normalBackpressure = _ClassStatement.forPayload(FlowableOnErrorReturnTest::normalBackpressure, "normalBackpressure", this);
+            this.payloads.returnItem = _ClassStatement.forPayload(FlowableOnErrorReturnTest::returnItem, "returnItem", this);
+            this.payloads.dispose = _ClassStatement.forPayload(FlowableOnErrorReturnTest::dispose, "dispose", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableOnErrorReturnTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.doubleOnError = _ClassStatement.forPayload(FlowableOnErrorReturnTest::doubleOnError, "doubleOnError", this);
         }
     }
 }

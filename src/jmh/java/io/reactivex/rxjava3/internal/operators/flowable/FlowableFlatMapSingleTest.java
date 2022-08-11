@@ -466,216 +466,341 @@ public class FlowableFlatMapSingleTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableFlatMapSingleTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normal, this.description("normal"));
+            this.payloads.normal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalDelayError, this.description("normalDelayError"));
+            this.payloads.normalDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalAsync, this.description("normalAsync"));
+            this.payloads.normalAsync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalAsyncMaxConcurrency() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalAsyncMaxConcurrency, this.description("normalAsyncMaxConcurrency"));
+            this.payloads.normalAsyncMaxConcurrency.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalAsyncMaxConcurrency1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalAsyncMaxConcurrency1, this.description("normalAsyncMaxConcurrency1"));
+            this.payloads.normalAsyncMaxConcurrency1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperThrowsFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperThrowsFlowable, this.description("mapperThrowsFlowable"));
+            this.payloads.mapperThrowsFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperReturnsNullFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperReturnsNullFlowable, this.description("mapperReturnsNullFlowable"));
+            this.payloads.mapperReturnsNullFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalDelayErrorAll() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalDelayErrorAll, this.description("normalDelayErrorAll"));
+            this.payloads.normalDelayErrorAll.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalBackpressured() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalBackpressured, this.description("normalBackpressured"));
+            this.payloads.normalBackpressured.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalMaxConcurrent1Backpressured() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalMaxConcurrent1Backpressured, this.description("normalMaxConcurrent1Backpressured"));
+            this.payloads.normalMaxConcurrent1Backpressured.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalMaxConcurrent2Backpressured() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalMaxConcurrent2Backpressured, this.description("normalMaxConcurrent2Backpressured"));
+            this.payloads.normalMaxConcurrent2Backpressured.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeAsync, this.description("takeAsync"));
+            this.payloads.takeAsync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_take() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::take, this.description("take"));
+            this.payloads.take.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_middleError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::middleError, this.description("middleError"));
+            this.payloads.middleError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncFlatten() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncFlatten, this.description("asyncFlatten"));
+            this.payloads.asyncFlatten.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_successError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::successError, this.description("successError"));
+            this.payloads.successError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposed, this.description("disposed"));
+            this.payloads.disposed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSource, this.description("badSource"));
+            this.payloads.badSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badInnerSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badInnerSource, this.description("badInnerSource"));
+            this.payloads.badInnerSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emissionQueueTrigger() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emissionQueueTrigger, this.description("emissionQueueTrigger"));
+            this.payloads.emissionQueueTrigger.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeInner() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeInner, this.description("disposeInner"));
+            this.payloads.disposeInner.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerSuccessCompletesAfterMain() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerSuccessCompletesAfterMain, this.description("innerSuccessCompletesAfterMain"));
+            this.payloads.innerSuccessCompletesAfterMain.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressure, this.description("backpressure"));
+            this.payloads.backpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorDelayed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorDelayed, this.description("errorDelayed"));
+            this.payloads.errorDelayed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestCancelRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestCancelRace, this.description("requestCancelRace"));
+            this.payloads.requestCancelRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncFlattenErrorMaxConcurrency() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncFlattenErrorMaxConcurrency, this.description("asyncFlattenErrorMaxConcurrency"));
+            this.payloads.asyncFlattenErrorMaxConcurrency.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_undeliverableUponCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::undeliverableUponCancel, this.description("undeliverableUponCancel"));
+            this.payloads.undeliverableUponCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_undeliverableUponCancelDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::undeliverableUponCancelDelayError, this.description("undeliverableUponCancelDelayError"));
+            this.payloads.undeliverableUponCancelDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequest, this.description("badRequest"));
+            this.payloads.badRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_successRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::successRace, this.description("successRace"));
+            this.payloads.successRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_successShortcut() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::successShortcut, this.description("successShortcut"));
+            this.payloads.successShortcut.evaluate();
         }
 
-        private FlowableFlatMapSingleTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableFlatMapSingleTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFlatMapSingleTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFlatMapSingleTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableFlatMapSingleTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFlatMapSingleTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFlatMapSingleTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableFlatMapSingleTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFlatMapSingleTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableFlatMapSingleTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableFlatMapSingleTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement normal;
+
+            public org.junit.runners.model.Statement normalDelayError;
+
+            public org.junit.runners.model.Statement normalAsync;
+
+            public org.junit.runners.model.Statement normalAsyncMaxConcurrency;
+
+            public org.junit.runners.model.Statement normalAsyncMaxConcurrency1;
+
+            public org.junit.runners.model.Statement mapperThrowsFlowable;
+
+            public org.junit.runners.model.Statement mapperReturnsNullFlowable;
+
+            public org.junit.runners.model.Statement normalDelayErrorAll;
+
+            public org.junit.runners.model.Statement normalBackpressured;
+
+            public org.junit.runners.model.Statement normalMaxConcurrent1Backpressured;
+
+            public org.junit.runners.model.Statement normalMaxConcurrent2Backpressured;
+
+            public org.junit.runners.model.Statement takeAsync;
+
+            public org.junit.runners.model.Statement take;
+
+            public org.junit.runners.model.Statement middleError;
+
+            public org.junit.runners.model.Statement asyncFlatten;
+
+            public org.junit.runners.model.Statement successError;
+
+            public org.junit.runners.model.Statement disposed;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement badSource;
+
+            public org.junit.runners.model.Statement badInnerSource;
+
+            public org.junit.runners.model.Statement emissionQueueTrigger;
+
+            public org.junit.runners.model.Statement disposeInner;
+
+            public org.junit.runners.model.Statement innerSuccessCompletesAfterMain;
+
+            public org.junit.runners.model.Statement backpressure;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement errorDelayed;
+
+            public org.junit.runners.model.Statement requestCancelRace;
+
+            public org.junit.runners.model.Statement asyncFlattenErrorMaxConcurrency;
+
+            public org.junit.runners.model.Statement undeliverableUponCancel;
+
+            public org.junit.runners.model.Statement undeliverableUponCancelDelayError;
+
+            public org.junit.runners.model.Statement badRequest;
+
+            public org.junit.runners.model.Statement successRace;
+
+            public org.junit.runners.model.Statement successShortcut;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.normal = _ClassStatement.forPayload(FlowableFlatMapSingleTest::normal, "normal", this);
+            this.payloads.normalDelayError = _ClassStatement.forPayload(FlowableFlatMapSingleTest::normalDelayError, "normalDelayError", this);
+            this.payloads.normalAsync = _ClassStatement.forPayload(FlowableFlatMapSingleTest::normalAsync, "normalAsync", this);
+            this.payloads.normalAsyncMaxConcurrency = _ClassStatement.forPayload(FlowableFlatMapSingleTest::normalAsyncMaxConcurrency, "normalAsyncMaxConcurrency", this);
+            this.payloads.normalAsyncMaxConcurrency1 = _ClassStatement.forPayload(FlowableFlatMapSingleTest::normalAsyncMaxConcurrency1, "normalAsyncMaxConcurrency1", this);
+            this.payloads.mapperThrowsFlowable = _ClassStatement.forPayload(FlowableFlatMapSingleTest::mapperThrowsFlowable, "mapperThrowsFlowable", this);
+            this.payloads.mapperReturnsNullFlowable = _ClassStatement.forPayload(FlowableFlatMapSingleTest::mapperReturnsNullFlowable, "mapperReturnsNullFlowable", this);
+            this.payloads.normalDelayErrorAll = _ClassStatement.forPayload(FlowableFlatMapSingleTest::normalDelayErrorAll, "normalDelayErrorAll", this);
+            this.payloads.normalBackpressured = _ClassStatement.forPayload(FlowableFlatMapSingleTest::normalBackpressured, "normalBackpressured", this);
+            this.payloads.normalMaxConcurrent1Backpressured = _ClassStatement.forPayload(FlowableFlatMapSingleTest::normalMaxConcurrent1Backpressured, "normalMaxConcurrent1Backpressured", this);
+            this.payloads.normalMaxConcurrent2Backpressured = _ClassStatement.forPayload(FlowableFlatMapSingleTest::normalMaxConcurrent2Backpressured, "normalMaxConcurrent2Backpressured", this);
+            this.payloads.takeAsync = _ClassStatement.forPayload(FlowableFlatMapSingleTest::takeAsync, "takeAsync", this);
+            this.payloads.take = _ClassStatement.forPayload(FlowableFlatMapSingleTest::take, "take", this);
+            this.payloads.middleError = _ClassStatement.forPayload(FlowableFlatMapSingleTest::middleError, "middleError", this);
+            this.payloads.asyncFlatten = _ClassStatement.forPayload(FlowableFlatMapSingleTest::asyncFlatten, "asyncFlatten", this);
+            this.payloads.successError = _ClassStatement.forPayload(FlowableFlatMapSingleTest::successError, "successError", this);
+            this.payloads.disposed = _ClassStatement.forPayload(FlowableFlatMapSingleTest::disposed, "disposed", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableFlatMapSingleTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.badSource = _ClassStatement.forPayload(FlowableFlatMapSingleTest::badSource, "badSource", this);
+            this.payloads.badInnerSource = _ClassStatement.forPayload(FlowableFlatMapSingleTest::badInnerSource, "badInnerSource", this);
+            this.payloads.emissionQueueTrigger = _ClassStatement.forPayload(FlowableFlatMapSingleTest::emissionQueueTrigger, "emissionQueueTrigger", this);
+            this.payloads.disposeInner = _ClassStatement.forPayload(FlowableFlatMapSingleTest::disposeInner, "disposeInner", this);
+            this.payloads.innerSuccessCompletesAfterMain = _ClassStatement.forPayload(FlowableFlatMapSingleTest::innerSuccessCompletesAfterMain, "innerSuccessCompletesAfterMain", this);
+            this.payloads.backpressure = _ClassStatement.forPayload(FlowableFlatMapSingleTest::backpressure, "backpressure", this);
+            this.payloads.error = _ClassStatement.forPayload(FlowableFlatMapSingleTest::error, "error", this);
+            this.payloads.errorDelayed = _ClassStatement.forPayload(FlowableFlatMapSingleTest::errorDelayed, "errorDelayed", this);
+            this.payloads.requestCancelRace = _ClassStatement.forPayload(FlowableFlatMapSingleTest::requestCancelRace, "requestCancelRace", this);
+            this.payloads.asyncFlattenErrorMaxConcurrency = _ClassStatement.forPayload(FlowableFlatMapSingleTest::asyncFlattenErrorMaxConcurrency, "asyncFlattenErrorMaxConcurrency", this);
+            this.payloads.undeliverableUponCancel = _ClassStatement.forPayload(FlowableFlatMapSingleTest::undeliverableUponCancel, "undeliverableUponCancel", this);
+            this.payloads.undeliverableUponCancelDelayError = _ClassStatement.forPayload(FlowableFlatMapSingleTest::undeliverableUponCancelDelayError, "undeliverableUponCancelDelayError", this);
+            this.payloads.badRequest = _ClassStatement.forPayload(FlowableFlatMapSingleTest::badRequest, "badRequest", this);
+            this.payloads.successRace = _ClassStatement.forPayload(FlowableFlatMapSingleTest::successRace, "successRace", this);
+            this.payloads.successShortcut = _ClassStatement.forPayload(FlowableFlatMapSingleTest::successShortcut, "successShortcut", this);
         }
     }
 }

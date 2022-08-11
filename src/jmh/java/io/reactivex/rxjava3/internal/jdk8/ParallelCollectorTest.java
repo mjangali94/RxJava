@@ -234,90 +234,173 @@ public class ParallelCollectorTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ParallelCollectorTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_basic() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::basic, this.description("basic"));
+            this.payloads.basic.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_empty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::empty, this.description("empty"));
+            this.payloads.empty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectorSupplierCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectorSupplierCrash, this.description("collectorSupplierCrash"));
+            this.payloads.collectorSupplierCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectorAccumulatorCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectorAccumulatorCrash, this.description("collectorAccumulatorCrash"));
+            this.payloads.collectorAccumulatorCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectorCombinerCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectorCombinerCrash, this.description("collectorCombinerCrash"));
+            this.payloads.collectorCombinerCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_collectorFinisherCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::collectorFinisherCrash, this.description("collectorFinisherCrash"));
+            this.payloads.collectorFinisherCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_async() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::async, this.description("async"));
+            this.payloads.async.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncHidden() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncHidden, this.description("asyncHidden"));
+            this.payloads.asyncHidden.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleError, this.description("doubleError"));
+            this.payloads.doubleError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncSum() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncSum, this.description("asyncSum"));
+            this.payloads.asyncSum.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncSumLong() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncSumLong, this.description("asyncSumLong"));
+            this.payloads.asyncSumLong.evaluate();
         }
 
-        private ParallelCollectorTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ParallelCollectorTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ParallelCollectorTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ParallelCollectorTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ParallelCollectorTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ParallelCollectorTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ParallelCollectorTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ParallelCollectorTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ParallelCollectorTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ParallelCollectorTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ParallelCollectorTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement basic;
+
+            public org.junit.runners.model.Statement empty;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement collectorSupplierCrash;
+
+            public org.junit.runners.model.Statement collectorAccumulatorCrash;
+
+            public org.junit.runners.model.Statement collectorCombinerCrash;
+
+            public org.junit.runners.model.Statement collectorFinisherCrash;
+
+            public org.junit.runners.model.Statement async;
+
+            public org.junit.runners.model.Statement asyncHidden;
+
+            public org.junit.runners.model.Statement doubleError;
+
+            public org.junit.runners.model.Statement asyncSum;
+
+            public org.junit.runners.model.Statement asyncSumLong;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.basic = _ClassStatement.forPayload(ParallelCollectorTest::basic, "basic", this);
+            this.payloads.empty = _ClassStatement.forPayload(ParallelCollectorTest::empty, "empty", this);
+            this.payloads.error = _ClassStatement.forPayload(ParallelCollectorTest::error, "error", this);
+            this.payloads.collectorSupplierCrash = _ClassStatement.forPayload(ParallelCollectorTest::collectorSupplierCrash, "collectorSupplierCrash", this);
+            this.payloads.collectorAccumulatorCrash = _ClassStatement.forPayload(ParallelCollectorTest::collectorAccumulatorCrash, "collectorAccumulatorCrash", this);
+            this.payloads.collectorCombinerCrash = _ClassStatement.forPayload(ParallelCollectorTest::collectorCombinerCrash, "collectorCombinerCrash", this);
+            this.payloads.collectorFinisherCrash = _ClassStatement.forPayload(ParallelCollectorTest::collectorFinisherCrash, "collectorFinisherCrash", this);
+            this.payloads.async = _ClassStatement.forPayload(ParallelCollectorTest::async, "async", this);
+            this.payloads.asyncHidden = _ClassStatement.forPayload(ParallelCollectorTest::asyncHidden, "asyncHidden", this);
+            this.payloads.doubleError = _ClassStatement.forPayload(ParallelCollectorTest::doubleError, "doubleError", this);
+            this.payloads.asyncSum = _ClassStatement.forPayload(ParallelCollectorTest::asyncSum, "asyncSum", this);
+            this.payloads.asyncSumLong = _ClassStatement.forPayload(ParallelCollectorTest::asyncSumLong, "asyncSumLong", this);
         }
     }
 }

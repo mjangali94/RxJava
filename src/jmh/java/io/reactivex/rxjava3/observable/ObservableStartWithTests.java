@@ -55,44 +55,4 @@ public class ObservableStartWithTests extends RxJavaTest {
     public void startWithEmpty() {
         Observable.just(1).startWithArray().test().assertResult(1);
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_startWith1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::startWith1, this.description("startWith1"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_startWithIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::startWithIterable, this.description("startWithIterable"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_startWithObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::startWithObservable, this.description("startWithObservable"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_startWithEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::startWithEmpty, this.description("startWithEmpty"));
-        }
-
-        private ObservableStartWithTests implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableStartWithTests();
-        }
-
-        @java.lang.Override
-        public ObservableStartWithTests implementation() {
-            return this.implementation;
-        }
-    }
 }

@@ -210,90 +210,173 @@ public class DisposableTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private DisposableTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribeOnlyOnce() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribeOnlyOnce, this.description("unsubscribeOnlyOnce"));
+            this.payloads.unsubscribeOnlyOnce.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_empty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::empty, this.description("empty"));
+            this.payloads.empty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribed, this.description("unsubscribed"));
+            this.payloads.unsubscribed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromAction() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromAction, this.description("fromAction"));
+            this.payloads.fromAction.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromActionThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromActionThrows, this.description("fromActionThrows"));
+            this.payloads.fromActionThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeRace, this.description("disposeRace"));
+            this.payloads.disposeRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromSubscriptionNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::fromSubscriptionNull, this.description("fromSubscriptionNull"), java.lang.NullPointerException.class);
+            this.payloads.fromSubscriptionNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromSubscription() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromSubscription, this.description("fromSubscription"));
+            this.payloads.fromSubscription.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_setOnceTwice() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::setOnceTwice, this.description("setOnceTwice"));
+            this.payloads.setOnceTwice.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromAutoCloseable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromAutoCloseable, this.description("fromAutoCloseable"));
+            this.payloads.fromAutoCloseable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromAutoCloseableThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromAutoCloseableThrows, this.description("fromAutoCloseableThrows"));
+            this.payloads.fromAutoCloseableThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toAutoCloseable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toAutoCloseable, this.description("toAutoCloseable"));
+            this.payloads.toAutoCloseable.evaluate();
         }
 
-        private DisposableTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new DisposableTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<DisposableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<DisposableTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public DisposableTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<DisposableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<DisposableTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new DisposableTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<DisposableTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(DisposableTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(DisposableTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement unsubscribeOnlyOnce;
+
+            public org.junit.runners.model.Statement empty;
+
+            public org.junit.runners.model.Statement unsubscribed;
+
+            public org.junit.runners.model.Statement fromAction;
+
+            public org.junit.runners.model.Statement fromActionThrows;
+
+            public org.junit.runners.model.Statement disposeRace;
+
+            public org.junit.runners.model.Statement fromSubscriptionNull;
+
+            public org.junit.runners.model.Statement fromSubscription;
+
+            public org.junit.runners.model.Statement setOnceTwice;
+
+            public org.junit.runners.model.Statement fromAutoCloseable;
+
+            public org.junit.runners.model.Statement fromAutoCloseableThrows;
+
+            public org.junit.runners.model.Statement toAutoCloseable;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.unsubscribeOnlyOnce = _ClassStatement.forPayload(DisposableTest::unsubscribeOnlyOnce, "unsubscribeOnlyOnce", this);
+            this.payloads.empty = _ClassStatement.forPayload(DisposableTest::empty, "empty", this);
+            this.payloads.unsubscribed = _ClassStatement.forPayload(DisposableTest::unsubscribed, "unsubscribed", this);
+            this.payloads.fromAction = _ClassStatement.forPayload(DisposableTest::fromAction, "fromAction", this);
+            this.payloads.fromActionThrows = _ClassStatement.forPayload(DisposableTest::fromActionThrows, "fromActionThrows", this);
+            this.payloads.disposeRace = _ClassStatement.forPayload(DisposableTest::disposeRace, "disposeRace", this);
+            this.payloads.fromSubscriptionNull = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(DisposableTest::fromSubscriptionNull, java.lang.NullPointerException.class), "fromSubscriptionNull", this);
+            this.payloads.fromSubscription = _ClassStatement.forPayload(DisposableTest::fromSubscription, "fromSubscription", this);
+            this.payloads.setOnceTwice = _ClassStatement.forPayload(DisposableTest::setOnceTwice, "setOnceTwice", this);
+            this.payloads.fromAutoCloseable = _ClassStatement.forPayload(DisposableTest::fromAutoCloseable, "fromAutoCloseable", this);
+            this.payloads.fromAutoCloseableThrows = _ClassStatement.forPayload(DisposableTest::fromAutoCloseableThrows, "fromAutoCloseableThrows", this);
+            this.payloads.toAutoCloseable = _ClassStatement.forPayload(DisposableTest::toAutoCloseable, "toAutoCloseable", this);
         }
     }
 }

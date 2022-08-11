@@ -103,96 +103,127 @@ public class FlowableStartWithTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableStartWithTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_justCompletableComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::justCompletableComplete, this.description("justCompletableComplete"));
+            this.runBenchmark(this.payloads.justCompletableComplete);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyCompletableComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyCompletableComplete, this.description("emptyCompletableComplete"));
+            this.runBenchmark(this.payloads.emptyCompletableComplete);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_runCompletableError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::runCompletableError, this.description("runCompletableError"));
+            this.runBenchmark(this.payloads.runCompletableError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_justSingleJust() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::justSingleJust, this.description("justSingleJust"));
+            this.runBenchmark(this.payloads.justSingleJust);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptySingleJust() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptySingleJust, this.description("emptySingleJust"));
+            this.runBenchmark(this.payloads.emptySingleJust);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_runSingleError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::runSingleError, this.description("runSingleError"));
+            this.runBenchmark(this.payloads.runSingleError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_justMaybeJust() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::justMaybeJust, this.description("justMaybeJust"));
+            this.runBenchmark(this.payloads.justMaybeJust);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyMaybeJust() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyMaybeJust, this.description("emptyMaybeJust"));
+            this.runBenchmark(this.payloads.emptyMaybeJust);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_runMaybeError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::runMaybeError, this.description("runMaybeError"));
+            this.runBenchmark(this.payloads.runMaybeError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_justFlowableJust() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::justFlowableJust, this.description("justFlowableJust"));
+            this.runBenchmark(this.payloads.justFlowableJust);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyFlowableJust() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyFlowableJust, this.description("emptyFlowableJust"));
+            this.runBenchmark(this.payloads.emptyFlowableJust);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyFlowableEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyFlowableEmpty, this.description("emptyFlowableEmpty"));
+            this.runBenchmark(this.payloads.emptyFlowableEmpty);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_runFlowableError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::runFlowableError, this.description("runFlowableError"));
+            this.runBenchmark(this.payloads.runFlowableError);
         }
 
-        private FlowableStartWithTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableStartWithTest();
+        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableStartWithTest> payload) throws java.lang.Throwable {
+            this.instance = new FlowableStartWithTest();
+            payload.accept(this.instance);
         }
 
-        @java.lang.Override
-        public FlowableStartWithTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableStartWithTest> justCompletableComplete;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableStartWithTest> emptyCompletableComplete;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableStartWithTest> runCompletableError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableStartWithTest> justSingleJust;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableStartWithTest> emptySingleJust;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableStartWithTest> runSingleError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableStartWithTest> justMaybeJust;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableStartWithTest> emptyMaybeJust;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableStartWithTest> runMaybeError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableStartWithTest> justFlowableJust;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableStartWithTest> emptyFlowableJust;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableStartWithTest> emptyFlowableEmpty;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableStartWithTest> runFlowableError;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.justCompletableComplete = FlowableStartWithTest::justCompletableComplete;
+            this.payloads.emptyCompletableComplete = FlowableStartWithTest::emptyCompletableComplete;
+            this.payloads.runCompletableError = FlowableStartWithTest::runCompletableError;
+            this.payloads.justSingleJust = FlowableStartWithTest::justSingleJust;
+            this.payloads.emptySingleJust = FlowableStartWithTest::emptySingleJust;
+            this.payloads.runSingleError = FlowableStartWithTest::runSingleError;
+            this.payloads.justMaybeJust = FlowableStartWithTest::justMaybeJust;
+            this.payloads.emptyMaybeJust = FlowableStartWithTest::emptyMaybeJust;
+            this.payloads.runMaybeError = FlowableStartWithTest::runMaybeError;
+            this.payloads.justFlowableJust = FlowableStartWithTest::justFlowableJust;
+            this.payloads.emptyFlowableJust = FlowableStartWithTest::emptyFlowableJust;
+            this.payloads.emptyFlowableEmpty = FlowableStartWithTest::emptyFlowableEmpty;
+            this.payloads.runFlowableError = FlowableStartWithTest::runFlowableError;
         }
     }
 }

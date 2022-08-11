@@ -272,90 +272,173 @@ public class FlowableMergeMaxConcurrentTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableMergeMaxConcurrentTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_whenMaxConcurrentIsOne() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::whenMaxConcurrentIsOne, this.description("whenMaxConcurrentIsOne"));
+            this.payloads.whenMaxConcurrentIsOne.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maxConcurrent() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::maxConcurrent, this.description("maxConcurrent"));
+            this.payloads.maxConcurrent.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeALotOfSourcesOneByOneSynchronously() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeALotOfSourcesOneByOneSynchronously, this.description("mergeALotOfSourcesOneByOneSynchronously"));
+            this.payloads.mergeALotOfSourcesOneByOneSynchronously.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeALotOfSourcesOneByOneSynchronouslyTakeHalf() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeALotOfSourcesOneByOneSynchronouslyTakeHalf, this.description("mergeALotOfSourcesOneByOneSynchronouslyTakeHalf"));
+            this.payloads.mergeALotOfSourcesOneByOneSynchronouslyTakeHalf.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_simple() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::simple, this.description("simple"));
+            this.payloads.simple.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_simpleOneLess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::simpleOneLess, this.description("simpleOneLess"));
+            this.payloads.simpleOneLess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_simpleAsyncLoop() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::simpleAsyncLoop, this.description("simpleAsyncLoop"));
+            this.payloads.simpleAsyncLoop.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_simpleAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::simpleAsync, this.description("simpleAsync"));
+            this.payloads.simpleAsync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_simpleOneLessAsyncLoop() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::simpleOneLessAsyncLoop, this.description("simpleOneLessAsyncLoop"));
+            this.payloads.simpleOneLessAsyncLoop.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_simpleOneLessAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::simpleOneLessAsync, this.description("simpleOneLessAsync"));
+            this.payloads.simpleOneLessAsync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureHonored() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureHonored, this.description("backpressureHonored"));
+            this.payloads.backpressureHonored.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_take() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::take, this.description("take"));
+            this.payloads.take.evaluate();
         }
 
-        private FlowableMergeMaxConcurrentTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableMergeMaxConcurrentTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableMergeMaxConcurrentTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableMergeMaxConcurrentTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableMergeMaxConcurrentTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableMergeMaxConcurrentTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableMergeMaxConcurrentTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableMergeMaxConcurrentTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableMergeMaxConcurrentTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableMergeMaxConcurrentTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableMergeMaxConcurrentTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement whenMaxConcurrentIsOne;
+
+            public org.junit.runners.model.Statement maxConcurrent;
+
+            public org.junit.runners.model.Statement mergeALotOfSourcesOneByOneSynchronously;
+
+            public org.junit.runners.model.Statement mergeALotOfSourcesOneByOneSynchronouslyTakeHalf;
+
+            public org.junit.runners.model.Statement simple;
+
+            public org.junit.runners.model.Statement simpleOneLess;
+
+            public org.junit.runners.model.Statement simpleAsyncLoop;
+
+            public org.junit.runners.model.Statement simpleAsync;
+
+            public org.junit.runners.model.Statement simpleOneLessAsyncLoop;
+
+            public org.junit.runners.model.Statement simpleOneLessAsync;
+
+            public org.junit.runners.model.Statement backpressureHonored;
+
+            public org.junit.runners.model.Statement take;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.whenMaxConcurrentIsOne = _ClassStatement.forPayload(FlowableMergeMaxConcurrentTest::whenMaxConcurrentIsOne, "whenMaxConcurrentIsOne", this);
+            this.payloads.maxConcurrent = _ClassStatement.forPayload(FlowableMergeMaxConcurrentTest::maxConcurrent, "maxConcurrent", this);
+            this.payloads.mergeALotOfSourcesOneByOneSynchronously = _ClassStatement.forPayload(FlowableMergeMaxConcurrentTest::mergeALotOfSourcesOneByOneSynchronously, "mergeALotOfSourcesOneByOneSynchronously", this);
+            this.payloads.mergeALotOfSourcesOneByOneSynchronouslyTakeHalf = _ClassStatement.forPayload(FlowableMergeMaxConcurrentTest::mergeALotOfSourcesOneByOneSynchronouslyTakeHalf, "mergeALotOfSourcesOneByOneSynchronouslyTakeHalf", this);
+            this.payloads.simple = _ClassStatement.forPayload(FlowableMergeMaxConcurrentTest::simple, "simple", this);
+            this.payloads.simpleOneLess = _ClassStatement.forPayload(FlowableMergeMaxConcurrentTest::simpleOneLess, "simpleOneLess", this);
+            this.payloads.simpleAsyncLoop = _ClassStatement.forPayload(FlowableMergeMaxConcurrentTest::simpleAsyncLoop, "simpleAsyncLoop", this);
+            this.payloads.simpleAsync = _ClassStatement.forPayload(FlowableMergeMaxConcurrentTest::simpleAsync, "simpleAsync", this);
+            this.payloads.simpleOneLessAsyncLoop = _ClassStatement.forPayload(FlowableMergeMaxConcurrentTest::simpleOneLessAsyncLoop, "simpleOneLessAsyncLoop", this);
+            this.payloads.simpleOneLessAsync = _ClassStatement.forPayload(FlowableMergeMaxConcurrentTest::simpleOneLessAsync, "simpleOneLessAsync", this);
+            this.payloads.backpressureHonored = _ClassStatement.forPayload(FlowableMergeMaxConcurrentTest::backpressureHonored, "backpressureHonored", this);
+            this.payloads.take = _ClassStatement.forPayload(FlowableMergeMaxConcurrentTest::take, "take", this);
         }
     }
 }

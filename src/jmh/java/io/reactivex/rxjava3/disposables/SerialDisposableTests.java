@@ -198,96 +198,174 @@ public class SerialDisposableTests extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private SerialDisposableTests instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribingWithoutUnderlyingDoesNothing() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribingWithoutUnderlyingDoesNothing, this.description("unsubscribingWithoutUnderlyingDoesNothing"));
+            this.payloads.unsubscribingWithoutUnderlyingDoesNothing.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_getDisposableShouldReturnset() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::getDisposableShouldReturnset, this.description("getDisposableShouldReturnset"));
+            this.payloads.getDisposableShouldReturnset.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_notDisposedWhenReplaced() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::notDisposedWhenReplaced, this.description("notDisposedWhenReplaced"));
+            this.payloads.notDisposedWhenReplaced.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribingTwiceDoesUnsubscribeOnce() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribingTwiceDoesUnsubscribeOnce, this.description("unsubscribingTwiceDoesUnsubscribeOnce"));
+            this.payloads.unsubscribingTwiceDoesUnsubscribeOnce.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_settingSameDisposableTwiceDoesUnsubscribeIt() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::settingSameDisposableTwiceDoesUnsubscribeIt, this.description("settingSameDisposableTwiceDoesUnsubscribeIt"));
+            this.payloads.settingSameDisposableTwiceDoesUnsubscribeIt.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribingWithSingleUnderlyingUnsubscribes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribingWithSingleUnderlyingUnsubscribes, this.description("unsubscribingWithSingleUnderlyingUnsubscribes"));
+            this.payloads.unsubscribingWithSingleUnderlyingUnsubscribes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_replacingFirstUnderlyingCausesUnsubscription() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::replacingFirstUnderlyingCausesUnsubscription, this.description("replacingFirstUnderlyingCausesUnsubscription"));
+            this.payloads.replacingFirstUnderlyingCausesUnsubscription.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_whenUnsubscribingSecondUnderlyingUnsubscribed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::whenUnsubscribingSecondUnderlyingUnsubscribed, this.description("whenUnsubscribingSecondUnderlyingUnsubscribed"));
+            this.payloads.whenUnsubscribingSecondUnderlyingUnsubscribed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_settingUnderlyingWhenUnsubscribedCausesImmediateUnsubscription() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::settingUnderlyingWhenUnsubscribedCausesImmediateUnsubscription, this.description("settingUnderlyingWhenUnsubscribedCausesImmediateUnsubscription"));
+            this.payloads.settingUnderlyingWhenUnsubscribedCausesImmediateUnsubscription.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_settingUnderlyingWhenUnsubscribedCausesImmediateUnsubscriptionConcurrently() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::settingUnderlyingWhenUnsubscribedCausesImmediateUnsubscriptionConcurrently, this.description("settingUnderlyingWhenUnsubscribedCausesImmediateUnsubscriptionConcurrently"));
+            this.payloads.settingUnderlyingWhenUnsubscribedCausesImmediateUnsubscriptionConcurrently.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concurrentSetDisposableShouldNotInterleave() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concurrentSetDisposableShouldNotInterleave, this.description("concurrentSetDisposableShouldNotInterleave"));
+            this.payloads.concurrentSetDisposableShouldNotInterleave.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeState() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeState, this.description("disposeState"));
+            this.payloads.disposeState.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().setUp();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<SerialDisposableTests> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<SerialDisposableTests> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.setUp();
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private SerialDisposableTests implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SerialDisposableTests();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<SerialDisposableTests> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<SerialDisposableTests> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new SerialDisposableTests();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<SerialDisposableTests> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(SerialDisposableTests.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(SerialDisposableTests.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public SerialDisposableTests implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement unsubscribingWithoutUnderlyingDoesNothing;
+
+            public org.junit.runners.model.Statement getDisposableShouldReturnset;
+
+            public org.junit.runners.model.Statement notDisposedWhenReplaced;
+
+            public org.junit.runners.model.Statement unsubscribingTwiceDoesUnsubscribeOnce;
+
+            public org.junit.runners.model.Statement settingSameDisposableTwiceDoesUnsubscribeIt;
+
+            public org.junit.runners.model.Statement unsubscribingWithSingleUnderlyingUnsubscribes;
+
+            public org.junit.runners.model.Statement replacingFirstUnderlyingCausesUnsubscription;
+
+            public org.junit.runners.model.Statement whenUnsubscribingSecondUnderlyingUnsubscribed;
+
+            public org.junit.runners.model.Statement settingUnderlyingWhenUnsubscribedCausesImmediateUnsubscription;
+
+            public org.junit.runners.model.Statement settingUnderlyingWhenUnsubscribedCausesImmediateUnsubscriptionConcurrently;
+
+            public org.junit.runners.model.Statement concurrentSetDisposableShouldNotInterleave;
+
+            public org.junit.runners.model.Statement disposeState;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.unsubscribingWithoutUnderlyingDoesNothing = _ClassStatement.forPayload(SerialDisposableTests::unsubscribingWithoutUnderlyingDoesNothing, "unsubscribingWithoutUnderlyingDoesNothing", this);
+            this.payloads.getDisposableShouldReturnset = _ClassStatement.forPayload(SerialDisposableTests::getDisposableShouldReturnset, "getDisposableShouldReturnset", this);
+            this.payloads.notDisposedWhenReplaced = _ClassStatement.forPayload(SerialDisposableTests::notDisposedWhenReplaced, "notDisposedWhenReplaced", this);
+            this.payloads.unsubscribingTwiceDoesUnsubscribeOnce = _ClassStatement.forPayload(SerialDisposableTests::unsubscribingTwiceDoesUnsubscribeOnce, "unsubscribingTwiceDoesUnsubscribeOnce", this);
+            this.payloads.settingSameDisposableTwiceDoesUnsubscribeIt = _ClassStatement.forPayload(SerialDisposableTests::settingSameDisposableTwiceDoesUnsubscribeIt, "settingSameDisposableTwiceDoesUnsubscribeIt", this);
+            this.payloads.unsubscribingWithSingleUnderlyingUnsubscribes = _ClassStatement.forPayload(SerialDisposableTests::unsubscribingWithSingleUnderlyingUnsubscribes, "unsubscribingWithSingleUnderlyingUnsubscribes", this);
+            this.payloads.replacingFirstUnderlyingCausesUnsubscription = _ClassStatement.forPayload(SerialDisposableTests::replacingFirstUnderlyingCausesUnsubscription, "replacingFirstUnderlyingCausesUnsubscription", this);
+            this.payloads.whenUnsubscribingSecondUnderlyingUnsubscribed = _ClassStatement.forPayload(SerialDisposableTests::whenUnsubscribingSecondUnderlyingUnsubscribed, "whenUnsubscribingSecondUnderlyingUnsubscribed", this);
+            this.payloads.settingUnderlyingWhenUnsubscribedCausesImmediateUnsubscription = _ClassStatement.forPayload(SerialDisposableTests::settingUnderlyingWhenUnsubscribedCausesImmediateUnsubscription, "settingUnderlyingWhenUnsubscribedCausesImmediateUnsubscription", this);
+            this.payloads.settingUnderlyingWhenUnsubscribedCausesImmediateUnsubscriptionConcurrently = _ClassStatement.forPayload(SerialDisposableTests::settingUnderlyingWhenUnsubscribedCausesImmediateUnsubscriptionConcurrently, "settingUnderlyingWhenUnsubscribedCausesImmediateUnsubscriptionConcurrently", this);
+            this.payloads.concurrentSetDisposableShouldNotInterleave = _ClassStatement.forPayload(SerialDisposableTests::concurrentSetDisposableShouldNotInterleave, "concurrentSetDisposableShouldNotInterleave", this);
+            this.payloads.disposeState = _ClassStatement.forPayload(SerialDisposableTests::disposeState, "disposeState", this);
         }
     }
 }

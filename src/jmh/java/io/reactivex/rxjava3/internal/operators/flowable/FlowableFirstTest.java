@@ -476,264 +476,398 @@ public class FlowableFirstTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableFirstTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrElseOfNoneFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrElseOfNoneFlowable, this.description("firstOrElseOfNoneFlowable"));
+            this.payloads.firstOrElseOfNoneFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrElseOfSomeFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrElseOfSomeFlowable, this.description("firstOrElseOfSomeFlowable"));
+            this.payloads.firstOrElseOfSomeFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrElseWithPredicateOfNoneMatchingThePredicateFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrElseWithPredicateOfNoneMatchingThePredicateFlowable, this.description("firstOrElseWithPredicateOfNoneMatchingThePredicateFlowable"));
+            this.payloads.firstOrElseWithPredicateOfNoneMatchingThePredicateFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrElseWithPredicateOfSomeFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrElseWithPredicateOfSomeFlowable, this.description("firstOrElseWithPredicateOfSomeFlowable"));
+            this.payloads.firstOrElseWithPredicateOfSomeFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstFlowable, this.description("firstFlowable"));
+            this.payloads.firstFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstWithOneElementFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstWithOneElementFlowable, this.description("firstWithOneElementFlowable"));
+            this.payloads.firstWithOneElementFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstWithEmptyFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstWithEmptyFlowable, this.description("firstWithEmptyFlowable"));
+            this.payloads.firstWithEmptyFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstWithPredicateFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstWithPredicateFlowable, this.description("firstWithPredicateFlowable"));
+            this.payloads.firstWithPredicateFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstWithPredicateAndOneElementFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstWithPredicateAndOneElementFlowable, this.description("firstWithPredicateAndOneElementFlowable"));
+            this.payloads.firstWithPredicateAndOneElementFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstWithPredicateAndEmptyFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstWithPredicateAndEmptyFlowable, this.description("firstWithPredicateAndEmptyFlowable"));
+            this.payloads.firstWithPredicateAndEmptyFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrDefaultFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrDefaultFlowable, this.description("firstOrDefaultFlowable"));
+            this.payloads.firstOrDefaultFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrDefaultWithOneElementFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrDefaultWithOneElementFlowable, this.description("firstOrDefaultWithOneElementFlowable"));
+            this.payloads.firstOrDefaultWithOneElementFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrDefaultWithEmptyFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrDefaultWithEmptyFlowable, this.description("firstOrDefaultWithEmptyFlowable"));
+            this.payloads.firstOrDefaultWithEmptyFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrDefaultWithPredicateFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrDefaultWithPredicateFlowable, this.description("firstOrDefaultWithPredicateFlowable"));
+            this.payloads.firstOrDefaultWithPredicateFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrDefaultWithPredicateAndOneElementFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrDefaultWithPredicateAndOneElementFlowable, this.description("firstOrDefaultWithPredicateAndOneElementFlowable"));
+            this.payloads.firstOrDefaultWithPredicateAndOneElementFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrDefaultWithPredicateAndEmptyFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrDefaultWithPredicateAndEmptyFlowable, this.description("firstOrDefaultWithPredicateAndEmptyFlowable"));
+            this.payloads.firstOrDefaultWithPredicateAndEmptyFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrElseOfNone() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrElseOfNone, this.description("firstOrElseOfNone"));
+            this.payloads.firstOrElseOfNone.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrElseOfSome() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrElseOfSome, this.description("firstOrElseOfSome"));
+            this.payloads.firstOrElseOfSome.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrElseWithPredicateOfNoneMatchingThePredicate() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrElseWithPredicateOfNoneMatchingThePredicate, this.description("firstOrElseWithPredicateOfNoneMatchingThePredicate"));
+            this.payloads.firstOrElseWithPredicateOfNoneMatchingThePredicate.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrElseWithPredicateOfSome() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrElseWithPredicateOfSome, this.description("firstOrElseWithPredicateOfSome"));
+            this.payloads.firstOrElseWithPredicateOfSome.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_first() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::first, this.description("first"));
+            this.payloads.first.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstWithOneElement() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstWithOneElement, this.description("firstWithOneElement"));
+            this.payloads.firstWithOneElement.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstWithEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstWithEmpty, this.description("firstWithEmpty"));
+            this.payloads.firstWithEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstWithPredicate() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstWithPredicate, this.description("firstWithPredicate"));
+            this.payloads.firstWithPredicate.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstWithPredicateAndOneElement() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstWithPredicateAndOneElement, this.description("firstWithPredicateAndOneElement"));
+            this.payloads.firstWithPredicateAndOneElement.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstWithPredicateAndEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstWithPredicateAndEmpty, this.description("firstWithPredicateAndEmpty"));
+            this.payloads.firstWithPredicateAndEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrDefault() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrDefault, this.description("firstOrDefault"));
+            this.payloads.firstOrDefault.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrDefaultWithOneElement() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrDefaultWithOneElement, this.description("firstOrDefaultWithOneElement"));
+            this.payloads.firstOrDefaultWithOneElement.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrDefaultWithEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrDefaultWithEmpty, this.description("firstOrDefaultWithEmpty"));
+            this.payloads.firstOrDefaultWithEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrDefaultWithPredicate() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrDefaultWithPredicate, this.description("firstOrDefaultWithPredicate"));
+            this.payloads.firstOrDefaultWithPredicate.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrDefaultWithPredicateAndOneElement() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrDefaultWithPredicateAndOneElement, this.description("firstOrDefaultWithPredicateAndOneElement"));
+            this.payloads.firstOrDefaultWithPredicateAndOneElement.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrDefaultWithPredicateAndEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrDefaultWithPredicateAndEmpty, this.description("firstOrDefaultWithPredicateAndEmpty"));
+            this.payloads.firstOrDefaultWithPredicateAndEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrErrorNoElement() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrErrorNoElement, this.description("firstOrErrorNoElement"));
+            this.payloads.firstOrErrorNoElement.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrErrorOneElement() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrErrorOneElement, this.description("firstOrErrorOneElement"));
+            this.payloads.firstOrErrorOneElement.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrErrorMultipleElements() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrErrorMultipleElements, this.description("firstOrErrorMultipleElements"));
+            this.payloads.firstOrErrorMultipleElements.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrErrorError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrErrorError, this.description("firstOrErrorError"));
+            this.payloads.firstOrErrorError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrErrorNoElementFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrErrorNoElementFlowable, this.description("firstOrErrorNoElementFlowable"));
+            this.payloads.firstOrErrorNoElementFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrErrorOneElementFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrErrorOneElementFlowable, this.description("firstOrErrorOneElementFlowable"));
+            this.payloads.firstOrErrorOneElementFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrErrorMultipleElementsFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrErrorMultipleElementsFlowable, this.description("firstOrErrorMultipleElementsFlowable"));
+            this.payloads.firstOrErrorMultipleElementsFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOrErrorErrorFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOrErrorErrorFlowable, this.description("firstOrErrorErrorFlowable"));
+            this.payloads.firstOrErrorErrorFlowable.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().before();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFirstTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFirstTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.before();
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private FlowableFirstTest implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableFirstTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFirstTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFirstTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableFirstTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFirstTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableFirstTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableFirstTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public FlowableFirstTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement firstOrElseOfNoneFlowable;
+
+            public org.junit.runners.model.Statement firstOrElseOfSomeFlowable;
+
+            public org.junit.runners.model.Statement firstOrElseWithPredicateOfNoneMatchingThePredicateFlowable;
+
+            public org.junit.runners.model.Statement firstOrElseWithPredicateOfSomeFlowable;
+
+            public org.junit.runners.model.Statement firstFlowable;
+
+            public org.junit.runners.model.Statement firstWithOneElementFlowable;
+
+            public org.junit.runners.model.Statement firstWithEmptyFlowable;
+
+            public org.junit.runners.model.Statement firstWithPredicateFlowable;
+
+            public org.junit.runners.model.Statement firstWithPredicateAndOneElementFlowable;
+
+            public org.junit.runners.model.Statement firstWithPredicateAndEmptyFlowable;
+
+            public org.junit.runners.model.Statement firstOrDefaultFlowable;
+
+            public org.junit.runners.model.Statement firstOrDefaultWithOneElementFlowable;
+
+            public org.junit.runners.model.Statement firstOrDefaultWithEmptyFlowable;
+
+            public org.junit.runners.model.Statement firstOrDefaultWithPredicateFlowable;
+
+            public org.junit.runners.model.Statement firstOrDefaultWithPredicateAndOneElementFlowable;
+
+            public org.junit.runners.model.Statement firstOrDefaultWithPredicateAndEmptyFlowable;
+
+            public org.junit.runners.model.Statement firstOrElseOfNone;
+
+            public org.junit.runners.model.Statement firstOrElseOfSome;
+
+            public org.junit.runners.model.Statement firstOrElseWithPredicateOfNoneMatchingThePredicate;
+
+            public org.junit.runners.model.Statement firstOrElseWithPredicateOfSome;
+
+            public org.junit.runners.model.Statement first;
+
+            public org.junit.runners.model.Statement firstWithOneElement;
+
+            public org.junit.runners.model.Statement firstWithEmpty;
+
+            public org.junit.runners.model.Statement firstWithPredicate;
+
+            public org.junit.runners.model.Statement firstWithPredicateAndOneElement;
+
+            public org.junit.runners.model.Statement firstWithPredicateAndEmpty;
+
+            public org.junit.runners.model.Statement firstOrDefault;
+
+            public org.junit.runners.model.Statement firstOrDefaultWithOneElement;
+
+            public org.junit.runners.model.Statement firstOrDefaultWithEmpty;
+
+            public org.junit.runners.model.Statement firstOrDefaultWithPredicate;
+
+            public org.junit.runners.model.Statement firstOrDefaultWithPredicateAndOneElement;
+
+            public org.junit.runners.model.Statement firstOrDefaultWithPredicateAndEmpty;
+
+            public org.junit.runners.model.Statement firstOrErrorNoElement;
+
+            public org.junit.runners.model.Statement firstOrErrorOneElement;
+
+            public org.junit.runners.model.Statement firstOrErrorMultipleElements;
+
+            public org.junit.runners.model.Statement firstOrErrorError;
+
+            public org.junit.runners.model.Statement firstOrErrorNoElementFlowable;
+
+            public org.junit.runners.model.Statement firstOrErrorOneElementFlowable;
+
+            public org.junit.runners.model.Statement firstOrErrorMultipleElementsFlowable;
+
+            public org.junit.runners.model.Statement firstOrErrorErrorFlowable;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.firstOrElseOfNoneFlowable = _ClassStatement.forPayload(FlowableFirstTest::firstOrElseOfNoneFlowable, "firstOrElseOfNoneFlowable", this);
+            this.payloads.firstOrElseOfSomeFlowable = _ClassStatement.forPayload(FlowableFirstTest::firstOrElseOfSomeFlowable, "firstOrElseOfSomeFlowable", this);
+            this.payloads.firstOrElseWithPredicateOfNoneMatchingThePredicateFlowable = _ClassStatement.forPayload(FlowableFirstTest::firstOrElseWithPredicateOfNoneMatchingThePredicateFlowable, "firstOrElseWithPredicateOfNoneMatchingThePredicateFlowable", this);
+            this.payloads.firstOrElseWithPredicateOfSomeFlowable = _ClassStatement.forPayload(FlowableFirstTest::firstOrElseWithPredicateOfSomeFlowable, "firstOrElseWithPredicateOfSomeFlowable", this);
+            this.payloads.firstFlowable = _ClassStatement.forPayload(FlowableFirstTest::firstFlowable, "firstFlowable", this);
+            this.payloads.firstWithOneElementFlowable = _ClassStatement.forPayload(FlowableFirstTest::firstWithOneElementFlowable, "firstWithOneElementFlowable", this);
+            this.payloads.firstWithEmptyFlowable = _ClassStatement.forPayload(FlowableFirstTest::firstWithEmptyFlowable, "firstWithEmptyFlowable", this);
+            this.payloads.firstWithPredicateFlowable = _ClassStatement.forPayload(FlowableFirstTest::firstWithPredicateFlowable, "firstWithPredicateFlowable", this);
+            this.payloads.firstWithPredicateAndOneElementFlowable = _ClassStatement.forPayload(FlowableFirstTest::firstWithPredicateAndOneElementFlowable, "firstWithPredicateAndOneElementFlowable", this);
+            this.payloads.firstWithPredicateAndEmptyFlowable = _ClassStatement.forPayload(FlowableFirstTest::firstWithPredicateAndEmptyFlowable, "firstWithPredicateAndEmptyFlowable", this);
+            this.payloads.firstOrDefaultFlowable = _ClassStatement.forPayload(FlowableFirstTest::firstOrDefaultFlowable, "firstOrDefaultFlowable", this);
+            this.payloads.firstOrDefaultWithOneElementFlowable = _ClassStatement.forPayload(FlowableFirstTest::firstOrDefaultWithOneElementFlowable, "firstOrDefaultWithOneElementFlowable", this);
+            this.payloads.firstOrDefaultWithEmptyFlowable = _ClassStatement.forPayload(FlowableFirstTest::firstOrDefaultWithEmptyFlowable, "firstOrDefaultWithEmptyFlowable", this);
+            this.payloads.firstOrDefaultWithPredicateFlowable = _ClassStatement.forPayload(FlowableFirstTest::firstOrDefaultWithPredicateFlowable, "firstOrDefaultWithPredicateFlowable", this);
+            this.payloads.firstOrDefaultWithPredicateAndOneElementFlowable = _ClassStatement.forPayload(FlowableFirstTest::firstOrDefaultWithPredicateAndOneElementFlowable, "firstOrDefaultWithPredicateAndOneElementFlowable", this);
+            this.payloads.firstOrDefaultWithPredicateAndEmptyFlowable = _ClassStatement.forPayload(FlowableFirstTest::firstOrDefaultWithPredicateAndEmptyFlowable, "firstOrDefaultWithPredicateAndEmptyFlowable", this);
+            this.payloads.firstOrElseOfNone = _ClassStatement.forPayload(FlowableFirstTest::firstOrElseOfNone, "firstOrElseOfNone", this);
+            this.payloads.firstOrElseOfSome = _ClassStatement.forPayload(FlowableFirstTest::firstOrElseOfSome, "firstOrElseOfSome", this);
+            this.payloads.firstOrElseWithPredicateOfNoneMatchingThePredicate = _ClassStatement.forPayload(FlowableFirstTest::firstOrElseWithPredicateOfNoneMatchingThePredicate, "firstOrElseWithPredicateOfNoneMatchingThePredicate", this);
+            this.payloads.firstOrElseWithPredicateOfSome = _ClassStatement.forPayload(FlowableFirstTest::firstOrElseWithPredicateOfSome, "firstOrElseWithPredicateOfSome", this);
+            this.payloads.first = _ClassStatement.forPayload(FlowableFirstTest::first, "first", this);
+            this.payloads.firstWithOneElement = _ClassStatement.forPayload(FlowableFirstTest::firstWithOneElement, "firstWithOneElement", this);
+            this.payloads.firstWithEmpty = _ClassStatement.forPayload(FlowableFirstTest::firstWithEmpty, "firstWithEmpty", this);
+            this.payloads.firstWithPredicate = _ClassStatement.forPayload(FlowableFirstTest::firstWithPredicate, "firstWithPredicate", this);
+            this.payloads.firstWithPredicateAndOneElement = _ClassStatement.forPayload(FlowableFirstTest::firstWithPredicateAndOneElement, "firstWithPredicateAndOneElement", this);
+            this.payloads.firstWithPredicateAndEmpty = _ClassStatement.forPayload(FlowableFirstTest::firstWithPredicateAndEmpty, "firstWithPredicateAndEmpty", this);
+            this.payloads.firstOrDefault = _ClassStatement.forPayload(FlowableFirstTest::firstOrDefault, "firstOrDefault", this);
+            this.payloads.firstOrDefaultWithOneElement = _ClassStatement.forPayload(FlowableFirstTest::firstOrDefaultWithOneElement, "firstOrDefaultWithOneElement", this);
+            this.payloads.firstOrDefaultWithEmpty = _ClassStatement.forPayload(FlowableFirstTest::firstOrDefaultWithEmpty, "firstOrDefaultWithEmpty", this);
+            this.payloads.firstOrDefaultWithPredicate = _ClassStatement.forPayload(FlowableFirstTest::firstOrDefaultWithPredicate, "firstOrDefaultWithPredicate", this);
+            this.payloads.firstOrDefaultWithPredicateAndOneElement = _ClassStatement.forPayload(FlowableFirstTest::firstOrDefaultWithPredicateAndOneElement, "firstOrDefaultWithPredicateAndOneElement", this);
+            this.payloads.firstOrDefaultWithPredicateAndEmpty = _ClassStatement.forPayload(FlowableFirstTest::firstOrDefaultWithPredicateAndEmpty, "firstOrDefaultWithPredicateAndEmpty", this);
+            this.payloads.firstOrErrorNoElement = _ClassStatement.forPayload(FlowableFirstTest::firstOrErrorNoElement, "firstOrErrorNoElement", this);
+            this.payloads.firstOrErrorOneElement = _ClassStatement.forPayload(FlowableFirstTest::firstOrErrorOneElement, "firstOrErrorOneElement", this);
+            this.payloads.firstOrErrorMultipleElements = _ClassStatement.forPayload(FlowableFirstTest::firstOrErrorMultipleElements, "firstOrErrorMultipleElements", this);
+            this.payloads.firstOrErrorError = _ClassStatement.forPayload(FlowableFirstTest::firstOrErrorError, "firstOrErrorError", this);
+            this.payloads.firstOrErrorNoElementFlowable = _ClassStatement.forPayload(FlowableFirstTest::firstOrErrorNoElementFlowable, "firstOrErrorNoElementFlowable", this);
+            this.payloads.firstOrErrorOneElementFlowable = _ClassStatement.forPayload(FlowableFirstTest::firstOrErrorOneElementFlowable, "firstOrErrorOneElementFlowable", this);
+            this.payloads.firstOrErrorMultipleElementsFlowable = _ClassStatement.forPayload(FlowableFirstTest::firstOrErrorMultipleElementsFlowable, "firstOrErrorMultipleElementsFlowable", this);
+            this.payloads.firstOrErrorErrorFlowable = _ClassStatement.forPayload(FlowableFirstTest::firstOrErrorErrorFlowable, "firstOrErrorErrorFlowable", this);
         }
     }
 }

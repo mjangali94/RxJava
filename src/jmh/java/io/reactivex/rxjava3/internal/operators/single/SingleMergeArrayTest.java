@@ -37,44 +37,4 @@ public class SingleMergeArrayTest extends RxJavaTest {
     public void errorDelayError() {
         Single.mergeArrayDelayError(Single.just(1), Single.error(new TestException()), Single.just(3)).test().assertFailure(TestException.class, 1, 3);
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_normal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normal, this.description("normal"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_normalDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalDelayError, this.description("normalDelayError"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_errorDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorDelayError, this.description("errorDelayError"));
-        }
-
-        private SingleMergeArrayTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SingleMergeArrayTest();
-        }
-
-        @java.lang.Override
-        public SingleMergeArrayTest implementation() {
-            return this.implementation;
-        }
-    }
 }

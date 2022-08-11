@@ -154,60 +154,79 @@ public class OperatorsUseInterfaces {
     static final Set<Class<?>> CAN_RETURN = new HashSet<>(Arrays.asList(Callable.class, Supplier.class, Function.class, BiFunction.class, Function3.class, Function4.class, Function5.class, Function6.class, Function7.class, Function8.class, Function9.class, Publisher.class, ObservableSource.class, MaybeSource.class, SingleSource.class));
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private OperatorsUseInterfaces instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkFlowable, this.description("checkFlowable"));
+            this.runBenchmark(this.payloads.checkFlowable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkObservable, this.description("checkObservable"));
+            this.runBenchmark(this.payloads.checkObservable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkMaybe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkMaybe, this.description("checkMaybe"));
+            this.runBenchmark(this.payloads.checkMaybe);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkSingle() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkSingle, this.description("checkSingle"));
+            this.runBenchmark(this.payloads.checkSingle);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkCompletable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkCompletable, this.description("checkCompletable"));
+            this.runBenchmark(this.payloads.checkCompletable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkParallelFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkParallelFlowable, this.description("checkParallelFlowable"));
+            this.runBenchmark(this.payloads.checkParallelFlowable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkSelf() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkSelf, this.description("checkSelf"));
+            this.runBenchmark(this.payloads.checkSelf);
         }
 
-        private OperatorsUseInterfaces implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new OperatorsUseInterfaces();
+        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<OperatorsUseInterfaces> payload) throws java.lang.Throwable {
+            this.instance = new OperatorsUseInterfaces();
+            payload.accept(this.instance);
         }
 
-        @java.lang.Override
-        public OperatorsUseInterfaces implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<OperatorsUseInterfaces> checkFlowable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<OperatorsUseInterfaces> checkObservable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<OperatorsUseInterfaces> checkMaybe;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<OperatorsUseInterfaces> checkSingle;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<OperatorsUseInterfaces> checkCompletable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<OperatorsUseInterfaces> checkParallelFlowable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<OperatorsUseInterfaces> checkSelf;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.checkFlowable = OperatorsUseInterfaces::checkFlowable;
+            this.payloads.checkObservable = OperatorsUseInterfaces::checkObservable;
+            this.payloads.checkMaybe = OperatorsUseInterfaces::checkMaybe;
+            this.payloads.checkSingle = OperatorsUseInterfaces::checkSingle;
+            this.payloads.checkCompletable = OperatorsUseInterfaces::checkCompletable;
+            this.payloads.checkParallelFlowable = OperatorsUseInterfaces::checkParallelFlowable;
+            this.payloads.checkSelf = OperatorsUseInterfaces::checkSelf;
         }
     }
 }

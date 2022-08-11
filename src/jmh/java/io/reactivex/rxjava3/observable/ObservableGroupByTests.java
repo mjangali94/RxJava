@@ -73,32 +73,4 @@ public class ObservableGroupByTests extends RxJavaTest {
         // make sure the event streams receive their interrupt
         Thread.sleep(200);
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_takeUnsubscribesOnGroupBy() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeUnsubscribesOnGroupBy, this.description("takeUnsubscribesOnGroupBy"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_takeUnsubscribesOnFlatMapOfGroupBy() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeUnsubscribesOnFlatMapOfGroupBy, this.description("takeUnsubscribesOnFlatMapOfGroupBy"));
-        }
-
-        private ObservableGroupByTests implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableGroupByTests();
-        }
-
-        @java.lang.Override
-        public ObservableGroupByTests implementation() {
-            return this.implementation;
-        }
-    }
 }

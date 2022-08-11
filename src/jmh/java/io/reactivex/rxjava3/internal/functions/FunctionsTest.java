@@ -206,120 +206,213 @@ public class FunctionsTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FunctionsTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_utilityClass() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::utilityClass, this.description("utilityClass"));
+            this.payloads.utilityClass.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_hashSetCallableEnum() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::hashSetCallableEnum, this.description("hashSetCallableEnum"));
+            this.payloads.hashSetCallableEnum.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_naturalComparatorEnum() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::naturalComparatorEnum, this.description("naturalComparatorEnum"));
+            this.payloads.naturalComparatorEnum.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_booleanSupplierPredicateReverse() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::booleanSupplierPredicateReverse, this.description("booleanSupplierPredicateReverse"));
+            this.payloads.booleanSupplierPredicateReverse.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toFunction2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::toFunction2, this.description("toFunction2"), java.lang.IllegalArgumentException.class);
+            this.payloads.toFunction2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toFunction3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::toFunction3, this.description("toFunction3"), java.lang.IllegalArgumentException.class);
+            this.payloads.toFunction3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toFunction4() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::toFunction4, this.description("toFunction4"), java.lang.IllegalArgumentException.class);
+            this.payloads.toFunction4.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toFunction5() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::toFunction5, this.description("toFunction5"), java.lang.IllegalArgumentException.class);
+            this.payloads.toFunction5.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toFunction6() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::toFunction6, this.description("toFunction6"), java.lang.IllegalArgumentException.class);
+            this.payloads.toFunction6.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toFunction7() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::toFunction7, this.description("toFunction7"), java.lang.IllegalArgumentException.class);
+            this.payloads.toFunction7.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toFunction8() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::toFunction8, this.description("toFunction8"), java.lang.IllegalArgumentException.class);
+            this.payloads.toFunction8.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toFunction9() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::toFunction9, this.description("toFunction9"), java.lang.IllegalArgumentException.class);
+            this.payloads.toFunction9.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_identityFunctionToString() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::identityFunctionToString, this.description("identityFunctionToString"));
+            this.payloads.identityFunctionToString.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyActionToString() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyActionToString, this.description("emptyActionToString"));
+            this.payloads.emptyActionToString.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyRunnableToString() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyRunnableToString, this.description("emptyRunnableToString"));
+            this.payloads.emptyRunnableToString.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyConsumerToString() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyConsumerToString, this.description("emptyConsumerToString"));
+            this.payloads.emptyConsumerToString.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorConsumerEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorConsumerEmpty, this.description("errorConsumerEmpty"));
+            this.payloads.errorConsumerEmpty.evaluate();
         }
 
-        private FunctionsTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FunctionsTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FunctionsTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FunctionsTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FunctionsTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FunctionsTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FunctionsTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FunctionsTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FunctionsTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FunctionsTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FunctionsTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement utilityClass;
+
+            public org.junit.runners.model.Statement hashSetCallableEnum;
+
+            public org.junit.runners.model.Statement naturalComparatorEnum;
+
+            public org.junit.runners.model.Statement booleanSupplierPredicateReverse;
+
+            public org.junit.runners.model.Statement toFunction2;
+
+            public org.junit.runners.model.Statement toFunction3;
+
+            public org.junit.runners.model.Statement toFunction4;
+
+            public org.junit.runners.model.Statement toFunction5;
+
+            public org.junit.runners.model.Statement toFunction6;
+
+            public org.junit.runners.model.Statement toFunction7;
+
+            public org.junit.runners.model.Statement toFunction8;
+
+            public org.junit.runners.model.Statement toFunction9;
+
+            public org.junit.runners.model.Statement identityFunctionToString;
+
+            public org.junit.runners.model.Statement emptyActionToString;
+
+            public org.junit.runners.model.Statement emptyRunnableToString;
+
+            public org.junit.runners.model.Statement emptyConsumerToString;
+
+            public org.junit.runners.model.Statement errorConsumerEmpty;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.utilityClass = _ClassStatement.forPayload(FunctionsTest::utilityClass, "utilityClass", this);
+            this.payloads.hashSetCallableEnum = _ClassStatement.forPayload(FunctionsTest::hashSetCallableEnum, "hashSetCallableEnum", this);
+            this.payloads.naturalComparatorEnum = _ClassStatement.forPayload(FunctionsTest::naturalComparatorEnum, "naturalComparatorEnum", this);
+            this.payloads.booleanSupplierPredicateReverse = _ClassStatement.forPayload(FunctionsTest::booleanSupplierPredicateReverse, "booleanSupplierPredicateReverse", this);
+            this.payloads.toFunction2 = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FunctionsTest::toFunction2, java.lang.IllegalArgumentException.class), "toFunction2", this);
+            this.payloads.toFunction3 = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FunctionsTest::toFunction3, java.lang.IllegalArgumentException.class), "toFunction3", this);
+            this.payloads.toFunction4 = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FunctionsTest::toFunction4, java.lang.IllegalArgumentException.class), "toFunction4", this);
+            this.payloads.toFunction5 = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FunctionsTest::toFunction5, java.lang.IllegalArgumentException.class), "toFunction5", this);
+            this.payloads.toFunction6 = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FunctionsTest::toFunction6, java.lang.IllegalArgumentException.class), "toFunction6", this);
+            this.payloads.toFunction7 = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FunctionsTest::toFunction7, java.lang.IllegalArgumentException.class), "toFunction7", this);
+            this.payloads.toFunction8 = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FunctionsTest::toFunction8, java.lang.IllegalArgumentException.class), "toFunction8", this);
+            this.payloads.toFunction9 = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FunctionsTest::toFunction9, java.lang.IllegalArgumentException.class), "toFunction9", this);
+            this.payloads.identityFunctionToString = _ClassStatement.forPayload(FunctionsTest::identityFunctionToString, "identityFunctionToString", this);
+            this.payloads.emptyActionToString = _ClassStatement.forPayload(FunctionsTest::emptyActionToString, "emptyActionToString", this);
+            this.payloads.emptyRunnableToString = _ClassStatement.forPayload(FunctionsTest::emptyRunnableToString, "emptyRunnableToString", this);
+            this.payloads.emptyConsumerToString = _ClassStatement.forPayload(FunctionsTest::emptyConsumerToString, "emptyConsumerToString", this);
+            this.payloads.errorConsumerEmpty = _ClassStatement.forPayload(FunctionsTest::errorConsumerEmpty, "errorConsumerEmpty", this);
         }
     }
 }

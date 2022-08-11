@@ -2376,1368 +2376,1877 @@ public class MaybeTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private MaybeTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromFlowableEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromFlowableEmpty, this.description("fromFlowableEmpty"));
+            this.payloads.fromFlowableEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromFlowableJust() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromFlowableJust, this.description("fromFlowableJust"));
+            this.payloads.fromFlowableJust.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromFlowableError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromFlowableError, this.description("fromFlowableError"));
+            this.payloads.fromFlowableError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromFlowableValueAndError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromFlowableValueAndError, this.description("fromFlowableValueAndError"));
+            this.payloads.fromFlowableValueAndError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromFlowableMany() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromFlowableMany, this.description("fromFlowableMany"));
+            this.payloads.fromFlowableMany.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromFlowableDisposeComposesThrough() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromFlowableDisposeComposesThrough, this.description("fromFlowableDisposeComposesThrough"));
+            this.payloads.fromFlowableDisposeComposesThrough.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromObservableEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromObservableEmpty, this.description("fromObservableEmpty"));
+            this.payloads.fromObservableEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromObservableJust() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromObservableJust, this.description("fromObservableJust"));
+            this.payloads.fromObservableJust.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromObservableError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromObservableError, this.description("fromObservableError"));
+            this.payloads.fromObservableError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromObservableValueAndError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromObservableValueAndError, this.description("fromObservableValueAndError"));
+            this.payloads.fromObservableValueAndError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromObservableMany() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromObservableMany, this.description("fromObservableMany"));
+            this.payloads.fromObservableMany.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromObservableDisposeComposesThrough() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromObservableDisposeComposesThrough, this.description("fromObservableDisposeComposesThrough"));
+            this.payloads.fromObservableDisposeComposesThrough.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromObservableDisposeComposesThroughImmediatelyCancelled() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromObservableDisposeComposesThroughImmediatelyCancelled, this.description("fromObservableDisposeComposesThroughImmediatelyCancelled"));
+            this.payloads.fromObservableDisposeComposesThroughImmediatelyCancelled.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_just() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::just, this.description("just"));
+            this.payloads.just.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_empty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::empty, this.description("empty"));
+            this.payloads.empty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_never() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::never, this.description("never"));
+            this.payloads.never.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorCallable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorCallable, this.description("errorCallable"));
+            this.payloads.errorCallable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorCallableReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorCallableReturnsNull, this.description("errorCallableReturnsNull"));
+            this.payloads.errorCallableReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_wrapCustom() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::wrapCustom, this.description("wrapCustom"));
+            this.payloads.wrapCustom.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_wrapMaybe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::wrapMaybe, this.description("wrapMaybe"));
+            this.payloads.wrapMaybe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptySingleton() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptySingleton, this.description("emptySingleton"));
+            this.payloads.emptySingleton.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_neverSingleton() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::neverSingleton, this.description("neverSingleton"));
+            this.payloads.neverSingleton.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_liftJust() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::liftJust, this.description("liftJust"));
+            this.payloads.liftJust.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_liftThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::liftThrows, this.description("liftThrows"));
+            this.payloads.liftThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_deferThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::deferThrows, this.description("deferThrows"));
+            this.payloads.deferThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_deferReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::deferReturnsNull, this.description("deferReturnsNull"));
+            this.payloads.deferReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_defer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::defer, this.description("defer"));
+            this.payloads.defer.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flowableMaybeFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flowableMaybeFlowable, this.description("flowableMaybeFlowable"));
+            this.payloads.flowableMaybeFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_obervableMaybeobervable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::obervableMaybeobervable, this.description("obervableMaybeobervable"));
+            this.payloads.obervableMaybeobervable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleMaybeSingle() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleMaybeSingle, this.description("singleMaybeSingle"));
+            this.payloads.singleMaybeSingle.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_completableMaybeCompletable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::completableMaybeCompletable, this.description("completableMaybeCompletable"));
+            this.payloads.completableMaybeCompletable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsafeCreate() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsafeCreate, this.description("unsafeCreate"));
+            this.payloads.unsafeCreate.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_to() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::to, this.description("to"));
+            this.payloads.to.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_as() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::as, this.description("as"));
+            this.payloads.as.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_compose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::compose, this.description("compose"));
+            this.payloads.compose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapReturnNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapReturnNull, this.description("mapReturnNull"));
+            this.payloads.mapReturnNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapThrows, this.description("mapThrows"));
+            this.payloads.mapThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_map() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::map, this.description("map"));
+            this.payloads.map.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_filterThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::filterThrows, this.description("filterThrows"));
+            this.payloads.filterThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_filterTrue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::filterTrue, this.description("filterTrue"));
+            this.payloads.filterTrue.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_filterFalse() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::filterFalse, this.description("filterFalse"));
+            this.payloads.filterFalse.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_filterEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::filterEmpty, this.description("filterEmpty"));
+            this.payloads.filterEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleFilterThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleFilterThrows, this.description("singleFilterThrows"));
+            this.payloads.singleFilterThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleFilterTrue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleFilterTrue, this.description("singleFilterTrue"));
+            this.payloads.singleFilterTrue.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleFilterFalse() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleFilterFalse, this.description("singleFilterFalse"));
+            this.payloads.singleFilterFalse.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cast() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cast, this.description("cast"));
+            this.payloads.cast.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observeOnSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observeOnSuccess, this.description("observeOnSuccess"));
+            this.payloads.observeOnSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observeOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observeOnError, this.description("observeOnError"));
+            this.payloads.observeOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observeOnComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observeOnComplete, this.description("observeOnComplete"));
+            this.payloads.observeOnComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observeOnDispose2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observeOnDispose2, this.description("observeOnDispose2"));
+            this.payloads.observeOnDispose2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observeOnDoubleSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observeOnDoubleSubscribe, this.description("observeOnDoubleSubscribe"));
+            this.payloads.observeOnDoubleSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_subscribeOnSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscribeOnSuccess, this.description("subscribeOnSuccess"));
+            this.payloads.subscribeOnSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observeOnErrorThread() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observeOnErrorThread, this.description("observeOnErrorThread"));
+            this.payloads.observeOnErrorThread.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observeOnCompleteThread() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observeOnCompleteThread, this.description("observeOnCompleteThread"));
+            this.payloads.observeOnCompleteThread.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_subscribeOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscribeOnError, this.description("subscribeOnError"));
+            this.payloads.subscribeOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_subscribeOnComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscribeOnComplete, this.description("subscribeOnComplete"));
+            this.payloads.subscribeOnComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromAction() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromAction, this.description("fromAction"));
+            this.payloads.fromAction.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromActionThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromActionThrows, this.description("fromActionThrows"));
+            this.payloads.fromActionThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromRunnable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromRunnable, this.description("fromRunnable"));
+            this.payloads.fromRunnable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromRunnableThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromRunnableThrows, this.description("fromRunnableThrows"));
+            this.payloads.fromRunnableThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromCallableThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromCallableThrows, this.description("fromCallableThrows"));
+            this.payloads.fromCallableThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnSuccess, this.description("doOnSuccess"));
+            this.payloads.doOnSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnSuccessEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnSuccessEmpty, this.description("doOnSuccessEmpty"));
+            this.payloads.doOnSuccessEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnSuccessThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnSuccessThrows, this.description("doOnSuccessThrows"));
+            this.payloads.doOnSuccessThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnSubscribe, this.description("doOnSubscribe"));
+            this.payloads.doOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnSubscribeThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnSubscribeThrows, this.description("doOnSubscribeThrows"));
+            this.payloads.doOnSubscribeThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnCompleteThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnCompleteThrows, this.description("doOnCompleteThrows"));
+            this.payloads.doOnCompleteThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnDispose, this.description("doOnDispose"));
+            this.payloads.doOnDispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnDisposeThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnDisposeThrows, this.description("doOnDisposeThrows"));
+            this.payloads.doOnDisposeThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observeOnDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observeOnDispose, this.description("observeOnDispose"));
+            this.payloads.observeOnDispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doAfterTerminateSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doAfterTerminateSuccess, this.description("doAfterTerminateSuccess"));
+            this.payloads.doAfterTerminateSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doAfterTerminateError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doAfterTerminateError, this.description("doAfterTerminateError"));
+            this.payloads.doAfterTerminateError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doAfterTerminateComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doAfterTerminateComplete, this.description("doAfterTerminateComplete"));
+            this.payloads.doAfterTerminateComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sourceThrowsNPE() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sourceThrowsNPE, this.description("sourceThrowsNPE"));
+            this.payloads.sourceThrowsNPE.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sourceThrowsIAE() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sourceThrowsIAE, this.description("sourceThrowsIAE"));
+            this.payloads.sourceThrowsIAE.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMap() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMap, this.description("flatMap"));
+            this.payloads.flatMap.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMap() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMap, this.description("concatMap"));
+            this.payloads.concatMap.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapEmpty, this.description("flatMapEmpty"));
+            this.payloads.flatMapEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapError, this.description("flatMapError"));
+            this.payloads.flatMapError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapNotifySuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapNotifySuccess, this.description("flatMapNotifySuccess"));
+            this.payloads.flatMapNotifySuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapNotifyError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapNotifyError, this.description("flatMapNotifyError"));
+            this.payloads.flatMapNotifyError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapNotifyComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapNotifyComplete, this.description("flatMapNotifyComplete"));
+            this.payloads.flatMapNotifyComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ignoreElementSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ignoreElementSuccess, this.description("ignoreElementSuccess"));
+            this.payloads.ignoreElementSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ignoreElementError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ignoreElementError, this.description("ignoreElementError"));
+            this.payloads.ignoreElementError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ignoreElementComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ignoreElementComplete, this.description("ignoreElementComplete"));
+            this.payloads.ignoreElementComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ignoreElementSuccessMaybe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ignoreElementSuccessMaybe, this.description("ignoreElementSuccessMaybe"));
+            this.payloads.ignoreElementSuccessMaybe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ignoreElementErrorMaybe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ignoreElementErrorMaybe, this.description("ignoreElementErrorMaybe"));
+            this.payloads.ignoreElementErrorMaybe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ignoreElementCompleteMaybe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ignoreElementCompleteMaybe, this.description("ignoreElementCompleteMaybe"));
+            this.payloads.ignoreElementCompleteMaybe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleToMaybe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleToMaybe, this.description("singleToMaybe"));
+            this.payloads.singleToMaybe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleToMaybeError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleToMaybeError, this.description("singleToMaybeError"));
+            this.payloads.singleToMaybeError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_completableToMaybe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::completableToMaybe, this.description("completableToMaybe"));
+            this.payloads.completableToMaybe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_completableToMaybeError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::completableToMaybeError, this.description("completableToMaybeError"));
+            this.payloads.completableToMaybeError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyToSingle() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyToSingle, this.description("emptyToSingle"));
+            this.payloads.emptyToSingle.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorToSingle() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorToSingle, this.description("errorToSingle"));
+            this.payloads.errorToSingle.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyToCompletable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyToCompletable, this.description("emptyToCompletable"));
+            this.payloads.emptyToCompletable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorToCompletable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorToCompletable, this.description("errorToCompletable"));
+            this.payloads.errorToCompletable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concat2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concat2, this.description("concat2"));
+            this.payloads.concat2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concat2Empty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concat2Empty, this.description("concat2Empty"));
+            this.payloads.concat2Empty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concat2Backpressured() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concat2Backpressured, this.description("concat2Backpressured"));
+            this.payloads.concat2Backpressured.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concat2BackpressuredNonEager() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concat2BackpressuredNonEager, this.description("concat2BackpressuredNonEager"));
+            this.payloads.concat2BackpressuredNonEager.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concat3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concat3, this.description("concat3"));
+            this.payloads.concat3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concat3Empty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concat3Empty, this.description("concat3Empty"));
+            this.payloads.concat3Empty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concat3Mixed1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concat3Mixed1, this.description("concat3Mixed1"));
+            this.payloads.concat3Mixed1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concat3Mixed2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concat3Mixed2, this.description("concat3Mixed2"));
+            this.payloads.concat3Mixed2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concat3Backpressured() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concat3Backpressured, this.description("concat3Backpressured"));
+            this.payloads.concat3Backpressured.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatArrayZero() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatArrayZero, this.description("concatArrayZero"));
+            this.payloads.concatArrayZero.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatArrayOne() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatArrayOne, this.description("concatArrayOne"));
+            this.payloads.concatArrayOne.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concat4() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concat4, this.description("concat4"));
+            this.payloads.concat4.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatIterable, this.description("concatIterable"));
+            this.payloads.concatIterable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatIterableEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatIterableEmpty, this.description("concatIterableEmpty"));
+            this.payloads.concatIterableEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatIterableBackpressured() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatIterableBackpressured, this.description("concatIterableBackpressured"));
+            this.payloads.concatIterableBackpressured.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatIterableBackpressuredNonEager() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatIterableBackpressuredNonEager, this.description("concatIterableBackpressuredNonEager"));
+            this.payloads.concatIterableBackpressuredNonEager.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatIterableZero() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatIterableZero, this.description("concatIterableZero"));
+            this.payloads.concatIterableZero.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatIterableOne() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatIterableOne, this.description("concatIterableOne"));
+            this.payloads.concatIterableOne.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatPublisher() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatPublisher, this.description("concatPublisher"));
+            this.payloads.concatPublisher.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatPublisherPrefetch() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatPublisherPrefetch, this.description("concatPublisherPrefetch"));
+            this.payloads.concatPublisherPrefetch.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_basic() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::basic, this.description("basic"));
+            this.payloads.basic.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_basicWithError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::basicWithError, this.description("basicWithError"));
+            this.payloads.basicWithError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_basicWithComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::basicWithComplete, this.description("basicWithComplete"));
+            this.payloads.basicWithComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsafeCreateWithMaybe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::unsafeCreateWithMaybe, this.description("unsafeCreateWithMaybe"), java.lang.IllegalArgumentException.class);
+            this.payloads.unsafeCreateWithMaybe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maybeToPublisherEnum() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::maybeToPublisherEnum, this.description("maybeToPublisherEnum"));
+            this.payloads.maybeToPublisherEnum.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambArrayOneIsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambArrayOneIsNull, this.description("ambArrayOneIsNull"));
+            this.payloads.ambArrayOneIsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambArrayEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambArrayEmpty, this.description("ambArrayEmpty"));
+            this.payloads.ambArrayEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambArrayOne() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambArrayOne, this.description("ambArrayOne"));
+            this.payloads.ambArrayOne.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambWithOrder() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambWithOrder, this.description("ambWithOrder"));
+            this.payloads.ambWithOrder.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambIterableOrder() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambIterableOrder, this.description("ambIterableOrder"));
+            this.payloads.ambIterableOrder.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambArrayOrder() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambArrayOrder, this.description("ambArrayOrder"));
+            this.payloads.ambArrayOrder.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambArray1SignalsSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambArray1SignalsSuccess, this.description("ambArray1SignalsSuccess"));
+            this.payloads.ambArray1SignalsSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambArray2SignalsSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambArray2SignalsSuccess, this.description("ambArray2SignalsSuccess"));
+            this.payloads.ambArray2SignalsSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambArray1SignalsError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambArray1SignalsError, this.description("ambArray1SignalsError"));
+            this.payloads.ambArray1SignalsError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambArray2SignalsError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambArray2SignalsError, this.description("ambArray2SignalsError"));
+            this.payloads.ambArray2SignalsError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambArray1SignalsComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambArray1SignalsComplete, this.description("ambArray1SignalsComplete"));
+            this.payloads.ambArray1SignalsComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambArray2SignalsComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambArray2SignalsComplete, this.description("ambArray2SignalsComplete"));
+            this.payloads.ambArray2SignalsComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambIterable1SignalsSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambIterable1SignalsSuccess, this.description("ambIterable1SignalsSuccess"));
+            this.payloads.ambIterable1SignalsSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambIterable2SignalsSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambIterable2SignalsSuccess, this.description("ambIterable2SignalsSuccess"));
+            this.payloads.ambIterable2SignalsSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambIterable2SignalsSuccessWithOverlap() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambIterable2SignalsSuccessWithOverlap, this.description("ambIterable2SignalsSuccessWithOverlap"));
+            this.payloads.ambIterable2SignalsSuccessWithOverlap.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambIterable1SignalsError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambIterable1SignalsError, this.description("ambIterable1SignalsError"));
+            this.payloads.ambIterable1SignalsError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambIterable2SignalsError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambIterable2SignalsError, this.description("ambIterable2SignalsError"));
+            this.payloads.ambIterable2SignalsError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambIterable2SignalsErrorWithOverlap() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambIterable2SignalsErrorWithOverlap, this.description("ambIterable2SignalsErrorWithOverlap"));
+            this.payloads.ambIterable2SignalsErrorWithOverlap.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambIterable1SignalsComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambIterable1SignalsComplete, this.description("ambIterable1SignalsComplete"));
+            this.payloads.ambIterable1SignalsComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambIterable2SignalsComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambIterable2SignalsComplete, this.description("ambIterable2SignalsComplete"));
+            this.payloads.ambIterable2SignalsComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambIterableIteratorNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambIterableIteratorNull, this.description("ambIterableIteratorNull"));
+            this.payloads.ambIterableIteratorNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambIterableOneIsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambIterableOneIsNull, this.description("ambIterableOneIsNull"));
+            this.payloads.ambIterableOneIsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambIterableEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambIterableEmpty, this.description("ambIterableEmpty"));
+            this.payloads.ambIterableEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambIterableOne() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambIterableOne, this.description("ambIterableOne"));
+            this.payloads.ambIterableOne.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeArray() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeArray, this.description("mergeArray"));
+            this.payloads.mergeArray.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_merge2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::merge2, this.description("merge2"));
+            this.payloads.merge2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_merge3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::merge3, this.description("merge3"));
+            this.payloads.merge3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_merge4() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::merge4, this.description("merge4"));
+            this.payloads.merge4.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_merge4Take2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::merge4Take2, this.description("merge4Take2"));
+            this.payloads.merge4Take2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeArrayBackpressured() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeArrayBackpressured, this.description("mergeArrayBackpressured"));
+            this.payloads.mergeArrayBackpressured.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeArrayBackpressuredMixed1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeArrayBackpressuredMixed1, this.description("mergeArrayBackpressuredMixed1"));
+            this.payloads.mergeArrayBackpressuredMixed1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeArrayBackpressuredMixed2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeArrayBackpressuredMixed2, this.description("mergeArrayBackpressuredMixed2"));
+            this.payloads.mergeArrayBackpressuredMixed2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeArrayBackpressuredMixed3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeArrayBackpressuredMixed3, this.description("mergeArrayBackpressuredMixed3"));
+            this.payloads.mergeArrayBackpressuredMixed3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeArrayFused() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeArrayFused, this.description("mergeArrayFused"));
+            this.payloads.mergeArrayFused.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeArrayFusedRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeArrayFusedRace, this.description("mergeArrayFusedRace"));
+            this.payloads.mergeArrayFusedRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeArrayZero() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeArrayZero, this.description("mergeArrayZero"));
+            this.payloads.mergeArrayZero.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeArrayOne() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeArrayOne, this.description("mergeArrayOne"));
+            this.payloads.mergeArrayOne.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergePublisher() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergePublisher, this.description("mergePublisher"));
+            this.payloads.mergePublisher.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergePublisherMaxConcurrent() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergePublisherMaxConcurrent, this.description("mergePublisherMaxConcurrent"));
+            this.payloads.mergePublisherMaxConcurrent.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeMaybe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeMaybe, this.description("mergeMaybe"));
+            this.payloads.mergeMaybe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeIterable, this.description("mergeIterable"));
+            this.payloads.mergeIterable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeALot() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeALot, this.description("mergeALot"));
+            this.payloads.mergeALot.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeALotLastEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeALotLastEmpty, this.description("mergeALotLastEmpty"));
+            this.payloads.mergeALotLastEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeALotFused() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeALotFused, this.description("mergeALotFused"));
+            this.payloads.mergeALotFused.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeErrorSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeErrorSuccess, this.description("mergeErrorSuccess"));
+            this.payloads.mergeErrorSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeSuccessError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeSuccessError, this.description("mergeSuccessError"));
+            this.payloads.mergeSuccessError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_subscribeZero() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscribeZero, this.description("subscribeZero"));
+            this.payloads.subscribeZero.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_subscribeZeroError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscribeZeroError, this.description("subscribeZeroError"));
+            this.payloads.subscribeZeroError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_subscribeToOnSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscribeToOnSuccess, this.description("subscribeToOnSuccess"));
+            this.payloads.subscribeToOnSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_subscribeToOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscribeToOnError, this.description("subscribeToOnError"));
+            this.payloads.subscribeToOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_subscribeToOnComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscribeToOnComplete, this.description("subscribeToOnComplete"));
+            this.payloads.subscribeToOnComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_subscribeWith() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscribeWith, this.description("subscribeWith"));
+            this.payloads.subscribeWith.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnEventSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnEventSuccess, this.description("doOnEventSuccess"));
+            this.payloads.doOnEventSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnEventError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnEventError, this.description("doOnEventError"));
+            this.payloads.doOnEventError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnEventComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnEventComplete, this.description("doOnEventComplete"));
+            this.payloads.doOnEventComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnEventSuccessThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnEventSuccessThrows, this.description("doOnEventSuccessThrows"));
+            this.payloads.doOnEventSuccessThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnEventErrorThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnEventErrorThrows, this.description("doOnEventErrorThrows"));
+            this.payloads.doOnEventErrorThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnEventCompleteThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnEventCompleteThrows, this.description("doOnEventCompleteThrows"));
+            this.payloads.doOnEventCompleteThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatArrayDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatArrayDelayError, this.description("concatArrayDelayError"));
+            this.payloads.concatArrayDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatIterableDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatIterableDelayError, this.description("concatIterableDelayError"));
+            this.payloads.concatIterableDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatPublisherDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatPublisherDelayError, this.description("concatPublisherDelayError"));
+            this.payloads.concatPublisherDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatPublisherDelayErrorPrefetch() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatPublisherDelayErrorPrefetch, this.description("concatPublisherDelayErrorPrefetch"));
+            this.payloads.concatPublisherDelayErrorPrefetch.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatEagerArray() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatEagerArray, this.description("concatEagerArray"));
+            this.payloads.concatEagerArray.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatEagerIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatEagerIterable, this.description("concatEagerIterable"));
+            this.payloads.concatEagerIterable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatEagerPublisher() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatEagerPublisher, this.description("concatEagerPublisher"));
+            this.payloads.concatEagerPublisher.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromFuture() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromFuture, this.description("fromFuture"));
+            this.payloads.fromFuture.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeArrayDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeArrayDelayError, this.description("mergeArrayDelayError"));
+            this.payloads.mergeArrayDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeIterableDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeIterableDelayError, this.description("mergeIterableDelayError"));
+            this.payloads.mergeIterableDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergePublisherDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergePublisherDelayError, this.description("mergePublisherDelayError"));
+            this.payloads.mergePublisherDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeDelayError2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeDelayError2, this.description("mergeDelayError2"));
+            this.payloads.mergeDelayError2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeDelayError3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeDelayError3, this.description("mergeDelayError3"));
+            this.payloads.mergeDelayError3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeDelayError4() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeDelayError4, this.description("mergeDelayError4"));
+            this.payloads.mergeDelayError4.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sequenceEqual() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sequenceEqual, this.description("sequenceEqual"));
+            this.payloads.sequenceEqual.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timer, this.description("timer"));
+            this.payloads.timer.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_blockingGet() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::blockingGet, this.description("blockingGet"));
+            this.payloads.blockingGet.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapContinuation() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapContinuation, this.description("flatMapContinuation"));
+            this.payloads.flatMapContinuation.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_using() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::using, this.description("using"));
+            this.payloads.using.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_usingNonEager() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::usingNonEager, this.description("usingNonEager"));
+            this.payloads.usingNonEager.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipArray() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zipArray, this.description("zipArray"));
+            this.payloads.zipArray.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zipIterable, this.description("zipIterable"));
+            this.payloads.zipIterable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zip2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zip2, this.description("zip2"));
+            this.payloads.zip2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipWith() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zipWith, this.description("zipWith"));
+            this.payloads.zipWith.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zip3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zip3, this.description("zip3"));
+            this.payloads.zip3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zip4() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zip4, this.description("zip4"));
+            this.payloads.zip4.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zip5() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zip5, this.description("zip5"));
+            this.payloads.zip5.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zip6() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zip6, this.description("zip6"));
+            this.payloads.zip6.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zip7() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zip7, this.description("zip7"));
+            this.payloads.zip7.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zip8() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zip8, this.description("zip8"));
+            this.payloads.zip8.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zip9() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zip9, this.description("zip9"));
+            this.payloads.zip9.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambWith1SignalsSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambWith1SignalsSuccess, this.description("ambWith1SignalsSuccess"));
+            this.payloads.ambWith1SignalsSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambWith2SignalsSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambWith2SignalsSuccess, this.description("ambWith2SignalsSuccess"));
+            this.payloads.ambWith2SignalsSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipIterableObject() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zipIterableObject, this.description("zipIterableObject"));
+            this.payloads.zipIterableObject.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onTerminateDetach() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onTerminateDetach, this.description("onTerminateDetach"));
+            this.payloads.onTerminateDetach.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_repeat() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::repeat, this.description("repeat"));
+            this.payloads.repeat.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_retry() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::retry, this.description("retry"));
+            this.payloads.retry.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorResumeWithEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorResumeWithEmpty, this.description("onErrorResumeWithEmpty"));
+            this.payloads.onErrorResumeWithEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorResumeWithValue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorResumeWithValue, this.description("onErrorResumeWithValue"));
+            this.payloads.onErrorResumeWithValue.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorResumeWithError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorResumeWithError, this.description("onErrorResumeWithError"));
+            this.payloads.onErrorResumeWithError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_valueConcatWithValue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::valueConcatWithValue, this.description("valueConcatWithValue"));
+            this.payloads.valueConcatWithValue.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorConcatWithValue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorConcatWithValue, this.description("errorConcatWithValue"));
+            this.payloads.errorConcatWithValue.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_valueConcatWithError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::valueConcatWithError, this.description("valueConcatWithError"));
+            this.payloads.valueConcatWithError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyConcatWithValue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyConcatWithValue, this.description("emptyConcatWithValue"));
+            this.payloads.emptyConcatWithValue.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyConcatWithError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyConcatWithError, this.description("emptyConcatWithError"));
+            this.payloads.emptyConcatWithError.evaluate();
         }
 
-        private MaybeTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public MaybeTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new MaybeTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(MaybeTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(MaybeTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement fromFlowableEmpty;
+
+            public org.junit.runners.model.Statement fromFlowableJust;
+
+            public org.junit.runners.model.Statement fromFlowableError;
+
+            public org.junit.runners.model.Statement fromFlowableValueAndError;
+
+            public org.junit.runners.model.Statement fromFlowableMany;
+
+            public org.junit.runners.model.Statement fromFlowableDisposeComposesThrough;
+
+            public org.junit.runners.model.Statement fromObservableEmpty;
+
+            public org.junit.runners.model.Statement fromObservableJust;
+
+            public org.junit.runners.model.Statement fromObservableError;
+
+            public org.junit.runners.model.Statement fromObservableValueAndError;
+
+            public org.junit.runners.model.Statement fromObservableMany;
+
+            public org.junit.runners.model.Statement fromObservableDisposeComposesThrough;
+
+            public org.junit.runners.model.Statement fromObservableDisposeComposesThroughImmediatelyCancelled;
+
+            public org.junit.runners.model.Statement just;
+
+            public org.junit.runners.model.Statement empty;
+
+            public org.junit.runners.model.Statement never;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement errorCallable;
+
+            public org.junit.runners.model.Statement errorCallableReturnsNull;
+
+            public org.junit.runners.model.Statement wrapCustom;
+
+            public org.junit.runners.model.Statement wrapMaybe;
+
+            public org.junit.runners.model.Statement emptySingleton;
+
+            public org.junit.runners.model.Statement neverSingleton;
+
+            public org.junit.runners.model.Statement liftJust;
+
+            public org.junit.runners.model.Statement liftThrows;
+
+            public org.junit.runners.model.Statement deferThrows;
+
+            public org.junit.runners.model.Statement deferReturnsNull;
+
+            public org.junit.runners.model.Statement defer;
+
+            public org.junit.runners.model.Statement flowableMaybeFlowable;
+
+            public org.junit.runners.model.Statement obervableMaybeobervable;
+
+            public org.junit.runners.model.Statement singleMaybeSingle;
+
+            public org.junit.runners.model.Statement completableMaybeCompletable;
+
+            public org.junit.runners.model.Statement unsafeCreate;
+
+            public org.junit.runners.model.Statement to;
+
+            public org.junit.runners.model.Statement as;
+
+            public org.junit.runners.model.Statement compose;
+
+            public org.junit.runners.model.Statement mapReturnNull;
+
+            public org.junit.runners.model.Statement mapThrows;
+
+            public org.junit.runners.model.Statement map;
+
+            public org.junit.runners.model.Statement filterThrows;
+
+            public org.junit.runners.model.Statement filterTrue;
+
+            public org.junit.runners.model.Statement filterFalse;
+
+            public org.junit.runners.model.Statement filterEmpty;
+
+            public org.junit.runners.model.Statement singleFilterThrows;
+
+            public org.junit.runners.model.Statement singleFilterTrue;
+
+            public org.junit.runners.model.Statement singleFilterFalse;
+
+            public org.junit.runners.model.Statement cast;
+
+            public org.junit.runners.model.Statement observeOnSuccess;
+
+            public org.junit.runners.model.Statement observeOnError;
+
+            public org.junit.runners.model.Statement observeOnComplete;
+
+            public org.junit.runners.model.Statement observeOnDispose2;
+
+            public org.junit.runners.model.Statement observeOnDoubleSubscribe;
+
+            public org.junit.runners.model.Statement subscribeOnSuccess;
+
+            public org.junit.runners.model.Statement observeOnErrorThread;
+
+            public org.junit.runners.model.Statement observeOnCompleteThread;
+
+            public org.junit.runners.model.Statement subscribeOnError;
+
+            public org.junit.runners.model.Statement subscribeOnComplete;
+
+            public org.junit.runners.model.Statement fromAction;
+
+            public org.junit.runners.model.Statement fromActionThrows;
+
+            public org.junit.runners.model.Statement fromRunnable;
+
+            public org.junit.runners.model.Statement fromRunnableThrows;
+
+            public org.junit.runners.model.Statement fromCallableThrows;
+
+            public org.junit.runners.model.Statement doOnSuccess;
+
+            public org.junit.runners.model.Statement doOnSuccessEmpty;
+
+            public org.junit.runners.model.Statement doOnSuccessThrows;
+
+            public org.junit.runners.model.Statement doOnSubscribe;
+
+            public org.junit.runners.model.Statement doOnSubscribeThrows;
+
+            public org.junit.runners.model.Statement doOnCompleteThrows;
+
+            public org.junit.runners.model.Statement doOnDispose;
+
+            public org.junit.runners.model.Statement doOnDisposeThrows;
+
+            public org.junit.runners.model.Statement observeOnDispose;
+
+            public org.junit.runners.model.Statement doAfterTerminateSuccess;
+
+            public org.junit.runners.model.Statement doAfterTerminateError;
+
+            public org.junit.runners.model.Statement doAfterTerminateComplete;
+
+            public org.junit.runners.model.Statement sourceThrowsNPE;
+
+            public org.junit.runners.model.Statement sourceThrowsIAE;
+
+            public org.junit.runners.model.Statement flatMap;
+
+            public org.junit.runners.model.Statement concatMap;
+
+            public org.junit.runners.model.Statement flatMapEmpty;
+
+            public org.junit.runners.model.Statement flatMapError;
+
+            public org.junit.runners.model.Statement flatMapNotifySuccess;
+
+            public org.junit.runners.model.Statement flatMapNotifyError;
+
+            public org.junit.runners.model.Statement flatMapNotifyComplete;
+
+            public org.junit.runners.model.Statement ignoreElementSuccess;
+
+            public org.junit.runners.model.Statement ignoreElementError;
+
+            public org.junit.runners.model.Statement ignoreElementComplete;
+
+            public org.junit.runners.model.Statement ignoreElementSuccessMaybe;
+
+            public org.junit.runners.model.Statement ignoreElementErrorMaybe;
+
+            public org.junit.runners.model.Statement ignoreElementCompleteMaybe;
+
+            public org.junit.runners.model.Statement singleToMaybe;
+
+            public org.junit.runners.model.Statement singleToMaybeError;
+
+            public org.junit.runners.model.Statement completableToMaybe;
+
+            public org.junit.runners.model.Statement completableToMaybeError;
+
+            public org.junit.runners.model.Statement emptyToSingle;
+
+            public org.junit.runners.model.Statement errorToSingle;
+
+            public org.junit.runners.model.Statement emptyToCompletable;
+
+            public org.junit.runners.model.Statement errorToCompletable;
+
+            public org.junit.runners.model.Statement concat2;
+
+            public org.junit.runners.model.Statement concat2Empty;
+
+            public org.junit.runners.model.Statement concat2Backpressured;
+
+            public org.junit.runners.model.Statement concat2BackpressuredNonEager;
+
+            public org.junit.runners.model.Statement concat3;
+
+            public org.junit.runners.model.Statement concat3Empty;
+
+            public org.junit.runners.model.Statement concat3Mixed1;
+
+            public org.junit.runners.model.Statement concat3Mixed2;
+
+            public org.junit.runners.model.Statement concat3Backpressured;
+
+            public org.junit.runners.model.Statement concatArrayZero;
+
+            public org.junit.runners.model.Statement concatArrayOne;
+
+            public org.junit.runners.model.Statement concat4;
+
+            public org.junit.runners.model.Statement concatIterable;
+
+            public org.junit.runners.model.Statement concatIterableEmpty;
+
+            public org.junit.runners.model.Statement concatIterableBackpressured;
+
+            public org.junit.runners.model.Statement concatIterableBackpressuredNonEager;
+
+            public org.junit.runners.model.Statement concatIterableZero;
+
+            public org.junit.runners.model.Statement concatIterableOne;
+
+            public org.junit.runners.model.Statement concatPublisher;
+
+            public org.junit.runners.model.Statement concatPublisherPrefetch;
+
+            public org.junit.runners.model.Statement basic;
+
+            public org.junit.runners.model.Statement basicWithError;
+
+            public org.junit.runners.model.Statement basicWithComplete;
+
+            public org.junit.runners.model.Statement unsafeCreateWithMaybe;
+
+            public org.junit.runners.model.Statement maybeToPublisherEnum;
+
+            public org.junit.runners.model.Statement ambArrayOneIsNull;
+
+            public org.junit.runners.model.Statement ambArrayEmpty;
+
+            public org.junit.runners.model.Statement ambArrayOne;
+
+            public org.junit.runners.model.Statement ambWithOrder;
+
+            public org.junit.runners.model.Statement ambIterableOrder;
+
+            public org.junit.runners.model.Statement ambArrayOrder;
+
+            public org.junit.runners.model.Statement ambArray1SignalsSuccess;
+
+            public org.junit.runners.model.Statement ambArray2SignalsSuccess;
+
+            public org.junit.runners.model.Statement ambArray1SignalsError;
+
+            public org.junit.runners.model.Statement ambArray2SignalsError;
+
+            public org.junit.runners.model.Statement ambArray1SignalsComplete;
+
+            public org.junit.runners.model.Statement ambArray2SignalsComplete;
+
+            public org.junit.runners.model.Statement ambIterable1SignalsSuccess;
+
+            public org.junit.runners.model.Statement ambIterable2SignalsSuccess;
+
+            public org.junit.runners.model.Statement ambIterable2SignalsSuccessWithOverlap;
+
+            public org.junit.runners.model.Statement ambIterable1SignalsError;
+
+            public org.junit.runners.model.Statement ambIterable2SignalsError;
+
+            public org.junit.runners.model.Statement ambIterable2SignalsErrorWithOverlap;
+
+            public org.junit.runners.model.Statement ambIterable1SignalsComplete;
+
+            public org.junit.runners.model.Statement ambIterable2SignalsComplete;
+
+            public org.junit.runners.model.Statement ambIterableIteratorNull;
+
+            public org.junit.runners.model.Statement ambIterableOneIsNull;
+
+            public org.junit.runners.model.Statement ambIterableEmpty;
+
+            public org.junit.runners.model.Statement ambIterableOne;
+
+            public org.junit.runners.model.Statement mergeArray;
+
+            public org.junit.runners.model.Statement merge2;
+
+            public org.junit.runners.model.Statement merge3;
+
+            public org.junit.runners.model.Statement merge4;
+
+            public org.junit.runners.model.Statement merge4Take2;
+
+            public org.junit.runners.model.Statement mergeArrayBackpressured;
+
+            public org.junit.runners.model.Statement mergeArrayBackpressuredMixed1;
+
+            public org.junit.runners.model.Statement mergeArrayBackpressuredMixed2;
+
+            public org.junit.runners.model.Statement mergeArrayBackpressuredMixed3;
+
+            public org.junit.runners.model.Statement mergeArrayFused;
+
+            public org.junit.runners.model.Statement mergeArrayFusedRace;
+
+            public org.junit.runners.model.Statement mergeArrayZero;
+
+            public org.junit.runners.model.Statement mergeArrayOne;
+
+            public org.junit.runners.model.Statement mergePublisher;
+
+            public org.junit.runners.model.Statement mergePublisherMaxConcurrent;
+
+            public org.junit.runners.model.Statement mergeMaybe;
+
+            public org.junit.runners.model.Statement mergeIterable;
+
+            public org.junit.runners.model.Statement mergeALot;
+
+            public org.junit.runners.model.Statement mergeALotLastEmpty;
+
+            public org.junit.runners.model.Statement mergeALotFused;
+
+            public org.junit.runners.model.Statement mergeErrorSuccess;
+
+            public org.junit.runners.model.Statement mergeSuccessError;
+
+            public org.junit.runners.model.Statement subscribeZero;
+
+            public org.junit.runners.model.Statement subscribeZeroError;
+
+            public org.junit.runners.model.Statement subscribeToOnSuccess;
+
+            public org.junit.runners.model.Statement subscribeToOnError;
+
+            public org.junit.runners.model.Statement subscribeToOnComplete;
+
+            public org.junit.runners.model.Statement subscribeWith;
+
+            public org.junit.runners.model.Statement doOnEventSuccess;
+
+            public org.junit.runners.model.Statement doOnEventError;
+
+            public org.junit.runners.model.Statement doOnEventComplete;
+
+            public org.junit.runners.model.Statement doOnEventSuccessThrows;
+
+            public org.junit.runners.model.Statement doOnEventErrorThrows;
+
+            public org.junit.runners.model.Statement doOnEventCompleteThrows;
+
+            public org.junit.runners.model.Statement concatArrayDelayError;
+
+            public org.junit.runners.model.Statement concatIterableDelayError;
+
+            public org.junit.runners.model.Statement concatPublisherDelayError;
+
+            public org.junit.runners.model.Statement concatPublisherDelayErrorPrefetch;
+
+            public org.junit.runners.model.Statement concatEagerArray;
+
+            public org.junit.runners.model.Statement concatEagerIterable;
+
+            public org.junit.runners.model.Statement concatEagerPublisher;
+
+            public org.junit.runners.model.Statement fromFuture;
+
+            public org.junit.runners.model.Statement mergeArrayDelayError;
+
+            public org.junit.runners.model.Statement mergeIterableDelayError;
+
+            public org.junit.runners.model.Statement mergePublisherDelayError;
+
+            public org.junit.runners.model.Statement mergeDelayError2;
+
+            public org.junit.runners.model.Statement mergeDelayError3;
+
+            public org.junit.runners.model.Statement mergeDelayError4;
+
+            public org.junit.runners.model.Statement sequenceEqual;
+
+            public org.junit.runners.model.Statement timer;
+
+            public org.junit.runners.model.Statement blockingGet;
+
+            public org.junit.runners.model.Statement flatMapContinuation;
+
+            public org.junit.runners.model.Statement using;
+
+            public org.junit.runners.model.Statement usingNonEager;
+
+            public org.junit.runners.model.Statement zipArray;
+
+            public org.junit.runners.model.Statement zipIterable;
+
+            public org.junit.runners.model.Statement zip2;
+
+            public org.junit.runners.model.Statement zipWith;
+
+            public org.junit.runners.model.Statement zip3;
+
+            public org.junit.runners.model.Statement zip4;
+
+            public org.junit.runners.model.Statement zip5;
+
+            public org.junit.runners.model.Statement zip6;
+
+            public org.junit.runners.model.Statement zip7;
+
+            public org.junit.runners.model.Statement zip8;
+
+            public org.junit.runners.model.Statement zip9;
+
+            public org.junit.runners.model.Statement ambWith1SignalsSuccess;
+
+            public org.junit.runners.model.Statement ambWith2SignalsSuccess;
+
+            public org.junit.runners.model.Statement zipIterableObject;
+
+            public org.junit.runners.model.Statement onTerminateDetach;
+
+            public org.junit.runners.model.Statement repeat;
+
+            public org.junit.runners.model.Statement retry;
+
+            public org.junit.runners.model.Statement onErrorResumeWithEmpty;
+
+            public org.junit.runners.model.Statement onErrorResumeWithValue;
+
+            public org.junit.runners.model.Statement onErrorResumeWithError;
+
+            public org.junit.runners.model.Statement valueConcatWithValue;
+
+            public org.junit.runners.model.Statement errorConcatWithValue;
+
+            public org.junit.runners.model.Statement valueConcatWithError;
+
+            public org.junit.runners.model.Statement emptyConcatWithValue;
+
+            public org.junit.runners.model.Statement emptyConcatWithError;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.fromFlowableEmpty = _ClassStatement.forPayload(MaybeTest::fromFlowableEmpty, "fromFlowableEmpty", this);
+            this.payloads.fromFlowableJust = _ClassStatement.forPayload(MaybeTest::fromFlowableJust, "fromFlowableJust", this);
+            this.payloads.fromFlowableError = _ClassStatement.forPayload(MaybeTest::fromFlowableError, "fromFlowableError", this);
+            this.payloads.fromFlowableValueAndError = _ClassStatement.forPayload(MaybeTest::fromFlowableValueAndError, "fromFlowableValueAndError", this);
+            this.payloads.fromFlowableMany = _ClassStatement.forPayload(MaybeTest::fromFlowableMany, "fromFlowableMany", this);
+            this.payloads.fromFlowableDisposeComposesThrough = _ClassStatement.forPayload(MaybeTest::fromFlowableDisposeComposesThrough, "fromFlowableDisposeComposesThrough", this);
+            this.payloads.fromObservableEmpty = _ClassStatement.forPayload(MaybeTest::fromObservableEmpty, "fromObservableEmpty", this);
+            this.payloads.fromObservableJust = _ClassStatement.forPayload(MaybeTest::fromObservableJust, "fromObservableJust", this);
+            this.payloads.fromObservableError = _ClassStatement.forPayload(MaybeTest::fromObservableError, "fromObservableError", this);
+            this.payloads.fromObservableValueAndError = _ClassStatement.forPayload(MaybeTest::fromObservableValueAndError, "fromObservableValueAndError", this);
+            this.payloads.fromObservableMany = _ClassStatement.forPayload(MaybeTest::fromObservableMany, "fromObservableMany", this);
+            this.payloads.fromObservableDisposeComposesThrough = _ClassStatement.forPayload(MaybeTest::fromObservableDisposeComposesThrough, "fromObservableDisposeComposesThrough", this);
+            this.payloads.fromObservableDisposeComposesThroughImmediatelyCancelled = _ClassStatement.forPayload(MaybeTest::fromObservableDisposeComposesThroughImmediatelyCancelled, "fromObservableDisposeComposesThroughImmediatelyCancelled", this);
+            this.payloads.just = _ClassStatement.forPayload(MaybeTest::just, "just", this);
+            this.payloads.empty = _ClassStatement.forPayload(MaybeTest::empty, "empty", this);
+            this.payloads.never = _ClassStatement.forPayload(MaybeTest::never, "never", this);
+            this.payloads.error = _ClassStatement.forPayload(MaybeTest::error, "error", this);
+            this.payloads.errorCallable = _ClassStatement.forPayload(MaybeTest::errorCallable, "errorCallable", this);
+            this.payloads.errorCallableReturnsNull = _ClassStatement.forPayload(MaybeTest::errorCallableReturnsNull, "errorCallableReturnsNull", this);
+            this.payloads.wrapCustom = _ClassStatement.forPayload(MaybeTest::wrapCustom, "wrapCustom", this);
+            this.payloads.wrapMaybe = _ClassStatement.forPayload(MaybeTest::wrapMaybe, "wrapMaybe", this);
+            this.payloads.emptySingleton = _ClassStatement.forPayload(MaybeTest::emptySingleton, "emptySingleton", this);
+            this.payloads.neverSingleton = _ClassStatement.forPayload(MaybeTest::neverSingleton, "neverSingleton", this);
+            this.payloads.liftJust = _ClassStatement.forPayload(MaybeTest::liftJust, "liftJust", this);
+            this.payloads.liftThrows = _ClassStatement.forPayload(MaybeTest::liftThrows, "liftThrows", this);
+            this.payloads.deferThrows = _ClassStatement.forPayload(MaybeTest::deferThrows, "deferThrows", this);
+            this.payloads.deferReturnsNull = _ClassStatement.forPayload(MaybeTest::deferReturnsNull, "deferReturnsNull", this);
+            this.payloads.defer = _ClassStatement.forPayload(MaybeTest::defer, "defer", this);
+            this.payloads.flowableMaybeFlowable = _ClassStatement.forPayload(MaybeTest::flowableMaybeFlowable, "flowableMaybeFlowable", this);
+            this.payloads.obervableMaybeobervable = _ClassStatement.forPayload(MaybeTest::obervableMaybeobervable, "obervableMaybeobervable", this);
+            this.payloads.singleMaybeSingle = _ClassStatement.forPayload(MaybeTest::singleMaybeSingle, "singleMaybeSingle", this);
+            this.payloads.completableMaybeCompletable = _ClassStatement.forPayload(MaybeTest::completableMaybeCompletable, "completableMaybeCompletable", this);
+            this.payloads.unsafeCreate = _ClassStatement.forPayload(MaybeTest::unsafeCreate, "unsafeCreate", this);
+            this.payloads.to = _ClassStatement.forPayload(MaybeTest::to, "to", this);
+            this.payloads.as = _ClassStatement.forPayload(MaybeTest::as, "as", this);
+            this.payloads.compose = _ClassStatement.forPayload(MaybeTest::compose, "compose", this);
+            this.payloads.mapReturnNull = _ClassStatement.forPayload(MaybeTest::mapReturnNull, "mapReturnNull", this);
+            this.payloads.mapThrows = _ClassStatement.forPayload(MaybeTest::mapThrows, "mapThrows", this);
+            this.payloads.map = _ClassStatement.forPayload(MaybeTest::map, "map", this);
+            this.payloads.filterThrows = _ClassStatement.forPayload(MaybeTest::filterThrows, "filterThrows", this);
+            this.payloads.filterTrue = _ClassStatement.forPayload(MaybeTest::filterTrue, "filterTrue", this);
+            this.payloads.filterFalse = _ClassStatement.forPayload(MaybeTest::filterFalse, "filterFalse", this);
+            this.payloads.filterEmpty = _ClassStatement.forPayload(MaybeTest::filterEmpty, "filterEmpty", this);
+            this.payloads.singleFilterThrows = _ClassStatement.forPayload(MaybeTest::singleFilterThrows, "singleFilterThrows", this);
+            this.payloads.singleFilterTrue = _ClassStatement.forPayload(MaybeTest::singleFilterTrue, "singleFilterTrue", this);
+            this.payloads.singleFilterFalse = _ClassStatement.forPayload(MaybeTest::singleFilterFalse, "singleFilterFalse", this);
+            this.payloads.cast = _ClassStatement.forPayload(MaybeTest::cast, "cast", this);
+            this.payloads.observeOnSuccess = _ClassStatement.forPayload(MaybeTest::observeOnSuccess, "observeOnSuccess", this);
+            this.payloads.observeOnError = _ClassStatement.forPayload(MaybeTest::observeOnError, "observeOnError", this);
+            this.payloads.observeOnComplete = _ClassStatement.forPayload(MaybeTest::observeOnComplete, "observeOnComplete", this);
+            this.payloads.observeOnDispose2 = _ClassStatement.forPayload(MaybeTest::observeOnDispose2, "observeOnDispose2", this);
+            this.payloads.observeOnDoubleSubscribe = _ClassStatement.forPayload(MaybeTest::observeOnDoubleSubscribe, "observeOnDoubleSubscribe", this);
+            this.payloads.subscribeOnSuccess = _ClassStatement.forPayload(MaybeTest::subscribeOnSuccess, "subscribeOnSuccess", this);
+            this.payloads.observeOnErrorThread = _ClassStatement.forPayload(MaybeTest::observeOnErrorThread, "observeOnErrorThread", this);
+            this.payloads.observeOnCompleteThread = _ClassStatement.forPayload(MaybeTest::observeOnCompleteThread, "observeOnCompleteThread", this);
+            this.payloads.subscribeOnError = _ClassStatement.forPayload(MaybeTest::subscribeOnError, "subscribeOnError", this);
+            this.payloads.subscribeOnComplete = _ClassStatement.forPayload(MaybeTest::subscribeOnComplete, "subscribeOnComplete", this);
+            this.payloads.fromAction = _ClassStatement.forPayload(MaybeTest::fromAction, "fromAction", this);
+            this.payloads.fromActionThrows = _ClassStatement.forPayload(MaybeTest::fromActionThrows, "fromActionThrows", this);
+            this.payloads.fromRunnable = _ClassStatement.forPayload(MaybeTest::fromRunnable, "fromRunnable", this);
+            this.payloads.fromRunnableThrows = _ClassStatement.forPayload(MaybeTest::fromRunnableThrows, "fromRunnableThrows", this);
+            this.payloads.fromCallableThrows = _ClassStatement.forPayload(MaybeTest::fromCallableThrows, "fromCallableThrows", this);
+            this.payloads.doOnSuccess = _ClassStatement.forPayload(MaybeTest::doOnSuccess, "doOnSuccess", this);
+            this.payloads.doOnSuccessEmpty = _ClassStatement.forPayload(MaybeTest::doOnSuccessEmpty, "doOnSuccessEmpty", this);
+            this.payloads.doOnSuccessThrows = _ClassStatement.forPayload(MaybeTest::doOnSuccessThrows, "doOnSuccessThrows", this);
+            this.payloads.doOnSubscribe = _ClassStatement.forPayload(MaybeTest::doOnSubscribe, "doOnSubscribe", this);
+            this.payloads.doOnSubscribeThrows = _ClassStatement.forPayload(MaybeTest::doOnSubscribeThrows, "doOnSubscribeThrows", this);
+            this.payloads.doOnCompleteThrows = _ClassStatement.forPayload(MaybeTest::doOnCompleteThrows, "doOnCompleteThrows", this);
+            this.payloads.doOnDispose = _ClassStatement.forPayload(MaybeTest::doOnDispose, "doOnDispose", this);
+            this.payloads.doOnDisposeThrows = _ClassStatement.forPayload(MaybeTest::doOnDisposeThrows, "doOnDisposeThrows", this);
+            this.payloads.observeOnDispose = _ClassStatement.forPayload(MaybeTest::observeOnDispose, "observeOnDispose", this);
+            this.payloads.doAfterTerminateSuccess = _ClassStatement.forPayload(MaybeTest::doAfterTerminateSuccess, "doAfterTerminateSuccess", this);
+            this.payloads.doAfterTerminateError = _ClassStatement.forPayload(MaybeTest::doAfterTerminateError, "doAfterTerminateError", this);
+            this.payloads.doAfterTerminateComplete = _ClassStatement.forPayload(MaybeTest::doAfterTerminateComplete, "doAfterTerminateComplete", this);
+            this.payloads.sourceThrowsNPE = _ClassStatement.forPayload(MaybeTest::sourceThrowsNPE, "sourceThrowsNPE", this);
+            this.payloads.sourceThrowsIAE = _ClassStatement.forPayload(MaybeTest::sourceThrowsIAE, "sourceThrowsIAE", this);
+            this.payloads.flatMap = _ClassStatement.forPayload(MaybeTest::flatMap, "flatMap", this);
+            this.payloads.concatMap = _ClassStatement.forPayload(MaybeTest::concatMap, "concatMap", this);
+            this.payloads.flatMapEmpty = _ClassStatement.forPayload(MaybeTest::flatMapEmpty, "flatMapEmpty", this);
+            this.payloads.flatMapError = _ClassStatement.forPayload(MaybeTest::flatMapError, "flatMapError", this);
+            this.payloads.flatMapNotifySuccess = _ClassStatement.forPayload(MaybeTest::flatMapNotifySuccess, "flatMapNotifySuccess", this);
+            this.payloads.flatMapNotifyError = _ClassStatement.forPayload(MaybeTest::flatMapNotifyError, "flatMapNotifyError", this);
+            this.payloads.flatMapNotifyComplete = _ClassStatement.forPayload(MaybeTest::flatMapNotifyComplete, "flatMapNotifyComplete", this);
+            this.payloads.ignoreElementSuccess = _ClassStatement.forPayload(MaybeTest::ignoreElementSuccess, "ignoreElementSuccess", this);
+            this.payloads.ignoreElementError = _ClassStatement.forPayload(MaybeTest::ignoreElementError, "ignoreElementError", this);
+            this.payloads.ignoreElementComplete = _ClassStatement.forPayload(MaybeTest::ignoreElementComplete, "ignoreElementComplete", this);
+            this.payloads.ignoreElementSuccessMaybe = _ClassStatement.forPayload(MaybeTest::ignoreElementSuccessMaybe, "ignoreElementSuccessMaybe", this);
+            this.payloads.ignoreElementErrorMaybe = _ClassStatement.forPayload(MaybeTest::ignoreElementErrorMaybe, "ignoreElementErrorMaybe", this);
+            this.payloads.ignoreElementCompleteMaybe = _ClassStatement.forPayload(MaybeTest::ignoreElementCompleteMaybe, "ignoreElementCompleteMaybe", this);
+            this.payloads.singleToMaybe = _ClassStatement.forPayload(MaybeTest::singleToMaybe, "singleToMaybe", this);
+            this.payloads.singleToMaybeError = _ClassStatement.forPayload(MaybeTest::singleToMaybeError, "singleToMaybeError", this);
+            this.payloads.completableToMaybe = _ClassStatement.forPayload(MaybeTest::completableToMaybe, "completableToMaybe", this);
+            this.payloads.completableToMaybeError = _ClassStatement.forPayload(MaybeTest::completableToMaybeError, "completableToMaybeError", this);
+            this.payloads.emptyToSingle = _ClassStatement.forPayload(MaybeTest::emptyToSingle, "emptyToSingle", this);
+            this.payloads.errorToSingle = _ClassStatement.forPayload(MaybeTest::errorToSingle, "errorToSingle", this);
+            this.payloads.emptyToCompletable = _ClassStatement.forPayload(MaybeTest::emptyToCompletable, "emptyToCompletable", this);
+            this.payloads.errorToCompletable = _ClassStatement.forPayload(MaybeTest::errorToCompletable, "errorToCompletable", this);
+            this.payloads.concat2 = _ClassStatement.forPayload(MaybeTest::concat2, "concat2", this);
+            this.payloads.concat2Empty = _ClassStatement.forPayload(MaybeTest::concat2Empty, "concat2Empty", this);
+            this.payloads.concat2Backpressured = _ClassStatement.forPayload(MaybeTest::concat2Backpressured, "concat2Backpressured", this);
+            this.payloads.concat2BackpressuredNonEager = _ClassStatement.forPayload(MaybeTest::concat2BackpressuredNonEager, "concat2BackpressuredNonEager", this);
+            this.payloads.concat3 = _ClassStatement.forPayload(MaybeTest::concat3, "concat3", this);
+            this.payloads.concat3Empty = _ClassStatement.forPayload(MaybeTest::concat3Empty, "concat3Empty", this);
+            this.payloads.concat3Mixed1 = _ClassStatement.forPayload(MaybeTest::concat3Mixed1, "concat3Mixed1", this);
+            this.payloads.concat3Mixed2 = _ClassStatement.forPayload(MaybeTest::concat3Mixed2, "concat3Mixed2", this);
+            this.payloads.concat3Backpressured = _ClassStatement.forPayload(MaybeTest::concat3Backpressured, "concat3Backpressured", this);
+            this.payloads.concatArrayZero = _ClassStatement.forPayload(MaybeTest::concatArrayZero, "concatArrayZero", this);
+            this.payloads.concatArrayOne = _ClassStatement.forPayload(MaybeTest::concatArrayOne, "concatArrayOne", this);
+            this.payloads.concat4 = _ClassStatement.forPayload(MaybeTest::concat4, "concat4", this);
+            this.payloads.concatIterable = _ClassStatement.forPayload(MaybeTest::concatIterable, "concatIterable", this);
+            this.payloads.concatIterableEmpty = _ClassStatement.forPayload(MaybeTest::concatIterableEmpty, "concatIterableEmpty", this);
+            this.payloads.concatIterableBackpressured = _ClassStatement.forPayload(MaybeTest::concatIterableBackpressured, "concatIterableBackpressured", this);
+            this.payloads.concatIterableBackpressuredNonEager = _ClassStatement.forPayload(MaybeTest::concatIterableBackpressuredNonEager, "concatIterableBackpressuredNonEager", this);
+            this.payloads.concatIterableZero = _ClassStatement.forPayload(MaybeTest::concatIterableZero, "concatIterableZero", this);
+            this.payloads.concatIterableOne = _ClassStatement.forPayload(MaybeTest::concatIterableOne, "concatIterableOne", this);
+            this.payloads.concatPublisher = _ClassStatement.forPayload(MaybeTest::concatPublisher, "concatPublisher", this);
+            this.payloads.concatPublisherPrefetch = _ClassStatement.forPayload(MaybeTest::concatPublisherPrefetch, "concatPublisherPrefetch", this);
+            this.payloads.basic = _ClassStatement.forPayload(MaybeTest::basic, "basic", this);
+            this.payloads.basicWithError = _ClassStatement.forPayload(MaybeTest::basicWithError, "basicWithError", this);
+            this.payloads.basicWithComplete = _ClassStatement.forPayload(MaybeTest::basicWithComplete, "basicWithComplete", this);
+            this.payloads.unsafeCreateWithMaybe = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(MaybeTest::unsafeCreateWithMaybe, java.lang.IllegalArgumentException.class), "unsafeCreateWithMaybe", this);
+            this.payloads.maybeToPublisherEnum = _ClassStatement.forPayload(MaybeTest::maybeToPublisherEnum, "maybeToPublisherEnum", this);
+            this.payloads.ambArrayOneIsNull = _ClassStatement.forPayload(MaybeTest::ambArrayOneIsNull, "ambArrayOneIsNull", this);
+            this.payloads.ambArrayEmpty = _ClassStatement.forPayload(MaybeTest::ambArrayEmpty, "ambArrayEmpty", this);
+            this.payloads.ambArrayOne = _ClassStatement.forPayload(MaybeTest::ambArrayOne, "ambArrayOne", this);
+            this.payloads.ambWithOrder = _ClassStatement.forPayload(MaybeTest::ambWithOrder, "ambWithOrder", this);
+            this.payloads.ambIterableOrder = _ClassStatement.forPayload(MaybeTest::ambIterableOrder, "ambIterableOrder", this);
+            this.payloads.ambArrayOrder = _ClassStatement.forPayload(MaybeTest::ambArrayOrder, "ambArrayOrder", this);
+            this.payloads.ambArray1SignalsSuccess = _ClassStatement.forPayload(MaybeTest::ambArray1SignalsSuccess, "ambArray1SignalsSuccess", this);
+            this.payloads.ambArray2SignalsSuccess = _ClassStatement.forPayload(MaybeTest::ambArray2SignalsSuccess, "ambArray2SignalsSuccess", this);
+            this.payloads.ambArray1SignalsError = _ClassStatement.forPayload(MaybeTest::ambArray1SignalsError, "ambArray1SignalsError", this);
+            this.payloads.ambArray2SignalsError = _ClassStatement.forPayload(MaybeTest::ambArray2SignalsError, "ambArray2SignalsError", this);
+            this.payloads.ambArray1SignalsComplete = _ClassStatement.forPayload(MaybeTest::ambArray1SignalsComplete, "ambArray1SignalsComplete", this);
+            this.payloads.ambArray2SignalsComplete = _ClassStatement.forPayload(MaybeTest::ambArray2SignalsComplete, "ambArray2SignalsComplete", this);
+            this.payloads.ambIterable1SignalsSuccess = _ClassStatement.forPayload(MaybeTest::ambIterable1SignalsSuccess, "ambIterable1SignalsSuccess", this);
+            this.payloads.ambIterable2SignalsSuccess = _ClassStatement.forPayload(MaybeTest::ambIterable2SignalsSuccess, "ambIterable2SignalsSuccess", this);
+            this.payloads.ambIterable2SignalsSuccessWithOverlap = _ClassStatement.forPayload(MaybeTest::ambIterable2SignalsSuccessWithOverlap, "ambIterable2SignalsSuccessWithOverlap", this);
+            this.payloads.ambIterable1SignalsError = _ClassStatement.forPayload(MaybeTest::ambIterable1SignalsError, "ambIterable1SignalsError", this);
+            this.payloads.ambIterable2SignalsError = _ClassStatement.forPayload(MaybeTest::ambIterable2SignalsError, "ambIterable2SignalsError", this);
+            this.payloads.ambIterable2SignalsErrorWithOverlap = _ClassStatement.forPayload(MaybeTest::ambIterable2SignalsErrorWithOverlap, "ambIterable2SignalsErrorWithOverlap", this);
+            this.payloads.ambIterable1SignalsComplete = _ClassStatement.forPayload(MaybeTest::ambIterable1SignalsComplete, "ambIterable1SignalsComplete", this);
+            this.payloads.ambIterable2SignalsComplete = _ClassStatement.forPayload(MaybeTest::ambIterable2SignalsComplete, "ambIterable2SignalsComplete", this);
+            this.payloads.ambIterableIteratorNull = _ClassStatement.forPayload(MaybeTest::ambIterableIteratorNull, "ambIterableIteratorNull", this);
+            this.payloads.ambIterableOneIsNull = _ClassStatement.forPayload(MaybeTest::ambIterableOneIsNull, "ambIterableOneIsNull", this);
+            this.payloads.ambIterableEmpty = _ClassStatement.forPayload(MaybeTest::ambIterableEmpty, "ambIterableEmpty", this);
+            this.payloads.ambIterableOne = _ClassStatement.forPayload(MaybeTest::ambIterableOne, "ambIterableOne", this);
+            this.payloads.mergeArray = _ClassStatement.forPayload(MaybeTest::mergeArray, "mergeArray", this);
+            this.payloads.merge2 = _ClassStatement.forPayload(MaybeTest::merge2, "merge2", this);
+            this.payloads.merge3 = _ClassStatement.forPayload(MaybeTest::merge3, "merge3", this);
+            this.payloads.merge4 = _ClassStatement.forPayload(MaybeTest::merge4, "merge4", this);
+            this.payloads.merge4Take2 = _ClassStatement.forPayload(MaybeTest::merge4Take2, "merge4Take2", this);
+            this.payloads.mergeArrayBackpressured = _ClassStatement.forPayload(MaybeTest::mergeArrayBackpressured, "mergeArrayBackpressured", this);
+            this.payloads.mergeArrayBackpressuredMixed1 = _ClassStatement.forPayload(MaybeTest::mergeArrayBackpressuredMixed1, "mergeArrayBackpressuredMixed1", this);
+            this.payloads.mergeArrayBackpressuredMixed2 = _ClassStatement.forPayload(MaybeTest::mergeArrayBackpressuredMixed2, "mergeArrayBackpressuredMixed2", this);
+            this.payloads.mergeArrayBackpressuredMixed3 = _ClassStatement.forPayload(MaybeTest::mergeArrayBackpressuredMixed3, "mergeArrayBackpressuredMixed3", this);
+            this.payloads.mergeArrayFused = _ClassStatement.forPayload(MaybeTest::mergeArrayFused, "mergeArrayFused", this);
+            this.payloads.mergeArrayFusedRace = _ClassStatement.forPayload(MaybeTest::mergeArrayFusedRace, "mergeArrayFusedRace", this);
+            this.payloads.mergeArrayZero = _ClassStatement.forPayload(MaybeTest::mergeArrayZero, "mergeArrayZero", this);
+            this.payloads.mergeArrayOne = _ClassStatement.forPayload(MaybeTest::mergeArrayOne, "mergeArrayOne", this);
+            this.payloads.mergePublisher = _ClassStatement.forPayload(MaybeTest::mergePublisher, "mergePublisher", this);
+            this.payloads.mergePublisherMaxConcurrent = _ClassStatement.forPayload(MaybeTest::mergePublisherMaxConcurrent, "mergePublisherMaxConcurrent", this);
+            this.payloads.mergeMaybe = _ClassStatement.forPayload(MaybeTest::mergeMaybe, "mergeMaybe", this);
+            this.payloads.mergeIterable = _ClassStatement.forPayload(MaybeTest::mergeIterable, "mergeIterable", this);
+            this.payloads.mergeALot = _ClassStatement.forPayload(MaybeTest::mergeALot, "mergeALot", this);
+            this.payloads.mergeALotLastEmpty = _ClassStatement.forPayload(MaybeTest::mergeALotLastEmpty, "mergeALotLastEmpty", this);
+            this.payloads.mergeALotFused = _ClassStatement.forPayload(MaybeTest::mergeALotFused, "mergeALotFused", this);
+            this.payloads.mergeErrorSuccess = _ClassStatement.forPayload(MaybeTest::mergeErrorSuccess, "mergeErrorSuccess", this);
+            this.payloads.mergeSuccessError = _ClassStatement.forPayload(MaybeTest::mergeSuccessError, "mergeSuccessError", this);
+            this.payloads.subscribeZero = _ClassStatement.forPayload(MaybeTest::subscribeZero, "subscribeZero", this);
+            this.payloads.subscribeZeroError = _ClassStatement.forPayload(MaybeTest::subscribeZeroError, "subscribeZeroError", this);
+            this.payloads.subscribeToOnSuccess = _ClassStatement.forPayload(MaybeTest::subscribeToOnSuccess, "subscribeToOnSuccess", this);
+            this.payloads.subscribeToOnError = _ClassStatement.forPayload(MaybeTest::subscribeToOnError, "subscribeToOnError", this);
+            this.payloads.subscribeToOnComplete = _ClassStatement.forPayload(MaybeTest::subscribeToOnComplete, "subscribeToOnComplete", this);
+            this.payloads.subscribeWith = _ClassStatement.forPayload(MaybeTest::subscribeWith, "subscribeWith", this);
+            this.payloads.doOnEventSuccess = _ClassStatement.forPayload(MaybeTest::doOnEventSuccess, "doOnEventSuccess", this);
+            this.payloads.doOnEventError = _ClassStatement.forPayload(MaybeTest::doOnEventError, "doOnEventError", this);
+            this.payloads.doOnEventComplete = _ClassStatement.forPayload(MaybeTest::doOnEventComplete, "doOnEventComplete", this);
+            this.payloads.doOnEventSuccessThrows = _ClassStatement.forPayload(MaybeTest::doOnEventSuccessThrows, "doOnEventSuccessThrows", this);
+            this.payloads.doOnEventErrorThrows = _ClassStatement.forPayload(MaybeTest::doOnEventErrorThrows, "doOnEventErrorThrows", this);
+            this.payloads.doOnEventCompleteThrows = _ClassStatement.forPayload(MaybeTest::doOnEventCompleteThrows, "doOnEventCompleteThrows", this);
+            this.payloads.concatArrayDelayError = _ClassStatement.forPayload(MaybeTest::concatArrayDelayError, "concatArrayDelayError", this);
+            this.payloads.concatIterableDelayError = _ClassStatement.forPayload(MaybeTest::concatIterableDelayError, "concatIterableDelayError", this);
+            this.payloads.concatPublisherDelayError = _ClassStatement.forPayload(MaybeTest::concatPublisherDelayError, "concatPublisherDelayError", this);
+            this.payloads.concatPublisherDelayErrorPrefetch = _ClassStatement.forPayload(MaybeTest::concatPublisherDelayErrorPrefetch, "concatPublisherDelayErrorPrefetch", this);
+            this.payloads.concatEagerArray = _ClassStatement.forPayload(MaybeTest::concatEagerArray, "concatEagerArray", this);
+            this.payloads.concatEagerIterable = _ClassStatement.forPayload(MaybeTest::concatEagerIterable, "concatEagerIterable", this);
+            this.payloads.concatEagerPublisher = _ClassStatement.forPayload(MaybeTest::concatEagerPublisher, "concatEagerPublisher", this);
+            this.payloads.fromFuture = _ClassStatement.forPayload(MaybeTest::fromFuture, "fromFuture", this);
+            this.payloads.mergeArrayDelayError = _ClassStatement.forPayload(MaybeTest::mergeArrayDelayError, "mergeArrayDelayError", this);
+            this.payloads.mergeIterableDelayError = _ClassStatement.forPayload(MaybeTest::mergeIterableDelayError, "mergeIterableDelayError", this);
+            this.payloads.mergePublisherDelayError = _ClassStatement.forPayload(MaybeTest::mergePublisherDelayError, "mergePublisherDelayError", this);
+            this.payloads.mergeDelayError2 = _ClassStatement.forPayload(MaybeTest::mergeDelayError2, "mergeDelayError2", this);
+            this.payloads.mergeDelayError3 = _ClassStatement.forPayload(MaybeTest::mergeDelayError3, "mergeDelayError3", this);
+            this.payloads.mergeDelayError4 = _ClassStatement.forPayload(MaybeTest::mergeDelayError4, "mergeDelayError4", this);
+            this.payloads.sequenceEqual = _ClassStatement.forPayload(MaybeTest::sequenceEqual, "sequenceEqual", this);
+            this.payloads.timer = _ClassStatement.forPayload(MaybeTest::timer, "timer", this);
+            this.payloads.blockingGet = _ClassStatement.forPayload(MaybeTest::blockingGet, "blockingGet", this);
+            this.payloads.flatMapContinuation = _ClassStatement.forPayload(MaybeTest::flatMapContinuation, "flatMapContinuation", this);
+            this.payloads.using = _ClassStatement.forPayload(MaybeTest::using, "using", this);
+            this.payloads.usingNonEager = _ClassStatement.forPayload(MaybeTest::usingNonEager, "usingNonEager", this);
+            this.payloads.zipArray = _ClassStatement.forPayload(MaybeTest::zipArray, "zipArray", this);
+            this.payloads.zipIterable = _ClassStatement.forPayload(MaybeTest::zipIterable, "zipIterable", this);
+            this.payloads.zip2 = _ClassStatement.forPayload(MaybeTest::zip2, "zip2", this);
+            this.payloads.zipWith = _ClassStatement.forPayload(MaybeTest::zipWith, "zipWith", this);
+            this.payloads.zip3 = _ClassStatement.forPayload(MaybeTest::zip3, "zip3", this);
+            this.payloads.zip4 = _ClassStatement.forPayload(MaybeTest::zip4, "zip4", this);
+            this.payloads.zip5 = _ClassStatement.forPayload(MaybeTest::zip5, "zip5", this);
+            this.payloads.zip6 = _ClassStatement.forPayload(MaybeTest::zip6, "zip6", this);
+            this.payloads.zip7 = _ClassStatement.forPayload(MaybeTest::zip7, "zip7", this);
+            this.payloads.zip8 = _ClassStatement.forPayload(MaybeTest::zip8, "zip8", this);
+            this.payloads.zip9 = _ClassStatement.forPayload(MaybeTest::zip9, "zip9", this);
+            this.payloads.ambWith1SignalsSuccess = _ClassStatement.forPayload(MaybeTest::ambWith1SignalsSuccess, "ambWith1SignalsSuccess", this);
+            this.payloads.ambWith2SignalsSuccess = _ClassStatement.forPayload(MaybeTest::ambWith2SignalsSuccess, "ambWith2SignalsSuccess", this);
+            this.payloads.zipIterableObject = _ClassStatement.forPayload(MaybeTest::zipIterableObject, "zipIterableObject", this);
+            this.payloads.onTerminateDetach = _ClassStatement.forPayload(MaybeTest::onTerminateDetach, "onTerminateDetach", this);
+            this.payloads.repeat = _ClassStatement.forPayload(MaybeTest::repeat, "repeat", this);
+            this.payloads.retry = _ClassStatement.forPayload(MaybeTest::retry, "retry", this);
+            this.payloads.onErrorResumeWithEmpty = _ClassStatement.forPayload(MaybeTest::onErrorResumeWithEmpty, "onErrorResumeWithEmpty", this);
+            this.payloads.onErrorResumeWithValue = _ClassStatement.forPayload(MaybeTest::onErrorResumeWithValue, "onErrorResumeWithValue", this);
+            this.payloads.onErrorResumeWithError = _ClassStatement.forPayload(MaybeTest::onErrorResumeWithError, "onErrorResumeWithError", this);
+            this.payloads.valueConcatWithValue = _ClassStatement.forPayload(MaybeTest::valueConcatWithValue, "valueConcatWithValue", this);
+            this.payloads.errorConcatWithValue = _ClassStatement.forPayload(MaybeTest::errorConcatWithValue, "errorConcatWithValue", this);
+            this.payloads.valueConcatWithError = _ClassStatement.forPayload(MaybeTest::valueConcatWithError, "valueConcatWithError", this);
+            this.payloads.emptyConcatWithValue = _ClassStatement.forPayload(MaybeTest::emptyConcatWithValue, "emptyConcatWithValue", this);
+            this.payloads.emptyConcatWithError = _ClassStatement.forPayload(MaybeTest::emptyConcatWithError, "emptyConcatWithError", this);
         }
     }
 }

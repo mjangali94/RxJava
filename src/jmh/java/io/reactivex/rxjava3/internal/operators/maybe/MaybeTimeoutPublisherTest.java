@@ -213,96 +213,181 @@ public class MaybeTimeoutPublisherTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private MaybeTimeoutPublisherTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainError, this.description("mainError"));
+            this.payloads.mainError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_otherError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::otherError, this.description("otherError"));
+            this.payloads.otherError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fallbackError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fallbackError, this.description("fallbackError"));
+            this.payloads.fallbackError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fallbackComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fallbackComplete, this.description("fallbackComplete"));
+            this.payloads.fallbackComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainComplete, this.description("mainComplete"));
+            this.payloads.mainComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_otherComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::otherComplete, this.description("otherComplete"));
+            this.payloads.otherComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose2, this.description("dispose2"));
+            this.payloads.dispose2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorRace, this.description("onErrorRace"));
+            this.payloads.onErrorRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onCompleteRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompleteRace, this.description("onCompleteRace"));
+            this.payloads.onCompleteRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSourceOther() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSourceOther, this.description("badSourceOther"));
+            this.payloads.badSourceOther.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainSuccessAfterOtherSignal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainSuccessAfterOtherSignal, this.description("mainSuccessAfterOtherSignal"));
+            this.payloads.mainSuccessAfterOtherSignal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainSuccess, this.description("mainSuccess"));
+            this.payloads.mainSuccess.evaluate();
         }
 
-        private MaybeTimeoutPublisherTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeTimeoutPublisherTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeTimeoutPublisherTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeTimeoutPublisherTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public MaybeTimeoutPublisherTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeTimeoutPublisherTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeTimeoutPublisherTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new MaybeTimeoutPublisherTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeTimeoutPublisherTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(MaybeTimeoutPublisherTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(MaybeTimeoutPublisherTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement mainError;
+
+            public org.junit.runners.model.Statement otherError;
+
+            public org.junit.runners.model.Statement fallbackError;
+
+            public org.junit.runners.model.Statement fallbackComplete;
+
+            public org.junit.runners.model.Statement mainComplete;
+
+            public org.junit.runners.model.Statement otherComplete;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement dispose2;
+
+            public org.junit.runners.model.Statement onErrorRace;
+
+            public org.junit.runners.model.Statement onCompleteRace;
+
+            public org.junit.runners.model.Statement badSourceOther;
+
+            public org.junit.runners.model.Statement mainSuccessAfterOtherSignal;
+
+            public org.junit.runners.model.Statement mainSuccess;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.mainError = _ClassStatement.forPayload(MaybeTimeoutPublisherTest::mainError, "mainError", this);
+            this.payloads.otherError = _ClassStatement.forPayload(MaybeTimeoutPublisherTest::otherError, "otherError", this);
+            this.payloads.fallbackError = _ClassStatement.forPayload(MaybeTimeoutPublisherTest::fallbackError, "fallbackError", this);
+            this.payloads.fallbackComplete = _ClassStatement.forPayload(MaybeTimeoutPublisherTest::fallbackComplete, "fallbackComplete", this);
+            this.payloads.mainComplete = _ClassStatement.forPayload(MaybeTimeoutPublisherTest::mainComplete, "mainComplete", this);
+            this.payloads.otherComplete = _ClassStatement.forPayload(MaybeTimeoutPublisherTest::otherComplete, "otherComplete", this);
+            this.payloads.dispose = _ClassStatement.forPayload(MaybeTimeoutPublisherTest::dispose, "dispose", this);
+            this.payloads.dispose2 = _ClassStatement.forPayload(MaybeTimeoutPublisherTest::dispose2, "dispose2", this);
+            this.payloads.onErrorRace = _ClassStatement.forPayload(MaybeTimeoutPublisherTest::onErrorRace, "onErrorRace", this);
+            this.payloads.onCompleteRace = _ClassStatement.forPayload(MaybeTimeoutPublisherTest::onCompleteRace, "onCompleteRace", this);
+            this.payloads.badSourceOther = _ClassStatement.forPayload(MaybeTimeoutPublisherTest::badSourceOther, "badSourceOther", this);
+            this.payloads.mainSuccessAfterOtherSignal = _ClassStatement.forPayload(MaybeTimeoutPublisherTest::mainSuccessAfterOtherSignal, "mainSuccessAfterOtherSignal", this);
+            this.payloads.mainSuccess = _ClassStatement.forPayload(MaybeTimeoutPublisherTest::mainSuccess, "mainSuccess", this);
         }
     }
 }

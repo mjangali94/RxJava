@@ -50,38 +50,4 @@ public class ObservableFinallyTest extends RxJavaTest {
     public void finallyCalledOnError() {
         checkActionCalled(Observable.<String>error(new RuntimeException("expected")));
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_finallyCalledOnComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::finallyCalledOnComplete, this.description("finallyCalledOnComplete"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_finallyCalledOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::finallyCalledOnError, this.description("finallyCalledOnError"));
-        }
-
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().before();
-        }
-
-        private ObservableFinallyTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableFinallyTest();
-        }
-
-        @java.lang.Override
-        public ObservableFinallyTest implementation() {
-            return this.implementation;
-        }
-    }
 }

@@ -38,32 +38,4 @@ public class MaybeToFlowableTest extends RxJavaTest {
             }
         });
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_source() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::source, this.description("source"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
-        }
-
-        private MaybeToFlowableTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeToFlowableTest();
-        }
-
-        @java.lang.Override
-        public MaybeToFlowableTest implementation() {
-            return this.implementation;
-        }
-    }
 }

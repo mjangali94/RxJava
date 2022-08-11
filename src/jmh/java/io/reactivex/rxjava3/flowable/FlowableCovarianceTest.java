@@ -241,66 +241,141 @@ public class FlowableCovarianceTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableCovarianceTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_covarianceOfFrom() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::covarianceOfFrom, this.description("covarianceOfFrom"));
+            this.payloads.covarianceOfFrom.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sortedList() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sortedList, this.description("sortedList"));
+            this.payloads.sortedList.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_groupByCompose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::groupByCompose, this.description("groupByCompose"));
+            this.payloads.groupByCompose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_covarianceOfCompose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::covarianceOfCompose, this.description("covarianceOfCompose"));
+            this.payloads.covarianceOfCompose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_covarianceOfCompose2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::covarianceOfCompose2, this.description("covarianceOfCompose2"));
+            this.payloads.covarianceOfCompose2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_covarianceOfCompose3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::covarianceOfCompose3, this.description("covarianceOfCompose3"));
+            this.payloads.covarianceOfCompose3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_covarianceOfCompose4() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::covarianceOfCompose4, this.description("covarianceOfCompose4"));
+            this.payloads.covarianceOfCompose4.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_composeWithDeltaLogic() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::composeWithDeltaLogic, this.description("composeWithDeltaLogic"));
+            this.payloads.composeWithDeltaLogic.evaluate();
         }
 
-        private FlowableCovarianceTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableCovarianceTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableCovarianceTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableCovarianceTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableCovarianceTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableCovarianceTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableCovarianceTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableCovarianceTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableCovarianceTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableCovarianceTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableCovarianceTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement covarianceOfFrom;
+
+            public org.junit.runners.model.Statement sortedList;
+
+            public org.junit.runners.model.Statement groupByCompose;
+
+            public org.junit.runners.model.Statement covarianceOfCompose;
+
+            public org.junit.runners.model.Statement covarianceOfCompose2;
+
+            public org.junit.runners.model.Statement covarianceOfCompose3;
+
+            public org.junit.runners.model.Statement covarianceOfCompose4;
+
+            public org.junit.runners.model.Statement composeWithDeltaLogic;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.covarianceOfFrom = _ClassStatement.forPayload(FlowableCovarianceTest::covarianceOfFrom, "covarianceOfFrom", this);
+            this.payloads.sortedList = _ClassStatement.forPayload(FlowableCovarianceTest::sortedList, "sortedList", this);
+            this.payloads.groupByCompose = _ClassStatement.forPayload(FlowableCovarianceTest::groupByCompose, "groupByCompose", this);
+            this.payloads.covarianceOfCompose = _ClassStatement.forPayload(FlowableCovarianceTest::covarianceOfCompose, "covarianceOfCompose", this);
+            this.payloads.covarianceOfCompose2 = _ClassStatement.forPayload(FlowableCovarianceTest::covarianceOfCompose2, "covarianceOfCompose2", this);
+            this.payloads.covarianceOfCompose3 = _ClassStatement.forPayload(FlowableCovarianceTest::covarianceOfCompose3, "covarianceOfCompose3", this);
+            this.payloads.covarianceOfCompose4 = _ClassStatement.forPayload(FlowableCovarianceTest::covarianceOfCompose4, "covarianceOfCompose4", this);
+            this.payloads.composeWithDeltaLogic = _ClassStatement.forPayload(FlowableCovarianceTest::composeWithDeltaLogic, "composeWithDeltaLogic", this);
         }
     }
 }

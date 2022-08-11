@@ -147,102 +147,189 @@ public class ParallelMapOptionalTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ParallelMapOptionalTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleFilter() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleFilter, this.description("doubleFilter"));
+            this.payloads.doubleFilter.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleFilterAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleFilterAsync, this.description("doubleFilterAsync"));
+            this.payloads.doubleFilterAsync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleError, this.description("doubleError"));
+            this.payloads.doubleError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleError2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleError2, this.description("doubleError2"));
+            this.payloads.doubleError2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapCrash, this.description("mapCrash"));
+            this.payloads.mapCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapCrashConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapCrashConditional, this.description("mapCrashConditional"));
+            this.payloads.mapCrashConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapCrashConditional2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapCrashConditional2, this.description("mapCrashConditional2"));
+            this.payloads.mapCrashConditional2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_allNone() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::allNone, this.description("allNone"));
+            this.payloads.allNone.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_allNoneConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::allNoneConditional, this.description("allNoneConditional"));
+            this.payloads.allNoneConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mixed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mixed, this.description("mixed"));
+            this.payloads.mixed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mixedConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mixedConditional, this.description("mixedConditional"));
+            this.payloads.mixedConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_invalidSubscriberCount() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::invalidSubscriberCount, this.description("invalidSubscriberCount"));
+            this.payloads.invalidSubscriberCount.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
-        private ParallelMapOptionalTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ParallelMapOptionalTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ParallelMapOptionalTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ParallelMapOptionalTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ParallelMapOptionalTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ParallelMapOptionalTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ParallelMapOptionalTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ParallelMapOptionalTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ParallelMapOptionalTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ParallelMapOptionalTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ParallelMapOptionalTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement doubleFilter;
+
+            public org.junit.runners.model.Statement doubleFilterAsync;
+
+            public org.junit.runners.model.Statement doubleError;
+
+            public org.junit.runners.model.Statement doubleError2;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement mapCrash;
+
+            public org.junit.runners.model.Statement mapCrashConditional;
+
+            public org.junit.runners.model.Statement mapCrashConditional2;
+
+            public org.junit.runners.model.Statement allNone;
+
+            public org.junit.runners.model.Statement allNoneConditional;
+
+            public org.junit.runners.model.Statement mixed;
+
+            public org.junit.runners.model.Statement mixedConditional;
+
+            public org.junit.runners.model.Statement invalidSubscriberCount;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.doubleFilter = _ClassStatement.forPayload(ParallelMapOptionalTest::doubleFilter, "doubleFilter", this);
+            this.payloads.doubleFilterAsync = _ClassStatement.forPayload(ParallelMapOptionalTest::doubleFilterAsync, "doubleFilterAsync", this);
+            this.payloads.doubleError = _ClassStatement.forPayload(ParallelMapOptionalTest::doubleError, "doubleError", this);
+            this.payloads.doubleError2 = _ClassStatement.forPayload(ParallelMapOptionalTest::doubleError2, "doubleError2", this);
+            this.payloads.error = _ClassStatement.forPayload(ParallelMapOptionalTest::error, "error", this);
+            this.payloads.mapCrash = _ClassStatement.forPayload(ParallelMapOptionalTest::mapCrash, "mapCrash", this);
+            this.payloads.mapCrashConditional = _ClassStatement.forPayload(ParallelMapOptionalTest::mapCrashConditional, "mapCrashConditional", this);
+            this.payloads.mapCrashConditional2 = _ClassStatement.forPayload(ParallelMapOptionalTest::mapCrashConditional2, "mapCrashConditional2", this);
+            this.payloads.allNone = _ClassStatement.forPayload(ParallelMapOptionalTest::allNone, "allNone", this);
+            this.payloads.allNoneConditional = _ClassStatement.forPayload(ParallelMapOptionalTest::allNoneConditional, "allNoneConditional", this);
+            this.payloads.mixed = _ClassStatement.forPayload(ParallelMapOptionalTest::mixed, "mixed", this);
+            this.payloads.mixedConditional = _ClassStatement.forPayload(ParallelMapOptionalTest::mixedConditional, "mixedConditional", this);
+            this.payloads.invalidSubscriberCount = _ClassStatement.forPayload(ParallelMapOptionalTest::invalidSubscriberCount, "invalidSubscriberCount", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(ParallelMapOptionalTest::doubleOnSubscribe, "doubleOnSubscribe", this);
         }
     }
 }

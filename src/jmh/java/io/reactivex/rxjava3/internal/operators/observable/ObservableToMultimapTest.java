@@ -473,120 +473,206 @@ public class ObservableToMultimapTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableToMultimapTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapObservable, this.description("toMultimapObservable"));
+            this.payloads.toMultimapObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapWithValueSelectorObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapWithValueSelectorObservable, this.description("toMultimapWithValueSelectorObservable"));
+            this.payloads.toMultimapWithValueSelectorObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapWithMapFactoryObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapWithMapFactoryObservable, this.description("toMultimapWithMapFactoryObservable"));
+            this.payloads.toMultimapWithMapFactoryObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapWithCollectionFactoryObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapWithCollectionFactoryObservable, this.description("toMultimapWithCollectionFactoryObservable"));
+            this.payloads.toMultimapWithCollectionFactoryObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapWithErrorObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapWithErrorObservable, this.description("toMultimapWithErrorObservable"));
+            this.payloads.toMultimapWithErrorObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapWithErrorInValueSelectorObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapWithErrorInValueSelectorObservable, this.description("toMultimapWithErrorInValueSelectorObservable"));
+            this.payloads.toMultimapWithErrorInValueSelectorObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapWithMapThrowingFactoryObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapWithMapThrowingFactoryObservable, this.description("toMultimapWithMapThrowingFactoryObservable"));
+            this.payloads.toMultimapWithMapThrowingFactoryObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapWithThrowingCollectionFactoryObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapWithThrowingCollectionFactoryObservable, this.description("toMultimapWithThrowingCollectionFactoryObservable"));
+            this.payloads.toMultimapWithThrowingCollectionFactoryObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimap() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimap, this.description("toMultimap"));
+            this.payloads.toMultimap.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapWithValueSelector() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapWithValueSelector, this.description("toMultimapWithValueSelector"));
+            this.payloads.toMultimapWithValueSelector.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapWithMapFactory() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapWithMapFactory, this.description("toMultimapWithMapFactory"));
+            this.payloads.toMultimapWithMapFactory.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapWithCollectionFactory() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapWithCollectionFactory, this.description("toMultimapWithCollectionFactory"));
+            this.payloads.toMultimapWithCollectionFactory.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapWithError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapWithError, this.description("toMultimapWithError"));
+            this.payloads.toMultimapWithError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapWithErrorInValueSelector() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapWithErrorInValueSelector, this.description("toMultimapWithErrorInValueSelector"));
+            this.payloads.toMultimapWithErrorInValueSelector.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapWithMapThrowingFactory() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapWithMapThrowingFactory, this.description("toMultimapWithMapThrowingFactory"));
+            this.payloads.toMultimapWithMapThrowingFactory.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapWithThrowingCollectionFactory() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapWithThrowingCollectionFactory, this.description("toMultimapWithThrowingCollectionFactory"));
+            this.payloads.toMultimapWithThrowingCollectionFactory.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().before();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableToMultimapTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableToMultimapTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.before();
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private ObservableToMultimapTest implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableToMultimapTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableToMultimapTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableToMultimapTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableToMultimapTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableToMultimapTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableToMultimapTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableToMultimapTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public ObservableToMultimapTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement toMultimapObservable;
+
+            public org.junit.runners.model.Statement toMultimapWithValueSelectorObservable;
+
+            public org.junit.runners.model.Statement toMultimapWithMapFactoryObservable;
+
+            public org.junit.runners.model.Statement toMultimapWithCollectionFactoryObservable;
+
+            public org.junit.runners.model.Statement toMultimapWithErrorObservable;
+
+            public org.junit.runners.model.Statement toMultimapWithErrorInValueSelectorObservable;
+
+            public org.junit.runners.model.Statement toMultimapWithMapThrowingFactoryObservable;
+
+            public org.junit.runners.model.Statement toMultimapWithThrowingCollectionFactoryObservable;
+
+            public org.junit.runners.model.Statement toMultimap;
+
+            public org.junit.runners.model.Statement toMultimapWithValueSelector;
+
+            public org.junit.runners.model.Statement toMultimapWithMapFactory;
+
+            public org.junit.runners.model.Statement toMultimapWithCollectionFactory;
+
+            public org.junit.runners.model.Statement toMultimapWithError;
+
+            public org.junit.runners.model.Statement toMultimapWithErrorInValueSelector;
+
+            public org.junit.runners.model.Statement toMultimapWithMapThrowingFactory;
+
+            public org.junit.runners.model.Statement toMultimapWithThrowingCollectionFactory;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.toMultimapObservable = _ClassStatement.forPayload(ObservableToMultimapTest::toMultimapObservable, "toMultimapObservable", this);
+            this.payloads.toMultimapWithValueSelectorObservable = _ClassStatement.forPayload(ObservableToMultimapTest::toMultimapWithValueSelectorObservable, "toMultimapWithValueSelectorObservable", this);
+            this.payloads.toMultimapWithMapFactoryObservable = _ClassStatement.forPayload(ObservableToMultimapTest::toMultimapWithMapFactoryObservable, "toMultimapWithMapFactoryObservable", this);
+            this.payloads.toMultimapWithCollectionFactoryObservable = _ClassStatement.forPayload(ObservableToMultimapTest::toMultimapWithCollectionFactoryObservable, "toMultimapWithCollectionFactoryObservable", this);
+            this.payloads.toMultimapWithErrorObservable = _ClassStatement.forPayload(ObservableToMultimapTest::toMultimapWithErrorObservable, "toMultimapWithErrorObservable", this);
+            this.payloads.toMultimapWithErrorInValueSelectorObservable = _ClassStatement.forPayload(ObservableToMultimapTest::toMultimapWithErrorInValueSelectorObservable, "toMultimapWithErrorInValueSelectorObservable", this);
+            this.payloads.toMultimapWithMapThrowingFactoryObservable = _ClassStatement.forPayload(ObservableToMultimapTest::toMultimapWithMapThrowingFactoryObservable, "toMultimapWithMapThrowingFactoryObservable", this);
+            this.payloads.toMultimapWithThrowingCollectionFactoryObservable = _ClassStatement.forPayload(ObservableToMultimapTest::toMultimapWithThrowingCollectionFactoryObservable, "toMultimapWithThrowingCollectionFactoryObservable", this);
+            this.payloads.toMultimap = _ClassStatement.forPayload(ObservableToMultimapTest::toMultimap, "toMultimap", this);
+            this.payloads.toMultimapWithValueSelector = _ClassStatement.forPayload(ObservableToMultimapTest::toMultimapWithValueSelector, "toMultimapWithValueSelector", this);
+            this.payloads.toMultimapWithMapFactory = _ClassStatement.forPayload(ObservableToMultimapTest::toMultimapWithMapFactory, "toMultimapWithMapFactory", this);
+            this.payloads.toMultimapWithCollectionFactory = _ClassStatement.forPayload(ObservableToMultimapTest::toMultimapWithCollectionFactory, "toMultimapWithCollectionFactory", this);
+            this.payloads.toMultimapWithError = _ClassStatement.forPayload(ObservableToMultimapTest::toMultimapWithError, "toMultimapWithError", this);
+            this.payloads.toMultimapWithErrorInValueSelector = _ClassStatement.forPayload(ObservableToMultimapTest::toMultimapWithErrorInValueSelector, "toMultimapWithErrorInValueSelector", this);
+            this.payloads.toMultimapWithMapThrowingFactory = _ClassStatement.forPayload(ObservableToMultimapTest::toMultimapWithMapThrowingFactory, "toMultimapWithMapThrowingFactory", this);
+            this.payloads.toMultimapWithThrowingCollectionFactory = _ClassStatement.forPayload(ObservableToMultimapTest::toMultimapWithThrowingCollectionFactory, "toMultimapWithThrowingCollectionFactory", this);
         }
     }
 }

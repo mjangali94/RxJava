@@ -97,78 +97,103 @@ public class ObservableOnErrorCompleteTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableOnErrorCompleteTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normal, this.description("normal"));
+            this.runBenchmark(this.payloads.normal);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_empty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::empty, this.description("empty"));
+            this.runBenchmark(this.payloads.empty);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.runBenchmark(this.payloads.error);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorMatches() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorMatches, this.description("errorMatches"));
+            this.runBenchmark(this.payloads.errorMatches);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorNotMatches() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorNotMatches, this.description("errorNotMatches"));
+            this.runBenchmark(this.payloads.errorNotMatches);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorPredicateCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorPredicateCrash, this.description("errorPredicateCrash"));
+            this.runBenchmark(this.payloads.errorPredicateCrash);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_itemsThenError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::itemsThenError, this.description("itemsThenError"));
+            this.runBenchmark(this.payloads.itemsThenError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.runBenchmark(this.payloads.dispose);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onSubscribe, this.description("onSubscribe"));
+            this.runBenchmark(this.payloads.onSubscribe);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_isDisposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::isDisposed, this.description("isDisposed"));
+            this.runBenchmark(this.payloads.isDisposed);
         }
 
-        private ObservableOnErrorCompleteTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableOnErrorCompleteTest();
+        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableOnErrorCompleteTest> payload) throws java.lang.Throwable {
+            this.instance = new ObservableOnErrorCompleteTest();
+            payload.accept(this.instance);
         }
 
-        @java.lang.Override
-        public ObservableOnErrorCompleteTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableOnErrorCompleteTest> normal;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableOnErrorCompleteTest> empty;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableOnErrorCompleteTest> error;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableOnErrorCompleteTest> errorMatches;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableOnErrorCompleteTest> errorNotMatches;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableOnErrorCompleteTest> errorPredicateCrash;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableOnErrorCompleteTest> itemsThenError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableOnErrorCompleteTest> dispose;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableOnErrorCompleteTest> onSubscribe;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableOnErrorCompleteTest> isDisposed;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.normal = ObservableOnErrorCompleteTest::normal;
+            this.payloads.empty = ObservableOnErrorCompleteTest::empty;
+            this.payloads.error = ObservableOnErrorCompleteTest::error;
+            this.payloads.errorMatches = ObservableOnErrorCompleteTest::errorMatches;
+            this.payloads.errorNotMatches = ObservableOnErrorCompleteTest::errorNotMatches;
+            this.payloads.errorPredicateCrash = ObservableOnErrorCompleteTest::errorPredicateCrash;
+            this.payloads.itemsThenError = ObservableOnErrorCompleteTest::itemsThenError;
+            this.payloads.dispose = ObservableOnErrorCompleteTest::dispose;
+            this.payloads.onSubscribe = ObservableOnErrorCompleteTest::onSubscribe;
+            this.payloads.isDisposed = ObservableOnErrorCompleteTest::isDisposed;
         }
     }
 }

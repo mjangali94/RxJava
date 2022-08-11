@@ -58,26 +58,4 @@ public class ObservableThrottleLastTests extends RxJavaTest {
         inOrder.verify(observer).onComplete();
         inOrder.verifyNoMoreInteractions();
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_throttle() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::throttle, this.description("throttle"));
-        }
-
-        private ObservableThrottleLastTests implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableThrottleLastTests();
-        }
-
-        @java.lang.Override
-        public ObservableThrottleLastTests implementation() {
-            return this.implementation;
-        }
-    }
 }

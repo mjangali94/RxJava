@@ -321,222 +321,349 @@ public class ObservableSequenceEqualTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableSequenceEqualTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observable1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observable1, this.description("observable1"));
+            this.payloads.observable1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observable2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observable2, this.description("observable2"));
+            this.payloads.observable2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observable3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observable3, this.description("observable3"));
+            this.payloads.observable3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withError1Observable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withError1Observable, this.description("withError1Observable"));
+            this.payloads.withError1Observable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withError2Observable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withError2Observable, this.description("withError2Observable"));
+            this.payloads.withError2Observable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withError3Observable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withError3Observable, this.description("withError3Observable"));
+            this.payloads.withError3Observable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withEmpty1Observable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withEmpty1Observable, this.description("withEmpty1Observable"));
+            this.payloads.withEmpty1Observable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withEmpty2Observable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withEmpty2Observable, this.description("withEmpty2Observable"));
+            this.payloads.withEmpty2Observable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withEmpty3Observable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withEmpty3Observable, this.description("withEmpty3Observable"));
+            this.payloads.withEmpty3Observable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withEqualityErrorObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withEqualityErrorObservable, this.description("withEqualityErrorObservable"));
+            this.payloads.withEqualityErrorObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_prefetchObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::prefetchObservable, this.description("prefetchObservable"));
+            this.payloads.prefetchObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposedObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposedObservable, this.description("disposedObservable"));
+            this.payloads.disposedObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_one() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::one, this.description("one"));
+            this.payloads.one.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_two() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::two, this.description("two"));
+            this.payloads.two.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_three() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::three, this.description("three"));
+            this.payloads.three.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withError1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withError1, this.description("withError1"));
+            this.payloads.withError1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withError2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withError2, this.description("withError2"));
+            this.payloads.withError2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withError3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withError3, this.description("withError3"));
+            this.payloads.withError3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withEmpty1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withEmpty1, this.description("withEmpty1"));
+            this.payloads.withEmpty1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withEmpty2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withEmpty2, this.description("withEmpty2"));
+            this.payloads.withEmpty2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withEmpty3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withEmpty3, this.description("withEmpty3"));
+            this.payloads.withEmpty3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withEqualityError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withEqualityError, this.description("withEqualityError"));
+            this.payloads.withEqualityError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_prefetch() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::prefetch, this.description("prefetch"));
+            this.payloads.prefetch.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposed, this.description("disposed"));
+            this.payloads.disposed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_simpleInequal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::simpleInequal, this.description("simpleInequal"));
+            this.payloads.simpleInequal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_simpleInequalObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::simpleInequalObservable, this.description("simpleInequalObservable"));
+            this.payloads.simpleInequalObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onNextCancelRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onNextCancelRace, this.description("onNextCancelRace"));
+            this.payloads.onNextCancelRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onNextCancelRaceObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onNextCancelRaceObservable, this.description("onNextCancelRaceObservable"));
+            this.payloads.onNextCancelRaceObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstCompletesBeforeSecond() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstCompletesBeforeSecond, this.description("firstCompletesBeforeSecond"));
+            this.payloads.firstCompletesBeforeSecond.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_secondCompletesBeforeFirst() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::secondCompletesBeforeFirst, this.description("secondCompletesBeforeFirst"));
+            this.payloads.secondCompletesBeforeFirst.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bothEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bothEmpty, this.description("bothEmpty"));
+            this.payloads.bothEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bothJust() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bothJust, this.description("bothJust"));
+            this.payloads.bothJust.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bothCompleteWhileComparing() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bothCompleteWhileComparing, this.description("bothCompleteWhileComparing"));
+            this.payloads.bothCompleteWhileComparing.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bothCompleteWhileComparingAsObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::bothCompleteWhileComparingAsObservable, this.description("bothCompleteWhileComparingAsObservable"));
+            this.payloads.bothCompleteWhileComparingAsObservable.evaluate();
         }
 
-        private ObservableSequenceEqualTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableSequenceEqualTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableSequenceEqualTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableSequenceEqualTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservableSequenceEqualTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableSequenceEqualTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableSequenceEqualTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableSequenceEqualTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableSequenceEqualTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableSequenceEqualTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableSequenceEqualTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement observable1;
+
+            public org.junit.runners.model.Statement observable2;
+
+            public org.junit.runners.model.Statement observable3;
+
+            public org.junit.runners.model.Statement withError1Observable;
+
+            public org.junit.runners.model.Statement withError2Observable;
+
+            public org.junit.runners.model.Statement withError3Observable;
+
+            public org.junit.runners.model.Statement withEmpty1Observable;
+
+            public org.junit.runners.model.Statement withEmpty2Observable;
+
+            public org.junit.runners.model.Statement withEmpty3Observable;
+
+            public org.junit.runners.model.Statement withEqualityErrorObservable;
+
+            public org.junit.runners.model.Statement prefetchObservable;
+
+            public org.junit.runners.model.Statement disposedObservable;
+
+            public org.junit.runners.model.Statement one;
+
+            public org.junit.runners.model.Statement two;
+
+            public org.junit.runners.model.Statement three;
+
+            public org.junit.runners.model.Statement withError1;
+
+            public org.junit.runners.model.Statement withError2;
+
+            public org.junit.runners.model.Statement withError3;
+
+            public org.junit.runners.model.Statement withEmpty1;
+
+            public org.junit.runners.model.Statement withEmpty2;
+
+            public org.junit.runners.model.Statement withEmpty3;
+
+            public org.junit.runners.model.Statement withEqualityError;
+
+            public org.junit.runners.model.Statement prefetch;
+
+            public org.junit.runners.model.Statement disposed;
+
+            public org.junit.runners.model.Statement simpleInequal;
+
+            public org.junit.runners.model.Statement simpleInequalObservable;
+
+            public org.junit.runners.model.Statement onNextCancelRace;
+
+            public org.junit.runners.model.Statement onNextCancelRaceObservable;
+
+            public org.junit.runners.model.Statement firstCompletesBeforeSecond;
+
+            public org.junit.runners.model.Statement secondCompletesBeforeFirst;
+
+            public org.junit.runners.model.Statement bothEmpty;
+
+            public org.junit.runners.model.Statement bothJust;
+
+            public org.junit.runners.model.Statement bothCompleteWhileComparing;
+
+            public org.junit.runners.model.Statement bothCompleteWhileComparingAsObservable;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.observable1 = _ClassStatement.forPayload(ObservableSequenceEqualTest::observable1, "observable1", this);
+            this.payloads.observable2 = _ClassStatement.forPayload(ObservableSequenceEqualTest::observable2, "observable2", this);
+            this.payloads.observable3 = _ClassStatement.forPayload(ObservableSequenceEqualTest::observable3, "observable3", this);
+            this.payloads.withError1Observable = _ClassStatement.forPayload(ObservableSequenceEqualTest::withError1Observable, "withError1Observable", this);
+            this.payloads.withError2Observable = _ClassStatement.forPayload(ObservableSequenceEqualTest::withError2Observable, "withError2Observable", this);
+            this.payloads.withError3Observable = _ClassStatement.forPayload(ObservableSequenceEqualTest::withError3Observable, "withError3Observable", this);
+            this.payloads.withEmpty1Observable = _ClassStatement.forPayload(ObservableSequenceEqualTest::withEmpty1Observable, "withEmpty1Observable", this);
+            this.payloads.withEmpty2Observable = _ClassStatement.forPayload(ObservableSequenceEqualTest::withEmpty2Observable, "withEmpty2Observable", this);
+            this.payloads.withEmpty3Observable = _ClassStatement.forPayload(ObservableSequenceEqualTest::withEmpty3Observable, "withEmpty3Observable", this);
+            this.payloads.withEqualityErrorObservable = _ClassStatement.forPayload(ObservableSequenceEqualTest::withEqualityErrorObservable, "withEqualityErrorObservable", this);
+            this.payloads.prefetchObservable = _ClassStatement.forPayload(ObservableSequenceEqualTest::prefetchObservable, "prefetchObservable", this);
+            this.payloads.disposedObservable = _ClassStatement.forPayload(ObservableSequenceEqualTest::disposedObservable, "disposedObservable", this);
+            this.payloads.one = _ClassStatement.forPayload(ObservableSequenceEqualTest::one, "one", this);
+            this.payloads.two = _ClassStatement.forPayload(ObservableSequenceEqualTest::two, "two", this);
+            this.payloads.three = _ClassStatement.forPayload(ObservableSequenceEqualTest::three, "three", this);
+            this.payloads.withError1 = _ClassStatement.forPayload(ObservableSequenceEqualTest::withError1, "withError1", this);
+            this.payloads.withError2 = _ClassStatement.forPayload(ObservableSequenceEqualTest::withError2, "withError2", this);
+            this.payloads.withError3 = _ClassStatement.forPayload(ObservableSequenceEqualTest::withError3, "withError3", this);
+            this.payloads.withEmpty1 = _ClassStatement.forPayload(ObservableSequenceEqualTest::withEmpty1, "withEmpty1", this);
+            this.payloads.withEmpty2 = _ClassStatement.forPayload(ObservableSequenceEqualTest::withEmpty2, "withEmpty2", this);
+            this.payloads.withEmpty3 = _ClassStatement.forPayload(ObservableSequenceEqualTest::withEmpty3, "withEmpty3", this);
+            this.payloads.withEqualityError = _ClassStatement.forPayload(ObservableSequenceEqualTest::withEqualityError, "withEqualityError", this);
+            this.payloads.prefetch = _ClassStatement.forPayload(ObservableSequenceEqualTest::prefetch, "prefetch", this);
+            this.payloads.disposed = _ClassStatement.forPayload(ObservableSequenceEqualTest::disposed, "disposed", this);
+            this.payloads.simpleInequal = _ClassStatement.forPayload(ObservableSequenceEqualTest::simpleInequal, "simpleInequal", this);
+            this.payloads.simpleInequalObservable = _ClassStatement.forPayload(ObservableSequenceEqualTest::simpleInequalObservable, "simpleInequalObservable", this);
+            this.payloads.onNextCancelRace = _ClassStatement.forPayload(ObservableSequenceEqualTest::onNextCancelRace, "onNextCancelRace", this);
+            this.payloads.onNextCancelRaceObservable = _ClassStatement.forPayload(ObservableSequenceEqualTest::onNextCancelRaceObservable, "onNextCancelRaceObservable", this);
+            this.payloads.firstCompletesBeforeSecond = _ClassStatement.forPayload(ObservableSequenceEqualTest::firstCompletesBeforeSecond, "firstCompletesBeforeSecond", this);
+            this.payloads.secondCompletesBeforeFirst = _ClassStatement.forPayload(ObservableSequenceEqualTest::secondCompletesBeforeFirst, "secondCompletesBeforeFirst", this);
+            this.payloads.bothEmpty = _ClassStatement.forPayload(ObservableSequenceEqualTest::bothEmpty, "bothEmpty", this);
+            this.payloads.bothJust = _ClassStatement.forPayload(ObservableSequenceEqualTest::bothJust, "bothJust", this);
+            this.payloads.bothCompleteWhileComparing = _ClassStatement.forPayload(ObservableSequenceEqualTest::bothCompleteWhileComparing, "bothCompleteWhileComparing", this);
+            this.payloads.bothCompleteWhileComparingAsObservable = _ClassStatement.forPayload(ObservableSequenceEqualTest::bothCompleteWhileComparingAsObservable, "bothCompleteWhileComparingAsObservable", this);
         }
     }
 }

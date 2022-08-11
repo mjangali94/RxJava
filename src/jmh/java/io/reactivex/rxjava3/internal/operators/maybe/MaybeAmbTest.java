@@ -208,78 +208,157 @@ public class MaybeAmbTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private MaybeAmbTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambLots() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambLots, this.description("ambLots"));
+            this.payloads.ambLots.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambFirstDone() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambFirstDone, this.description("ambFirstDone"));
+            this.payloads.ambFirstDone.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerErrorRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerErrorRace, this.description("innerErrorRace"));
+            this.payloads.innerErrorRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeNoFurtherSignals() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeNoFurtherSignals, this.description("disposeNoFurtherSignals"));
+            this.payloads.disposeNoFurtherSignals.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noWinnerSuccessDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noWinnerSuccessDispose, this.description("noWinnerSuccessDispose"));
+            this.payloads.noWinnerSuccessDispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noWinnerErrorDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noWinnerErrorDispose, this.description("noWinnerErrorDispose"));
+            this.payloads.noWinnerErrorDispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noWinnerCompleteDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noWinnerCompleteDispose, this.description("noWinnerCompleteDispose"));
+            this.payloads.noWinnerCompleteDispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nullSourceSuccessRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nullSourceSuccessRace, this.description("nullSourceSuccessRace"));
+            this.payloads.nullSourceSuccessRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maybeSourcesInIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::maybeSourcesInIterable, this.description("maybeSourcesInIterable"));
+            this.payloads.maybeSourcesInIterable.evaluate();
         }
 
-        private MaybeAmbTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeAmbTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeAmbTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeAmbTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public MaybeAmbTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeAmbTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeAmbTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new MaybeAmbTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeAmbTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(MaybeAmbTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(MaybeAmbTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement ambLots;
+
+            public org.junit.runners.model.Statement ambFirstDone;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement innerErrorRace;
+
+            public org.junit.runners.model.Statement disposeNoFurtherSignals;
+
+            public org.junit.runners.model.Statement noWinnerSuccessDispose;
+
+            public org.junit.runners.model.Statement noWinnerErrorDispose;
+
+            public org.junit.runners.model.Statement noWinnerCompleteDispose;
+
+            public org.junit.runners.model.Statement nullSourceSuccessRace;
+
+            public org.junit.runners.model.Statement maybeSourcesInIterable;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.ambLots = _ClassStatement.forPayload(MaybeAmbTest::ambLots, "ambLots", this);
+            this.payloads.ambFirstDone = _ClassStatement.forPayload(MaybeAmbTest::ambFirstDone, "ambFirstDone", this);
+            this.payloads.dispose = _ClassStatement.forPayload(MaybeAmbTest::dispose, "dispose", this);
+            this.payloads.innerErrorRace = _ClassStatement.forPayload(MaybeAmbTest::innerErrorRace, "innerErrorRace", this);
+            this.payloads.disposeNoFurtherSignals = _ClassStatement.forPayload(MaybeAmbTest::disposeNoFurtherSignals, "disposeNoFurtherSignals", this);
+            this.payloads.noWinnerSuccessDispose = _ClassStatement.forPayload(MaybeAmbTest::noWinnerSuccessDispose, "noWinnerSuccessDispose", this);
+            this.payloads.noWinnerErrorDispose = _ClassStatement.forPayload(MaybeAmbTest::noWinnerErrorDispose, "noWinnerErrorDispose", this);
+            this.payloads.noWinnerCompleteDispose = _ClassStatement.forPayload(MaybeAmbTest::noWinnerCompleteDispose, "noWinnerCompleteDispose", this);
+            this.payloads.nullSourceSuccessRace = _ClassStatement.forPayload(MaybeAmbTest::nullSourceSuccessRace, "nullSourceSuccessRace", this);
+            this.payloads.maybeSourcesInIterable = _ClassStatement.forPayload(MaybeAmbTest::maybeSourcesInIterable, "maybeSourcesInIterable", this);
         }
     }
 }

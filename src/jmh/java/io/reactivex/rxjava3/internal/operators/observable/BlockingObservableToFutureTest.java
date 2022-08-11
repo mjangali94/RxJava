@@ -107,60 +107,133 @@ public class BlockingObservableToFutureTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private BlockingObservableToFutureTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toFuture() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toFuture, this.description("toFuture"));
+            this.payloads.toFuture.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toFutureList() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toFutureList, this.description("toFutureList"));
+            this.payloads.toFutureList.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_exceptionWithMoreThanOneElement() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::exceptionWithMoreThanOneElement, this.description("exceptionWithMoreThanOneElement"), java.lang.IndexOutOfBoundsException.class);
+            this.payloads.exceptionWithMoreThanOneElement.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toFutureWithException() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toFutureWithException, this.description("toFutureWithException"));
+            this.payloads.toFutureWithException.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_getAfterCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::getAfterCancel, this.description("getAfterCancel"), java.util.concurrent.CancellationException.class);
+            this.payloads.getAfterCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_getWithTimeoutAfterCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::getWithTimeoutAfterCancel, this.description("getWithTimeoutAfterCancel"), java.util.concurrent.CancellationException.class);
+            this.payloads.getWithTimeoutAfterCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_getWithEmptyFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::getWithEmptyFlowable, this.description("getWithEmptyFlowable"), java.util.NoSuchElementException.class);
+            this.payloads.getWithEmptyFlowable.evaluate();
         }
 
-        private BlockingObservableToFutureTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new BlockingObservableToFutureTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<BlockingObservableToFutureTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<BlockingObservableToFutureTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public BlockingObservableToFutureTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<BlockingObservableToFutureTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<BlockingObservableToFutureTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new BlockingObservableToFutureTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<BlockingObservableToFutureTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(BlockingObservableToFutureTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(BlockingObservableToFutureTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement toFuture;
+
+            public org.junit.runners.model.Statement toFutureList;
+
+            public org.junit.runners.model.Statement exceptionWithMoreThanOneElement;
+
+            public org.junit.runners.model.Statement toFutureWithException;
+
+            public org.junit.runners.model.Statement getAfterCancel;
+
+            public org.junit.runners.model.Statement getWithTimeoutAfterCancel;
+
+            public org.junit.runners.model.Statement getWithEmptyFlowable;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.toFuture = _ClassStatement.forPayload(BlockingObservableToFutureTest::toFuture, "toFuture", this);
+            this.payloads.toFutureList = _ClassStatement.forPayload(BlockingObservableToFutureTest::toFutureList, "toFutureList", this);
+            this.payloads.exceptionWithMoreThanOneElement = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(BlockingObservableToFutureTest::exceptionWithMoreThanOneElement, java.lang.IndexOutOfBoundsException.class), "exceptionWithMoreThanOneElement", this);
+            this.payloads.toFutureWithException = _ClassStatement.forPayload(BlockingObservableToFutureTest::toFutureWithException, "toFutureWithException", this);
+            this.payloads.getAfterCancel = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(BlockingObservableToFutureTest::getAfterCancel, java.util.concurrent.CancellationException.class), "getAfterCancel", this);
+            this.payloads.getWithTimeoutAfterCancel = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(BlockingObservableToFutureTest::getWithTimeoutAfterCancel, java.util.concurrent.CancellationException.class), "getWithTimeoutAfterCancel", this);
+            this.payloads.getWithEmptyFlowable = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(BlockingObservableToFutureTest::getWithEmptyFlowable, java.util.NoSuchElementException.class), "getWithEmptyFlowable", this);
         }
     }
 }

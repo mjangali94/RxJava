@@ -33,38 +33,4 @@ public class SingleFromTest extends RxJavaTest {
     public void fromPublisher() {
         Single.fromPublisher(Flowable.just(1)).test().assertResult(1);
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_fromFuture() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromFuture, this.description("fromFuture"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_fromFutureTimeout() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromFutureTimeout, this.description("fromFutureTimeout"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_fromPublisher() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromPublisher, this.description("fromPublisher"));
-        }
-
-        private SingleFromTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SingleFromTest();
-        }
-
-        @java.lang.Override
-        public SingleFromTest implementation() {
-            return this.implementation;
-        }
-    }
 }

@@ -122,66 +122,141 @@ public class SingleConcatMapTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private SingleConcatMapTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapValue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapValue, this.description("concatMapValue"));
+            this.payloads.concatMapValue.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapValueDifferentType() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapValueDifferentType, this.description("concatMapValueDifferentType"));
+            this.payloads.concatMapValueDifferentType.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapValueNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapValueNull, this.description("concatMapValueNull"));
+            this.payloads.concatMapValueNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapValueErrorThrown() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapValueErrorThrown, this.description("concatMapValueErrorThrown"));
+            this.payloads.concatMapValueErrorThrown.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapError, this.description("concatMapError"));
+            this.payloads.concatMapError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mappedSingleOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mappedSingleOnError, this.description("mappedSingleOnError"));
+            this.payloads.mappedSingleOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
-        private SingleConcatMapTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SingleConcatMapTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<SingleConcatMapTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleConcatMapTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public SingleConcatMapTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<SingleConcatMapTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleConcatMapTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new SingleConcatMapTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleConcatMapTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(SingleConcatMapTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(SingleConcatMapTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement concatMapValue;
+
+            public org.junit.runners.model.Statement concatMapValueDifferentType;
+
+            public org.junit.runners.model.Statement concatMapValueNull;
+
+            public org.junit.runners.model.Statement concatMapValueErrorThrown;
+
+            public org.junit.runners.model.Statement concatMapError;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement mappedSingleOnError;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.concatMapValue = _ClassStatement.forPayload(SingleConcatMapTest::concatMapValue, "concatMapValue", this);
+            this.payloads.concatMapValueDifferentType = _ClassStatement.forPayload(SingleConcatMapTest::concatMapValueDifferentType, "concatMapValueDifferentType", this);
+            this.payloads.concatMapValueNull = _ClassStatement.forPayload(SingleConcatMapTest::concatMapValueNull, "concatMapValueNull", this);
+            this.payloads.concatMapValueErrorThrown = _ClassStatement.forPayload(SingleConcatMapTest::concatMapValueErrorThrown, "concatMapValueErrorThrown", this);
+            this.payloads.concatMapError = _ClassStatement.forPayload(SingleConcatMapTest::concatMapError, "concatMapError", this);
+            this.payloads.dispose = _ClassStatement.forPayload(SingleConcatMapTest::dispose, "dispose", this);
+            this.payloads.mappedSingleOnError = _ClassStatement.forPayload(SingleConcatMapTest::mappedSingleOnError, "mappedSingleOnError", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(SingleConcatMapTest::doubleOnSubscribe, "doubleOnSubscribe", this);
         }
     }
 }

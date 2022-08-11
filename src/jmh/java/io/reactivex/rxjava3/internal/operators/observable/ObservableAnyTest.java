@@ -506,198 +506,317 @@ public class ObservableAnyTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableAnyTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_anyWithTwoItemsObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::anyWithTwoItemsObservable, this.description("anyWithTwoItemsObservable"));
+            this.payloads.anyWithTwoItemsObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_isEmptyWithTwoItemsObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::isEmptyWithTwoItemsObservable, this.description("isEmptyWithTwoItemsObservable"));
+            this.payloads.isEmptyWithTwoItemsObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_anyWithOneItemObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::anyWithOneItemObservable, this.description("anyWithOneItemObservable"));
+            this.payloads.anyWithOneItemObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_isEmptyWithOneItemObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::isEmptyWithOneItemObservable, this.description("isEmptyWithOneItemObservable"));
+            this.payloads.isEmptyWithOneItemObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_anyWithEmptyObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::anyWithEmptyObservable, this.description("anyWithEmptyObservable"));
+            this.payloads.anyWithEmptyObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_isEmptyWithEmptyObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::isEmptyWithEmptyObservable, this.description("isEmptyWithEmptyObservable"));
+            this.payloads.isEmptyWithEmptyObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_anyWithPredicate1Observable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::anyWithPredicate1Observable, this.description("anyWithPredicate1Observable"));
+            this.payloads.anyWithPredicate1Observable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_exists1Observable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::exists1Observable, this.description("exists1Observable"));
+            this.payloads.exists1Observable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_anyWithPredicate2Observable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::anyWithPredicate2Observable, this.description("anyWithPredicate2Observable"));
+            this.payloads.anyWithPredicate2Observable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_anyWithEmptyAndPredicateObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::anyWithEmptyAndPredicateObservable, this.description("anyWithEmptyAndPredicateObservable"));
+            this.payloads.anyWithEmptyAndPredicateObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withFollowingFirstObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withFollowingFirstObservable, this.description("withFollowingFirstObservable"));
+            this.payloads.withFollowingFirstObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_issue1935NoUnsubscribeDownstreamObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::issue1935NoUnsubscribeDownstreamObservable, this.description("issue1935NoUnsubscribeDownstreamObservable"));
+            this.payloads.issue1935NoUnsubscribeDownstreamObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_predicateThrowsExceptionAndValueInCauseMessageObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::predicateThrowsExceptionAndValueInCauseMessageObservable, this.description("predicateThrowsExceptionAndValueInCauseMessageObservable"));
+            this.payloads.predicateThrowsExceptionAndValueInCauseMessageObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_anyWithTwoItems() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::anyWithTwoItems, this.description("anyWithTwoItems"));
+            this.payloads.anyWithTwoItems.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_isEmptyWithTwoItems() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::isEmptyWithTwoItems, this.description("isEmptyWithTwoItems"));
+            this.payloads.isEmptyWithTwoItems.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_anyWithOneItem() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::anyWithOneItem, this.description("anyWithOneItem"));
+            this.payloads.anyWithOneItem.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_isEmptyWithOneItem() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::isEmptyWithOneItem, this.description("isEmptyWithOneItem"));
+            this.payloads.isEmptyWithOneItem.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_anyWithEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::anyWithEmpty, this.description("anyWithEmpty"));
+            this.payloads.anyWithEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_isEmptyWithEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::isEmptyWithEmpty, this.description("isEmptyWithEmpty"));
+            this.payloads.isEmptyWithEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_anyWithPredicate1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::anyWithPredicate1, this.description("anyWithPredicate1"));
+            this.payloads.anyWithPredicate1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_exists1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::exists1, this.description("exists1"));
+            this.payloads.exists1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_anyWithPredicate2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::anyWithPredicate2, this.description("anyWithPredicate2"));
+            this.payloads.anyWithPredicate2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_anyWithEmptyAndPredicate() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::anyWithEmptyAndPredicate, this.description("anyWithEmptyAndPredicate"));
+            this.payloads.anyWithEmptyAndPredicate.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withFollowingFirst() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withFollowingFirst, this.description("withFollowingFirst"));
+            this.payloads.withFollowingFirst.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_issue1935NoUnsubscribeDownstream() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::issue1935NoUnsubscribeDownstream, this.description("issue1935NoUnsubscribeDownstream"));
+            this.payloads.issue1935NoUnsubscribeDownstream.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_predicateThrowsExceptionAndValueInCauseMessage() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::predicateThrowsExceptionAndValueInCauseMessage, this.description("predicateThrowsExceptionAndValueInCauseMessage"));
+            this.payloads.predicateThrowsExceptionAndValueInCauseMessage.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_predicateThrowsSuppressOthers() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::predicateThrowsSuppressOthers, this.description("predicateThrowsSuppressOthers"));
+            this.payloads.predicateThrowsSuppressOthers.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSourceSingle() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSourceSingle, this.description("badSourceSingle"));
+            this.payloads.badSourceSingle.evaluate();
         }
 
-        private ObservableAnyTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableAnyTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableAnyTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableAnyTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservableAnyTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableAnyTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableAnyTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableAnyTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableAnyTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableAnyTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableAnyTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement anyWithTwoItemsObservable;
+
+            public org.junit.runners.model.Statement isEmptyWithTwoItemsObservable;
+
+            public org.junit.runners.model.Statement anyWithOneItemObservable;
+
+            public org.junit.runners.model.Statement isEmptyWithOneItemObservable;
+
+            public org.junit.runners.model.Statement anyWithEmptyObservable;
+
+            public org.junit.runners.model.Statement isEmptyWithEmptyObservable;
+
+            public org.junit.runners.model.Statement anyWithPredicate1Observable;
+
+            public org.junit.runners.model.Statement exists1Observable;
+
+            public org.junit.runners.model.Statement anyWithPredicate2Observable;
+
+            public org.junit.runners.model.Statement anyWithEmptyAndPredicateObservable;
+
+            public org.junit.runners.model.Statement withFollowingFirstObservable;
+
+            public org.junit.runners.model.Statement issue1935NoUnsubscribeDownstreamObservable;
+
+            public org.junit.runners.model.Statement predicateThrowsExceptionAndValueInCauseMessageObservable;
+
+            public org.junit.runners.model.Statement anyWithTwoItems;
+
+            public org.junit.runners.model.Statement isEmptyWithTwoItems;
+
+            public org.junit.runners.model.Statement anyWithOneItem;
+
+            public org.junit.runners.model.Statement isEmptyWithOneItem;
+
+            public org.junit.runners.model.Statement anyWithEmpty;
+
+            public org.junit.runners.model.Statement isEmptyWithEmpty;
+
+            public org.junit.runners.model.Statement anyWithPredicate1;
+
+            public org.junit.runners.model.Statement exists1;
+
+            public org.junit.runners.model.Statement anyWithPredicate2;
+
+            public org.junit.runners.model.Statement anyWithEmptyAndPredicate;
+
+            public org.junit.runners.model.Statement withFollowingFirst;
+
+            public org.junit.runners.model.Statement issue1935NoUnsubscribeDownstream;
+
+            public org.junit.runners.model.Statement predicateThrowsExceptionAndValueInCauseMessage;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement predicateThrowsSuppressOthers;
+
+            public org.junit.runners.model.Statement badSourceSingle;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.anyWithTwoItemsObservable = _ClassStatement.forPayload(ObservableAnyTest::anyWithTwoItemsObservable, "anyWithTwoItemsObservable", this);
+            this.payloads.isEmptyWithTwoItemsObservable = _ClassStatement.forPayload(ObservableAnyTest::isEmptyWithTwoItemsObservable, "isEmptyWithTwoItemsObservable", this);
+            this.payloads.anyWithOneItemObservable = _ClassStatement.forPayload(ObservableAnyTest::anyWithOneItemObservable, "anyWithOneItemObservable", this);
+            this.payloads.isEmptyWithOneItemObservable = _ClassStatement.forPayload(ObservableAnyTest::isEmptyWithOneItemObservable, "isEmptyWithOneItemObservable", this);
+            this.payloads.anyWithEmptyObservable = _ClassStatement.forPayload(ObservableAnyTest::anyWithEmptyObservable, "anyWithEmptyObservable", this);
+            this.payloads.isEmptyWithEmptyObservable = _ClassStatement.forPayload(ObservableAnyTest::isEmptyWithEmptyObservable, "isEmptyWithEmptyObservable", this);
+            this.payloads.anyWithPredicate1Observable = _ClassStatement.forPayload(ObservableAnyTest::anyWithPredicate1Observable, "anyWithPredicate1Observable", this);
+            this.payloads.exists1Observable = _ClassStatement.forPayload(ObservableAnyTest::exists1Observable, "exists1Observable", this);
+            this.payloads.anyWithPredicate2Observable = _ClassStatement.forPayload(ObservableAnyTest::anyWithPredicate2Observable, "anyWithPredicate2Observable", this);
+            this.payloads.anyWithEmptyAndPredicateObservable = _ClassStatement.forPayload(ObservableAnyTest::anyWithEmptyAndPredicateObservable, "anyWithEmptyAndPredicateObservable", this);
+            this.payloads.withFollowingFirstObservable = _ClassStatement.forPayload(ObservableAnyTest::withFollowingFirstObservable, "withFollowingFirstObservable", this);
+            this.payloads.issue1935NoUnsubscribeDownstreamObservable = _ClassStatement.forPayload(ObservableAnyTest::issue1935NoUnsubscribeDownstreamObservable, "issue1935NoUnsubscribeDownstreamObservable", this);
+            this.payloads.predicateThrowsExceptionAndValueInCauseMessageObservable = _ClassStatement.forPayload(ObservableAnyTest::predicateThrowsExceptionAndValueInCauseMessageObservable, "predicateThrowsExceptionAndValueInCauseMessageObservable", this);
+            this.payloads.anyWithTwoItems = _ClassStatement.forPayload(ObservableAnyTest::anyWithTwoItems, "anyWithTwoItems", this);
+            this.payloads.isEmptyWithTwoItems = _ClassStatement.forPayload(ObservableAnyTest::isEmptyWithTwoItems, "isEmptyWithTwoItems", this);
+            this.payloads.anyWithOneItem = _ClassStatement.forPayload(ObservableAnyTest::anyWithOneItem, "anyWithOneItem", this);
+            this.payloads.isEmptyWithOneItem = _ClassStatement.forPayload(ObservableAnyTest::isEmptyWithOneItem, "isEmptyWithOneItem", this);
+            this.payloads.anyWithEmpty = _ClassStatement.forPayload(ObservableAnyTest::anyWithEmpty, "anyWithEmpty", this);
+            this.payloads.isEmptyWithEmpty = _ClassStatement.forPayload(ObservableAnyTest::isEmptyWithEmpty, "isEmptyWithEmpty", this);
+            this.payloads.anyWithPredicate1 = _ClassStatement.forPayload(ObservableAnyTest::anyWithPredicate1, "anyWithPredicate1", this);
+            this.payloads.exists1 = _ClassStatement.forPayload(ObservableAnyTest::exists1, "exists1", this);
+            this.payloads.anyWithPredicate2 = _ClassStatement.forPayload(ObservableAnyTest::anyWithPredicate2, "anyWithPredicate2", this);
+            this.payloads.anyWithEmptyAndPredicate = _ClassStatement.forPayload(ObservableAnyTest::anyWithEmptyAndPredicate, "anyWithEmptyAndPredicate", this);
+            this.payloads.withFollowingFirst = _ClassStatement.forPayload(ObservableAnyTest::withFollowingFirst, "withFollowingFirst", this);
+            this.payloads.issue1935NoUnsubscribeDownstream = _ClassStatement.forPayload(ObservableAnyTest::issue1935NoUnsubscribeDownstream, "issue1935NoUnsubscribeDownstream", this);
+            this.payloads.predicateThrowsExceptionAndValueInCauseMessage = _ClassStatement.forPayload(ObservableAnyTest::predicateThrowsExceptionAndValueInCauseMessage, "predicateThrowsExceptionAndValueInCauseMessage", this);
+            this.payloads.dispose = _ClassStatement.forPayload(ObservableAnyTest::dispose, "dispose", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(ObservableAnyTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.predicateThrowsSuppressOthers = _ClassStatement.forPayload(ObservableAnyTest::predicateThrowsSuppressOthers, "predicateThrowsSuppressOthers", this);
+            this.payloads.badSourceSingle = _ClassStatement.forPayload(ObservableAnyTest::badSourceSingle, "badSourceSingle", this);
         }
     }
 }

@@ -870,240 +870,366 @@ public class FlowableDelayTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableDelayTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delay() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delay, this.description("delay"));
+            this.payloads.delay.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_longDelay() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::longDelay, this.description("longDelay"));
+            this.payloads.longDelay.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayWithError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayWithError, this.description("delayWithError"));
+            this.payloads.delayWithError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayWithMultipleSubscriptions() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayWithMultipleSubscriptions, this.description("delayWithMultipleSubscriptions"));
+            this.payloads.delayWithMultipleSubscriptions.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delaySubscription() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delaySubscription, this.description("delaySubscription"));
+            this.payloads.delaySubscription.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delaySubscriptionCancelBeforeTime() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delaySubscriptionCancelBeforeTime, this.description("delaySubscriptionCancelBeforeTime"));
+            this.payloads.delaySubscriptionCancelBeforeTime.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayWithFlowableNormal1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayWithFlowableNormal1, this.description("delayWithFlowableNormal1"));
+            this.payloads.delayWithFlowableNormal1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayWithFlowableSingleSend1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayWithFlowableSingleSend1, this.description("delayWithFlowableSingleSend1"));
+            this.payloads.delayWithFlowableSingleSend1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayWithFlowableSourceThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayWithFlowableSourceThrows, this.description("delayWithFlowableSourceThrows"));
+            this.payloads.delayWithFlowableSourceThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayWithFlowableDelayFunctionThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayWithFlowableDelayFunctionThrows, this.description("delayWithFlowableDelayFunctionThrows"));
+            this.payloads.delayWithFlowableDelayFunctionThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayWithFlowableDelayThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayWithFlowableDelayThrows, this.description("delayWithFlowableDelayThrows"));
+            this.payloads.delayWithFlowableDelayThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayWithFlowableSubscriptionNormal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayWithFlowableSubscriptionNormal, this.description("delayWithFlowableSubscriptionNormal"));
+            this.payloads.delayWithFlowableSubscriptionNormal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayWithFlowableSubscriptionFunctionThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayWithFlowableSubscriptionFunctionThrows, this.description("delayWithFlowableSubscriptionFunctionThrows"));
+            this.payloads.delayWithFlowableSubscriptionFunctionThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayWithFlowableSubscriptionThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayWithFlowableSubscriptionThrows, this.description("delayWithFlowableSubscriptionThrows"));
+            this.payloads.delayWithFlowableSubscriptionThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayWithFlowableEmptyDelayer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayWithFlowableEmptyDelayer, this.description("delayWithFlowableEmptyDelayer"));
+            this.payloads.delayWithFlowableEmptyDelayer.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayWithFlowableSubscriptionRunCompletion() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayWithFlowableSubscriptionRunCompletion, this.description("delayWithFlowableSubscriptionRunCompletion"));
+            this.payloads.delayWithFlowableSubscriptionRunCompletion.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayWithFlowableAsTimed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayWithFlowableAsTimed, this.description("delayWithFlowableAsTimed"));
+            this.payloads.delayWithFlowableAsTimed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayWithFlowableReorder() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayWithFlowableReorder, this.description("delayWithFlowableReorder"));
+            this.payloads.delayWithFlowableReorder.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayEmitsEverything() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayEmitsEverything, this.description("delayEmitsEverything"));
+            this.payloads.delayEmitsEverything.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureWithTimedDelay() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureWithTimedDelay, this.description("backpressureWithTimedDelay"));
+            this.payloads.backpressureWithTimedDelay.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureWithSubscriptionTimedDelay() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureWithSubscriptionTimedDelay, this.description("backpressureWithSubscriptionTimedDelay"));
+            this.payloads.backpressureWithSubscriptionTimedDelay.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureWithSelectorDelay() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureWithSelectorDelay, this.description("backpressureWithSelectorDelay"));
+            this.payloads.backpressureWithSelectorDelay.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureWithSelectorDelayAndSubscriptionDelay() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureWithSelectorDelayAndSubscriptionDelay, this.description("backpressureWithSelectorDelayAndSubscriptionDelay"));
+            this.payloads.backpressureWithSelectorDelayAndSubscriptionDelay.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorRunsBeforeOnNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorRunsBeforeOnNext, this.description("errorRunsBeforeOnNext"));
+            this.payloads.errorRunsBeforeOnNext.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delaySupplierSimple() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delaySupplierSimple, this.description("delaySupplierSimple"));
+            this.payloads.delaySupplierSimple.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delaySupplierCompletes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delaySupplierCompletes, this.description("delaySupplierCompletes"));
+            this.payloads.delaySupplierCompletes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delaySupplierErrors() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delaySupplierErrors, this.description("delaySupplierErrors"));
+            this.payloads.delaySupplierErrors.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayAndTakeUntilNeverSubscribeToSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayAndTakeUntilNeverSubscribeToSource, this.description("delayAndTakeUntilNeverSubscribeToSource"));
+            this.payloads.delayAndTakeUntilNeverSubscribeToSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayWithTimeDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayWithTimeDelayError, this.description("delayWithTimeDelayError"));
+            this.payloads.delayWithTimeDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delaySubscriptionDisposeBeforeTime() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delaySubscriptionDisposeBeforeTime, this.description("delaySubscriptionDisposeBeforeTime"));
+            this.payloads.delaySubscriptionDisposeBeforeTime.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorCalledOnScheduler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorCalledOnScheduler, this.description("onErrorCalledOnScheduler"));
+            this.payloads.onErrorCalledOnScheduler.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onCompleteFinal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompleteFinal, this.description("onCompleteFinal"));
+            this.payloads.onCompleteFinal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorFinal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorFinal, this.description("onErrorFinal"));
+            this.payloads.onErrorFinal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_itemDelayReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::itemDelayReturnsNull, this.description("itemDelayReturnsNull"));
+            this.payloads.itemDelayReturnsNull.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().before();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableDelayTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableDelayTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.before();
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private FlowableDelayTest implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableDelayTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableDelayTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableDelayTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableDelayTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableDelayTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableDelayTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableDelayTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public FlowableDelayTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement delay;
+
+            public org.junit.runners.model.Statement longDelay;
+
+            public org.junit.runners.model.Statement delayWithError;
+
+            public org.junit.runners.model.Statement delayWithMultipleSubscriptions;
+
+            public org.junit.runners.model.Statement delaySubscription;
+
+            public org.junit.runners.model.Statement delaySubscriptionCancelBeforeTime;
+
+            public org.junit.runners.model.Statement delayWithFlowableNormal1;
+
+            public org.junit.runners.model.Statement delayWithFlowableSingleSend1;
+
+            public org.junit.runners.model.Statement delayWithFlowableSourceThrows;
+
+            public org.junit.runners.model.Statement delayWithFlowableDelayFunctionThrows;
+
+            public org.junit.runners.model.Statement delayWithFlowableDelayThrows;
+
+            public org.junit.runners.model.Statement delayWithFlowableSubscriptionNormal;
+
+            public org.junit.runners.model.Statement delayWithFlowableSubscriptionFunctionThrows;
+
+            public org.junit.runners.model.Statement delayWithFlowableSubscriptionThrows;
+
+            public org.junit.runners.model.Statement delayWithFlowableEmptyDelayer;
+
+            public org.junit.runners.model.Statement delayWithFlowableSubscriptionRunCompletion;
+
+            public org.junit.runners.model.Statement delayWithFlowableAsTimed;
+
+            public org.junit.runners.model.Statement delayWithFlowableReorder;
+
+            public org.junit.runners.model.Statement delayEmitsEverything;
+
+            public org.junit.runners.model.Statement backpressureWithTimedDelay;
+
+            public org.junit.runners.model.Statement backpressureWithSubscriptionTimedDelay;
+
+            public org.junit.runners.model.Statement backpressureWithSelectorDelay;
+
+            public org.junit.runners.model.Statement backpressureWithSelectorDelayAndSubscriptionDelay;
+
+            public org.junit.runners.model.Statement errorRunsBeforeOnNext;
+
+            public org.junit.runners.model.Statement delaySupplierSimple;
+
+            public org.junit.runners.model.Statement delaySupplierCompletes;
+
+            public org.junit.runners.model.Statement delaySupplierErrors;
+
+            public org.junit.runners.model.Statement delayAndTakeUntilNeverSubscribeToSource;
+
+            public org.junit.runners.model.Statement delayWithTimeDelayError;
+
+            public org.junit.runners.model.Statement delaySubscriptionDisposeBeforeTime;
+
+            public org.junit.runners.model.Statement onErrorCalledOnScheduler;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement onCompleteFinal;
+
+            public org.junit.runners.model.Statement onErrorFinal;
+
+            public org.junit.runners.model.Statement itemDelayReturnsNull;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.delay = _ClassStatement.forPayload(FlowableDelayTest::delay, "delay", this);
+            this.payloads.longDelay = _ClassStatement.forPayload(FlowableDelayTest::longDelay, "longDelay", this);
+            this.payloads.delayWithError = _ClassStatement.forPayload(FlowableDelayTest::delayWithError, "delayWithError", this);
+            this.payloads.delayWithMultipleSubscriptions = _ClassStatement.forPayload(FlowableDelayTest::delayWithMultipleSubscriptions, "delayWithMultipleSubscriptions", this);
+            this.payloads.delaySubscription = _ClassStatement.forPayload(FlowableDelayTest::delaySubscription, "delaySubscription", this);
+            this.payloads.delaySubscriptionCancelBeforeTime = _ClassStatement.forPayload(FlowableDelayTest::delaySubscriptionCancelBeforeTime, "delaySubscriptionCancelBeforeTime", this);
+            this.payloads.delayWithFlowableNormal1 = _ClassStatement.forPayload(FlowableDelayTest::delayWithFlowableNormal1, "delayWithFlowableNormal1", this);
+            this.payloads.delayWithFlowableSingleSend1 = _ClassStatement.forPayload(FlowableDelayTest::delayWithFlowableSingleSend1, "delayWithFlowableSingleSend1", this);
+            this.payloads.delayWithFlowableSourceThrows = _ClassStatement.forPayload(FlowableDelayTest::delayWithFlowableSourceThrows, "delayWithFlowableSourceThrows", this);
+            this.payloads.delayWithFlowableDelayFunctionThrows = _ClassStatement.forPayload(FlowableDelayTest::delayWithFlowableDelayFunctionThrows, "delayWithFlowableDelayFunctionThrows", this);
+            this.payloads.delayWithFlowableDelayThrows = _ClassStatement.forPayload(FlowableDelayTest::delayWithFlowableDelayThrows, "delayWithFlowableDelayThrows", this);
+            this.payloads.delayWithFlowableSubscriptionNormal = _ClassStatement.forPayload(FlowableDelayTest::delayWithFlowableSubscriptionNormal, "delayWithFlowableSubscriptionNormal", this);
+            this.payloads.delayWithFlowableSubscriptionFunctionThrows = _ClassStatement.forPayload(FlowableDelayTest::delayWithFlowableSubscriptionFunctionThrows, "delayWithFlowableSubscriptionFunctionThrows", this);
+            this.payloads.delayWithFlowableSubscriptionThrows = _ClassStatement.forPayload(FlowableDelayTest::delayWithFlowableSubscriptionThrows, "delayWithFlowableSubscriptionThrows", this);
+            this.payloads.delayWithFlowableEmptyDelayer = _ClassStatement.forPayload(FlowableDelayTest::delayWithFlowableEmptyDelayer, "delayWithFlowableEmptyDelayer", this);
+            this.payloads.delayWithFlowableSubscriptionRunCompletion = _ClassStatement.forPayload(FlowableDelayTest::delayWithFlowableSubscriptionRunCompletion, "delayWithFlowableSubscriptionRunCompletion", this);
+            this.payloads.delayWithFlowableAsTimed = _ClassStatement.forPayload(FlowableDelayTest::delayWithFlowableAsTimed, "delayWithFlowableAsTimed", this);
+            this.payloads.delayWithFlowableReorder = _ClassStatement.forPayload(FlowableDelayTest::delayWithFlowableReorder, "delayWithFlowableReorder", this);
+            this.payloads.delayEmitsEverything = _ClassStatement.forPayload(FlowableDelayTest::delayEmitsEverything, "delayEmitsEverything", this);
+            this.payloads.backpressureWithTimedDelay = _ClassStatement.forPayload(FlowableDelayTest::backpressureWithTimedDelay, "backpressureWithTimedDelay", this);
+            this.payloads.backpressureWithSubscriptionTimedDelay = _ClassStatement.forPayload(FlowableDelayTest::backpressureWithSubscriptionTimedDelay, "backpressureWithSubscriptionTimedDelay", this);
+            this.payloads.backpressureWithSelectorDelay = _ClassStatement.forPayload(FlowableDelayTest::backpressureWithSelectorDelay, "backpressureWithSelectorDelay", this);
+            this.payloads.backpressureWithSelectorDelayAndSubscriptionDelay = _ClassStatement.forPayload(FlowableDelayTest::backpressureWithSelectorDelayAndSubscriptionDelay, "backpressureWithSelectorDelayAndSubscriptionDelay", this);
+            this.payloads.errorRunsBeforeOnNext = _ClassStatement.forPayload(FlowableDelayTest::errorRunsBeforeOnNext, "errorRunsBeforeOnNext", this);
+            this.payloads.delaySupplierSimple = _ClassStatement.forPayload(FlowableDelayTest::delaySupplierSimple, "delaySupplierSimple", this);
+            this.payloads.delaySupplierCompletes = _ClassStatement.forPayload(FlowableDelayTest::delaySupplierCompletes, "delaySupplierCompletes", this);
+            this.payloads.delaySupplierErrors = _ClassStatement.forPayload(FlowableDelayTest::delaySupplierErrors, "delaySupplierErrors", this);
+            this.payloads.delayAndTakeUntilNeverSubscribeToSource = _ClassStatement.forPayload(FlowableDelayTest::delayAndTakeUntilNeverSubscribeToSource, "delayAndTakeUntilNeverSubscribeToSource", this);
+            this.payloads.delayWithTimeDelayError = _ClassStatement.forPayload(FlowableDelayTest::delayWithTimeDelayError, "delayWithTimeDelayError", this);
+            this.payloads.delaySubscriptionDisposeBeforeTime = _ClassStatement.forPayload(FlowableDelayTest::delaySubscriptionDisposeBeforeTime, "delaySubscriptionDisposeBeforeTime", this);
+            this.payloads.onErrorCalledOnScheduler = _ClassStatement.forPayload(FlowableDelayTest::onErrorCalledOnScheduler, "onErrorCalledOnScheduler", this);
+            this.payloads.dispose = _ClassStatement.forPayload(FlowableDelayTest::dispose, "dispose", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableDelayTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.onCompleteFinal = _ClassStatement.forPayload(FlowableDelayTest::onCompleteFinal, "onCompleteFinal", this);
+            this.payloads.onErrorFinal = _ClassStatement.forPayload(FlowableDelayTest::onErrorFinal, "onErrorFinal", this);
+            this.payloads.itemDelayReturnsNull = _ClassStatement.forPayload(FlowableDelayTest::itemDelayReturnsNull, "itemDelayReturnsNull", this);
         }
     }
 }

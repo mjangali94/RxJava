@@ -354,108 +354,197 @@ public class BlockingObservableNextTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private BlockingObservableNextTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_next() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::next, this.description("next"));
+            this.payloads.next.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nextWithError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nextWithError, this.description("nextWithError"));
+            this.payloads.nextWithError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nextWithEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nextWithEmpty, this.description("nextWithEmpty"));
+            this.payloads.nextWithEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onError, this.description("onError"));
+            this.payloads.onError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorInNewThread() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorInNewThread, this.description("onErrorInNewThread"));
+            this.payloads.onErrorInNewThread.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nextWithOnlyUsingNextMethod() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nextWithOnlyUsingNextMethod, this.description("nextWithOnlyUsingNextMethod"));
+            this.payloads.nextWithOnlyUsingNextMethod.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nextWithCallingHasNextMultipleTimes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nextWithCallingHasNextMultipleTimes, this.description("nextWithCallingHasNextMultipleTimes"));
+            this.payloads.nextWithCallingHasNextMultipleTimes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noBufferingOrBlockingOfSequence() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noBufferingOrBlockingOfSequence, this.description("noBufferingOrBlockingOfSequence"));
+            this.payloads.noBufferingOrBlockingOfSequence.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleSourceManyIterators() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleSourceManyIterators, this.description("singleSourceManyIterators"));
+            this.payloads.singleSourceManyIterators.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_synchronousNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::synchronousNext, this.description("synchronousNext"));
+            this.payloads.synchronousNext.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_interrupt() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::interrupt, this.description("interrupt"));
+            this.payloads.interrupt.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_remove() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::remove, this.description("remove"), java.lang.UnsupportedOperationException.class);
+            this.payloads.remove.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nextObserverError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nextObserverError, this.description("nextObserverError"));
+            this.payloads.nextObserverError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nextObserverOnNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nextObserverOnNext, this.description("nextObserverOnNext"));
+            this.payloads.nextObserverOnNext.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nextObserverOnCompleteOnNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nextObserverOnCompleteOnNext, this.description("nextObserverOnCompleteOnNext"));
+            this.payloads.nextObserverOnCompleteOnNext.evaluate();
         }
 
-        private BlockingObservableNextTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new BlockingObservableNextTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<BlockingObservableNextTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<BlockingObservableNextTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public BlockingObservableNextTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<BlockingObservableNextTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<BlockingObservableNextTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new BlockingObservableNextTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<BlockingObservableNextTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(BlockingObservableNextTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(BlockingObservableNextTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement next;
+
+            public org.junit.runners.model.Statement nextWithError;
+
+            public org.junit.runners.model.Statement nextWithEmpty;
+
+            public org.junit.runners.model.Statement onError;
+
+            public org.junit.runners.model.Statement onErrorInNewThread;
+
+            public org.junit.runners.model.Statement nextWithOnlyUsingNextMethod;
+
+            public org.junit.runners.model.Statement nextWithCallingHasNextMultipleTimes;
+
+            public org.junit.runners.model.Statement noBufferingOrBlockingOfSequence;
+
+            public org.junit.runners.model.Statement singleSourceManyIterators;
+
+            public org.junit.runners.model.Statement synchronousNext;
+
+            public org.junit.runners.model.Statement interrupt;
+
+            public org.junit.runners.model.Statement remove;
+
+            public org.junit.runners.model.Statement nextObserverError;
+
+            public org.junit.runners.model.Statement nextObserverOnNext;
+
+            public org.junit.runners.model.Statement nextObserverOnCompleteOnNext;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.next = _ClassStatement.forPayload(BlockingObservableNextTest::next, "next", this);
+            this.payloads.nextWithError = _ClassStatement.forPayload(BlockingObservableNextTest::nextWithError, "nextWithError", this);
+            this.payloads.nextWithEmpty = _ClassStatement.forPayload(BlockingObservableNextTest::nextWithEmpty, "nextWithEmpty", this);
+            this.payloads.onError = _ClassStatement.forPayload(BlockingObservableNextTest::onError, "onError", this);
+            this.payloads.onErrorInNewThread = _ClassStatement.forPayload(BlockingObservableNextTest::onErrorInNewThread, "onErrorInNewThread", this);
+            this.payloads.nextWithOnlyUsingNextMethod = _ClassStatement.forPayload(BlockingObservableNextTest::nextWithOnlyUsingNextMethod, "nextWithOnlyUsingNextMethod", this);
+            this.payloads.nextWithCallingHasNextMultipleTimes = _ClassStatement.forPayload(BlockingObservableNextTest::nextWithCallingHasNextMultipleTimes, "nextWithCallingHasNextMultipleTimes", this);
+            this.payloads.noBufferingOrBlockingOfSequence = _ClassStatement.forPayload(BlockingObservableNextTest::noBufferingOrBlockingOfSequence, "noBufferingOrBlockingOfSequence", this);
+            this.payloads.singleSourceManyIterators = _ClassStatement.forPayload(BlockingObservableNextTest::singleSourceManyIterators, "singleSourceManyIterators", this);
+            this.payloads.synchronousNext = _ClassStatement.forPayload(BlockingObservableNextTest::synchronousNext, "synchronousNext", this);
+            this.payloads.interrupt = _ClassStatement.forPayload(BlockingObservableNextTest::interrupt, "interrupt", this);
+            this.payloads.remove = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(BlockingObservableNextTest::remove, java.lang.UnsupportedOperationException.class), "remove", this);
+            this.payloads.nextObserverError = _ClassStatement.forPayload(BlockingObservableNextTest::nextObserverError, "nextObserverError", this);
+            this.payloads.nextObserverOnNext = _ClassStatement.forPayload(BlockingObservableNextTest::nextObserverOnNext, "nextObserverOnNext", this);
+            this.payloads.nextObserverOnCompleteOnNext = _ClassStatement.forPayload(BlockingObservableNextTest::nextObserverOnCompleteOnNext, "nextObserverOnCompleteOnNext", this);
         }
     }
 }

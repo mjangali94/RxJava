@@ -658,151 +658,242 @@ public class FlowableBackpressureTests extends RxJavaTest {
     };
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableBackpressureTests instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observeOn() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observeOn, this.description("observeOn"));
+            this.payloads.observeOn.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observeOnWithSlowConsumer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observeOnWithSlowConsumer, this.description("observeOnWithSlowConsumer"));
+            this.payloads.observeOnWithSlowConsumer.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeSync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeSync, this.description("mergeSync"));
+            this.payloads.mergeSync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeAsync, this.description("mergeAsync"));
+            this.payloads.mergeAsync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeAsyncThenObserveOnLoop() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeAsyncThenObserveOnLoop, this.description("mergeAsyncThenObserveOnLoop"));
+            this.payloads.mergeAsyncThenObserveOnLoop.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeAsyncThenObserveOn() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeAsyncThenObserveOn, this.description("mergeAsyncThenObserveOn"));
+            this.payloads.mergeAsyncThenObserveOn.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapSync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapSync, this.description("flatMapSync"));
+            this.payloads.flatMapSync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipSync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zipSync, this.description("zipSync"));
+            this.payloads.zipSync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zipAsync, this.description("zipAsync"));
+            this.payloads.zipAsync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_subscribeOnScheduling() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscribeOnScheduling, this.description("subscribeOnScheduling"));
+            this.payloads.subscribeOnScheduling.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeFilterSkipChainAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeFilterSkipChainAsync, this.description("takeFilterSkipChainAsync"));
+            this.payloads.takeFilterSkipChainAsync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_userSubscriberUsingRequestSync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::userSubscriberUsingRequestSync, this.description("userSubscriberUsingRequestSync"));
+            this.payloads.userSubscriberUsingRequestSync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_userSubscriberUsingRequestAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::userSubscriberUsingRequestAsync, this.description("userSubscriberUsingRequestAsync"));
+            this.payloads.userSubscriberUsingRequestAsync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firehoseFailsAsExpected() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firehoseFailsAsExpected, this.description("firehoseFailsAsExpected"));
+            this.payloads.firehoseFailsAsExpected.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firehoseFailsAsExpectedLoop() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firehoseFailsAsExpectedLoop, this.description("firehoseFailsAsExpectedLoop"));
+            this.payloads.firehoseFailsAsExpectedLoop.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onBackpressureDrop() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onBackpressureDrop, this.description("onBackpressureDrop"));
+            this.payloads.onBackpressureDrop.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onBackpressureDropWithAction() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onBackpressureDropWithAction, this.description("onBackpressureDropWithAction"));
+            this.payloads.onBackpressureDropWithAction.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onBackpressureDropSynchronous() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onBackpressureDropSynchronous, this.description("onBackpressureDropSynchronous"));
+            this.payloads.onBackpressureDropSynchronous.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onBackpressureDropSynchronousWithAction() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onBackpressureDropSynchronousWithAction, this.description("onBackpressureDropSynchronousWithAction"));
+            this.payloads.onBackpressureDropSynchronousWithAction.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onBackpressureBuffer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onBackpressureBuffer, this.description("onBackpressureBuffer"));
+            this.payloads.onBackpressureBuffer.evaluate();
         }
 
-        @java.lang.Override
-        public void after() throws java.lang.Throwable {
-            this.implementation().doAfterTest();
-            super.after();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableBackpressureTests> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableBackpressureTests> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                try {
+                    this.payload.accept(this.benchmark.instance);
+                } finally {
+                    this.benchmark.instance.doAfterTest();
+                }
+            }
         }
 
-        @java.lang.Override
-        public org.junit.runners.model.Statement applyRuleFields(org.junit.runners.model.Statement statement, org.junit.runner.Description description) {
-            statement = this.applyRule(this.implementation().testName, statement, description);
-            statement = super.applyRuleFields(statement, description);
-            return statement;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableBackpressureTests> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableBackpressureTests> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableBackpressureTests();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.testName, statement);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableBackpressureTests> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableBackpressureTests.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableBackpressureTests.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        private FlowableBackpressureTests implementation;
+        private static class _Payloads {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableBackpressureTests();
+            public org.junit.runners.model.Statement observeOn;
+
+            public org.junit.runners.model.Statement observeOnWithSlowConsumer;
+
+            public org.junit.runners.model.Statement mergeSync;
+
+            public org.junit.runners.model.Statement mergeAsync;
+
+            public org.junit.runners.model.Statement mergeAsyncThenObserveOnLoop;
+
+            public org.junit.runners.model.Statement mergeAsyncThenObserveOn;
+
+            public org.junit.runners.model.Statement flatMapSync;
+
+            public org.junit.runners.model.Statement zipSync;
+
+            public org.junit.runners.model.Statement zipAsync;
+
+            public org.junit.runners.model.Statement subscribeOnScheduling;
+
+            public org.junit.runners.model.Statement takeFilterSkipChainAsync;
+
+            public org.junit.runners.model.Statement userSubscriberUsingRequestSync;
+
+            public org.junit.runners.model.Statement userSubscriberUsingRequestAsync;
+
+            public org.junit.runners.model.Statement firehoseFailsAsExpected;
+
+            public org.junit.runners.model.Statement firehoseFailsAsExpectedLoop;
+
+            public org.junit.runners.model.Statement onBackpressureDrop;
+
+            public org.junit.runners.model.Statement onBackpressureDropWithAction;
+
+            public org.junit.runners.model.Statement onBackpressureDropSynchronous;
+
+            public org.junit.runners.model.Statement onBackpressureDropSynchronousWithAction;
+
+            public org.junit.runners.model.Statement onBackpressureBuffer;
         }
 
-        @java.lang.Override
-        public FlowableBackpressureTests implementation() {
-            return this.implementation;
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.observeOn = _ClassStatement.forPayload(FlowableBackpressureTests::observeOn, "observeOn", this);
+            this.payloads.observeOnWithSlowConsumer = _ClassStatement.forPayload(FlowableBackpressureTests::observeOnWithSlowConsumer, "observeOnWithSlowConsumer", this);
+            this.payloads.mergeSync = _ClassStatement.forPayload(FlowableBackpressureTests::mergeSync, "mergeSync", this);
+            this.payloads.mergeAsync = _ClassStatement.forPayload(FlowableBackpressureTests::mergeAsync, "mergeAsync", this);
+            this.payloads.mergeAsyncThenObserveOnLoop = _ClassStatement.forPayload(FlowableBackpressureTests::mergeAsyncThenObserveOnLoop, "mergeAsyncThenObserveOnLoop", this);
+            this.payloads.mergeAsyncThenObserveOn = _ClassStatement.forPayload(FlowableBackpressureTests::mergeAsyncThenObserveOn, "mergeAsyncThenObserveOn", this);
+            this.payloads.flatMapSync = _ClassStatement.forPayload(FlowableBackpressureTests::flatMapSync, "flatMapSync", this);
+            this.payloads.zipSync = _ClassStatement.forPayload(FlowableBackpressureTests::zipSync, "zipSync", this);
+            this.payloads.zipAsync = _ClassStatement.forPayload(FlowableBackpressureTests::zipAsync, "zipAsync", this);
+            this.payloads.subscribeOnScheduling = _ClassStatement.forPayload(FlowableBackpressureTests::subscribeOnScheduling, "subscribeOnScheduling", this);
+            this.payloads.takeFilterSkipChainAsync = _ClassStatement.forPayload(FlowableBackpressureTests::takeFilterSkipChainAsync, "takeFilterSkipChainAsync", this);
+            this.payloads.userSubscriberUsingRequestSync = _ClassStatement.forPayload(FlowableBackpressureTests::userSubscriberUsingRequestSync, "userSubscriberUsingRequestSync", this);
+            this.payloads.userSubscriberUsingRequestAsync = _ClassStatement.forPayload(FlowableBackpressureTests::userSubscriberUsingRequestAsync, "userSubscriberUsingRequestAsync", this);
+            this.payloads.firehoseFailsAsExpected = _ClassStatement.forPayload(FlowableBackpressureTests::firehoseFailsAsExpected, "firehoseFailsAsExpected", this);
+            this.payloads.firehoseFailsAsExpectedLoop = _ClassStatement.forPayload(FlowableBackpressureTests::firehoseFailsAsExpectedLoop, "firehoseFailsAsExpectedLoop", this);
+            this.payloads.onBackpressureDrop = _ClassStatement.forPayload(FlowableBackpressureTests::onBackpressureDrop, "onBackpressureDrop", this);
+            this.payloads.onBackpressureDropWithAction = _ClassStatement.forPayload(FlowableBackpressureTests::onBackpressureDropWithAction, "onBackpressureDropWithAction", this);
+            this.payloads.onBackpressureDropSynchronous = _ClassStatement.forPayload(FlowableBackpressureTests::onBackpressureDropSynchronous, "onBackpressureDropSynchronous", this);
+            this.payloads.onBackpressureDropSynchronousWithAction = _ClassStatement.forPayload(FlowableBackpressureTests::onBackpressureDropSynchronousWithAction, "onBackpressureDropSynchronousWithAction", this);
+            this.payloads.onBackpressureBuffer = _ClassStatement.forPayload(FlowableBackpressureTests::onBackpressureBuffer, "onBackpressureBuffer", this);
         }
     }
 }

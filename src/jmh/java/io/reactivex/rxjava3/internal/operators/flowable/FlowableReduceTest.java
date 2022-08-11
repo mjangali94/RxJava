@@ -472,204 +472,318 @@ public class FlowableReduceTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableReduceTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_aggregateAsIntSumFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::aggregateAsIntSumFlowable, this.description("aggregateAsIntSumFlowable"));
+            this.payloads.aggregateAsIntSumFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_aggregateAsIntSumSourceThrowsFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::aggregateAsIntSumSourceThrowsFlowable, this.description("aggregateAsIntSumSourceThrowsFlowable"));
+            this.payloads.aggregateAsIntSumSourceThrowsFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_aggregateAsIntSumAccumulatorThrowsFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::aggregateAsIntSumAccumulatorThrowsFlowable, this.description("aggregateAsIntSumAccumulatorThrowsFlowable"));
+            this.payloads.aggregateAsIntSumAccumulatorThrowsFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_aggregateAsIntSumResultSelectorThrowsFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::aggregateAsIntSumResultSelectorThrowsFlowable, this.description("aggregateAsIntSumResultSelectorThrowsFlowable"));
+            this.payloads.aggregateAsIntSumResultSelectorThrowsFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureWithInitialValueFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureWithInitialValueFlowable, this.description("backpressureWithInitialValueFlowable"));
+            this.payloads.backpressureWithInitialValueFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_aggregateAsIntSum() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::aggregateAsIntSum, this.description("aggregateAsIntSum"));
+            this.payloads.aggregateAsIntSum.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_aggregateAsIntSumSourceThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::aggregateAsIntSumSourceThrows, this.description("aggregateAsIntSumSourceThrows"));
+            this.payloads.aggregateAsIntSumSourceThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_aggregateAsIntSumAccumulatorThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::aggregateAsIntSumAccumulatorThrows, this.description("aggregateAsIntSumAccumulatorThrows"));
+            this.payloads.aggregateAsIntSumAccumulatorThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_aggregateAsIntSumResultSelectorThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::aggregateAsIntSumResultSelectorThrows, this.description("aggregateAsIntSumResultSelectorThrows"));
+            this.payloads.aggregateAsIntSumResultSelectorThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureWithNoInitialValue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureWithNoInitialValue, this.description("backpressureWithNoInitialValue"));
+            this.payloads.backpressureWithNoInitialValue.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureWithInitialValue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureWithInitialValue, this.description("backpressureWithInitialValue"));
+            this.payloads.backpressureWithInitialValue.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_reducerCrashSuppressOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::reducerCrashSuppressOnError, this.description("reducerCrashSuppressOnError"));
+            this.payloads.reducerCrashSuppressOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancel, this.description("cancel"));
+            this.payloads.cancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureWithNoInitialValueObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureWithNoInitialValueObservable, this.description("backpressureWithNoInitialValueObservable"));
+            this.payloads.backpressureWithNoInitialValueObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_source() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::source, this.description("source"));
+            this.payloads.source.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorFlowable, this.description("errorFlowable"));
+            this.payloads.errorFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_empty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::empty, this.description("empty"));
+            this.payloads.empty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyFlowable, this.description("emptyFlowable"));
+            this.payloads.emptyFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSource, this.description("badSource"));
+            this.payloads.badSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSourceFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSourceFlowable, this.description("badSourceFlowable"));
+            this.payloads.badSourceFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_reducerThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::reducerThrows, this.description("reducerThrows"));
+            this.payloads.reducerThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_shouldReduceTo10Events() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::shouldReduceTo10Events, this.description("shouldReduceTo10Events"));
+            this.payloads.shouldReduceTo10Events.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_shouldReduceTo10EventsFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::shouldReduceTo10EventsFlowable, this.description("shouldReduceTo10EventsFlowable"));
+            this.payloads.shouldReduceTo10EventsFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_seedDoubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::seedDoubleOnSubscribe, this.description("seedDoubleOnSubscribe"));
+            this.payloads.seedDoubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_seedDisposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::seedDisposed, this.description("seedDisposed"));
+            this.payloads.seedDisposed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_seedBadSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::seedBadSource, this.description("seedBadSource"));
+            this.payloads.seedBadSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribeFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribeFlowable, this.description("doubleOnSubscribeFlowable"));
+            this.payloads.doubleOnSubscribeFlowable.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().before();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableReduceTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableReduceTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.before();
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private FlowableReduceTest implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableReduceTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableReduceTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableReduceTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableReduceTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableReduceTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableReduceTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableReduceTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public FlowableReduceTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement aggregateAsIntSumFlowable;
+
+            public org.junit.runners.model.Statement aggregateAsIntSumSourceThrowsFlowable;
+
+            public org.junit.runners.model.Statement aggregateAsIntSumAccumulatorThrowsFlowable;
+
+            public org.junit.runners.model.Statement aggregateAsIntSumResultSelectorThrowsFlowable;
+
+            public org.junit.runners.model.Statement backpressureWithInitialValueFlowable;
+
+            public org.junit.runners.model.Statement aggregateAsIntSum;
+
+            public org.junit.runners.model.Statement aggregateAsIntSumSourceThrows;
+
+            public org.junit.runners.model.Statement aggregateAsIntSumAccumulatorThrows;
+
+            public org.junit.runners.model.Statement aggregateAsIntSumResultSelectorThrows;
+
+            public org.junit.runners.model.Statement backpressureWithNoInitialValue;
+
+            public org.junit.runners.model.Statement backpressureWithInitialValue;
+
+            public org.junit.runners.model.Statement reducerCrashSuppressOnError;
+
+            public org.junit.runners.model.Statement cancel;
+
+            public org.junit.runners.model.Statement backpressureWithNoInitialValueObservable;
+
+            public org.junit.runners.model.Statement source;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement errorFlowable;
+
+            public org.junit.runners.model.Statement empty;
+
+            public org.junit.runners.model.Statement emptyFlowable;
+
+            public org.junit.runners.model.Statement badSource;
+
+            public org.junit.runners.model.Statement badSourceFlowable;
+
+            public org.junit.runners.model.Statement reducerThrows;
+
+            public org.junit.runners.model.Statement shouldReduceTo10Events;
+
+            public org.junit.runners.model.Statement shouldReduceTo10EventsFlowable;
+
+            public org.junit.runners.model.Statement seedDoubleOnSubscribe;
+
+            public org.junit.runners.model.Statement seedDisposed;
+
+            public org.junit.runners.model.Statement seedBadSource;
+
+            public org.junit.runners.model.Statement doubleOnSubscribeFlowable;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.aggregateAsIntSumFlowable = _ClassStatement.forPayload(FlowableReduceTest::aggregateAsIntSumFlowable, "aggregateAsIntSumFlowable", this);
+            this.payloads.aggregateAsIntSumSourceThrowsFlowable = _ClassStatement.forPayload(FlowableReduceTest::aggregateAsIntSumSourceThrowsFlowable, "aggregateAsIntSumSourceThrowsFlowable", this);
+            this.payloads.aggregateAsIntSumAccumulatorThrowsFlowable = _ClassStatement.forPayload(FlowableReduceTest::aggregateAsIntSumAccumulatorThrowsFlowable, "aggregateAsIntSumAccumulatorThrowsFlowable", this);
+            this.payloads.aggregateAsIntSumResultSelectorThrowsFlowable = _ClassStatement.forPayload(FlowableReduceTest::aggregateAsIntSumResultSelectorThrowsFlowable, "aggregateAsIntSumResultSelectorThrowsFlowable", this);
+            this.payloads.backpressureWithInitialValueFlowable = _ClassStatement.forPayload(FlowableReduceTest::backpressureWithInitialValueFlowable, "backpressureWithInitialValueFlowable", this);
+            this.payloads.aggregateAsIntSum = _ClassStatement.forPayload(FlowableReduceTest::aggregateAsIntSum, "aggregateAsIntSum", this);
+            this.payloads.aggregateAsIntSumSourceThrows = _ClassStatement.forPayload(FlowableReduceTest::aggregateAsIntSumSourceThrows, "aggregateAsIntSumSourceThrows", this);
+            this.payloads.aggregateAsIntSumAccumulatorThrows = _ClassStatement.forPayload(FlowableReduceTest::aggregateAsIntSumAccumulatorThrows, "aggregateAsIntSumAccumulatorThrows", this);
+            this.payloads.aggregateAsIntSumResultSelectorThrows = _ClassStatement.forPayload(FlowableReduceTest::aggregateAsIntSumResultSelectorThrows, "aggregateAsIntSumResultSelectorThrows", this);
+            this.payloads.backpressureWithNoInitialValue = _ClassStatement.forPayload(FlowableReduceTest::backpressureWithNoInitialValue, "backpressureWithNoInitialValue", this);
+            this.payloads.backpressureWithInitialValue = _ClassStatement.forPayload(FlowableReduceTest::backpressureWithInitialValue, "backpressureWithInitialValue", this);
+            this.payloads.reducerCrashSuppressOnError = _ClassStatement.forPayload(FlowableReduceTest::reducerCrashSuppressOnError, "reducerCrashSuppressOnError", this);
+            this.payloads.cancel = _ClassStatement.forPayload(FlowableReduceTest::cancel, "cancel", this);
+            this.payloads.backpressureWithNoInitialValueObservable = _ClassStatement.forPayload(FlowableReduceTest::backpressureWithNoInitialValueObservable, "backpressureWithNoInitialValueObservable", this);
+            this.payloads.source = _ClassStatement.forPayload(FlowableReduceTest::source, "source", this);
+            this.payloads.dispose = _ClassStatement.forPayload(FlowableReduceTest::dispose, "dispose", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableReduceTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.error = _ClassStatement.forPayload(FlowableReduceTest::error, "error", this);
+            this.payloads.errorFlowable = _ClassStatement.forPayload(FlowableReduceTest::errorFlowable, "errorFlowable", this);
+            this.payloads.empty = _ClassStatement.forPayload(FlowableReduceTest::empty, "empty", this);
+            this.payloads.emptyFlowable = _ClassStatement.forPayload(FlowableReduceTest::emptyFlowable, "emptyFlowable", this);
+            this.payloads.badSource = _ClassStatement.forPayload(FlowableReduceTest::badSource, "badSource", this);
+            this.payloads.badSourceFlowable = _ClassStatement.forPayload(FlowableReduceTest::badSourceFlowable, "badSourceFlowable", this);
+            this.payloads.reducerThrows = _ClassStatement.forPayload(FlowableReduceTest::reducerThrows, "reducerThrows", this);
+            this.payloads.shouldReduceTo10Events = _ClassStatement.forPayload(FlowableReduceTest::shouldReduceTo10Events, "shouldReduceTo10Events", this);
+            this.payloads.shouldReduceTo10EventsFlowable = _ClassStatement.forPayload(FlowableReduceTest::shouldReduceTo10EventsFlowable, "shouldReduceTo10EventsFlowable", this);
+            this.payloads.seedDoubleOnSubscribe = _ClassStatement.forPayload(FlowableReduceTest::seedDoubleOnSubscribe, "seedDoubleOnSubscribe", this);
+            this.payloads.seedDisposed = _ClassStatement.forPayload(FlowableReduceTest::seedDisposed, "seedDisposed", this);
+            this.payloads.seedBadSource = _ClassStatement.forPayload(FlowableReduceTest::seedBadSource, "seedBadSource", this);
+            this.payloads.doubleOnSubscribeFlowable = _ClassStatement.forPayload(FlowableReduceTest::doubleOnSubscribeFlowable, "doubleOnSubscribeFlowable", this);
         }
     }
 }

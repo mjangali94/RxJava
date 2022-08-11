@@ -72,26 +72,4 @@ public class ObservableBufferUntilSubscriberTest extends RxJavaTest {
             Assert.assertEquals(NITERS, counter.get());
         }
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_issue1677() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::issue1677, this.description("issue1677"));
-        }
-
-        private ObservableBufferUntilSubscriberTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableBufferUntilSubscriberTest();
-        }
-
-        @java.lang.Override
-        public ObservableBufferUntilSubscriberTest implementation() {
-            return this.implementation;
-        }
-    }
 }

@@ -279,126 +279,221 @@ public class SingleFlatMapTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private SingleFlatMapTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normal, this.description("normal"));
+            this.payloads.normal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperThrows, this.description("mapperThrows"));
+            this.payloads.mapperThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperReturnsNull, this.description("mapperReturnsNull"));
+            this.payloads.mapperReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapObservable, this.description("flatMapObservable"));
+            this.payloads.flatMapObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapPublisher() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapPublisher, this.description("flatMapPublisher"));
+            this.payloads.flatMapPublisher.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapPublisherMapperThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapPublisherMapperThrows, this.description("flatMapPublisherMapperThrows"));
+            this.payloads.flatMapPublisherMapperThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapPublisherSingleError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapPublisherSingleError, this.description("flatMapPublisherSingleError"));
+            this.payloads.flatMapPublisherSingleError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapPublisherCancelDuringSingle() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapPublisherCancelDuringSingle, this.description("flatMapPublisherCancelDuringSingle"));
+            this.payloads.flatMapPublisherCancelDuringSingle.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapPublisherCancelDuringFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapPublisherCancelDuringFlowable, this.description("flatMapPublisherCancelDuringFlowable"));
+            this.payloads.flatMapPublisherCancelDuringFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapValue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapValue, this.description("flatMapValue"));
+            this.payloads.flatMapValue.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapValueDifferentType() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapValueDifferentType, this.description("flatMapValueDifferentType"));
+            this.payloads.flatMapValueDifferentType.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapValueNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapValueNull, this.description("flatMapValueNull"));
+            this.payloads.flatMapValueNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapValueErrorThrown() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapValueErrorThrown, this.description("flatMapValueErrorThrown"));
+            this.payloads.flatMapValueErrorThrown.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapError, this.description("flatMapError"));
+            this.payloads.flatMapError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mappedSingleOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mappedSingleOnError, this.description("mappedSingleOnError"));
+            this.payloads.mappedSingleOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
-        private SingleFlatMapTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SingleFlatMapTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<SingleFlatMapTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleFlatMapTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public SingleFlatMapTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<SingleFlatMapTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleFlatMapTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new SingleFlatMapTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleFlatMapTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(SingleFlatMapTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(SingleFlatMapTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement normal;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement mapperThrows;
+
+            public org.junit.runners.model.Statement mapperReturnsNull;
+
+            public org.junit.runners.model.Statement flatMapObservable;
+
+            public org.junit.runners.model.Statement flatMapPublisher;
+
+            public org.junit.runners.model.Statement flatMapPublisherMapperThrows;
+
+            public org.junit.runners.model.Statement flatMapPublisherSingleError;
+
+            public org.junit.runners.model.Statement flatMapPublisherCancelDuringSingle;
+
+            public org.junit.runners.model.Statement flatMapPublisherCancelDuringFlowable;
+
+            public org.junit.runners.model.Statement flatMapValue;
+
+            public org.junit.runners.model.Statement flatMapValueDifferentType;
+
+            public org.junit.runners.model.Statement flatMapValueNull;
+
+            public org.junit.runners.model.Statement flatMapValueErrorThrown;
+
+            public org.junit.runners.model.Statement flatMapError;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement mappedSingleOnError;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.normal = _ClassStatement.forPayload(SingleFlatMapTest::normal, "normal", this);
+            this.payloads.error = _ClassStatement.forPayload(SingleFlatMapTest::error, "error", this);
+            this.payloads.mapperThrows = _ClassStatement.forPayload(SingleFlatMapTest::mapperThrows, "mapperThrows", this);
+            this.payloads.mapperReturnsNull = _ClassStatement.forPayload(SingleFlatMapTest::mapperReturnsNull, "mapperReturnsNull", this);
+            this.payloads.flatMapObservable = _ClassStatement.forPayload(SingleFlatMapTest::flatMapObservable, "flatMapObservable", this);
+            this.payloads.flatMapPublisher = _ClassStatement.forPayload(SingleFlatMapTest::flatMapPublisher, "flatMapPublisher", this);
+            this.payloads.flatMapPublisherMapperThrows = _ClassStatement.forPayload(SingleFlatMapTest::flatMapPublisherMapperThrows, "flatMapPublisherMapperThrows", this);
+            this.payloads.flatMapPublisherSingleError = _ClassStatement.forPayload(SingleFlatMapTest::flatMapPublisherSingleError, "flatMapPublisherSingleError", this);
+            this.payloads.flatMapPublisherCancelDuringSingle = _ClassStatement.forPayload(SingleFlatMapTest::flatMapPublisherCancelDuringSingle, "flatMapPublisherCancelDuringSingle", this);
+            this.payloads.flatMapPublisherCancelDuringFlowable = _ClassStatement.forPayload(SingleFlatMapTest::flatMapPublisherCancelDuringFlowable, "flatMapPublisherCancelDuringFlowable", this);
+            this.payloads.flatMapValue = _ClassStatement.forPayload(SingleFlatMapTest::flatMapValue, "flatMapValue", this);
+            this.payloads.flatMapValueDifferentType = _ClassStatement.forPayload(SingleFlatMapTest::flatMapValueDifferentType, "flatMapValueDifferentType", this);
+            this.payloads.flatMapValueNull = _ClassStatement.forPayload(SingleFlatMapTest::flatMapValueNull, "flatMapValueNull", this);
+            this.payloads.flatMapValueErrorThrown = _ClassStatement.forPayload(SingleFlatMapTest::flatMapValueErrorThrown, "flatMapValueErrorThrown", this);
+            this.payloads.flatMapError = _ClassStatement.forPayload(SingleFlatMapTest::flatMapError, "flatMapError", this);
+            this.payloads.dispose = _ClassStatement.forPayload(SingleFlatMapTest::dispose, "dispose", this);
+            this.payloads.mappedSingleOnError = _ClassStatement.forPayload(SingleFlatMapTest::mappedSingleOnError, "mappedSingleOnError", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(SingleFlatMapTest::doubleOnSubscribe, "doubleOnSubscribe", this);
         }
     }
 }

@@ -186,126 +186,221 @@ public class ObservableDoAfterNextTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableDoAfterNextTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_just() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::just, this.description("just"));
+            this.payloads.just.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_justHidden() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::justHidden, this.description("justHidden"));
+            this.payloads.justHidden.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_range() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::range, this.description("range"));
+            this.payloads.range.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_empty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::empty, this.description("empty"));
+            this.payloads.empty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_syncFused() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::syncFused, this.description("syncFused"));
+            this.payloads.syncFused.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncFusedRejected() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncFusedRejected, this.description("asyncFusedRejected"));
+            this.payloads.asyncFusedRejected.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncFused() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncFused, this.description("asyncFused"));
+            this.payloads.asyncFused.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_justConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::justConditional, this.description("justConditional"));
+            this.payloads.justConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rangeConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rangeConditional, this.description("rangeConditional"));
+            this.payloads.rangeConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorConditional, this.description("errorConditional"));
+            this.payloads.errorConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyConditional, this.description("emptyConditional"));
+            this.payloads.emptyConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_syncFusedConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::syncFusedConditional, this.description("syncFusedConditional"));
+            this.payloads.syncFusedConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncFusedRejectedConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncFusedRejectedConditional, this.description("asyncFusedRejectedConditional"));
+            this.payloads.asyncFusedRejectedConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncFusedConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncFusedConditional, this.description("asyncFusedConditional"));
+            this.payloads.asyncFusedConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_consumerThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::consumerThrows, this.description("consumerThrows"));
+            this.payloads.consumerThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_consumerThrowsConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::consumerThrowsConditional, this.description("consumerThrowsConditional"));
+            this.payloads.consumerThrowsConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_consumerThrowsConditional2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::consumerThrowsConditional2, this.description("consumerThrowsConditional2"));
+            this.payloads.consumerThrowsConditional2.evaluate();
         }
 
-        private ObservableDoAfterNextTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableDoAfterNextTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableDoAfterNextTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableDoAfterNextTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservableDoAfterNextTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableDoAfterNextTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableDoAfterNextTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableDoAfterNextTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableDoAfterNextTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableDoAfterNextTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableDoAfterNextTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement just;
+
+            public org.junit.runners.model.Statement justHidden;
+
+            public org.junit.runners.model.Statement range;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement empty;
+
+            public org.junit.runners.model.Statement syncFused;
+
+            public org.junit.runners.model.Statement asyncFusedRejected;
+
+            public org.junit.runners.model.Statement asyncFused;
+
+            public org.junit.runners.model.Statement justConditional;
+
+            public org.junit.runners.model.Statement rangeConditional;
+
+            public org.junit.runners.model.Statement errorConditional;
+
+            public org.junit.runners.model.Statement emptyConditional;
+
+            public org.junit.runners.model.Statement syncFusedConditional;
+
+            public org.junit.runners.model.Statement asyncFusedRejectedConditional;
+
+            public org.junit.runners.model.Statement asyncFusedConditional;
+
+            public org.junit.runners.model.Statement consumerThrows;
+
+            public org.junit.runners.model.Statement consumerThrowsConditional;
+
+            public org.junit.runners.model.Statement consumerThrowsConditional2;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.just = _ClassStatement.forPayload(ObservableDoAfterNextTest::just, "just", this);
+            this.payloads.justHidden = _ClassStatement.forPayload(ObservableDoAfterNextTest::justHidden, "justHidden", this);
+            this.payloads.range = _ClassStatement.forPayload(ObservableDoAfterNextTest::range, "range", this);
+            this.payloads.error = _ClassStatement.forPayload(ObservableDoAfterNextTest::error, "error", this);
+            this.payloads.empty = _ClassStatement.forPayload(ObservableDoAfterNextTest::empty, "empty", this);
+            this.payloads.syncFused = _ClassStatement.forPayload(ObservableDoAfterNextTest::syncFused, "syncFused", this);
+            this.payloads.asyncFusedRejected = _ClassStatement.forPayload(ObservableDoAfterNextTest::asyncFusedRejected, "asyncFusedRejected", this);
+            this.payloads.asyncFused = _ClassStatement.forPayload(ObservableDoAfterNextTest::asyncFused, "asyncFused", this);
+            this.payloads.justConditional = _ClassStatement.forPayload(ObservableDoAfterNextTest::justConditional, "justConditional", this);
+            this.payloads.rangeConditional = _ClassStatement.forPayload(ObservableDoAfterNextTest::rangeConditional, "rangeConditional", this);
+            this.payloads.errorConditional = _ClassStatement.forPayload(ObservableDoAfterNextTest::errorConditional, "errorConditional", this);
+            this.payloads.emptyConditional = _ClassStatement.forPayload(ObservableDoAfterNextTest::emptyConditional, "emptyConditional", this);
+            this.payloads.syncFusedConditional = _ClassStatement.forPayload(ObservableDoAfterNextTest::syncFusedConditional, "syncFusedConditional", this);
+            this.payloads.asyncFusedRejectedConditional = _ClassStatement.forPayload(ObservableDoAfterNextTest::asyncFusedRejectedConditional, "asyncFusedRejectedConditional", this);
+            this.payloads.asyncFusedConditional = _ClassStatement.forPayload(ObservableDoAfterNextTest::asyncFusedConditional, "asyncFusedConditional", this);
+            this.payloads.consumerThrows = _ClassStatement.forPayload(ObservableDoAfterNextTest::consumerThrows, "consumerThrows", this);
+            this.payloads.consumerThrowsConditional = _ClassStatement.forPayload(ObservableDoAfterNextTest::consumerThrowsConditional, "consumerThrowsConditional", this);
+            this.payloads.consumerThrowsConditional2 = _ClassStatement.forPayload(ObservableDoAfterNextTest::consumerThrowsConditional2, "consumerThrowsConditional2", this);
         }
     }
 }

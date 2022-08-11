@@ -203,114 +203,205 @@ public class MaybeConcatArrayTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private MaybeConcatArrayTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancel, this.description("cancel"));
+            this.payloads.cancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelDelayError, this.description("cancelDelayError"));
+            this.payloads.cancelDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressure, this.description("backpressure"));
+            this.payloads.backpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureDelayError, this.description("backpressureDelayError"));
+            this.payloads.backpressureDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestCancelRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestCancelRace, this.description("requestCancelRace"));
+            this.payloads.requestCancelRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestCancelRaceDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestCancelRaceDelayError, this.description("requestCancelRaceDelayError"));
+            this.payloads.requestCancelRaceDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorAfterTermination() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorAfterTermination, this.description("errorAfterTermination"));
+            this.payloads.errorAfterTermination.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noSubsequentSubscription() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noSubsequentSubscription, this.description("noSubsequentSubscription"));
+            this.payloads.noSubsequentSubscription.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noSubsequentSubscriptionDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noSubsequentSubscriptionDelayError, this.description("noSubsequentSubscriptionDelayError"));
+            this.payloads.noSubsequentSubscriptionDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequest, this.description("badRequest"));
+            this.payloads.badRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequestDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequestDelayError, this.description("badRequestDelayError"));
+            this.payloads.badRequestDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mixed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mixed, this.description("mixed"));
+            this.payloads.mixed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestBeforeSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestBeforeSuccess, this.description("requestBeforeSuccess"));
+            this.payloads.requestBeforeSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestBeforeComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestBeforeComplete, this.description("requestBeforeComplete"));
+            this.payloads.requestBeforeComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestBeforeSuccessDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestBeforeSuccessDelayError, this.description("requestBeforeSuccessDelayError"));
+            this.payloads.requestBeforeSuccessDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestBeforeCompleteDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestBeforeCompleteDelayError, this.description("requestBeforeCompleteDelayError"));
+            this.payloads.requestBeforeCompleteDelayError.evaluate();
         }
 
-        private MaybeConcatArrayTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeConcatArrayTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeConcatArrayTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeConcatArrayTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public MaybeConcatArrayTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeConcatArrayTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeConcatArrayTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new MaybeConcatArrayTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeConcatArrayTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(MaybeConcatArrayTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(MaybeConcatArrayTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement cancel;
+
+            public org.junit.runners.model.Statement cancelDelayError;
+
+            public org.junit.runners.model.Statement backpressure;
+
+            public org.junit.runners.model.Statement backpressureDelayError;
+
+            public org.junit.runners.model.Statement requestCancelRace;
+
+            public org.junit.runners.model.Statement requestCancelRaceDelayError;
+
+            public org.junit.runners.model.Statement errorAfterTermination;
+
+            public org.junit.runners.model.Statement noSubsequentSubscription;
+
+            public org.junit.runners.model.Statement noSubsequentSubscriptionDelayError;
+
+            public org.junit.runners.model.Statement badRequest;
+
+            public org.junit.runners.model.Statement badRequestDelayError;
+
+            public org.junit.runners.model.Statement mixed;
+
+            public org.junit.runners.model.Statement requestBeforeSuccess;
+
+            public org.junit.runners.model.Statement requestBeforeComplete;
+
+            public org.junit.runners.model.Statement requestBeforeSuccessDelayError;
+
+            public org.junit.runners.model.Statement requestBeforeCompleteDelayError;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.cancel = _ClassStatement.forPayload(MaybeConcatArrayTest::cancel, "cancel", this);
+            this.payloads.cancelDelayError = _ClassStatement.forPayload(MaybeConcatArrayTest::cancelDelayError, "cancelDelayError", this);
+            this.payloads.backpressure = _ClassStatement.forPayload(MaybeConcatArrayTest::backpressure, "backpressure", this);
+            this.payloads.backpressureDelayError = _ClassStatement.forPayload(MaybeConcatArrayTest::backpressureDelayError, "backpressureDelayError", this);
+            this.payloads.requestCancelRace = _ClassStatement.forPayload(MaybeConcatArrayTest::requestCancelRace, "requestCancelRace", this);
+            this.payloads.requestCancelRaceDelayError = _ClassStatement.forPayload(MaybeConcatArrayTest::requestCancelRaceDelayError, "requestCancelRaceDelayError", this);
+            this.payloads.errorAfterTermination = _ClassStatement.forPayload(MaybeConcatArrayTest::errorAfterTermination, "errorAfterTermination", this);
+            this.payloads.noSubsequentSubscription = _ClassStatement.forPayload(MaybeConcatArrayTest::noSubsequentSubscription, "noSubsequentSubscription", this);
+            this.payloads.noSubsequentSubscriptionDelayError = _ClassStatement.forPayload(MaybeConcatArrayTest::noSubsequentSubscriptionDelayError, "noSubsequentSubscriptionDelayError", this);
+            this.payloads.badRequest = _ClassStatement.forPayload(MaybeConcatArrayTest::badRequest, "badRequest", this);
+            this.payloads.badRequestDelayError = _ClassStatement.forPayload(MaybeConcatArrayTest::badRequestDelayError, "badRequestDelayError", this);
+            this.payloads.mixed = _ClassStatement.forPayload(MaybeConcatArrayTest::mixed, "mixed", this);
+            this.payloads.requestBeforeSuccess = _ClassStatement.forPayload(MaybeConcatArrayTest::requestBeforeSuccess, "requestBeforeSuccess", this);
+            this.payloads.requestBeforeComplete = _ClassStatement.forPayload(MaybeConcatArrayTest::requestBeforeComplete, "requestBeforeComplete", this);
+            this.payloads.requestBeforeSuccessDelayError = _ClassStatement.forPayload(MaybeConcatArrayTest::requestBeforeSuccessDelayError, "requestBeforeSuccessDelayError", this);
+            this.payloads.requestBeforeCompleteDelayError = _ClassStatement.forPayload(MaybeConcatArrayTest::requestBeforeCompleteDelayError, "requestBeforeCompleteDelayError", this);
         }
     }
 }

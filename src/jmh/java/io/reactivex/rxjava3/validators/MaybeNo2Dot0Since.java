@@ -57,26 +57,4 @@ public class MaybeNo2Dot0Since {
             fail(b.toString());
         }
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_noSince20InMaybe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noSince20InMaybe, this.description("noSince20InMaybe"));
-        }
-
-        private MaybeNo2Dot0Since implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeNo2Dot0Since();
-        }
-
-        @java.lang.Override
-        public MaybeNo2Dot0Since implementation() {
-            return this.implementation;
-        }
-    }
 }

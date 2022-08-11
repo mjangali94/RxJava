@@ -114,96 +114,181 @@ public class MaybeIsEmptyTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private MaybeIsEmptyTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normal, this.description("normal"));
+            this.payloads.normal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_empty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::empty, this.description("empty"));
+            this.payloads.empty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedBackToMaybe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedBackToMaybe, this.description("fusedBackToMaybe"));
+            this.payloads.fusedBackToMaybe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalToMaybe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalToMaybe, this.description("normalToMaybe"));
+            this.payloads.normalToMaybe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyToMaybe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyToMaybe, this.description("emptyToMaybe"));
+            this.payloads.emptyToMaybe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorToMaybe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorToMaybe, this.description("errorToMaybe"));
+            this.payloads.errorToMaybe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_isDisposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::isDisposed, this.description("isDisposed"));
+            this.payloads.isDisposed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeToMaybe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeToMaybe, this.description("disposeToMaybe"));
+            this.payloads.disposeToMaybe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_isDisposedToMaybe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::isDisposedToMaybe, this.description("isDisposedToMaybe"));
+            this.payloads.isDisposedToMaybe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribeToMaybe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribeToMaybe, this.description("doubleOnSubscribeToMaybe"));
+            this.payloads.doubleOnSubscribeToMaybe.evaluate();
         }
 
-        private MaybeIsEmptyTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeIsEmptyTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeIsEmptyTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeIsEmptyTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public MaybeIsEmptyTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeIsEmptyTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeIsEmptyTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new MaybeIsEmptyTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeIsEmptyTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(MaybeIsEmptyTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(MaybeIsEmptyTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement normal;
+
+            public org.junit.runners.model.Statement empty;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement fusedBackToMaybe;
+
+            public org.junit.runners.model.Statement normalToMaybe;
+
+            public org.junit.runners.model.Statement emptyToMaybe;
+
+            public org.junit.runners.model.Statement errorToMaybe;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement isDisposed;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement disposeToMaybe;
+
+            public org.junit.runners.model.Statement isDisposedToMaybe;
+
+            public org.junit.runners.model.Statement doubleOnSubscribeToMaybe;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.normal = _ClassStatement.forPayload(MaybeIsEmptyTest::normal, "normal", this);
+            this.payloads.empty = _ClassStatement.forPayload(MaybeIsEmptyTest::empty, "empty", this);
+            this.payloads.error = _ClassStatement.forPayload(MaybeIsEmptyTest::error, "error", this);
+            this.payloads.fusedBackToMaybe = _ClassStatement.forPayload(MaybeIsEmptyTest::fusedBackToMaybe, "fusedBackToMaybe", this);
+            this.payloads.normalToMaybe = _ClassStatement.forPayload(MaybeIsEmptyTest::normalToMaybe, "normalToMaybe", this);
+            this.payloads.emptyToMaybe = _ClassStatement.forPayload(MaybeIsEmptyTest::emptyToMaybe, "emptyToMaybe", this);
+            this.payloads.errorToMaybe = _ClassStatement.forPayload(MaybeIsEmptyTest::errorToMaybe, "errorToMaybe", this);
+            this.payloads.dispose = _ClassStatement.forPayload(MaybeIsEmptyTest::dispose, "dispose", this);
+            this.payloads.isDisposed = _ClassStatement.forPayload(MaybeIsEmptyTest::isDisposed, "isDisposed", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(MaybeIsEmptyTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.disposeToMaybe = _ClassStatement.forPayload(MaybeIsEmptyTest::disposeToMaybe, "disposeToMaybe", this);
+            this.payloads.isDisposedToMaybe = _ClassStatement.forPayload(MaybeIsEmptyTest::isDisposedToMaybe, "isDisposedToMaybe", this);
+            this.payloads.doubleOnSubscribeToMaybe = _ClassStatement.forPayload(MaybeIsEmptyTest::doubleOnSubscribeToMaybe, "doubleOnSubscribeToMaybe", this);
         }
     }
 }

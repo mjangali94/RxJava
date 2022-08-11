@@ -61,54 +61,125 @@ public class FlowableNotificationTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableNotificationTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onNextIntegerNotificationDoesNotEqualNullNotification() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::onNextIntegerNotificationDoesNotEqualNullNotification, this.description("onNextIntegerNotificationDoesNotEqualNullNotification"), java.lang.NullPointerException.class);
+            this.payloads.onNextIntegerNotificationDoesNotEqualNullNotification.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onNextNullNotificationDoesNotEqualIntegerNotification() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::onNextNullNotificationDoesNotEqualIntegerNotification, this.description("onNextNullNotificationDoesNotEqualIntegerNotification"), java.lang.NullPointerException.class);
+            this.payloads.onNextNullNotificationDoesNotEqualIntegerNotification.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onNextIntegerNotificationsWhenEqual() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onNextIntegerNotificationsWhenEqual, this.description("onNextIntegerNotificationsWhenEqual"));
+            this.payloads.onNextIntegerNotificationsWhenEqual.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onNextIntegerNotificationsWhenNotEqual() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onNextIntegerNotificationsWhenNotEqual, this.description("onNextIntegerNotificationsWhenNotEqual"));
+            this.payloads.onNextIntegerNotificationsWhenNotEqual.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorIntegerNotificationsWhenEqual() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorIntegerNotificationsWhenEqual, this.description("onErrorIntegerNotificationsWhenEqual"));
+            this.payloads.onErrorIntegerNotificationsWhenEqual.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorIntegerNotificationWhenNotEqual() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorIntegerNotificationWhenNotEqual, this.description("onErrorIntegerNotificationWhenNotEqual"));
+            this.payloads.onErrorIntegerNotificationWhenNotEqual.evaluate();
         }
 
-        private FlowableNotificationTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableNotificationTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableNotificationTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableNotificationTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableNotificationTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableNotificationTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableNotificationTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableNotificationTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableNotificationTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableNotificationTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableNotificationTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement onNextIntegerNotificationDoesNotEqualNullNotification;
+
+            public org.junit.runners.model.Statement onNextNullNotificationDoesNotEqualIntegerNotification;
+
+            public org.junit.runners.model.Statement onNextIntegerNotificationsWhenEqual;
+
+            public org.junit.runners.model.Statement onNextIntegerNotificationsWhenNotEqual;
+
+            public org.junit.runners.model.Statement onErrorIntegerNotificationsWhenEqual;
+
+            public org.junit.runners.model.Statement onErrorIntegerNotificationWhenNotEqual;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.onNextIntegerNotificationDoesNotEqualNullNotification = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNotificationTest::onNextIntegerNotificationDoesNotEqualNullNotification, java.lang.NullPointerException.class), "onNextIntegerNotificationDoesNotEqualNullNotification", this);
+            this.payloads.onNextNullNotificationDoesNotEqualIntegerNotification = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableNotificationTest::onNextNullNotificationDoesNotEqualIntegerNotification, java.lang.NullPointerException.class), "onNextNullNotificationDoesNotEqualIntegerNotification", this);
+            this.payloads.onNextIntegerNotificationsWhenEqual = _ClassStatement.forPayload(FlowableNotificationTest::onNextIntegerNotificationsWhenEqual, "onNextIntegerNotificationsWhenEqual", this);
+            this.payloads.onNextIntegerNotificationsWhenNotEqual = _ClassStatement.forPayload(FlowableNotificationTest::onNextIntegerNotificationsWhenNotEqual, "onNextIntegerNotificationsWhenNotEqual", this);
+            this.payloads.onErrorIntegerNotificationsWhenEqual = _ClassStatement.forPayload(FlowableNotificationTest::onErrorIntegerNotificationsWhenEqual, "onErrorIntegerNotificationsWhenEqual", this);
+            this.payloads.onErrorIntegerNotificationWhenNotEqual = _ClassStatement.forPayload(FlowableNotificationTest::onErrorIntegerNotificationWhenNotEqual, "onErrorIntegerNotificationWhenNotEqual", this);
         }
     }
 }

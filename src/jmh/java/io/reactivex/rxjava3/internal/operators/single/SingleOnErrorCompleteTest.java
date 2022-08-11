@@ -84,66 +84,87 @@ public class SingleOnErrorCompleteTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private SingleOnErrorCompleteTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normal, this.description("normal"));
+            this.runBenchmark(this.payloads.normal);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.runBenchmark(this.payloads.error);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorMatches() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorMatches, this.description("errorMatches"));
+            this.runBenchmark(this.payloads.errorMatches);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorNotMatches() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorNotMatches, this.description("errorNotMatches"));
+            this.runBenchmark(this.payloads.errorNotMatches);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorPredicateCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorPredicateCrash, this.description("errorPredicateCrash"));
+            this.runBenchmark(this.payloads.errorPredicateCrash);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.runBenchmark(this.payloads.dispose);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onSubscribe, this.description("onSubscribe"));
+            this.runBenchmark(this.payloads.onSubscribe);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_isDisposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::isDisposed, this.description("isDisposed"));
+            this.runBenchmark(this.payloads.isDisposed);
         }
 
-        private SingleOnErrorCompleteTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SingleOnErrorCompleteTest();
+        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleOnErrorCompleteTest> payload) throws java.lang.Throwable {
+            this.instance = new SingleOnErrorCompleteTest();
+            payload.accept(this.instance);
         }
 
-        @java.lang.Override
-        public SingleOnErrorCompleteTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleOnErrorCompleteTest> normal;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleOnErrorCompleteTest> error;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleOnErrorCompleteTest> errorMatches;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleOnErrorCompleteTest> errorNotMatches;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleOnErrorCompleteTest> errorPredicateCrash;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleOnErrorCompleteTest> dispose;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleOnErrorCompleteTest> onSubscribe;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleOnErrorCompleteTest> isDisposed;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.normal = SingleOnErrorCompleteTest::normal;
+            this.payloads.error = SingleOnErrorCompleteTest::error;
+            this.payloads.errorMatches = SingleOnErrorCompleteTest::errorMatches;
+            this.payloads.errorNotMatches = SingleOnErrorCompleteTest::errorNotMatches;
+            this.payloads.errorPredicateCrash = SingleOnErrorCompleteTest::errorPredicateCrash;
+            this.payloads.dispose = SingleOnErrorCompleteTest::dispose;
+            this.payloads.onSubscribe = SingleOnErrorCompleteTest::onSubscribe;
+            this.payloads.isDisposed = SingleOnErrorCompleteTest::isDisposed;
         }
     }
 }

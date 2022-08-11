@@ -621,150 +621,253 @@ public class FlowableWindowWithFlowableTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableWindowWithFlowableTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowViaFlowableNormal1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::windowViaFlowableNormal1, this.description("windowViaFlowableNormal1"));
+            this.payloads.windowViaFlowableNormal1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowViaFlowableBoundaryCompletes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::windowViaFlowableBoundaryCompletes, this.description("windowViaFlowableBoundaryCompletes"));
+            this.payloads.windowViaFlowableBoundaryCompletes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowViaFlowableBoundaryThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::windowViaFlowableBoundaryThrows, this.description("windowViaFlowableBoundaryThrows"));
+            this.payloads.windowViaFlowableBoundaryThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowViaFlowableThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::windowViaFlowableThrows, this.description("windowViaFlowableThrows"));
+            this.payloads.windowViaFlowableThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundaryDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundaryDispose, this.description("boundaryDispose"));
+            this.payloads.boundaryDispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundaryOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundaryOnError, this.description("boundaryOnError"));
+            this.payloads.boundaryOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerBadSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerBadSource, this.description("innerBadSource"));
+            this.payloads.innerBadSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_reentrant() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::reentrant, this.description("reentrant"));
+            this.payloads.reentrant.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSource, this.description("badSource"));
+            this.payloads.badSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundaryDirectMissingBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundaryDirectMissingBackpressure, this.description("boundaryDirectMissingBackpressure"));
+            this.payloads.boundaryDirectMissingBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundaryDirectMissingBackpressureNoNullPointerException() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundaryDirectMissingBackpressureNoNullPointerException, this.description("boundaryDirectMissingBackpressureNoNullPointerException"));
+            this.payloads.boundaryDirectMissingBackpressureNoNullPointerException.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundaryDirectSecondMissingBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundaryDirectSecondMissingBackpressure, this.description("boundaryDirectSecondMissingBackpressure"));
+            this.payloads.boundaryDirectSecondMissingBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundaryDirectDoubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundaryDirectDoubleOnSubscribe, this.description("boundaryDirectDoubleOnSubscribe"));
+            this.payloads.boundaryDirectDoubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_upstreamDisposedWhenOutputsDisposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::upstreamDisposedWhenOutputsDisposed, this.description("upstreamDisposedWhenOutputsDisposed"));
+            this.payloads.upstreamDisposedWhenOutputsDisposed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainAndBoundaryBothError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainAndBoundaryBothError, this.description("mainAndBoundaryBothError"));
+            this.payloads.mainAndBoundaryBothError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainCompleteBoundaryErrorRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainCompleteBoundaryErrorRace, this.description("mainCompleteBoundaryErrorRace"));
+            this.payloads.mainCompleteBoundaryErrorRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainNextBoundaryNextRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainNextBoundaryNextRace, this.description("mainNextBoundaryNextRace"));
+            this.payloads.mainNextBoundaryNextRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeOneAnotherBoundary() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeOneAnotherBoundary, this.description("takeOneAnotherBoundary"));
+            this.payloads.takeOneAnotherBoundary.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeMainBoundaryCompleteRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeMainBoundaryCompleteRace, this.description("disposeMainBoundaryCompleteRace"));
+            this.payloads.disposeMainBoundaryCompleteRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeMainBoundaryErrorRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeMainBoundaryErrorRace, this.description("disposeMainBoundaryErrorRace"));
+            this.payloads.disposeMainBoundaryErrorRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancellingWindowCancelsUpstream() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancellingWindowCancelsUpstream, this.description("cancellingWindowCancelsUpstream"));
+            this.payloads.cancellingWindowCancelsUpstream.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_windowAbandonmentCancelsUpstream() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::windowAbandonmentCancelsUpstream, this.description("windowAbandonmentCancelsUpstream"));
+            this.payloads.windowAbandonmentCancelsUpstream.evaluate();
         }
 
-        private FlowableWindowWithFlowableTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableWindowWithFlowableTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableWindowWithFlowableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableWindowWithFlowableTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableWindowWithFlowableTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableWindowWithFlowableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableWindowWithFlowableTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableWindowWithFlowableTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableWindowWithFlowableTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableWindowWithFlowableTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableWindowWithFlowableTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement windowViaFlowableNormal1;
+
+            public org.junit.runners.model.Statement windowViaFlowableBoundaryCompletes;
+
+            public org.junit.runners.model.Statement windowViaFlowableBoundaryThrows;
+
+            public org.junit.runners.model.Statement windowViaFlowableThrows;
+
+            public org.junit.runners.model.Statement boundaryDispose;
+
+            public org.junit.runners.model.Statement boundaryOnError;
+
+            public org.junit.runners.model.Statement innerBadSource;
+
+            public org.junit.runners.model.Statement reentrant;
+
+            public org.junit.runners.model.Statement badSource;
+
+            public org.junit.runners.model.Statement boundaryDirectMissingBackpressure;
+
+            public org.junit.runners.model.Statement boundaryDirectMissingBackpressureNoNullPointerException;
+
+            public org.junit.runners.model.Statement boundaryDirectSecondMissingBackpressure;
+
+            public org.junit.runners.model.Statement boundaryDirectDoubleOnSubscribe;
+
+            public org.junit.runners.model.Statement upstreamDisposedWhenOutputsDisposed;
+
+            public org.junit.runners.model.Statement mainAndBoundaryBothError;
+
+            public org.junit.runners.model.Statement mainCompleteBoundaryErrorRace;
+
+            public org.junit.runners.model.Statement mainNextBoundaryNextRace;
+
+            public org.junit.runners.model.Statement takeOneAnotherBoundary;
+
+            public org.junit.runners.model.Statement disposeMainBoundaryCompleteRace;
+
+            public org.junit.runners.model.Statement disposeMainBoundaryErrorRace;
+
+            public org.junit.runners.model.Statement cancellingWindowCancelsUpstream;
+
+            public org.junit.runners.model.Statement windowAbandonmentCancelsUpstream;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.windowViaFlowableNormal1 = _ClassStatement.forPayload(FlowableWindowWithFlowableTest::windowViaFlowableNormal1, "windowViaFlowableNormal1", this);
+            this.payloads.windowViaFlowableBoundaryCompletes = _ClassStatement.forPayload(FlowableWindowWithFlowableTest::windowViaFlowableBoundaryCompletes, "windowViaFlowableBoundaryCompletes", this);
+            this.payloads.windowViaFlowableBoundaryThrows = _ClassStatement.forPayload(FlowableWindowWithFlowableTest::windowViaFlowableBoundaryThrows, "windowViaFlowableBoundaryThrows", this);
+            this.payloads.windowViaFlowableThrows = _ClassStatement.forPayload(FlowableWindowWithFlowableTest::windowViaFlowableThrows, "windowViaFlowableThrows", this);
+            this.payloads.boundaryDispose = _ClassStatement.forPayload(FlowableWindowWithFlowableTest::boundaryDispose, "boundaryDispose", this);
+            this.payloads.boundaryOnError = _ClassStatement.forPayload(FlowableWindowWithFlowableTest::boundaryOnError, "boundaryOnError", this);
+            this.payloads.innerBadSource = _ClassStatement.forPayload(FlowableWindowWithFlowableTest::innerBadSource, "innerBadSource", this);
+            this.payloads.reentrant = _ClassStatement.forPayload(FlowableWindowWithFlowableTest::reentrant, "reentrant", this);
+            this.payloads.badSource = _ClassStatement.forPayload(FlowableWindowWithFlowableTest::badSource, "badSource", this);
+            this.payloads.boundaryDirectMissingBackpressure = _ClassStatement.forPayload(FlowableWindowWithFlowableTest::boundaryDirectMissingBackpressure, "boundaryDirectMissingBackpressure", this);
+            this.payloads.boundaryDirectMissingBackpressureNoNullPointerException = _ClassStatement.forPayload(FlowableWindowWithFlowableTest::boundaryDirectMissingBackpressureNoNullPointerException, "boundaryDirectMissingBackpressureNoNullPointerException", this);
+            this.payloads.boundaryDirectSecondMissingBackpressure = _ClassStatement.forPayload(FlowableWindowWithFlowableTest::boundaryDirectSecondMissingBackpressure, "boundaryDirectSecondMissingBackpressure", this);
+            this.payloads.boundaryDirectDoubleOnSubscribe = _ClassStatement.forPayload(FlowableWindowWithFlowableTest::boundaryDirectDoubleOnSubscribe, "boundaryDirectDoubleOnSubscribe", this);
+            this.payloads.upstreamDisposedWhenOutputsDisposed = _ClassStatement.forPayload(FlowableWindowWithFlowableTest::upstreamDisposedWhenOutputsDisposed, "upstreamDisposedWhenOutputsDisposed", this);
+            this.payloads.mainAndBoundaryBothError = _ClassStatement.forPayload(FlowableWindowWithFlowableTest::mainAndBoundaryBothError, "mainAndBoundaryBothError", this);
+            this.payloads.mainCompleteBoundaryErrorRace = _ClassStatement.forPayload(FlowableWindowWithFlowableTest::mainCompleteBoundaryErrorRace, "mainCompleteBoundaryErrorRace", this);
+            this.payloads.mainNextBoundaryNextRace = _ClassStatement.forPayload(FlowableWindowWithFlowableTest::mainNextBoundaryNextRace, "mainNextBoundaryNextRace", this);
+            this.payloads.takeOneAnotherBoundary = _ClassStatement.forPayload(FlowableWindowWithFlowableTest::takeOneAnotherBoundary, "takeOneAnotherBoundary", this);
+            this.payloads.disposeMainBoundaryCompleteRace = _ClassStatement.forPayload(FlowableWindowWithFlowableTest::disposeMainBoundaryCompleteRace, "disposeMainBoundaryCompleteRace", this);
+            this.payloads.disposeMainBoundaryErrorRace = _ClassStatement.forPayload(FlowableWindowWithFlowableTest::disposeMainBoundaryErrorRace, "disposeMainBoundaryErrorRace", this);
+            this.payloads.cancellingWindowCancelsUpstream = _ClassStatement.forPayload(FlowableWindowWithFlowableTest::cancellingWindowCancelsUpstream, "cancellingWindowCancelsUpstream", this);
+            this.payloads.windowAbandonmentCancelsUpstream = _ClassStatement.forPayload(FlowableWindowWithFlowableTest::windowAbandonmentCancelsUpstream, "windowAbandonmentCancelsUpstream", this);
         }
     }
 }

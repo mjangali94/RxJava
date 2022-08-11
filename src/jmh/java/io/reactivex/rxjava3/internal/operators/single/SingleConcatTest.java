@@ -135,84 +135,165 @@ public class SingleConcatTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private SingleConcatTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatWith() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatWith, this.description("concatWith"));
+            this.payloads.concatWith.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concat2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concat2, this.description("concat2"));
+            this.payloads.concat2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concat3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concat3, this.description("concat3"));
+            this.payloads.concat3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concat4() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concat4, this.description("concat4"));
+            this.payloads.concat4.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatArray() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatArray, this.description("concatArray"));
+            this.payloads.concatArray.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatArrayEagerTest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatArrayEagerTest, this.description("concatArrayEagerTest"));
+            this.payloads.concatArrayEagerTest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatEagerIterableTest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatEagerIterableTest, this.description("concatEagerIterableTest"));
+            this.payloads.concatEagerIterableTest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatEagerPublisherTest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatEagerPublisherTest, this.description("concatEagerPublisherTest"));
+            this.payloads.concatEagerPublisherTest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatObservable, this.description("concatObservable"));
+            this.payloads.concatObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noSubsequentSubscription() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noSubsequentSubscription, this.description("noSubsequentSubscription"));
+            this.payloads.noSubsequentSubscription.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noSubsequentSubscriptionIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noSubsequentSubscriptionIterable, this.description("noSubsequentSubscriptionIterable"));
+            this.payloads.noSubsequentSubscriptionIterable.evaluate();
         }
 
-        private SingleConcatTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SingleConcatTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<SingleConcatTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleConcatTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public SingleConcatTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<SingleConcatTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleConcatTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new SingleConcatTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleConcatTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(SingleConcatTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(SingleConcatTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement concatWith;
+
+            public org.junit.runners.model.Statement concat2;
+
+            public org.junit.runners.model.Statement concat3;
+
+            public org.junit.runners.model.Statement concat4;
+
+            public org.junit.runners.model.Statement concatArray;
+
+            public org.junit.runners.model.Statement concatArrayEagerTest;
+
+            public org.junit.runners.model.Statement concatEagerIterableTest;
+
+            public org.junit.runners.model.Statement concatEagerPublisherTest;
+
+            public org.junit.runners.model.Statement concatObservable;
+
+            public org.junit.runners.model.Statement noSubsequentSubscription;
+
+            public org.junit.runners.model.Statement noSubsequentSubscriptionIterable;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.concatWith = _ClassStatement.forPayload(SingleConcatTest::concatWith, "concatWith", this);
+            this.payloads.concat2 = _ClassStatement.forPayload(SingleConcatTest::concat2, "concat2", this);
+            this.payloads.concat3 = _ClassStatement.forPayload(SingleConcatTest::concat3, "concat3", this);
+            this.payloads.concat4 = _ClassStatement.forPayload(SingleConcatTest::concat4, "concat4", this);
+            this.payloads.concatArray = _ClassStatement.forPayload(SingleConcatTest::concatArray, "concatArray", this);
+            this.payloads.concatArrayEagerTest = _ClassStatement.forPayload(SingleConcatTest::concatArrayEagerTest, "concatArrayEagerTest", this);
+            this.payloads.concatEagerIterableTest = _ClassStatement.forPayload(SingleConcatTest::concatEagerIterableTest, "concatEagerIterableTest", this);
+            this.payloads.concatEagerPublisherTest = _ClassStatement.forPayload(SingleConcatTest::concatEagerPublisherTest, "concatEagerPublisherTest", this);
+            this.payloads.concatObservable = _ClassStatement.forPayload(SingleConcatTest::concatObservable, "concatObservable", this);
+            this.payloads.noSubsequentSubscription = _ClassStatement.forPayload(SingleConcatTest::noSubsequentSubscription, "noSubsequentSubscription", this);
+            this.payloads.noSubsequentSubscriptionIterable = _ClassStatement.forPayload(SingleConcatTest::noSubsequentSubscriptionIterable, "noSubsequentSubscriptionIterable", this);
         }
     }
 }

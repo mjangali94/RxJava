@@ -75,32 +75,4 @@ public class ObservableWindowTests extends RxJavaTest {
         to.assertValueCount(4).assertNoErrors().assertNotComplete();
         to.dispose();
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_window() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::window, this.description("window"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_timeSizeWindowAlternatingBounds() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeSizeWindowAlternatingBounds, this.description("timeSizeWindowAlternatingBounds"));
-        }
-
-        private ObservableWindowTests implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableWindowTests();
-        }
-
-        @java.lang.Override
-        public ObservableWindowTests implementation() {
-            return this.implementation;
-        }
-    }
 }

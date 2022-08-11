@@ -540,234 +540,365 @@ public class FlowableFlatMapCompletableTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableFlatMapCompletableTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalFlowable, this.description("normalFlowable"));
+            this.payloads.normalFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperThrowsFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperThrowsFlowable, this.description("mapperThrowsFlowable"));
+            this.payloads.mapperThrowsFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperReturnsNullFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperReturnsNullFlowable, this.description("mapperReturnsNullFlowable"));
+            this.payloads.mapperReturnsNullFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalDelayErrorFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalDelayErrorFlowable, this.description("normalDelayErrorFlowable"));
+            this.payloads.normalDelayErrorFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalAsyncFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalAsyncFlowable, this.description("normalAsyncFlowable"));
+            this.payloads.normalAsyncFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalAsyncFlowableMaxConcurrency() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalAsyncFlowableMaxConcurrency, this.description("normalAsyncFlowableMaxConcurrency"));
+            this.payloads.normalAsyncFlowableMaxConcurrency.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalDelayErrorAllFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalDelayErrorAllFlowable, this.description("normalDelayErrorAllFlowable"));
+            this.payloads.normalDelayErrorAllFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalDelayInnerErrorAllFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalDelayInnerErrorAllFlowable, this.description("normalDelayInnerErrorAllFlowable"));
+            this.payloads.normalDelayInnerErrorAllFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalNonDelayErrorOuterFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalNonDelayErrorOuterFlowable, this.description("normalNonDelayErrorOuterFlowable"));
+            this.payloads.normalNonDelayErrorOuterFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedFlowable, this.description("fusedFlowable"));
+            this.payloads.fusedFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normal, this.description("normal"));
+            this.payloads.normal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperThrows, this.description("mapperThrows"));
+            this.payloads.mapperThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperReturnsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperReturnsNull, this.description("mapperReturnsNull"));
+            this.payloads.mapperReturnsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalDelayError, this.description("normalDelayError"));
+            this.payloads.normalDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalAsync, this.description("normalAsync"));
+            this.payloads.normalAsync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalDelayErrorAll() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalDelayErrorAll, this.description("normalDelayErrorAll"));
+            this.payloads.normalDelayErrorAll.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalDelayInnerErrorAll() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalDelayInnerErrorAll, this.description("normalDelayInnerErrorAll"));
+            this.payloads.normalDelayInnerErrorAll.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalNonDelayErrorOuter() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalNonDelayErrorOuter, this.description("normalNonDelayErrorOuter"));
+            this.payloads.normalNonDelayErrorOuter.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fused() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fused, this.description("fused"));
+            this.payloads.fused.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposed, this.description("disposed"));
+            this.payloads.disposed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalAsyncMaxConcurrency() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalAsyncMaxConcurrency, this.description("normalAsyncMaxConcurrency"));
+            this.payloads.normalAsyncMaxConcurrency.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposedFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposedFlowable, this.description("disposedFlowable"));
+            this.payloads.disposedFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSource, this.description("badSource"));
+            this.payloads.badSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedInternalsFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedInternalsFlowable, this.description("fusedInternalsFlowable"));
+            this.payloads.fusedInternalsFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerObserverFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerObserverFlowable, this.description("innerObserverFlowable"));
+            this.payloads.innerObserverFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSourceFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSourceFlowable, this.description("badSourceFlowable"));
+            this.payloads.badSourceFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerObserver() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerObserver, this.description("innerObserver"));
+            this.payloads.innerObserver.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayErrorMaxConcurrency() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayErrorMaxConcurrency, this.description("delayErrorMaxConcurrency"));
+            this.payloads.delayErrorMaxConcurrency.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayErrorMaxConcurrencyCompletable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayErrorMaxConcurrencyCompletable, this.description("delayErrorMaxConcurrencyCompletable"));
+            this.payloads.delayErrorMaxConcurrencyCompletable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncMaxConcurrency() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncMaxConcurrency, this.description("asyncMaxConcurrency"));
+            this.payloads.asyncMaxConcurrency.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_undeliverableUponCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::undeliverableUponCancel, this.description("undeliverableUponCancel"));
+            this.payloads.undeliverableUponCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_undeliverableUponCancelDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::undeliverableUponCancelDelayError, this.description("undeliverableUponCancelDelayError"));
+            this.payloads.undeliverableUponCancelDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribeCompletable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribeCompletable, this.description("doubleOnSubscribeCompletable"));
+            this.payloads.doubleOnSubscribeCompletable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelWhileMapping() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelWhileMapping, this.description("cancelWhileMapping"));
+            this.payloads.cancelWhileMapping.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelWhileMappingCompletable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelWhileMappingCompletable, this.description("cancelWhileMappingCompletable"));
+            this.payloads.cancelWhileMappingCompletable.evaluate();
         }
 
-        private FlowableFlatMapCompletableTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableFlatMapCompletableTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFlatMapCompletableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFlatMapCompletableTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableFlatMapCompletableTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFlatMapCompletableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFlatMapCompletableTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableFlatMapCompletableTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFlatMapCompletableTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableFlatMapCompletableTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableFlatMapCompletableTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement normalFlowable;
+
+            public org.junit.runners.model.Statement mapperThrowsFlowable;
+
+            public org.junit.runners.model.Statement mapperReturnsNullFlowable;
+
+            public org.junit.runners.model.Statement normalDelayErrorFlowable;
+
+            public org.junit.runners.model.Statement normalAsyncFlowable;
+
+            public org.junit.runners.model.Statement normalAsyncFlowableMaxConcurrency;
+
+            public org.junit.runners.model.Statement normalDelayErrorAllFlowable;
+
+            public org.junit.runners.model.Statement normalDelayInnerErrorAllFlowable;
+
+            public org.junit.runners.model.Statement normalNonDelayErrorOuterFlowable;
+
+            public org.junit.runners.model.Statement fusedFlowable;
+
+            public org.junit.runners.model.Statement normal;
+
+            public org.junit.runners.model.Statement mapperThrows;
+
+            public org.junit.runners.model.Statement mapperReturnsNull;
+
+            public org.junit.runners.model.Statement normalDelayError;
+
+            public org.junit.runners.model.Statement normalAsync;
+
+            public org.junit.runners.model.Statement normalDelayErrorAll;
+
+            public org.junit.runners.model.Statement normalDelayInnerErrorAll;
+
+            public org.junit.runners.model.Statement normalNonDelayErrorOuter;
+
+            public org.junit.runners.model.Statement fused;
+
+            public org.junit.runners.model.Statement disposed;
+
+            public org.junit.runners.model.Statement normalAsyncMaxConcurrency;
+
+            public org.junit.runners.model.Statement disposedFlowable;
+
+            public org.junit.runners.model.Statement badSource;
+
+            public org.junit.runners.model.Statement fusedInternalsFlowable;
+
+            public org.junit.runners.model.Statement innerObserverFlowable;
+
+            public org.junit.runners.model.Statement badSourceFlowable;
+
+            public org.junit.runners.model.Statement innerObserver;
+
+            public org.junit.runners.model.Statement delayErrorMaxConcurrency;
+
+            public org.junit.runners.model.Statement delayErrorMaxConcurrencyCompletable;
+
+            public org.junit.runners.model.Statement asyncMaxConcurrency;
+
+            public org.junit.runners.model.Statement undeliverableUponCancel;
+
+            public org.junit.runners.model.Statement undeliverableUponCancelDelayError;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement doubleOnSubscribeCompletable;
+
+            public org.junit.runners.model.Statement cancelWhileMapping;
+
+            public org.junit.runners.model.Statement cancelWhileMappingCompletable;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.normalFlowable = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::normalFlowable, "normalFlowable", this);
+            this.payloads.mapperThrowsFlowable = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::mapperThrowsFlowable, "mapperThrowsFlowable", this);
+            this.payloads.mapperReturnsNullFlowable = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::mapperReturnsNullFlowable, "mapperReturnsNullFlowable", this);
+            this.payloads.normalDelayErrorFlowable = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::normalDelayErrorFlowable, "normalDelayErrorFlowable", this);
+            this.payloads.normalAsyncFlowable = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::normalAsyncFlowable, "normalAsyncFlowable", this);
+            this.payloads.normalAsyncFlowableMaxConcurrency = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::normalAsyncFlowableMaxConcurrency, "normalAsyncFlowableMaxConcurrency", this);
+            this.payloads.normalDelayErrorAllFlowable = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::normalDelayErrorAllFlowable, "normalDelayErrorAllFlowable", this);
+            this.payloads.normalDelayInnerErrorAllFlowable = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::normalDelayInnerErrorAllFlowable, "normalDelayInnerErrorAllFlowable", this);
+            this.payloads.normalNonDelayErrorOuterFlowable = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::normalNonDelayErrorOuterFlowable, "normalNonDelayErrorOuterFlowable", this);
+            this.payloads.fusedFlowable = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::fusedFlowable, "fusedFlowable", this);
+            this.payloads.normal = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::normal, "normal", this);
+            this.payloads.mapperThrows = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::mapperThrows, "mapperThrows", this);
+            this.payloads.mapperReturnsNull = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::mapperReturnsNull, "mapperReturnsNull", this);
+            this.payloads.normalDelayError = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::normalDelayError, "normalDelayError", this);
+            this.payloads.normalAsync = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::normalAsync, "normalAsync", this);
+            this.payloads.normalDelayErrorAll = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::normalDelayErrorAll, "normalDelayErrorAll", this);
+            this.payloads.normalDelayInnerErrorAll = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::normalDelayInnerErrorAll, "normalDelayInnerErrorAll", this);
+            this.payloads.normalNonDelayErrorOuter = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::normalNonDelayErrorOuter, "normalNonDelayErrorOuter", this);
+            this.payloads.fused = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::fused, "fused", this);
+            this.payloads.disposed = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::disposed, "disposed", this);
+            this.payloads.normalAsyncMaxConcurrency = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::normalAsyncMaxConcurrency, "normalAsyncMaxConcurrency", this);
+            this.payloads.disposedFlowable = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::disposedFlowable, "disposedFlowable", this);
+            this.payloads.badSource = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::badSource, "badSource", this);
+            this.payloads.fusedInternalsFlowable = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::fusedInternalsFlowable, "fusedInternalsFlowable", this);
+            this.payloads.innerObserverFlowable = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::innerObserverFlowable, "innerObserverFlowable", this);
+            this.payloads.badSourceFlowable = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::badSourceFlowable, "badSourceFlowable", this);
+            this.payloads.innerObserver = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::innerObserver, "innerObserver", this);
+            this.payloads.delayErrorMaxConcurrency = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::delayErrorMaxConcurrency, "delayErrorMaxConcurrency", this);
+            this.payloads.delayErrorMaxConcurrencyCompletable = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::delayErrorMaxConcurrencyCompletable, "delayErrorMaxConcurrencyCompletable", this);
+            this.payloads.asyncMaxConcurrency = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::asyncMaxConcurrency, "asyncMaxConcurrency", this);
+            this.payloads.undeliverableUponCancel = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::undeliverableUponCancel, "undeliverableUponCancel", this);
+            this.payloads.undeliverableUponCancelDelayError = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::undeliverableUponCancelDelayError, "undeliverableUponCancelDelayError", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.doubleOnSubscribeCompletable = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::doubleOnSubscribeCompletable, "doubleOnSubscribeCompletable", this);
+            this.payloads.cancelWhileMapping = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::cancelWhileMapping, "cancelWhileMapping", this);
+            this.payloads.cancelWhileMappingCompletable = _ClassStatement.forPayload(FlowableFlatMapCompletableTest::cancelWhileMappingCompletable, "cancelWhileMappingCompletable", this);
         }
     }
 }

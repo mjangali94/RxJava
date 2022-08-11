@@ -102,38 +102,4 @@ public class QueueSubscriptionTest extends RxJavaTest {
         assertEquals("EmptySubscription", EmptySubscription.INSTANCE.toString());
         TestHelper.assertNoOffer(EmptySubscription.INSTANCE);
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_noOfferBasic() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noOfferBasic, this.description("noOfferBasic"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_noOfferBasicInt() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noOfferBasicInt, this.description("noOfferBasicInt"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_empty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::empty, this.description("empty"));
-        }
-
-        private QueueSubscriptionTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new QueueSubscriptionTest();
-        }
-
-        @java.lang.Override
-        public QueueSubscriptionTest implementation() {
-            return this.implementation;
-        }
-    }
 }

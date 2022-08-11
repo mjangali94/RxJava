@@ -97,78 +97,103 @@ public class FlowableOnErrorCompleteTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableOnErrorCompleteTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normal, this.description("normal"));
+            this.runBenchmark(this.payloads.normal);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalBackpressured() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalBackpressured, this.description("normalBackpressured"));
+            this.runBenchmark(this.payloads.normalBackpressured);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_empty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::empty, this.description("empty"));
+            this.runBenchmark(this.payloads.empty);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.runBenchmark(this.payloads.error);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorMatches() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorMatches, this.description("errorMatches"));
+            this.runBenchmark(this.payloads.errorMatches);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorNotMatches() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorNotMatches, this.description("errorNotMatches"));
+            this.runBenchmark(this.payloads.errorNotMatches);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorPredicateCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorPredicateCrash, this.description("errorPredicateCrash"));
+            this.runBenchmark(this.payloads.errorPredicateCrash);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_itemsThenError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::itemsThenError, this.description("itemsThenError"));
+            this.runBenchmark(this.payloads.itemsThenError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancel, this.description("cancel"));
+            this.runBenchmark(this.payloads.cancel);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onSubscribe, this.description("onSubscribe"));
+            this.runBenchmark(this.payloads.onSubscribe);
         }
 
-        private FlowableOnErrorCompleteTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableOnErrorCompleteTest();
+        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnErrorCompleteTest> payload) throws java.lang.Throwable {
+            this.instance = new FlowableOnErrorCompleteTest();
+            payload.accept(this.instance);
         }
 
-        @java.lang.Override
-        public FlowableOnErrorCompleteTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnErrorCompleteTest> normal;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnErrorCompleteTest> normalBackpressured;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnErrorCompleteTest> empty;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnErrorCompleteTest> error;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnErrorCompleteTest> errorMatches;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnErrorCompleteTest> errorNotMatches;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnErrorCompleteTest> errorPredicateCrash;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnErrorCompleteTest> itemsThenError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnErrorCompleteTest> cancel;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableOnErrorCompleteTest> onSubscribe;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.normal = FlowableOnErrorCompleteTest::normal;
+            this.payloads.normalBackpressured = FlowableOnErrorCompleteTest::normalBackpressured;
+            this.payloads.empty = FlowableOnErrorCompleteTest::empty;
+            this.payloads.error = FlowableOnErrorCompleteTest::error;
+            this.payloads.errorMatches = FlowableOnErrorCompleteTest::errorMatches;
+            this.payloads.errorNotMatches = FlowableOnErrorCompleteTest::errorNotMatches;
+            this.payloads.errorPredicateCrash = FlowableOnErrorCompleteTest::errorPredicateCrash;
+            this.payloads.itemsThenError = FlowableOnErrorCompleteTest::itemsThenError;
+            this.payloads.cancel = FlowableOnErrorCompleteTest::cancel;
+            this.payloads.onSubscribe = FlowableOnErrorCompleteTest::onSubscribe;
         }
     }
 }

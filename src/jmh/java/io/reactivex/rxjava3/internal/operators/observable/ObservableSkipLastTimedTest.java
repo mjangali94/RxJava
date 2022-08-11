@@ -336,132 +336,229 @@ public class ObservableSkipLastTimedTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableSkipLastTimedTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipLastTimed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipLastTimed, this.description("skipLastTimed"));
+            this.payloads.skipLastTimed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipLastTimedErrorBeforeTime() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipLastTimedErrorBeforeTime, this.description("skipLastTimedErrorBeforeTime"));
+            this.payloads.skipLastTimedErrorBeforeTime.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipLastTimedCompleteBeforeTime() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipLastTimedCompleteBeforeTime, this.description("skipLastTimedCompleteBeforeTime"));
+            this.payloads.skipLastTimedCompleteBeforeTime.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipLastTimedWhenAllElementsAreValid() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipLastTimedWhenAllElementsAreValid, this.description("skipLastTimedWhenAllElementsAreValid"));
+            this.payloads.skipLastTimedWhenAllElementsAreValid.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipLastTimedDefaultScheduler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipLastTimedDefaultScheduler, this.description("skipLastTimedDefaultScheduler"));
+            this.payloads.skipLastTimedDefaultScheduler.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipLastTimedDefaultSchedulerDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipLastTimedDefaultSchedulerDelayError, this.description("skipLastTimedDefaultSchedulerDelayError"));
+            this.payloads.skipLastTimedDefaultSchedulerDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipLastTimedCustomSchedulerDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipLastTimedCustomSchedulerDelayError, this.description("skipLastTimedCustomSchedulerDelayError"));
+            this.payloads.skipLastTimedCustomSchedulerDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onCompleteDisposeRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompleteDisposeRace, this.description("onCompleteDisposeRace"));
+            this.payloads.onCompleteDisposeRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onCompleteDisposeDelayErrorRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompleteDisposeDelayErrorRace, this.description("onCompleteDisposeDelayErrorRace"));
+            this.payloads.onCompleteDisposeDelayErrorRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorDelayed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorDelayed, this.description("errorDelayed"));
+            this.payloads.errorDelayed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_take() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::take, this.description("take"));
+            this.payloads.take.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onNextDisposeRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onNextDisposeRace, this.description("onNextDisposeRace"));
+            this.payloads.onNextDisposeRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onNextOnCompleteDisposeDelayErrorRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onNextOnCompleteDisposeDelayErrorRace, this.description("onNextOnCompleteDisposeDelayErrorRace"));
+            this.payloads.onNextOnCompleteDisposeDelayErrorRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipLastTimedDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipLastTimedDelayError, this.description("skipLastTimedDelayError"));
+            this.payloads.skipLastTimedDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipLastTimedErrorBeforeTimeDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipLastTimedErrorBeforeTimeDelayError, this.description("skipLastTimedErrorBeforeTimeDelayError"));
+            this.payloads.skipLastTimedErrorBeforeTimeDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipLastTimedCompleteBeforeTimeDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipLastTimedCompleteBeforeTimeDelayError, this.description("skipLastTimedCompleteBeforeTimeDelayError"));
+            this.payloads.skipLastTimedCompleteBeforeTimeDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_skipLastTimedWhenAllElementsAreValidDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::skipLastTimedWhenAllElementsAreValidDelayError, this.description("skipLastTimedWhenAllElementsAreValidDelayError"));
+            this.payloads.skipLastTimedWhenAllElementsAreValidDelayError.evaluate();
         }
 
-        private ObservableSkipLastTimedTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableSkipLastTimedTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableSkipLastTimedTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableSkipLastTimedTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservableSkipLastTimedTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableSkipLastTimedTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableSkipLastTimedTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableSkipLastTimedTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableSkipLastTimedTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableSkipLastTimedTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableSkipLastTimedTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement skipLastTimed;
+
+            public org.junit.runners.model.Statement skipLastTimedErrorBeforeTime;
+
+            public org.junit.runners.model.Statement skipLastTimedCompleteBeforeTime;
+
+            public org.junit.runners.model.Statement skipLastTimedWhenAllElementsAreValid;
+
+            public org.junit.runners.model.Statement skipLastTimedDefaultScheduler;
+
+            public org.junit.runners.model.Statement skipLastTimedDefaultSchedulerDelayError;
+
+            public org.junit.runners.model.Statement skipLastTimedCustomSchedulerDelayError;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement onCompleteDisposeRace;
+
+            public org.junit.runners.model.Statement onCompleteDisposeDelayErrorRace;
+
+            public org.junit.runners.model.Statement errorDelayed;
+
+            public org.junit.runners.model.Statement take;
+
+            public org.junit.runners.model.Statement onNextDisposeRace;
+
+            public org.junit.runners.model.Statement onNextOnCompleteDisposeDelayErrorRace;
+
+            public org.junit.runners.model.Statement skipLastTimedDelayError;
+
+            public org.junit.runners.model.Statement skipLastTimedErrorBeforeTimeDelayError;
+
+            public org.junit.runners.model.Statement skipLastTimedCompleteBeforeTimeDelayError;
+
+            public org.junit.runners.model.Statement skipLastTimedWhenAllElementsAreValidDelayError;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.skipLastTimed = _ClassStatement.forPayload(ObservableSkipLastTimedTest::skipLastTimed, "skipLastTimed", this);
+            this.payloads.skipLastTimedErrorBeforeTime = _ClassStatement.forPayload(ObservableSkipLastTimedTest::skipLastTimedErrorBeforeTime, "skipLastTimedErrorBeforeTime", this);
+            this.payloads.skipLastTimedCompleteBeforeTime = _ClassStatement.forPayload(ObservableSkipLastTimedTest::skipLastTimedCompleteBeforeTime, "skipLastTimedCompleteBeforeTime", this);
+            this.payloads.skipLastTimedWhenAllElementsAreValid = _ClassStatement.forPayload(ObservableSkipLastTimedTest::skipLastTimedWhenAllElementsAreValid, "skipLastTimedWhenAllElementsAreValid", this);
+            this.payloads.skipLastTimedDefaultScheduler = _ClassStatement.forPayload(ObservableSkipLastTimedTest::skipLastTimedDefaultScheduler, "skipLastTimedDefaultScheduler", this);
+            this.payloads.skipLastTimedDefaultSchedulerDelayError = _ClassStatement.forPayload(ObservableSkipLastTimedTest::skipLastTimedDefaultSchedulerDelayError, "skipLastTimedDefaultSchedulerDelayError", this);
+            this.payloads.skipLastTimedCustomSchedulerDelayError = _ClassStatement.forPayload(ObservableSkipLastTimedTest::skipLastTimedCustomSchedulerDelayError, "skipLastTimedCustomSchedulerDelayError", this);
+            this.payloads.dispose = _ClassStatement.forPayload(ObservableSkipLastTimedTest::dispose, "dispose", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(ObservableSkipLastTimedTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.onCompleteDisposeRace = _ClassStatement.forPayload(ObservableSkipLastTimedTest::onCompleteDisposeRace, "onCompleteDisposeRace", this);
+            this.payloads.onCompleteDisposeDelayErrorRace = _ClassStatement.forPayload(ObservableSkipLastTimedTest::onCompleteDisposeDelayErrorRace, "onCompleteDisposeDelayErrorRace", this);
+            this.payloads.errorDelayed = _ClassStatement.forPayload(ObservableSkipLastTimedTest::errorDelayed, "errorDelayed", this);
+            this.payloads.take = _ClassStatement.forPayload(ObservableSkipLastTimedTest::take, "take", this);
+            this.payloads.onNextDisposeRace = _ClassStatement.forPayload(ObservableSkipLastTimedTest::onNextDisposeRace, "onNextDisposeRace", this);
+            this.payloads.onNextOnCompleteDisposeDelayErrorRace = _ClassStatement.forPayload(ObservableSkipLastTimedTest::onNextOnCompleteDisposeDelayErrorRace, "onNextOnCompleteDisposeDelayErrorRace", this);
+            this.payloads.skipLastTimedDelayError = _ClassStatement.forPayload(ObservableSkipLastTimedTest::skipLastTimedDelayError, "skipLastTimedDelayError", this);
+            this.payloads.skipLastTimedErrorBeforeTimeDelayError = _ClassStatement.forPayload(ObservableSkipLastTimedTest::skipLastTimedErrorBeforeTimeDelayError, "skipLastTimedErrorBeforeTimeDelayError", this);
+            this.payloads.skipLastTimedCompleteBeforeTimeDelayError = _ClassStatement.forPayload(ObservableSkipLastTimedTest::skipLastTimedCompleteBeforeTimeDelayError, "skipLastTimedCompleteBeforeTimeDelayError", this);
+            this.payloads.skipLastTimedWhenAllElementsAreValidDelayError = _ClassStatement.forPayload(ObservableSkipLastTimedTest::skipLastTimedWhenAllElementsAreValidDelayError, "skipLastTimedWhenAllElementsAreValidDelayError", this);
         }
     }
 }

@@ -89,60 +89,133 @@ public class NotificationLiteTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private NotificationLiteTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_complete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::complete, this.description("complete"));
+            this.payloads.complete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_valueKind() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::valueKind, this.description("valueKind"));
+            this.payloads.valueKind.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_soloEnum() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::soloEnum, this.description("soloEnum"));
+            this.payloads.soloEnum.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorNotification() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorNotification, this.description("errorNotification"));
+            this.payloads.errorNotification.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_completeNotification() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::completeNotification, this.description("completeNotification"));
+            this.payloads.completeNotification.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposableNotification() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposableNotification, this.description("disposableNotification"));
+            this.payloads.disposableNotification.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_subscriptionNotification() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscriptionNotification, this.description("subscriptionNotification"));
+            this.payloads.subscriptionNotification.evaluate();
         }
 
-        private NotificationLiteTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new NotificationLiteTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<NotificationLiteTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<NotificationLiteTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public NotificationLiteTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<NotificationLiteTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<NotificationLiteTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new NotificationLiteTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<NotificationLiteTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(NotificationLiteTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(NotificationLiteTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement complete;
+
+            public org.junit.runners.model.Statement valueKind;
+
+            public org.junit.runners.model.Statement soloEnum;
+
+            public org.junit.runners.model.Statement errorNotification;
+
+            public org.junit.runners.model.Statement completeNotification;
+
+            public org.junit.runners.model.Statement disposableNotification;
+
+            public org.junit.runners.model.Statement subscriptionNotification;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.complete = _ClassStatement.forPayload(NotificationLiteTest::complete, "complete", this);
+            this.payloads.valueKind = _ClassStatement.forPayload(NotificationLiteTest::valueKind, "valueKind", this);
+            this.payloads.soloEnum = _ClassStatement.forPayload(NotificationLiteTest::soloEnum, "soloEnum", this);
+            this.payloads.errorNotification = _ClassStatement.forPayload(NotificationLiteTest::errorNotification, "errorNotification", this);
+            this.payloads.completeNotification = _ClassStatement.forPayload(NotificationLiteTest::completeNotification, "completeNotification", this);
+            this.payloads.disposableNotification = _ClassStatement.forPayload(NotificationLiteTest::disposableNotification, "disposableNotification", this);
+            this.payloads.subscriptionNotification = _ClassStatement.forPayload(NotificationLiteTest::subscriptionNotification, "subscriptionNotification", this);
         }
     }
     // TODO this test is no longer relevant as nulls are not allowed and value maps to itself

@@ -24,24 +24,31 @@ public class MaybeConcatArrayEagerDelayErrorTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private MaybeConcatArrayEagerDelayErrorTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normal, this.description("normal"));
+            this.runBenchmark(this.payloads.normal);
         }
 
-        private MaybeConcatArrayEagerDelayErrorTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeConcatArrayEagerDelayErrorTest();
+        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeConcatArrayEagerDelayErrorTest> payload) throws java.lang.Throwable {
+            this.instance = new MaybeConcatArrayEagerDelayErrorTest();
+            payload.accept(this.instance);
         }
 
-        @java.lang.Override
-        public MaybeConcatArrayEagerDelayErrorTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeConcatArrayEagerDelayErrorTest> normal;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.normal = MaybeConcatArrayEagerDelayErrorTest::normal;
         }
     }
 }

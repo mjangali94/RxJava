@@ -128,38 +128,4 @@ public class SchedulerMultiWorkerSupportTest extends RxJavaTest {
             }
         }
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_moreThanMaxWorkers() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::moreThanMaxWorkers, this.description("moreThanMaxWorkers"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_getShutdownWorkers() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::getShutdownWorkers, this.description("getShutdownWorkers"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_distinctThreads() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::distinctThreads, this.description("distinctThreads"));
-        }
-
-        private SchedulerMultiWorkerSupportTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SchedulerMultiWorkerSupportTest();
-        }
-
-        @java.lang.Override
-        public SchedulerMultiWorkerSupportTest implementation() {
-            return this.implementation;
-        }
-    }
 }

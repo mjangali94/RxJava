@@ -1009,396 +1009,574 @@ public class FlowableTests extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableTests instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromArray() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromArray, this.description("fromArray"));
+            this.payloads.fromArray.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromIterable, this.description("fromIterable"));
+            this.payloads.fromIterable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromArityArgs3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromArityArgs3, this.description("fromArityArgs3"));
+            this.payloads.fromArityArgs3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromArityArgs1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fromArityArgs1, this.description("fromArityArgs1"));
+            this.payloads.fromArityArgs1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_create() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::create, this.description("create"));
+            this.payloads.create.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_countAFewItemsFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::countAFewItemsFlowable, this.description("countAFewItemsFlowable"));
+            this.payloads.countAFewItemsFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_countZeroItemsFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::countZeroItemsFlowable, this.description("countZeroItemsFlowable"));
+            this.payloads.countZeroItemsFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_countErrorFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::countErrorFlowable, this.description("countErrorFlowable"));
+            this.payloads.countErrorFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_countAFewItems() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::countAFewItems, this.description("countAFewItems"));
+            this.payloads.countAFewItems.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_countZeroItems() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::countZeroItems, this.description("countZeroItems"));
+            this.payloads.countZeroItems.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_countError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::countError, this.description("countError"));
+            this.payloads.countError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeFirstWithPredicateOfSome() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeFirstWithPredicateOfSome, this.description("takeFirstWithPredicateOfSome"));
+            this.payloads.takeFirstWithPredicateOfSome.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeFirstWithPredicateOfNoneMatchingThePredicate() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeFirstWithPredicateOfNoneMatchingThePredicate, this.description("takeFirstWithPredicateOfNoneMatchingThePredicate"));
+            this.payloads.takeFirstWithPredicateOfNoneMatchingThePredicate.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeFirstOfSome() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeFirstOfSome, this.description("takeFirstOfSome"));
+            this.payloads.takeFirstOfSome.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeFirstOfNone() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeFirstOfNone, this.description("takeFirstOfNone"));
+            this.payloads.takeFirstOfNone.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOfNoneFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOfNoneFlowable, this.description("firstOfNoneFlowable"));
+            this.payloads.firstOfNoneFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstWithPredicateOfNoneMatchingThePredicateFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstWithPredicateOfNoneMatchingThePredicateFlowable, this.description("firstWithPredicateOfNoneMatchingThePredicateFlowable"));
+            this.payloads.firstWithPredicateOfNoneMatchingThePredicateFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOfNone() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstOfNone, this.description("firstOfNone"));
+            this.payloads.firstOfNone.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstWithPredicateOfNoneMatchingThePredicate() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstWithPredicateOfNoneMatchingThePredicate, this.description("firstWithPredicateOfNoneMatchingThePredicate"));
+            this.payloads.firstWithPredicateOfNoneMatchingThePredicate.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_reduce() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::reduce, this.description("reduce"));
+            this.payloads.reduce.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_reduceWithEmptyObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::reduceWithEmptyObservable, this.description("reduceWithEmptyObservable"));
+            this.payloads.reduceWithEmptyObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_reduceWithEmptyObservableAndSeed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::reduceWithEmptyObservableAndSeed, this.description("reduceWithEmptyObservableAndSeed"));
+            this.payloads.reduceWithEmptyObservableAndSeed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_reduceWithInitialValue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::reduceWithInitialValue, this.description("reduceWithInitialValue"));
+            this.payloads.reduceWithInitialValue.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_materializeDematerializeChaining() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::materializeDematerializeChaining, this.description("materializeDematerializeChaining"));
+            this.payloads.materializeDematerializeChaining.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_customObservableWithErrorInObserverAsynchronous() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::customObservableWithErrorInObserverAsynchronous, this.description("customObservableWithErrorInObserverAsynchronous"));
+            this.payloads.customObservableWithErrorInObserverAsynchronous.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_customObservableWithErrorInObserverSynchronous() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::customObservableWithErrorInObserverSynchronous, this.description("customObservableWithErrorInObserverSynchronous"));
+            this.payloads.customObservableWithErrorInObserverSynchronous.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_customObservableWithErrorInObservableSynchronous() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::customObservableWithErrorInObservableSynchronous, this.description("customObservableWithErrorInObservableSynchronous"));
+            this.payloads.customObservableWithErrorInObservableSynchronous.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_publishLast() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::publishLast, this.description("publishLast"));
+            this.payloads.publishLast.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_replay() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::replay, this.description("replay"));
+            this.payloads.replay.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cache() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cache, this.description("cache"));
+            this.payloads.cache.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cacheWithCapacity() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cacheWithCapacity, this.description("cacheWithCapacity"));
+            this.payloads.cacheWithCapacity.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeWithErrorInObserver() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeWithErrorInObserver, this.description("takeWithErrorInObserver"));
+            this.payloads.takeWithErrorInObserver.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ofType() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ofType, this.description("ofType"));
+            this.payloads.ofType.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ofTypeWithPolymorphism() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ofTypeWithPolymorphism, this.description("ofTypeWithPolymorphism"));
+            this.payloads.ofTypeWithPolymorphism.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_containsFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::containsFlowable, this.description("containsFlowable"));
+            this.payloads.containsFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_containsWithInexistenceFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::containsWithInexistenceFlowable, this.description("containsWithInexistenceFlowable"));
+            this.payloads.containsWithInexistenceFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_containsWithEmptyObservableFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::containsWithEmptyObservableFlowable, this.description("containsWithEmptyObservableFlowable"));
+            this.payloads.containsWithEmptyObservableFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_contains() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::contains, this.description("contains"));
+            this.payloads.contains.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_containsWithInexistence() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::containsWithInexistence, this.description("containsWithInexistence"));
+            this.payloads.containsWithInexistence.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_containsWithEmptyObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::containsWithEmptyObservable, this.description("containsWithEmptyObservable"));
+            this.payloads.containsWithEmptyObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ignoreElementsFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ignoreElementsFlowable, this.description("ignoreElementsFlowable"));
+            this.payloads.ignoreElementsFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ignoreElements() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ignoreElements, this.description("ignoreElements"));
+            this.payloads.ignoreElements.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_justWithScheduler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::justWithScheduler, this.description("justWithScheduler"));
+            this.payloads.justWithScheduler.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_startWithWithScheduler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::startWithWithScheduler, this.description("startWithWithScheduler"));
+            this.payloads.startWithWithScheduler.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rangeWithScheduler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rangeWithScheduler, this.description("rangeWithScheduler"));
+            this.payloads.rangeWithScheduler.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeWith() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeWith, this.description("mergeWith"));
+            this.payloads.mergeWith.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatWith() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatWith, this.description("concatWith"));
+            this.payloads.concatWith.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambWith() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambWith, this.description("ambWith"));
+            this.payloads.ambWith.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeWhileToList() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeWhileToList, this.description("takeWhileToList"));
+            this.payloads.takeWhileToList.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_compose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::compose, this.description("compose"));
+            this.payloads.compose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorThrownIssue1685() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorThrownIssue1685, this.description("errorThrownIssue1685"));
+            this.payloads.errorThrownIssue1685.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyIdentity() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyIdentity, this.description("emptyIdentity"));
+            this.payloads.emptyIdentity.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyIsEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyIsEmpty, this.description("emptyIsEmpty"));
+            this.payloads.emptyIsEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_extend() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::extend, this.description("extend"));
+            this.payloads.extend.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asExtend() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asExtend, this.description("asExtend"));
+            this.payloads.asExtend.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_as() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::as, this.description("as"));
+            this.payloads.as.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toObservableEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toObservableEmpty, this.description("toObservableEmpty"));
+            this.payloads.toObservableEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toObservableJust() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toObservableJust, this.description("toObservableJust"));
+            this.payloads.toObservableJust.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toObservableRange() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toObservableRange, this.description("toObservableRange"));
+            this.payloads.toObservableRange.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toObservableError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toObservableError, this.description("toObservableError"));
+            this.payloads.toObservableError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipIterableObject() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zipIterableObject, this.description("zipIterableObject"));
+            this.payloads.zipIterableObject.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combineLatestObject() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::combineLatestObject, this.description("combineLatestObject"));
+            this.payloads.combineLatestObject.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().before();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTests> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTests> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.before();
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private FlowableTests implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableTests();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTests> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTests> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableTests();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTests> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableTests.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableTests.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public FlowableTests implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement fromArray;
+
+            public org.junit.runners.model.Statement fromIterable;
+
+            public org.junit.runners.model.Statement fromArityArgs3;
+
+            public org.junit.runners.model.Statement fromArityArgs1;
+
+            public org.junit.runners.model.Statement create;
+
+            public org.junit.runners.model.Statement countAFewItemsFlowable;
+
+            public org.junit.runners.model.Statement countZeroItemsFlowable;
+
+            public org.junit.runners.model.Statement countErrorFlowable;
+
+            public org.junit.runners.model.Statement countAFewItems;
+
+            public org.junit.runners.model.Statement countZeroItems;
+
+            public org.junit.runners.model.Statement countError;
+
+            public org.junit.runners.model.Statement takeFirstWithPredicateOfSome;
+
+            public org.junit.runners.model.Statement takeFirstWithPredicateOfNoneMatchingThePredicate;
+
+            public org.junit.runners.model.Statement takeFirstOfSome;
+
+            public org.junit.runners.model.Statement takeFirstOfNone;
+
+            public org.junit.runners.model.Statement firstOfNoneFlowable;
+
+            public org.junit.runners.model.Statement firstWithPredicateOfNoneMatchingThePredicateFlowable;
+
+            public org.junit.runners.model.Statement firstOfNone;
+
+            public org.junit.runners.model.Statement firstWithPredicateOfNoneMatchingThePredicate;
+
+            public org.junit.runners.model.Statement reduce;
+
+            public org.junit.runners.model.Statement reduceWithEmptyObservable;
+
+            public org.junit.runners.model.Statement reduceWithEmptyObservableAndSeed;
+
+            public org.junit.runners.model.Statement reduceWithInitialValue;
+
+            public org.junit.runners.model.Statement materializeDematerializeChaining;
+
+            public org.junit.runners.model.Statement customObservableWithErrorInObserverAsynchronous;
+
+            public org.junit.runners.model.Statement customObservableWithErrorInObserverSynchronous;
+
+            public org.junit.runners.model.Statement customObservableWithErrorInObservableSynchronous;
+
+            public org.junit.runners.model.Statement publishLast;
+
+            public org.junit.runners.model.Statement replay;
+
+            public org.junit.runners.model.Statement cache;
+
+            public org.junit.runners.model.Statement cacheWithCapacity;
+
+            public org.junit.runners.model.Statement takeWithErrorInObserver;
+
+            public org.junit.runners.model.Statement ofType;
+
+            public org.junit.runners.model.Statement ofTypeWithPolymorphism;
+
+            public org.junit.runners.model.Statement containsFlowable;
+
+            public org.junit.runners.model.Statement containsWithInexistenceFlowable;
+
+            public org.junit.runners.model.Statement containsWithEmptyObservableFlowable;
+
+            public org.junit.runners.model.Statement contains;
+
+            public org.junit.runners.model.Statement containsWithInexistence;
+
+            public org.junit.runners.model.Statement containsWithEmptyObservable;
+
+            public org.junit.runners.model.Statement ignoreElementsFlowable;
+
+            public org.junit.runners.model.Statement ignoreElements;
+
+            public org.junit.runners.model.Statement justWithScheduler;
+
+            public org.junit.runners.model.Statement startWithWithScheduler;
+
+            public org.junit.runners.model.Statement rangeWithScheduler;
+
+            public org.junit.runners.model.Statement mergeWith;
+
+            public org.junit.runners.model.Statement concatWith;
+
+            public org.junit.runners.model.Statement ambWith;
+
+            public org.junit.runners.model.Statement takeWhileToList;
+
+            public org.junit.runners.model.Statement compose;
+
+            public org.junit.runners.model.Statement errorThrownIssue1685;
+
+            public org.junit.runners.model.Statement emptyIdentity;
+
+            public org.junit.runners.model.Statement emptyIsEmpty;
+
+            public org.junit.runners.model.Statement extend;
+
+            public org.junit.runners.model.Statement asExtend;
+
+            public org.junit.runners.model.Statement as;
+
+            public org.junit.runners.model.Statement toObservableEmpty;
+
+            public org.junit.runners.model.Statement toObservableJust;
+
+            public org.junit.runners.model.Statement toObservableRange;
+
+            public org.junit.runners.model.Statement toObservableError;
+
+            public org.junit.runners.model.Statement zipIterableObject;
+
+            public org.junit.runners.model.Statement combineLatestObject;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.fromArray = _ClassStatement.forPayload(FlowableTests::fromArray, "fromArray", this);
+            this.payloads.fromIterable = _ClassStatement.forPayload(FlowableTests::fromIterable, "fromIterable", this);
+            this.payloads.fromArityArgs3 = _ClassStatement.forPayload(FlowableTests::fromArityArgs3, "fromArityArgs3", this);
+            this.payloads.fromArityArgs1 = _ClassStatement.forPayload(FlowableTests::fromArityArgs1, "fromArityArgs1", this);
+            this.payloads.create = _ClassStatement.forPayload(FlowableTests::create, "create", this);
+            this.payloads.countAFewItemsFlowable = _ClassStatement.forPayload(FlowableTests::countAFewItemsFlowable, "countAFewItemsFlowable", this);
+            this.payloads.countZeroItemsFlowable = _ClassStatement.forPayload(FlowableTests::countZeroItemsFlowable, "countZeroItemsFlowable", this);
+            this.payloads.countErrorFlowable = _ClassStatement.forPayload(FlowableTests::countErrorFlowable, "countErrorFlowable", this);
+            this.payloads.countAFewItems = _ClassStatement.forPayload(FlowableTests::countAFewItems, "countAFewItems", this);
+            this.payloads.countZeroItems = _ClassStatement.forPayload(FlowableTests::countZeroItems, "countZeroItems", this);
+            this.payloads.countError = _ClassStatement.forPayload(FlowableTests::countError, "countError", this);
+            this.payloads.takeFirstWithPredicateOfSome = _ClassStatement.forPayload(FlowableTests::takeFirstWithPredicateOfSome, "takeFirstWithPredicateOfSome", this);
+            this.payloads.takeFirstWithPredicateOfNoneMatchingThePredicate = _ClassStatement.forPayload(FlowableTests::takeFirstWithPredicateOfNoneMatchingThePredicate, "takeFirstWithPredicateOfNoneMatchingThePredicate", this);
+            this.payloads.takeFirstOfSome = _ClassStatement.forPayload(FlowableTests::takeFirstOfSome, "takeFirstOfSome", this);
+            this.payloads.takeFirstOfNone = _ClassStatement.forPayload(FlowableTests::takeFirstOfNone, "takeFirstOfNone", this);
+            this.payloads.firstOfNoneFlowable = _ClassStatement.forPayload(FlowableTests::firstOfNoneFlowable, "firstOfNoneFlowable", this);
+            this.payloads.firstWithPredicateOfNoneMatchingThePredicateFlowable = _ClassStatement.forPayload(FlowableTests::firstWithPredicateOfNoneMatchingThePredicateFlowable, "firstWithPredicateOfNoneMatchingThePredicateFlowable", this);
+            this.payloads.firstOfNone = _ClassStatement.forPayload(FlowableTests::firstOfNone, "firstOfNone", this);
+            this.payloads.firstWithPredicateOfNoneMatchingThePredicate = _ClassStatement.forPayload(FlowableTests::firstWithPredicateOfNoneMatchingThePredicate, "firstWithPredicateOfNoneMatchingThePredicate", this);
+            this.payloads.reduce = _ClassStatement.forPayload(FlowableTests::reduce, "reduce", this);
+            this.payloads.reduceWithEmptyObservable = _ClassStatement.forPayload(FlowableTests::reduceWithEmptyObservable, "reduceWithEmptyObservable", this);
+            this.payloads.reduceWithEmptyObservableAndSeed = _ClassStatement.forPayload(FlowableTests::reduceWithEmptyObservableAndSeed, "reduceWithEmptyObservableAndSeed", this);
+            this.payloads.reduceWithInitialValue = _ClassStatement.forPayload(FlowableTests::reduceWithInitialValue, "reduceWithInitialValue", this);
+            this.payloads.materializeDematerializeChaining = _ClassStatement.forPayload(FlowableTests::materializeDematerializeChaining, "materializeDematerializeChaining", this);
+            this.payloads.customObservableWithErrorInObserverAsynchronous = _ClassStatement.forPayload(FlowableTests::customObservableWithErrorInObserverAsynchronous, "customObservableWithErrorInObserverAsynchronous", this);
+            this.payloads.customObservableWithErrorInObserverSynchronous = _ClassStatement.forPayload(FlowableTests::customObservableWithErrorInObserverSynchronous, "customObservableWithErrorInObserverSynchronous", this);
+            this.payloads.customObservableWithErrorInObservableSynchronous = _ClassStatement.forPayload(FlowableTests::customObservableWithErrorInObservableSynchronous, "customObservableWithErrorInObservableSynchronous", this);
+            this.payloads.publishLast = _ClassStatement.forPayload(FlowableTests::publishLast, "publishLast", this);
+            this.payloads.replay = _ClassStatement.forPayload(FlowableTests::replay, "replay", this);
+            this.payloads.cache = _ClassStatement.forPayload(FlowableTests::cache, "cache", this);
+            this.payloads.cacheWithCapacity = _ClassStatement.forPayload(FlowableTests::cacheWithCapacity, "cacheWithCapacity", this);
+            this.payloads.takeWithErrorInObserver = _ClassStatement.forPayload(FlowableTests::takeWithErrorInObserver, "takeWithErrorInObserver", this);
+            this.payloads.ofType = _ClassStatement.forPayload(FlowableTests::ofType, "ofType", this);
+            this.payloads.ofTypeWithPolymorphism = _ClassStatement.forPayload(FlowableTests::ofTypeWithPolymorphism, "ofTypeWithPolymorphism", this);
+            this.payloads.containsFlowable = _ClassStatement.forPayload(FlowableTests::containsFlowable, "containsFlowable", this);
+            this.payloads.containsWithInexistenceFlowable = _ClassStatement.forPayload(FlowableTests::containsWithInexistenceFlowable, "containsWithInexistenceFlowable", this);
+            this.payloads.containsWithEmptyObservableFlowable = _ClassStatement.forPayload(FlowableTests::containsWithEmptyObservableFlowable, "containsWithEmptyObservableFlowable", this);
+            this.payloads.contains = _ClassStatement.forPayload(FlowableTests::contains, "contains", this);
+            this.payloads.containsWithInexistence = _ClassStatement.forPayload(FlowableTests::containsWithInexistence, "containsWithInexistence", this);
+            this.payloads.containsWithEmptyObservable = _ClassStatement.forPayload(FlowableTests::containsWithEmptyObservable, "containsWithEmptyObservable", this);
+            this.payloads.ignoreElementsFlowable = _ClassStatement.forPayload(FlowableTests::ignoreElementsFlowable, "ignoreElementsFlowable", this);
+            this.payloads.ignoreElements = _ClassStatement.forPayload(FlowableTests::ignoreElements, "ignoreElements", this);
+            this.payloads.justWithScheduler = _ClassStatement.forPayload(FlowableTests::justWithScheduler, "justWithScheduler", this);
+            this.payloads.startWithWithScheduler = _ClassStatement.forPayload(FlowableTests::startWithWithScheduler, "startWithWithScheduler", this);
+            this.payloads.rangeWithScheduler = _ClassStatement.forPayload(FlowableTests::rangeWithScheduler, "rangeWithScheduler", this);
+            this.payloads.mergeWith = _ClassStatement.forPayload(FlowableTests::mergeWith, "mergeWith", this);
+            this.payloads.concatWith = _ClassStatement.forPayload(FlowableTests::concatWith, "concatWith", this);
+            this.payloads.ambWith = _ClassStatement.forPayload(FlowableTests::ambWith, "ambWith", this);
+            this.payloads.takeWhileToList = _ClassStatement.forPayload(FlowableTests::takeWhileToList, "takeWhileToList", this);
+            this.payloads.compose = _ClassStatement.forPayload(FlowableTests::compose, "compose", this);
+            this.payloads.errorThrownIssue1685 = _ClassStatement.forPayload(FlowableTests::errorThrownIssue1685, "errorThrownIssue1685", this);
+            this.payloads.emptyIdentity = _ClassStatement.forPayload(FlowableTests::emptyIdentity, "emptyIdentity", this);
+            this.payloads.emptyIsEmpty = _ClassStatement.forPayload(FlowableTests::emptyIsEmpty, "emptyIsEmpty", this);
+            this.payloads.extend = _ClassStatement.forPayload(FlowableTests::extend, "extend", this);
+            this.payloads.asExtend = _ClassStatement.forPayload(FlowableTests::asExtend, "asExtend", this);
+            this.payloads.as = _ClassStatement.forPayload(FlowableTests::as, "as", this);
+            this.payloads.toObservableEmpty = _ClassStatement.forPayload(FlowableTests::toObservableEmpty, "toObservableEmpty", this);
+            this.payloads.toObservableJust = _ClassStatement.forPayload(FlowableTests::toObservableJust, "toObservableJust", this);
+            this.payloads.toObservableRange = _ClassStatement.forPayload(FlowableTests::toObservableRange, "toObservableRange", this);
+            this.payloads.toObservableError = _ClassStatement.forPayload(FlowableTests::toObservableError, "toObservableError", this);
+            this.payloads.zipIterableObject = _ClassStatement.forPayload(FlowableTests::zipIterableObject, "zipIterableObject", this);
+            this.payloads.combineLatestObject = _ClassStatement.forPayload(FlowableTests::combineLatestObject, "combineLatestObject", this);
         }
     }
 }

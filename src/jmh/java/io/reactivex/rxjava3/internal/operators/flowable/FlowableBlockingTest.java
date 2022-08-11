@@ -471,204 +471,325 @@ public class FlowableBlockingTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableBlockingTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_blockingFirst() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::blockingFirst, this.description("blockingFirst"));
+            this.payloads.blockingFirst.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_blockingFirstDefault() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::blockingFirstDefault, this.description("blockingFirstDefault"));
+            this.payloads.blockingFirstDefault.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_blockingSubscribeConsumer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::blockingSubscribeConsumer, this.description("blockingSubscribeConsumer"));
+            this.payloads.blockingSubscribeConsumer.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundedBlockingSubscribeConsumer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundedBlockingSubscribeConsumer, this.description("boundedBlockingSubscribeConsumer"));
+            this.payloads.boundedBlockingSubscribeConsumer.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundedBlockingSubscribeConsumerBufferExceed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundedBlockingSubscribeConsumerBufferExceed, this.description("boundedBlockingSubscribeConsumerBufferExceed"));
+            this.payloads.boundedBlockingSubscribeConsumerBufferExceed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_blockingSubscribeConsumerConsumer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::blockingSubscribeConsumerConsumer, this.description("blockingSubscribeConsumerConsumer"));
+            this.payloads.blockingSubscribeConsumerConsumer.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundedBlockingSubscribeConsumerConsumer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundedBlockingSubscribeConsumerConsumer, this.description("boundedBlockingSubscribeConsumerConsumer"));
+            this.payloads.boundedBlockingSubscribeConsumerConsumer.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundedBlockingSubscribeConsumerConsumerBufferExceed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundedBlockingSubscribeConsumerConsumerBufferExceed, this.description("boundedBlockingSubscribeConsumerConsumerBufferExceed"));
+            this.payloads.boundedBlockingSubscribeConsumerConsumerBufferExceed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_blockingSubscribeConsumerConsumerError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::blockingSubscribeConsumerConsumerError, this.description("blockingSubscribeConsumerConsumerError"));
+            this.payloads.blockingSubscribeConsumerConsumerError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundedBlockingSubscribeConsumerConsumerError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundedBlockingSubscribeConsumerConsumerError, this.description("boundedBlockingSubscribeConsumerConsumerError"));
+            this.payloads.boundedBlockingSubscribeConsumerConsumerError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_blockingSubscribeConsumerConsumerAction() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::blockingSubscribeConsumerConsumerAction, this.description("blockingSubscribeConsumerConsumerAction"));
+            this.payloads.blockingSubscribeConsumerConsumerAction.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundedBlockingSubscribeConsumerConsumerAction() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundedBlockingSubscribeConsumerConsumerAction, this.description("boundedBlockingSubscribeConsumerConsumerAction"));
+            this.payloads.boundedBlockingSubscribeConsumerConsumerAction.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundedBlockingSubscribeConsumerConsumerActionBufferExceed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundedBlockingSubscribeConsumerConsumerActionBufferExceed, this.description("boundedBlockingSubscribeConsumerConsumerActionBufferExceed"));
+            this.payloads.boundedBlockingSubscribeConsumerConsumerActionBufferExceed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundedBlockingSubscribeConsumerConsumerActionBufferExceedMillionItem() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundedBlockingSubscribeConsumerConsumerActionBufferExceedMillionItem, this.description("boundedBlockingSubscribeConsumerConsumerActionBufferExceedMillionItem"));
+            this.payloads.boundedBlockingSubscribeConsumerConsumerActionBufferExceedMillionItem.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_blockingSubscribeObserver() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::blockingSubscribeObserver, this.description("blockingSubscribeObserver"));
+            this.payloads.blockingSubscribeObserver.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_blockingSubscribeObserverError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::blockingSubscribeObserverError, this.description("blockingSubscribeObserverError"));
+            this.payloads.blockingSubscribeObserverError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_blockingForEachThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::blockingForEachThrows, this.description("blockingForEachThrows"), io.reactivex.rxjava3.exceptions.TestException.class);
+            this.payloads.blockingForEachThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_blockingFirstEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::blockingFirstEmpty, this.description("blockingFirstEmpty"), java.util.NoSuchElementException.class);
+            this.payloads.blockingFirstEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_blockingLastEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::blockingLastEmpty, this.description("blockingLastEmpty"), java.util.NoSuchElementException.class);
+            this.payloads.blockingLastEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_blockingFirstNormal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::blockingFirstNormal, this.description("blockingFirstNormal"));
+            this.payloads.blockingFirstNormal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_blockingLastNormal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::blockingLastNormal, this.description("blockingLastNormal"));
+            this.payloads.blockingLastNormal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstFgnoredCancelAndOnNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstFgnoredCancelAndOnNext, this.description("firstFgnoredCancelAndOnNext"));
+            this.payloads.firstFgnoredCancelAndOnNext.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstIgnoredCancelAndOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstIgnoredCancelAndOnError, this.description("firstIgnoredCancelAndOnError"));
+            this.payloads.firstIgnoredCancelAndOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::firstOnError, this.description("firstOnError"), io.reactivex.rxjava3.exceptions.TestException.class);
+            this.payloads.firstOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_interrupt() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::interrupt, this.description("interrupt"));
+            this.payloads.interrupt.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_blockingSingleEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::blockingSingleEmpty, this.description("blockingSingleEmpty"), java.util.NoSuchElementException.class);
+            this.payloads.blockingSingleEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onCompleteDelayed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompleteDelayed, this.description("onCompleteDelayed"));
+            this.payloads.onCompleteDelayed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_utilityClass() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::utilityClass, this.description("utilityClass"));
+            this.payloads.utilityClass.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeUpFront() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeUpFront, this.description("disposeUpFront"));
+            this.payloads.disposeUpFront.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayed, this.description("delayed"));
+            this.payloads.delayed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_blockinsSubscribeCancelAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::blockinsSubscribeCancelAsync, this.description("blockinsSubscribeCancelAsync"));
+            this.payloads.blockinsSubscribeCancelAsync.evaluate();
         }
 
-        private FlowableBlockingTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableBlockingTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableBlockingTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableBlockingTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableBlockingTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableBlockingTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableBlockingTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableBlockingTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableBlockingTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableBlockingTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableBlockingTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement blockingFirst;
+
+            public org.junit.runners.model.Statement blockingFirstDefault;
+
+            public org.junit.runners.model.Statement blockingSubscribeConsumer;
+
+            public org.junit.runners.model.Statement boundedBlockingSubscribeConsumer;
+
+            public org.junit.runners.model.Statement boundedBlockingSubscribeConsumerBufferExceed;
+
+            public org.junit.runners.model.Statement blockingSubscribeConsumerConsumer;
+
+            public org.junit.runners.model.Statement boundedBlockingSubscribeConsumerConsumer;
+
+            public org.junit.runners.model.Statement boundedBlockingSubscribeConsumerConsumerBufferExceed;
+
+            public org.junit.runners.model.Statement blockingSubscribeConsumerConsumerError;
+
+            public org.junit.runners.model.Statement boundedBlockingSubscribeConsumerConsumerError;
+
+            public org.junit.runners.model.Statement blockingSubscribeConsumerConsumerAction;
+
+            public org.junit.runners.model.Statement boundedBlockingSubscribeConsumerConsumerAction;
+
+            public org.junit.runners.model.Statement boundedBlockingSubscribeConsumerConsumerActionBufferExceed;
+
+            public org.junit.runners.model.Statement boundedBlockingSubscribeConsumerConsumerActionBufferExceedMillionItem;
+
+            public org.junit.runners.model.Statement blockingSubscribeObserver;
+
+            public org.junit.runners.model.Statement blockingSubscribeObserverError;
+
+            public org.junit.runners.model.Statement blockingForEachThrows;
+
+            public org.junit.runners.model.Statement blockingFirstEmpty;
+
+            public org.junit.runners.model.Statement blockingLastEmpty;
+
+            public org.junit.runners.model.Statement blockingFirstNormal;
+
+            public org.junit.runners.model.Statement blockingLastNormal;
+
+            public org.junit.runners.model.Statement firstFgnoredCancelAndOnNext;
+
+            public org.junit.runners.model.Statement firstIgnoredCancelAndOnError;
+
+            public org.junit.runners.model.Statement firstOnError;
+
+            public org.junit.runners.model.Statement interrupt;
+
+            public org.junit.runners.model.Statement blockingSingleEmpty;
+
+            public org.junit.runners.model.Statement onCompleteDelayed;
+
+            public org.junit.runners.model.Statement utilityClass;
+
+            public org.junit.runners.model.Statement disposeUpFront;
+
+            public org.junit.runners.model.Statement delayed;
+
+            public org.junit.runners.model.Statement blockinsSubscribeCancelAsync;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.blockingFirst = _ClassStatement.forPayload(FlowableBlockingTest::blockingFirst, "blockingFirst", this);
+            this.payloads.blockingFirstDefault = _ClassStatement.forPayload(FlowableBlockingTest::blockingFirstDefault, "blockingFirstDefault", this);
+            this.payloads.blockingSubscribeConsumer = _ClassStatement.forPayload(FlowableBlockingTest::blockingSubscribeConsumer, "blockingSubscribeConsumer", this);
+            this.payloads.boundedBlockingSubscribeConsumer = _ClassStatement.forPayload(FlowableBlockingTest::boundedBlockingSubscribeConsumer, "boundedBlockingSubscribeConsumer", this);
+            this.payloads.boundedBlockingSubscribeConsumerBufferExceed = _ClassStatement.forPayload(FlowableBlockingTest::boundedBlockingSubscribeConsumerBufferExceed, "boundedBlockingSubscribeConsumerBufferExceed", this);
+            this.payloads.blockingSubscribeConsumerConsumer = _ClassStatement.forPayload(FlowableBlockingTest::blockingSubscribeConsumerConsumer, "blockingSubscribeConsumerConsumer", this);
+            this.payloads.boundedBlockingSubscribeConsumerConsumer = _ClassStatement.forPayload(FlowableBlockingTest::boundedBlockingSubscribeConsumerConsumer, "boundedBlockingSubscribeConsumerConsumer", this);
+            this.payloads.boundedBlockingSubscribeConsumerConsumerBufferExceed = _ClassStatement.forPayload(FlowableBlockingTest::boundedBlockingSubscribeConsumerConsumerBufferExceed, "boundedBlockingSubscribeConsumerConsumerBufferExceed", this);
+            this.payloads.blockingSubscribeConsumerConsumerError = _ClassStatement.forPayload(FlowableBlockingTest::blockingSubscribeConsumerConsumerError, "blockingSubscribeConsumerConsumerError", this);
+            this.payloads.boundedBlockingSubscribeConsumerConsumerError = _ClassStatement.forPayload(FlowableBlockingTest::boundedBlockingSubscribeConsumerConsumerError, "boundedBlockingSubscribeConsumerConsumerError", this);
+            this.payloads.blockingSubscribeConsumerConsumerAction = _ClassStatement.forPayload(FlowableBlockingTest::blockingSubscribeConsumerConsumerAction, "blockingSubscribeConsumerConsumerAction", this);
+            this.payloads.boundedBlockingSubscribeConsumerConsumerAction = _ClassStatement.forPayload(FlowableBlockingTest::boundedBlockingSubscribeConsumerConsumerAction, "boundedBlockingSubscribeConsumerConsumerAction", this);
+            this.payloads.boundedBlockingSubscribeConsumerConsumerActionBufferExceed = _ClassStatement.forPayload(FlowableBlockingTest::boundedBlockingSubscribeConsumerConsumerActionBufferExceed, "boundedBlockingSubscribeConsumerConsumerActionBufferExceed", this);
+            this.payloads.boundedBlockingSubscribeConsumerConsumerActionBufferExceedMillionItem = _ClassStatement.forPayload(FlowableBlockingTest::boundedBlockingSubscribeConsumerConsumerActionBufferExceedMillionItem, "boundedBlockingSubscribeConsumerConsumerActionBufferExceedMillionItem", this);
+            this.payloads.blockingSubscribeObserver = _ClassStatement.forPayload(FlowableBlockingTest::blockingSubscribeObserver, "blockingSubscribeObserver", this);
+            this.payloads.blockingSubscribeObserverError = _ClassStatement.forPayload(FlowableBlockingTest::blockingSubscribeObserverError, "blockingSubscribeObserverError", this);
+            this.payloads.blockingForEachThrows = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableBlockingTest::blockingForEachThrows, io.reactivex.rxjava3.exceptions.TestException.class), "blockingForEachThrows", this);
+            this.payloads.blockingFirstEmpty = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableBlockingTest::blockingFirstEmpty, java.util.NoSuchElementException.class), "blockingFirstEmpty", this);
+            this.payloads.blockingLastEmpty = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableBlockingTest::blockingLastEmpty, java.util.NoSuchElementException.class), "blockingLastEmpty", this);
+            this.payloads.blockingFirstNormal = _ClassStatement.forPayload(FlowableBlockingTest::blockingFirstNormal, "blockingFirstNormal", this);
+            this.payloads.blockingLastNormal = _ClassStatement.forPayload(FlowableBlockingTest::blockingLastNormal, "blockingLastNormal", this);
+            this.payloads.firstFgnoredCancelAndOnNext = _ClassStatement.forPayload(FlowableBlockingTest::firstFgnoredCancelAndOnNext, "firstFgnoredCancelAndOnNext", this);
+            this.payloads.firstIgnoredCancelAndOnError = _ClassStatement.forPayload(FlowableBlockingTest::firstIgnoredCancelAndOnError, "firstIgnoredCancelAndOnError", this);
+            this.payloads.firstOnError = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableBlockingTest::firstOnError, io.reactivex.rxjava3.exceptions.TestException.class), "firstOnError", this);
+            this.payloads.interrupt = _ClassStatement.forPayload(FlowableBlockingTest::interrupt, "interrupt", this);
+            this.payloads.blockingSingleEmpty = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableBlockingTest::blockingSingleEmpty, java.util.NoSuchElementException.class), "blockingSingleEmpty", this);
+            this.payloads.onCompleteDelayed = _ClassStatement.forPayload(FlowableBlockingTest::onCompleteDelayed, "onCompleteDelayed", this);
+            this.payloads.utilityClass = _ClassStatement.forPayload(FlowableBlockingTest::utilityClass, "utilityClass", this);
+            this.payloads.disposeUpFront = _ClassStatement.forPayload(FlowableBlockingTest::disposeUpFront, "disposeUpFront", this);
+            this.payloads.delayed = _ClassStatement.forPayload(FlowableBlockingTest::delayed, "delayed", this);
+            this.payloads.blockinsSubscribeCancelAsync = _ClassStatement.forPayload(FlowableBlockingTest::blockinsSubscribeCancelAsync, "blockinsSubscribeCancelAsync", this);
         }
     }
 }

@@ -68,54 +68,71 @@ public class CancellableQueueFuseableTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private CancellableQueueFuseableTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_offer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::offer, this.description("offer"));
+            this.runBenchmark(this.payloads.offer);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_pollClear() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::pollClear, this.description("pollClear"));
+            this.runBenchmark(this.payloads.pollClear);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancel, this.description("cancel"));
+            this.runBenchmark(this.payloads.cancel);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.runBenchmark(this.payloads.dispose);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancel2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancel2, this.description("cancel2"));
+            this.runBenchmark(this.payloads.cancel2);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose2, this.description("dispose2"));
+            this.runBenchmark(this.payloads.dispose2);
         }
 
-        private CancellableQueueFuseableTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new CancellableQueueFuseableTest();
+        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<CancellableQueueFuseableTest> payload) throws java.lang.Throwable {
+            this.instance = new CancellableQueueFuseableTest();
+            payload.accept(this.instance);
         }
 
-        @java.lang.Override
-        public CancellableQueueFuseableTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<CancellableQueueFuseableTest> offer;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<CancellableQueueFuseableTest> pollClear;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<CancellableQueueFuseableTest> cancel;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<CancellableQueueFuseableTest> dispose;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<CancellableQueueFuseableTest> cancel2;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<CancellableQueueFuseableTest> dispose2;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.offer = CancellableQueueFuseableTest::offer;
+            this.payloads.pollClear = CancellableQueueFuseableTest::pollClear;
+            this.payloads.cancel = CancellableQueueFuseableTest::cancel;
+            this.payloads.dispose = CancellableQueueFuseableTest::dispose;
+            this.payloads.cancel2 = CancellableQueueFuseableTest::cancel2;
+            this.payloads.dispose2 = CancellableQueueFuseableTest::dispose2;
         }
     }
 }

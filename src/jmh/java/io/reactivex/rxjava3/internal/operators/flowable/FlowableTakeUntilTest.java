@@ -349,126 +349,221 @@ public class FlowableTakeUntilTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableTakeUntilTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeUntil() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeUntil, this.description("takeUntil"));
+            this.payloads.takeUntil.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeUntilSourceCompleted() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeUntilSourceCompleted, this.description("takeUntilSourceCompleted"));
+            this.payloads.takeUntilSourceCompleted.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeUntilSourceError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeUntilSourceError, this.description("takeUntilSourceError"));
+            this.payloads.takeUntilSourceError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeUntilOtherError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeUntilOtherError, this.description("takeUntilOtherError"));
+            this.payloads.takeUntilOtherError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeUntilOtherCompleted() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeUntilOtherCompleted, this.description("takeUntilOtherCompleted"));
+            this.payloads.takeUntilOtherCompleted.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_untilFires() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::untilFires, this.description("untilFires"));
+            this.payloads.untilFires.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainCompletes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainCompletes, this.description("mainCompletes"));
+            this.payloads.mainCompletes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_downstreamUnsubscribes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::downstreamUnsubscribes, this.description("downstreamUnsubscribes"));
+            this.payloads.downstreamUnsubscribes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressure, this.description("backpressure"));
+            this.payloads.backpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_untilPublisherMainSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::untilPublisherMainSuccess, this.description("untilPublisherMainSuccess"));
+            this.payloads.untilPublisherMainSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_untilPublisherMainComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::untilPublisherMainComplete, this.description("untilPublisherMainComplete"));
+            this.payloads.untilPublisherMainComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_untilPublisherMainError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::untilPublisherMainError, this.description("untilPublisherMainError"));
+            this.payloads.untilPublisherMainError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_untilPublisherOtherOnNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::untilPublisherOtherOnNext, this.description("untilPublisherOtherOnNext"));
+            this.payloads.untilPublisherOtherOnNext.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_untilPublisherOtherOnComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::untilPublisherOtherOnComplete, this.description("untilPublisherOtherOnComplete"));
+            this.payloads.untilPublisherOtherOnComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_untilPublisherOtherError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::untilPublisherOtherError, this.description("untilPublisherOtherError"));
+            this.payloads.untilPublisherOtherError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_untilPublisherDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::untilPublisherDispose, this.description("untilPublisherDispose"));
+            this.payloads.untilPublisherDispose.evaluate();
         }
 
-        private FlowableTakeUntilTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableTakeUntilTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTakeUntilTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTakeUntilTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableTakeUntilTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTakeUntilTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTakeUntilTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableTakeUntilTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTakeUntilTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableTakeUntilTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableTakeUntilTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement takeUntil;
+
+            public org.junit.runners.model.Statement takeUntilSourceCompleted;
+
+            public org.junit.runners.model.Statement takeUntilSourceError;
+
+            public org.junit.runners.model.Statement takeUntilOtherError;
+
+            public org.junit.runners.model.Statement takeUntilOtherCompleted;
+
+            public org.junit.runners.model.Statement untilFires;
+
+            public org.junit.runners.model.Statement mainCompletes;
+
+            public org.junit.runners.model.Statement downstreamUnsubscribes;
+
+            public org.junit.runners.model.Statement backpressure;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement untilPublisherMainSuccess;
+
+            public org.junit.runners.model.Statement untilPublisherMainComplete;
+
+            public org.junit.runners.model.Statement untilPublisherMainError;
+
+            public org.junit.runners.model.Statement untilPublisherOtherOnNext;
+
+            public org.junit.runners.model.Statement untilPublisherOtherOnComplete;
+
+            public org.junit.runners.model.Statement untilPublisherOtherError;
+
+            public org.junit.runners.model.Statement untilPublisherDispose;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.takeUntil = _ClassStatement.forPayload(FlowableTakeUntilTest::takeUntil, "takeUntil", this);
+            this.payloads.takeUntilSourceCompleted = _ClassStatement.forPayload(FlowableTakeUntilTest::takeUntilSourceCompleted, "takeUntilSourceCompleted", this);
+            this.payloads.takeUntilSourceError = _ClassStatement.forPayload(FlowableTakeUntilTest::takeUntilSourceError, "takeUntilSourceError", this);
+            this.payloads.takeUntilOtherError = _ClassStatement.forPayload(FlowableTakeUntilTest::takeUntilOtherError, "takeUntilOtherError", this);
+            this.payloads.takeUntilOtherCompleted = _ClassStatement.forPayload(FlowableTakeUntilTest::takeUntilOtherCompleted, "takeUntilOtherCompleted", this);
+            this.payloads.untilFires = _ClassStatement.forPayload(FlowableTakeUntilTest::untilFires, "untilFires", this);
+            this.payloads.mainCompletes = _ClassStatement.forPayload(FlowableTakeUntilTest::mainCompletes, "mainCompletes", this);
+            this.payloads.downstreamUnsubscribes = _ClassStatement.forPayload(FlowableTakeUntilTest::downstreamUnsubscribes, "downstreamUnsubscribes", this);
+            this.payloads.backpressure = _ClassStatement.forPayload(FlowableTakeUntilTest::backpressure, "backpressure", this);
+            this.payloads.dispose = _ClassStatement.forPayload(FlowableTakeUntilTest::dispose, "dispose", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableTakeUntilTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.untilPublisherMainSuccess = _ClassStatement.forPayload(FlowableTakeUntilTest::untilPublisherMainSuccess, "untilPublisherMainSuccess", this);
+            this.payloads.untilPublisherMainComplete = _ClassStatement.forPayload(FlowableTakeUntilTest::untilPublisherMainComplete, "untilPublisherMainComplete", this);
+            this.payloads.untilPublisherMainError = _ClassStatement.forPayload(FlowableTakeUntilTest::untilPublisherMainError, "untilPublisherMainError", this);
+            this.payloads.untilPublisherOtherOnNext = _ClassStatement.forPayload(FlowableTakeUntilTest::untilPublisherOtherOnNext, "untilPublisherOtherOnNext", this);
+            this.payloads.untilPublisherOtherOnComplete = _ClassStatement.forPayload(FlowableTakeUntilTest::untilPublisherOtherOnComplete, "untilPublisherOtherOnComplete", this);
+            this.payloads.untilPublisherOtherError = _ClassStatement.forPayload(FlowableTakeUntilTest::untilPublisherOtherError, "untilPublisherOtherError", this);
+            this.payloads.untilPublisherDispose = _ClassStatement.forPayload(FlowableTakeUntilTest::untilPublisherDispose, "untilPublisherDispose", this);
         }
     }
 }

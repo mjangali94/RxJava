@@ -661,240 +661,366 @@ public class FlowableFromSourceTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableFromSourceTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalBuffered() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalBuffered, this.description("normalBuffered"));
+            this.payloads.normalBuffered.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalDrop() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalDrop, this.description("normalDrop"));
+            this.payloads.normalDrop.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalLatest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalLatest, this.description("normalLatest"));
+            this.payloads.normalLatest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalMissing() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalMissing, this.description("normalMissing"));
+            this.payloads.normalMissing.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalMissingRequested() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalMissingRequested, this.description("normalMissingRequested"));
+            this.payloads.normalMissingRequested.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalError, this.description("normalError"));
+            this.payloads.normalError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorBuffered() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorBuffered, this.description("errorBuffered"));
+            this.payloads.errorBuffered.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorLatest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorLatest, this.description("errorLatest"));
+            this.payloads.errorLatest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorMissing() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorMissing, this.description("errorMissing"));
+            this.payloads.errorMissing.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribedBuffer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribedBuffer, this.description("unsubscribedBuffer"));
+            this.payloads.unsubscribedBuffer.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribedLatest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribedLatest, this.description("unsubscribedLatest"));
+            this.payloads.unsubscribedLatest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribedError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribedError, this.description("unsubscribedError"));
+            this.payloads.unsubscribedError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribedDrop() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribedDrop, this.description("unsubscribedDrop"));
+            this.payloads.unsubscribedDrop.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribedMissing() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribedMissing, this.description("unsubscribedMissing"));
+            this.payloads.unsubscribedMissing.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribedNoCancelBuffer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribedNoCancelBuffer, this.description("unsubscribedNoCancelBuffer"));
+            this.payloads.unsubscribedNoCancelBuffer.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribedNoCancelLatest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribedNoCancelLatest, this.description("unsubscribedNoCancelLatest"));
+            this.payloads.unsubscribedNoCancelLatest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribedNoCancelError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribedNoCancelError, this.description("unsubscribedNoCancelError"));
+            this.payloads.unsubscribedNoCancelError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribedNoCancelDrop() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribedNoCancelDrop, this.description("unsubscribedNoCancelDrop"));
+            this.payloads.unsubscribedNoCancelDrop.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribedNoCancelMissing() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribedNoCancelMissing, this.description("unsubscribedNoCancelMissing"));
+            this.payloads.unsubscribedNoCancelMissing.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_deferredRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::deferredRequest, this.description("deferredRequest"));
+            this.payloads.deferredRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_take() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::take, this.description("take"));
+            this.payloads.take.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeOne() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeOne, this.description("takeOne"));
+            this.payloads.takeOne.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestExact() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestExact, this.description("requestExact"));
+            this.payloads.requestExact.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeNoCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeNoCancel, this.description("takeNoCancel"));
+            this.payloads.takeNoCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeOneNoCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeOneNoCancel, this.description("takeOneNoCancel"));
+            this.payloads.takeOneNoCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribeNoCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribeNoCancel, this.description("unsubscribeNoCancel"));
+            this.payloads.unsubscribeNoCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribeInline() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribeInline, this.description("unsubscribeInline"));
+            this.payloads.unsubscribeInline.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_completeInline() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::completeInline, this.description("completeInline"));
+            this.payloads.completeInline.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorInline() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorInline, this.description("errorInline"));
+            this.payloads.errorInline.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestInline() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestInline, this.description("requestInline"));
+            this.payloads.requestInline.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribeInlineLatest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribeInlineLatest, this.description("unsubscribeInlineLatest"));
+            this.payloads.unsubscribeInlineLatest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribeInlineExactLatest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribeInlineExactLatest, this.description("unsubscribeInlineExactLatest"));
+            this.payloads.unsubscribeInlineExactLatest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_completeInlineLatest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::completeInlineLatest, this.description("completeInlineLatest"));
+            this.payloads.completeInlineLatest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_completeInlineExactLatest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::completeInlineExactLatest, this.description("completeInlineExactLatest"));
+            this.payloads.completeInlineExactLatest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorInlineLatest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorInlineLatest, this.description("errorInlineLatest"));
+            this.payloads.errorInlineLatest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestInlineLatest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestInlineLatest, this.description("requestInlineLatest"));
+            this.payloads.requestInlineLatest.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().before();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFromSourceTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFromSourceTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.before();
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private FlowableFromSourceTest implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableFromSourceTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFromSourceTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFromSourceTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableFromSourceTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFromSourceTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableFromSourceTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableFromSourceTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public FlowableFromSourceTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement normalBuffered;
+
+            public org.junit.runners.model.Statement normalDrop;
+
+            public org.junit.runners.model.Statement normalLatest;
+
+            public org.junit.runners.model.Statement normalMissing;
+
+            public org.junit.runners.model.Statement normalMissingRequested;
+
+            public org.junit.runners.model.Statement normalError;
+
+            public org.junit.runners.model.Statement errorBuffered;
+
+            public org.junit.runners.model.Statement errorLatest;
+
+            public org.junit.runners.model.Statement errorMissing;
+
+            public org.junit.runners.model.Statement unsubscribedBuffer;
+
+            public org.junit.runners.model.Statement unsubscribedLatest;
+
+            public org.junit.runners.model.Statement unsubscribedError;
+
+            public org.junit.runners.model.Statement unsubscribedDrop;
+
+            public org.junit.runners.model.Statement unsubscribedMissing;
+
+            public org.junit.runners.model.Statement unsubscribedNoCancelBuffer;
+
+            public org.junit.runners.model.Statement unsubscribedNoCancelLatest;
+
+            public org.junit.runners.model.Statement unsubscribedNoCancelError;
+
+            public org.junit.runners.model.Statement unsubscribedNoCancelDrop;
+
+            public org.junit.runners.model.Statement unsubscribedNoCancelMissing;
+
+            public org.junit.runners.model.Statement deferredRequest;
+
+            public org.junit.runners.model.Statement take;
+
+            public org.junit.runners.model.Statement takeOne;
+
+            public org.junit.runners.model.Statement requestExact;
+
+            public org.junit.runners.model.Statement takeNoCancel;
+
+            public org.junit.runners.model.Statement takeOneNoCancel;
+
+            public org.junit.runners.model.Statement unsubscribeNoCancel;
+
+            public org.junit.runners.model.Statement unsubscribeInline;
+
+            public org.junit.runners.model.Statement completeInline;
+
+            public org.junit.runners.model.Statement errorInline;
+
+            public org.junit.runners.model.Statement requestInline;
+
+            public org.junit.runners.model.Statement unsubscribeInlineLatest;
+
+            public org.junit.runners.model.Statement unsubscribeInlineExactLatest;
+
+            public org.junit.runners.model.Statement completeInlineLatest;
+
+            public org.junit.runners.model.Statement completeInlineExactLatest;
+
+            public org.junit.runners.model.Statement errorInlineLatest;
+
+            public org.junit.runners.model.Statement requestInlineLatest;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.normalBuffered = _ClassStatement.forPayload(FlowableFromSourceTest::normalBuffered, "normalBuffered", this);
+            this.payloads.normalDrop = _ClassStatement.forPayload(FlowableFromSourceTest::normalDrop, "normalDrop", this);
+            this.payloads.normalLatest = _ClassStatement.forPayload(FlowableFromSourceTest::normalLatest, "normalLatest", this);
+            this.payloads.normalMissing = _ClassStatement.forPayload(FlowableFromSourceTest::normalMissing, "normalMissing", this);
+            this.payloads.normalMissingRequested = _ClassStatement.forPayload(FlowableFromSourceTest::normalMissingRequested, "normalMissingRequested", this);
+            this.payloads.normalError = _ClassStatement.forPayload(FlowableFromSourceTest::normalError, "normalError", this);
+            this.payloads.errorBuffered = _ClassStatement.forPayload(FlowableFromSourceTest::errorBuffered, "errorBuffered", this);
+            this.payloads.errorLatest = _ClassStatement.forPayload(FlowableFromSourceTest::errorLatest, "errorLatest", this);
+            this.payloads.errorMissing = _ClassStatement.forPayload(FlowableFromSourceTest::errorMissing, "errorMissing", this);
+            this.payloads.unsubscribedBuffer = _ClassStatement.forPayload(FlowableFromSourceTest::unsubscribedBuffer, "unsubscribedBuffer", this);
+            this.payloads.unsubscribedLatest = _ClassStatement.forPayload(FlowableFromSourceTest::unsubscribedLatest, "unsubscribedLatest", this);
+            this.payloads.unsubscribedError = _ClassStatement.forPayload(FlowableFromSourceTest::unsubscribedError, "unsubscribedError", this);
+            this.payloads.unsubscribedDrop = _ClassStatement.forPayload(FlowableFromSourceTest::unsubscribedDrop, "unsubscribedDrop", this);
+            this.payloads.unsubscribedMissing = _ClassStatement.forPayload(FlowableFromSourceTest::unsubscribedMissing, "unsubscribedMissing", this);
+            this.payloads.unsubscribedNoCancelBuffer = _ClassStatement.forPayload(FlowableFromSourceTest::unsubscribedNoCancelBuffer, "unsubscribedNoCancelBuffer", this);
+            this.payloads.unsubscribedNoCancelLatest = _ClassStatement.forPayload(FlowableFromSourceTest::unsubscribedNoCancelLatest, "unsubscribedNoCancelLatest", this);
+            this.payloads.unsubscribedNoCancelError = _ClassStatement.forPayload(FlowableFromSourceTest::unsubscribedNoCancelError, "unsubscribedNoCancelError", this);
+            this.payloads.unsubscribedNoCancelDrop = _ClassStatement.forPayload(FlowableFromSourceTest::unsubscribedNoCancelDrop, "unsubscribedNoCancelDrop", this);
+            this.payloads.unsubscribedNoCancelMissing = _ClassStatement.forPayload(FlowableFromSourceTest::unsubscribedNoCancelMissing, "unsubscribedNoCancelMissing", this);
+            this.payloads.deferredRequest = _ClassStatement.forPayload(FlowableFromSourceTest::deferredRequest, "deferredRequest", this);
+            this.payloads.take = _ClassStatement.forPayload(FlowableFromSourceTest::take, "take", this);
+            this.payloads.takeOne = _ClassStatement.forPayload(FlowableFromSourceTest::takeOne, "takeOne", this);
+            this.payloads.requestExact = _ClassStatement.forPayload(FlowableFromSourceTest::requestExact, "requestExact", this);
+            this.payloads.takeNoCancel = _ClassStatement.forPayload(FlowableFromSourceTest::takeNoCancel, "takeNoCancel", this);
+            this.payloads.takeOneNoCancel = _ClassStatement.forPayload(FlowableFromSourceTest::takeOneNoCancel, "takeOneNoCancel", this);
+            this.payloads.unsubscribeNoCancel = _ClassStatement.forPayload(FlowableFromSourceTest::unsubscribeNoCancel, "unsubscribeNoCancel", this);
+            this.payloads.unsubscribeInline = _ClassStatement.forPayload(FlowableFromSourceTest::unsubscribeInline, "unsubscribeInline", this);
+            this.payloads.completeInline = _ClassStatement.forPayload(FlowableFromSourceTest::completeInline, "completeInline", this);
+            this.payloads.errorInline = _ClassStatement.forPayload(FlowableFromSourceTest::errorInline, "errorInline", this);
+            this.payloads.requestInline = _ClassStatement.forPayload(FlowableFromSourceTest::requestInline, "requestInline", this);
+            this.payloads.unsubscribeInlineLatest = _ClassStatement.forPayload(FlowableFromSourceTest::unsubscribeInlineLatest, "unsubscribeInlineLatest", this);
+            this.payloads.unsubscribeInlineExactLatest = _ClassStatement.forPayload(FlowableFromSourceTest::unsubscribeInlineExactLatest, "unsubscribeInlineExactLatest", this);
+            this.payloads.completeInlineLatest = _ClassStatement.forPayload(FlowableFromSourceTest::completeInlineLatest, "completeInlineLatest", this);
+            this.payloads.completeInlineExactLatest = _ClassStatement.forPayload(FlowableFromSourceTest::completeInlineExactLatest, "completeInlineExactLatest", this);
+            this.payloads.errorInlineLatest = _ClassStatement.forPayload(FlowableFromSourceTest::errorInlineLatest, "errorInlineLatest", this);
+            this.payloads.requestInlineLatest = _ClassStatement.forPayload(FlowableFromSourceTest::requestInlineLatest, "requestInlineLatest", this);
         }
     }
 }

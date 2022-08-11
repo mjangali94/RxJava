@@ -151,90 +151,173 @@ public class ObservableToSortedListTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableToSortedListTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sortedListObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sortedListObservable, this.description("sortedListObservable"));
+            this.payloads.sortedListObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sortedListWithCustomFunctionFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sortedListWithCustomFunctionFlowable, this.description("sortedListWithCustomFunctionFlowable"));
+            this.payloads.sortedListWithCustomFunctionFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withFollowingFirstObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withFollowingFirstObservable, this.description("withFollowingFirstObservable"));
+            this.payloads.withFollowingFirstObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sorted() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sorted, this.description("sorted"));
+            this.payloads.sorted.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sortedComparator() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sortedComparator, this.description("sortedComparator"));
+            this.payloads.sortedComparator.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toSortedListCapacityObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toSortedListCapacityObservable, this.description("toSortedListCapacityObservable"));
+            this.payloads.toSortedListCapacityObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toSortedListComparatorCapacityObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toSortedListComparatorCapacityObservable, this.description("toSortedListComparatorCapacityObservable"));
+            this.payloads.toSortedListComparatorCapacityObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sortedList() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sortedList, this.description("sortedList"));
+            this.payloads.sortedList.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sortedListWithCustomFunction() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sortedListWithCustomFunction, this.description("sortedListWithCustomFunction"));
+            this.payloads.sortedListWithCustomFunction.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withFollowingFirst() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withFollowingFirst, this.description("withFollowingFirst"));
+            this.payloads.withFollowingFirst.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toSortedListCapacity() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toSortedListCapacity, this.description("toSortedListCapacity"));
+            this.payloads.toSortedListCapacity.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toSortedListComparatorCapacity() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toSortedListComparatorCapacity, this.description("toSortedListComparatorCapacity"));
+            this.payloads.toSortedListComparatorCapacity.evaluate();
         }
 
-        private ObservableToSortedListTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableToSortedListTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableToSortedListTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableToSortedListTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservableToSortedListTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableToSortedListTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableToSortedListTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableToSortedListTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableToSortedListTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableToSortedListTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableToSortedListTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement sortedListObservable;
+
+            public org.junit.runners.model.Statement sortedListWithCustomFunctionFlowable;
+
+            public org.junit.runners.model.Statement withFollowingFirstObservable;
+
+            public org.junit.runners.model.Statement sorted;
+
+            public org.junit.runners.model.Statement sortedComparator;
+
+            public org.junit.runners.model.Statement toSortedListCapacityObservable;
+
+            public org.junit.runners.model.Statement toSortedListComparatorCapacityObservable;
+
+            public org.junit.runners.model.Statement sortedList;
+
+            public org.junit.runners.model.Statement sortedListWithCustomFunction;
+
+            public org.junit.runners.model.Statement withFollowingFirst;
+
+            public org.junit.runners.model.Statement toSortedListCapacity;
+
+            public org.junit.runners.model.Statement toSortedListComparatorCapacity;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.sortedListObservable = _ClassStatement.forPayload(ObservableToSortedListTest::sortedListObservable, "sortedListObservable", this);
+            this.payloads.sortedListWithCustomFunctionFlowable = _ClassStatement.forPayload(ObservableToSortedListTest::sortedListWithCustomFunctionFlowable, "sortedListWithCustomFunctionFlowable", this);
+            this.payloads.withFollowingFirstObservable = _ClassStatement.forPayload(ObservableToSortedListTest::withFollowingFirstObservable, "withFollowingFirstObservable", this);
+            this.payloads.sorted = _ClassStatement.forPayload(ObservableToSortedListTest::sorted, "sorted", this);
+            this.payloads.sortedComparator = _ClassStatement.forPayload(ObservableToSortedListTest::sortedComparator, "sortedComparator", this);
+            this.payloads.toSortedListCapacityObservable = _ClassStatement.forPayload(ObservableToSortedListTest::toSortedListCapacityObservable, "toSortedListCapacityObservable", this);
+            this.payloads.toSortedListComparatorCapacityObservable = _ClassStatement.forPayload(ObservableToSortedListTest::toSortedListComparatorCapacityObservable, "toSortedListComparatorCapacityObservable", this);
+            this.payloads.sortedList = _ClassStatement.forPayload(ObservableToSortedListTest::sortedList, "sortedList", this);
+            this.payloads.sortedListWithCustomFunction = _ClassStatement.forPayload(ObservableToSortedListTest::sortedListWithCustomFunction, "sortedListWithCustomFunction", this);
+            this.payloads.withFollowingFirst = _ClassStatement.forPayload(ObservableToSortedListTest::withFollowingFirst, "withFollowingFirst", this);
+            this.payloads.toSortedListCapacity = _ClassStatement.forPayload(ObservableToSortedListTest::toSortedListCapacity, "toSortedListCapacity", this);
+            this.payloads.toSortedListComparatorCapacity = _ClassStatement.forPayload(ObservableToSortedListTest::toSortedListComparatorCapacity, "toSortedListComparatorCapacity", this);
         }
     }
 }

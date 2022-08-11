@@ -226,96 +226,181 @@ public class MaybeMergeArrayTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private MaybeMergeArrayTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normal, this.description("normal"));
+            this.payloads.normal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedPollMixed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedPollMixed, this.description("fusedPollMixed"));
+            this.payloads.fusedPollMixed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedEmptyCheck() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedEmptyCheck, this.description("fusedEmptyCheck"));
+            this.payloads.fusedEmptyCheck.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancel, this.description("cancel"));
+            this.payloads.cancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstErrors() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstErrors, this.description("firstErrors"));
+            this.payloads.firstErrors.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorFused() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorFused, this.description("errorFused"));
+            this.payloads.errorFused.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorRace, this.description("errorRace"));
+            this.payloads.errorRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeBadSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeBadSource, this.description("mergeBadSource"));
+            this.payloads.mergeBadSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_smallOffer2Throws() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::smallOffer2Throws, this.description("smallOffer2Throws"));
+            this.payloads.smallOffer2Throws.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_largeOffer2Throws() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::largeOffer2Throws, this.description("largeOffer2Throws"));
+            this.payloads.largeOffer2Throws.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequest, this.description("badRequest"));
+            this.payloads.badRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancel2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancel2, this.description("cancel2"));
+            this.payloads.cancel2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_take() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::take, this.description("take"));
+            this.payloads.take.evaluate();
         }
 
-        private MaybeMergeArrayTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeMergeArrayTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeMergeArrayTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeMergeArrayTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public MaybeMergeArrayTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeMergeArrayTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeMergeArrayTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new MaybeMergeArrayTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeMergeArrayTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(MaybeMergeArrayTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(MaybeMergeArrayTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement normal;
+
+            public org.junit.runners.model.Statement fusedPollMixed;
+
+            public org.junit.runners.model.Statement fusedEmptyCheck;
+
+            public org.junit.runners.model.Statement cancel;
+
+            public org.junit.runners.model.Statement firstErrors;
+
+            public org.junit.runners.model.Statement errorFused;
+
+            public org.junit.runners.model.Statement errorRace;
+
+            public org.junit.runners.model.Statement mergeBadSource;
+
+            public org.junit.runners.model.Statement smallOffer2Throws;
+
+            public org.junit.runners.model.Statement largeOffer2Throws;
+
+            public org.junit.runners.model.Statement badRequest;
+
+            public org.junit.runners.model.Statement cancel2;
+
+            public org.junit.runners.model.Statement take;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.normal = _ClassStatement.forPayload(MaybeMergeArrayTest::normal, "normal", this);
+            this.payloads.fusedPollMixed = _ClassStatement.forPayload(MaybeMergeArrayTest::fusedPollMixed, "fusedPollMixed", this);
+            this.payloads.fusedEmptyCheck = _ClassStatement.forPayload(MaybeMergeArrayTest::fusedEmptyCheck, "fusedEmptyCheck", this);
+            this.payloads.cancel = _ClassStatement.forPayload(MaybeMergeArrayTest::cancel, "cancel", this);
+            this.payloads.firstErrors = _ClassStatement.forPayload(MaybeMergeArrayTest::firstErrors, "firstErrors", this);
+            this.payloads.errorFused = _ClassStatement.forPayload(MaybeMergeArrayTest::errorFused, "errorFused", this);
+            this.payloads.errorRace = _ClassStatement.forPayload(MaybeMergeArrayTest::errorRace, "errorRace", this);
+            this.payloads.mergeBadSource = _ClassStatement.forPayload(MaybeMergeArrayTest::mergeBadSource, "mergeBadSource", this);
+            this.payloads.smallOffer2Throws = _ClassStatement.forPayload(MaybeMergeArrayTest::smallOffer2Throws, "smallOffer2Throws", this);
+            this.payloads.largeOffer2Throws = _ClassStatement.forPayload(MaybeMergeArrayTest::largeOffer2Throws, "largeOffer2Throws", this);
+            this.payloads.badRequest = _ClassStatement.forPayload(MaybeMergeArrayTest::badRequest, "badRequest", this);
+            this.payloads.cancel2 = _ClassStatement.forPayload(MaybeMergeArrayTest::cancel2, "cancel2", this);
+            this.payloads.take = _ClassStatement.forPayload(MaybeMergeArrayTest::take, "take", this);
         }
     }
 }

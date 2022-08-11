@@ -305,144 +305,245 @@ public class CompositeExceptionTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private CompositeExceptionTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_multipleWithSameCause() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::multipleWithSameCause, this.description("multipleWithSameCause"));
+            this.payloads.multipleWithSameCause.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyErrors() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyErrors, this.description("emptyErrors"));
+            this.payloads.emptyErrors.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_compositeExceptionFromParentThenChild() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::compositeExceptionFromParentThenChild, this.description("compositeExceptionFromParentThenChild"));
+            this.payloads.compositeExceptionFromParentThenChild.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_compositeExceptionFromChildThenParent() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::compositeExceptionFromChildThenParent, this.description("compositeExceptionFromChildThenParent"));
+            this.payloads.compositeExceptionFromChildThenParent.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_compositeExceptionFromChildAndComposite() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::compositeExceptionFromChildAndComposite, this.description("compositeExceptionFromChildAndComposite"));
+            this.payloads.compositeExceptionFromChildAndComposite.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_compositeExceptionFromCompositeAndChild() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::compositeExceptionFromCompositeAndChild, this.description("compositeExceptionFromCompositeAndChild"));
+            this.payloads.compositeExceptionFromCompositeAndChild.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_compositeExceptionFromTwoDuplicateComposites() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::compositeExceptionFromTwoDuplicateComposites, this.description("compositeExceptionFromTwoDuplicateComposites"));
+            this.payloads.compositeExceptionFromTwoDuplicateComposites.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nullCollection() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nullCollection, this.description("nullCollection"));
+            this.payloads.nullCollection.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nullElement() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nullElement, this.description("nullElement"));
+            this.payloads.nullElement.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_compositeExceptionWithUnsupportedInitCause() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::compositeExceptionWithUnsupportedInitCause, this.description("compositeExceptionWithUnsupportedInitCause"));
+            this.payloads.compositeExceptionWithUnsupportedInitCause.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_compositeExceptionWithNullInitCause() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::compositeExceptionWithNullInitCause, this.description("compositeExceptionWithNullInitCause"));
+            this.payloads.compositeExceptionWithNullInitCause.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_messageCollection() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::messageCollection, this.description("messageCollection"));
+            this.payloads.messageCollection.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_messageVarargs() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::messageVarargs, this.description("messageVarargs"));
+            this.payloads.messageVarargs.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_constructorWithNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::constructorWithNull, this.description("constructorWithNull"));
+            this.payloads.constructorWithNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_printStackTrace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::printStackTrace, this.description("printStackTrace"));
+            this.payloads.printStackTrace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badException() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badException, this.description("badException"));
+            this.payloads.badException.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_exceptionOverview() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::exceptionOverview, this.description("exceptionOverview"));
+            this.payloads.exceptionOverview.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_causeWithExceptionWithoutStacktrace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::causeWithExceptionWithoutStacktrace, this.description("causeWithExceptionWithoutStacktrace"));
+            this.payloads.causeWithExceptionWithoutStacktrace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_reoccurringException() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::reoccurringException, this.description("reoccurringException"));
+            this.payloads.reoccurringException.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nestedMultilineMessage() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nestedMultilineMessage, this.description("nestedMultilineMessage"));
+            this.payloads.nestedMultilineMessage.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleExceptionIsTheCause() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleExceptionIsTheCause, this.description("singleExceptionIsTheCause"));
+            this.payloads.singleExceptionIsTheCause.evaluate();
         }
 
-        private CompositeExceptionTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new CompositeExceptionTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<CompositeExceptionTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<CompositeExceptionTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public CompositeExceptionTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<CompositeExceptionTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<CompositeExceptionTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new CompositeExceptionTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<CompositeExceptionTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(CompositeExceptionTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(CompositeExceptionTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement multipleWithSameCause;
+
+            public org.junit.runners.model.Statement emptyErrors;
+
+            public org.junit.runners.model.Statement compositeExceptionFromParentThenChild;
+
+            public org.junit.runners.model.Statement compositeExceptionFromChildThenParent;
+
+            public org.junit.runners.model.Statement compositeExceptionFromChildAndComposite;
+
+            public org.junit.runners.model.Statement compositeExceptionFromCompositeAndChild;
+
+            public org.junit.runners.model.Statement compositeExceptionFromTwoDuplicateComposites;
+
+            public org.junit.runners.model.Statement nullCollection;
+
+            public org.junit.runners.model.Statement nullElement;
+
+            public org.junit.runners.model.Statement compositeExceptionWithUnsupportedInitCause;
+
+            public org.junit.runners.model.Statement compositeExceptionWithNullInitCause;
+
+            public org.junit.runners.model.Statement messageCollection;
+
+            public org.junit.runners.model.Statement messageVarargs;
+
+            public org.junit.runners.model.Statement constructorWithNull;
+
+            public org.junit.runners.model.Statement printStackTrace;
+
+            public org.junit.runners.model.Statement badException;
+
+            public org.junit.runners.model.Statement exceptionOverview;
+
+            public org.junit.runners.model.Statement causeWithExceptionWithoutStacktrace;
+
+            public org.junit.runners.model.Statement reoccurringException;
+
+            public org.junit.runners.model.Statement nestedMultilineMessage;
+
+            public org.junit.runners.model.Statement singleExceptionIsTheCause;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.multipleWithSameCause = _ClassStatement.forPayload(CompositeExceptionTest::multipleWithSameCause, "multipleWithSameCause", this);
+            this.payloads.emptyErrors = _ClassStatement.forPayload(CompositeExceptionTest::emptyErrors, "emptyErrors", this);
+            this.payloads.compositeExceptionFromParentThenChild = _ClassStatement.forPayload(CompositeExceptionTest::compositeExceptionFromParentThenChild, "compositeExceptionFromParentThenChild", this);
+            this.payloads.compositeExceptionFromChildThenParent = _ClassStatement.forPayload(CompositeExceptionTest::compositeExceptionFromChildThenParent, "compositeExceptionFromChildThenParent", this);
+            this.payloads.compositeExceptionFromChildAndComposite = _ClassStatement.forPayload(CompositeExceptionTest::compositeExceptionFromChildAndComposite, "compositeExceptionFromChildAndComposite", this);
+            this.payloads.compositeExceptionFromCompositeAndChild = _ClassStatement.forPayload(CompositeExceptionTest::compositeExceptionFromCompositeAndChild, "compositeExceptionFromCompositeAndChild", this);
+            this.payloads.compositeExceptionFromTwoDuplicateComposites = _ClassStatement.forPayload(CompositeExceptionTest::compositeExceptionFromTwoDuplicateComposites, "compositeExceptionFromTwoDuplicateComposites", this);
+            this.payloads.nullCollection = _ClassStatement.forPayload(CompositeExceptionTest::nullCollection, "nullCollection", this);
+            this.payloads.nullElement = _ClassStatement.forPayload(CompositeExceptionTest::nullElement, "nullElement", this);
+            this.payloads.compositeExceptionWithUnsupportedInitCause = _ClassStatement.forPayload(CompositeExceptionTest::compositeExceptionWithUnsupportedInitCause, "compositeExceptionWithUnsupportedInitCause", this);
+            this.payloads.compositeExceptionWithNullInitCause = _ClassStatement.forPayload(CompositeExceptionTest::compositeExceptionWithNullInitCause, "compositeExceptionWithNullInitCause", this);
+            this.payloads.messageCollection = _ClassStatement.forPayload(CompositeExceptionTest::messageCollection, "messageCollection", this);
+            this.payloads.messageVarargs = _ClassStatement.forPayload(CompositeExceptionTest::messageVarargs, "messageVarargs", this);
+            this.payloads.constructorWithNull = _ClassStatement.forPayload(CompositeExceptionTest::constructorWithNull, "constructorWithNull", this);
+            this.payloads.printStackTrace = _ClassStatement.forPayload(CompositeExceptionTest::printStackTrace, "printStackTrace", this);
+            this.payloads.badException = _ClassStatement.forPayload(CompositeExceptionTest::badException, "badException", this);
+            this.payloads.exceptionOverview = _ClassStatement.forPayload(CompositeExceptionTest::exceptionOverview, "exceptionOverview", this);
+            this.payloads.causeWithExceptionWithoutStacktrace = _ClassStatement.forPayload(CompositeExceptionTest::causeWithExceptionWithoutStacktrace, "causeWithExceptionWithoutStacktrace", this);
+            this.payloads.reoccurringException = _ClassStatement.forPayload(CompositeExceptionTest::reoccurringException, "reoccurringException", this);
+            this.payloads.nestedMultilineMessage = _ClassStatement.forPayload(CompositeExceptionTest::nestedMultilineMessage, "nestedMultilineMessage", this);
+            this.payloads.singleExceptionIsTheCause = _ClassStatement.forPayload(CompositeExceptionTest::singleExceptionIsTheCause, "singleExceptionIsTheCause", this);
         }
     }
 }

@@ -825,156 +825,261 @@ public class QueueDrainHelperTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private QueueDrainHelperTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_isCancelled() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::isCancelled, this.description("isCancelled"));
+            this.payloads.isCancelled.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestMaxInt() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestMaxInt, this.description("requestMaxInt"));
+            this.payloads.requestMaxInt.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestMinInt() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestMinInt, this.description("requestMinInt"));
+            this.payloads.requestMinInt.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestAlmostMaxInt() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestAlmostMaxInt, this.description("requestAlmostMaxInt"));
+            this.payloads.requestAlmostMaxInt.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_postCompleteEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::postCompleteEmpty, this.description("postCompleteEmpty"));
+            this.payloads.postCompleteEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_postCompleteWithRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::postCompleteWithRequest, this.description("postCompleteWithRequest"));
+            this.payloads.postCompleteWithRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_completeRequestRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::completeRequestRace, this.description("completeRequestRace"));
+            this.payloads.completeRequestRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_postCompleteCancelled() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::postCompleteCancelled, this.description("postCompleteCancelled"));
+            this.payloads.postCompleteCancelled.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_postCompleteCancelledAfterOne() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::postCompleteCancelledAfterOne, this.description("postCompleteCancelledAfterOne"));
+            this.payloads.postCompleteCancelledAfterOne.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_drainMaxLoopMissingBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::drainMaxLoopMissingBackpressure, this.description("drainMaxLoopMissingBackpressure"));
+            this.payloads.drainMaxLoopMissingBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_drainMaxLoopMissingBackpressureWithResource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::drainMaxLoopMissingBackpressureWithResource, this.description("drainMaxLoopMissingBackpressureWithResource"));
+            this.payloads.drainMaxLoopMissingBackpressureWithResource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_drainMaxLoopDontAccept() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::drainMaxLoopDontAccept, this.description("drainMaxLoopDontAccept"));
+            this.payloads.drainMaxLoopDontAccept.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkTerminatedDelayErrorEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkTerminatedDelayErrorEmpty, this.description("checkTerminatedDelayErrorEmpty"));
+            this.payloads.checkTerminatedDelayErrorEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkTerminatedDelayErrorNonEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkTerminatedDelayErrorNonEmpty, this.description("checkTerminatedDelayErrorNonEmpty"));
+            this.payloads.checkTerminatedDelayErrorNonEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkTerminatedDelayErrorEmptyError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkTerminatedDelayErrorEmptyError, this.description("checkTerminatedDelayErrorEmptyError"));
+            this.payloads.checkTerminatedDelayErrorEmptyError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkTerminatedNonDelayErrorError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::checkTerminatedNonDelayErrorError, this.description("checkTerminatedNonDelayErrorError"));
+            this.payloads.checkTerminatedNonDelayErrorError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observerCheckTerminatedDelayErrorEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observerCheckTerminatedDelayErrorEmpty, this.description("observerCheckTerminatedDelayErrorEmpty"));
+            this.payloads.observerCheckTerminatedDelayErrorEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observerCheckTerminatedDelayErrorEmptyResource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observerCheckTerminatedDelayErrorEmptyResource, this.description("observerCheckTerminatedDelayErrorEmptyResource"));
+            this.payloads.observerCheckTerminatedDelayErrorEmptyResource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observerCheckTerminatedDelayErrorNonEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observerCheckTerminatedDelayErrorNonEmpty, this.description("observerCheckTerminatedDelayErrorNonEmpty"));
+            this.payloads.observerCheckTerminatedDelayErrorNonEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observerCheckTerminatedDelayErrorEmptyError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observerCheckTerminatedDelayErrorEmptyError, this.description("observerCheckTerminatedDelayErrorEmptyError"));
+            this.payloads.observerCheckTerminatedDelayErrorEmptyError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observerCheckTerminatedNonDelayErrorError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observerCheckTerminatedNonDelayErrorError, this.description("observerCheckTerminatedNonDelayErrorError"));
+            this.payloads.observerCheckTerminatedNonDelayErrorError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observerCheckTerminatedNonDelayErrorErrorResource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observerCheckTerminatedNonDelayErrorErrorResource, this.description("observerCheckTerminatedNonDelayErrorErrorResource"));
+            this.payloads.observerCheckTerminatedNonDelayErrorErrorResource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_postCompleteAlreadyComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::postCompleteAlreadyComplete, this.description("postCompleteAlreadyComplete"));
+            this.payloads.postCompleteAlreadyComplete.evaluate();
         }
 
-        private QueueDrainHelperTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new QueueDrainHelperTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<QueueDrainHelperTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<QueueDrainHelperTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public QueueDrainHelperTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<QueueDrainHelperTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<QueueDrainHelperTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new QueueDrainHelperTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<QueueDrainHelperTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(QueueDrainHelperTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(QueueDrainHelperTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement isCancelled;
+
+            public org.junit.runners.model.Statement requestMaxInt;
+
+            public org.junit.runners.model.Statement requestMinInt;
+
+            public org.junit.runners.model.Statement requestAlmostMaxInt;
+
+            public org.junit.runners.model.Statement postCompleteEmpty;
+
+            public org.junit.runners.model.Statement postCompleteWithRequest;
+
+            public org.junit.runners.model.Statement completeRequestRace;
+
+            public org.junit.runners.model.Statement postCompleteCancelled;
+
+            public org.junit.runners.model.Statement postCompleteCancelledAfterOne;
+
+            public org.junit.runners.model.Statement drainMaxLoopMissingBackpressure;
+
+            public org.junit.runners.model.Statement drainMaxLoopMissingBackpressureWithResource;
+
+            public org.junit.runners.model.Statement drainMaxLoopDontAccept;
+
+            public org.junit.runners.model.Statement checkTerminatedDelayErrorEmpty;
+
+            public org.junit.runners.model.Statement checkTerminatedDelayErrorNonEmpty;
+
+            public org.junit.runners.model.Statement checkTerminatedDelayErrorEmptyError;
+
+            public org.junit.runners.model.Statement checkTerminatedNonDelayErrorError;
+
+            public org.junit.runners.model.Statement observerCheckTerminatedDelayErrorEmpty;
+
+            public org.junit.runners.model.Statement observerCheckTerminatedDelayErrorEmptyResource;
+
+            public org.junit.runners.model.Statement observerCheckTerminatedDelayErrorNonEmpty;
+
+            public org.junit.runners.model.Statement observerCheckTerminatedDelayErrorEmptyError;
+
+            public org.junit.runners.model.Statement observerCheckTerminatedNonDelayErrorError;
+
+            public org.junit.runners.model.Statement observerCheckTerminatedNonDelayErrorErrorResource;
+
+            public org.junit.runners.model.Statement postCompleteAlreadyComplete;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.isCancelled = _ClassStatement.forPayload(QueueDrainHelperTest::isCancelled, "isCancelled", this);
+            this.payloads.requestMaxInt = _ClassStatement.forPayload(QueueDrainHelperTest::requestMaxInt, "requestMaxInt", this);
+            this.payloads.requestMinInt = _ClassStatement.forPayload(QueueDrainHelperTest::requestMinInt, "requestMinInt", this);
+            this.payloads.requestAlmostMaxInt = _ClassStatement.forPayload(QueueDrainHelperTest::requestAlmostMaxInt, "requestAlmostMaxInt", this);
+            this.payloads.postCompleteEmpty = _ClassStatement.forPayload(QueueDrainHelperTest::postCompleteEmpty, "postCompleteEmpty", this);
+            this.payloads.postCompleteWithRequest = _ClassStatement.forPayload(QueueDrainHelperTest::postCompleteWithRequest, "postCompleteWithRequest", this);
+            this.payloads.completeRequestRace = _ClassStatement.forPayload(QueueDrainHelperTest::completeRequestRace, "completeRequestRace", this);
+            this.payloads.postCompleteCancelled = _ClassStatement.forPayload(QueueDrainHelperTest::postCompleteCancelled, "postCompleteCancelled", this);
+            this.payloads.postCompleteCancelledAfterOne = _ClassStatement.forPayload(QueueDrainHelperTest::postCompleteCancelledAfterOne, "postCompleteCancelledAfterOne", this);
+            this.payloads.drainMaxLoopMissingBackpressure = _ClassStatement.forPayload(QueueDrainHelperTest::drainMaxLoopMissingBackpressure, "drainMaxLoopMissingBackpressure", this);
+            this.payloads.drainMaxLoopMissingBackpressureWithResource = _ClassStatement.forPayload(QueueDrainHelperTest::drainMaxLoopMissingBackpressureWithResource, "drainMaxLoopMissingBackpressureWithResource", this);
+            this.payloads.drainMaxLoopDontAccept = _ClassStatement.forPayload(QueueDrainHelperTest::drainMaxLoopDontAccept, "drainMaxLoopDontAccept", this);
+            this.payloads.checkTerminatedDelayErrorEmpty = _ClassStatement.forPayload(QueueDrainHelperTest::checkTerminatedDelayErrorEmpty, "checkTerminatedDelayErrorEmpty", this);
+            this.payloads.checkTerminatedDelayErrorNonEmpty = _ClassStatement.forPayload(QueueDrainHelperTest::checkTerminatedDelayErrorNonEmpty, "checkTerminatedDelayErrorNonEmpty", this);
+            this.payloads.checkTerminatedDelayErrorEmptyError = _ClassStatement.forPayload(QueueDrainHelperTest::checkTerminatedDelayErrorEmptyError, "checkTerminatedDelayErrorEmptyError", this);
+            this.payloads.checkTerminatedNonDelayErrorError = _ClassStatement.forPayload(QueueDrainHelperTest::checkTerminatedNonDelayErrorError, "checkTerminatedNonDelayErrorError", this);
+            this.payloads.observerCheckTerminatedDelayErrorEmpty = _ClassStatement.forPayload(QueueDrainHelperTest::observerCheckTerminatedDelayErrorEmpty, "observerCheckTerminatedDelayErrorEmpty", this);
+            this.payloads.observerCheckTerminatedDelayErrorEmptyResource = _ClassStatement.forPayload(QueueDrainHelperTest::observerCheckTerminatedDelayErrorEmptyResource, "observerCheckTerminatedDelayErrorEmptyResource", this);
+            this.payloads.observerCheckTerminatedDelayErrorNonEmpty = _ClassStatement.forPayload(QueueDrainHelperTest::observerCheckTerminatedDelayErrorNonEmpty, "observerCheckTerminatedDelayErrorNonEmpty", this);
+            this.payloads.observerCheckTerminatedDelayErrorEmptyError = _ClassStatement.forPayload(QueueDrainHelperTest::observerCheckTerminatedDelayErrorEmptyError, "observerCheckTerminatedDelayErrorEmptyError", this);
+            this.payloads.observerCheckTerminatedNonDelayErrorError = _ClassStatement.forPayload(QueueDrainHelperTest::observerCheckTerminatedNonDelayErrorError, "observerCheckTerminatedNonDelayErrorError", this);
+            this.payloads.observerCheckTerminatedNonDelayErrorErrorResource = _ClassStatement.forPayload(QueueDrainHelperTest::observerCheckTerminatedNonDelayErrorErrorResource, "observerCheckTerminatedNonDelayErrorErrorResource", this);
+            this.payloads.postCompleteAlreadyComplete = _ClassStatement.forPayload(QueueDrainHelperTest::postCompleteAlreadyComplete, "postCompleteAlreadyComplete", this);
         }
     }
 }

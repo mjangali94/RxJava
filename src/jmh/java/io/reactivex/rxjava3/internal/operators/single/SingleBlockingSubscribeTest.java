@@ -251,150 +251,199 @@ public class SingleBlockingSubscribeTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private SingleBlockingSubscribeTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noArgSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noArgSuccess, this.description("noArgSuccess"));
+            this.runBenchmark(this.payloads.noArgSuccess);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noArgSuccessAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noArgSuccessAsync, this.description("noArgSuccessAsync"));
+            this.runBenchmark(this.payloads.noArgSuccessAsync);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noArgError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noArgError, this.description("noArgError"));
+            this.runBenchmark(this.payloads.noArgError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noArgErrorAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noArgErrorAsync, this.description("noArgErrorAsync"));
+            this.runBenchmark(this.payloads.noArgErrorAsync);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_oneArgSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::oneArgSuccess, this.description("oneArgSuccess"));
+            this.runBenchmark(this.payloads.oneArgSuccess);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_oneArgSuccessAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::oneArgSuccessAsync, this.description("oneArgSuccessAsync"));
+            this.runBenchmark(this.payloads.oneArgSuccessAsync);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_oneArgSuccessFails() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::oneArgSuccessFails, this.description("oneArgSuccessFails"));
+            this.runBenchmark(this.payloads.oneArgSuccessFails);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_oneArgError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::oneArgError, this.description("oneArgError"));
+            this.runBenchmark(this.payloads.oneArgError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_oneArgErrorAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::oneArgErrorAsync, this.description("oneArgErrorAsync"));
+            this.runBenchmark(this.payloads.oneArgErrorAsync);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_twoArgSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::twoArgSuccess, this.description("twoArgSuccess"));
+            this.runBenchmark(this.payloads.twoArgSuccess);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_twoArgSuccessAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::twoArgSuccessAsync, this.description("twoArgSuccessAsync"));
+            this.runBenchmark(this.payloads.twoArgSuccessAsync);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_twoArgSuccessFails() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::twoArgSuccessFails, this.description("twoArgSuccessFails"));
+            this.runBenchmark(this.payloads.twoArgSuccessFails);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_twoArgError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::twoArgError, this.description("twoArgError"));
+            this.runBenchmark(this.payloads.twoArgError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_twoArgErrorAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::twoArgErrorAsync, this.description("twoArgErrorAsync"));
+            this.runBenchmark(this.payloads.twoArgErrorAsync);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_twoArgErrorFails() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::twoArgErrorFails, this.description("twoArgErrorFails"));
+            this.runBenchmark(this.payloads.twoArgErrorFails);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_twoArgInterrupted() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::twoArgInterrupted, this.description("twoArgInterrupted"));
+            this.runBenchmark(this.payloads.twoArgInterrupted);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observerSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observerSuccess, this.description("observerSuccess"));
+            this.runBenchmark(this.payloads.observerSuccess);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observerSuccessAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observerSuccessAsync, this.description("observerSuccessAsync"));
+            this.runBenchmark(this.payloads.observerSuccessAsync);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observerError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observerError, this.description("observerError"));
+            this.runBenchmark(this.payloads.observerError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observerErrorAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observerErrorAsync, this.description("observerErrorAsync"));
+            this.runBenchmark(this.payloads.observerErrorAsync);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observerDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observerDispose, this.description("observerDispose"));
+            this.runBenchmark(this.payloads.observerDispose);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ovserverInterrupted() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ovserverInterrupted, this.description("ovserverInterrupted"));
+            this.runBenchmark(this.payloads.ovserverInterrupted);
         }
 
-        private SingleBlockingSubscribeTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SingleBlockingSubscribeTest();
+        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleBlockingSubscribeTest> payload) throws java.lang.Throwable {
+            this.instance = new SingleBlockingSubscribeTest();
+            payload.accept(this.instance);
         }
 
-        @java.lang.Override
-        public SingleBlockingSubscribeTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleBlockingSubscribeTest> noArgSuccess;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleBlockingSubscribeTest> noArgSuccessAsync;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleBlockingSubscribeTest> noArgError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleBlockingSubscribeTest> noArgErrorAsync;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleBlockingSubscribeTest> oneArgSuccess;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleBlockingSubscribeTest> oneArgSuccessAsync;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleBlockingSubscribeTest> oneArgSuccessFails;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleBlockingSubscribeTest> oneArgError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleBlockingSubscribeTest> oneArgErrorAsync;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleBlockingSubscribeTest> twoArgSuccess;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleBlockingSubscribeTest> twoArgSuccessAsync;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleBlockingSubscribeTest> twoArgSuccessFails;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleBlockingSubscribeTest> twoArgError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleBlockingSubscribeTest> twoArgErrorAsync;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleBlockingSubscribeTest> twoArgErrorFails;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleBlockingSubscribeTest> twoArgInterrupted;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleBlockingSubscribeTest> observerSuccess;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleBlockingSubscribeTest> observerSuccessAsync;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleBlockingSubscribeTest> observerError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleBlockingSubscribeTest> observerErrorAsync;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleBlockingSubscribeTest> observerDispose;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleBlockingSubscribeTest> ovserverInterrupted;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.noArgSuccess = SingleBlockingSubscribeTest::noArgSuccess;
+            this.payloads.noArgSuccessAsync = SingleBlockingSubscribeTest::noArgSuccessAsync;
+            this.payloads.noArgError = SingleBlockingSubscribeTest::noArgError;
+            this.payloads.noArgErrorAsync = SingleBlockingSubscribeTest::noArgErrorAsync;
+            this.payloads.oneArgSuccess = SingleBlockingSubscribeTest::oneArgSuccess;
+            this.payloads.oneArgSuccessAsync = SingleBlockingSubscribeTest::oneArgSuccessAsync;
+            this.payloads.oneArgSuccessFails = SingleBlockingSubscribeTest::oneArgSuccessFails;
+            this.payloads.oneArgError = SingleBlockingSubscribeTest::oneArgError;
+            this.payloads.oneArgErrorAsync = SingleBlockingSubscribeTest::oneArgErrorAsync;
+            this.payloads.twoArgSuccess = SingleBlockingSubscribeTest::twoArgSuccess;
+            this.payloads.twoArgSuccessAsync = SingleBlockingSubscribeTest::twoArgSuccessAsync;
+            this.payloads.twoArgSuccessFails = SingleBlockingSubscribeTest::twoArgSuccessFails;
+            this.payloads.twoArgError = SingleBlockingSubscribeTest::twoArgError;
+            this.payloads.twoArgErrorAsync = SingleBlockingSubscribeTest::twoArgErrorAsync;
+            this.payloads.twoArgErrorFails = SingleBlockingSubscribeTest::twoArgErrorFails;
+            this.payloads.twoArgInterrupted = SingleBlockingSubscribeTest::twoArgInterrupted;
+            this.payloads.observerSuccess = SingleBlockingSubscribeTest::observerSuccess;
+            this.payloads.observerSuccessAsync = SingleBlockingSubscribeTest::observerSuccessAsync;
+            this.payloads.observerError = SingleBlockingSubscribeTest::observerError;
+            this.payloads.observerErrorAsync = SingleBlockingSubscribeTest::observerErrorAsync;
+            this.payloads.observerDispose = SingleBlockingSubscribeTest::observerDispose;
+            this.payloads.ovserverInterrupted = SingleBlockingSubscribeTest::ovserverInterrupted;
         }
     }
 }

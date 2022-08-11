@@ -30,26 +30,4 @@ public class DisposeOnCancelTest extends RxJavaTest {
         assertNull(doc.get());
         assertNull(doc.get(1, TimeUnit.SECONDS));
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_basicCoverage() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::basicCoverage, this.description("basicCoverage"));
-        }
-
-        private DisposeOnCancelTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new DisposeOnCancelTest();
-        }
-
-        @java.lang.Override
-        public DisposeOnCancelTest implementation() {
-            return this.implementation;
-        }
-    }
 }

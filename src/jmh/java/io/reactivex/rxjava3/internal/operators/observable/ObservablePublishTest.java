@@ -740,258 +740,397 @@ public class ObservablePublishTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservablePublishTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_publish() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::publish, this.description("publish"));
+            this.payloads.publish.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureFastSlow() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureFastSlow, this.description("backpressureFastSlow"));
+            this.payloads.backpressureFastSlow.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeUntilWithPublishedStreamUsingSelector() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeUntilWithPublishedStreamUsingSelector, this.description("takeUntilWithPublishedStreamUsingSelector"));
+            this.payloads.takeUntilWithPublishedStreamUsingSelector.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeUntilWithPublishedStream() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeUntilWithPublishedStream, this.description("takeUntilWithPublishedStream"));
+            this.payloads.takeUntilWithPublishedStream.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureTwoConsumers() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureTwoConsumers, this.description("backpressureTwoConsumers"));
+            this.payloads.backpressureTwoConsumers.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_connectWithNoSubscriber() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::connectWithNoSubscriber, this.description("connectWithNoSubscriber"));
+            this.payloads.connectWithNoSubscriber.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_subscribeAfterDisconnectThenConnect() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscribeAfterDisconnectThenConnect, this.description("subscribeAfterDisconnectThenConnect"));
+            this.payloads.subscribeAfterDisconnectThenConnect.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noSubscriberRetentionOnCompleted() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noSubscriberRetentionOnCompleted, this.description("noSubscriberRetentionOnCompleted"));
+            this.payloads.noSubscriberRetentionOnCompleted.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nonNullConnection() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nonNullConnection, this.description("nonNullConnection"));
+            this.payloads.nonNullConnection.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noDisconnectSomeoneElse() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noDisconnectSomeoneElse, this.description("noDisconnectSomeoneElse"));
+            this.payloads.noDisconnectSomeoneElse.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_connectIsIdempotent() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::connectIsIdempotent, this.description("connectIsIdempotent"));
+            this.payloads.connectIsIdempotent.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observeOn() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observeOn, this.description("observeOn"));
+            this.payloads.observeOn.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_preNextConnect() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::preNextConnect, this.description("preNextConnect"));
+            this.payloads.preNextConnect.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_connectRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::connectRace, this.description("connectRace"));
+            this.payloads.connectRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_selectorCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::selectorCrash, this.description("selectorCrash"));
+            this.payloads.selectorCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_source() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::source, this.description("source"));
+            this.payloads.source.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_connectThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::connectThrows, this.description("connectThrows"));
+            this.payloads.connectThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_addRemoveRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::addRemoveRace, this.description("addRemoveRace"));
+            this.payloads.addRemoveRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeOnArrival() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeOnArrival, this.description("disposeOnArrival"));
+            this.payloads.disposeOnArrival.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_empty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::empty, this.description("empty"));
+            this.payloads.empty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_take() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::take, this.description("take"));
+            this.payloads.take.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_just() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::just, this.description("just"));
+            this.payloads.just.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nextCancelRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nextCancelRace, this.description("nextCancelRace"));
+            this.payloads.nextCancelRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSource, this.description("badSource"));
+            this.payloads.badSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noErrorLoss() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noErrorLoss, this.description("noErrorLoss"));
+            this.payloads.noErrorLoss.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_subscribeDisconnectRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscribeDisconnectRace, this.description("subscribeDisconnectRace"));
+            this.payloads.subscribeDisconnectRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_selectorDisconnectsIndependentSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::selectorDisconnectsIndependentSource, this.description("selectorDisconnectsIndependentSource"));
+            this.payloads.selectorDisconnectsIndependentSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_selectorLatecommer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::selectorLatecommer, this.description("selectorLatecommer"));
+            this.payloads.selectorLatecommer.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainError, this.description("mainError"));
+            this.payloads.mainError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_selectorInnerError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::selectorInnerError, this.description("selectorInnerError"));
+            this.payloads.selectorInnerError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayedUpstreamOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayedUpstreamOnSubscribe, this.description("delayedUpstreamOnSubscribe"));
+            this.payloads.delayedUpstreamOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposedUpfront() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposedUpfront, this.description("disposedUpfront"));
+            this.payloads.disposedUpfront.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_altConnectCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::altConnectCrash, this.description("altConnectCrash"));
+            this.payloads.altConnectCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_altConnectRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::altConnectRace, this.description("altConnectRace"));
+            this.payloads.altConnectRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onCompleteAvailableUntilReset() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompleteAvailableUntilReset, this.description("onCompleteAvailableUntilReset"));
+            this.payloads.onCompleteAvailableUntilReset.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorAvailableUntilReset() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorAvailableUntilReset, this.description("onErrorAvailableUntilReset"));
+            this.payloads.onErrorAvailableUntilReset.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeResets() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeResets, this.description("disposeResets"));
+            this.payloads.disposeResets.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposeNoNeedForReset() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposeNoNeedForReset, this.description("disposeNoNeedForReset"));
+            this.payloads.disposeNoNeedForReset.evaluate();
         }
 
-        private ObservablePublishTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservablePublishTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservablePublishTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservablePublishTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservablePublishTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservablePublishTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservablePublishTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservablePublishTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservablePublishTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservablePublishTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservablePublishTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement publish;
+
+            public org.junit.runners.model.Statement backpressureFastSlow;
+
+            public org.junit.runners.model.Statement takeUntilWithPublishedStreamUsingSelector;
+
+            public org.junit.runners.model.Statement takeUntilWithPublishedStream;
+
+            public org.junit.runners.model.Statement backpressureTwoConsumers;
+
+            public org.junit.runners.model.Statement connectWithNoSubscriber;
+
+            public org.junit.runners.model.Statement subscribeAfterDisconnectThenConnect;
+
+            public org.junit.runners.model.Statement noSubscriberRetentionOnCompleted;
+
+            public org.junit.runners.model.Statement nonNullConnection;
+
+            public org.junit.runners.model.Statement noDisconnectSomeoneElse;
+
+            public org.junit.runners.model.Statement connectIsIdempotent;
+
+            public org.junit.runners.model.Statement observeOn;
+
+            public org.junit.runners.model.Statement preNextConnect;
+
+            public org.junit.runners.model.Statement connectRace;
+
+            public org.junit.runners.model.Statement selectorCrash;
+
+            public org.junit.runners.model.Statement source;
+
+            public org.junit.runners.model.Statement connectThrows;
+
+            public org.junit.runners.model.Statement addRemoveRace;
+
+            public org.junit.runners.model.Statement disposeOnArrival;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement empty;
+
+            public org.junit.runners.model.Statement take;
+
+            public org.junit.runners.model.Statement just;
+
+            public org.junit.runners.model.Statement nextCancelRace;
+
+            public org.junit.runners.model.Statement badSource;
+
+            public org.junit.runners.model.Statement noErrorLoss;
+
+            public org.junit.runners.model.Statement subscribeDisconnectRace;
+
+            public org.junit.runners.model.Statement selectorDisconnectsIndependentSource;
+
+            public org.junit.runners.model.Statement selectorLatecommer;
+
+            public org.junit.runners.model.Statement mainError;
+
+            public org.junit.runners.model.Statement selectorInnerError;
+
+            public org.junit.runners.model.Statement delayedUpstreamOnSubscribe;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement disposedUpfront;
+
+            public org.junit.runners.model.Statement altConnectCrash;
+
+            public org.junit.runners.model.Statement altConnectRace;
+
+            public org.junit.runners.model.Statement onCompleteAvailableUntilReset;
+
+            public org.junit.runners.model.Statement onErrorAvailableUntilReset;
+
+            public org.junit.runners.model.Statement disposeResets;
+
+            public org.junit.runners.model.Statement disposeNoNeedForReset;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.publish = _ClassStatement.forPayload(ObservablePublishTest::publish, "publish", this);
+            this.payloads.backpressureFastSlow = _ClassStatement.forPayload(ObservablePublishTest::backpressureFastSlow, "backpressureFastSlow", this);
+            this.payloads.takeUntilWithPublishedStreamUsingSelector = _ClassStatement.forPayload(ObservablePublishTest::takeUntilWithPublishedStreamUsingSelector, "takeUntilWithPublishedStreamUsingSelector", this);
+            this.payloads.takeUntilWithPublishedStream = _ClassStatement.forPayload(ObservablePublishTest::takeUntilWithPublishedStream, "takeUntilWithPublishedStream", this);
+            this.payloads.backpressureTwoConsumers = _ClassStatement.forPayload(ObservablePublishTest::backpressureTwoConsumers, "backpressureTwoConsumers", this);
+            this.payloads.connectWithNoSubscriber = _ClassStatement.forPayload(ObservablePublishTest::connectWithNoSubscriber, "connectWithNoSubscriber", this);
+            this.payloads.subscribeAfterDisconnectThenConnect = _ClassStatement.forPayload(ObservablePublishTest::subscribeAfterDisconnectThenConnect, "subscribeAfterDisconnectThenConnect", this);
+            this.payloads.noSubscriberRetentionOnCompleted = _ClassStatement.forPayload(ObservablePublishTest::noSubscriberRetentionOnCompleted, "noSubscriberRetentionOnCompleted", this);
+            this.payloads.nonNullConnection = _ClassStatement.forPayload(ObservablePublishTest::nonNullConnection, "nonNullConnection", this);
+            this.payloads.noDisconnectSomeoneElse = _ClassStatement.forPayload(ObservablePublishTest::noDisconnectSomeoneElse, "noDisconnectSomeoneElse", this);
+            this.payloads.connectIsIdempotent = _ClassStatement.forPayload(ObservablePublishTest::connectIsIdempotent, "connectIsIdempotent", this);
+            this.payloads.observeOn = _ClassStatement.forPayload(ObservablePublishTest::observeOn, "observeOn", this);
+            this.payloads.preNextConnect = _ClassStatement.forPayload(ObservablePublishTest::preNextConnect, "preNextConnect", this);
+            this.payloads.connectRace = _ClassStatement.forPayload(ObservablePublishTest::connectRace, "connectRace", this);
+            this.payloads.selectorCrash = _ClassStatement.forPayload(ObservablePublishTest::selectorCrash, "selectorCrash", this);
+            this.payloads.source = _ClassStatement.forPayload(ObservablePublishTest::source, "source", this);
+            this.payloads.connectThrows = _ClassStatement.forPayload(ObservablePublishTest::connectThrows, "connectThrows", this);
+            this.payloads.addRemoveRace = _ClassStatement.forPayload(ObservablePublishTest::addRemoveRace, "addRemoveRace", this);
+            this.payloads.disposeOnArrival = _ClassStatement.forPayload(ObservablePublishTest::disposeOnArrival, "disposeOnArrival", this);
+            this.payloads.dispose = _ClassStatement.forPayload(ObservablePublishTest::dispose, "dispose", this);
+            this.payloads.empty = _ClassStatement.forPayload(ObservablePublishTest::empty, "empty", this);
+            this.payloads.take = _ClassStatement.forPayload(ObservablePublishTest::take, "take", this);
+            this.payloads.just = _ClassStatement.forPayload(ObservablePublishTest::just, "just", this);
+            this.payloads.nextCancelRace = _ClassStatement.forPayload(ObservablePublishTest::nextCancelRace, "nextCancelRace", this);
+            this.payloads.badSource = _ClassStatement.forPayload(ObservablePublishTest::badSource, "badSource", this);
+            this.payloads.noErrorLoss = _ClassStatement.forPayload(ObservablePublishTest::noErrorLoss, "noErrorLoss", this);
+            this.payloads.subscribeDisconnectRace = _ClassStatement.forPayload(ObservablePublishTest::subscribeDisconnectRace, "subscribeDisconnectRace", this);
+            this.payloads.selectorDisconnectsIndependentSource = _ClassStatement.forPayload(ObservablePublishTest::selectorDisconnectsIndependentSource, "selectorDisconnectsIndependentSource", this);
+            this.payloads.selectorLatecommer = _ClassStatement.forPayload(ObservablePublishTest::selectorLatecommer, "selectorLatecommer", this);
+            this.payloads.mainError = _ClassStatement.forPayload(ObservablePublishTest::mainError, "mainError", this);
+            this.payloads.selectorInnerError = _ClassStatement.forPayload(ObservablePublishTest::selectorInnerError, "selectorInnerError", this);
+            this.payloads.delayedUpstreamOnSubscribe = _ClassStatement.forPayload(ObservablePublishTest::delayedUpstreamOnSubscribe, "delayedUpstreamOnSubscribe", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(ObservablePublishTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.disposedUpfront = _ClassStatement.forPayload(ObservablePublishTest::disposedUpfront, "disposedUpfront", this);
+            this.payloads.altConnectCrash = _ClassStatement.forPayload(ObservablePublishTest::altConnectCrash, "altConnectCrash", this);
+            this.payloads.altConnectRace = _ClassStatement.forPayload(ObservablePublishTest::altConnectRace, "altConnectRace", this);
+            this.payloads.onCompleteAvailableUntilReset = _ClassStatement.forPayload(ObservablePublishTest::onCompleteAvailableUntilReset, "onCompleteAvailableUntilReset", this);
+            this.payloads.onErrorAvailableUntilReset = _ClassStatement.forPayload(ObservablePublishTest::onErrorAvailableUntilReset, "onErrorAvailableUntilReset", this);
+            this.payloads.disposeResets = _ClassStatement.forPayload(ObservablePublishTest::disposeResets, "disposeResets", this);
+            this.payloads.disposeNoNeedForReset = _ClassStatement.forPayload(ObservablePublishTest::disposeNoNeedForReset, "disposeNoNeedForReset", this);
         }
     }
 }

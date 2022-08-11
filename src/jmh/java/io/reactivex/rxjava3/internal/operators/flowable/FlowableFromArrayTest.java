@@ -157,96 +157,181 @@ public class FlowableFromArrayTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableFromArrayTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_simple() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::simple, this.description("simple"));
+            this.payloads.simple.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressure, this.description("backpressure"));
+            this.payloads.backpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_conditionalBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::conditionalBackpressure, this.description("conditionalBackpressure"));
+            this.payloads.conditionalBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_empty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::empty, this.description("empty"));
+            this.payloads.empty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_just() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::just, this.description("just"));
+            this.payloads.just.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_just10Arguments() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::just10Arguments, this.description("just10Arguments"));
+            this.payloads.just10Arguments.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequest, this.description("badRequest"));
+            this.payloads.badRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_conditionalOneIsNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::conditionalOneIsNull, this.description("conditionalOneIsNull"));
+            this.payloads.conditionalOneIsNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_conditionalOneIsNullSlowPath() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::conditionalOneIsNullSlowPath, this.description("conditionalOneIsNullSlowPath"));
+            this.payloads.conditionalOneIsNullSlowPath.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_conditionalOneByOne() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::conditionalOneByOne, this.description("conditionalOneByOne"));
+            this.payloads.conditionalOneByOne.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_conditionalFiltered() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::conditionalFiltered, this.description("conditionalFiltered"));
+            this.payloads.conditionalFiltered.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_conditionalSlowPathCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::conditionalSlowPathCancel, this.description("conditionalSlowPathCancel"));
+            this.payloads.conditionalSlowPathCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_conditionalSlowPathSkipCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::conditionalSlowPathSkipCancel, this.description("conditionalSlowPathSkipCancel"));
+            this.payloads.conditionalSlowPathSkipCancel.evaluate();
         }
 
-        private FlowableFromArrayTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableFromArrayTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFromArrayTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFromArrayTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableFromArrayTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFromArrayTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFromArrayTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableFromArrayTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableFromArrayTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableFromArrayTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableFromArrayTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement simple;
+
+            public org.junit.runners.model.Statement backpressure;
+
+            public org.junit.runners.model.Statement conditionalBackpressure;
+
+            public org.junit.runners.model.Statement empty;
+
+            public org.junit.runners.model.Statement just;
+
+            public org.junit.runners.model.Statement just10Arguments;
+
+            public org.junit.runners.model.Statement badRequest;
+
+            public org.junit.runners.model.Statement conditionalOneIsNull;
+
+            public org.junit.runners.model.Statement conditionalOneIsNullSlowPath;
+
+            public org.junit.runners.model.Statement conditionalOneByOne;
+
+            public org.junit.runners.model.Statement conditionalFiltered;
+
+            public org.junit.runners.model.Statement conditionalSlowPathCancel;
+
+            public org.junit.runners.model.Statement conditionalSlowPathSkipCancel;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.simple = _ClassStatement.forPayload(FlowableFromArrayTest::simple, "simple", this);
+            this.payloads.backpressure = _ClassStatement.forPayload(FlowableFromArrayTest::backpressure, "backpressure", this);
+            this.payloads.conditionalBackpressure = _ClassStatement.forPayload(FlowableFromArrayTest::conditionalBackpressure, "conditionalBackpressure", this);
+            this.payloads.empty = _ClassStatement.forPayload(FlowableFromArrayTest::empty, "empty", this);
+            this.payloads.just = _ClassStatement.forPayload(FlowableFromArrayTest::just, "just", this);
+            this.payloads.just10Arguments = _ClassStatement.forPayload(FlowableFromArrayTest::just10Arguments, "just10Arguments", this);
+            this.payloads.badRequest = _ClassStatement.forPayload(FlowableFromArrayTest::badRequest, "badRequest", this);
+            this.payloads.conditionalOneIsNull = _ClassStatement.forPayload(FlowableFromArrayTest::conditionalOneIsNull, "conditionalOneIsNull", this);
+            this.payloads.conditionalOneIsNullSlowPath = _ClassStatement.forPayload(FlowableFromArrayTest::conditionalOneIsNullSlowPath, "conditionalOneIsNullSlowPath", this);
+            this.payloads.conditionalOneByOne = _ClassStatement.forPayload(FlowableFromArrayTest::conditionalOneByOne, "conditionalOneByOne", this);
+            this.payloads.conditionalFiltered = _ClassStatement.forPayload(FlowableFromArrayTest::conditionalFiltered, "conditionalFiltered", this);
+            this.payloads.conditionalSlowPathCancel = _ClassStatement.forPayload(FlowableFromArrayTest::conditionalSlowPathCancel, "conditionalSlowPathCancel", this);
+            this.payloads.conditionalSlowPathSkipCancel = _ClassStatement.forPayload(FlowableFromArrayTest::conditionalSlowPathSkipCancel, "conditionalSlowPathSkipCancel", this);
         }
     }
 }

@@ -810,205 +810,318 @@ public class XFlatMapTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private XFlatMapTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flowableFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flowableFlowable, this.description("flowableFlowable"));
+            this.payloads.flowableFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flowableSingle() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flowableSingle, this.description("flowableSingle"));
+            this.payloads.flowableSingle.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flowableMaybe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flowableMaybe, this.description("flowableMaybe"));
+            this.payloads.flowableMaybe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flowableCompletable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flowableCompletable, this.description("flowableCompletable"));
+            this.payloads.flowableCompletable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flowableCompletable2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flowableCompletable2, this.description("flowableCompletable2"));
+            this.payloads.flowableCompletable2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observableObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observableObservable, this.description("observableObservable"));
+            this.payloads.observableObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observerSingle() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observerSingle, this.description("observerSingle"));
+            this.payloads.observerSingle.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observerMaybe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observerMaybe, this.description("observerMaybe"));
+            this.payloads.observerMaybe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observerCompletable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observerCompletable, this.description("observerCompletable"));
+            this.payloads.observerCompletable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observerCompletable2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observerCompletable2, this.description("observerCompletable2"));
+            this.payloads.observerCompletable2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleSingle() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleSingle, this.description("singleSingle"));
+            this.payloads.singleSingle.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleMaybe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleMaybe, this.description("singleMaybe"));
+            this.payloads.singleMaybe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleCompletable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleCompletable, this.description("singleCompletable"));
+            this.payloads.singleCompletable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleCompletable2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleCompletable2, this.description("singleCompletable2"));
+            this.payloads.singleCompletable2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singlePublisher() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singlePublisher, this.description("singlePublisher"));
+            this.payloads.singlePublisher.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleCombiner() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleCombiner, this.description("singleCombiner"));
+            this.payloads.singleCombiner.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleObservable, this.description("singleObservable"));
+            this.payloads.singleObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleNotificationSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleNotificationSuccess, this.description("singleNotificationSuccess"));
+            this.payloads.singleNotificationSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleNotificationError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleNotificationError, this.description("singleNotificationError"));
+            this.payloads.singleNotificationError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maybeSingle() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::maybeSingle, this.description("maybeSingle"));
+            this.payloads.maybeSingle.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maybeSingle2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::maybeSingle2, this.description("maybeSingle2"));
+            this.payloads.maybeSingle2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maybeMaybe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::maybeMaybe, this.description("maybeMaybe"));
+            this.payloads.maybeMaybe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maybePublisher() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::maybePublisher, this.description("maybePublisher"));
+            this.payloads.maybePublisher.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maybeObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::maybeObservable, this.description("maybeObservable"));
+            this.payloads.maybeObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maybeNotificationSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::maybeNotificationSuccess, this.description("maybeNotificationSuccess"));
+            this.payloads.maybeNotificationSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maybeNotificationError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::maybeNotificationError, this.description("maybeNotificationError"));
+            this.payloads.maybeNotificationError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maybeNotificationEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::maybeNotificationEmpty, this.description("maybeNotificationEmpty"));
+            this.payloads.maybeNotificationEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maybeCombiner() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::maybeCombiner, this.description("maybeCombiner"));
+            this.payloads.maybeCombiner.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maybeCompletable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::maybeCompletable, this.description("maybeCompletable"));
+            this.payloads.maybeCompletable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maybeCompletable2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::maybeCompletable2, this.description("maybeCompletable2"));
+            this.payloads.maybeCompletable2.evaluate();
         }
 
-        @java.lang.Override
-        public org.junit.runners.model.Statement applyRuleFields(org.junit.runners.model.Statement statement, org.junit.runner.Description description) {
-            statement = this.applyRule(this.implementation().retry, statement, description);
-            statement = super.applyRuleFields(statement, description);
-            return statement;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<XFlatMapTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<XFlatMapTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private XFlatMapTest implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new XFlatMapTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<XFlatMapTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<XFlatMapTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new XFlatMapTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.retry, statement);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<XFlatMapTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(XFlatMapTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(XFlatMapTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public XFlatMapTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement flowableFlowable;
+
+            public org.junit.runners.model.Statement flowableSingle;
+
+            public org.junit.runners.model.Statement flowableMaybe;
+
+            public org.junit.runners.model.Statement flowableCompletable;
+
+            public org.junit.runners.model.Statement flowableCompletable2;
+
+            public org.junit.runners.model.Statement observableObservable;
+
+            public org.junit.runners.model.Statement observerSingle;
+
+            public org.junit.runners.model.Statement observerMaybe;
+
+            public org.junit.runners.model.Statement observerCompletable;
+
+            public org.junit.runners.model.Statement observerCompletable2;
+
+            public org.junit.runners.model.Statement singleSingle;
+
+            public org.junit.runners.model.Statement singleMaybe;
+
+            public org.junit.runners.model.Statement singleCompletable;
+
+            public org.junit.runners.model.Statement singleCompletable2;
+
+            public org.junit.runners.model.Statement singlePublisher;
+
+            public org.junit.runners.model.Statement singleCombiner;
+
+            public org.junit.runners.model.Statement singleObservable;
+
+            public org.junit.runners.model.Statement singleNotificationSuccess;
+
+            public org.junit.runners.model.Statement singleNotificationError;
+
+            public org.junit.runners.model.Statement maybeSingle;
+
+            public org.junit.runners.model.Statement maybeSingle2;
+
+            public org.junit.runners.model.Statement maybeMaybe;
+
+            public org.junit.runners.model.Statement maybePublisher;
+
+            public org.junit.runners.model.Statement maybeObservable;
+
+            public org.junit.runners.model.Statement maybeNotificationSuccess;
+
+            public org.junit.runners.model.Statement maybeNotificationError;
+
+            public org.junit.runners.model.Statement maybeNotificationEmpty;
+
+            public org.junit.runners.model.Statement maybeCombiner;
+
+            public org.junit.runners.model.Statement maybeCompletable;
+
+            public org.junit.runners.model.Statement maybeCompletable2;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.flowableFlowable = _ClassStatement.forPayload(XFlatMapTest::flowableFlowable, "flowableFlowable", this);
+            this.payloads.flowableSingle = _ClassStatement.forPayload(XFlatMapTest::flowableSingle, "flowableSingle", this);
+            this.payloads.flowableMaybe = _ClassStatement.forPayload(XFlatMapTest::flowableMaybe, "flowableMaybe", this);
+            this.payloads.flowableCompletable = _ClassStatement.forPayload(XFlatMapTest::flowableCompletable, "flowableCompletable", this);
+            this.payloads.flowableCompletable2 = _ClassStatement.forPayload(XFlatMapTest::flowableCompletable2, "flowableCompletable2", this);
+            this.payloads.observableObservable = _ClassStatement.forPayload(XFlatMapTest::observableObservable, "observableObservable", this);
+            this.payloads.observerSingle = _ClassStatement.forPayload(XFlatMapTest::observerSingle, "observerSingle", this);
+            this.payloads.observerMaybe = _ClassStatement.forPayload(XFlatMapTest::observerMaybe, "observerMaybe", this);
+            this.payloads.observerCompletable = _ClassStatement.forPayload(XFlatMapTest::observerCompletable, "observerCompletable", this);
+            this.payloads.observerCompletable2 = _ClassStatement.forPayload(XFlatMapTest::observerCompletable2, "observerCompletable2", this);
+            this.payloads.singleSingle = _ClassStatement.forPayload(XFlatMapTest::singleSingle, "singleSingle", this);
+            this.payloads.singleMaybe = _ClassStatement.forPayload(XFlatMapTest::singleMaybe, "singleMaybe", this);
+            this.payloads.singleCompletable = _ClassStatement.forPayload(XFlatMapTest::singleCompletable, "singleCompletable", this);
+            this.payloads.singleCompletable2 = _ClassStatement.forPayload(XFlatMapTest::singleCompletable2, "singleCompletable2", this);
+            this.payloads.singlePublisher = _ClassStatement.forPayload(XFlatMapTest::singlePublisher, "singlePublisher", this);
+            this.payloads.singleCombiner = _ClassStatement.forPayload(XFlatMapTest::singleCombiner, "singleCombiner", this);
+            this.payloads.singleObservable = _ClassStatement.forPayload(XFlatMapTest::singleObservable, "singleObservable", this);
+            this.payloads.singleNotificationSuccess = _ClassStatement.forPayload(XFlatMapTest::singleNotificationSuccess, "singleNotificationSuccess", this);
+            this.payloads.singleNotificationError = _ClassStatement.forPayload(XFlatMapTest::singleNotificationError, "singleNotificationError", this);
+            this.payloads.maybeSingle = _ClassStatement.forPayload(XFlatMapTest::maybeSingle, "maybeSingle", this);
+            this.payloads.maybeSingle2 = _ClassStatement.forPayload(XFlatMapTest::maybeSingle2, "maybeSingle2", this);
+            this.payloads.maybeMaybe = _ClassStatement.forPayload(XFlatMapTest::maybeMaybe, "maybeMaybe", this);
+            this.payloads.maybePublisher = _ClassStatement.forPayload(XFlatMapTest::maybePublisher, "maybePublisher", this);
+            this.payloads.maybeObservable = _ClassStatement.forPayload(XFlatMapTest::maybeObservable, "maybeObservable", this);
+            this.payloads.maybeNotificationSuccess = _ClassStatement.forPayload(XFlatMapTest::maybeNotificationSuccess, "maybeNotificationSuccess", this);
+            this.payloads.maybeNotificationError = _ClassStatement.forPayload(XFlatMapTest::maybeNotificationError, "maybeNotificationError", this);
+            this.payloads.maybeNotificationEmpty = _ClassStatement.forPayload(XFlatMapTest::maybeNotificationEmpty, "maybeNotificationEmpty", this);
+            this.payloads.maybeCombiner = _ClassStatement.forPayload(XFlatMapTest::maybeCombiner, "maybeCombiner", this);
+            this.payloads.maybeCompletable = _ClassStatement.forPayload(XFlatMapTest::maybeCompletable, "maybeCompletable", this);
+            this.payloads.maybeCompletable2 = _ClassStatement.forPayload(XFlatMapTest::maybeCompletable2, "maybeCompletable2", this);
         }
     }
 }

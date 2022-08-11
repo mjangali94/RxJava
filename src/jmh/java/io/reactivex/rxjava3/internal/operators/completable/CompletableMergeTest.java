@@ -530,216 +530,341 @@ public class CompletableMergeTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private CompletableMergeTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_invalidPrefetch() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::invalidPrefetch, this.description("invalidPrefetch"));
+            this.payloads.invalidPrefetch.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelAfterFirst() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelAfterFirst, this.description("cancelAfterFirst"));
+            this.payloads.cancelAfterFirst.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelAfterFirstDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelAfterFirstDelayError, this.description("cancelAfterFirstDelayError"));
+            this.payloads.cancelAfterFirstDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorAfterComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorAfterComplete, this.description("onErrorAfterComplete"));
+            this.payloads.onErrorAfterComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_completeAfterMain() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::completeAfterMain, this.description("completeAfterMain"));
+            this.payloads.completeAfterMain.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_completeAfterMainDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::completeAfterMainDelayError, this.description("completeAfterMainDelayError"));
+            this.payloads.completeAfterMainDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorAfterMainDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorAfterMainDelayError, this.description("errorAfterMainDelayError"));
+            this.payloads.errorAfterMainDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposePropagates() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposePropagates, this.description("disposePropagates"));
+            this.payloads.disposePropagates.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerComplete, this.description("innerComplete"));
+            this.payloads.innerComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerError, this.description("innerError"));
+            this.payloads.innerError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerErrorDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerErrorDelayError, this.description("innerErrorDelayError"));
+            this.payloads.innerErrorDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainErrorInnerErrorRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainErrorInnerErrorRace, this.description("mainErrorInnerErrorRace"));
+            this.payloads.mainErrorInnerErrorRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainErrorInnerErrorDelayedRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainErrorInnerErrorDelayedRace, this.description("mainErrorInnerErrorDelayedRace"));
+            this.payloads.mainErrorInnerErrorDelayedRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maxConcurrencyOne() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::maxConcurrencyOne, this.description("maxConcurrencyOne"));
+            this.payloads.maxConcurrencyOne.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maxConcurrencyOneDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::maxConcurrencyOneDelayError, this.description("maxConcurrencyOneDelayError"));
+            this.payloads.maxConcurrencyOneDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maxConcurrencyOneDelayErrorFirst() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::maxConcurrencyOneDelayErrorFirst, this.description("maxConcurrencyOneDelayErrorFirst"));
+            this.payloads.maxConcurrencyOneDelayErrorFirst.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maxConcurrencyOneDelayMainErrors() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::maxConcurrencyOneDelayMainErrors, this.description("maxConcurrencyOneDelayMainErrors"));
+            this.payloads.maxConcurrencyOneDelayMainErrors.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainDoubleOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainDoubleOnError, this.description("mainDoubleOnError"));
+            this.payloads.mainDoubleOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerDoubleOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerDoubleOnError, this.description("innerDoubleOnError"));
+            this.payloads.innerDoubleOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerIsDisposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerIsDisposed, this.description("innerIsDisposed"));
+            this.payloads.innerIsDisposed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeArrayInnerErrorRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeArrayInnerErrorRace, this.description("mergeArrayInnerErrorRace"));
+            this.payloads.mergeArrayInnerErrorRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayErrorIterableCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayErrorIterableCancel, this.description("delayErrorIterableCancel"));
+            this.payloads.delayErrorIterableCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayErrorIterableCancelAfterHasNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayErrorIterableCancelAfterHasNext, this.description("delayErrorIterableCancelAfterHasNext"));
+            this.payloads.delayErrorIterableCancelAfterHasNext.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayErrorIterableCancelAfterNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayErrorIterableCancelAfterNext, this.description("delayErrorIterableCancelAfterNext"));
+            this.payloads.delayErrorIterableCancelAfterNext.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_arrayUndeliverableUponCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::arrayUndeliverableUponCancel, this.description("arrayUndeliverableUponCancel"));
+            this.payloads.arrayUndeliverableUponCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_iterableUndeliverableUponCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::iterableUndeliverableUponCancel, this.description("iterableUndeliverableUponCancel"));
+            this.payloads.iterableUndeliverableUponCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_arrayUndeliverableUponCancelDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::arrayUndeliverableUponCancelDelayError, this.description("arrayUndeliverableUponCancelDelayError"));
+            this.payloads.arrayUndeliverableUponCancelDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_iterableUndeliverableUponCancelDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::iterableUndeliverableUponCancelDelayError, this.description("iterableUndeliverableUponCancelDelayError"));
+            this.payloads.iterableUndeliverableUponCancelDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_iterableCompleteLater() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::iterableCompleteLater, this.description("iterableCompleteLater"));
+            this.payloads.iterableCompleteLater.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_terminalDisposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::terminalDisposed, this.description("terminalDisposed"));
+            this.payloads.terminalDisposed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerDisposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerDisposed, this.description("innerDisposed"));
+            this.payloads.innerDisposed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
-        private CompletableMergeTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new CompletableMergeTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableMergeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableMergeTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public CompletableMergeTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableMergeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableMergeTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new CompletableMergeTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableMergeTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(CompletableMergeTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(CompletableMergeTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement invalidPrefetch;
+
+            public org.junit.runners.model.Statement cancelAfterFirst;
+
+            public org.junit.runners.model.Statement cancelAfterFirstDelayError;
+
+            public org.junit.runners.model.Statement onErrorAfterComplete;
+
+            public org.junit.runners.model.Statement completeAfterMain;
+
+            public org.junit.runners.model.Statement completeAfterMainDelayError;
+
+            public org.junit.runners.model.Statement errorAfterMainDelayError;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement disposePropagates;
+
+            public org.junit.runners.model.Statement innerComplete;
+
+            public org.junit.runners.model.Statement innerError;
+
+            public org.junit.runners.model.Statement innerErrorDelayError;
+
+            public org.junit.runners.model.Statement mainErrorInnerErrorRace;
+
+            public org.junit.runners.model.Statement mainErrorInnerErrorDelayedRace;
+
+            public org.junit.runners.model.Statement maxConcurrencyOne;
+
+            public org.junit.runners.model.Statement maxConcurrencyOneDelayError;
+
+            public org.junit.runners.model.Statement maxConcurrencyOneDelayErrorFirst;
+
+            public org.junit.runners.model.Statement maxConcurrencyOneDelayMainErrors;
+
+            public org.junit.runners.model.Statement mainDoubleOnError;
+
+            public org.junit.runners.model.Statement innerDoubleOnError;
+
+            public org.junit.runners.model.Statement innerIsDisposed;
+
+            public org.junit.runners.model.Statement mergeArrayInnerErrorRace;
+
+            public org.junit.runners.model.Statement delayErrorIterableCancel;
+
+            public org.junit.runners.model.Statement delayErrorIterableCancelAfterHasNext;
+
+            public org.junit.runners.model.Statement delayErrorIterableCancelAfterNext;
+
+            public org.junit.runners.model.Statement arrayUndeliverableUponCancel;
+
+            public org.junit.runners.model.Statement iterableUndeliverableUponCancel;
+
+            public org.junit.runners.model.Statement arrayUndeliverableUponCancelDelayError;
+
+            public org.junit.runners.model.Statement iterableUndeliverableUponCancelDelayError;
+
+            public org.junit.runners.model.Statement iterableCompleteLater;
+
+            public org.junit.runners.model.Statement terminalDisposed;
+
+            public org.junit.runners.model.Statement innerDisposed;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.invalidPrefetch = _ClassStatement.forPayload(CompletableMergeTest::invalidPrefetch, "invalidPrefetch", this);
+            this.payloads.cancelAfterFirst = _ClassStatement.forPayload(CompletableMergeTest::cancelAfterFirst, "cancelAfterFirst", this);
+            this.payloads.cancelAfterFirstDelayError = _ClassStatement.forPayload(CompletableMergeTest::cancelAfterFirstDelayError, "cancelAfterFirstDelayError", this);
+            this.payloads.onErrorAfterComplete = _ClassStatement.forPayload(CompletableMergeTest::onErrorAfterComplete, "onErrorAfterComplete", this);
+            this.payloads.completeAfterMain = _ClassStatement.forPayload(CompletableMergeTest::completeAfterMain, "completeAfterMain", this);
+            this.payloads.completeAfterMainDelayError = _ClassStatement.forPayload(CompletableMergeTest::completeAfterMainDelayError, "completeAfterMainDelayError", this);
+            this.payloads.errorAfterMainDelayError = _ClassStatement.forPayload(CompletableMergeTest::errorAfterMainDelayError, "errorAfterMainDelayError", this);
+            this.payloads.dispose = _ClassStatement.forPayload(CompletableMergeTest::dispose, "dispose", this);
+            this.payloads.disposePropagates = _ClassStatement.forPayload(CompletableMergeTest::disposePropagates, "disposePropagates", this);
+            this.payloads.innerComplete = _ClassStatement.forPayload(CompletableMergeTest::innerComplete, "innerComplete", this);
+            this.payloads.innerError = _ClassStatement.forPayload(CompletableMergeTest::innerError, "innerError", this);
+            this.payloads.innerErrorDelayError = _ClassStatement.forPayload(CompletableMergeTest::innerErrorDelayError, "innerErrorDelayError", this);
+            this.payloads.mainErrorInnerErrorRace = _ClassStatement.forPayload(CompletableMergeTest::mainErrorInnerErrorRace, "mainErrorInnerErrorRace", this);
+            this.payloads.mainErrorInnerErrorDelayedRace = _ClassStatement.forPayload(CompletableMergeTest::mainErrorInnerErrorDelayedRace, "mainErrorInnerErrorDelayedRace", this);
+            this.payloads.maxConcurrencyOne = _ClassStatement.forPayload(CompletableMergeTest::maxConcurrencyOne, "maxConcurrencyOne", this);
+            this.payloads.maxConcurrencyOneDelayError = _ClassStatement.forPayload(CompletableMergeTest::maxConcurrencyOneDelayError, "maxConcurrencyOneDelayError", this);
+            this.payloads.maxConcurrencyOneDelayErrorFirst = _ClassStatement.forPayload(CompletableMergeTest::maxConcurrencyOneDelayErrorFirst, "maxConcurrencyOneDelayErrorFirst", this);
+            this.payloads.maxConcurrencyOneDelayMainErrors = _ClassStatement.forPayload(CompletableMergeTest::maxConcurrencyOneDelayMainErrors, "maxConcurrencyOneDelayMainErrors", this);
+            this.payloads.mainDoubleOnError = _ClassStatement.forPayload(CompletableMergeTest::mainDoubleOnError, "mainDoubleOnError", this);
+            this.payloads.innerDoubleOnError = _ClassStatement.forPayload(CompletableMergeTest::innerDoubleOnError, "innerDoubleOnError", this);
+            this.payloads.innerIsDisposed = _ClassStatement.forPayload(CompletableMergeTest::innerIsDisposed, "innerIsDisposed", this);
+            this.payloads.mergeArrayInnerErrorRace = _ClassStatement.forPayload(CompletableMergeTest::mergeArrayInnerErrorRace, "mergeArrayInnerErrorRace", this);
+            this.payloads.delayErrorIterableCancel = _ClassStatement.forPayload(CompletableMergeTest::delayErrorIterableCancel, "delayErrorIterableCancel", this);
+            this.payloads.delayErrorIterableCancelAfterHasNext = _ClassStatement.forPayload(CompletableMergeTest::delayErrorIterableCancelAfterHasNext, "delayErrorIterableCancelAfterHasNext", this);
+            this.payloads.delayErrorIterableCancelAfterNext = _ClassStatement.forPayload(CompletableMergeTest::delayErrorIterableCancelAfterNext, "delayErrorIterableCancelAfterNext", this);
+            this.payloads.arrayUndeliverableUponCancel = _ClassStatement.forPayload(CompletableMergeTest::arrayUndeliverableUponCancel, "arrayUndeliverableUponCancel", this);
+            this.payloads.iterableUndeliverableUponCancel = _ClassStatement.forPayload(CompletableMergeTest::iterableUndeliverableUponCancel, "iterableUndeliverableUponCancel", this);
+            this.payloads.arrayUndeliverableUponCancelDelayError = _ClassStatement.forPayload(CompletableMergeTest::arrayUndeliverableUponCancelDelayError, "arrayUndeliverableUponCancelDelayError", this);
+            this.payloads.iterableUndeliverableUponCancelDelayError = _ClassStatement.forPayload(CompletableMergeTest::iterableUndeliverableUponCancelDelayError, "iterableUndeliverableUponCancelDelayError", this);
+            this.payloads.iterableCompleteLater = _ClassStatement.forPayload(CompletableMergeTest::iterableCompleteLater, "iterableCompleteLater", this);
+            this.payloads.terminalDisposed = _ClassStatement.forPayload(CompletableMergeTest::terminalDisposed, "terminalDisposed", this);
+            this.payloads.innerDisposed = _ClassStatement.forPayload(CompletableMergeTest::innerDisposed, "innerDisposed", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(CompletableMergeTest::doubleOnSubscribe, "doubleOnSubscribe", this);
         }
     }
 }

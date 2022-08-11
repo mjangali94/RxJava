@@ -213,78 +213,150 @@ public class FlowableThrottleFirstTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableThrottleFirstTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_throttlingWithCompleted() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::throttlingWithCompleted, this.description("throttlingWithCompleted"));
+            this.payloads.throttlingWithCompleted.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_throttlingWithError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::throttlingWithError, this.description("throttlingWithError"));
+            this.payloads.throttlingWithError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_throttle() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::throttle, this.description("throttle"));
+            this.payloads.throttle.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_throttleFirstDefaultScheduler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::throttleFirstDefaultScheduler, this.description("throttleFirstDefaultScheduler"));
+            this.payloads.throttleFirstDefaultScheduler.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSource, this.description("badSource"));
+            this.payloads.badSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureNoRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureNoRequest, this.description("backpressureNoRequest"));
+            this.payloads.backpressureNoRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequest, this.description("badRequest"));
+            this.payloads.badRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().before();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableThrottleFirstTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableThrottleFirstTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.before();
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private FlowableThrottleFirstTest implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableThrottleFirstTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableThrottleFirstTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableThrottleFirstTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableThrottleFirstTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableThrottleFirstTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableThrottleFirstTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableThrottleFirstTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public FlowableThrottleFirstTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement throttlingWithCompleted;
+
+            public org.junit.runners.model.Statement throttlingWithError;
+
+            public org.junit.runners.model.Statement throttle;
+
+            public org.junit.runners.model.Statement throttleFirstDefaultScheduler;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement badSource;
+
+            public org.junit.runners.model.Statement backpressureNoRequest;
+
+            public org.junit.runners.model.Statement badRequest;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.throttlingWithCompleted = _ClassStatement.forPayload(FlowableThrottleFirstTest::throttlingWithCompleted, "throttlingWithCompleted", this);
+            this.payloads.throttlingWithError = _ClassStatement.forPayload(FlowableThrottleFirstTest::throttlingWithError, "throttlingWithError", this);
+            this.payloads.throttle = _ClassStatement.forPayload(FlowableThrottleFirstTest::throttle, "throttle", this);
+            this.payloads.throttleFirstDefaultScheduler = _ClassStatement.forPayload(FlowableThrottleFirstTest::throttleFirstDefaultScheduler, "throttleFirstDefaultScheduler", this);
+            this.payloads.dispose = _ClassStatement.forPayload(FlowableThrottleFirstTest::dispose, "dispose", this);
+            this.payloads.badSource = _ClassStatement.forPayload(FlowableThrottleFirstTest::badSource, "badSource", this);
+            this.payloads.backpressureNoRequest = _ClassStatement.forPayload(FlowableThrottleFirstTest::backpressureNoRequest, "backpressureNoRequest", this);
+            this.payloads.badRequest = _ClassStatement.forPayload(FlowableThrottleFirstTest::badRequest, "badRequest", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableThrottleFirstTest::doubleOnSubscribe, "doubleOnSubscribe", this);
         }
     }
 }

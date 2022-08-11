@@ -166,60 +166,79 @@ public class MaybeSafeSubscribeTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private MaybeSafeSubscribeTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalSuccess, this.description("normalSuccess"));
+            this.runBenchmark(this.payloads.normalSuccess);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalError, this.description("normalError"));
+            this.runBenchmark(this.payloads.normalError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalEmpty, this.description("normalEmpty"));
+            this.runBenchmark(this.payloads.normalEmpty);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onSubscribeCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onSubscribeCrash, this.description("onSubscribeCrash"));
+            this.runBenchmark(this.payloads.onSubscribeCrash);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onSuccessCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onSuccessCrash, this.description("onSuccessCrash"));
+            this.runBenchmark(this.payloads.onSuccessCrash);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorCrash, this.description("onErrorCrash"));
+            this.runBenchmark(this.payloads.onErrorCrash);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onCompleteCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompleteCrash, this.description("onCompleteCrash"));
+            this.runBenchmark(this.payloads.onCompleteCrash);
         }
 
-        private MaybeSafeSubscribeTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeSafeSubscribeTest();
+        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeSafeSubscribeTest> payload) throws java.lang.Throwable {
+            this.instance = new MaybeSafeSubscribeTest();
+            payload.accept(this.instance);
         }
 
-        @java.lang.Override
-        public MaybeSafeSubscribeTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeSafeSubscribeTest> normalSuccess;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeSafeSubscribeTest> normalError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeSafeSubscribeTest> normalEmpty;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeSafeSubscribeTest> onSubscribeCrash;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeSafeSubscribeTest> onSuccessCrash;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeSafeSubscribeTest> onErrorCrash;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeSafeSubscribeTest> onCompleteCrash;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.normalSuccess = MaybeSafeSubscribeTest::normalSuccess;
+            this.payloads.normalError = MaybeSafeSubscribeTest::normalError;
+            this.payloads.normalEmpty = MaybeSafeSubscribeTest::normalEmpty;
+            this.payloads.onSubscribeCrash = MaybeSafeSubscribeTest::onSubscribeCrash;
+            this.payloads.onSuccessCrash = MaybeSafeSubscribeTest::onSuccessCrash;
+            this.payloads.onErrorCrash = MaybeSafeSubscribeTest::onErrorCrash;
+            this.payloads.onCompleteCrash = MaybeSafeSubscribeTest::onCompleteCrash;
         }
     }
 }

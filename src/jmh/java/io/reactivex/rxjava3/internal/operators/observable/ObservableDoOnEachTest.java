@@ -606,132 +606,222 @@ public class ObservableDoOnEachTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableDoOnEachTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnEach() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnEach, this.description("doOnEach"));
+            this.payloads.doOnEach.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnEachWithError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnEachWithError, this.description("doOnEachWithError"));
+            this.payloads.doOnEachWithError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doOnEachWithErrorInCallback() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doOnEachWithErrorInCallback, this.description("doOnEachWithErrorInCallback"));
+            this.payloads.doOnEachWithErrorInCallback.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_issue1451Case1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::issue1451Case1, this.description("issue1451Case1"));
+            this.payloads.issue1451Case1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_issue1451Case2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::issue1451Case2, this.description("issue1451Case2"));
+            this.payloads.issue1451Case2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorThrows, this.description("onErrorThrows"));
+            this.payloads.onErrorThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ignoreCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ignoreCancel, this.description("ignoreCancel"));
+            this.payloads.ignoreCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorAfterCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorAfterCrash, this.description("onErrorAfterCrash"));
+            this.payloads.onErrorAfterCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onCompleteAfterCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompleteAfterCrash, this.description("onCompleteAfterCrash"));
+            this.payloads.onCompleteAfterCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onCompleteCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompleteCrash, this.description("onCompleteCrash"));
+            this.payloads.onCompleteCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ignoreCancelConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ignoreCancelConditional, this.description("ignoreCancelConditional"));
+            this.payloads.ignoreCancelConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorAfterCrashConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorAfterCrashConditional, this.description("onErrorAfterCrashConditional"));
+            this.payloads.onErrorAfterCrashConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onCompleteAfter() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompleteAfter, this.description("onCompleteAfter"));
+            this.payloads.onCompleteAfter.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onCompleteAfterCrashConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompleteAfterCrashConditional, this.description("onCompleteAfterCrashConditional"));
+            this.payloads.onCompleteAfterCrashConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onCompleteCrashConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompleteCrashConditional, this.description("onCompleteCrashConditional"));
+            this.payloads.onCompleteCrashConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorOnErrorCrashConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorOnErrorCrashConditional, this.description("onErrorOnErrorCrashConditional"));
+            this.payloads.onErrorOnErrorCrashConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().before();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableDoOnEachTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableDoOnEachTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.before();
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private ObservableDoOnEachTest implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableDoOnEachTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableDoOnEachTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableDoOnEachTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableDoOnEachTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableDoOnEachTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableDoOnEachTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableDoOnEachTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public ObservableDoOnEachTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement doOnEach;
+
+            public org.junit.runners.model.Statement doOnEachWithError;
+
+            public org.junit.runners.model.Statement doOnEachWithErrorInCallback;
+
+            public org.junit.runners.model.Statement issue1451Case1;
+
+            public org.junit.runners.model.Statement issue1451Case2;
+
+            public org.junit.runners.model.Statement onErrorThrows;
+
+            public org.junit.runners.model.Statement ignoreCancel;
+
+            public org.junit.runners.model.Statement onErrorAfterCrash;
+
+            public org.junit.runners.model.Statement onCompleteAfterCrash;
+
+            public org.junit.runners.model.Statement onCompleteCrash;
+
+            public org.junit.runners.model.Statement ignoreCancelConditional;
+
+            public org.junit.runners.model.Statement onErrorAfterCrashConditional;
+
+            public org.junit.runners.model.Statement onCompleteAfter;
+
+            public org.junit.runners.model.Statement onCompleteAfterCrashConditional;
+
+            public org.junit.runners.model.Statement onCompleteCrashConditional;
+
+            public org.junit.runners.model.Statement onErrorOnErrorCrashConditional;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.doOnEach = _ClassStatement.forPayload(ObservableDoOnEachTest::doOnEach, "doOnEach", this);
+            this.payloads.doOnEachWithError = _ClassStatement.forPayload(ObservableDoOnEachTest::doOnEachWithError, "doOnEachWithError", this);
+            this.payloads.doOnEachWithErrorInCallback = _ClassStatement.forPayload(ObservableDoOnEachTest::doOnEachWithErrorInCallback, "doOnEachWithErrorInCallback", this);
+            this.payloads.issue1451Case1 = _ClassStatement.forPayload(ObservableDoOnEachTest::issue1451Case1, "issue1451Case1", this);
+            this.payloads.issue1451Case2 = _ClassStatement.forPayload(ObservableDoOnEachTest::issue1451Case2, "issue1451Case2", this);
+            this.payloads.onErrorThrows = _ClassStatement.forPayload(ObservableDoOnEachTest::onErrorThrows, "onErrorThrows", this);
+            this.payloads.ignoreCancel = _ClassStatement.forPayload(ObservableDoOnEachTest::ignoreCancel, "ignoreCancel", this);
+            this.payloads.onErrorAfterCrash = _ClassStatement.forPayload(ObservableDoOnEachTest::onErrorAfterCrash, "onErrorAfterCrash", this);
+            this.payloads.onCompleteAfterCrash = _ClassStatement.forPayload(ObservableDoOnEachTest::onCompleteAfterCrash, "onCompleteAfterCrash", this);
+            this.payloads.onCompleteCrash = _ClassStatement.forPayload(ObservableDoOnEachTest::onCompleteCrash, "onCompleteCrash", this);
+            this.payloads.ignoreCancelConditional = _ClassStatement.forPayload(ObservableDoOnEachTest::ignoreCancelConditional, "ignoreCancelConditional", this);
+            this.payloads.onErrorAfterCrashConditional = _ClassStatement.forPayload(ObservableDoOnEachTest::onErrorAfterCrashConditional, "onErrorAfterCrashConditional", this);
+            this.payloads.onCompleteAfter = _ClassStatement.forPayload(ObservableDoOnEachTest::onCompleteAfter, "onCompleteAfter", this);
+            this.payloads.onCompleteAfterCrashConditional = _ClassStatement.forPayload(ObservableDoOnEachTest::onCompleteAfterCrashConditional, "onCompleteAfterCrashConditional", this);
+            this.payloads.onCompleteCrashConditional = _ClassStatement.forPayload(ObservableDoOnEachTest::onCompleteCrashConditional, "onCompleteCrashConditional", this);
+            this.payloads.onErrorOnErrorCrashConditional = _ClassStatement.forPayload(ObservableDoOnEachTest::onErrorOnErrorCrashConditional, "onErrorOnErrorCrashConditional", this);
+            this.payloads.dispose = _ClassStatement.forPayload(ObservableDoOnEachTest::dispose, "dispose", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(ObservableDoOnEachTest::doubleOnSubscribe, "doubleOnSubscribe", this);
         }
     }
 }

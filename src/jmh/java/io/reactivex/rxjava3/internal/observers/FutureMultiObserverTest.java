@@ -36,32 +36,4 @@ public class FutureMultiObserverTest extends RxJavaTest {
         assertTrue(f.cancel(true));
         f.onComplete();
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_cancelBeforeOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelBeforeOnSubscribe, this.description("cancelBeforeOnSubscribe"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_onCompleteJustAfterDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompleteJustAfterDispose, this.description("onCompleteJustAfterDispose"));
-        }
-
-        private FutureMultiObserverTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FutureMultiObserverTest();
-        }
-
-        @java.lang.Override
-        public FutureMultiObserverTest implementation() {
-            return this.implementation;
-        }
-    }
 }

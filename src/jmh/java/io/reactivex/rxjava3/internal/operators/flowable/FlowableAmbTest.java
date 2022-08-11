@@ -584,216 +584,334 @@ public class FlowableAmbTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableAmbTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_amb() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::amb, this.description("amb"));
+            this.payloads.amb.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_amb2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::amb2, this.description("amb2"));
+            this.payloads.amb2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_amb3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::amb3, this.description("amb3"));
+            this.payloads.amb3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_producerRequestThroughAmb() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::producerRequestThroughAmb, this.description("producerRequestThroughAmb"));
+            this.payloads.producerRequestThroughAmb.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressure, this.description("backpressure"));
+            this.payloads.backpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_subscriptionOnlyHappensOnce() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::subscriptionOnlyHappensOnce, this.description("subscriptionOnlyHappensOnce"));
+            this.payloads.subscriptionOnlyHappensOnce.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_secondaryRequestsPropagatedToChildren() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::secondaryRequestsPropagatedToChildren, this.description("secondaryRequestsPropagatedToChildren"));
+            this.payloads.secondaryRequestsPropagatedToChildren.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_synchronousSources() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::synchronousSources, this.description("synchronousSources"));
+            this.payloads.synchronousSources.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambCancelsOthers() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambCancelsOthers, this.description("ambCancelsOthers"));
+            this.payloads.ambCancelsOthers.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_multipleUse() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::multipleUse, this.description("multipleUse"));
+            this.payloads.multipleUse.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambIterable, this.description("ambIterable"));
+            this.payloads.ambIterable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambIterable2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambIterable2, this.description("ambIterable2"));
+            this.payloads.ambIterable2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambArrayEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambArrayEmpty, this.description("ambArrayEmpty"));
+            this.payloads.ambArrayEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambArraySingleElement() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambArraySingleElement, this.description("ambArraySingleElement"));
+            this.payloads.ambArraySingleElement.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposed, this.description("disposed"));
+            this.payloads.disposed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_manySources() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::manySources, this.description("manySources"));
+            this.payloads.manySources.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyIterable, this.description("emptyIterable"));
+            this.payloads.emptyIterable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleIterable, this.description("singleIterable"));
+            this.payloads.singleIterable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onNextRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onNextRace, this.description("onNextRace"));
+            this.payloads.onNextRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onCompleteRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompleteRace, this.description("onCompleteRace"));
+            this.payloads.onCompleteRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorRace, this.description("onErrorRace"));
+            this.payloads.onErrorRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nullIterableElement() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nullIterableElement, this.description("nullIterableElement"));
+            this.payloads.nullIterableElement.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_iteratorThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::iteratorThrows, this.description("iteratorThrows"));
+            this.payloads.iteratorThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambWithOrder() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambWithOrder, this.description("ambWithOrder"));
+            this.payloads.ambWithOrder.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambIterableOrder() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambIterableOrder, this.description("ambIterableOrder"));
+            this.payloads.ambIterableOrder.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambArrayOrder() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambArrayOrder, this.description("ambArrayOrder"));
+            this.payloads.ambArrayOrder.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noWinnerSuccessDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noWinnerSuccessDispose, this.description("noWinnerSuccessDispose"));
+            this.payloads.noWinnerSuccessDispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noWinnerErrorDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noWinnerErrorDispose, this.description("noWinnerErrorDispose"));
+            this.payloads.noWinnerErrorDispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noWinnerCompleteDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noWinnerCompleteDispose, this.description("noWinnerCompleteDispose"));
+            this.payloads.noWinnerCompleteDispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_publishersInIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::publishersInIterable, this.description("publishersInIterable"));
+            this.payloads.publishersInIterable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequest, this.description("badRequest"));
+            this.payloads.badRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestAfterCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestAfterCancel, this.description("requestAfterCancel"));
+            this.payloads.requestAfterCancel.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().setUp();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableAmbTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableAmbTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.setUp();
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private FlowableAmbTest implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableAmbTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableAmbTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableAmbTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableAmbTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableAmbTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableAmbTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableAmbTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public FlowableAmbTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement amb;
+
+            public org.junit.runners.model.Statement amb2;
+
+            public org.junit.runners.model.Statement amb3;
+
+            public org.junit.runners.model.Statement producerRequestThroughAmb;
+
+            public org.junit.runners.model.Statement backpressure;
+
+            public org.junit.runners.model.Statement subscriptionOnlyHappensOnce;
+
+            public org.junit.runners.model.Statement secondaryRequestsPropagatedToChildren;
+
+            public org.junit.runners.model.Statement synchronousSources;
+
+            public org.junit.runners.model.Statement ambCancelsOthers;
+
+            public org.junit.runners.model.Statement multipleUse;
+
+            public org.junit.runners.model.Statement ambIterable;
+
+            public org.junit.runners.model.Statement ambIterable2;
+
+            public org.junit.runners.model.Statement ambArrayEmpty;
+
+            public org.junit.runners.model.Statement ambArraySingleElement;
+
+            public org.junit.runners.model.Statement disposed;
+
+            public org.junit.runners.model.Statement manySources;
+
+            public org.junit.runners.model.Statement emptyIterable;
+
+            public org.junit.runners.model.Statement singleIterable;
+
+            public org.junit.runners.model.Statement onNextRace;
+
+            public org.junit.runners.model.Statement onCompleteRace;
+
+            public org.junit.runners.model.Statement onErrorRace;
+
+            public org.junit.runners.model.Statement nullIterableElement;
+
+            public org.junit.runners.model.Statement iteratorThrows;
+
+            public org.junit.runners.model.Statement ambWithOrder;
+
+            public org.junit.runners.model.Statement ambIterableOrder;
+
+            public org.junit.runners.model.Statement ambArrayOrder;
+
+            public org.junit.runners.model.Statement noWinnerSuccessDispose;
+
+            public org.junit.runners.model.Statement noWinnerErrorDispose;
+
+            public org.junit.runners.model.Statement noWinnerCompleteDispose;
+
+            public org.junit.runners.model.Statement publishersInIterable;
+
+            public org.junit.runners.model.Statement badRequest;
+
+            public org.junit.runners.model.Statement requestAfterCancel;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.amb = _ClassStatement.forPayload(FlowableAmbTest::amb, "amb", this);
+            this.payloads.amb2 = _ClassStatement.forPayload(FlowableAmbTest::amb2, "amb2", this);
+            this.payloads.amb3 = _ClassStatement.forPayload(FlowableAmbTest::amb3, "amb3", this);
+            this.payloads.producerRequestThroughAmb = _ClassStatement.forPayload(FlowableAmbTest::producerRequestThroughAmb, "producerRequestThroughAmb", this);
+            this.payloads.backpressure = _ClassStatement.forPayload(FlowableAmbTest::backpressure, "backpressure", this);
+            this.payloads.subscriptionOnlyHappensOnce = _ClassStatement.forPayload(FlowableAmbTest::subscriptionOnlyHappensOnce, "subscriptionOnlyHappensOnce", this);
+            this.payloads.secondaryRequestsPropagatedToChildren = _ClassStatement.forPayload(FlowableAmbTest::secondaryRequestsPropagatedToChildren, "secondaryRequestsPropagatedToChildren", this);
+            this.payloads.synchronousSources = _ClassStatement.forPayload(FlowableAmbTest::synchronousSources, "synchronousSources", this);
+            this.payloads.ambCancelsOthers = _ClassStatement.forPayload(FlowableAmbTest::ambCancelsOthers, "ambCancelsOthers", this);
+            this.payloads.multipleUse = _ClassStatement.forPayload(FlowableAmbTest::multipleUse, "multipleUse", this);
+            this.payloads.ambIterable = _ClassStatement.forPayload(FlowableAmbTest::ambIterable, "ambIterable", this);
+            this.payloads.ambIterable2 = _ClassStatement.forPayload(FlowableAmbTest::ambIterable2, "ambIterable2", this);
+            this.payloads.ambArrayEmpty = _ClassStatement.forPayload(FlowableAmbTest::ambArrayEmpty, "ambArrayEmpty", this);
+            this.payloads.ambArraySingleElement = _ClassStatement.forPayload(FlowableAmbTest::ambArraySingleElement, "ambArraySingleElement", this);
+            this.payloads.disposed = _ClassStatement.forPayload(FlowableAmbTest::disposed, "disposed", this);
+            this.payloads.manySources = _ClassStatement.forPayload(FlowableAmbTest::manySources, "manySources", this);
+            this.payloads.emptyIterable = _ClassStatement.forPayload(FlowableAmbTest::emptyIterable, "emptyIterable", this);
+            this.payloads.singleIterable = _ClassStatement.forPayload(FlowableAmbTest::singleIterable, "singleIterable", this);
+            this.payloads.onNextRace = _ClassStatement.forPayload(FlowableAmbTest::onNextRace, "onNextRace", this);
+            this.payloads.onCompleteRace = _ClassStatement.forPayload(FlowableAmbTest::onCompleteRace, "onCompleteRace", this);
+            this.payloads.onErrorRace = _ClassStatement.forPayload(FlowableAmbTest::onErrorRace, "onErrorRace", this);
+            this.payloads.nullIterableElement = _ClassStatement.forPayload(FlowableAmbTest::nullIterableElement, "nullIterableElement", this);
+            this.payloads.iteratorThrows = _ClassStatement.forPayload(FlowableAmbTest::iteratorThrows, "iteratorThrows", this);
+            this.payloads.ambWithOrder = _ClassStatement.forPayload(FlowableAmbTest::ambWithOrder, "ambWithOrder", this);
+            this.payloads.ambIterableOrder = _ClassStatement.forPayload(FlowableAmbTest::ambIterableOrder, "ambIterableOrder", this);
+            this.payloads.ambArrayOrder = _ClassStatement.forPayload(FlowableAmbTest::ambArrayOrder, "ambArrayOrder", this);
+            this.payloads.noWinnerSuccessDispose = _ClassStatement.forPayload(FlowableAmbTest::noWinnerSuccessDispose, "noWinnerSuccessDispose", this);
+            this.payloads.noWinnerErrorDispose = _ClassStatement.forPayload(FlowableAmbTest::noWinnerErrorDispose, "noWinnerErrorDispose", this);
+            this.payloads.noWinnerCompleteDispose = _ClassStatement.forPayload(FlowableAmbTest::noWinnerCompleteDispose, "noWinnerCompleteDispose", this);
+            this.payloads.publishersInIterable = _ClassStatement.forPayload(FlowableAmbTest::publishersInIterable, "publishersInIterable", this);
+            this.payloads.badRequest = _ClassStatement.forPayload(FlowableAmbTest::badRequest, "badRequest", this);
+            this.payloads.requestAfterCancel = _ClassStatement.forPayload(FlowableAmbTest::requestAfterCancel, "requestAfterCancel", this);
         }
     }
 }

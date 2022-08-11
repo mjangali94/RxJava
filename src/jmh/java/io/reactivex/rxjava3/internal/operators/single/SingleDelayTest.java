@@ -221,162 +221,269 @@ public class SingleDelayTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private SingleDelayTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayOnSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayOnSuccess, this.description("delayOnSuccess"));
+            this.payloads.delayOnSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayOnError, this.description("delayOnError"));
+            this.payloads.delayOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayedErrorOnSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayedErrorOnSuccess, this.description("delayedErrorOnSuccess"));
+            this.payloads.delayedErrorOnSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayedErrorOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayedErrorOnError, this.description("delayedErrorOnError"));
+            this.payloads.delayedErrorOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delaySubscriptionCompletable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delaySubscriptionCompletable, this.description("delaySubscriptionCompletable"));
+            this.payloads.delaySubscriptionCompletable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delaySubscriptionObservable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delaySubscriptionObservable, this.description("delaySubscriptionObservable"));
+            this.payloads.delaySubscriptionObservable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delaySubscriptionFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delaySubscriptionFlowable, this.description("delaySubscriptionFlowable"));
+            this.payloads.delaySubscriptionFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delaySubscriptionSingle() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delaySubscriptionSingle, this.description("delaySubscriptionSingle"));
+            this.payloads.delaySubscriptionSingle.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delaySubscriptionTime() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delaySubscriptionTime, this.description("delaySubscriptionTime"));
+            this.payloads.delaySubscriptionTime.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delaySubscriptionTimeCustomScheduler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delaySubscriptionTimeCustomScheduler, this.description("delaySubscriptionTimeCustomScheduler"));
+            this.payloads.delaySubscriptionTimeCustomScheduler.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorCalledOnScheduler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorCalledOnScheduler, this.description("onErrorCalledOnScheduler"));
+            this.payloads.onErrorCalledOnScheduler.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withPublisherDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withPublisherDispose, this.description("withPublisherDispose"));
+            this.payloads.withPublisherDispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withPublisherError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withPublisherError, this.description("withPublisherError"));
+            this.payloads.withPublisherError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withPublisherError2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withPublisherError2, this.description("withPublisherError2"));
+            this.payloads.withPublisherError2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withObservableDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withObservableDispose, this.description("withObservableDispose"));
+            this.payloads.withObservableDispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withObservableError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withObservableError, this.description("withObservableError"));
+            this.payloads.withObservableError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withObservableError2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withObservableError2, this.description("withObservableError2"));
+            this.payloads.withObservableError2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withSingleErrors() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withSingleErrors, this.description("withSingleErrors"));
+            this.payloads.withSingleErrors.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withSingleDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withSingleDispose, this.description("withSingleDispose"));
+            this.payloads.withSingleDispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withCompletableDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withCompletableDispose, this.description("withCompletableDispose"));
+            this.payloads.withCompletableDispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withCompletableDoubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withCompletableDoubleOnSubscribe, this.description("withCompletableDoubleOnSubscribe"));
+            this.payloads.withCompletableDoubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withSingleDoubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withSingleDoubleOnSubscribe, this.description("withSingleDoubleOnSubscribe"));
+            this.payloads.withSingleDoubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withPublisherDoubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withPublisherDoubleOnSubscribe, this.description("withPublisherDoubleOnSubscribe"));
+            this.payloads.withPublisherDoubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withObservableDoubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withObservableDoubleOnSubscribe, this.description("withObservableDoubleOnSubscribe"));
+            this.payloads.withObservableDoubleOnSubscribe.evaluate();
         }
 
-        private SingleDelayTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SingleDelayTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<SingleDelayTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleDelayTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public SingleDelayTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<SingleDelayTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleDelayTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new SingleDelayTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleDelayTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(SingleDelayTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(SingleDelayTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement delayOnSuccess;
+
+            public org.junit.runners.model.Statement delayOnError;
+
+            public org.junit.runners.model.Statement delayedErrorOnSuccess;
+
+            public org.junit.runners.model.Statement delayedErrorOnError;
+
+            public org.junit.runners.model.Statement delaySubscriptionCompletable;
+
+            public org.junit.runners.model.Statement delaySubscriptionObservable;
+
+            public org.junit.runners.model.Statement delaySubscriptionFlowable;
+
+            public org.junit.runners.model.Statement delaySubscriptionSingle;
+
+            public org.junit.runners.model.Statement delaySubscriptionTime;
+
+            public org.junit.runners.model.Statement delaySubscriptionTimeCustomScheduler;
+
+            public org.junit.runners.model.Statement onErrorCalledOnScheduler;
+
+            public org.junit.runners.model.Statement withPublisherDispose;
+
+            public org.junit.runners.model.Statement withPublisherError;
+
+            public org.junit.runners.model.Statement withPublisherError2;
+
+            public org.junit.runners.model.Statement withObservableDispose;
+
+            public org.junit.runners.model.Statement withObservableError;
+
+            public org.junit.runners.model.Statement withObservableError2;
+
+            public org.junit.runners.model.Statement withSingleErrors;
+
+            public org.junit.runners.model.Statement withSingleDispose;
+
+            public org.junit.runners.model.Statement withCompletableDispose;
+
+            public org.junit.runners.model.Statement withCompletableDoubleOnSubscribe;
+
+            public org.junit.runners.model.Statement withSingleDoubleOnSubscribe;
+
+            public org.junit.runners.model.Statement withPublisherDoubleOnSubscribe;
+
+            public org.junit.runners.model.Statement withObservableDoubleOnSubscribe;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.delayOnSuccess = _ClassStatement.forPayload(SingleDelayTest::delayOnSuccess, "delayOnSuccess", this);
+            this.payloads.delayOnError = _ClassStatement.forPayload(SingleDelayTest::delayOnError, "delayOnError", this);
+            this.payloads.delayedErrorOnSuccess = _ClassStatement.forPayload(SingleDelayTest::delayedErrorOnSuccess, "delayedErrorOnSuccess", this);
+            this.payloads.delayedErrorOnError = _ClassStatement.forPayload(SingleDelayTest::delayedErrorOnError, "delayedErrorOnError", this);
+            this.payloads.delaySubscriptionCompletable = _ClassStatement.forPayload(SingleDelayTest::delaySubscriptionCompletable, "delaySubscriptionCompletable", this);
+            this.payloads.delaySubscriptionObservable = _ClassStatement.forPayload(SingleDelayTest::delaySubscriptionObservable, "delaySubscriptionObservable", this);
+            this.payloads.delaySubscriptionFlowable = _ClassStatement.forPayload(SingleDelayTest::delaySubscriptionFlowable, "delaySubscriptionFlowable", this);
+            this.payloads.delaySubscriptionSingle = _ClassStatement.forPayload(SingleDelayTest::delaySubscriptionSingle, "delaySubscriptionSingle", this);
+            this.payloads.delaySubscriptionTime = _ClassStatement.forPayload(SingleDelayTest::delaySubscriptionTime, "delaySubscriptionTime", this);
+            this.payloads.delaySubscriptionTimeCustomScheduler = _ClassStatement.forPayload(SingleDelayTest::delaySubscriptionTimeCustomScheduler, "delaySubscriptionTimeCustomScheduler", this);
+            this.payloads.onErrorCalledOnScheduler = _ClassStatement.forPayload(SingleDelayTest::onErrorCalledOnScheduler, "onErrorCalledOnScheduler", this);
+            this.payloads.withPublisherDispose = _ClassStatement.forPayload(SingleDelayTest::withPublisherDispose, "withPublisherDispose", this);
+            this.payloads.withPublisherError = _ClassStatement.forPayload(SingleDelayTest::withPublisherError, "withPublisherError", this);
+            this.payloads.withPublisherError2 = _ClassStatement.forPayload(SingleDelayTest::withPublisherError2, "withPublisherError2", this);
+            this.payloads.withObservableDispose = _ClassStatement.forPayload(SingleDelayTest::withObservableDispose, "withObservableDispose", this);
+            this.payloads.withObservableError = _ClassStatement.forPayload(SingleDelayTest::withObservableError, "withObservableError", this);
+            this.payloads.withObservableError2 = _ClassStatement.forPayload(SingleDelayTest::withObservableError2, "withObservableError2", this);
+            this.payloads.withSingleErrors = _ClassStatement.forPayload(SingleDelayTest::withSingleErrors, "withSingleErrors", this);
+            this.payloads.withSingleDispose = _ClassStatement.forPayload(SingleDelayTest::withSingleDispose, "withSingleDispose", this);
+            this.payloads.withCompletableDispose = _ClassStatement.forPayload(SingleDelayTest::withCompletableDispose, "withCompletableDispose", this);
+            this.payloads.withCompletableDoubleOnSubscribe = _ClassStatement.forPayload(SingleDelayTest::withCompletableDoubleOnSubscribe, "withCompletableDoubleOnSubscribe", this);
+            this.payloads.withSingleDoubleOnSubscribe = _ClassStatement.forPayload(SingleDelayTest::withSingleDoubleOnSubscribe, "withSingleDoubleOnSubscribe", this);
+            this.payloads.withPublisherDoubleOnSubscribe = _ClassStatement.forPayload(SingleDelayTest::withPublisherDoubleOnSubscribe, "withPublisherDoubleOnSubscribe", this);
+            this.payloads.withObservableDoubleOnSubscribe = _ClassStatement.forPayload(SingleDelayTest::withObservableDoubleOnSubscribe, "withObservableDoubleOnSubscribe", this);
         }
     }
 }

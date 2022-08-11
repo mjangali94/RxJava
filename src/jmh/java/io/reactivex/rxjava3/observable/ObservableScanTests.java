@@ -39,26 +39,4 @@ public class ObservableScanTests extends RxJavaTest {
         // make sure the event streams receive their interrupt
         Thread.sleep(200);
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_unsubscribeScan() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribeScan, this.description("unsubscribeScan"));
-        }
-
-        private ObservableScanTests implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableScanTests();
-        }
-
-        @java.lang.Override
-        public ObservableScanTests implementation() {
-            return this.implementation;
-        }
-    }
 }

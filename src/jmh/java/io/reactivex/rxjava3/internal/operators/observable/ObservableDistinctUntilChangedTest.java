@@ -214,84 +214,158 @@ public class ObservableDistinctUntilChangedTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableDistinctUntilChangedTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_distinctUntilChangedOfNone() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::distinctUntilChangedOfNone, this.description("distinctUntilChangedOfNone"));
+            this.payloads.distinctUntilChangedOfNone.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_distinctUntilChangedOfNoneWithKeySelector() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::distinctUntilChangedOfNoneWithKeySelector, this.description("distinctUntilChangedOfNoneWithKeySelector"));
+            this.payloads.distinctUntilChangedOfNoneWithKeySelector.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_distinctUntilChangedOfNormalSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::distinctUntilChangedOfNormalSource, this.description("distinctUntilChangedOfNormalSource"));
+            this.payloads.distinctUntilChangedOfNormalSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_distinctUntilChangedOfNormalSourceWithKeySelector() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::distinctUntilChangedOfNormalSourceWithKeySelector, this.description("distinctUntilChangedOfNormalSourceWithKeySelector"));
+            this.payloads.distinctUntilChangedOfNormalSourceWithKeySelector.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_customComparator() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::customComparator, this.description("customComparator"));
+            this.payloads.customComparator.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_customComparatorThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::customComparatorThrows, this.description("customComparatorThrows"));
+            this.payloads.customComparatorThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fused() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fused, this.description("fused"));
+            this.payloads.fused.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedAsync, this.description("fusedAsync"));
+            this.payloads.fusedAsync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ignoreCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ignoreCancel, this.description("ignoreCancel"));
+            this.payloads.ignoreCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mutableWithSelector() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mutableWithSelector, this.description("mutableWithSelector"));
+            this.payloads.mutableWithSelector.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().before();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableDistinctUntilChangedTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableDistinctUntilChangedTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.before();
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private ObservableDistinctUntilChangedTest implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableDistinctUntilChangedTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableDistinctUntilChangedTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableDistinctUntilChangedTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableDistinctUntilChangedTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableDistinctUntilChangedTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableDistinctUntilChangedTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableDistinctUntilChangedTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public ObservableDistinctUntilChangedTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement distinctUntilChangedOfNone;
+
+            public org.junit.runners.model.Statement distinctUntilChangedOfNoneWithKeySelector;
+
+            public org.junit.runners.model.Statement distinctUntilChangedOfNormalSource;
+
+            public org.junit.runners.model.Statement distinctUntilChangedOfNormalSourceWithKeySelector;
+
+            public org.junit.runners.model.Statement customComparator;
+
+            public org.junit.runners.model.Statement customComparatorThrows;
+
+            public org.junit.runners.model.Statement fused;
+
+            public org.junit.runners.model.Statement fusedAsync;
+
+            public org.junit.runners.model.Statement ignoreCancel;
+
+            public org.junit.runners.model.Statement mutableWithSelector;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.distinctUntilChangedOfNone = _ClassStatement.forPayload(ObservableDistinctUntilChangedTest::distinctUntilChangedOfNone, "distinctUntilChangedOfNone", this);
+            this.payloads.distinctUntilChangedOfNoneWithKeySelector = _ClassStatement.forPayload(ObservableDistinctUntilChangedTest::distinctUntilChangedOfNoneWithKeySelector, "distinctUntilChangedOfNoneWithKeySelector", this);
+            this.payloads.distinctUntilChangedOfNormalSource = _ClassStatement.forPayload(ObservableDistinctUntilChangedTest::distinctUntilChangedOfNormalSource, "distinctUntilChangedOfNormalSource", this);
+            this.payloads.distinctUntilChangedOfNormalSourceWithKeySelector = _ClassStatement.forPayload(ObservableDistinctUntilChangedTest::distinctUntilChangedOfNormalSourceWithKeySelector, "distinctUntilChangedOfNormalSourceWithKeySelector", this);
+            this.payloads.customComparator = _ClassStatement.forPayload(ObservableDistinctUntilChangedTest::customComparator, "customComparator", this);
+            this.payloads.customComparatorThrows = _ClassStatement.forPayload(ObservableDistinctUntilChangedTest::customComparatorThrows, "customComparatorThrows", this);
+            this.payloads.fused = _ClassStatement.forPayload(ObservableDistinctUntilChangedTest::fused, "fused", this);
+            this.payloads.fusedAsync = _ClassStatement.forPayload(ObservableDistinctUntilChangedTest::fusedAsync, "fusedAsync", this);
+            this.payloads.ignoreCancel = _ClassStatement.forPayload(ObservableDistinctUntilChangedTest::ignoreCancel, "ignoreCancel", this);
+            this.payloads.mutableWithSelector = _ClassStatement.forPayload(ObservableDistinctUntilChangedTest::mutableWithSelector, "mutableWithSelector", this);
         }
     }
 }

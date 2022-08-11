@@ -76,38 +76,4 @@ public class NewThreadSchedulerTest extends AbstractSchedulerConcurrencyTests {
             }
         }, 0, TimeUnit.MILLISECONDS, null);
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.schedulers.AbstractSchedulerConcurrencyTests._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_handledErrorIsNotDeliveredToThreadHandler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::handledErrorIsNotDeliveredToThreadHandler, this.description("handledErrorIsNotDeliveredToThreadHandler"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_shutdownRejects() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::shutdownRejects, this.description("shutdownRejects"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_npeRegression() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::npeRegression, this.description("npeRegression"));
-        }
-
-        private NewThreadSchedulerTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new NewThreadSchedulerTest();
-        }
-
-        @java.lang.Override
-        public NewThreadSchedulerTest implementation() {
-            return this.implementation;
-        }
-    }
 }

@@ -98,66 +98,141 @@ public class FlowableBlockingStreamTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableBlockingStreamTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_empty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::empty, this.description("empty"));
+            this.payloads.empty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_just() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::just, this.description("just"));
+            this.payloads.just.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_range() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::range, this.description("range"));
+            this.payloads.range.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rangeBackpressured() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rangeBackpressured, this.description("rangeBackpressured"));
+            this.payloads.rangeBackpressured.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rangeAsyncBackpressured() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rangeAsyncBackpressured, this.description("rangeAsyncBackpressured"));
+            this.payloads.rangeAsyncBackpressured.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rangeAsyncBackpressured1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rangeAsyncBackpressured1, this.description("rangeAsyncBackpressured1"));
+            this.payloads.rangeAsyncBackpressured1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_close() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::close, this.description("close"));
+            this.payloads.close.evaluate();
         }
 
-        private FlowableBlockingStreamTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableBlockingStreamTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableBlockingStreamTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableBlockingStreamTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableBlockingStreamTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableBlockingStreamTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableBlockingStreamTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableBlockingStreamTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableBlockingStreamTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableBlockingStreamTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableBlockingStreamTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement empty;
+
+            public org.junit.runners.model.Statement just;
+
+            public org.junit.runners.model.Statement range;
+
+            public org.junit.runners.model.Statement rangeBackpressured;
+
+            public org.junit.runners.model.Statement rangeAsyncBackpressured;
+
+            public org.junit.runners.model.Statement rangeAsyncBackpressured1;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement close;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.empty = _ClassStatement.forPayload(FlowableBlockingStreamTest::empty, "empty", this);
+            this.payloads.just = _ClassStatement.forPayload(FlowableBlockingStreamTest::just, "just", this);
+            this.payloads.range = _ClassStatement.forPayload(FlowableBlockingStreamTest::range, "range", this);
+            this.payloads.rangeBackpressured = _ClassStatement.forPayload(FlowableBlockingStreamTest::rangeBackpressured, "rangeBackpressured", this);
+            this.payloads.rangeAsyncBackpressured = _ClassStatement.forPayload(FlowableBlockingStreamTest::rangeAsyncBackpressured, "rangeAsyncBackpressured", this);
+            this.payloads.rangeAsyncBackpressured1 = _ClassStatement.forPayload(FlowableBlockingStreamTest::rangeAsyncBackpressured1, "rangeAsyncBackpressured1", this);
+            this.payloads.error = _ClassStatement.forPayload(FlowableBlockingStreamTest::error, "error", this);
+            this.payloads.close = _ClassStatement.forPayload(FlowableBlockingStreamTest::close, "close", this);
         }
     }
 }

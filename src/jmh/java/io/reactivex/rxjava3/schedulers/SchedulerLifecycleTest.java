@@ -115,32 +115,4 @@ public class SchedulerLifecycleTest extends RxJavaTest {
         rxThreadsAfter.removeAll(rxThreadsBefore);
         Assert.assertTrue("Some new threads appeared: " + rxThreadsAfter, rxThreadsAfter.isEmpty());
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_shutdown() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::shutdown, this.description("shutdown"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_startIdempotence() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::startIdempotence, this.description("startIdempotence"));
-        }
-
-        private SchedulerLifecycleTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SchedulerLifecycleTest();
-        }
-
-        @java.lang.Override
-        public SchedulerLifecycleTest implementation() {
-            return this.implementation;
-        }
-    }
 }

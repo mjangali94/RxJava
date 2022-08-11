@@ -53,26 +53,4 @@ public class DefaultSubscriberTest extends RxJavaTest {
         Flowable.range(1, 10).subscribe(sub);
         assertEquals(Collections.emptyList(), sub.events);
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_requestUpfront() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestUpfront, this.description("requestUpfront"));
-        }
-
-        private DefaultSubscriberTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new DefaultSubscriberTest();
-        }
-
-        @java.lang.Override
-        public DefaultSubscriberTest implementation() {
-            return this.implementation;
-        }
-    }
 }

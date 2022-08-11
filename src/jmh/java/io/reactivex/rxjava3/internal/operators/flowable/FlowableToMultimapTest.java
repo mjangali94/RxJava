@@ -472,120 +472,206 @@ public class FlowableToMultimapTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableToMultimapTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapFlowable, this.description("toMultimapFlowable"));
+            this.payloads.toMultimapFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapWithValueSelectorFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapWithValueSelectorFlowable, this.description("toMultimapWithValueSelectorFlowable"));
+            this.payloads.toMultimapWithValueSelectorFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapWithMapFactoryFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapWithMapFactoryFlowable, this.description("toMultimapWithMapFactoryFlowable"));
+            this.payloads.toMultimapWithMapFactoryFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapWithCollectionFactoryFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapWithCollectionFactoryFlowable, this.description("toMultimapWithCollectionFactoryFlowable"));
+            this.payloads.toMultimapWithCollectionFactoryFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapWithErrorFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapWithErrorFlowable, this.description("toMultimapWithErrorFlowable"));
+            this.payloads.toMultimapWithErrorFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapWithErrorInValueSelectorFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapWithErrorInValueSelectorFlowable, this.description("toMultimapWithErrorInValueSelectorFlowable"));
+            this.payloads.toMultimapWithErrorInValueSelectorFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapWithMapThrowingFactoryFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapWithMapThrowingFactoryFlowable, this.description("toMultimapWithMapThrowingFactoryFlowable"));
+            this.payloads.toMultimapWithMapThrowingFactoryFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapWithThrowingCollectionFactoryFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapWithThrowingCollectionFactoryFlowable, this.description("toMultimapWithThrowingCollectionFactoryFlowable"));
+            this.payloads.toMultimapWithThrowingCollectionFactoryFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimap() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimap, this.description("toMultimap"));
+            this.payloads.toMultimap.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapWithValueSelector() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapWithValueSelector, this.description("toMultimapWithValueSelector"));
+            this.payloads.toMultimapWithValueSelector.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapWithMapFactory() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapWithMapFactory, this.description("toMultimapWithMapFactory"));
+            this.payloads.toMultimapWithMapFactory.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapWithCollectionFactory() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapWithCollectionFactory, this.description("toMultimapWithCollectionFactory"));
+            this.payloads.toMultimapWithCollectionFactory.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapWithError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapWithError, this.description("toMultimapWithError"));
+            this.payloads.toMultimapWithError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapWithErrorInValueSelector() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapWithErrorInValueSelector, this.description("toMultimapWithErrorInValueSelector"));
+            this.payloads.toMultimapWithErrorInValueSelector.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapWithMapThrowingFactory() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapWithMapThrowingFactory, this.description("toMultimapWithMapThrowingFactory"));
+            this.payloads.toMultimapWithMapThrowingFactory.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMultimapWithThrowingCollectionFactory() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toMultimapWithThrowingCollectionFactory, this.description("toMultimapWithThrowingCollectionFactory"));
+            this.payloads.toMultimapWithThrowingCollectionFactory.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().before();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableToMultimapTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableToMultimapTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.before();
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private FlowableToMultimapTest implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableToMultimapTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableToMultimapTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableToMultimapTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableToMultimapTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableToMultimapTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableToMultimapTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableToMultimapTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public FlowableToMultimapTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement toMultimapFlowable;
+
+            public org.junit.runners.model.Statement toMultimapWithValueSelectorFlowable;
+
+            public org.junit.runners.model.Statement toMultimapWithMapFactoryFlowable;
+
+            public org.junit.runners.model.Statement toMultimapWithCollectionFactoryFlowable;
+
+            public org.junit.runners.model.Statement toMultimapWithErrorFlowable;
+
+            public org.junit.runners.model.Statement toMultimapWithErrorInValueSelectorFlowable;
+
+            public org.junit.runners.model.Statement toMultimapWithMapThrowingFactoryFlowable;
+
+            public org.junit.runners.model.Statement toMultimapWithThrowingCollectionFactoryFlowable;
+
+            public org.junit.runners.model.Statement toMultimap;
+
+            public org.junit.runners.model.Statement toMultimapWithValueSelector;
+
+            public org.junit.runners.model.Statement toMultimapWithMapFactory;
+
+            public org.junit.runners.model.Statement toMultimapWithCollectionFactory;
+
+            public org.junit.runners.model.Statement toMultimapWithError;
+
+            public org.junit.runners.model.Statement toMultimapWithErrorInValueSelector;
+
+            public org.junit.runners.model.Statement toMultimapWithMapThrowingFactory;
+
+            public org.junit.runners.model.Statement toMultimapWithThrowingCollectionFactory;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.toMultimapFlowable = _ClassStatement.forPayload(FlowableToMultimapTest::toMultimapFlowable, "toMultimapFlowable", this);
+            this.payloads.toMultimapWithValueSelectorFlowable = _ClassStatement.forPayload(FlowableToMultimapTest::toMultimapWithValueSelectorFlowable, "toMultimapWithValueSelectorFlowable", this);
+            this.payloads.toMultimapWithMapFactoryFlowable = _ClassStatement.forPayload(FlowableToMultimapTest::toMultimapWithMapFactoryFlowable, "toMultimapWithMapFactoryFlowable", this);
+            this.payloads.toMultimapWithCollectionFactoryFlowable = _ClassStatement.forPayload(FlowableToMultimapTest::toMultimapWithCollectionFactoryFlowable, "toMultimapWithCollectionFactoryFlowable", this);
+            this.payloads.toMultimapWithErrorFlowable = _ClassStatement.forPayload(FlowableToMultimapTest::toMultimapWithErrorFlowable, "toMultimapWithErrorFlowable", this);
+            this.payloads.toMultimapWithErrorInValueSelectorFlowable = _ClassStatement.forPayload(FlowableToMultimapTest::toMultimapWithErrorInValueSelectorFlowable, "toMultimapWithErrorInValueSelectorFlowable", this);
+            this.payloads.toMultimapWithMapThrowingFactoryFlowable = _ClassStatement.forPayload(FlowableToMultimapTest::toMultimapWithMapThrowingFactoryFlowable, "toMultimapWithMapThrowingFactoryFlowable", this);
+            this.payloads.toMultimapWithThrowingCollectionFactoryFlowable = _ClassStatement.forPayload(FlowableToMultimapTest::toMultimapWithThrowingCollectionFactoryFlowable, "toMultimapWithThrowingCollectionFactoryFlowable", this);
+            this.payloads.toMultimap = _ClassStatement.forPayload(FlowableToMultimapTest::toMultimap, "toMultimap", this);
+            this.payloads.toMultimapWithValueSelector = _ClassStatement.forPayload(FlowableToMultimapTest::toMultimapWithValueSelector, "toMultimapWithValueSelector", this);
+            this.payloads.toMultimapWithMapFactory = _ClassStatement.forPayload(FlowableToMultimapTest::toMultimapWithMapFactory, "toMultimapWithMapFactory", this);
+            this.payloads.toMultimapWithCollectionFactory = _ClassStatement.forPayload(FlowableToMultimapTest::toMultimapWithCollectionFactory, "toMultimapWithCollectionFactory", this);
+            this.payloads.toMultimapWithError = _ClassStatement.forPayload(FlowableToMultimapTest::toMultimapWithError, "toMultimapWithError", this);
+            this.payloads.toMultimapWithErrorInValueSelector = _ClassStatement.forPayload(FlowableToMultimapTest::toMultimapWithErrorInValueSelector, "toMultimapWithErrorInValueSelector", this);
+            this.payloads.toMultimapWithMapThrowingFactory = _ClassStatement.forPayload(FlowableToMultimapTest::toMultimapWithMapThrowingFactory, "toMultimapWithMapThrowingFactory", this);
+            this.payloads.toMultimapWithThrowingCollectionFactory = _ClassStatement.forPayload(FlowableToMultimapTest::toMultimapWithThrowingCollectionFactory, "toMultimapWithThrowingCollectionFactory", this);
         }
     }
 }

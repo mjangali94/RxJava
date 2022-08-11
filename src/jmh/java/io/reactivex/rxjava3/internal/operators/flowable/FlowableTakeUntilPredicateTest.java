@@ -199,84 +199,165 @@ public class FlowableTakeUntilPredicateTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableTakeUntilPredicateTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeEmpty, this.description("takeEmpty"));
+            this.payloads.takeEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeAll() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeAll, this.description("takeAll"));
+            this.payloads.takeAll.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeFirst() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeFirst, this.description("takeFirst"));
+            this.payloads.takeFirst.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeSome() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeSome, this.description("takeSome"));
+            this.payloads.takeSome.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_functionThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::functionThrows, this.description("functionThrows"));
+            this.payloads.functionThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sourceThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sourceThrows, this.description("sourceThrows"));
+            this.payloads.sourceThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressure, this.description("backpressure"));
+            this.payloads.backpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorIncludesLastValueAsCause() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorIncludesLastValueAsCause, this.description("errorIncludesLastValueAsCause"));
+            this.payloads.errorIncludesLastValueAsCause.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSource, this.description("badSource"));
+            this.payloads.badSource.evaluate();
         }
 
-        private FlowableTakeUntilPredicateTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableTakeUntilPredicateTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTakeUntilPredicateTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTakeUntilPredicateTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableTakeUntilPredicateTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTakeUntilPredicateTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTakeUntilPredicateTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableTakeUntilPredicateTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableTakeUntilPredicateTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableTakeUntilPredicateTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableTakeUntilPredicateTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement takeEmpty;
+
+            public org.junit.runners.model.Statement takeAll;
+
+            public org.junit.runners.model.Statement takeFirst;
+
+            public org.junit.runners.model.Statement takeSome;
+
+            public org.junit.runners.model.Statement functionThrows;
+
+            public org.junit.runners.model.Statement sourceThrows;
+
+            public org.junit.runners.model.Statement backpressure;
+
+            public org.junit.runners.model.Statement errorIncludesLastValueAsCause;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement badSource;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.takeEmpty = _ClassStatement.forPayload(FlowableTakeUntilPredicateTest::takeEmpty, "takeEmpty", this);
+            this.payloads.takeAll = _ClassStatement.forPayload(FlowableTakeUntilPredicateTest::takeAll, "takeAll", this);
+            this.payloads.takeFirst = _ClassStatement.forPayload(FlowableTakeUntilPredicateTest::takeFirst, "takeFirst", this);
+            this.payloads.takeSome = _ClassStatement.forPayload(FlowableTakeUntilPredicateTest::takeSome, "takeSome", this);
+            this.payloads.functionThrows = _ClassStatement.forPayload(FlowableTakeUntilPredicateTest::functionThrows, "functionThrows", this);
+            this.payloads.sourceThrows = _ClassStatement.forPayload(FlowableTakeUntilPredicateTest::sourceThrows, "sourceThrows", this);
+            this.payloads.backpressure = _ClassStatement.forPayload(FlowableTakeUntilPredicateTest::backpressure, "backpressure", this);
+            this.payloads.errorIncludesLastValueAsCause = _ClassStatement.forPayload(FlowableTakeUntilPredicateTest::errorIncludesLastValueAsCause, "errorIncludesLastValueAsCause", this);
+            this.payloads.dispose = _ClassStatement.forPayload(FlowableTakeUntilPredicateTest::dispose, "dispose", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableTakeUntilPredicateTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.badSource = _ClassStatement.forPayload(FlowableTakeUntilPredicateTest::badSource, "badSource", this);
         }
     }
 }

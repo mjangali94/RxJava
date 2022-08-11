@@ -25,26 +25,4 @@ public class ParameterNamesInClassesTest {
     public void javacParametersEnabled() throws Exception {
         assertEquals("Please enable saving parameter names via the -parameters javac argument", "paramName", getClass().getDeclaredMethod("method", Integer.TYPE).getParameters()[0].getName());
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_javacParametersEnabled() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::javacParametersEnabled, this.description("javacParametersEnabled"));
-        }
-
-        private ParameterNamesInClassesTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ParameterNamesInClassesTest();
-        }
-
-        @java.lang.Override
-        public ParameterNamesInClassesTest implementation() {
-            return this.implementation;
-        }
-    }
 }

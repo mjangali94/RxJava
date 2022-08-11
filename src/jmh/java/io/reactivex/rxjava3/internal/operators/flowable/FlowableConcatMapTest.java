@@ -281,108 +281,197 @@ public class FlowableConcatMapTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableConcatMapTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_simpleSubscriptionRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::simpleSubscriptionRequest, this.description("simpleSubscriptionRequest"));
+            this.payloads.simpleSubscriptionRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundaryFusion() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundaryFusion, this.description("boundaryFusion"));
+            this.payloads.boundaryFusion.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerScalarRequestRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerScalarRequestRace, this.description("innerScalarRequestRace"));
+            this.payloads.innerScalarRequestRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerScalarRequestRaceDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerScalarRequestRaceDelayError, this.description("innerScalarRequestRaceDelayError"));
+            this.payloads.innerScalarRequestRaceDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundaryFusionDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundaryFusionDelayError, this.description("boundaryFusionDelayError"));
+            this.payloads.boundaryFusionDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_pollThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::pollThrows, this.description("pollThrows"));
+            this.payloads.pollThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_pollThrowsDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::pollThrowsDelayError, this.description("pollThrowsDelayError"));
+            this.payloads.pollThrowsDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noCancelPrevious() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noCancelPrevious, this.description("noCancelPrevious"));
+            this.payloads.noCancelPrevious.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayErrorCallableTillTheEnd() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayErrorCallableTillTheEnd, this.description("delayErrorCallableTillTheEnd"));
+            this.payloads.delayErrorCallableTillTheEnd.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayErrorCallableEager() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayErrorCallableEager, this.description("delayErrorCallableEager"));
+            this.payloads.delayErrorCallableEager.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_undeliverableUponCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::undeliverableUponCancel, this.description("undeliverableUponCancel"));
+            this.payloads.undeliverableUponCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_undeliverableUponCancelDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::undeliverableUponCancelDelayError, this.description("undeliverableUponCancelDelayError"));
+            this.payloads.undeliverableUponCancelDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_undeliverableUponCancelDelayErrorTillEnd() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::undeliverableUponCancelDelayErrorTillEnd, this.description("undeliverableUponCancelDelayErrorTillEnd"));
+            this.payloads.undeliverableUponCancelDelayErrorTillEnd.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncFusedSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncFusedSource, this.description("asyncFusedSource"));
+            this.payloads.asyncFusedSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scalarCallableSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scalarCallableSource, this.description("scalarCallableSource"));
+            this.payloads.scalarCallableSource.evaluate();
         }
 
-        private FlowableConcatMapTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableConcatMapTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatMapTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatMapTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableConcatMapTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatMapTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatMapTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableConcatMapTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatMapTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableConcatMapTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableConcatMapTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement simpleSubscriptionRequest;
+
+            public org.junit.runners.model.Statement boundaryFusion;
+
+            public org.junit.runners.model.Statement innerScalarRequestRace;
+
+            public org.junit.runners.model.Statement innerScalarRequestRaceDelayError;
+
+            public org.junit.runners.model.Statement boundaryFusionDelayError;
+
+            public org.junit.runners.model.Statement pollThrows;
+
+            public org.junit.runners.model.Statement pollThrowsDelayError;
+
+            public org.junit.runners.model.Statement noCancelPrevious;
+
+            public org.junit.runners.model.Statement delayErrorCallableTillTheEnd;
+
+            public org.junit.runners.model.Statement delayErrorCallableEager;
+
+            public org.junit.runners.model.Statement undeliverableUponCancel;
+
+            public org.junit.runners.model.Statement undeliverableUponCancelDelayError;
+
+            public org.junit.runners.model.Statement undeliverableUponCancelDelayErrorTillEnd;
+
+            public org.junit.runners.model.Statement asyncFusedSource;
+
+            public org.junit.runners.model.Statement scalarCallableSource;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.simpleSubscriptionRequest = _ClassStatement.forPayload(FlowableConcatMapTest::simpleSubscriptionRequest, "simpleSubscriptionRequest", this);
+            this.payloads.boundaryFusion = _ClassStatement.forPayload(FlowableConcatMapTest::boundaryFusion, "boundaryFusion", this);
+            this.payloads.innerScalarRequestRace = _ClassStatement.forPayload(FlowableConcatMapTest::innerScalarRequestRace, "innerScalarRequestRace", this);
+            this.payloads.innerScalarRequestRaceDelayError = _ClassStatement.forPayload(FlowableConcatMapTest::innerScalarRequestRaceDelayError, "innerScalarRequestRaceDelayError", this);
+            this.payloads.boundaryFusionDelayError = _ClassStatement.forPayload(FlowableConcatMapTest::boundaryFusionDelayError, "boundaryFusionDelayError", this);
+            this.payloads.pollThrows = _ClassStatement.forPayload(FlowableConcatMapTest::pollThrows, "pollThrows", this);
+            this.payloads.pollThrowsDelayError = _ClassStatement.forPayload(FlowableConcatMapTest::pollThrowsDelayError, "pollThrowsDelayError", this);
+            this.payloads.noCancelPrevious = _ClassStatement.forPayload(FlowableConcatMapTest::noCancelPrevious, "noCancelPrevious", this);
+            this.payloads.delayErrorCallableTillTheEnd = _ClassStatement.forPayload(FlowableConcatMapTest::delayErrorCallableTillTheEnd, "delayErrorCallableTillTheEnd", this);
+            this.payloads.delayErrorCallableEager = _ClassStatement.forPayload(FlowableConcatMapTest::delayErrorCallableEager, "delayErrorCallableEager", this);
+            this.payloads.undeliverableUponCancel = _ClassStatement.forPayload(FlowableConcatMapTest::undeliverableUponCancel, "undeliverableUponCancel", this);
+            this.payloads.undeliverableUponCancelDelayError = _ClassStatement.forPayload(FlowableConcatMapTest::undeliverableUponCancelDelayError, "undeliverableUponCancelDelayError", this);
+            this.payloads.undeliverableUponCancelDelayErrorTillEnd = _ClassStatement.forPayload(FlowableConcatMapTest::undeliverableUponCancelDelayErrorTillEnd, "undeliverableUponCancelDelayErrorTillEnd", this);
+            this.payloads.asyncFusedSource = _ClassStatement.forPayload(FlowableConcatMapTest::asyncFusedSource, "asyncFusedSource", this);
+            this.payloads.scalarCallableSource = _ClassStatement.forPayload(FlowableConcatMapTest::scalarCallableSource, "scalarCallableSource", this);
         }
     }
 }

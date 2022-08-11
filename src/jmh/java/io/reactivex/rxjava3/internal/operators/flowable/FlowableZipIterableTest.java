@@ -376,108 +376,190 @@ public class FlowableZipIterableTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableZipIterableTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipIterableSameSize() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zipIterableSameSize, this.description("zipIterableSameSize"));
+            this.payloads.zipIterableSameSize.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipIterableEmptyFirstSize() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zipIterableEmptyFirstSize, this.description("zipIterableEmptyFirstSize"));
+            this.payloads.zipIterableEmptyFirstSize.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipIterableEmptySecond() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zipIterableEmptySecond, this.description("zipIterableEmptySecond"));
+            this.payloads.zipIterableEmptySecond.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipIterableFirstShorter() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zipIterableFirstShorter, this.description("zipIterableFirstShorter"));
+            this.payloads.zipIterableFirstShorter.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipIterableSecondShorter() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zipIterableSecondShorter, this.description("zipIterableSecondShorter"));
+            this.payloads.zipIterableSecondShorter.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipIterableFirstThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zipIterableFirstThrows, this.description("zipIterableFirstThrows"));
+            this.payloads.zipIterableFirstThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipIterableIteratorThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zipIterableIteratorThrows, this.description("zipIterableIteratorThrows"));
+            this.payloads.zipIterableIteratorThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipIterableHasNextThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zipIterableHasNextThrows, this.description("zipIterableHasNextThrows"));
+            this.payloads.zipIterableHasNextThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zipIterableNextThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zipIterableNextThrows, this.description("zipIterableNextThrows"));
+            this.payloads.zipIterableNextThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_take2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::take2, this.description("take2"));
+            this.payloads.take2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_iteratorThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::iteratorThrows, this.description("iteratorThrows"));
+            this.payloads.iteratorThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSource, this.description("badSource"));
+            this.payloads.badSource.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().setUp();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableZipIterableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableZipIterableTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.setUp();
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private FlowableZipIterableTest implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableZipIterableTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableZipIterableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableZipIterableTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableZipIterableTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableZipIterableTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableZipIterableTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableZipIterableTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public FlowableZipIterableTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement zipIterableSameSize;
+
+            public org.junit.runners.model.Statement zipIterableEmptyFirstSize;
+
+            public org.junit.runners.model.Statement zipIterableEmptySecond;
+
+            public org.junit.runners.model.Statement zipIterableFirstShorter;
+
+            public org.junit.runners.model.Statement zipIterableSecondShorter;
+
+            public org.junit.runners.model.Statement zipIterableFirstThrows;
+
+            public org.junit.runners.model.Statement zipIterableIteratorThrows;
+
+            public org.junit.runners.model.Statement zipIterableHasNextThrows;
+
+            public org.junit.runners.model.Statement zipIterableNextThrows;
+
+            public org.junit.runners.model.Statement take2;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement iteratorThrows;
+
+            public org.junit.runners.model.Statement badSource;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.zipIterableSameSize = _ClassStatement.forPayload(FlowableZipIterableTest::zipIterableSameSize, "zipIterableSameSize", this);
+            this.payloads.zipIterableEmptyFirstSize = _ClassStatement.forPayload(FlowableZipIterableTest::zipIterableEmptyFirstSize, "zipIterableEmptyFirstSize", this);
+            this.payloads.zipIterableEmptySecond = _ClassStatement.forPayload(FlowableZipIterableTest::zipIterableEmptySecond, "zipIterableEmptySecond", this);
+            this.payloads.zipIterableFirstShorter = _ClassStatement.forPayload(FlowableZipIterableTest::zipIterableFirstShorter, "zipIterableFirstShorter", this);
+            this.payloads.zipIterableSecondShorter = _ClassStatement.forPayload(FlowableZipIterableTest::zipIterableSecondShorter, "zipIterableSecondShorter", this);
+            this.payloads.zipIterableFirstThrows = _ClassStatement.forPayload(FlowableZipIterableTest::zipIterableFirstThrows, "zipIterableFirstThrows", this);
+            this.payloads.zipIterableIteratorThrows = _ClassStatement.forPayload(FlowableZipIterableTest::zipIterableIteratorThrows, "zipIterableIteratorThrows", this);
+            this.payloads.zipIterableHasNextThrows = _ClassStatement.forPayload(FlowableZipIterableTest::zipIterableHasNextThrows, "zipIterableHasNextThrows", this);
+            this.payloads.zipIterableNextThrows = _ClassStatement.forPayload(FlowableZipIterableTest::zipIterableNextThrows, "zipIterableNextThrows", this);
+            this.payloads.take2 = _ClassStatement.forPayload(FlowableZipIterableTest::take2, "take2", this);
+            this.payloads.dispose = _ClassStatement.forPayload(FlowableZipIterableTest::dispose, "dispose", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableZipIterableTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.iteratorThrows = _ClassStatement.forPayload(FlowableZipIterableTest::iteratorThrows, "iteratorThrows", this);
+            this.payloads.badSource = _ClassStatement.forPayload(FlowableZipIterableTest::badSource, "badSource", this);
         }
     }
 }

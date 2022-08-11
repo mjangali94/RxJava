@@ -25,26 +25,4 @@ public class MaybeEmptyTest extends RxJavaTest {
         assertTrue(m.getClass().toString(), m instanceof ScalarSupplier);
         assertNull(((ScalarSupplier<?>) m).get());
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_scalarSupplier() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scalarSupplier, this.description("scalarSupplier"));
-        }
-
-        private MaybeEmptyTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeEmptyTest();
-        }
-
-        @java.lang.Override
-        public MaybeEmptyTest implementation() {
-            return this.implementation;
-        }
-    }
 }

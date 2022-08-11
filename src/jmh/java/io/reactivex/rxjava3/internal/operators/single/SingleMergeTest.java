@@ -86,84 +86,165 @@ public class SingleMergeTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private SingleMergeTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeSingleSingle() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeSingleSingle, this.description("mergeSingleSingle"));
+            this.payloads.mergeSingleSingle.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_merge2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::merge2, this.description("merge2"));
+            this.payloads.merge2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_merge3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::merge3, this.description("merge3"));
+            this.payloads.merge3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_merge4() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::merge4, this.description("merge4"));
+            this.payloads.merge4.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeErrors() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeErrors, this.description("mergeErrors"));
+            this.payloads.mergeErrors.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeDelayErrorIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeDelayErrorIterable, this.description("mergeDelayErrorIterable"));
+            this.payloads.mergeDelayErrorIterable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeDelayErrorPublisher() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeDelayErrorPublisher, this.description("mergeDelayErrorPublisher"));
+            this.payloads.mergeDelayErrorPublisher.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeDelayError2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeDelayError2, this.description("mergeDelayError2"));
+            this.payloads.mergeDelayError2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeDelayError2ErrorFirst() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeDelayError2ErrorFirst, this.description("mergeDelayError2ErrorFirst"));
+            this.payloads.mergeDelayError2ErrorFirst.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeDelayError3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeDelayError3, this.description("mergeDelayError3"));
+            this.payloads.mergeDelayError3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeDelayError4() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mergeDelayError4, this.description("mergeDelayError4"));
+            this.payloads.mergeDelayError4.evaluate();
         }
 
-        private SingleMergeTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SingleMergeTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<SingleMergeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleMergeTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public SingleMergeTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<SingleMergeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleMergeTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new SingleMergeTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleMergeTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(SingleMergeTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(SingleMergeTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement mergeSingleSingle;
+
+            public org.junit.runners.model.Statement merge2;
+
+            public org.junit.runners.model.Statement merge3;
+
+            public org.junit.runners.model.Statement merge4;
+
+            public org.junit.runners.model.Statement mergeErrors;
+
+            public org.junit.runners.model.Statement mergeDelayErrorIterable;
+
+            public org.junit.runners.model.Statement mergeDelayErrorPublisher;
+
+            public org.junit.runners.model.Statement mergeDelayError2;
+
+            public org.junit.runners.model.Statement mergeDelayError2ErrorFirst;
+
+            public org.junit.runners.model.Statement mergeDelayError3;
+
+            public org.junit.runners.model.Statement mergeDelayError4;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.mergeSingleSingle = _ClassStatement.forPayload(SingleMergeTest::mergeSingleSingle, "mergeSingleSingle", this);
+            this.payloads.merge2 = _ClassStatement.forPayload(SingleMergeTest::merge2, "merge2", this);
+            this.payloads.merge3 = _ClassStatement.forPayload(SingleMergeTest::merge3, "merge3", this);
+            this.payloads.merge4 = _ClassStatement.forPayload(SingleMergeTest::merge4, "merge4", this);
+            this.payloads.mergeErrors = _ClassStatement.forPayload(SingleMergeTest::mergeErrors, "mergeErrors", this);
+            this.payloads.mergeDelayErrorIterable = _ClassStatement.forPayload(SingleMergeTest::mergeDelayErrorIterable, "mergeDelayErrorIterable", this);
+            this.payloads.mergeDelayErrorPublisher = _ClassStatement.forPayload(SingleMergeTest::mergeDelayErrorPublisher, "mergeDelayErrorPublisher", this);
+            this.payloads.mergeDelayError2 = _ClassStatement.forPayload(SingleMergeTest::mergeDelayError2, "mergeDelayError2", this);
+            this.payloads.mergeDelayError2ErrorFirst = _ClassStatement.forPayload(SingleMergeTest::mergeDelayError2ErrorFirst, "mergeDelayError2ErrorFirst", this);
+            this.payloads.mergeDelayError3 = _ClassStatement.forPayload(SingleMergeTest::mergeDelayError3, "mergeDelayError3", this);
+            this.payloads.mergeDelayError4 = _ClassStatement.forPayload(SingleMergeTest::mergeDelayError4, "mergeDelayError4", this);
         }
     }
 }

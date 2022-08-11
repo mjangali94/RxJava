@@ -170,72 +170,149 @@ public class TransformerTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private TransformerTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flowableTransformerThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flowableTransformerThrows, this.description("flowableTransformerThrows"));
+            this.payloads.flowableTransformerThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observableTransformerThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observableTransformerThrows, this.description("observableTransformerThrows"));
+            this.payloads.observableTransformerThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleTransformerThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleTransformerThrows, this.description("singleTransformerThrows"));
+            this.payloads.singleTransformerThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maybeTransformerThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::maybeTransformerThrows, this.description("maybeTransformerThrows"));
+            this.payloads.maybeTransformerThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_completableTransformerThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::completableTransformerThrows, this.description("completableTransformerThrows"));
+            this.payloads.completableTransformerThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observableGenericsSignatureTest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observableGenericsSignatureTest, this.description("observableGenericsSignatureTest"));
+            this.payloads.observableGenericsSignatureTest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleGenericsSignatureTest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleGenericsSignatureTest, this.description("singleGenericsSignatureTest"));
+            this.payloads.singleGenericsSignatureTest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_maybeGenericsSignatureTest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::maybeGenericsSignatureTest, this.description("maybeGenericsSignatureTest"));
+            this.payloads.maybeGenericsSignatureTest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flowableGenericsSignatureTest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flowableGenericsSignatureTest, this.description("flowableGenericsSignatureTest"));
+            this.payloads.flowableGenericsSignatureTest.evaluate();
         }
 
-        private TransformerTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new TransformerTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<TransformerTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<TransformerTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public TransformerTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<TransformerTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<TransformerTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new TransformerTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<TransformerTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(TransformerTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(TransformerTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement flowableTransformerThrows;
+
+            public org.junit.runners.model.Statement observableTransformerThrows;
+
+            public org.junit.runners.model.Statement singleTransformerThrows;
+
+            public org.junit.runners.model.Statement maybeTransformerThrows;
+
+            public org.junit.runners.model.Statement completableTransformerThrows;
+
+            public org.junit.runners.model.Statement observableGenericsSignatureTest;
+
+            public org.junit.runners.model.Statement singleGenericsSignatureTest;
+
+            public org.junit.runners.model.Statement maybeGenericsSignatureTest;
+
+            public org.junit.runners.model.Statement flowableGenericsSignatureTest;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.flowableTransformerThrows = _ClassStatement.forPayload(TransformerTest::flowableTransformerThrows, "flowableTransformerThrows", this);
+            this.payloads.observableTransformerThrows = _ClassStatement.forPayload(TransformerTest::observableTransformerThrows, "observableTransformerThrows", this);
+            this.payloads.singleTransformerThrows = _ClassStatement.forPayload(TransformerTest::singleTransformerThrows, "singleTransformerThrows", this);
+            this.payloads.maybeTransformerThrows = _ClassStatement.forPayload(TransformerTest::maybeTransformerThrows, "maybeTransformerThrows", this);
+            this.payloads.completableTransformerThrows = _ClassStatement.forPayload(TransformerTest::completableTransformerThrows, "completableTransformerThrows", this);
+            this.payloads.observableGenericsSignatureTest = _ClassStatement.forPayload(TransformerTest::observableGenericsSignatureTest, "observableGenericsSignatureTest", this);
+            this.payloads.singleGenericsSignatureTest = _ClassStatement.forPayload(TransformerTest::singleGenericsSignatureTest, "singleGenericsSignatureTest", this);
+            this.payloads.maybeGenericsSignatureTest = _ClassStatement.forPayload(TransformerTest::maybeGenericsSignatureTest, "maybeGenericsSignatureTest", this);
+            this.payloads.flowableGenericsSignatureTest = _ClassStatement.forPayload(TransformerTest::flowableGenericsSignatureTest, "flowableGenericsSignatureTest", this);
         }
     }
 }

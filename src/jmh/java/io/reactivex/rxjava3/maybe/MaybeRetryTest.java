@@ -138,78 +138,157 @@ public class MaybeRetryTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private MaybeRetryTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_retryTimesPredicateWithMatchingPredicate() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::retryTimesPredicateWithMatchingPredicate, this.description("retryTimesPredicateWithMatchingPredicate"));
+            this.payloads.retryTimesPredicateWithMatchingPredicate.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_retryTimesPredicateWithMatchingRetryAmount() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::retryTimesPredicateWithMatchingRetryAmount, this.description("retryTimesPredicateWithMatchingRetryAmount"));
+            this.payloads.retryTimesPredicateWithMatchingRetryAmount.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_retryTimesPredicateWithNotMatchingRetryAmount() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::retryTimesPredicateWithNotMatchingRetryAmount, this.description("retryTimesPredicateWithNotMatchingRetryAmount"));
+            this.payloads.retryTimesPredicateWithNotMatchingRetryAmount.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_retryTimesPredicateWithZeroRetries() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::retryTimesPredicateWithZeroRetries, this.description("retryTimesPredicateWithZeroRetries"));
+            this.payloads.retryTimesPredicateWithZeroRetries.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_untilTrueJust() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::untilTrueJust, this.description("untilTrueJust"));
+            this.payloads.untilTrueJust.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_untilFalseJust() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::untilFalseJust, this.description("untilFalseJust"));
+            this.payloads.untilFalseJust.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_untilTrueEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::untilTrueEmpty, this.description("untilTrueEmpty"));
+            this.payloads.untilTrueEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_untilFalseEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::untilFalseEmpty, this.description("untilFalseEmpty"));
+            this.payloads.untilFalseEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_untilTrueError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::untilTrueError, this.description("untilTrueError"));
+            this.payloads.untilTrueError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_untilFalseError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::untilFalseError, this.description("untilFalseError"));
+            this.payloads.untilFalseError.evaluate();
         }
 
-        private MaybeRetryTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeRetryTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeRetryTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeRetryTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public MaybeRetryTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeRetryTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeRetryTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new MaybeRetryTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeRetryTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(MaybeRetryTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(MaybeRetryTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement retryTimesPredicateWithMatchingPredicate;
+
+            public org.junit.runners.model.Statement retryTimesPredicateWithMatchingRetryAmount;
+
+            public org.junit.runners.model.Statement retryTimesPredicateWithNotMatchingRetryAmount;
+
+            public org.junit.runners.model.Statement retryTimesPredicateWithZeroRetries;
+
+            public org.junit.runners.model.Statement untilTrueJust;
+
+            public org.junit.runners.model.Statement untilFalseJust;
+
+            public org.junit.runners.model.Statement untilTrueEmpty;
+
+            public org.junit.runners.model.Statement untilFalseEmpty;
+
+            public org.junit.runners.model.Statement untilTrueError;
+
+            public org.junit.runners.model.Statement untilFalseError;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.retryTimesPredicateWithMatchingPredicate = _ClassStatement.forPayload(MaybeRetryTest::retryTimesPredicateWithMatchingPredicate, "retryTimesPredicateWithMatchingPredicate", this);
+            this.payloads.retryTimesPredicateWithMatchingRetryAmount = _ClassStatement.forPayload(MaybeRetryTest::retryTimesPredicateWithMatchingRetryAmount, "retryTimesPredicateWithMatchingRetryAmount", this);
+            this.payloads.retryTimesPredicateWithNotMatchingRetryAmount = _ClassStatement.forPayload(MaybeRetryTest::retryTimesPredicateWithNotMatchingRetryAmount, "retryTimesPredicateWithNotMatchingRetryAmount", this);
+            this.payloads.retryTimesPredicateWithZeroRetries = _ClassStatement.forPayload(MaybeRetryTest::retryTimesPredicateWithZeroRetries, "retryTimesPredicateWithZeroRetries", this);
+            this.payloads.untilTrueJust = _ClassStatement.forPayload(MaybeRetryTest::untilTrueJust, "untilTrueJust", this);
+            this.payloads.untilFalseJust = _ClassStatement.forPayload(MaybeRetryTest::untilFalseJust, "untilFalseJust", this);
+            this.payloads.untilTrueEmpty = _ClassStatement.forPayload(MaybeRetryTest::untilTrueEmpty, "untilTrueEmpty", this);
+            this.payloads.untilFalseEmpty = _ClassStatement.forPayload(MaybeRetryTest::untilFalseEmpty, "untilFalseEmpty", this);
+            this.payloads.untilTrueError = _ClassStatement.forPayload(MaybeRetryTest::untilTrueError, "untilTrueError", this);
+            this.payloads.untilFalseError = _ClassStatement.forPayload(MaybeRetryTest::untilFalseError, "untilFalseError", this);
         }
     }
 }

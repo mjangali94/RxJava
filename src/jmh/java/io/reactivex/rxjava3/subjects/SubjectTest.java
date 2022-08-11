@@ -44,26 +44,4 @@ public abstract class SubjectTest<T> extends RxJavaTest {
         }
         p.test().assertEmpty().dispose();
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static abstract class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_onNextNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onNextNull, this.description("onNextNull"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_onErrorNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorNull, this.description("onErrorNull"));
-        }
-
-        @java.lang.Override
-        public abstract void createImplementation() throws java.lang.Throwable;
-
-        @java.lang.Override
-        public abstract SubjectTest implementation();
-    }
 }

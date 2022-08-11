@@ -534,198 +534,317 @@ public class SingleFlatMapIterableFlowableTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private SingleFlatMapIterableFlowableTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normal, this.description("normal"));
+            this.payloads.normal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyIterable, this.description("emptyIterable"));
+            this.payloads.emptyIterable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressure, this.description("backpressure"));
+            this.payloads.backpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_take() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::take, this.description("take"));
+            this.payloads.take.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fused() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fused, this.description("fused"));
+            this.payloads.fused.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedNoSync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedNoSync, this.description("fusedNoSync"));
+            this.payloads.fusedNoSync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_iteratorCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::iteratorCrash, this.description("iteratorCrash"));
+            this.payloads.iteratorCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_hasNextCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::hasNextCrash, this.description("hasNextCrash"));
+            this.payloads.hasNextCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nextCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nextCrash, this.description("nextCrash"));
+            this.payloads.nextCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_hasNextCrash2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::hasNextCrash2, this.description("hasNextCrash2"));
+            this.payloads.hasNextCrash2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_async1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::async1, this.description("async1"));
+            this.payloads.async1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_async2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::async2, this.description("async2"));
+            this.payloads.async2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_async3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::async3, this.description("async3"));
+            this.payloads.async3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_async4() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::async4, this.description("async4"));
+            this.payloads.async4.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedEmptyCheck() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedEmptyCheck, this.description("fusedEmptyCheck"));
+            this.payloads.fusedEmptyCheck.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_hasNextThrowsUnbounded() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::hasNextThrowsUnbounded, this.description("hasNextThrowsUnbounded"));
+            this.payloads.hasNextThrowsUnbounded.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nextThrowsUnbounded() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nextThrowsUnbounded, this.description("nextThrowsUnbounded"));
+            this.payloads.nextThrowsUnbounded.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_hasNextThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::hasNextThrows, this.description("hasNextThrows"));
+            this.payloads.hasNextThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nextThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nextThrows, this.description("nextThrows"));
+            this.payloads.nextThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestBefore() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestBefore, this.description("requestBefore"));
+            this.payloads.requestBefore.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestCreateInnerRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestCreateInnerRace, this.description("requestCreateInnerRace"));
+            this.payloads.requestCreateInnerRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelCreateInnerRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelCreateInnerRace, this.description("cancelCreateInnerRace"));
+            this.payloads.cancelCreateInnerRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_slowPathCancelAfterHasNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::slowPathCancelAfterHasNext, this.description("slowPathCancelAfterHasNext"));
+            this.payloads.slowPathCancelAfterHasNext.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fastPathCancelAfterHasNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fastPathCancelAfterHasNext, this.description("fastPathCancelAfterHasNext"));
+            this.payloads.fastPathCancelAfterHasNext.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestIteratorRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestIteratorRace, this.description("requestIteratorRace"));
+            this.payloads.requestIteratorRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequest, this.description("badRequest"));
+            this.payloads.badRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_slowPatchCancelAfterOnNext() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::slowPatchCancelAfterOnNext, this.description("slowPatchCancelAfterOnNext"));
+            this.payloads.slowPatchCancelAfterOnNext.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onSuccessRequestRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onSuccessRequestRace, this.description("onSuccessRequestRace"));
+            this.payloads.onSuccessRequestRace.evaluate();
         }
 
-        private SingleFlatMapIterableFlowableTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SingleFlatMapIterableFlowableTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<SingleFlatMapIterableFlowableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleFlatMapIterableFlowableTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public SingleFlatMapIterableFlowableTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<SingleFlatMapIterableFlowableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleFlatMapIterableFlowableTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new SingleFlatMapIterableFlowableTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleFlatMapIterableFlowableTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(SingleFlatMapIterableFlowableTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(SingleFlatMapIterableFlowableTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement normal;
+
+            public org.junit.runners.model.Statement emptyIterable;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement backpressure;
+
+            public org.junit.runners.model.Statement take;
+
+            public org.junit.runners.model.Statement fused;
+
+            public org.junit.runners.model.Statement fusedNoSync;
+
+            public org.junit.runners.model.Statement iteratorCrash;
+
+            public org.junit.runners.model.Statement hasNextCrash;
+
+            public org.junit.runners.model.Statement nextCrash;
+
+            public org.junit.runners.model.Statement hasNextCrash2;
+
+            public org.junit.runners.model.Statement async1;
+
+            public org.junit.runners.model.Statement async2;
+
+            public org.junit.runners.model.Statement async3;
+
+            public org.junit.runners.model.Statement async4;
+
+            public org.junit.runners.model.Statement fusedEmptyCheck;
+
+            public org.junit.runners.model.Statement hasNextThrowsUnbounded;
+
+            public org.junit.runners.model.Statement nextThrowsUnbounded;
+
+            public org.junit.runners.model.Statement hasNextThrows;
+
+            public org.junit.runners.model.Statement nextThrows;
+
+            public org.junit.runners.model.Statement requestBefore;
+
+            public org.junit.runners.model.Statement requestCreateInnerRace;
+
+            public org.junit.runners.model.Statement cancelCreateInnerRace;
+
+            public org.junit.runners.model.Statement slowPathCancelAfterHasNext;
+
+            public org.junit.runners.model.Statement fastPathCancelAfterHasNext;
+
+            public org.junit.runners.model.Statement requestIteratorRace;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement badRequest;
+
+            public org.junit.runners.model.Statement slowPatchCancelAfterOnNext;
+
+            public org.junit.runners.model.Statement onSuccessRequestRace;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.normal = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::normal, "normal", this);
+            this.payloads.emptyIterable = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::emptyIterable, "emptyIterable", this);
+            this.payloads.error = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::error, "error", this);
+            this.payloads.backpressure = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::backpressure, "backpressure", this);
+            this.payloads.take = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::take, "take", this);
+            this.payloads.fused = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::fused, "fused", this);
+            this.payloads.fusedNoSync = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::fusedNoSync, "fusedNoSync", this);
+            this.payloads.iteratorCrash = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::iteratorCrash, "iteratorCrash", this);
+            this.payloads.hasNextCrash = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::hasNextCrash, "hasNextCrash", this);
+            this.payloads.nextCrash = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::nextCrash, "nextCrash", this);
+            this.payloads.hasNextCrash2 = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::hasNextCrash2, "hasNextCrash2", this);
+            this.payloads.async1 = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::async1, "async1", this);
+            this.payloads.async2 = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::async2, "async2", this);
+            this.payloads.async3 = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::async3, "async3", this);
+            this.payloads.async4 = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::async4, "async4", this);
+            this.payloads.fusedEmptyCheck = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::fusedEmptyCheck, "fusedEmptyCheck", this);
+            this.payloads.hasNextThrowsUnbounded = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::hasNextThrowsUnbounded, "hasNextThrowsUnbounded", this);
+            this.payloads.nextThrowsUnbounded = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::nextThrowsUnbounded, "nextThrowsUnbounded", this);
+            this.payloads.hasNextThrows = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::hasNextThrows, "hasNextThrows", this);
+            this.payloads.nextThrows = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::nextThrows, "nextThrows", this);
+            this.payloads.requestBefore = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::requestBefore, "requestBefore", this);
+            this.payloads.requestCreateInnerRace = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::requestCreateInnerRace, "requestCreateInnerRace", this);
+            this.payloads.cancelCreateInnerRace = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::cancelCreateInnerRace, "cancelCreateInnerRace", this);
+            this.payloads.slowPathCancelAfterHasNext = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::slowPathCancelAfterHasNext, "slowPathCancelAfterHasNext", this);
+            this.payloads.fastPathCancelAfterHasNext = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::fastPathCancelAfterHasNext, "fastPathCancelAfterHasNext", this);
+            this.payloads.requestIteratorRace = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::requestIteratorRace, "requestIteratorRace", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.badRequest = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::badRequest, "badRequest", this);
+            this.payloads.slowPatchCancelAfterOnNext = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::slowPatchCancelAfterOnNext, "slowPatchCancelAfterOnNext", this);
+            this.payloads.onSuccessRequestRace = _ClassStatement.forPayload(SingleFlatMapIterableFlowableTest::onSuccessRequestRace, "onSuccessRequestRace", this);
         }
     }
 }

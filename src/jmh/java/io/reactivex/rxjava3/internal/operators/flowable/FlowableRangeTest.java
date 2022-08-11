@@ -522,276 +522,421 @@ public class FlowableRangeTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableRangeTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rangeStartAt2Count3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rangeStartAt2Count3, this.description("rangeStartAt2Count3"));
+            this.payloads.rangeStartAt2Count3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rangeUnsubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rangeUnsubscribe, this.description("rangeUnsubscribe"));
+            this.payloads.rangeUnsubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rangeWithZero() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rangeWithZero, this.description("rangeWithZero"));
+            this.payloads.rangeWithZero.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rangeWithOverflow2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rangeWithOverflow2, this.description("rangeWithOverflow2"));
+            this.payloads.rangeWithOverflow2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rangeWithOverflow3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rangeWithOverflow3, this.description("rangeWithOverflow3"));
+            this.payloads.rangeWithOverflow3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rangeWithOverflow4() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::rangeWithOverflow4, this.description("rangeWithOverflow4"), java.lang.IllegalArgumentException.class);
+            this.payloads.rangeWithOverflow4.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rangeWithOverflow5() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rangeWithOverflow5, this.description("rangeWithOverflow5"));
+            this.payloads.rangeWithOverflow5.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureViaRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureViaRequest, this.description("backpressureViaRequest"));
+            this.payloads.backpressureViaRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noBackpressure, this.description("noBackpressure"));
+            this.payloads.noBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withBackpressure1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withBackpressure1, this.description("withBackpressure1"));
+            this.payloads.withBackpressure1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withBackpressureAllAtOnce() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withBackpressureAllAtOnce, this.description("withBackpressureAllAtOnce"));
+            this.payloads.withBackpressureAllAtOnce.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withBackpressureRequestWayMore() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withBackpressureRequestWayMore, this.description("withBackpressureRequestWayMore"));
+            this.payloads.withBackpressureRequestWayMore.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestOverflow() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestOverflow, this.description("requestOverflow"));
+            this.payloads.requestOverflow.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyRangeSendsOnCompleteEagerlyWithRequestZero() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyRangeSendsOnCompleteEagerlyWithRequestZero, this.description("emptyRangeSendsOnCompleteEagerlyWithRequestZero"));
+            this.payloads.emptyRangeSendsOnCompleteEagerlyWithRequestZero.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nearMaxValueWithoutBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nearMaxValueWithoutBackpressure, this.description("nearMaxValueWithoutBackpressure"));
+            this.payloads.nearMaxValueWithoutBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nearMaxValueWithBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nearMaxValueWithBackpressure, this.description("nearMaxValueWithBackpressure"));
+            this.payloads.nearMaxValueWithBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_negativeCount() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::negativeCount, this.description("negativeCount"));
+            this.payloads.negativeCount.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestWrongFusion() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestWrongFusion, this.description("requestWrongFusion"));
+            this.payloads.requestWrongFusion.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_countOne() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::countOne, this.description("countOne"));
+            this.payloads.countOne.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fused() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fused, this.description("fused"));
+            this.payloads.fused.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedReject() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedReject, this.description("fusedReject"));
+            this.payloads.fusedReject.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposed, this.description("disposed"));
+            this.payloads.disposed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedClearIsEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedClearIsEmpty, this.description("fusedClearIsEmpty"));
+            this.payloads.fusedClearIsEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noOverflow() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noOverflow, this.description("noOverflow"));
+            this.payloads.noOverflow.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_conditionalNormal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::conditionalNormal, this.description("conditionalNormal"));
+            this.payloads.conditionalNormal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequest, this.description("badRequest"));
+            this.payloads.badRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_conditionalNormalSlowpath() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::conditionalNormalSlowpath, this.description("conditionalNormalSlowpath"));
+            this.payloads.conditionalNormalSlowpath.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_conditionalSlowPathTakeExact() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::conditionalSlowPathTakeExact, this.description("conditionalSlowPathTakeExact"));
+            this.payloads.conditionalSlowPathTakeExact.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_slowPathTakeExact() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::slowPathTakeExact, this.description("slowPathTakeExact"));
+            this.payloads.slowPathTakeExact.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_conditionalSlowPathRebatch() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::conditionalSlowPathRebatch, this.description("conditionalSlowPathRebatch"));
+            this.payloads.conditionalSlowPathRebatch.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_slowPathRebatch() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::slowPathRebatch, this.description("slowPathRebatch"));
+            this.payloads.slowPathRebatch.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_slowPathCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::slowPathCancel, this.description("slowPathCancel"));
+            this.payloads.slowPathCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fastPathCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fastPathCancel, this.description("fastPathCancel"));
+            this.payloads.fastPathCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_conditionalSlowPathCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::conditionalSlowPathCancel, this.description("conditionalSlowPathCancel"));
+            this.payloads.conditionalSlowPathCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_conditionalFastPathCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::conditionalFastPathCancel, this.description("conditionalFastPathCancel"));
+            this.payloads.conditionalFastPathCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_conditionalRequestOneByOne() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::conditionalRequestOneByOne, this.description("conditionalRequestOneByOne"));
+            this.payloads.conditionalRequestOneByOne.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_conditionalRequestOneByOne2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::conditionalRequestOneByOne2, this.description("conditionalRequestOneByOne2"));
+            this.payloads.conditionalRequestOneByOne2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fastPathCancelExact() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fastPathCancelExact, this.description("fastPathCancelExact"));
+            this.payloads.fastPathCancelExact.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_conditionalFastPathCancelExact() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::conditionalFastPathCancelExact, this.description("conditionalFastPathCancelExact"));
+            this.payloads.conditionalFastPathCancelExact.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_conditionalCancel1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::conditionalCancel1, this.description("conditionalCancel1"));
+            this.payloads.conditionalCancel1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_conditionalCancel2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::conditionalCancel2, this.description("conditionalCancel2"));
+            this.payloads.conditionalCancel2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_slowPathCancelBeforeComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::slowPathCancelBeforeComplete, this.description("slowPathCancelBeforeComplete"));
+            this.payloads.slowPathCancelBeforeComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_conditionalFastPatchCancelBeforeComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::conditionalFastPatchCancelBeforeComplete, this.description("conditionalFastPatchCancelBeforeComplete"));
+            this.payloads.conditionalFastPatchCancelBeforeComplete.evaluate();
         }
 
-        private FlowableRangeTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableRangeTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRangeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRangeTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowableRangeTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRangeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRangeTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableRangeTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRangeTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableRangeTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableRangeTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement rangeStartAt2Count3;
+
+            public org.junit.runners.model.Statement rangeUnsubscribe;
+
+            public org.junit.runners.model.Statement rangeWithZero;
+
+            public org.junit.runners.model.Statement rangeWithOverflow2;
+
+            public org.junit.runners.model.Statement rangeWithOverflow3;
+
+            public org.junit.runners.model.Statement rangeWithOverflow4;
+
+            public org.junit.runners.model.Statement rangeWithOverflow5;
+
+            public org.junit.runners.model.Statement backpressureViaRequest;
+
+            public org.junit.runners.model.Statement noBackpressure;
+
+            public org.junit.runners.model.Statement withBackpressure1;
+
+            public org.junit.runners.model.Statement withBackpressureAllAtOnce;
+
+            public org.junit.runners.model.Statement withBackpressureRequestWayMore;
+
+            public org.junit.runners.model.Statement requestOverflow;
+
+            public org.junit.runners.model.Statement emptyRangeSendsOnCompleteEagerlyWithRequestZero;
+
+            public org.junit.runners.model.Statement nearMaxValueWithoutBackpressure;
+
+            public org.junit.runners.model.Statement nearMaxValueWithBackpressure;
+
+            public org.junit.runners.model.Statement negativeCount;
+
+            public org.junit.runners.model.Statement requestWrongFusion;
+
+            public org.junit.runners.model.Statement countOne;
+
+            public org.junit.runners.model.Statement fused;
+
+            public org.junit.runners.model.Statement fusedReject;
+
+            public org.junit.runners.model.Statement disposed;
+
+            public org.junit.runners.model.Statement fusedClearIsEmpty;
+
+            public org.junit.runners.model.Statement noOverflow;
+
+            public org.junit.runners.model.Statement conditionalNormal;
+
+            public org.junit.runners.model.Statement badRequest;
+
+            public org.junit.runners.model.Statement conditionalNormalSlowpath;
+
+            public org.junit.runners.model.Statement conditionalSlowPathTakeExact;
+
+            public org.junit.runners.model.Statement slowPathTakeExact;
+
+            public org.junit.runners.model.Statement conditionalSlowPathRebatch;
+
+            public org.junit.runners.model.Statement slowPathRebatch;
+
+            public org.junit.runners.model.Statement slowPathCancel;
+
+            public org.junit.runners.model.Statement fastPathCancel;
+
+            public org.junit.runners.model.Statement conditionalSlowPathCancel;
+
+            public org.junit.runners.model.Statement conditionalFastPathCancel;
+
+            public org.junit.runners.model.Statement conditionalRequestOneByOne;
+
+            public org.junit.runners.model.Statement conditionalRequestOneByOne2;
+
+            public org.junit.runners.model.Statement fastPathCancelExact;
+
+            public org.junit.runners.model.Statement conditionalFastPathCancelExact;
+
+            public org.junit.runners.model.Statement conditionalCancel1;
+
+            public org.junit.runners.model.Statement conditionalCancel2;
+
+            public org.junit.runners.model.Statement slowPathCancelBeforeComplete;
+
+            public org.junit.runners.model.Statement conditionalFastPatchCancelBeforeComplete;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.rangeStartAt2Count3 = _ClassStatement.forPayload(FlowableRangeTest::rangeStartAt2Count3, "rangeStartAt2Count3", this);
+            this.payloads.rangeUnsubscribe = _ClassStatement.forPayload(FlowableRangeTest::rangeUnsubscribe, "rangeUnsubscribe", this);
+            this.payloads.rangeWithZero = _ClassStatement.forPayload(FlowableRangeTest::rangeWithZero, "rangeWithZero", this);
+            this.payloads.rangeWithOverflow2 = _ClassStatement.forPayload(FlowableRangeTest::rangeWithOverflow2, "rangeWithOverflow2", this);
+            this.payloads.rangeWithOverflow3 = _ClassStatement.forPayload(FlowableRangeTest::rangeWithOverflow3, "rangeWithOverflow3", this);
+            this.payloads.rangeWithOverflow4 = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(FlowableRangeTest::rangeWithOverflow4, java.lang.IllegalArgumentException.class), "rangeWithOverflow4", this);
+            this.payloads.rangeWithOverflow5 = _ClassStatement.forPayload(FlowableRangeTest::rangeWithOverflow5, "rangeWithOverflow5", this);
+            this.payloads.backpressureViaRequest = _ClassStatement.forPayload(FlowableRangeTest::backpressureViaRequest, "backpressureViaRequest", this);
+            this.payloads.noBackpressure = _ClassStatement.forPayload(FlowableRangeTest::noBackpressure, "noBackpressure", this);
+            this.payloads.withBackpressure1 = _ClassStatement.forPayload(FlowableRangeTest::withBackpressure1, "withBackpressure1", this);
+            this.payloads.withBackpressureAllAtOnce = _ClassStatement.forPayload(FlowableRangeTest::withBackpressureAllAtOnce, "withBackpressureAllAtOnce", this);
+            this.payloads.withBackpressureRequestWayMore = _ClassStatement.forPayload(FlowableRangeTest::withBackpressureRequestWayMore, "withBackpressureRequestWayMore", this);
+            this.payloads.requestOverflow = _ClassStatement.forPayload(FlowableRangeTest::requestOverflow, "requestOverflow", this);
+            this.payloads.emptyRangeSendsOnCompleteEagerlyWithRequestZero = _ClassStatement.forPayload(FlowableRangeTest::emptyRangeSendsOnCompleteEagerlyWithRequestZero, "emptyRangeSendsOnCompleteEagerlyWithRequestZero", this);
+            this.payloads.nearMaxValueWithoutBackpressure = _ClassStatement.forPayload(FlowableRangeTest::nearMaxValueWithoutBackpressure, "nearMaxValueWithoutBackpressure", this);
+            this.payloads.nearMaxValueWithBackpressure = _ClassStatement.forPayload(FlowableRangeTest::nearMaxValueWithBackpressure, "nearMaxValueWithBackpressure", this);
+            this.payloads.negativeCount = _ClassStatement.forPayload(FlowableRangeTest::negativeCount, "negativeCount", this);
+            this.payloads.requestWrongFusion = _ClassStatement.forPayload(FlowableRangeTest::requestWrongFusion, "requestWrongFusion", this);
+            this.payloads.countOne = _ClassStatement.forPayload(FlowableRangeTest::countOne, "countOne", this);
+            this.payloads.fused = _ClassStatement.forPayload(FlowableRangeTest::fused, "fused", this);
+            this.payloads.fusedReject = _ClassStatement.forPayload(FlowableRangeTest::fusedReject, "fusedReject", this);
+            this.payloads.disposed = _ClassStatement.forPayload(FlowableRangeTest::disposed, "disposed", this);
+            this.payloads.fusedClearIsEmpty = _ClassStatement.forPayload(FlowableRangeTest::fusedClearIsEmpty, "fusedClearIsEmpty", this);
+            this.payloads.noOverflow = _ClassStatement.forPayload(FlowableRangeTest::noOverflow, "noOverflow", this);
+            this.payloads.conditionalNormal = _ClassStatement.forPayload(FlowableRangeTest::conditionalNormal, "conditionalNormal", this);
+            this.payloads.badRequest = _ClassStatement.forPayload(FlowableRangeTest::badRequest, "badRequest", this);
+            this.payloads.conditionalNormalSlowpath = _ClassStatement.forPayload(FlowableRangeTest::conditionalNormalSlowpath, "conditionalNormalSlowpath", this);
+            this.payloads.conditionalSlowPathTakeExact = _ClassStatement.forPayload(FlowableRangeTest::conditionalSlowPathTakeExact, "conditionalSlowPathTakeExact", this);
+            this.payloads.slowPathTakeExact = _ClassStatement.forPayload(FlowableRangeTest::slowPathTakeExact, "slowPathTakeExact", this);
+            this.payloads.conditionalSlowPathRebatch = _ClassStatement.forPayload(FlowableRangeTest::conditionalSlowPathRebatch, "conditionalSlowPathRebatch", this);
+            this.payloads.slowPathRebatch = _ClassStatement.forPayload(FlowableRangeTest::slowPathRebatch, "slowPathRebatch", this);
+            this.payloads.slowPathCancel = _ClassStatement.forPayload(FlowableRangeTest::slowPathCancel, "slowPathCancel", this);
+            this.payloads.fastPathCancel = _ClassStatement.forPayload(FlowableRangeTest::fastPathCancel, "fastPathCancel", this);
+            this.payloads.conditionalSlowPathCancel = _ClassStatement.forPayload(FlowableRangeTest::conditionalSlowPathCancel, "conditionalSlowPathCancel", this);
+            this.payloads.conditionalFastPathCancel = _ClassStatement.forPayload(FlowableRangeTest::conditionalFastPathCancel, "conditionalFastPathCancel", this);
+            this.payloads.conditionalRequestOneByOne = _ClassStatement.forPayload(FlowableRangeTest::conditionalRequestOneByOne, "conditionalRequestOneByOne", this);
+            this.payloads.conditionalRequestOneByOne2 = _ClassStatement.forPayload(FlowableRangeTest::conditionalRequestOneByOne2, "conditionalRequestOneByOne2", this);
+            this.payloads.fastPathCancelExact = _ClassStatement.forPayload(FlowableRangeTest::fastPathCancelExact, "fastPathCancelExact", this);
+            this.payloads.conditionalFastPathCancelExact = _ClassStatement.forPayload(FlowableRangeTest::conditionalFastPathCancelExact, "conditionalFastPathCancelExact", this);
+            this.payloads.conditionalCancel1 = _ClassStatement.forPayload(FlowableRangeTest::conditionalCancel1, "conditionalCancel1", this);
+            this.payloads.conditionalCancel2 = _ClassStatement.forPayload(FlowableRangeTest::conditionalCancel2, "conditionalCancel2", this);
+            this.payloads.slowPathCancelBeforeComplete = _ClassStatement.forPayload(FlowableRangeTest::slowPathCancelBeforeComplete, "slowPathCancelBeforeComplete", this);
+            this.payloads.conditionalFastPatchCancelBeforeComplete = _ClassStatement.forPayload(FlowableRangeTest::conditionalFastPatchCancelBeforeComplete, "conditionalFastPatchCancelBeforeComplete", this);
         }
     }
 }

@@ -1073,300 +1073,453 @@ public class ObservableCombineLatestTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableCombineLatestTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combineLatestWithFunctionThatThrowsAnException() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::combineLatestWithFunctionThatThrowsAnException, this.description("combineLatestWithFunctionThatThrowsAnException"));
+            this.payloads.combineLatestWithFunctionThatThrowsAnException.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combineLatestDifferentLengthObservableSequences1() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::combineLatestDifferentLengthObservableSequences1, this.description("combineLatestDifferentLengthObservableSequences1"));
+            this.payloads.combineLatestDifferentLengthObservableSequences1.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combineLatestDifferentLengthObservableSequences2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::combineLatestDifferentLengthObservableSequences2, this.description("combineLatestDifferentLengthObservableSequences2"));
+            this.payloads.combineLatestDifferentLengthObservableSequences2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combineLatestWithInterleavingSequences() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::combineLatestWithInterleavingSequences, this.description("combineLatestWithInterleavingSequences"));
+            this.payloads.combineLatestWithInterleavingSequences.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combineLatest2Types() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::combineLatest2Types, this.description("combineLatest2Types"));
+            this.payloads.combineLatest2Types.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combineLatest3TypesA() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::combineLatest3TypesA, this.description("combineLatest3TypesA"));
+            this.payloads.combineLatest3TypesA.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combineLatest3TypesB() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::combineLatest3TypesB, this.description("combineLatest3TypesB"));
+            this.payloads.combineLatest3TypesB.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combineSimple() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::combineSimple, this.description("combineSimple"));
+            this.payloads.combineSimple.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combineMultipleObservers() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::combineMultipleObservers, this.description("combineMultipleObservers"));
+            this.payloads.combineMultipleObservers.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstNeverProduces() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstNeverProduces, this.description("firstNeverProduces"));
+            this.payloads.firstNeverProduces.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_secondNeverProduces() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::secondNeverProduces, this.description("secondNeverProduces"));
+            this.payloads.secondNeverProduces.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_oneToNSources() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::oneToNSources, this.description("oneToNSources"));
+            this.payloads.oneToNSources.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_oneToNSourcesScheduled() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::oneToNSourcesScheduled, this.description("oneToNSourcesScheduled"));
+            this.payloads.oneToNSourcesScheduled.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_twoSourcesOverload() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::twoSourcesOverload, this.description("twoSourcesOverload"));
+            this.payloads.twoSourcesOverload.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_threeSourcesOverload() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::threeSourcesOverload, this.description("threeSourcesOverload"));
+            this.payloads.threeSourcesOverload.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fourSourcesOverload() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fourSourcesOverload, this.description("fourSourcesOverload"));
+            this.payloads.fourSourcesOverload.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fiveSourcesOverload() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fiveSourcesOverload, this.description("fiveSourcesOverload"));
+            this.payloads.fiveSourcesOverload.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sixSourcesOverload() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sixSourcesOverload, this.description("sixSourcesOverload"));
+            this.payloads.sixSourcesOverload.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sevenSourcesOverload() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sevenSourcesOverload, this.description("sevenSourcesOverload"));
+            this.payloads.sevenSourcesOverload.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_eightSourcesOverload() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::eightSourcesOverload, this.description("eightSourcesOverload"));
+            this.payloads.eightSourcesOverload.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nineSourcesOverload() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nineSourcesOverload, this.description("nineSourcesOverload"));
+            this.payloads.nineSourcesOverload.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_zeroSources() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::zeroSources, this.description("zeroSources"));
+            this.payloads.zeroSources.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_withCombineLatestIssue1717() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::withCombineLatestIssue1717, this.description("withCombineLatestIssue1717"));
+            this.payloads.withCombineLatestIssue1717.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combineLatestArrayOfSources() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::combineLatestArrayOfSources, this.description("combineLatestArrayOfSources"));
+            this.payloads.combineLatestArrayOfSources.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combineLatestDelayErrorArrayOfSources() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::combineLatestDelayErrorArrayOfSources, this.description("combineLatestDelayErrorArrayOfSources"));
+            this.payloads.combineLatestDelayErrorArrayOfSources.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combineLatestDelayErrorArrayOfSourcesWithError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::combineLatestDelayErrorArrayOfSourcesWithError, this.description("combineLatestDelayErrorArrayOfSourcesWithError"));
+            this.payloads.combineLatestDelayErrorArrayOfSourcesWithError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combineLatestDelayErrorIterableOfSources() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::combineLatestDelayErrorIterableOfSources, this.description("combineLatestDelayErrorIterableOfSources"));
+            this.payloads.combineLatestDelayErrorIterableOfSources.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combineLatestDelayErrorIterableOfSourcesWithError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::combineLatestDelayErrorIterableOfSourcesWithError, this.description("combineLatestDelayErrorIterableOfSourcesWithError"));
+            this.payloads.combineLatestDelayErrorIterableOfSourcesWithError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combineLatestArrayEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::combineLatestArrayEmpty, this.description("combineLatestArrayEmpty"));
+            this.payloads.combineLatestArrayEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combineLatestDelayErrorEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::combineLatestDelayErrorEmpty, this.description("combineLatestDelayErrorEmpty"));
+            this.payloads.combineLatestDelayErrorEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposed, this.description("disposed"));
+            this.payloads.disposed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelWhileSubscribing() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelWhileSubscribing, this.description("cancelWhileSubscribing"));
+            this.payloads.cancelWhileSubscribing.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combineAsync() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::combineAsync, this.description("combineAsync"));
+            this.payloads.combineAsync.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorDelayed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorDelayed, this.description("errorDelayed"));
+            this.payloads.errorDelayed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorDelayed2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorDelayed2, this.description("errorDelayed2"));
+            this.payloads.errorDelayed2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorRace, this.description("onErrorRace"));
+            this.payloads.onErrorRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dontSubscribeIfDone() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dontSubscribeIfDone, this.description("dontSubscribeIfDone"));
+            this.payloads.dontSubscribeIfDone.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dontSubscribeIfDone2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dontSubscribeIfDone2, this.description("dontSubscribeIfDone2"));
+            this.payloads.dontSubscribeIfDone2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_combine2Observable2Errors() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::combine2Observable2Errors, this.description("combine2Observable2Errors"));
+            this.payloads.combine2Observable2Errors.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_eagerDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::eagerDispose, this.description("eagerDispose"));
+            this.payloads.eagerDispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_syncFirstErrorsAfterItemDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::syncFirstErrorsAfterItemDelayError, this.description("syncFirstErrorsAfterItemDelayError"));
+            this.payloads.syncFirstErrorsAfterItemDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observableSourcesInIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::observableSourcesInIterable, this.description("observableSourcesInIterable"));
+            this.payloads.observableSourcesInIterable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onCompleteDisposeRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompleteDisposeRace, this.description("onCompleteDisposeRace"));
+            this.payloads.onCompleteDisposeRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorDisposeDelayErrorRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorDisposeDelayErrorRace, this.description("onErrorDisposeDelayErrorRace"));
+            this.payloads.onErrorDisposeDelayErrorRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doneButNotEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doneButNotEmpty, this.description("doneButNotEmpty"));
+            this.payloads.doneButNotEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_iterableNullPublisher() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::iterableNullPublisher, this.description("iterableNullPublisher"));
+            this.payloads.iterableNullPublisher.evaluate();
         }
 
-        private ObservableCombineLatestTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableCombineLatestTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableCombineLatestTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableCombineLatestTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservableCombineLatestTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableCombineLatestTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableCombineLatestTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableCombineLatestTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableCombineLatestTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableCombineLatestTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableCombineLatestTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement combineLatestWithFunctionThatThrowsAnException;
+
+            public org.junit.runners.model.Statement combineLatestDifferentLengthObservableSequences1;
+
+            public org.junit.runners.model.Statement combineLatestDifferentLengthObservableSequences2;
+
+            public org.junit.runners.model.Statement combineLatestWithInterleavingSequences;
+
+            public org.junit.runners.model.Statement combineLatest2Types;
+
+            public org.junit.runners.model.Statement combineLatest3TypesA;
+
+            public org.junit.runners.model.Statement combineLatest3TypesB;
+
+            public org.junit.runners.model.Statement combineSimple;
+
+            public org.junit.runners.model.Statement combineMultipleObservers;
+
+            public org.junit.runners.model.Statement firstNeverProduces;
+
+            public org.junit.runners.model.Statement secondNeverProduces;
+
+            public org.junit.runners.model.Statement oneToNSources;
+
+            public org.junit.runners.model.Statement oneToNSourcesScheduled;
+
+            public org.junit.runners.model.Statement twoSourcesOverload;
+
+            public org.junit.runners.model.Statement threeSourcesOverload;
+
+            public org.junit.runners.model.Statement fourSourcesOverload;
+
+            public org.junit.runners.model.Statement fiveSourcesOverload;
+
+            public org.junit.runners.model.Statement sixSourcesOverload;
+
+            public org.junit.runners.model.Statement sevenSourcesOverload;
+
+            public org.junit.runners.model.Statement eightSourcesOverload;
+
+            public org.junit.runners.model.Statement nineSourcesOverload;
+
+            public org.junit.runners.model.Statement zeroSources;
+
+            public org.junit.runners.model.Statement withCombineLatestIssue1717;
+
+            public org.junit.runners.model.Statement combineLatestArrayOfSources;
+
+            public org.junit.runners.model.Statement combineLatestDelayErrorArrayOfSources;
+
+            public org.junit.runners.model.Statement combineLatestDelayErrorArrayOfSourcesWithError;
+
+            public org.junit.runners.model.Statement combineLatestDelayErrorIterableOfSources;
+
+            public org.junit.runners.model.Statement combineLatestDelayErrorIterableOfSourcesWithError;
+
+            public org.junit.runners.model.Statement combineLatestArrayEmpty;
+
+            public org.junit.runners.model.Statement combineLatestDelayErrorEmpty;
+
+            public org.junit.runners.model.Statement disposed;
+
+            public org.junit.runners.model.Statement cancelWhileSubscribing;
+
+            public org.junit.runners.model.Statement combineAsync;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement errorDelayed;
+
+            public org.junit.runners.model.Statement errorDelayed2;
+
+            public org.junit.runners.model.Statement onErrorRace;
+
+            public org.junit.runners.model.Statement dontSubscribeIfDone;
+
+            public org.junit.runners.model.Statement dontSubscribeIfDone2;
+
+            public org.junit.runners.model.Statement combine2Observable2Errors;
+
+            public org.junit.runners.model.Statement eagerDispose;
+
+            public org.junit.runners.model.Statement syncFirstErrorsAfterItemDelayError;
+
+            public org.junit.runners.model.Statement observableSourcesInIterable;
+
+            public org.junit.runners.model.Statement onCompleteDisposeRace;
+
+            public org.junit.runners.model.Statement onErrorDisposeDelayErrorRace;
+
+            public org.junit.runners.model.Statement doneButNotEmpty;
+
+            public org.junit.runners.model.Statement iterableNullPublisher;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.combineLatestWithFunctionThatThrowsAnException = _ClassStatement.forPayload(ObservableCombineLatestTest::combineLatestWithFunctionThatThrowsAnException, "combineLatestWithFunctionThatThrowsAnException", this);
+            this.payloads.combineLatestDifferentLengthObservableSequences1 = _ClassStatement.forPayload(ObservableCombineLatestTest::combineLatestDifferentLengthObservableSequences1, "combineLatestDifferentLengthObservableSequences1", this);
+            this.payloads.combineLatestDifferentLengthObservableSequences2 = _ClassStatement.forPayload(ObservableCombineLatestTest::combineLatestDifferentLengthObservableSequences2, "combineLatestDifferentLengthObservableSequences2", this);
+            this.payloads.combineLatestWithInterleavingSequences = _ClassStatement.forPayload(ObservableCombineLatestTest::combineLatestWithInterleavingSequences, "combineLatestWithInterleavingSequences", this);
+            this.payloads.combineLatest2Types = _ClassStatement.forPayload(ObservableCombineLatestTest::combineLatest2Types, "combineLatest2Types", this);
+            this.payloads.combineLatest3TypesA = _ClassStatement.forPayload(ObservableCombineLatestTest::combineLatest3TypesA, "combineLatest3TypesA", this);
+            this.payloads.combineLatest3TypesB = _ClassStatement.forPayload(ObservableCombineLatestTest::combineLatest3TypesB, "combineLatest3TypesB", this);
+            this.payloads.combineSimple = _ClassStatement.forPayload(ObservableCombineLatestTest::combineSimple, "combineSimple", this);
+            this.payloads.combineMultipleObservers = _ClassStatement.forPayload(ObservableCombineLatestTest::combineMultipleObservers, "combineMultipleObservers", this);
+            this.payloads.firstNeverProduces = _ClassStatement.forPayload(ObservableCombineLatestTest::firstNeverProduces, "firstNeverProduces", this);
+            this.payloads.secondNeverProduces = _ClassStatement.forPayload(ObservableCombineLatestTest::secondNeverProduces, "secondNeverProduces", this);
+            this.payloads.oneToNSources = _ClassStatement.forPayload(ObservableCombineLatestTest::oneToNSources, "oneToNSources", this);
+            this.payloads.oneToNSourcesScheduled = _ClassStatement.forPayload(ObservableCombineLatestTest::oneToNSourcesScheduled, "oneToNSourcesScheduled", this);
+            this.payloads.twoSourcesOverload = _ClassStatement.forPayload(ObservableCombineLatestTest::twoSourcesOverload, "twoSourcesOverload", this);
+            this.payloads.threeSourcesOverload = _ClassStatement.forPayload(ObservableCombineLatestTest::threeSourcesOverload, "threeSourcesOverload", this);
+            this.payloads.fourSourcesOverload = _ClassStatement.forPayload(ObservableCombineLatestTest::fourSourcesOverload, "fourSourcesOverload", this);
+            this.payloads.fiveSourcesOverload = _ClassStatement.forPayload(ObservableCombineLatestTest::fiveSourcesOverload, "fiveSourcesOverload", this);
+            this.payloads.sixSourcesOverload = _ClassStatement.forPayload(ObservableCombineLatestTest::sixSourcesOverload, "sixSourcesOverload", this);
+            this.payloads.sevenSourcesOverload = _ClassStatement.forPayload(ObservableCombineLatestTest::sevenSourcesOverload, "sevenSourcesOverload", this);
+            this.payloads.eightSourcesOverload = _ClassStatement.forPayload(ObservableCombineLatestTest::eightSourcesOverload, "eightSourcesOverload", this);
+            this.payloads.nineSourcesOverload = _ClassStatement.forPayload(ObservableCombineLatestTest::nineSourcesOverload, "nineSourcesOverload", this);
+            this.payloads.zeroSources = _ClassStatement.forPayload(ObservableCombineLatestTest::zeroSources, "zeroSources", this);
+            this.payloads.withCombineLatestIssue1717 = _ClassStatement.forPayload(ObservableCombineLatestTest::withCombineLatestIssue1717, "withCombineLatestIssue1717", this);
+            this.payloads.combineLatestArrayOfSources = _ClassStatement.forPayload(ObservableCombineLatestTest::combineLatestArrayOfSources, "combineLatestArrayOfSources", this);
+            this.payloads.combineLatestDelayErrorArrayOfSources = _ClassStatement.forPayload(ObservableCombineLatestTest::combineLatestDelayErrorArrayOfSources, "combineLatestDelayErrorArrayOfSources", this);
+            this.payloads.combineLatestDelayErrorArrayOfSourcesWithError = _ClassStatement.forPayload(ObservableCombineLatestTest::combineLatestDelayErrorArrayOfSourcesWithError, "combineLatestDelayErrorArrayOfSourcesWithError", this);
+            this.payloads.combineLatestDelayErrorIterableOfSources = _ClassStatement.forPayload(ObservableCombineLatestTest::combineLatestDelayErrorIterableOfSources, "combineLatestDelayErrorIterableOfSources", this);
+            this.payloads.combineLatestDelayErrorIterableOfSourcesWithError = _ClassStatement.forPayload(ObservableCombineLatestTest::combineLatestDelayErrorIterableOfSourcesWithError, "combineLatestDelayErrorIterableOfSourcesWithError", this);
+            this.payloads.combineLatestArrayEmpty = _ClassStatement.forPayload(ObservableCombineLatestTest::combineLatestArrayEmpty, "combineLatestArrayEmpty", this);
+            this.payloads.combineLatestDelayErrorEmpty = _ClassStatement.forPayload(ObservableCombineLatestTest::combineLatestDelayErrorEmpty, "combineLatestDelayErrorEmpty", this);
+            this.payloads.disposed = _ClassStatement.forPayload(ObservableCombineLatestTest::disposed, "disposed", this);
+            this.payloads.cancelWhileSubscribing = _ClassStatement.forPayload(ObservableCombineLatestTest::cancelWhileSubscribing, "cancelWhileSubscribing", this);
+            this.payloads.combineAsync = _ClassStatement.forPayload(ObservableCombineLatestTest::combineAsync, "combineAsync", this);
+            this.payloads.error = _ClassStatement.forPayload(ObservableCombineLatestTest::error, "error", this);
+            this.payloads.errorDelayed = _ClassStatement.forPayload(ObservableCombineLatestTest::errorDelayed, "errorDelayed", this);
+            this.payloads.errorDelayed2 = _ClassStatement.forPayload(ObservableCombineLatestTest::errorDelayed2, "errorDelayed2", this);
+            this.payloads.onErrorRace = _ClassStatement.forPayload(ObservableCombineLatestTest::onErrorRace, "onErrorRace", this);
+            this.payloads.dontSubscribeIfDone = _ClassStatement.forPayload(ObservableCombineLatestTest::dontSubscribeIfDone, "dontSubscribeIfDone", this);
+            this.payloads.dontSubscribeIfDone2 = _ClassStatement.forPayload(ObservableCombineLatestTest::dontSubscribeIfDone2, "dontSubscribeIfDone2", this);
+            this.payloads.combine2Observable2Errors = _ClassStatement.forPayload(ObservableCombineLatestTest::combine2Observable2Errors, "combine2Observable2Errors", this);
+            this.payloads.eagerDispose = _ClassStatement.forPayload(ObservableCombineLatestTest::eagerDispose, "eagerDispose", this);
+            this.payloads.syncFirstErrorsAfterItemDelayError = _ClassStatement.forPayload(ObservableCombineLatestTest::syncFirstErrorsAfterItemDelayError, "syncFirstErrorsAfterItemDelayError", this);
+            this.payloads.observableSourcesInIterable = _ClassStatement.forPayload(ObservableCombineLatestTest::observableSourcesInIterable, "observableSourcesInIterable", this);
+            this.payloads.onCompleteDisposeRace = _ClassStatement.forPayload(ObservableCombineLatestTest::onCompleteDisposeRace, "onCompleteDisposeRace", this);
+            this.payloads.onErrorDisposeDelayErrorRace = _ClassStatement.forPayload(ObservableCombineLatestTest::onErrorDisposeDelayErrorRace, "onErrorDisposeDelayErrorRace", this);
+            this.payloads.doneButNotEmpty = _ClassStatement.forPayload(ObservableCombineLatestTest::doneButNotEmpty, "doneButNotEmpty", this);
+            this.payloads.iterableNullPublisher = _ClassStatement.forPayload(ObservableCombineLatestTest::iterableNullPublisher, "iterableNullPublisher", this);
         }
     }
 }

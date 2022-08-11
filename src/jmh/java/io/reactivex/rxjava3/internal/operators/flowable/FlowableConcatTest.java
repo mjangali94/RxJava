@@ -1398,528 +1398,703 @@ public class FlowableConcatTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableConcatTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concat() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concat, this.description("concat"));
+            this.runBenchmark(this.payloads.concat);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatWithList() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatWithList, this.description("concatWithList"));
+            this.runBenchmark(this.payloads.concatWithList);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatObservableOfObservables() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatObservableOfObservables, this.description("concatObservableOfObservables"));
+            this.runBenchmark(this.payloads.concatObservableOfObservables);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_simpleAsyncConcat() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::simpleAsyncConcat, this.description("simpleAsyncConcat"));
+            this.runBenchmark(this.payloads.simpleAsyncConcat);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nestedAsyncConcatLoop() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nestedAsyncConcatLoop, this.description("nestedAsyncConcatLoop"));
+            this.runBenchmark(this.payloads.nestedAsyncConcatLoop);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nestedAsyncConcat() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nestedAsyncConcat, this.description("nestedAsyncConcat"));
+            this.runBenchmark(this.payloads.nestedAsyncConcat);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_blockedObservableOfObservables() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::blockedObservableOfObservables, this.description("blockedObservableOfObservables"));
+            this.runBenchmark(this.payloads.blockedObservableOfObservables);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatConcurrentWithInfinity() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatConcurrentWithInfinity, this.description("concatConcurrentWithInfinity"));
+            this.runBenchmark(this.payloads.concatConcurrentWithInfinity);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatNonBlockingObservables() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatNonBlockingObservables, this.description("concatNonBlockingObservables"));
+            this.runBenchmark(this.payloads.concatNonBlockingObservables);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatUnsubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatUnsubscribe, this.description("concatUnsubscribe"));
+            this.runBenchmark(this.payloads.concatUnsubscribe);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatUnsubscribeConcurrent() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatUnsubscribeConcurrent, this.description("concatUnsubscribeConcurrent"));
+            this.runBenchmark(this.payloads.concatUnsubscribeConcurrent);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_multipleObservers() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::multipleObservers, this.description("multipleObservers"));
+            this.runBenchmark(this.payloads.multipleObservers);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatVeryLongObservableOfObservables() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatVeryLongObservableOfObservables, this.description("concatVeryLongObservableOfObservables"));
+            this.runBenchmark(this.payloads.concatVeryLongObservableOfObservables);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatVeryLongObservableOfObservablesTakeHalf() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatVeryLongObservableOfObservablesTakeHalf, this.description("concatVeryLongObservableOfObservablesTakeHalf"));
+            this.runBenchmark(this.payloads.concatVeryLongObservableOfObservablesTakeHalf);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatOuterBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatOuterBackpressure, this.description("concatOuterBackpressure"));
+            this.runBenchmark(this.payloads.concatOuterBackpressure);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerBackpressureWithAlignedBoundaries() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerBackpressureWithAlignedBoundaries, this.description("innerBackpressureWithAlignedBoundaries"));
+            this.runBenchmark(this.payloads.innerBackpressureWithAlignedBoundaries);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerBackpressureWithoutAlignedBoundaries() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerBackpressureWithoutAlignedBoundaries, this.description("innerBackpressureWithoutAlignedBoundaries"));
+            this.runBenchmark(this.payloads.innerBackpressureWithoutAlignedBoundaries);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatWithNonCompliantSourceDoubleOnComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatWithNonCompliantSourceDoubleOnComplete, this.description("concatWithNonCompliantSourceDoubleOnComplete"));
+            this.runBenchmark(this.payloads.concatWithNonCompliantSourceDoubleOnComplete);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_issue2890NoStackoverflow() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::issue2890NoStackoverflow, this.description("issue2890NoStackoverflow"));
+            this.runBenchmark(this.payloads.issue2890NoStackoverflow);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_requestOverflowDoesNotStallStream() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::requestOverflowDoesNotStallStream, this.description("requestOverflowDoesNotStallStream"));
+            this.runBenchmark(this.payloads.requestOverflowDoesNotStallStream);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapRangeAsyncLoopIssue2876() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapRangeAsyncLoopIssue2876, this.description("concatMapRangeAsyncLoopIssue2876"));
+            this.runBenchmark(this.payloads.concatMapRangeAsyncLoopIssue2876);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_arrayDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::arrayDelayError, this.description("arrayDelayError"));
+            this.runBenchmark(this.payloads.arrayDelayError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scalarAndRangeBackpressured() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scalarAndRangeBackpressured, this.description("scalarAndRangeBackpressured"));
+            this.runBenchmark(this.payloads.scalarAndRangeBackpressured);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scalarAndEmptyBackpressured() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scalarAndEmptyBackpressured, this.description("scalarAndEmptyBackpressured"));
+            this.runBenchmark(this.payloads.scalarAndEmptyBackpressured);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_rangeAndEmptyBackpressured() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::rangeAndEmptyBackpressured, this.description("rangeAndEmptyBackpressured"));
+            this.runBenchmark(this.payloads.rangeAndEmptyBackpressured);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyAndScalarBackpressured() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyAndScalarBackpressured, this.description("emptyAndScalarBackpressured"));
+            this.runBenchmark(this.payloads.emptyAndScalarBackpressured);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatArray() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatArray, this.description("concatArray"));
+            this.runBenchmark(this.payloads.concatArray);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapJustJust() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapJustJust, this.description("concatMapJustJust"));
+            this.runBenchmark(this.payloads.concatMapJustJust);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapJustRange() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapJustRange, this.description("concatMapJustRange"));
+            this.runBenchmark(this.payloads.concatMapJustRange);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapDelayErrorJustJust() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapDelayErrorJustJust, this.description("concatMapDelayErrorJustJust"));
+            this.runBenchmark(this.payloads.concatMapDelayErrorJustJust);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapDelayErrorJustRange() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapDelayErrorJustRange, this.description("concatMapDelayErrorJustRange"));
+            this.runBenchmark(this.payloads.concatMapDelayErrorJustRange);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_startWithArray() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::startWithArray, this.description("startWithArray"));
+            this.runBenchmark(this.payloads.startWithArray);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_veryLongTake() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::veryLongTake, this.description("veryLongTake"));
+            this.runBenchmark(this.payloads.veryLongTake);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concat3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concat3, this.description("concat3"));
+            this.runBenchmark(this.payloads.concat3);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concat4() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concat4, this.description("concat4"));
+            this.runBenchmark(this.payloads.concat4);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatArrayDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatArrayDelayError, this.description("concatArrayDelayError"));
+            this.runBenchmark(this.payloads.concatArrayDelayError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatArrayDelayErrorWithError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatArrayDelayErrorWithError, this.description("concatArrayDelayErrorWithError"));
+            this.runBenchmark(this.payloads.concatArrayDelayErrorWithError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatIterableDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatIterableDelayError, this.description("concatIterableDelayError"));
+            this.runBenchmark(this.payloads.concatIterableDelayError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatIterableDelayErrorWithError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatIterableDelayErrorWithError, this.description("concatIterableDelayErrorWithError"));
+            this.runBenchmark(this.payloads.concatIterableDelayErrorWithError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatObservableDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatObservableDelayError, this.description("concatObservableDelayError"));
+            this.runBenchmark(this.payloads.concatObservableDelayError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatObservableDelayErrorWithError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatObservableDelayErrorWithError, this.description("concatObservableDelayErrorWithError"));
+            this.runBenchmark(this.payloads.concatObservableDelayErrorWithError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatObservableDelayErrorBoundary() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatObservableDelayErrorBoundary, this.description("concatObservableDelayErrorBoundary"));
+            this.runBenchmark(this.payloads.concatObservableDelayErrorBoundary);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatObservableDelayErrorTillEnd() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatObservableDelayErrorTillEnd, this.description("concatObservableDelayErrorTillEnd"));
+            this.runBenchmark(this.payloads.concatObservableDelayErrorTillEnd);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapDelayError, this.description("concatMapDelayError"));
+            this.runBenchmark(this.payloads.concatMapDelayError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapDelayErrorWithError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapDelayErrorWithError, this.description("concatMapDelayErrorWithError"));
+            this.runBenchmark(this.payloads.concatMapDelayErrorWithError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapIterableBufferSize() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapIterableBufferSize, this.description("concatMapIterableBufferSize"));
+            this.runBenchmark(this.payloads.concatMapIterableBufferSize);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyArray() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyArray, this.description("emptyArray"));
+            this.runBenchmark(this.payloads.emptyArray);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleElementArray() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleElementArray, this.description("singleElementArray"));
+            this.runBenchmark(this.payloads.singleElementArray);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapDelayErrorEmptySource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapDelayErrorEmptySource, this.description("concatMapDelayErrorEmptySource"));
+            this.runBenchmark(this.payloads.concatMapDelayErrorEmptySource);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapDelayErrorJustSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapDelayErrorJustSource, this.description("concatMapDelayErrorJustSource"));
+            this.runBenchmark(this.payloads.concatMapDelayErrorJustSource);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatArrayEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatArrayEmpty, this.description("concatArrayEmpty"));
+            this.runBenchmark(this.payloads.concatArrayEmpty);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatArraySingleElement() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatArraySingleElement, this.description("concatArraySingleElement"));
+            this.runBenchmark(this.payloads.concatArraySingleElement);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapErrorEmptySource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapErrorEmptySource, this.description("concatMapErrorEmptySource"));
+            this.runBenchmark(this.payloads.concatMapErrorEmptySource);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapJustSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapJustSource, this.description("concatMapJustSource"));
+            this.runBenchmark(this.payloads.concatMapJustSource);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapJustSourceDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapJustSourceDelayError, this.description("concatMapJustSourceDelayError"));
+            this.runBenchmark(this.payloads.concatMapJustSourceDelayError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapScalarBackpressured() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapScalarBackpressured, this.description("concatMapScalarBackpressured"));
+            this.runBenchmark(this.payloads.concatMapScalarBackpressured);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapScalarBackpressuredDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapScalarBackpressuredDelayError, this.description("concatMapScalarBackpressuredDelayError"));
+            this.runBenchmark(this.payloads.concatMapScalarBackpressuredDelayError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapEmpty, this.description("concatMapEmpty"));
+            this.runBenchmark(this.payloads.concatMapEmpty);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapEmptyDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapEmptyDelayError, this.description("concatMapEmptyDelayError"));
+            this.runBenchmark(this.payloads.concatMapEmptyDelayError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ignoreBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ignoreBackpressure, this.description("ignoreBackpressure"));
+            this.runBenchmark(this.payloads.ignoreBackpressure);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.runBenchmark(this.payloads.doubleOnSubscribe);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_immediateInnerNextOuterError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::immediateInnerNextOuterError, this.description("immediateInnerNextOuterError"));
+            this.runBenchmark(this.payloads.immediateInnerNextOuterError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_immediateInnerNextOuterError2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::immediateInnerNextOuterError2, this.description("immediateInnerNextOuterError2"));
+            this.runBenchmark(this.payloads.immediateInnerNextOuterError2);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapInnerError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapInnerError, this.description("concatMapInnerError"));
+            this.runBenchmark(this.payloads.concatMapInnerError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatMapInnerErrorDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatMapInnerErrorDelayError, this.description("concatMapInnerErrorDelayError"));
+            this.runBenchmark(this.payloads.concatMapInnerErrorDelayError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSource, this.description("badSource"));
+            this.runBenchmark(this.payloads.badSource);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badInnerSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badInnerSource, this.description("badInnerSource"));
+            this.runBenchmark(this.payloads.badInnerSource);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badInnerSourceDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badInnerSourceDelayError, this.description("badInnerSourceDelayError"));
+            this.runBenchmark(this.payloads.badInnerSourceDelayError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSourceDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSourceDelayError, this.description("badSourceDelayError"));
+            this.runBenchmark(this.payloads.badSourceDelayError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedCrash, this.description("fusedCrash"));
+            this.runBenchmark(this.payloads.fusedCrash);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedCrashDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedCrashDelayError, this.description("fusedCrashDelayError"));
+            this.runBenchmark(this.payloads.fusedCrashDelayError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_callableCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::callableCrash, this.description("callableCrash"));
+            this.runBenchmark(this.payloads.callableCrash);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_callableCrashDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::callableCrashDelayError, this.description("callableCrashDelayError"));
+            this.runBenchmark(this.payloads.callableCrashDelayError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.runBenchmark(this.payloads.dispose);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_notVeryEnd() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::notVeryEnd, this.description("notVeryEnd"));
+            this.runBenchmark(this.payloads.notVeryEnd);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.runBenchmark(this.payloads.error);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperThrows, this.description("mapperThrows"));
+            this.runBenchmark(this.payloads.mapperThrows);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noSubsequentSubscription() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noSubsequentSubscription, this.description("noSubsequentSubscription"));
+            this.runBenchmark(this.payloads.noSubsequentSubscription);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noSubsequentSubscriptionDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noSubsequentSubscriptionDelayError, this.description("noSubsequentSubscriptionDelayError"));
+            this.runBenchmark(this.payloads.noSubsequentSubscriptionDelayError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noSubsequentSubscriptionIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noSubsequentSubscriptionIterable, this.description("noSubsequentSubscriptionIterable"));
+            this.runBenchmark(this.payloads.noSubsequentSubscriptionIterable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noSubsequentSubscriptionDelayErrorIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noSubsequentSubscriptionDelayErrorIterable, this.description("noSubsequentSubscriptionDelayErrorIterable"));
+            this.runBenchmark(this.payloads.noSubsequentSubscriptionDelayErrorIterable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noCancelPreviousArray() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noCancelPreviousArray, this.description("noCancelPreviousArray"));
+            this.runBenchmark(this.payloads.noCancelPreviousArray);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noCancelPreviousIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noCancelPreviousIterable, this.description("noCancelPreviousIterable"));
+            this.runBenchmark(this.payloads.noCancelPreviousIterable);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_arrayDelayErrorMultipleErrors() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::arrayDelayErrorMultipleErrors, this.description("arrayDelayErrorMultipleErrors"));
+            this.runBenchmark(this.payloads.arrayDelayErrorMultipleErrors);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_arrayDelayErrorMultipleNullErrors() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::arrayDelayErrorMultipleNullErrors, this.description("arrayDelayErrorMultipleNullErrors"));
+            this.runBenchmark(this.payloads.arrayDelayErrorMultipleNullErrors);
         }
 
-        private FlowableConcatTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableConcatTest();
+        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> payload) throws java.lang.Throwable {
+            this.instance = new FlowableConcatTest();
+            payload.accept(this.instance);
         }
 
-        @java.lang.Override
-        public FlowableConcatTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concat;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatWithList;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatObservableOfObservables;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> simpleAsyncConcat;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> nestedAsyncConcatLoop;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> nestedAsyncConcat;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> blockedObservableOfObservables;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatConcurrentWithInfinity;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatNonBlockingObservables;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatUnsubscribe;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatUnsubscribeConcurrent;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> multipleObservers;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatVeryLongObservableOfObservables;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatVeryLongObservableOfObservablesTakeHalf;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatOuterBackpressure;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> innerBackpressureWithAlignedBoundaries;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> innerBackpressureWithoutAlignedBoundaries;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatWithNonCompliantSourceDoubleOnComplete;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> issue2890NoStackoverflow;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> requestOverflowDoesNotStallStream;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatMapRangeAsyncLoopIssue2876;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> arrayDelayError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> scalarAndRangeBackpressured;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> scalarAndEmptyBackpressured;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> rangeAndEmptyBackpressured;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> emptyAndScalarBackpressured;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatArray;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatMapJustJust;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatMapJustRange;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatMapDelayErrorJustJust;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatMapDelayErrorJustRange;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> startWithArray;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> veryLongTake;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concat3;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concat4;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatArrayDelayError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatArrayDelayErrorWithError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatIterableDelayError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatIterableDelayErrorWithError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatObservableDelayError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatObservableDelayErrorWithError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatObservableDelayErrorBoundary;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatObservableDelayErrorTillEnd;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatMapDelayError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatMapDelayErrorWithError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatMapIterableBufferSize;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> emptyArray;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> singleElementArray;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatMapDelayErrorEmptySource;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatMapDelayErrorJustSource;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatArrayEmpty;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatArraySingleElement;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatMapErrorEmptySource;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatMapJustSource;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatMapJustSourceDelayError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatMapScalarBackpressured;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatMapScalarBackpressuredDelayError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatMapEmpty;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatMapEmptyDelayError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> ignoreBackpressure;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> doubleOnSubscribe;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> immediateInnerNextOuterError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> immediateInnerNextOuterError2;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatMapInnerError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concatMapInnerErrorDelayError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> badSource;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> badInnerSource;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> badInnerSourceDelayError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> badSourceDelayError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> fusedCrash;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> fusedCrashDelayError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> callableCrash;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> callableCrashDelayError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> dispose;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> notVeryEnd;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> error;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> mapperThrows;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> noSubsequentSubscription;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> noSubsequentSubscriptionDelayError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> noSubsequentSubscriptionIterable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> noSubsequentSubscriptionDelayErrorIterable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> noCancelPreviousArray;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> noCancelPreviousIterable;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> arrayDelayErrorMultipleErrors;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> arrayDelayErrorMultipleNullErrors;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.concat = FlowableConcatTest::concat;
+            this.payloads.concatWithList = FlowableConcatTest::concatWithList;
+            this.payloads.concatObservableOfObservables = FlowableConcatTest::concatObservableOfObservables;
+            this.payloads.simpleAsyncConcat = FlowableConcatTest::simpleAsyncConcat;
+            this.payloads.nestedAsyncConcatLoop = FlowableConcatTest::nestedAsyncConcatLoop;
+            this.payloads.nestedAsyncConcat = FlowableConcatTest::nestedAsyncConcat;
+            this.payloads.blockedObservableOfObservables = FlowableConcatTest::blockedObservableOfObservables;
+            this.payloads.concatConcurrentWithInfinity = FlowableConcatTest::concatConcurrentWithInfinity;
+            this.payloads.concatNonBlockingObservables = FlowableConcatTest::concatNonBlockingObservables;
+            this.payloads.concatUnsubscribe = FlowableConcatTest::concatUnsubscribe;
+            this.payloads.concatUnsubscribeConcurrent = FlowableConcatTest::concatUnsubscribeConcurrent;
+            this.payloads.multipleObservers = FlowableConcatTest::multipleObservers;
+            this.payloads.concatVeryLongObservableOfObservables = FlowableConcatTest::concatVeryLongObservableOfObservables;
+            this.payloads.concatVeryLongObservableOfObservablesTakeHalf = FlowableConcatTest::concatVeryLongObservableOfObservablesTakeHalf;
+            this.payloads.concatOuterBackpressure = FlowableConcatTest::concatOuterBackpressure;
+            this.payloads.innerBackpressureWithAlignedBoundaries = FlowableConcatTest::innerBackpressureWithAlignedBoundaries;
+            this.payloads.innerBackpressureWithoutAlignedBoundaries = FlowableConcatTest::innerBackpressureWithoutAlignedBoundaries;
+            this.payloads.concatWithNonCompliantSourceDoubleOnComplete = FlowableConcatTest::concatWithNonCompliantSourceDoubleOnComplete;
+            this.payloads.issue2890NoStackoverflow = FlowableConcatTest::issue2890NoStackoverflow;
+            this.payloads.requestOverflowDoesNotStallStream = FlowableConcatTest::requestOverflowDoesNotStallStream;
+            this.payloads.concatMapRangeAsyncLoopIssue2876 = FlowableConcatTest::concatMapRangeAsyncLoopIssue2876;
+            this.payloads.arrayDelayError = FlowableConcatTest::arrayDelayError;
+            this.payloads.scalarAndRangeBackpressured = FlowableConcatTest::scalarAndRangeBackpressured;
+            this.payloads.scalarAndEmptyBackpressured = FlowableConcatTest::scalarAndEmptyBackpressured;
+            this.payloads.rangeAndEmptyBackpressured = FlowableConcatTest::rangeAndEmptyBackpressured;
+            this.payloads.emptyAndScalarBackpressured = FlowableConcatTest::emptyAndScalarBackpressured;
+            this.payloads.concatArray = FlowableConcatTest::concatArray;
+            this.payloads.concatMapJustJust = FlowableConcatTest::concatMapJustJust;
+            this.payloads.concatMapJustRange = FlowableConcatTest::concatMapJustRange;
+            this.payloads.concatMapDelayErrorJustJust = FlowableConcatTest::concatMapDelayErrorJustJust;
+            this.payloads.concatMapDelayErrorJustRange = FlowableConcatTest::concatMapDelayErrorJustRange;
+            this.payloads.startWithArray = FlowableConcatTest::startWithArray;
+            this.payloads.veryLongTake = FlowableConcatTest::veryLongTake;
+            this.payloads.concat3 = FlowableConcatTest::concat3;
+            this.payloads.concat4 = FlowableConcatTest::concat4;
+            this.payloads.concatArrayDelayError = FlowableConcatTest::concatArrayDelayError;
+            this.payloads.concatArrayDelayErrorWithError = FlowableConcatTest::concatArrayDelayErrorWithError;
+            this.payloads.concatIterableDelayError = FlowableConcatTest::concatIterableDelayError;
+            this.payloads.concatIterableDelayErrorWithError = FlowableConcatTest::concatIterableDelayErrorWithError;
+            this.payloads.concatObservableDelayError = FlowableConcatTest::concatObservableDelayError;
+            this.payloads.concatObservableDelayErrorWithError = FlowableConcatTest::concatObservableDelayErrorWithError;
+            this.payloads.concatObservableDelayErrorBoundary = FlowableConcatTest::concatObservableDelayErrorBoundary;
+            this.payloads.concatObservableDelayErrorTillEnd = FlowableConcatTest::concatObservableDelayErrorTillEnd;
+            this.payloads.concatMapDelayError = FlowableConcatTest::concatMapDelayError;
+            this.payloads.concatMapDelayErrorWithError = FlowableConcatTest::concatMapDelayErrorWithError;
+            this.payloads.concatMapIterableBufferSize = FlowableConcatTest::concatMapIterableBufferSize;
+            this.payloads.emptyArray = FlowableConcatTest::emptyArray;
+            this.payloads.singleElementArray = FlowableConcatTest::singleElementArray;
+            this.payloads.concatMapDelayErrorEmptySource = FlowableConcatTest::concatMapDelayErrorEmptySource;
+            this.payloads.concatMapDelayErrorJustSource = FlowableConcatTest::concatMapDelayErrorJustSource;
+            this.payloads.concatArrayEmpty = FlowableConcatTest::concatArrayEmpty;
+            this.payloads.concatArraySingleElement = FlowableConcatTest::concatArraySingleElement;
+            this.payloads.concatMapErrorEmptySource = FlowableConcatTest::concatMapErrorEmptySource;
+            this.payloads.concatMapJustSource = FlowableConcatTest::concatMapJustSource;
+            this.payloads.concatMapJustSourceDelayError = FlowableConcatTest::concatMapJustSourceDelayError;
+            this.payloads.concatMapScalarBackpressured = FlowableConcatTest::concatMapScalarBackpressured;
+            this.payloads.concatMapScalarBackpressuredDelayError = FlowableConcatTest::concatMapScalarBackpressuredDelayError;
+            this.payloads.concatMapEmpty = FlowableConcatTest::concatMapEmpty;
+            this.payloads.concatMapEmptyDelayError = FlowableConcatTest::concatMapEmptyDelayError;
+            this.payloads.ignoreBackpressure = FlowableConcatTest::ignoreBackpressure;
+            this.payloads.doubleOnSubscribe = FlowableConcatTest::doubleOnSubscribe;
+            this.payloads.immediateInnerNextOuterError = FlowableConcatTest::immediateInnerNextOuterError;
+            this.payloads.immediateInnerNextOuterError2 = FlowableConcatTest::immediateInnerNextOuterError2;
+            this.payloads.concatMapInnerError = FlowableConcatTest::concatMapInnerError;
+            this.payloads.concatMapInnerErrorDelayError = FlowableConcatTest::concatMapInnerErrorDelayError;
+            this.payloads.badSource = FlowableConcatTest::badSource;
+            this.payloads.badInnerSource = FlowableConcatTest::badInnerSource;
+            this.payloads.badInnerSourceDelayError = FlowableConcatTest::badInnerSourceDelayError;
+            this.payloads.badSourceDelayError = FlowableConcatTest::badSourceDelayError;
+            this.payloads.fusedCrash = FlowableConcatTest::fusedCrash;
+            this.payloads.fusedCrashDelayError = FlowableConcatTest::fusedCrashDelayError;
+            this.payloads.callableCrash = FlowableConcatTest::callableCrash;
+            this.payloads.callableCrashDelayError = FlowableConcatTest::callableCrashDelayError;
+            this.payloads.dispose = FlowableConcatTest::dispose;
+            this.payloads.notVeryEnd = FlowableConcatTest::notVeryEnd;
+            this.payloads.error = FlowableConcatTest::error;
+            this.payloads.mapperThrows = FlowableConcatTest::mapperThrows;
+            this.payloads.noSubsequentSubscription = FlowableConcatTest::noSubsequentSubscription;
+            this.payloads.noSubsequentSubscriptionDelayError = FlowableConcatTest::noSubsequentSubscriptionDelayError;
+            this.payloads.noSubsequentSubscriptionIterable = FlowableConcatTest::noSubsequentSubscriptionIterable;
+            this.payloads.noSubsequentSubscriptionDelayErrorIterable = FlowableConcatTest::noSubsequentSubscriptionDelayErrorIterable;
+            this.payloads.noCancelPreviousArray = FlowableConcatTest::noCancelPreviousArray;
+            this.payloads.noCancelPreviousIterable = FlowableConcatTest::noCancelPreviousIterable;
+            this.payloads.arrayDelayErrorMultipleErrors = FlowableConcatTest::arrayDelayErrorMultipleErrors;
+            this.payloads.arrayDelayErrorMultipleNullErrors = FlowableConcatTest::arrayDelayErrorMultipleNullErrors;
         }
     }
 }

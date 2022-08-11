@@ -124,48 +124,63 @@ public class CompletableSafeSubscribeTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private CompletableSafeSubscribeTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalError, this.description("normalError"));
+            this.runBenchmark(this.payloads.normalError);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalEmpty, this.description("normalEmpty"));
+            this.runBenchmark(this.payloads.normalEmpty);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onSubscribeCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onSubscribeCrash, this.description("onSubscribeCrash"));
+            this.runBenchmark(this.payloads.onSubscribeCrash);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorCrash, this.description("onErrorCrash"));
+            this.runBenchmark(this.payloads.onErrorCrash);
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onCompleteCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompleteCrash, this.description("onCompleteCrash"));
+            this.runBenchmark(this.payloads.onCompleteCrash);
         }
 
-        private CompletableSafeSubscribeTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new CompletableSafeSubscribeTest();
+        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableSafeSubscribeTest> payload) throws java.lang.Throwable {
+            this.instance = new CompletableSafeSubscribeTest();
+            payload.accept(this.instance);
         }
 
-        @java.lang.Override
-        public CompletableSafeSubscribeTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableSafeSubscribeTest> normalError;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableSafeSubscribeTest> normalEmpty;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableSafeSubscribeTest> onSubscribeCrash;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableSafeSubscribeTest> onErrorCrash;
+
+            public se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableSafeSubscribeTest> onCompleteCrash;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.normalError = CompletableSafeSubscribeTest::normalError;
+            this.payloads.normalEmpty = CompletableSafeSubscribeTest::normalEmpty;
+            this.payloads.onSubscribeCrash = CompletableSafeSubscribeTest::onSubscribeCrash;
+            this.payloads.onErrorCrash = CompletableSafeSubscribeTest::onErrorCrash;
+            this.payloads.onCompleteCrash = CompletableSafeSubscribeTest::onCompleteCrash;
         }
     }
 }

@@ -26,26 +26,4 @@ public class AbstractFlowableWithUpstreamTest extends RxJavaTest {
         Flowable<Integer> f = Flowable.just(1);
         assertSame(f, ((HasUpstreamPublisher<Integer>) f.map(Functions.<Integer>identity())).source());
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_source() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::source, this.description("source"));
-        }
-
-        private AbstractFlowableWithUpstreamTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new AbstractFlowableWithUpstreamTest();
-        }
-
-        @java.lang.Override
-        public AbstractFlowableWithUpstreamTest implementation() {
-            return this.implementation;
-        }
-    }
 }

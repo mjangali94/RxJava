@@ -39,26 +39,4 @@ public class SingleTimerTest extends RxJavaTest {
         testScheduler.advanceTimeBy(1, TimeUnit.SECONDS);
         assertEquals(1, atomicLong.get());
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_timer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timer, this.description("timer"));
-        }
-
-        private SingleTimerTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SingleTimerTest();
-        }
-
-        @java.lang.Override
-        public SingleTimerTest implementation() {
-            return this.implementation;
-        }
-    }
 }

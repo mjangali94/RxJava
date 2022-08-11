@@ -57,26 +57,4 @@ public class ObservableCombineLatestTests extends RxJavaTest {
             System.out.println("Result: " + t1);
         }
     };
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_covarianceOfCombineLatest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::covarianceOfCombineLatest, this.description("covarianceOfCombineLatest"));
-        }
-
-        private ObservableCombineLatestTests implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableCombineLatestTests();
-        }
-
-        @java.lang.Override
-        public ObservableCombineLatestTests implementation() {
-            return this.implementation;
-        }
-    }
 }

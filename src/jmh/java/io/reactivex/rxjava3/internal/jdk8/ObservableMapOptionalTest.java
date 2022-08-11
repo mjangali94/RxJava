@@ -236,198 +236,317 @@ public class ObservableMapOptionalTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableMapOptionalTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_allPresent() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::allPresent, this.description("allPresent"));
+            this.payloads.allPresent.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_allEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::allEmpty, this.description("allEmpty"));
+            this.payloads.allEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mixed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mixed, this.description("mixed"));
+            this.payloads.mixed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperChash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperChash, this.description("mapperChash"));
+            this.payloads.mapperChash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperNull, this.description("mapperNull"));
+            this.payloads.mapperNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_crashDropsOnNexts() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::crashDropsOnNexts, this.description("crashDropsOnNexts"));
+            this.payloads.crashDropsOnNexts.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_syncFusedAll() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::syncFusedAll, this.description("syncFusedAll"));
+            this.payloads.syncFusedAll.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncFusedAll() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncFusedAll, this.description("asyncFusedAll"));
+            this.payloads.asyncFusedAll.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundaryFusedAll() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundaryFusedAll, this.description("boundaryFusedAll"));
+            this.payloads.boundaryFusedAll.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_syncFusedNone() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::syncFusedNone, this.description("syncFusedNone"));
+            this.payloads.syncFusedNone.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncFusedNone() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncFusedNone, this.description("asyncFusedNone"));
+            this.payloads.asyncFusedNone.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundaryFusedNone() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundaryFusedNone, this.description("boundaryFusedNone"));
+            this.payloads.boundaryFusedNone.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_syncFusedMixed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::syncFusedMixed, this.description("syncFusedMixed"));
+            this.payloads.syncFusedMixed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncFusedMixed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncFusedMixed, this.description("asyncFusedMixed"));
+            this.payloads.asyncFusedMixed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundaryFusedMixed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundaryFusedMixed, this.description("boundaryFusedMixed"));
+            this.payloads.boundaryFusedMixed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_allPresentConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::allPresentConditional, this.description("allPresentConditional"));
+            this.payloads.allPresentConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_allEmptyConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::allEmptyConditional, this.description("allEmptyConditional"));
+            this.payloads.allEmptyConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mixedConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mixedConditional, this.description("mixedConditional"));
+            this.payloads.mixedConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperChashConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperChashConditional, this.description("mapperChashConditional"));
+            this.payloads.mapperChashConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperNullConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperNullConditional, this.description("mapperNullConditional"));
+            this.payloads.mapperNullConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_crashDropsOnNextsConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::crashDropsOnNextsConditional, this.description("crashDropsOnNextsConditional"));
+            this.payloads.crashDropsOnNextsConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_syncFusedAllConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::syncFusedAllConditional, this.description("syncFusedAllConditional"));
+            this.payloads.syncFusedAllConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncFusedAllConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncFusedAllConditional, this.description("asyncFusedAllConditional"));
+            this.payloads.asyncFusedAllConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundaryFusedAllConditiona() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundaryFusedAllConditiona, this.description("boundaryFusedAllConditiona"));
+            this.payloads.boundaryFusedAllConditiona.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_syncFusedNoneConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::syncFusedNoneConditional, this.description("syncFusedNoneConditional"));
+            this.payloads.syncFusedNoneConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncFusedNoneConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncFusedNoneConditional, this.description("asyncFusedNoneConditional"));
+            this.payloads.asyncFusedNoneConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundaryFusedNoneConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundaryFusedNoneConditional, this.description("boundaryFusedNoneConditional"));
+            this.payloads.boundaryFusedNoneConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_syncFusedMixedConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::syncFusedMixedConditional, this.description("syncFusedMixedConditional"));
+            this.payloads.syncFusedMixedConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncFusedMixedConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncFusedMixedConditional, this.description("asyncFusedMixedConditional"));
+            this.payloads.asyncFusedMixedConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundaryFusedMixedConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::boundaryFusedMixedConditional, this.description("boundaryFusedMixedConditional"));
+            this.payloads.boundaryFusedMixedConditional.evaluate();
         }
 
-        private ObservableMapOptionalTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableMapOptionalTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableMapOptionalTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableMapOptionalTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservableMapOptionalTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableMapOptionalTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableMapOptionalTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableMapOptionalTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableMapOptionalTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableMapOptionalTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableMapOptionalTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement allPresent;
+
+            public org.junit.runners.model.Statement allEmpty;
+
+            public org.junit.runners.model.Statement mixed;
+
+            public org.junit.runners.model.Statement mapperChash;
+
+            public org.junit.runners.model.Statement mapperNull;
+
+            public org.junit.runners.model.Statement crashDropsOnNexts;
+
+            public org.junit.runners.model.Statement syncFusedAll;
+
+            public org.junit.runners.model.Statement asyncFusedAll;
+
+            public org.junit.runners.model.Statement boundaryFusedAll;
+
+            public org.junit.runners.model.Statement syncFusedNone;
+
+            public org.junit.runners.model.Statement asyncFusedNone;
+
+            public org.junit.runners.model.Statement boundaryFusedNone;
+
+            public org.junit.runners.model.Statement syncFusedMixed;
+
+            public org.junit.runners.model.Statement asyncFusedMixed;
+
+            public org.junit.runners.model.Statement boundaryFusedMixed;
+
+            public org.junit.runners.model.Statement allPresentConditional;
+
+            public org.junit.runners.model.Statement allEmptyConditional;
+
+            public org.junit.runners.model.Statement mixedConditional;
+
+            public org.junit.runners.model.Statement mapperChashConditional;
+
+            public org.junit.runners.model.Statement mapperNullConditional;
+
+            public org.junit.runners.model.Statement crashDropsOnNextsConditional;
+
+            public org.junit.runners.model.Statement syncFusedAllConditional;
+
+            public org.junit.runners.model.Statement asyncFusedAllConditional;
+
+            public org.junit.runners.model.Statement boundaryFusedAllConditiona;
+
+            public org.junit.runners.model.Statement syncFusedNoneConditional;
+
+            public org.junit.runners.model.Statement asyncFusedNoneConditional;
+
+            public org.junit.runners.model.Statement boundaryFusedNoneConditional;
+
+            public org.junit.runners.model.Statement syncFusedMixedConditional;
+
+            public org.junit.runners.model.Statement asyncFusedMixedConditional;
+
+            public org.junit.runners.model.Statement boundaryFusedMixedConditional;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.allPresent = _ClassStatement.forPayload(ObservableMapOptionalTest::allPresent, "allPresent", this);
+            this.payloads.allEmpty = _ClassStatement.forPayload(ObservableMapOptionalTest::allEmpty, "allEmpty", this);
+            this.payloads.mixed = _ClassStatement.forPayload(ObservableMapOptionalTest::mixed, "mixed", this);
+            this.payloads.mapperChash = _ClassStatement.forPayload(ObservableMapOptionalTest::mapperChash, "mapperChash", this);
+            this.payloads.mapperNull = _ClassStatement.forPayload(ObservableMapOptionalTest::mapperNull, "mapperNull", this);
+            this.payloads.crashDropsOnNexts = _ClassStatement.forPayload(ObservableMapOptionalTest::crashDropsOnNexts, "crashDropsOnNexts", this);
+            this.payloads.syncFusedAll = _ClassStatement.forPayload(ObservableMapOptionalTest::syncFusedAll, "syncFusedAll", this);
+            this.payloads.asyncFusedAll = _ClassStatement.forPayload(ObservableMapOptionalTest::asyncFusedAll, "asyncFusedAll", this);
+            this.payloads.boundaryFusedAll = _ClassStatement.forPayload(ObservableMapOptionalTest::boundaryFusedAll, "boundaryFusedAll", this);
+            this.payloads.syncFusedNone = _ClassStatement.forPayload(ObservableMapOptionalTest::syncFusedNone, "syncFusedNone", this);
+            this.payloads.asyncFusedNone = _ClassStatement.forPayload(ObservableMapOptionalTest::asyncFusedNone, "asyncFusedNone", this);
+            this.payloads.boundaryFusedNone = _ClassStatement.forPayload(ObservableMapOptionalTest::boundaryFusedNone, "boundaryFusedNone", this);
+            this.payloads.syncFusedMixed = _ClassStatement.forPayload(ObservableMapOptionalTest::syncFusedMixed, "syncFusedMixed", this);
+            this.payloads.asyncFusedMixed = _ClassStatement.forPayload(ObservableMapOptionalTest::asyncFusedMixed, "asyncFusedMixed", this);
+            this.payloads.boundaryFusedMixed = _ClassStatement.forPayload(ObservableMapOptionalTest::boundaryFusedMixed, "boundaryFusedMixed", this);
+            this.payloads.allPresentConditional = _ClassStatement.forPayload(ObservableMapOptionalTest::allPresentConditional, "allPresentConditional", this);
+            this.payloads.allEmptyConditional = _ClassStatement.forPayload(ObservableMapOptionalTest::allEmptyConditional, "allEmptyConditional", this);
+            this.payloads.mixedConditional = _ClassStatement.forPayload(ObservableMapOptionalTest::mixedConditional, "mixedConditional", this);
+            this.payloads.mapperChashConditional = _ClassStatement.forPayload(ObservableMapOptionalTest::mapperChashConditional, "mapperChashConditional", this);
+            this.payloads.mapperNullConditional = _ClassStatement.forPayload(ObservableMapOptionalTest::mapperNullConditional, "mapperNullConditional", this);
+            this.payloads.crashDropsOnNextsConditional = _ClassStatement.forPayload(ObservableMapOptionalTest::crashDropsOnNextsConditional, "crashDropsOnNextsConditional", this);
+            this.payloads.syncFusedAllConditional = _ClassStatement.forPayload(ObservableMapOptionalTest::syncFusedAllConditional, "syncFusedAllConditional", this);
+            this.payloads.asyncFusedAllConditional = _ClassStatement.forPayload(ObservableMapOptionalTest::asyncFusedAllConditional, "asyncFusedAllConditional", this);
+            this.payloads.boundaryFusedAllConditiona = _ClassStatement.forPayload(ObservableMapOptionalTest::boundaryFusedAllConditiona, "boundaryFusedAllConditiona", this);
+            this.payloads.syncFusedNoneConditional = _ClassStatement.forPayload(ObservableMapOptionalTest::syncFusedNoneConditional, "syncFusedNoneConditional", this);
+            this.payloads.asyncFusedNoneConditional = _ClassStatement.forPayload(ObservableMapOptionalTest::asyncFusedNoneConditional, "asyncFusedNoneConditional", this);
+            this.payloads.boundaryFusedNoneConditional = _ClassStatement.forPayload(ObservableMapOptionalTest::boundaryFusedNoneConditional, "boundaryFusedNoneConditional", this);
+            this.payloads.syncFusedMixedConditional = _ClassStatement.forPayload(ObservableMapOptionalTest::syncFusedMixedConditional, "syncFusedMixedConditional", this);
+            this.payloads.asyncFusedMixedConditional = _ClassStatement.forPayload(ObservableMapOptionalTest::asyncFusedMixedConditional, "asyncFusedMixedConditional", this);
+            this.payloads.boundaryFusedMixedConditional = _ClassStatement.forPayload(ObservableMapOptionalTest::boundaryFusedMixedConditional, "boundaryFusedMixedConditional", this);
         }
     }
 }

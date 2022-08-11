@@ -126,78 +126,157 @@ public class MaybeDoFinallyTest extends RxJavaTest implements Action {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private MaybeDoFinallyTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalJust() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalJust, this.description("normalJust"));
+            this.payloads.normalJust.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalEmpty, this.description("normalEmpty"));
+            this.payloads.normalEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalError, this.description("normalError"));
+            this.payloads.normalError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalJustConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalJustConditional, this.description("normalJustConditional"));
+            this.payloads.normalJustConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalEmptyConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalEmptyConditional, this.description("normalEmptyConditional"));
+            this.payloads.normalEmptyConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalErrorConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalErrorConditional, this.description("normalErrorConditional"));
+            this.payloads.normalErrorConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_actionThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::actionThrows, this.description("actionThrows"));
+            this.payloads.actionThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_actionThrowsConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::actionThrowsConditional, this.description("actionThrowsConditional"));
+            this.payloads.actionThrowsConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposed, this.description("disposed"));
+            this.payloads.disposed.evaluate();
         }
 
-        private MaybeDoFinallyTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeDoFinallyTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeDoFinallyTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeDoFinallyTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public MaybeDoFinallyTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeDoFinallyTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeDoFinallyTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new MaybeDoFinallyTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeDoFinallyTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(MaybeDoFinallyTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(MaybeDoFinallyTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement normalJust;
+
+            public org.junit.runners.model.Statement normalEmpty;
+
+            public org.junit.runners.model.Statement normalError;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement normalJustConditional;
+
+            public org.junit.runners.model.Statement normalEmptyConditional;
+
+            public org.junit.runners.model.Statement normalErrorConditional;
+
+            public org.junit.runners.model.Statement actionThrows;
+
+            public org.junit.runners.model.Statement actionThrowsConditional;
+
+            public org.junit.runners.model.Statement disposed;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.normalJust = _ClassStatement.forPayload(MaybeDoFinallyTest::normalJust, "normalJust", this);
+            this.payloads.normalEmpty = _ClassStatement.forPayload(MaybeDoFinallyTest::normalEmpty, "normalEmpty", this);
+            this.payloads.normalError = _ClassStatement.forPayload(MaybeDoFinallyTest::normalError, "normalError", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(MaybeDoFinallyTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.normalJustConditional = _ClassStatement.forPayload(MaybeDoFinallyTest::normalJustConditional, "normalJustConditional", this);
+            this.payloads.normalEmptyConditional = _ClassStatement.forPayload(MaybeDoFinallyTest::normalEmptyConditional, "normalEmptyConditional", this);
+            this.payloads.normalErrorConditional = _ClassStatement.forPayload(MaybeDoFinallyTest::normalErrorConditional, "normalErrorConditional", this);
+            this.payloads.actionThrows = _ClassStatement.forPayload(MaybeDoFinallyTest::actionThrows, "actionThrows", this);
+            this.payloads.actionThrowsConditional = _ClassStatement.forPayload(MaybeDoFinallyTest::actionThrowsConditional, "actionThrowsConditional", this);
+            this.payloads.disposed = _ClassStatement.forPayload(MaybeDoFinallyTest::disposed, "disposed", this);
         }
     }
 }

@@ -29,26 +29,4 @@ public class SingleFlatMapCompletableTest extends RxJavaTest {
             }
         }));
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
-        }
-
-        private SingleFlatMapCompletableTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SingleFlatMapCompletableTest();
-        }
-
-        @java.lang.Override
-        public SingleFlatMapCompletableTest implementation() {
-            return this.implementation;
-        }
-    }
 }

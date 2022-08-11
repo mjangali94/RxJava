@@ -29,26 +29,4 @@ public class MaybeErrorTest extends RxJavaTest {
             }
         }).test().assertFailure(TestException.class);
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_errorSupplierThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorSupplierThrows, this.description("errorSupplierThrows"));
-        }
-
-        private MaybeErrorTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeErrorTest();
-        }
-
-        @java.lang.Override
-        public MaybeErrorTest implementation() {
-            return this.implementation;
-        }
-    }
 }

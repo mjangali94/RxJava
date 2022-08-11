@@ -236,180 +236,293 @@ public class ParallelMapTryOptionalTest extends RxJavaTest implements Consumer<O
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ParallelMapTryOptionalTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapNoError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapNoError, this.description("mapNoError"));
+            this.payloads.mapNoError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapErrorNoError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapErrorNoError, this.description("mapErrorNoError"));
+            this.payloads.mapErrorNoError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapConditionalNoError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapConditionalNoError, this.description("mapConditionalNoError"));
+            this.payloads.mapConditionalNoError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapErrorConditionalNoError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapErrorConditionalNoError, this.description("mapErrorConditionalNoError"));
+            this.payloads.mapErrorConditionalNoError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapFailWithError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapFailWithError, this.description("mapFailWithError"));
+            this.payloads.mapFailWithError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapFailWithStop() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapFailWithStop, this.description("mapFailWithStop"));
+            this.payloads.mapFailWithStop.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapFailWithRetry() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapFailWithRetry, this.description("mapFailWithRetry"));
+            this.payloads.mapFailWithRetry.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapFailWithRetryLimited() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapFailWithRetryLimited, this.description("mapFailWithRetryLimited"));
+            this.payloads.mapFailWithRetryLimited.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapFailWithSkip() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapFailWithSkip, this.description("mapFailWithSkip"));
+            this.payloads.mapFailWithSkip.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapFailHandlerThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapFailHandlerThrows, this.description("mapFailHandlerThrows"));
+            this.payloads.mapFailHandlerThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapInvalidSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapInvalidSource, this.description("mapInvalidSource"));
+            this.payloads.mapInvalidSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapFailWithErrorConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapFailWithErrorConditional, this.description("mapFailWithErrorConditional"));
+            this.payloads.mapFailWithErrorConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapFailWithStopConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapFailWithStopConditional, this.description("mapFailWithStopConditional"));
+            this.payloads.mapFailWithStopConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapFailWithRetryConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapFailWithRetryConditional, this.description("mapFailWithRetryConditional"));
+            this.payloads.mapFailWithRetryConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapFailWithRetryLimitedConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapFailWithRetryLimitedConditional, this.description("mapFailWithRetryLimitedConditional"));
+            this.payloads.mapFailWithRetryLimitedConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapFailWithSkipConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapFailWithSkipConditional, this.description("mapFailWithSkipConditional"));
+            this.payloads.mapFailWithSkipConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapFailHandlerThrowsConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapFailHandlerThrowsConditional, this.description("mapFailHandlerThrowsConditional"));
+            this.payloads.mapFailHandlerThrowsConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapWrongParallelismConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapWrongParallelismConditional, this.description("mapWrongParallelismConditional"));
+            this.payloads.mapWrongParallelismConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapInvalidSourceConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapInvalidSourceConditional, this.description("mapInvalidSourceConditional"));
+            this.payloads.mapInvalidSourceConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_failureHandlingEnum() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::failureHandlingEnum, this.description("failureHandlingEnum"));
+            this.payloads.failureHandlingEnum.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_allNone() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::allNone, this.description("allNone"));
+            this.payloads.allNone.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_allNoneConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::allNoneConditional, this.description("allNoneConditional"));
+            this.payloads.allNoneConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mixed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mixed, this.description("mixed"));
+            this.payloads.mixed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mixedConditional() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mixedConditional, this.description("mixedConditional"));
+            this.payloads.mixedConditional.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mixedConditional2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mixedConditional2, this.description("mixedConditional2"));
+            this.payloads.mixedConditional2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_invalidSubscriberCount() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::invalidSubscriberCount, this.description("invalidSubscriberCount"));
+            this.payloads.invalidSubscriberCount.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
-        private ParallelMapTryOptionalTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ParallelMapTryOptionalTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ParallelMapTryOptionalTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ParallelMapTryOptionalTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ParallelMapTryOptionalTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ParallelMapTryOptionalTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ParallelMapTryOptionalTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ParallelMapTryOptionalTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ParallelMapTryOptionalTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ParallelMapTryOptionalTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ParallelMapTryOptionalTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement mapNoError;
+
+            public org.junit.runners.model.Statement mapErrorNoError;
+
+            public org.junit.runners.model.Statement mapConditionalNoError;
+
+            public org.junit.runners.model.Statement mapErrorConditionalNoError;
+
+            public org.junit.runners.model.Statement mapFailWithError;
+
+            public org.junit.runners.model.Statement mapFailWithStop;
+
+            public org.junit.runners.model.Statement mapFailWithRetry;
+
+            public org.junit.runners.model.Statement mapFailWithRetryLimited;
+
+            public org.junit.runners.model.Statement mapFailWithSkip;
+
+            public org.junit.runners.model.Statement mapFailHandlerThrows;
+
+            public org.junit.runners.model.Statement mapInvalidSource;
+
+            public org.junit.runners.model.Statement mapFailWithErrorConditional;
+
+            public org.junit.runners.model.Statement mapFailWithStopConditional;
+
+            public org.junit.runners.model.Statement mapFailWithRetryConditional;
+
+            public org.junit.runners.model.Statement mapFailWithRetryLimitedConditional;
+
+            public org.junit.runners.model.Statement mapFailWithSkipConditional;
+
+            public org.junit.runners.model.Statement mapFailHandlerThrowsConditional;
+
+            public org.junit.runners.model.Statement mapWrongParallelismConditional;
+
+            public org.junit.runners.model.Statement mapInvalidSourceConditional;
+
+            public org.junit.runners.model.Statement failureHandlingEnum;
+
+            public org.junit.runners.model.Statement allNone;
+
+            public org.junit.runners.model.Statement allNoneConditional;
+
+            public org.junit.runners.model.Statement mixed;
+
+            public org.junit.runners.model.Statement mixedConditional;
+
+            public org.junit.runners.model.Statement mixedConditional2;
+
+            public org.junit.runners.model.Statement invalidSubscriberCount;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.mapNoError = _ClassStatement.forPayload(ParallelMapTryOptionalTest::mapNoError, "mapNoError", this);
+            this.payloads.mapErrorNoError = _ClassStatement.forPayload(ParallelMapTryOptionalTest::mapErrorNoError, "mapErrorNoError", this);
+            this.payloads.mapConditionalNoError = _ClassStatement.forPayload(ParallelMapTryOptionalTest::mapConditionalNoError, "mapConditionalNoError", this);
+            this.payloads.mapErrorConditionalNoError = _ClassStatement.forPayload(ParallelMapTryOptionalTest::mapErrorConditionalNoError, "mapErrorConditionalNoError", this);
+            this.payloads.mapFailWithError = _ClassStatement.forPayload(ParallelMapTryOptionalTest::mapFailWithError, "mapFailWithError", this);
+            this.payloads.mapFailWithStop = _ClassStatement.forPayload(ParallelMapTryOptionalTest::mapFailWithStop, "mapFailWithStop", this);
+            this.payloads.mapFailWithRetry = _ClassStatement.forPayload(ParallelMapTryOptionalTest::mapFailWithRetry, "mapFailWithRetry", this);
+            this.payloads.mapFailWithRetryLimited = _ClassStatement.forPayload(ParallelMapTryOptionalTest::mapFailWithRetryLimited, "mapFailWithRetryLimited", this);
+            this.payloads.mapFailWithSkip = _ClassStatement.forPayload(ParallelMapTryOptionalTest::mapFailWithSkip, "mapFailWithSkip", this);
+            this.payloads.mapFailHandlerThrows = _ClassStatement.forPayload(ParallelMapTryOptionalTest::mapFailHandlerThrows, "mapFailHandlerThrows", this);
+            this.payloads.mapInvalidSource = _ClassStatement.forPayload(ParallelMapTryOptionalTest::mapInvalidSource, "mapInvalidSource", this);
+            this.payloads.mapFailWithErrorConditional = _ClassStatement.forPayload(ParallelMapTryOptionalTest::mapFailWithErrorConditional, "mapFailWithErrorConditional", this);
+            this.payloads.mapFailWithStopConditional = _ClassStatement.forPayload(ParallelMapTryOptionalTest::mapFailWithStopConditional, "mapFailWithStopConditional", this);
+            this.payloads.mapFailWithRetryConditional = _ClassStatement.forPayload(ParallelMapTryOptionalTest::mapFailWithRetryConditional, "mapFailWithRetryConditional", this);
+            this.payloads.mapFailWithRetryLimitedConditional = _ClassStatement.forPayload(ParallelMapTryOptionalTest::mapFailWithRetryLimitedConditional, "mapFailWithRetryLimitedConditional", this);
+            this.payloads.mapFailWithSkipConditional = _ClassStatement.forPayload(ParallelMapTryOptionalTest::mapFailWithSkipConditional, "mapFailWithSkipConditional", this);
+            this.payloads.mapFailHandlerThrowsConditional = _ClassStatement.forPayload(ParallelMapTryOptionalTest::mapFailHandlerThrowsConditional, "mapFailHandlerThrowsConditional", this);
+            this.payloads.mapWrongParallelismConditional = _ClassStatement.forPayload(ParallelMapTryOptionalTest::mapWrongParallelismConditional, "mapWrongParallelismConditional", this);
+            this.payloads.mapInvalidSourceConditional = _ClassStatement.forPayload(ParallelMapTryOptionalTest::mapInvalidSourceConditional, "mapInvalidSourceConditional", this);
+            this.payloads.failureHandlingEnum = _ClassStatement.forPayload(ParallelMapTryOptionalTest::failureHandlingEnum, "failureHandlingEnum", this);
+            this.payloads.allNone = _ClassStatement.forPayload(ParallelMapTryOptionalTest::allNone, "allNone", this);
+            this.payloads.allNoneConditional = _ClassStatement.forPayload(ParallelMapTryOptionalTest::allNoneConditional, "allNoneConditional", this);
+            this.payloads.mixed = _ClassStatement.forPayload(ParallelMapTryOptionalTest::mixed, "mixed", this);
+            this.payloads.mixedConditional = _ClassStatement.forPayload(ParallelMapTryOptionalTest::mixedConditional, "mixedConditional", this);
+            this.payloads.mixedConditional2 = _ClassStatement.forPayload(ParallelMapTryOptionalTest::mixedConditional2, "mixedConditional2", this);
+            this.payloads.invalidSubscriberCount = _ClassStatement.forPayload(ParallelMapTryOptionalTest::invalidSubscriberCount, "invalidSubscriberCount", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(ParallelMapTryOptionalTest::doubleOnSubscribe, "doubleOnSubscribe", this);
         }
     }
 }

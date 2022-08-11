@@ -26,26 +26,4 @@ public class AbstractObservableWithUpstreamTest extends RxJavaTest {
         Observable<Integer> o = Observable.just(1);
         assertSame(o, ((HasUpstreamObservableSource<Integer>) o.map(Functions.<Integer>identity())).source());
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_source() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::source, this.description("source"));
-        }
-
-        private AbstractObservableWithUpstreamTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new AbstractObservableWithUpstreamTest();
-        }
-
-        @java.lang.Override
-        public AbstractObservableWithUpstreamTest implementation() {
-            return this.implementation;
-        }
-    }
 }

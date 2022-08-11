@@ -119,72 +119,149 @@ public class BlockingObservableToIteratorTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private BlockingObservableToIteratorTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toIterator() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toIterator, this.description("toIterator"));
+            this.payloads.toIterator.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toIteratorWithException() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::toIteratorWithException, this.description("toIteratorWithException"), io.reactivex.rxjava3.exceptions.TestException.class);
+            this.payloads.toIteratorWithException.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_interruptWait() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::interruptWait, this.description("interruptWait"));
+            this.payloads.interruptWait.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyThrowsNoSuch() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::emptyThrowsNoSuch, this.description("emptyThrowsNoSuch"), java.util.NoSuchElementException.class);
+            this.payloads.emptyThrowsNoSuch.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_remove() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::remove, this.description("remove"), java.lang.UnsupportedOperationException.class);
+            this.payloads.remove.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposedIteratorHasNextReturns() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::disposedIteratorHasNextReturns, this.description("disposedIteratorHasNextReturns"), java.util.NoSuchElementException.class);
+            this.payloads.disposedIteratorHasNextReturns.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_asyncDisposeUnblocks() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::asyncDisposeUnblocks, this.description("asyncDisposeUnblocks"));
+            this.payloads.asyncDisposeUnblocks.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorAfterDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::errorAfterDispose, this.description("errorAfterDispose"), io.reactivex.rxjava3.exceptions.TestException.class);
+            this.payloads.errorAfterDispose.evaluate();
         }
 
-        private BlockingObservableToIteratorTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new BlockingObservableToIteratorTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<BlockingObservableToIteratorTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<BlockingObservableToIteratorTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public BlockingObservableToIteratorTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<BlockingObservableToIteratorTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<BlockingObservableToIteratorTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new BlockingObservableToIteratorTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<BlockingObservableToIteratorTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(BlockingObservableToIteratorTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(BlockingObservableToIteratorTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement toIterator;
+
+            public org.junit.runners.model.Statement toIteratorWithException;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement interruptWait;
+
+            public org.junit.runners.model.Statement emptyThrowsNoSuch;
+
+            public org.junit.runners.model.Statement remove;
+
+            public org.junit.runners.model.Statement disposedIteratorHasNextReturns;
+
+            public org.junit.runners.model.Statement asyncDisposeUnblocks;
+
+            public org.junit.runners.model.Statement errorAfterDispose;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.toIterator = _ClassStatement.forPayload(BlockingObservableToIteratorTest::toIterator, "toIterator", this);
+            this.payloads.toIteratorWithException = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(BlockingObservableToIteratorTest::toIteratorWithException, io.reactivex.rxjava3.exceptions.TestException.class), "toIteratorWithException", this);
+            this.payloads.dispose = _ClassStatement.forPayload(BlockingObservableToIteratorTest::dispose, "dispose", this);
+            this.payloads.interruptWait = _ClassStatement.forPayload(BlockingObservableToIteratorTest::interruptWait, "interruptWait", this);
+            this.payloads.emptyThrowsNoSuch = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(BlockingObservableToIteratorTest::emptyThrowsNoSuch, java.util.NoSuchElementException.class), "emptyThrowsNoSuch", this);
+            this.payloads.remove = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(BlockingObservableToIteratorTest::remove, java.lang.UnsupportedOperationException.class), "remove", this);
+            this.payloads.disposedIteratorHasNextReturns = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(BlockingObservableToIteratorTest::disposedIteratorHasNextReturns, java.util.NoSuchElementException.class), "disposedIteratorHasNextReturns", this);
+            this.payloads.asyncDisposeUnblocks = _ClassStatement.forPayload(BlockingObservableToIteratorTest::asyncDisposeUnblocks, "asyncDisposeUnblocks", this);
+            this.payloads.errorAfterDispose = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(BlockingObservableToIteratorTest::errorAfterDispose, io.reactivex.rxjava3.exceptions.TestException.class), "errorAfterDispose", this);
         }
     }
 }

@@ -294,162 +294,269 @@ public class AtomicThrowableTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private AtomicThrowableTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_isTerminated() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::isTerminated, this.description("isTerminated"));
+            this.payloads.isTerminated.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_tryTerminateAndReportNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tryTerminateAndReportNull, this.description("tryTerminateAndReportNull"));
+            this.payloads.tryTerminateAndReportNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_tryTerminateAndReportAlreadyTerminated() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tryTerminateAndReportAlreadyTerminated, this.description("tryTerminateAndReportAlreadyTerminated"));
+            this.payloads.tryTerminateAndReportAlreadyTerminated.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_tryTerminateAndReportHasError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tryTerminateAndReportHasError, this.description("tryTerminateAndReportHasError"));
+            this.payloads.tryTerminateAndReportHasError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_tryTerminateConsumerSubscriberNoError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tryTerminateConsumerSubscriberNoError, this.description("tryTerminateConsumerSubscriberNoError"));
+            this.payloads.tryTerminateConsumerSubscriberNoError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_tryTerminateConsumerSubscriberError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tryTerminateConsumerSubscriberError, this.description("tryTerminateConsumerSubscriberError"));
+            this.payloads.tryTerminateConsumerSubscriberError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_tryTerminateConsumerSubscriberTerminated() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tryTerminateConsumerSubscriberTerminated, this.description("tryTerminateConsumerSubscriberTerminated"));
+            this.payloads.tryTerminateConsumerSubscriberTerminated.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_tryTerminateConsumerObserverNoError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tryTerminateConsumerObserverNoError, this.description("tryTerminateConsumerObserverNoError"));
+            this.payloads.tryTerminateConsumerObserverNoError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_tryTerminateConsumerObserverError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tryTerminateConsumerObserverError, this.description("tryTerminateConsumerObserverError"));
+            this.payloads.tryTerminateConsumerObserverError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_tryTerminateConsumerObserverTerminated() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tryTerminateConsumerObserverTerminated, this.description("tryTerminateConsumerObserverTerminated"));
+            this.payloads.tryTerminateConsumerObserverTerminated.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_tryTerminateConsumerMaybeObserverNoError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tryTerminateConsumerMaybeObserverNoError, this.description("tryTerminateConsumerMaybeObserverNoError"));
+            this.payloads.tryTerminateConsumerMaybeObserverNoError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_tryTerminateConsumerMaybeObserverError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tryTerminateConsumerMaybeObserverError, this.description("tryTerminateConsumerMaybeObserverError"));
+            this.payloads.tryTerminateConsumerMaybeObserverError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_tryTerminateConsumerMaybeObserverTerminated() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tryTerminateConsumerMaybeObserverTerminated, this.description("tryTerminateConsumerMaybeObserverTerminated"));
+            this.payloads.tryTerminateConsumerMaybeObserverTerminated.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_tryTerminateConsumerSingleNoError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tryTerminateConsumerSingleNoError, this.description("tryTerminateConsumerSingleNoError"));
+            this.payloads.tryTerminateConsumerSingleNoError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_tryTerminateConsumerSingleError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tryTerminateConsumerSingleError, this.description("tryTerminateConsumerSingleError"));
+            this.payloads.tryTerminateConsumerSingleError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_tryTerminateConsumerSingleTerminated() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tryTerminateConsumerSingleTerminated, this.description("tryTerminateConsumerSingleTerminated"));
+            this.payloads.tryTerminateConsumerSingleTerminated.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_tryTerminateConsumerCompletableObserverNoError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tryTerminateConsumerCompletableObserverNoError, this.description("tryTerminateConsumerCompletableObserverNoError"));
+            this.payloads.tryTerminateConsumerCompletableObserverNoError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_tryTerminateConsumerCompletableObserverError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tryTerminateConsumerCompletableObserverError, this.description("tryTerminateConsumerCompletableObserverError"));
+            this.payloads.tryTerminateConsumerCompletableObserverError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_tryTerminateConsumerCompletableObserverTerminated() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tryTerminateConsumerCompletableObserverTerminated, this.description("tryTerminateConsumerCompletableObserverTerminated"));
+            this.payloads.tryTerminateConsumerCompletableObserverTerminated.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_tryTerminateConsumerEmitterNoError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tryTerminateConsumerEmitterNoError, this.description("tryTerminateConsumerEmitterNoError"));
+            this.payloads.tryTerminateConsumerEmitterNoError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_tryTerminateConsumerEmitterError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tryTerminateConsumerEmitterError, this.description("tryTerminateConsumerEmitterError"));
+            this.payloads.tryTerminateConsumerEmitterError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_tryTerminateConsumerEmitterTerminated() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tryTerminateConsumerEmitterTerminated, this.description("tryTerminateConsumerEmitterTerminated"));
+            this.payloads.tryTerminateConsumerEmitterTerminated.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_tryAddThrowableOrReportNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tryAddThrowableOrReportNull, this.description("tryAddThrowableOrReportNull"));
+            this.payloads.tryAddThrowableOrReportNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_tryAddThrowableOrReportTerminated() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tryAddThrowableOrReportTerminated, this.description("tryAddThrowableOrReportTerminated"));
+            this.payloads.tryAddThrowableOrReportTerminated.evaluate();
         }
 
-        private AtomicThrowableTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new AtomicThrowableTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<AtomicThrowableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<AtomicThrowableTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public AtomicThrowableTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<AtomicThrowableTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<AtomicThrowableTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new AtomicThrowableTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<AtomicThrowableTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(AtomicThrowableTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(AtomicThrowableTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement isTerminated;
+
+            public org.junit.runners.model.Statement tryTerminateAndReportNull;
+
+            public org.junit.runners.model.Statement tryTerminateAndReportAlreadyTerminated;
+
+            public org.junit.runners.model.Statement tryTerminateAndReportHasError;
+
+            public org.junit.runners.model.Statement tryTerminateConsumerSubscriberNoError;
+
+            public org.junit.runners.model.Statement tryTerminateConsumerSubscriberError;
+
+            public org.junit.runners.model.Statement tryTerminateConsumerSubscriberTerminated;
+
+            public org.junit.runners.model.Statement tryTerminateConsumerObserverNoError;
+
+            public org.junit.runners.model.Statement tryTerminateConsumerObserverError;
+
+            public org.junit.runners.model.Statement tryTerminateConsumerObserverTerminated;
+
+            public org.junit.runners.model.Statement tryTerminateConsumerMaybeObserverNoError;
+
+            public org.junit.runners.model.Statement tryTerminateConsumerMaybeObserverError;
+
+            public org.junit.runners.model.Statement tryTerminateConsumerMaybeObserverTerminated;
+
+            public org.junit.runners.model.Statement tryTerminateConsumerSingleNoError;
+
+            public org.junit.runners.model.Statement tryTerminateConsumerSingleError;
+
+            public org.junit.runners.model.Statement tryTerminateConsumerSingleTerminated;
+
+            public org.junit.runners.model.Statement tryTerminateConsumerCompletableObserverNoError;
+
+            public org.junit.runners.model.Statement tryTerminateConsumerCompletableObserverError;
+
+            public org.junit.runners.model.Statement tryTerminateConsumerCompletableObserverTerminated;
+
+            public org.junit.runners.model.Statement tryTerminateConsumerEmitterNoError;
+
+            public org.junit.runners.model.Statement tryTerminateConsumerEmitterError;
+
+            public org.junit.runners.model.Statement tryTerminateConsumerEmitterTerminated;
+
+            public org.junit.runners.model.Statement tryAddThrowableOrReportNull;
+
+            public org.junit.runners.model.Statement tryAddThrowableOrReportTerminated;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.isTerminated = _ClassStatement.forPayload(AtomicThrowableTest::isTerminated, "isTerminated", this);
+            this.payloads.tryTerminateAndReportNull = _ClassStatement.forPayload(AtomicThrowableTest::tryTerminateAndReportNull, "tryTerminateAndReportNull", this);
+            this.payloads.tryTerminateAndReportAlreadyTerminated = _ClassStatement.forPayload(AtomicThrowableTest::tryTerminateAndReportAlreadyTerminated, "tryTerminateAndReportAlreadyTerminated", this);
+            this.payloads.tryTerminateAndReportHasError = _ClassStatement.forPayload(AtomicThrowableTest::tryTerminateAndReportHasError, "tryTerminateAndReportHasError", this);
+            this.payloads.tryTerminateConsumerSubscriberNoError = _ClassStatement.forPayload(AtomicThrowableTest::tryTerminateConsumerSubscriberNoError, "tryTerminateConsumerSubscriberNoError", this);
+            this.payloads.tryTerminateConsumerSubscriberError = _ClassStatement.forPayload(AtomicThrowableTest::tryTerminateConsumerSubscriberError, "tryTerminateConsumerSubscriberError", this);
+            this.payloads.tryTerminateConsumerSubscriberTerminated = _ClassStatement.forPayload(AtomicThrowableTest::tryTerminateConsumerSubscriberTerminated, "tryTerminateConsumerSubscriberTerminated", this);
+            this.payloads.tryTerminateConsumerObserverNoError = _ClassStatement.forPayload(AtomicThrowableTest::tryTerminateConsumerObserverNoError, "tryTerminateConsumerObserverNoError", this);
+            this.payloads.tryTerminateConsumerObserverError = _ClassStatement.forPayload(AtomicThrowableTest::tryTerminateConsumerObserverError, "tryTerminateConsumerObserverError", this);
+            this.payloads.tryTerminateConsumerObserverTerminated = _ClassStatement.forPayload(AtomicThrowableTest::tryTerminateConsumerObserverTerminated, "tryTerminateConsumerObserverTerminated", this);
+            this.payloads.tryTerminateConsumerMaybeObserverNoError = _ClassStatement.forPayload(AtomicThrowableTest::tryTerminateConsumerMaybeObserverNoError, "tryTerminateConsumerMaybeObserverNoError", this);
+            this.payloads.tryTerminateConsumerMaybeObserverError = _ClassStatement.forPayload(AtomicThrowableTest::tryTerminateConsumerMaybeObserverError, "tryTerminateConsumerMaybeObserverError", this);
+            this.payloads.tryTerminateConsumerMaybeObserverTerminated = _ClassStatement.forPayload(AtomicThrowableTest::tryTerminateConsumerMaybeObserverTerminated, "tryTerminateConsumerMaybeObserverTerminated", this);
+            this.payloads.tryTerminateConsumerSingleNoError = _ClassStatement.forPayload(AtomicThrowableTest::tryTerminateConsumerSingleNoError, "tryTerminateConsumerSingleNoError", this);
+            this.payloads.tryTerminateConsumerSingleError = _ClassStatement.forPayload(AtomicThrowableTest::tryTerminateConsumerSingleError, "tryTerminateConsumerSingleError", this);
+            this.payloads.tryTerminateConsumerSingleTerminated = _ClassStatement.forPayload(AtomicThrowableTest::tryTerminateConsumerSingleTerminated, "tryTerminateConsumerSingleTerminated", this);
+            this.payloads.tryTerminateConsumerCompletableObserverNoError = _ClassStatement.forPayload(AtomicThrowableTest::tryTerminateConsumerCompletableObserverNoError, "tryTerminateConsumerCompletableObserverNoError", this);
+            this.payloads.tryTerminateConsumerCompletableObserverError = _ClassStatement.forPayload(AtomicThrowableTest::tryTerminateConsumerCompletableObserverError, "tryTerminateConsumerCompletableObserverError", this);
+            this.payloads.tryTerminateConsumerCompletableObserverTerminated = _ClassStatement.forPayload(AtomicThrowableTest::tryTerminateConsumerCompletableObserverTerminated, "tryTerminateConsumerCompletableObserverTerminated", this);
+            this.payloads.tryTerminateConsumerEmitterNoError = _ClassStatement.forPayload(AtomicThrowableTest::tryTerminateConsumerEmitterNoError, "tryTerminateConsumerEmitterNoError", this);
+            this.payloads.tryTerminateConsumerEmitterError = _ClassStatement.forPayload(AtomicThrowableTest::tryTerminateConsumerEmitterError, "tryTerminateConsumerEmitterError", this);
+            this.payloads.tryTerminateConsumerEmitterTerminated = _ClassStatement.forPayload(AtomicThrowableTest::tryTerminateConsumerEmitterTerminated, "tryTerminateConsumerEmitterTerminated", this);
+            this.payloads.tryAddThrowableOrReportNull = _ClassStatement.forPayload(AtomicThrowableTest::tryAddThrowableOrReportNull, "tryAddThrowableOrReportNull", this);
+            this.payloads.tryAddThrowableOrReportTerminated = _ClassStatement.forPayload(AtomicThrowableTest::tryAddThrowableOrReportTerminated, "tryAddThrowableOrReportTerminated", this);
         }
     }
 }

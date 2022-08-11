@@ -1506,294 +1506,445 @@ public class ObservableGroupByTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableGroupByTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_groupBy() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::groupBy, this.description("groupBy"));
+            this.payloads.groupBy.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_groupByWithElementSelector() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::groupByWithElementSelector, this.description("groupByWithElementSelector"));
+            this.payloads.groupByWithElementSelector.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_groupByWithElementSelector2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::groupByWithElementSelector2, this.description("groupByWithElementSelector2"));
+            this.payloads.groupByWithElementSelector2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_empty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::empty, this.description("empty"));
+            this.payloads.empty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_groupedEventStream() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::groupedEventStream, this.description("groupedEventStream"));
+            this.payloads.groupedEventStream.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribeOnNestedTakeAndSyncInfiniteStream() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribeOnNestedTakeAndSyncInfiniteStream, this.description("unsubscribeOnNestedTakeAndSyncInfiniteStream"));
+            this.payloads.unsubscribeOnNestedTakeAndSyncInfiniteStream.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribeOnNestedTakeAndAsyncInfiniteStream() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribeOnNestedTakeAndAsyncInfiniteStream, this.description("unsubscribeOnNestedTakeAndAsyncInfiniteStream"));
+            this.payloads.unsubscribeOnNestedTakeAndAsyncInfiniteStream.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribeViaTakeOnGroupThenMergeAndTake() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribeViaTakeOnGroupThenMergeAndTake, this.description("unsubscribeViaTakeOnGroupThenMergeAndTake"));
+            this.payloads.unsubscribeViaTakeOnGroupThenMergeAndTake.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsubscribeViaTakeOnGroupThenTakeOnInner() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsubscribeViaTakeOnGroupThenTakeOnInner, this.description("unsubscribeViaTakeOnGroupThenTakeOnInner"));
+            this.payloads.unsubscribeViaTakeOnGroupThenTakeOnInner.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_staggeredCompletion() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::staggeredCompletion, this.description("staggeredCompletion"));
+            this.payloads.staggeredCompletion.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_completionIfInnerNotSubscribed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::completionIfInnerNotSubscribed, this.description("completionIfInnerNotSubscribed"));
+            this.payloads.completionIfInnerNotSubscribed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ignoringGroups() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ignoringGroups, this.description("ignoringGroups"));
+            this.payloads.ignoringGroups.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstGroupsCompleteAndParentSlowToThenEmitFinalGroupsAndThenComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstGroupsCompleteAndParentSlowToThenEmitFinalGroupsAndThenComplete, this.description("firstGroupsCompleteAndParentSlowToThenEmitFinalGroupsAndThenComplete"));
+            this.payloads.firstGroupsCompleteAndParentSlowToThenEmitFinalGroupsAndThenComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstGroupsCompleteAndParentSlowToThenEmitFinalGroupsWhichThenSubscribesOnAndDelaysAndThenCompletes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstGroupsCompleteAndParentSlowToThenEmitFinalGroupsWhichThenSubscribesOnAndDelaysAndThenCompletes, this.description("firstGroupsCompleteAndParentSlowToThenEmitFinalGroupsWhichThenSubscribesOnAndDelaysAndThenCompletes"));
+            this.payloads.firstGroupsCompleteAndParentSlowToThenEmitFinalGroupsWhichThenSubscribesOnAndDelaysAndThenCompletes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_firstGroupsCompleteAndParentSlowToThenEmitFinalGroupsWhichThenObservesOnAndDelaysAndThenCompletes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::firstGroupsCompleteAndParentSlowToThenEmitFinalGroupsWhichThenObservesOnAndDelaysAndThenCompletes, this.description("firstGroupsCompleteAndParentSlowToThenEmitFinalGroupsWhichThenObservesOnAndDelaysAndThenCompletes"));
+            this.payloads.firstGroupsCompleteAndParentSlowToThenEmitFinalGroupsWhichThenObservesOnAndDelaysAndThenCompletes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_groupsWithNestedSubscribeOn() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::groupsWithNestedSubscribeOn, this.description("groupsWithNestedSubscribeOn"));
+            this.payloads.groupsWithNestedSubscribeOn.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_groupsWithNestedObserveOn() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::groupsWithNestedObserveOn, this.description("groupsWithNestedObserveOn"));
+            this.payloads.groupsWithNestedObserveOn.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_groupByOnAsynchronousSourceAcceptsMultipleSubscriptions() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::groupByOnAsynchronousSourceAcceptsMultipleSubscriptions, this.description("groupByOnAsynchronousSourceAcceptsMultipleSubscriptions"));
+            this.payloads.groupByOnAsynchronousSourceAcceptsMultipleSubscriptions.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_groupByBackpressure() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::groupByBackpressure, this.description("groupByBackpressure"));
+            this.payloads.groupByBackpressure.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalBehavior() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalBehavior, this.description("normalBehavior"));
+            this.payloads.normalBehavior.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_keySelectorThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::keySelectorThrows, this.description("keySelectorThrows"));
+            this.payloads.keySelectorThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_valueSelectorThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::valueSelectorThrows, this.description("valueSelectorThrows"));
+            this.payloads.valueSelectorThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_innerEscapeCompleted() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::innerEscapeCompleted, this.description("innerEscapeCompleted"));
+            this.payloads.innerEscapeCompleted.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_exceptionIfSubscribeToChildMoreThanOnce() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::exceptionIfSubscribeToChildMoreThanOnce, this.description("exceptionIfSubscribeToChildMoreThanOnce"));
+            this.payloads.exceptionIfSubscribeToChildMoreThanOnce.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error2, this.description("error2"));
+            this.payloads.error2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_groupByBackpressure3() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::groupByBackpressure3, this.description("groupByBackpressure3"));
+            this.payloads.groupByBackpressure3.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_groupByBackpressure2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::groupByBackpressure2, this.description("groupByBackpressure2"));
+            this.payloads.groupByBackpressure2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_groupByWithNullKey() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::groupByWithNullKey, this.description("groupByWithNullKey"));
+            this.payloads.groupByWithNullKey.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_groupByUnsubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::groupByUnsubscribe, this.description("groupByUnsubscribe"));
+            this.payloads.groupByUnsubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_groupByShouldPropagateError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::groupByShouldPropagateError, this.description("groupByShouldPropagateError"));
+            this.payloads.groupByShouldPropagateError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_keySelectorAndDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::keySelectorAndDelayError, this.description("keySelectorAndDelayError"));
+            this.payloads.keySelectorAndDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_keyAndValueSelectorAndDelayError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::keyAndValueSelectorAndDelayError, this.description("keyAndValueSelectorAndDelayError"));
+            this.payloads.keyAndValueSelectorAndDelayError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_reentrantComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::reentrantComplete, this.description("reentrantComplete"));
+            this.payloads.reentrantComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_reentrantCompleteCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::reentrantCompleteCancel, this.description("reentrantCompleteCancel"));
+            this.payloads.reentrantCompleteCancel.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayErrorSimpleComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayErrorSimpleComplete, this.description("delayErrorSimpleComplete"));
+            this.payloads.delayErrorSimpleComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_cancelOverFlatmapRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelOverFlatmapRace, this.description("cancelOverFlatmapRace"));
+            this.payloads.cancelOverFlatmapRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_abandonedGroupsNoDataloss() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::abandonedGroupsNoDataloss, this.description("abandonedGroupsNoDataloss"));
+            this.payloads.abandonedGroupsNoDataloss.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_newGroupValueSelectorFails() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::newGroupValueSelectorFails, this.description("newGroupValueSelectorFails"));
+            this.payloads.newGroupValueSelectorFails.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_existingGroupValueSelectorFails() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::existingGroupValueSelectorFails, this.description("existingGroupValueSelectorFails"));
+            this.payloads.existingGroupValueSelectorFails.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nullKeyDisposeGroup() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::nullKeyDisposeGroup, this.description("nullKeyDisposeGroup"));
+            this.payloads.nullKeyDisposeGroup.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_groupSubscribeOnNextRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::groupSubscribeOnNextRace, this.description("groupSubscribeOnNextRace"));
+            this.payloads.groupSubscribeOnNextRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_abandonedGroupDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::abandonedGroupDispose, this.description("abandonedGroupDispose"));
+            this.payloads.abandonedGroupDispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_delayErrorCompleteMoreWorkInGroup() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::delayErrorCompleteMoreWorkInGroup, this.description("delayErrorCompleteMoreWorkInGroup"));
+            this.payloads.delayErrorCompleteMoreWorkInGroup.evaluate();
         }
 
-        private ObservableGroupByTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableGroupByTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableGroupByTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableGroupByTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservableGroupByTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableGroupByTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableGroupByTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableGroupByTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableGroupByTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableGroupByTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableGroupByTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement groupBy;
+
+            public org.junit.runners.model.Statement groupByWithElementSelector;
+
+            public org.junit.runners.model.Statement groupByWithElementSelector2;
+
+            public org.junit.runners.model.Statement empty;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement groupedEventStream;
+
+            public org.junit.runners.model.Statement unsubscribeOnNestedTakeAndSyncInfiniteStream;
+
+            public org.junit.runners.model.Statement unsubscribeOnNestedTakeAndAsyncInfiniteStream;
+
+            public org.junit.runners.model.Statement unsubscribeViaTakeOnGroupThenMergeAndTake;
+
+            public org.junit.runners.model.Statement unsubscribeViaTakeOnGroupThenTakeOnInner;
+
+            public org.junit.runners.model.Statement staggeredCompletion;
+
+            public org.junit.runners.model.Statement completionIfInnerNotSubscribed;
+
+            public org.junit.runners.model.Statement ignoringGroups;
+
+            public org.junit.runners.model.Statement firstGroupsCompleteAndParentSlowToThenEmitFinalGroupsAndThenComplete;
+
+            public org.junit.runners.model.Statement firstGroupsCompleteAndParentSlowToThenEmitFinalGroupsWhichThenSubscribesOnAndDelaysAndThenCompletes;
+
+            public org.junit.runners.model.Statement firstGroupsCompleteAndParentSlowToThenEmitFinalGroupsWhichThenObservesOnAndDelaysAndThenCompletes;
+
+            public org.junit.runners.model.Statement groupsWithNestedSubscribeOn;
+
+            public org.junit.runners.model.Statement groupsWithNestedObserveOn;
+
+            public org.junit.runners.model.Statement groupByOnAsynchronousSourceAcceptsMultipleSubscriptions;
+
+            public org.junit.runners.model.Statement groupByBackpressure;
+
+            public org.junit.runners.model.Statement normalBehavior;
+
+            public org.junit.runners.model.Statement keySelectorThrows;
+
+            public org.junit.runners.model.Statement valueSelectorThrows;
+
+            public org.junit.runners.model.Statement innerEscapeCompleted;
+
+            public org.junit.runners.model.Statement exceptionIfSubscribeToChildMoreThanOnce;
+
+            public org.junit.runners.model.Statement error2;
+
+            public org.junit.runners.model.Statement groupByBackpressure3;
+
+            public org.junit.runners.model.Statement groupByBackpressure2;
+
+            public org.junit.runners.model.Statement groupByWithNullKey;
+
+            public org.junit.runners.model.Statement groupByUnsubscribe;
+
+            public org.junit.runners.model.Statement groupByShouldPropagateError;
+
+            public org.junit.runners.model.Statement keySelectorAndDelayError;
+
+            public org.junit.runners.model.Statement keyAndValueSelectorAndDelayError;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement reentrantComplete;
+
+            public org.junit.runners.model.Statement reentrantCompleteCancel;
+
+            public org.junit.runners.model.Statement delayErrorSimpleComplete;
+
+            public org.junit.runners.model.Statement cancelOverFlatmapRace;
+
+            public org.junit.runners.model.Statement abandonedGroupsNoDataloss;
+
+            public org.junit.runners.model.Statement newGroupValueSelectorFails;
+
+            public org.junit.runners.model.Statement existingGroupValueSelectorFails;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement nullKeyDisposeGroup;
+
+            public org.junit.runners.model.Statement groupSubscribeOnNextRace;
+
+            public org.junit.runners.model.Statement abandonedGroupDispose;
+
+            public org.junit.runners.model.Statement delayErrorCompleteMoreWorkInGroup;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.groupBy = _ClassStatement.forPayload(ObservableGroupByTest::groupBy, "groupBy", this);
+            this.payloads.groupByWithElementSelector = _ClassStatement.forPayload(ObservableGroupByTest::groupByWithElementSelector, "groupByWithElementSelector", this);
+            this.payloads.groupByWithElementSelector2 = _ClassStatement.forPayload(ObservableGroupByTest::groupByWithElementSelector2, "groupByWithElementSelector2", this);
+            this.payloads.empty = _ClassStatement.forPayload(ObservableGroupByTest::empty, "empty", this);
+            this.payloads.error = _ClassStatement.forPayload(ObservableGroupByTest::error, "error", this);
+            this.payloads.groupedEventStream = _ClassStatement.forPayload(ObservableGroupByTest::groupedEventStream, "groupedEventStream", this);
+            this.payloads.unsubscribeOnNestedTakeAndSyncInfiniteStream = _ClassStatement.forPayload(ObservableGroupByTest::unsubscribeOnNestedTakeAndSyncInfiniteStream, "unsubscribeOnNestedTakeAndSyncInfiniteStream", this);
+            this.payloads.unsubscribeOnNestedTakeAndAsyncInfiniteStream = _ClassStatement.forPayload(ObservableGroupByTest::unsubscribeOnNestedTakeAndAsyncInfiniteStream, "unsubscribeOnNestedTakeAndAsyncInfiniteStream", this);
+            this.payloads.unsubscribeViaTakeOnGroupThenMergeAndTake = _ClassStatement.forPayload(ObservableGroupByTest::unsubscribeViaTakeOnGroupThenMergeAndTake, "unsubscribeViaTakeOnGroupThenMergeAndTake", this);
+            this.payloads.unsubscribeViaTakeOnGroupThenTakeOnInner = _ClassStatement.forPayload(ObservableGroupByTest::unsubscribeViaTakeOnGroupThenTakeOnInner, "unsubscribeViaTakeOnGroupThenTakeOnInner", this);
+            this.payloads.staggeredCompletion = _ClassStatement.forPayload(ObservableGroupByTest::staggeredCompletion, "staggeredCompletion", this);
+            this.payloads.completionIfInnerNotSubscribed = _ClassStatement.forPayload(ObservableGroupByTest::completionIfInnerNotSubscribed, "completionIfInnerNotSubscribed", this);
+            this.payloads.ignoringGroups = _ClassStatement.forPayload(ObservableGroupByTest::ignoringGroups, "ignoringGroups", this);
+            this.payloads.firstGroupsCompleteAndParentSlowToThenEmitFinalGroupsAndThenComplete = _ClassStatement.forPayload(ObservableGroupByTest::firstGroupsCompleteAndParentSlowToThenEmitFinalGroupsAndThenComplete, "firstGroupsCompleteAndParentSlowToThenEmitFinalGroupsAndThenComplete", this);
+            this.payloads.firstGroupsCompleteAndParentSlowToThenEmitFinalGroupsWhichThenSubscribesOnAndDelaysAndThenCompletes = _ClassStatement.forPayload(ObservableGroupByTest::firstGroupsCompleteAndParentSlowToThenEmitFinalGroupsWhichThenSubscribesOnAndDelaysAndThenCompletes, "firstGroupsCompleteAndParentSlowToThenEmitFinalGroupsWhichThenSubscribesOnAndDelaysAndThenCompletes", this);
+            this.payloads.firstGroupsCompleteAndParentSlowToThenEmitFinalGroupsWhichThenObservesOnAndDelaysAndThenCompletes = _ClassStatement.forPayload(ObservableGroupByTest::firstGroupsCompleteAndParentSlowToThenEmitFinalGroupsWhichThenObservesOnAndDelaysAndThenCompletes, "firstGroupsCompleteAndParentSlowToThenEmitFinalGroupsWhichThenObservesOnAndDelaysAndThenCompletes", this);
+            this.payloads.groupsWithNestedSubscribeOn = _ClassStatement.forPayload(ObservableGroupByTest::groupsWithNestedSubscribeOn, "groupsWithNestedSubscribeOn", this);
+            this.payloads.groupsWithNestedObserveOn = _ClassStatement.forPayload(ObservableGroupByTest::groupsWithNestedObserveOn, "groupsWithNestedObserveOn", this);
+            this.payloads.groupByOnAsynchronousSourceAcceptsMultipleSubscriptions = _ClassStatement.forPayload(ObservableGroupByTest::groupByOnAsynchronousSourceAcceptsMultipleSubscriptions, "groupByOnAsynchronousSourceAcceptsMultipleSubscriptions", this);
+            this.payloads.groupByBackpressure = _ClassStatement.forPayload(ObservableGroupByTest::groupByBackpressure, "groupByBackpressure", this);
+            this.payloads.normalBehavior = _ClassStatement.forPayload(ObservableGroupByTest::normalBehavior, "normalBehavior", this);
+            this.payloads.keySelectorThrows = _ClassStatement.forPayload(ObservableGroupByTest::keySelectorThrows, "keySelectorThrows", this);
+            this.payloads.valueSelectorThrows = _ClassStatement.forPayload(ObservableGroupByTest::valueSelectorThrows, "valueSelectorThrows", this);
+            this.payloads.innerEscapeCompleted = _ClassStatement.forPayload(ObservableGroupByTest::innerEscapeCompleted, "innerEscapeCompleted", this);
+            this.payloads.exceptionIfSubscribeToChildMoreThanOnce = _ClassStatement.forPayload(ObservableGroupByTest::exceptionIfSubscribeToChildMoreThanOnce, "exceptionIfSubscribeToChildMoreThanOnce", this);
+            this.payloads.error2 = _ClassStatement.forPayload(ObservableGroupByTest::error2, "error2", this);
+            this.payloads.groupByBackpressure3 = _ClassStatement.forPayload(ObservableGroupByTest::groupByBackpressure3, "groupByBackpressure3", this);
+            this.payloads.groupByBackpressure2 = _ClassStatement.forPayload(ObservableGroupByTest::groupByBackpressure2, "groupByBackpressure2", this);
+            this.payloads.groupByWithNullKey = _ClassStatement.forPayload(ObservableGroupByTest::groupByWithNullKey, "groupByWithNullKey", this);
+            this.payloads.groupByUnsubscribe = _ClassStatement.forPayload(ObservableGroupByTest::groupByUnsubscribe, "groupByUnsubscribe", this);
+            this.payloads.groupByShouldPropagateError = _ClassStatement.forPayload(ObservableGroupByTest::groupByShouldPropagateError, "groupByShouldPropagateError", this);
+            this.payloads.keySelectorAndDelayError = _ClassStatement.forPayload(ObservableGroupByTest::keySelectorAndDelayError, "keySelectorAndDelayError", this);
+            this.payloads.keyAndValueSelectorAndDelayError = _ClassStatement.forPayload(ObservableGroupByTest::keyAndValueSelectorAndDelayError, "keyAndValueSelectorAndDelayError", this);
+            this.payloads.dispose = _ClassStatement.forPayload(ObservableGroupByTest::dispose, "dispose", this);
+            this.payloads.reentrantComplete = _ClassStatement.forPayload(ObservableGroupByTest::reentrantComplete, "reentrantComplete", this);
+            this.payloads.reentrantCompleteCancel = _ClassStatement.forPayload(ObservableGroupByTest::reentrantCompleteCancel, "reentrantCompleteCancel", this);
+            this.payloads.delayErrorSimpleComplete = _ClassStatement.forPayload(ObservableGroupByTest::delayErrorSimpleComplete, "delayErrorSimpleComplete", this);
+            this.payloads.cancelOverFlatmapRace = _ClassStatement.forPayload(ObservableGroupByTest::cancelOverFlatmapRace, "cancelOverFlatmapRace", this);
+            this.payloads.abandonedGroupsNoDataloss = _ClassStatement.forPayload(ObservableGroupByTest::abandonedGroupsNoDataloss, "abandonedGroupsNoDataloss", this);
+            this.payloads.newGroupValueSelectorFails = _ClassStatement.forPayload(ObservableGroupByTest::newGroupValueSelectorFails, "newGroupValueSelectorFails", this);
+            this.payloads.existingGroupValueSelectorFails = _ClassStatement.forPayload(ObservableGroupByTest::existingGroupValueSelectorFails, "existingGroupValueSelectorFails", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(ObservableGroupByTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.nullKeyDisposeGroup = _ClassStatement.forPayload(ObservableGroupByTest::nullKeyDisposeGroup, "nullKeyDisposeGroup", this);
+            this.payloads.groupSubscribeOnNextRace = _ClassStatement.forPayload(ObservableGroupByTest::groupSubscribeOnNextRace, "groupSubscribeOnNextRace", this);
+            this.payloads.abandonedGroupDispose = _ClassStatement.forPayload(ObservableGroupByTest::abandonedGroupDispose, "abandonedGroupDispose", this);
+            this.payloads.delayErrorCompleteMoreWorkInGroup = _ClassStatement.forPayload(ObservableGroupByTest::delayErrorCompleteMoreWorkInGroup, "delayErrorCompleteMoreWorkInGroup", this);
         }
     }
 }

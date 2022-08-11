@@ -25,26 +25,4 @@ public class ObservableAutoConnectTest extends RxJavaTest {
         ps.publish().autoConnect(0);
         assertTrue(ps.hasObservers());
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_autoConnectImmediately() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::autoConnectImmediately, this.description("autoConnectImmediately"));
-        }
-
-        private ObservableAutoConnectTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableAutoConnectTest();
-        }
-
-        @java.lang.Override
-        public ObservableAutoConnectTest implementation() {
-            return this.implementation;
-        }
-    }
 }

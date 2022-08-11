@@ -414,168 +414,270 @@ public class FlowableSampleTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowableSampleTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sample() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sample, this.description("sample"));
+            this.payloads.sample.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sampleWithSamplerNormal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sampleWithSamplerNormal, this.description("sampleWithSamplerNormal"));
+            this.payloads.sampleWithSamplerNormal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sampleWithSamplerNoDuplicates() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sampleWithSamplerNoDuplicates, this.description("sampleWithSamplerNoDuplicates"));
+            this.payloads.sampleWithSamplerNoDuplicates.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sampleWithSamplerTerminatingEarly() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sampleWithSamplerTerminatingEarly, this.description("sampleWithSamplerTerminatingEarly"));
+            this.payloads.sampleWithSamplerTerminatingEarly.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sampleWithSamplerEmitAndTerminate() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sampleWithSamplerEmitAndTerminate, this.description("sampleWithSamplerEmitAndTerminate"));
+            this.payloads.sampleWithSamplerEmitAndTerminate.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sampleWithSamplerEmptySource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sampleWithSamplerEmptySource, this.description("sampleWithSamplerEmptySource"));
+            this.payloads.sampleWithSamplerEmptySource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sampleWithSamplerSourceThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sampleWithSamplerSourceThrows, this.description("sampleWithSamplerSourceThrows"));
+            this.payloads.sampleWithSamplerSourceThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sampleWithSamplerThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sampleWithSamplerThrows, this.description("sampleWithSamplerThrows"));
+            this.payloads.sampleWithSamplerThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sampleUnsubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sampleUnsubscribe, this.description("sampleUnsubscribe"));
+            this.payloads.sampleUnsubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureOverflow() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureOverflow, this.description("backpressureOverflow"));
+            this.payloads.backpressureOverflow.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressureOverflowWithOtherPublisher() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressureOverflowWithOtherPublisher, this.description("backpressureOverflowWithOtherPublisher"));
+            this.payloads.backpressureOverflowWithOtherPublisher.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emitLastTimed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emitLastTimed, this.description("emitLastTimed"));
+            this.payloads.emitLastTimed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emitLastTimedEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emitLastTimedEmpty, this.description("emitLastTimedEmpty"));
+            this.payloads.emitLastTimedEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emitLastTimedCustomScheduler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emitLastTimedCustomScheduler, this.description("emitLastTimedCustomScheduler"));
+            this.payloads.emitLastTimedCustomScheduler.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emitLastTimedRunCompleteRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emitLastTimedRunCompleteRace, this.description("emitLastTimedRunCompleteRace"));
+            this.payloads.emitLastTimedRunCompleteRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emitLastOther() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emitLastOther, this.description("emitLastOther"));
+            this.payloads.emitLastOther.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emitLastOtherEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emitLastOtherEmpty, this.description("emitLastOtherEmpty"));
+            this.payloads.emitLastOtherEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emitLastOtherRunCompleteRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emitLastOtherRunCompleteRace, this.description("emitLastOtherRunCompleteRace"));
+            this.payloads.emitLastOtherRunCompleteRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emitLastOtherCompleteCompleteRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emitLastOtherCompleteCompleteRace, this.description("emitLastOtherCompleteCompleteRace"));
+            this.payloads.emitLastOtherCompleteCompleteRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequest, this.description("badRequest"));
+            this.payloads.badRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badRequestTimed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badRequestTimed, this.description("badRequestTimed"));
+            this.payloads.badRequestTimed.evaluate();
         }
 
-        @java.lang.Override
-        public void before() throws java.lang.Throwable {
-            super.before();
-            this.implementation().before();
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSampleTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSampleTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance.before();
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        private FlowableSampleTest implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableSampleTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSampleTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSampleTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowableSampleTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableSampleTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowableSampleTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowableSampleTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
         }
 
-        @java.lang.Override
-        public FlowableSampleTest implementation() {
-            return this.implementation;
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement sample;
+
+            public org.junit.runners.model.Statement sampleWithSamplerNormal;
+
+            public org.junit.runners.model.Statement sampleWithSamplerNoDuplicates;
+
+            public org.junit.runners.model.Statement sampleWithSamplerTerminatingEarly;
+
+            public org.junit.runners.model.Statement sampleWithSamplerEmitAndTerminate;
+
+            public org.junit.runners.model.Statement sampleWithSamplerEmptySource;
+
+            public org.junit.runners.model.Statement sampleWithSamplerSourceThrows;
+
+            public org.junit.runners.model.Statement sampleWithSamplerThrows;
+
+            public org.junit.runners.model.Statement sampleUnsubscribe;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement backpressureOverflow;
+
+            public org.junit.runners.model.Statement backpressureOverflowWithOtherPublisher;
+
+            public org.junit.runners.model.Statement emitLastTimed;
+
+            public org.junit.runners.model.Statement emitLastTimedEmpty;
+
+            public org.junit.runners.model.Statement emitLastTimedCustomScheduler;
+
+            public org.junit.runners.model.Statement emitLastTimedRunCompleteRace;
+
+            public org.junit.runners.model.Statement emitLastOther;
+
+            public org.junit.runners.model.Statement emitLastOtherEmpty;
+
+            public org.junit.runners.model.Statement emitLastOtherRunCompleteRace;
+
+            public org.junit.runners.model.Statement emitLastOtherCompleteCompleteRace;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement badRequest;
+
+            public org.junit.runners.model.Statement badRequestTimed;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.sample = _ClassStatement.forPayload(FlowableSampleTest::sample, "sample", this);
+            this.payloads.sampleWithSamplerNormal = _ClassStatement.forPayload(FlowableSampleTest::sampleWithSamplerNormal, "sampleWithSamplerNormal", this);
+            this.payloads.sampleWithSamplerNoDuplicates = _ClassStatement.forPayload(FlowableSampleTest::sampleWithSamplerNoDuplicates, "sampleWithSamplerNoDuplicates", this);
+            this.payloads.sampleWithSamplerTerminatingEarly = _ClassStatement.forPayload(FlowableSampleTest::sampleWithSamplerTerminatingEarly, "sampleWithSamplerTerminatingEarly", this);
+            this.payloads.sampleWithSamplerEmitAndTerminate = _ClassStatement.forPayload(FlowableSampleTest::sampleWithSamplerEmitAndTerminate, "sampleWithSamplerEmitAndTerminate", this);
+            this.payloads.sampleWithSamplerEmptySource = _ClassStatement.forPayload(FlowableSampleTest::sampleWithSamplerEmptySource, "sampleWithSamplerEmptySource", this);
+            this.payloads.sampleWithSamplerSourceThrows = _ClassStatement.forPayload(FlowableSampleTest::sampleWithSamplerSourceThrows, "sampleWithSamplerSourceThrows", this);
+            this.payloads.sampleWithSamplerThrows = _ClassStatement.forPayload(FlowableSampleTest::sampleWithSamplerThrows, "sampleWithSamplerThrows", this);
+            this.payloads.sampleUnsubscribe = _ClassStatement.forPayload(FlowableSampleTest::sampleUnsubscribe, "sampleUnsubscribe", this);
+            this.payloads.dispose = _ClassStatement.forPayload(FlowableSampleTest::dispose, "dispose", this);
+            this.payloads.error = _ClassStatement.forPayload(FlowableSampleTest::error, "error", this);
+            this.payloads.backpressureOverflow = _ClassStatement.forPayload(FlowableSampleTest::backpressureOverflow, "backpressureOverflow", this);
+            this.payloads.backpressureOverflowWithOtherPublisher = _ClassStatement.forPayload(FlowableSampleTest::backpressureOverflowWithOtherPublisher, "backpressureOverflowWithOtherPublisher", this);
+            this.payloads.emitLastTimed = _ClassStatement.forPayload(FlowableSampleTest::emitLastTimed, "emitLastTimed", this);
+            this.payloads.emitLastTimedEmpty = _ClassStatement.forPayload(FlowableSampleTest::emitLastTimedEmpty, "emitLastTimedEmpty", this);
+            this.payloads.emitLastTimedCustomScheduler = _ClassStatement.forPayload(FlowableSampleTest::emitLastTimedCustomScheduler, "emitLastTimedCustomScheduler", this);
+            this.payloads.emitLastTimedRunCompleteRace = _ClassStatement.forPayload(FlowableSampleTest::emitLastTimedRunCompleteRace, "emitLastTimedRunCompleteRace", this);
+            this.payloads.emitLastOther = _ClassStatement.forPayload(FlowableSampleTest::emitLastOther, "emitLastOther", this);
+            this.payloads.emitLastOtherEmpty = _ClassStatement.forPayload(FlowableSampleTest::emitLastOtherEmpty, "emitLastOtherEmpty", this);
+            this.payloads.emitLastOtherRunCompleteRace = _ClassStatement.forPayload(FlowableSampleTest::emitLastOtherRunCompleteRace, "emitLastOtherRunCompleteRace", this);
+            this.payloads.emitLastOtherCompleteCompleteRace = _ClassStatement.forPayload(FlowableSampleTest::emitLastOtherCompleteCompleteRace, "emitLastOtherCompleteCompleteRace", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(FlowableSampleTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.badRequest = _ClassStatement.forPayload(FlowableSampleTest::badRequest, "badRequest", this);
+            this.payloads.badRequestTimed = _ClassStatement.forPayload(FlowableSampleTest::badRequestTimed, "badRequestTimed", this);
         }
     }
 }

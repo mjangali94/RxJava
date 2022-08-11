@@ -229,90 +229,173 @@ public class ObservableScalarXMapTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableScalarXMapTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_utilityClass() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::utilityClass, this.description("utilityClass"));
+            this.payloads.utilityClass.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_tryScalarXMap() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::tryScalarXMap, this.description("tryScalarXMap"));
+            this.payloads.tryScalarXMap.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyXMap() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyXMap, this.description("emptyXMap"));
+            this.payloads.emptyXMap.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperCrashes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperCrashes, this.description("mapperCrashes"));
+            this.payloads.mapperCrashes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperToJust() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperToJust, this.description("mapperToJust"));
+            this.payloads.mapperToJust.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperToEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperToEmpty, this.description("mapperToEmpty"));
+            this.payloads.mapperToEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapperToCrashingCallable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperToCrashingCallable, this.description("mapperToCrashingCallable"));
+            this.payloads.mapperToCrashingCallable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scalarMapToEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scalarMapToEmpty, this.description("scalarMapToEmpty"));
+            this.payloads.scalarMapToEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scalarMapToCrashingCallable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scalarMapToCrashingCallable, this.description("scalarMapToCrashingCallable"));
+            this.payloads.scalarMapToCrashingCallable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scalarDisposableStateCheck() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scalarDisposableStateCheck, this.description("scalarDisposableStateCheck"));
+            this.payloads.scalarDisposableStateCheck.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scalarDisposableRunDisposeRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scalarDisposableRunDisposeRace, this.description("scalarDisposableRunDisposeRace"));
+            this.payloads.scalarDisposableRunDisposeRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scalarDisposbleWrongFusion() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scalarDisposbleWrongFusion, this.description("scalarDisposbleWrongFusion"));
+            this.payloads.scalarDisposbleWrongFusion.evaluate();
         }
 
-        private ObservableScalarXMapTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableScalarXMapTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableScalarXMapTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableScalarXMapTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservableScalarXMapTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableScalarXMapTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableScalarXMapTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableScalarXMapTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableScalarXMapTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableScalarXMapTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableScalarXMapTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement utilityClass;
+
+            public org.junit.runners.model.Statement tryScalarXMap;
+
+            public org.junit.runners.model.Statement emptyXMap;
+
+            public org.junit.runners.model.Statement mapperCrashes;
+
+            public org.junit.runners.model.Statement mapperToJust;
+
+            public org.junit.runners.model.Statement mapperToEmpty;
+
+            public org.junit.runners.model.Statement mapperToCrashingCallable;
+
+            public org.junit.runners.model.Statement scalarMapToEmpty;
+
+            public org.junit.runners.model.Statement scalarMapToCrashingCallable;
+
+            public org.junit.runners.model.Statement scalarDisposableStateCheck;
+
+            public org.junit.runners.model.Statement scalarDisposableRunDisposeRace;
+
+            public org.junit.runners.model.Statement scalarDisposbleWrongFusion;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.utilityClass = _ClassStatement.forPayload(ObservableScalarXMapTest::utilityClass, "utilityClass", this);
+            this.payloads.tryScalarXMap = _ClassStatement.forPayload(ObservableScalarXMapTest::tryScalarXMap, "tryScalarXMap", this);
+            this.payloads.emptyXMap = _ClassStatement.forPayload(ObservableScalarXMapTest::emptyXMap, "emptyXMap", this);
+            this.payloads.mapperCrashes = _ClassStatement.forPayload(ObservableScalarXMapTest::mapperCrashes, "mapperCrashes", this);
+            this.payloads.mapperToJust = _ClassStatement.forPayload(ObservableScalarXMapTest::mapperToJust, "mapperToJust", this);
+            this.payloads.mapperToEmpty = _ClassStatement.forPayload(ObservableScalarXMapTest::mapperToEmpty, "mapperToEmpty", this);
+            this.payloads.mapperToCrashingCallable = _ClassStatement.forPayload(ObservableScalarXMapTest::mapperToCrashingCallable, "mapperToCrashingCallable", this);
+            this.payloads.scalarMapToEmpty = _ClassStatement.forPayload(ObservableScalarXMapTest::scalarMapToEmpty, "scalarMapToEmpty", this);
+            this.payloads.scalarMapToCrashingCallable = _ClassStatement.forPayload(ObservableScalarXMapTest::scalarMapToCrashingCallable, "scalarMapToCrashingCallable", this);
+            this.payloads.scalarDisposableStateCheck = _ClassStatement.forPayload(ObservableScalarXMapTest::scalarDisposableStateCheck, "scalarDisposableStateCheck", this);
+            this.payloads.scalarDisposableRunDisposeRace = _ClassStatement.forPayload(ObservableScalarXMapTest::scalarDisposableRunDisposeRace, "scalarDisposableRunDisposeRace", this);
+            this.payloads.scalarDisposbleWrongFusion = _ClassStatement.forPayload(ObservableScalarXMapTest::scalarDisposbleWrongFusion, "scalarDisposbleWrongFusion", this);
         }
     }
 }

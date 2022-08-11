@@ -360,108 +360,197 @@ public class ObservableScanTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private ObservableScanTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scanIntegersWithInitialValue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scanIntegersWithInitialValue, this.description("scanIntegersWithInitialValue"));
+            this.payloads.scanIntegersWithInitialValue.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scanIntegersWithoutInitialValue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scanIntegersWithoutInitialValue, this.description("scanIntegersWithoutInitialValue"));
+            this.payloads.scanIntegersWithoutInitialValue.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scanIntegersWithoutInitialValueAndOnlyOneValue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scanIntegersWithoutInitialValueAndOnlyOneValue, this.description("scanIntegersWithoutInitialValueAndOnlyOneValue"));
+            this.payloads.scanIntegersWithoutInitialValueAndOnlyOneValue.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_shouldNotEmitUntilAfterSubscription() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::shouldNotEmitUntilAfterSubscription, this.description("shouldNotEmitUntilAfterSubscription"));
+            this.payloads.shouldNotEmitUntilAfterSubscription.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noBackpressureWithInitialValue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noBackpressureWithInitialValue, this.description("noBackpressureWithInitialValue"));
+            this.payloads.noBackpressureWithInitialValue.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_seedFactory() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::seedFactory, this.description("seedFactory"));
+            this.payloads.seedFactory.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scanWithRequestOne() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scanWithRequestOne, this.description("scanWithRequestOne"));
+            this.payloads.scanWithRequestOne.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_initialValueEmittedNoProducer() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::initialValueEmittedNoProducer, this.description("initialValueEmittedNoProducer"));
+            this.payloads.initialValueEmittedNoProducer.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSource, this.description("badSource"));
+            this.payloads.badSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scanFunctionThrowsAndUpstreamErrorsDoesNotResultInTwoTerminalEvents() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scanFunctionThrowsAndUpstreamErrorsDoesNotResultInTwoTerminalEvents, this.description("scanFunctionThrowsAndUpstreamErrorsDoesNotResultInTwoTerminalEvents"));
+            this.payloads.scanFunctionThrowsAndUpstreamErrorsDoesNotResultInTwoTerminalEvents.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scanFunctionThrowsAndUpstreamCompletesDoesNotResultInTwoTerminalEvents() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scanFunctionThrowsAndUpstreamCompletesDoesNotResultInTwoTerminalEvents, this.description("scanFunctionThrowsAndUpstreamCompletesDoesNotResultInTwoTerminalEvents"));
+            this.payloads.scanFunctionThrowsAndUpstreamCompletesDoesNotResultInTwoTerminalEvents.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_scanFunctionThrowsAndUpstreamEmitsOnNextResultsInScanFunctionBeingCalledOnlyOnce() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::scanFunctionThrowsAndUpstreamEmitsOnNextResultsInScanFunctionBeingCalledOnlyOnce, this.description("scanFunctionThrowsAndUpstreamEmitsOnNextResultsInScanFunctionBeingCalledOnlyOnce"));
+            this.payloads.scanFunctionThrowsAndUpstreamEmitsOnNextResultsInScanFunctionBeingCalledOnlyOnce.evaluate();
         }
 
-        private ObservableScanTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new ObservableScanTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableScanTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableScanTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public ObservableScanTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableScanTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableScanTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new ObservableScanTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableScanTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(ObservableScanTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(ObservableScanTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement scanIntegersWithInitialValue;
+
+            public org.junit.runners.model.Statement scanIntegersWithoutInitialValue;
+
+            public org.junit.runners.model.Statement scanIntegersWithoutInitialValueAndOnlyOneValue;
+
+            public org.junit.runners.model.Statement shouldNotEmitUntilAfterSubscription;
+
+            public org.junit.runners.model.Statement noBackpressureWithInitialValue;
+
+            public org.junit.runners.model.Statement seedFactory;
+
+            public org.junit.runners.model.Statement scanWithRequestOne;
+
+            public org.junit.runners.model.Statement initialValueEmittedNoProducer;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement badSource;
+
+            public org.junit.runners.model.Statement scanFunctionThrowsAndUpstreamErrorsDoesNotResultInTwoTerminalEvents;
+
+            public org.junit.runners.model.Statement scanFunctionThrowsAndUpstreamCompletesDoesNotResultInTwoTerminalEvents;
+
+            public org.junit.runners.model.Statement scanFunctionThrowsAndUpstreamEmitsOnNextResultsInScanFunctionBeingCalledOnlyOnce;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.scanIntegersWithInitialValue = _ClassStatement.forPayload(ObservableScanTest::scanIntegersWithInitialValue, "scanIntegersWithInitialValue", this);
+            this.payloads.scanIntegersWithoutInitialValue = _ClassStatement.forPayload(ObservableScanTest::scanIntegersWithoutInitialValue, "scanIntegersWithoutInitialValue", this);
+            this.payloads.scanIntegersWithoutInitialValueAndOnlyOneValue = _ClassStatement.forPayload(ObservableScanTest::scanIntegersWithoutInitialValueAndOnlyOneValue, "scanIntegersWithoutInitialValueAndOnlyOneValue", this);
+            this.payloads.shouldNotEmitUntilAfterSubscription = _ClassStatement.forPayload(ObservableScanTest::shouldNotEmitUntilAfterSubscription, "shouldNotEmitUntilAfterSubscription", this);
+            this.payloads.noBackpressureWithInitialValue = _ClassStatement.forPayload(ObservableScanTest::noBackpressureWithInitialValue, "noBackpressureWithInitialValue", this);
+            this.payloads.seedFactory = _ClassStatement.forPayload(ObservableScanTest::seedFactory, "seedFactory", this);
+            this.payloads.scanWithRequestOne = _ClassStatement.forPayload(ObservableScanTest::scanWithRequestOne, "scanWithRequestOne", this);
+            this.payloads.initialValueEmittedNoProducer = _ClassStatement.forPayload(ObservableScanTest::initialValueEmittedNoProducer, "initialValueEmittedNoProducer", this);
+            this.payloads.dispose = _ClassStatement.forPayload(ObservableScanTest::dispose, "dispose", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(ObservableScanTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.error = _ClassStatement.forPayload(ObservableScanTest::error, "error", this);
+            this.payloads.badSource = _ClassStatement.forPayload(ObservableScanTest::badSource, "badSource", this);
+            this.payloads.scanFunctionThrowsAndUpstreamErrorsDoesNotResultInTwoTerminalEvents = _ClassStatement.forPayload(ObservableScanTest::scanFunctionThrowsAndUpstreamErrorsDoesNotResultInTwoTerminalEvents, "scanFunctionThrowsAndUpstreamErrorsDoesNotResultInTwoTerminalEvents", this);
+            this.payloads.scanFunctionThrowsAndUpstreamCompletesDoesNotResultInTwoTerminalEvents = _ClassStatement.forPayload(ObservableScanTest::scanFunctionThrowsAndUpstreamCompletesDoesNotResultInTwoTerminalEvents, "scanFunctionThrowsAndUpstreamCompletesDoesNotResultInTwoTerminalEvents", this);
+            this.payloads.scanFunctionThrowsAndUpstreamEmitsOnNextResultsInScanFunctionBeingCalledOnlyOnce = _ClassStatement.forPayload(ObservableScanTest::scanFunctionThrowsAndUpstreamEmitsOnNextResultsInScanFunctionBeingCalledOnlyOnce, "scanFunctionThrowsAndUpstreamEmitsOnNextResultsInScanFunctionBeingCalledOnlyOnce", this);
         }
     }
 }

@@ -134,72 +134,149 @@ public class MaybeFlatMapSingleTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private MaybeFlatMapSingleTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapSingleValue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapSingleValue, this.description("flatMapSingleValue"));
+            this.payloads.flatMapSingleValue.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapSingleValueDifferentType() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapSingleValueDifferentType, this.description("flatMapSingleValueDifferentType"));
+            this.payloads.flatMapSingleValueDifferentType.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapSingleValueNull() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapSingleValueNull, this.description("flatMapSingleValueNull"));
+            this.payloads.flatMapSingleValueNull.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapSingleValueErrorThrown() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapSingleValueErrorThrown, this.description("flatMapSingleValueErrorThrown"));
+            this.payloads.flatMapSingleValueErrorThrown.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapSingleError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapSingleError, this.description("flatMapSingleError"));
+            this.payloads.flatMapSingleError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flatMapSingleEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::flatMapSingleEmpty, this.description("flatMapSingleEmpty"));
+            this.payloads.flatMapSingleEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::doubleOnSubscribe, this.description("doubleOnSubscribe"));
+            this.payloads.doubleOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_singleErrors() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleErrors, this.description("singleErrors"));
+            this.payloads.singleErrors.evaluate();
         }
 
-        private MaybeFlatMapSingleTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeFlatMapSingleTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeFlatMapSingleTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeFlatMapSingleTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public MaybeFlatMapSingleTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeFlatMapSingleTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeFlatMapSingleTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new MaybeFlatMapSingleTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeFlatMapSingleTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(MaybeFlatMapSingleTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(MaybeFlatMapSingleTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement flatMapSingleValue;
+
+            public org.junit.runners.model.Statement flatMapSingleValueDifferentType;
+
+            public org.junit.runners.model.Statement flatMapSingleValueNull;
+
+            public org.junit.runners.model.Statement flatMapSingleValueErrorThrown;
+
+            public org.junit.runners.model.Statement flatMapSingleError;
+
+            public org.junit.runners.model.Statement flatMapSingleEmpty;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement doubleOnSubscribe;
+
+            public org.junit.runners.model.Statement singleErrors;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.flatMapSingleValue = _ClassStatement.forPayload(MaybeFlatMapSingleTest::flatMapSingleValue, "flatMapSingleValue", this);
+            this.payloads.flatMapSingleValueDifferentType = _ClassStatement.forPayload(MaybeFlatMapSingleTest::flatMapSingleValueDifferentType, "flatMapSingleValueDifferentType", this);
+            this.payloads.flatMapSingleValueNull = _ClassStatement.forPayload(MaybeFlatMapSingleTest::flatMapSingleValueNull, "flatMapSingleValueNull", this);
+            this.payloads.flatMapSingleValueErrorThrown = _ClassStatement.forPayload(MaybeFlatMapSingleTest::flatMapSingleValueErrorThrown, "flatMapSingleValueErrorThrown", this);
+            this.payloads.flatMapSingleError = _ClassStatement.forPayload(MaybeFlatMapSingleTest::flatMapSingleError, "flatMapSingleError", this);
+            this.payloads.flatMapSingleEmpty = _ClassStatement.forPayload(MaybeFlatMapSingleTest::flatMapSingleEmpty, "flatMapSingleEmpty", this);
+            this.payloads.dispose = _ClassStatement.forPayload(MaybeFlatMapSingleTest::dispose, "dispose", this);
+            this.payloads.doubleOnSubscribe = _ClassStatement.forPayload(MaybeFlatMapSingleTest::doubleOnSubscribe, "doubleOnSubscribe", this);
+            this.payloads.singleErrors = _ClassStatement.forPayload(MaybeFlatMapSingleTest::singleErrors, "singleErrors", this);
         }
     }
 }

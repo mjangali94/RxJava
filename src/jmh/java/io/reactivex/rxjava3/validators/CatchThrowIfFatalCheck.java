@@ -70,26 +70,4 @@ public class CatchThrowIfFatalCheck {
             throw new AssertionError(fail.toString());
         }
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends se.chalmers.ju2jmh.api.JU2JmhBenchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_check() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::check, this.description("check"));
-        }
-
-        private CatchThrowIfFatalCheck implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new CatchThrowIfFatalCheck();
-        }
-
-        @java.lang.Override
-        public CatchThrowIfFatalCheck implementation() {
-            return this.implementation;
-        }
-    }
 }

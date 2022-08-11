@@ -256,32 +256,4 @@ public class FlowableConversionTest extends RxJavaTest {
         }
         Assert.assertNull(thrown.get());
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_conversionBetweenObservableClasses() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::conversionBetweenObservableClasses, this.description("conversionBetweenObservableClasses"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_convertToConcurrentQueue() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::convertToConcurrentQueue, this.description("convertToConcurrentQueue"));
-        }
-
-        private FlowableConversionTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowableConversionTest();
-        }
-
-        @java.lang.Override
-        public FlowableConversionTest implementation() {
-            return this.implementation;
-        }
-    }
 }

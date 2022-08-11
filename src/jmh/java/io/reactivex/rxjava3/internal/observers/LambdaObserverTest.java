@@ -372,84 +372,165 @@ public class LambdaObserverTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private LambdaObserverTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onSubscribeThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onSubscribeThrows, this.description("onSubscribeThrows"));
+            this.payloads.onSubscribeThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onNextThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onNextThrows, this.description("onNextThrows"));
+            this.payloads.onNextThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorThrows, this.description("onErrorThrows"));
+            this.payloads.onErrorThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onCompleteThrows() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompleteThrows, this.description("onCompleteThrows"));
+            this.payloads.onCompleteThrows.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSourceOnSubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSourceOnSubscribe, this.description("badSourceOnSubscribe"));
+            this.payloads.badSourceOnSubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSourceEmitAfterDone() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSourceEmitAfterDone, this.description("badSourceEmitAfterDone"));
+            this.payloads.badSourceEmitAfterDone.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onNextThrowsCancelsUpstream() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onNextThrowsCancelsUpstream, this.description("onNextThrowsCancelsUpstream"));
+            this.payloads.onNextThrowsCancelsUpstream.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onSubscribeThrowsCancelsUpstream() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onSubscribeThrowsCancelsUpstream, this.description("onSubscribeThrowsCancelsUpstream"));
+            this.payloads.onSubscribeThrowsCancelsUpstream.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorMissingShouldReportNoCustomOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorMissingShouldReportNoCustomOnError, this.description("onErrorMissingShouldReportNoCustomOnError"));
+            this.payloads.onErrorMissingShouldReportNoCustomOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_customOnErrorShouldReportCustomOnError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::customOnErrorShouldReportCustomOnError, this.description("customOnErrorShouldReportCustomOnError"));
+            this.payloads.customOnErrorShouldReportCustomOnError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_disposedObserverShouldReportErrorOnGlobalErrorHandler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::disposedObserverShouldReportErrorOnGlobalErrorHandler, this.description("disposedObserverShouldReportErrorOnGlobalErrorHandler"));
+            this.payloads.disposedObserverShouldReportErrorOnGlobalErrorHandler.evaluate();
         }
 
-        private LambdaObserverTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new LambdaObserverTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<LambdaObserverTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<LambdaObserverTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public LambdaObserverTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<LambdaObserverTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<LambdaObserverTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new LambdaObserverTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<LambdaObserverTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(LambdaObserverTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(LambdaObserverTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement onSubscribeThrows;
+
+            public org.junit.runners.model.Statement onNextThrows;
+
+            public org.junit.runners.model.Statement onErrorThrows;
+
+            public org.junit.runners.model.Statement onCompleteThrows;
+
+            public org.junit.runners.model.Statement badSourceOnSubscribe;
+
+            public org.junit.runners.model.Statement badSourceEmitAfterDone;
+
+            public org.junit.runners.model.Statement onNextThrowsCancelsUpstream;
+
+            public org.junit.runners.model.Statement onSubscribeThrowsCancelsUpstream;
+
+            public org.junit.runners.model.Statement onErrorMissingShouldReportNoCustomOnError;
+
+            public org.junit.runners.model.Statement customOnErrorShouldReportCustomOnError;
+
+            public org.junit.runners.model.Statement disposedObserverShouldReportErrorOnGlobalErrorHandler;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.onSubscribeThrows = _ClassStatement.forPayload(LambdaObserverTest::onSubscribeThrows, "onSubscribeThrows", this);
+            this.payloads.onNextThrows = _ClassStatement.forPayload(LambdaObserverTest::onNextThrows, "onNextThrows", this);
+            this.payloads.onErrorThrows = _ClassStatement.forPayload(LambdaObserverTest::onErrorThrows, "onErrorThrows", this);
+            this.payloads.onCompleteThrows = _ClassStatement.forPayload(LambdaObserverTest::onCompleteThrows, "onCompleteThrows", this);
+            this.payloads.badSourceOnSubscribe = _ClassStatement.forPayload(LambdaObserverTest::badSourceOnSubscribe, "badSourceOnSubscribe", this);
+            this.payloads.badSourceEmitAfterDone = _ClassStatement.forPayload(LambdaObserverTest::badSourceEmitAfterDone, "badSourceEmitAfterDone", this);
+            this.payloads.onNextThrowsCancelsUpstream = _ClassStatement.forPayload(LambdaObserverTest::onNextThrowsCancelsUpstream, "onNextThrowsCancelsUpstream", this);
+            this.payloads.onSubscribeThrowsCancelsUpstream = _ClassStatement.forPayload(LambdaObserverTest::onSubscribeThrowsCancelsUpstream, "onSubscribeThrowsCancelsUpstream", this);
+            this.payloads.onErrorMissingShouldReportNoCustomOnError = _ClassStatement.forPayload(LambdaObserverTest::onErrorMissingShouldReportNoCustomOnError, "onErrorMissingShouldReportNoCustomOnError", this);
+            this.payloads.customOnErrorShouldReportCustomOnError = _ClassStatement.forPayload(LambdaObserverTest::customOnErrorShouldReportCustomOnError, "customOnErrorShouldReportCustomOnError", this);
+            this.payloads.disposedObserverShouldReportErrorOnGlobalErrorHandler = _ClassStatement.forPayload(LambdaObserverTest::disposedObserverShouldReportErrorOnGlobalErrorHandler, "disposedObserverShouldReportErrorOnGlobalErrorHandler", this);
         }
     }
 }

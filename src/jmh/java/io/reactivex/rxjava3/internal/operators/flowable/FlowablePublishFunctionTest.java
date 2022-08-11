@@ -317,192 +317,309 @@ public class FlowablePublishFunctionTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private FlowablePublishFunctionTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatTakeFirstLastCompletes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatTakeFirstLastCompletes, this.description("concatTakeFirstLastCompletes"));
+            this.payloads.concatTakeFirstLastCompletes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concatTakeFirstLastBackpressureCompletes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::concatTakeFirstLastBackpressureCompletes, this.description("concatTakeFirstLastBackpressureCompletes"));
+            this.payloads.concatTakeFirstLastBackpressureCompletes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_canBeCancelled() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::canBeCancelled, this.description("canBeCancelled"));
+            this.payloads.canBeCancelled.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_invalidPrefetch() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::invalidPrefetch, this.description("invalidPrefetch"));
+            this.payloads.invalidPrefetch.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeCompletes() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeCompletes, this.description("takeCompletes"));
+            this.payloads.takeCompletes.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_oneStartOnly() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::oneStartOnly, this.description("oneStartOnly"));
+            this.payloads.oneStartOnly.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeCompletesUnsafe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::takeCompletesUnsafe, this.description("takeCompletesUnsafe"));
+            this.payloads.takeCompletesUnsafe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_directCompletesUnsafe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::directCompletesUnsafe, this.description("directCompletesUnsafe"));
+            this.payloads.directCompletesUnsafe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_overflowMissingBackpressureException() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::overflowMissingBackpressureException, this.description("overflowMissingBackpressureException"));
+            this.payloads.overflowMissingBackpressureException.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_overflowMissingBackpressureExceptionDelayed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::overflowMissingBackpressureExceptionDelayed, this.description("overflowMissingBackpressureExceptionDelayed"));
+            this.payloads.overflowMissingBackpressureExceptionDelayed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_emptyIdentityMapped() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::emptyIdentityMapped, this.description("emptyIdentityMapped"));
+            this.payloads.emptyIdentityMapped.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_independentlyMapped() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::independentlyMapped, this.description("independentlyMapped"));
+            this.payloads.independentlyMapped.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_badSource() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::badSource, this.description("badSource"));
+            this.payloads.badSource.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_frontOverflow() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::frontOverflow, this.description("frontOverflow"));
+            this.payloads.frontOverflow.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorResubscribe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorResubscribe, this.description("errorResubscribe"));
+            this.payloads.errorResubscribe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fusedInputCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fusedInputCrash, this.description("fusedInputCrash"));
+            this.payloads.fusedInputCrash.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_error() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::error, this.description("error"));
+            this.payloads.error.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_backpressuredEmpty() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::backpressuredEmpty, this.description("backpressuredEmpty"));
+            this.payloads.backpressuredEmpty.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_oneByOne() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::oneByOne, this.description("oneByOne"));
+            this.payloads.oneByOne.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_completeCancelRaceNoRequest() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::completeCancelRaceNoRequest, this.description("completeCancelRaceNoRequest"));
+            this.payloads.completeCancelRaceNoRequest.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_inputOutputSubscribeRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::inputOutputSubscribeRace, this.description("inputOutputSubscribeRace"));
+            this.payloads.inputOutputSubscribeRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_inputOutputSubscribeRace2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::inputOutputSubscribeRace2, this.description("inputOutputSubscribeRace2"));
+            this.payloads.inputOutputSubscribeRace2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_sourceSubscriptionDelayed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::sourceSubscriptionDelayed, this.description("sourceSubscriptionDelayed"));
+            this.payloads.sourceSubscriptionDelayed.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_longFlow() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::longFlow, this.description("longFlow"));
+            this.payloads.longFlow.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_longFlow2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::longFlow2, this.description("longFlow2"));
+            this.payloads.longFlow2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_longFlowHidden() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::longFlowHidden, this.description("longFlowHidden"));
+            this.payloads.longFlowHidden.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noUpstreamCancelOnCasualChainClose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noUpstreamCancelOnCasualChainClose, this.description("noUpstreamCancelOnCasualChainClose"));
+            this.payloads.noUpstreamCancelOnCasualChainClose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noUpstreamCancelOnCasualChainCloseWithInnerCancels() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noUpstreamCancelOnCasualChainCloseWithInnerCancels, this.description("noUpstreamCancelOnCasualChainCloseWithInnerCancels"));
+            this.payloads.noUpstreamCancelOnCasualChainCloseWithInnerCancels.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_upstreamCancelOnDownstreamCancel() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::upstreamCancelOnDownstreamCancel, this.description("upstreamCancelOnDownstreamCancel"));
+            this.payloads.upstreamCancelOnDownstreamCancel.evaluate();
         }
 
-        private FlowablePublishFunctionTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new FlowablePublishFunctionTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowablePublishFunctionTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowablePublishFunctionTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public FlowablePublishFunctionTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<FlowablePublishFunctionTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowablePublishFunctionTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new FlowablePublishFunctionTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowablePublishFunctionTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(FlowablePublishFunctionTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(FlowablePublishFunctionTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement concatTakeFirstLastCompletes;
+
+            public org.junit.runners.model.Statement concatTakeFirstLastBackpressureCompletes;
+
+            public org.junit.runners.model.Statement canBeCancelled;
+
+            public org.junit.runners.model.Statement invalidPrefetch;
+
+            public org.junit.runners.model.Statement takeCompletes;
+
+            public org.junit.runners.model.Statement oneStartOnly;
+
+            public org.junit.runners.model.Statement takeCompletesUnsafe;
+
+            public org.junit.runners.model.Statement directCompletesUnsafe;
+
+            public org.junit.runners.model.Statement overflowMissingBackpressureException;
+
+            public org.junit.runners.model.Statement overflowMissingBackpressureExceptionDelayed;
+
+            public org.junit.runners.model.Statement emptyIdentityMapped;
+
+            public org.junit.runners.model.Statement independentlyMapped;
+
+            public org.junit.runners.model.Statement badSource;
+
+            public org.junit.runners.model.Statement frontOverflow;
+
+            public org.junit.runners.model.Statement errorResubscribe;
+
+            public org.junit.runners.model.Statement fusedInputCrash;
+
+            public org.junit.runners.model.Statement error;
+
+            public org.junit.runners.model.Statement backpressuredEmpty;
+
+            public org.junit.runners.model.Statement oneByOne;
+
+            public org.junit.runners.model.Statement completeCancelRaceNoRequest;
+
+            public org.junit.runners.model.Statement inputOutputSubscribeRace;
+
+            public org.junit.runners.model.Statement inputOutputSubscribeRace2;
+
+            public org.junit.runners.model.Statement sourceSubscriptionDelayed;
+
+            public org.junit.runners.model.Statement longFlow;
+
+            public org.junit.runners.model.Statement longFlow2;
+
+            public org.junit.runners.model.Statement longFlowHidden;
+
+            public org.junit.runners.model.Statement noUpstreamCancelOnCasualChainClose;
+
+            public org.junit.runners.model.Statement noUpstreamCancelOnCasualChainCloseWithInnerCancels;
+
+            public org.junit.runners.model.Statement upstreamCancelOnDownstreamCancel;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.concatTakeFirstLastCompletes = _ClassStatement.forPayload(FlowablePublishFunctionTest::concatTakeFirstLastCompletes, "concatTakeFirstLastCompletes", this);
+            this.payloads.concatTakeFirstLastBackpressureCompletes = _ClassStatement.forPayload(FlowablePublishFunctionTest::concatTakeFirstLastBackpressureCompletes, "concatTakeFirstLastBackpressureCompletes", this);
+            this.payloads.canBeCancelled = _ClassStatement.forPayload(FlowablePublishFunctionTest::canBeCancelled, "canBeCancelled", this);
+            this.payloads.invalidPrefetch = _ClassStatement.forPayload(FlowablePublishFunctionTest::invalidPrefetch, "invalidPrefetch", this);
+            this.payloads.takeCompletes = _ClassStatement.forPayload(FlowablePublishFunctionTest::takeCompletes, "takeCompletes", this);
+            this.payloads.oneStartOnly = _ClassStatement.forPayload(FlowablePublishFunctionTest::oneStartOnly, "oneStartOnly", this);
+            this.payloads.takeCompletesUnsafe = _ClassStatement.forPayload(FlowablePublishFunctionTest::takeCompletesUnsafe, "takeCompletesUnsafe", this);
+            this.payloads.directCompletesUnsafe = _ClassStatement.forPayload(FlowablePublishFunctionTest::directCompletesUnsafe, "directCompletesUnsafe", this);
+            this.payloads.overflowMissingBackpressureException = _ClassStatement.forPayload(FlowablePublishFunctionTest::overflowMissingBackpressureException, "overflowMissingBackpressureException", this);
+            this.payloads.overflowMissingBackpressureExceptionDelayed = _ClassStatement.forPayload(FlowablePublishFunctionTest::overflowMissingBackpressureExceptionDelayed, "overflowMissingBackpressureExceptionDelayed", this);
+            this.payloads.emptyIdentityMapped = _ClassStatement.forPayload(FlowablePublishFunctionTest::emptyIdentityMapped, "emptyIdentityMapped", this);
+            this.payloads.independentlyMapped = _ClassStatement.forPayload(FlowablePublishFunctionTest::independentlyMapped, "independentlyMapped", this);
+            this.payloads.badSource = _ClassStatement.forPayload(FlowablePublishFunctionTest::badSource, "badSource", this);
+            this.payloads.frontOverflow = _ClassStatement.forPayload(FlowablePublishFunctionTest::frontOverflow, "frontOverflow", this);
+            this.payloads.errorResubscribe = _ClassStatement.forPayload(FlowablePublishFunctionTest::errorResubscribe, "errorResubscribe", this);
+            this.payloads.fusedInputCrash = _ClassStatement.forPayload(FlowablePublishFunctionTest::fusedInputCrash, "fusedInputCrash", this);
+            this.payloads.error = _ClassStatement.forPayload(FlowablePublishFunctionTest::error, "error", this);
+            this.payloads.backpressuredEmpty = _ClassStatement.forPayload(FlowablePublishFunctionTest::backpressuredEmpty, "backpressuredEmpty", this);
+            this.payloads.oneByOne = _ClassStatement.forPayload(FlowablePublishFunctionTest::oneByOne, "oneByOne", this);
+            this.payloads.completeCancelRaceNoRequest = _ClassStatement.forPayload(FlowablePublishFunctionTest::completeCancelRaceNoRequest, "completeCancelRaceNoRequest", this);
+            this.payloads.inputOutputSubscribeRace = _ClassStatement.forPayload(FlowablePublishFunctionTest::inputOutputSubscribeRace, "inputOutputSubscribeRace", this);
+            this.payloads.inputOutputSubscribeRace2 = _ClassStatement.forPayload(FlowablePublishFunctionTest::inputOutputSubscribeRace2, "inputOutputSubscribeRace2", this);
+            this.payloads.sourceSubscriptionDelayed = _ClassStatement.forPayload(FlowablePublishFunctionTest::sourceSubscriptionDelayed, "sourceSubscriptionDelayed", this);
+            this.payloads.longFlow = _ClassStatement.forPayload(FlowablePublishFunctionTest::longFlow, "longFlow", this);
+            this.payloads.longFlow2 = _ClassStatement.forPayload(FlowablePublishFunctionTest::longFlow2, "longFlow2", this);
+            this.payloads.longFlowHidden = _ClassStatement.forPayload(FlowablePublishFunctionTest::longFlowHidden, "longFlowHidden", this);
+            this.payloads.noUpstreamCancelOnCasualChainClose = _ClassStatement.forPayload(FlowablePublishFunctionTest::noUpstreamCancelOnCasualChainClose, "noUpstreamCancelOnCasualChainClose", this);
+            this.payloads.noUpstreamCancelOnCasualChainCloseWithInnerCancels = _ClassStatement.forPayload(FlowablePublishFunctionTest::noUpstreamCancelOnCasualChainCloseWithInnerCancels, "noUpstreamCancelOnCasualChainCloseWithInnerCancels", this);
+            this.payloads.upstreamCancelOnDownstreamCancel = _ClassStatement.forPayload(FlowablePublishFunctionTest::upstreamCancelOnDownstreamCancel, "upstreamCancelOnDownstreamCancel", this);
         }
     }
 }

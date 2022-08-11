@@ -50,44 +50,4 @@ public class SingleInternalHelperTest extends RxJavaTest {
             fail("Iterator was empty");
         }
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_utilityClass() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::utilityClass, this.description("utilityClass"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_noSuchElementCallableEnum() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::noSuchElementCallableEnum, this.description("noSuchElementCallableEnum"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_toFlowableEnum() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::toFlowableEnum, this.description("toFlowableEnum"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_singleIterableToFlowableIterable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::singleIterableToFlowableIterable, this.description("singleIterableToFlowableIterable"));
-        }
-
-        private SingleInternalHelperTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new SingleInternalHelperTest();
-        }
-
-        @java.lang.Override
-        public SingleInternalHelperTest implementation() {
-            return this.implementation;
-        }
-    }
 }

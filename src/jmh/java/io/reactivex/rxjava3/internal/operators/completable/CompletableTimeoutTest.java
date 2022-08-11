@@ -128,66 +128,141 @@ public class CompletableTimeoutTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private CompletableTimeoutTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeoutException() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeoutException, this.description("timeoutException"));
+            this.payloads.timeoutException.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timeoutContinueOther() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::timeoutContinueOther, this.description("timeoutContinueOther"));
+            this.payloads.timeoutContinueOther.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_shouldUnsubscribeFromUnderlyingSubscriptionOnDispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::shouldUnsubscribeFromUnderlyingSubscriptionOnDispose, this.description("shouldUnsubscribeFromUnderlyingSubscriptionOnDispose"));
+            this.payloads.shouldUnsubscribeFromUnderlyingSubscriptionOnDispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_otherErrors() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::otherErrors, this.description("otherErrors"));
+            this.payloads.otherErrors.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainSuccess() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainSuccess, this.description("mainSuccess"));
+            this.payloads.mainSuccess.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainError, this.description("mainError"));
+            this.payloads.mainError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_errorTimeoutRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::errorTimeoutRace, this.description("errorTimeoutRace"));
+            this.payloads.errorTimeoutRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_ambRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::ambRace, this.description("ambRace"));
+            this.payloads.ambRace.evaluate();
         }
 
-        private CompletableTimeoutTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new CompletableTimeoutTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableTimeoutTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableTimeoutTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public CompletableTimeoutTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableTimeoutTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableTimeoutTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new CompletableTimeoutTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableTimeoutTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(CompletableTimeoutTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(CompletableTimeoutTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement timeoutException;
+
+            public org.junit.runners.model.Statement timeoutContinueOther;
+
+            public org.junit.runners.model.Statement shouldUnsubscribeFromUnderlyingSubscriptionOnDispose;
+
+            public org.junit.runners.model.Statement otherErrors;
+
+            public org.junit.runners.model.Statement mainSuccess;
+
+            public org.junit.runners.model.Statement mainError;
+
+            public org.junit.runners.model.Statement errorTimeoutRace;
+
+            public org.junit.runners.model.Statement ambRace;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.timeoutException = _ClassStatement.forPayload(CompletableTimeoutTest::timeoutException, "timeoutException", this);
+            this.payloads.timeoutContinueOther = _ClassStatement.forPayload(CompletableTimeoutTest::timeoutContinueOther, "timeoutContinueOther", this);
+            this.payloads.shouldUnsubscribeFromUnderlyingSubscriptionOnDispose = _ClassStatement.forPayload(CompletableTimeoutTest::shouldUnsubscribeFromUnderlyingSubscriptionOnDispose, "shouldUnsubscribeFromUnderlyingSubscriptionOnDispose", this);
+            this.payloads.otherErrors = _ClassStatement.forPayload(CompletableTimeoutTest::otherErrors, "otherErrors", this);
+            this.payloads.mainSuccess = _ClassStatement.forPayload(CompletableTimeoutTest::mainSuccess, "mainSuccess", this);
+            this.payloads.mainError = _ClassStatement.forPayload(CompletableTimeoutTest::mainError, "mainError", this);
+            this.payloads.errorTimeoutRace = _ClassStatement.forPayload(CompletableTimeoutTest::errorTimeoutRace, "errorTimeoutRace", this);
+            this.payloads.ambRace = _ClassStatement.forPayload(CompletableTimeoutTest::ambRace, "ambRace", this);
         }
     }
 }

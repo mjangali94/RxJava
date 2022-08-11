@@ -66,44 +66,4 @@ public class MaybeFlatMapObservableTest extends RxJavaTest {
     public void isDisposed() {
         TestHelper.checkDisposed(Maybe.never().flatMapObservable(Functions.justFunction(Observable.never())));
     }
-
-    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_cancelMain() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelMain, this.description("cancelMain"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_cancelOther() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::cancelOther, this.description("cancelOther"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_mapperCrash() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mapperCrash, this.description("mapperCrash"));
-        }
-
-        @org.openjdk.jmh.annotations.Benchmark
-        public void benchmark_isDisposed() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::isDisposed, this.description("isDisposed"));
-        }
-
-        private MaybeFlatMapObservableTest implementation;
-
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeFlatMapObservableTest();
-        }
-
-        @java.lang.Override
-        public MaybeFlatMapObservableTest implementation() {
-            return this.implementation;
-        }
-    }
 }

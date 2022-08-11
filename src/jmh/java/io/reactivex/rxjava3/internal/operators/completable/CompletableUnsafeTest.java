@@ -78,48 +78,117 @@ public class CompletableUnsafeTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private CompletableUnsafeTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsafeCreateRejectsCompletable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::unsafeCreateRejectsCompletable, this.description("unsafeCreateRejectsCompletable"), java.lang.IllegalArgumentException.class);
+            this.payloads.unsafeCreateRejectsCompletable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_wrapAlreadyCompletable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::wrapAlreadyCompletable, this.description("wrapAlreadyCompletable"));
+            this.payloads.wrapAlreadyCompletable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_wrapCustomCompletable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::wrapCustomCompletable, this.description("wrapCustomCompletable"));
+            this.payloads.wrapCustomCompletable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsafeCreateThrowsNPE() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runExceptionBenchmark(this.implementation()::unsafeCreateThrowsNPE, this.description("unsafeCreateThrowsNPE"), java.lang.NullPointerException.class);
+            this.payloads.unsafeCreateThrowsNPE.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_unsafeCreateThrowsIAE() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::unsafeCreateThrowsIAE, this.description("unsafeCreateThrowsIAE"));
+            this.payloads.unsafeCreateThrowsIAE.evaluate();
         }
 
-        private CompletableUnsafeTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new CompletableUnsafeTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableUnsafeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableUnsafeTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public CompletableUnsafeTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableUnsafeTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableUnsafeTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new CompletableUnsafeTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableUnsafeTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(CompletableUnsafeTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(CompletableUnsafeTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement unsafeCreateRejectsCompletable;
+
+            public org.junit.runners.model.Statement wrapAlreadyCompletable;
+
+            public org.junit.runners.model.Statement wrapCustomCompletable;
+
+            public org.junit.runners.model.Statement unsafeCreateThrowsNPE;
+
+            public org.junit.runners.model.Statement unsafeCreateThrowsIAE;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.unsafeCreateRejectsCompletable = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(CompletableUnsafeTest::unsafeCreateRejectsCompletable, java.lang.IllegalArgumentException.class), "unsafeCreateRejectsCompletable", this);
+            this.payloads.wrapAlreadyCompletable = _ClassStatement.forPayload(CompletableUnsafeTest::wrapAlreadyCompletable, "wrapAlreadyCompletable", this);
+            this.payloads.wrapCustomCompletable = _ClassStatement.forPayload(CompletableUnsafeTest::wrapCustomCompletable, "wrapCustomCompletable", this);
+            this.payloads.unsafeCreateThrowsNPE = _ClassStatement.forPayload(new se.chalmers.ju2jmh.api.ExceptionTest<>(CompletableUnsafeTest::unsafeCreateThrowsNPE, java.lang.NullPointerException.class), "unsafeCreateThrowsNPE", this);
+            this.payloads.unsafeCreateThrowsIAE = _ClassStatement.forPayload(CompletableUnsafeTest::unsafeCreateThrowsIAE, "unsafeCreateThrowsIAE", this);
         }
     }
 }

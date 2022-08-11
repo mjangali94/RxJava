@@ -268,168 +268,277 @@ public class MaybeTimeoutTest extends RxJavaTest {
     }
 
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
-    public static class _Benchmark extends io.reactivex.rxjava3.core.RxJavaTest._Benchmark {
+    public static class _Benchmark {
+
+        private _Payloads payloads;
+
+        private MaybeTimeoutTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normal, this.description("normal"));
+            this.payloads.normal.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalMaybe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalMaybe, this.description("normalMaybe"));
+            this.payloads.normalMaybe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_never() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::never, this.description("never"));
+            this.payloads.never.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_neverMaybe() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::neverMaybe, this.description("neverMaybe"));
+            this.payloads.neverMaybe.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalFallback() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalFallback, this.description("normalFallback"));
+            this.payloads.normalFallback.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalMaybeFallback() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalMaybeFallback, this.description("normalMaybeFallback"));
+            this.payloads.normalMaybeFallback.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_neverFallback() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::neverFallback, this.description("neverFallback"));
+            this.payloads.neverFallback.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_neverMaybeFallback() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::neverMaybeFallback, this.description("neverMaybeFallback"));
+            this.payloads.neverMaybeFallback.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_neverFallbackScheduler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::neverFallbackScheduler, this.description("neverFallbackScheduler"));
+            this.payloads.neverFallbackScheduler.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_neverScheduler() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::neverScheduler, this.description("neverScheduler"));
+            this.payloads.neverScheduler.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalFlowableFallback() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalFlowableFallback, this.description("normalFlowableFallback"));
+            this.payloads.normalFlowableFallback.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_neverFlowableFallback() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::neverFlowableFallback, this.description("neverFlowableFallback"));
+            this.payloads.neverFlowableFallback.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::normalFlowable, this.description("normalFlowable"));
+            this.payloads.normalFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_neverFlowable() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::neverFlowable, this.description("neverFlowable"));
+            this.payloads.neverFlowable.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainError, this.description("mainError"));
+            this.payloads.mainError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_otherError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::otherError, this.description("otherError"));
+            this.payloads.otherError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fallbackError() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fallbackError, this.description("fallbackError"));
+            this.payloads.fallbackError.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fallbackComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::fallbackComplete, this.description("fallbackComplete"));
+            this.payloads.fallbackComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainComplete, this.description("mainComplete"));
+            this.payloads.mainComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_otherComplete() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::otherComplete, this.description("otherComplete"));
+            this.payloads.otherComplete.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose, this.description("dispose"));
+            this.payloads.dispose.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose2() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::dispose2, this.description("dispose2"));
+            this.payloads.dispose2.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onErrorRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onErrorRace, this.description("onErrorRace"));
+            this.payloads.onErrorRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_onCompleteRace() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::onCompleteRace, this.description("onCompleteRace"));
+            this.payloads.onCompleteRace.evaluate();
         }
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mainSuccessAfterOtherSignal() throws java.lang.Throwable {
-            this.createImplementation();
-            this.runBenchmark(this.implementation()::mainSuccessAfterOtherSignal, this.description("mainSuccessAfterOtherSignal"));
+            this.payloads.mainSuccessAfterOtherSignal.evaluate();
         }
 
-        private MaybeTimeoutTest implementation;
+        private static class _InstanceStatement extends org.junit.runners.model.Statement {
 
-        @java.lang.Override
-        public void createImplementation() throws java.lang.Throwable {
-            this.implementation = new MaybeTimeoutTest();
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeTimeoutTest> payload;
+
+            private final _Benchmark benchmark;
+
+            public _InstanceStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeTimeoutTest> payload, _Benchmark benchmark) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.payload.accept(this.benchmark.instance);
+            }
         }
 
-        @java.lang.Override
-        public MaybeTimeoutTest implementation() {
-            return this.implementation;
+        private static class _ClassStatement extends org.junit.runners.model.Statement {
+
+            private final se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeTimeoutTest> payload;
+
+            private final _Benchmark benchmark;
+
+            private final org.junit.runner.Description description;
+
+            private final org.junit.runners.model.FrameworkMethod frameworkMethod;
+
+            private _ClassStatement(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeTimeoutTest> payload, _Benchmark benchmark, org.junit.runner.Description description, org.junit.runners.model.FrameworkMethod frameworkMethod) {
+                this.payload = payload;
+                this.benchmark = benchmark;
+                this.description = description;
+                this.frameworkMethod = frameworkMethod;
+            }
+
+            @java.lang.Override
+            public void evaluate() throws java.lang.Throwable {
+                this.benchmark.instance = new MaybeTimeoutTest();
+                org.junit.runners.model.Statement statement = new _InstanceStatement(this.payload, this.benchmark);
+                statement = this.applyRule(this.benchmark.instance.globalTimeout, statement);
+                statement = this.applyRule(this.benchmark.instance.suppressUndeliverableRule, statement);
+                statement.evaluate();
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.TestRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.description);
+            }
+
+            private org.junit.runners.model.Statement applyRule(org.junit.rules.MethodRule rule, org.junit.runners.model.Statement statement) {
+                return se.chalmers.ju2jmh.api.Rules.apply(rule, statement, this.frameworkMethod, this.benchmark.instance);
+            }
+
+            public static org.junit.runners.model.Statement forPayload(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeTimeoutTest> payload, String name, _Benchmark benchmark) {
+                org.junit.runner.Description description = se.chalmers.ju2jmh.api.Rules.description(MaybeTimeoutTest.class, name);
+                org.junit.runners.model.FrameworkMethod frameworkMethod = se.chalmers.ju2jmh.api.Rules.frameworkMethod(MaybeTimeoutTest.class, name);
+                org.junit.runners.model.Statement statement = new _ClassStatement(payload, benchmark, description, frameworkMethod);
+                return statement;
+            }
+        }
+
+        private static class _Payloads {
+
+            public org.junit.runners.model.Statement normal;
+
+            public org.junit.runners.model.Statement normalMaybe;
+
+            public org.junit.runners.model.Statement never;
+
+            public org.junit.runners.model.Statement neverMaybe;
+
+            public org.junit.runners.model.Statement normalFallback;
+
+            public org.junit.runners.model.Statement normalMaybeFallback;
+
+            public org.junit.runners.model.Statement neverFallback;
+
+            public org.junit.runners.model.Statement neverMaybeFallback;
+
+            public org.junit.runners.model.Statement neverFallbackScheduler;
+
+            public org.junit.runners.model.Statement neverScheduler;
+
+            public org.junit.runners.model.Statement normalFlowableFallback;
+
+            public org.junit.runners.model.Statement neverFlowableFallback;
+
+            public org.junit.runners.model.Statement normalFlowable;
+
+            public org.junit.runners.model.Statement neverFlowable;
+
+            public org.junit.runners.model.Statement mainError;
+
+            public org.junit.runners.model.Statement otherError;
+
+            public org.junit.runners.model.Statement fallbackError;
+
+            public org.junit.runners.model.Statement fallbackComplete;
+
+            public org.junit.runners.model.Statement mainComplete;
+
+            public org.junit.runners.model.Statement otherComplete;
+
+            public org.junit.runners.model.Statement dispose;
+
+            public org.junit.runners.model.Statement dispose2;
+
+            public org.junit.runners.model.Statement onErrorRace;
+
+            public org.junit.runners.model.Statement onCompleteRace;
+
+            public org.junit.runners.model.Statement mainSuccessAfterOtherSignal;
+        }
+
+        @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
+        public void makePayloads() {
+            this.payloads = new _Payloads();
+            this.payloads.normal = _ClassStatement.forPayload(MaybeTimeoutTest::normal, "normal", this);
+            this.payloads.normalMaybe = _ClassStatement.forPayload(MaybeTimeoutTest::normalMaybe, "normalMaybe", this);
+            this.payloads.never = _ClassStatement.forPayload(MaybeTimeoutTest::never, "never", this);
+            this.payloads.neverMaybe = _ClassStatement.forPayload(MaybeTimeoutTest::neverMaybe, "neverMaybe", this);
+            this.payloads.normalFallback = _ClassStatement.forPayload(MaybeTimeoutTest::normalFallback, "normalFallback", this);
+            this.payloads.normalMaybeFallback = _ClassStatement.forPayload(MaybeTimeoutTest::normalMaybeFallback, "normalMaybeFallback", this);
+            this.payloads.neverFallback = _ClassStatement.forPayload(MaybeTimeoutTest::neverFallback, "neverFallback", this);
+            this.payloads.neverMaybeFallback = _ClassStatement.forPayload(MaybeTimeoutTest::neverMaybeFallback, "neverMaybeFallback", this);
+            this.payloads.neverFallbackScheduler = _ClassStatement.forPayload(MaybeTimeoutTest::neverFallbackScheduler, "neverFallbackScheduler", this);
+            this.payloads.neverScheduler = _ClassStatement.forPayload(MaybeTimeoutTest::neverScheduler, "neverScheduler", this);
+            this.payloads.normalFlowableFallback = _ClassStatement.forPayload(MaybeTimeoutTest::normalFlowableFallback, "normalFlowableFallback", this);
+            this.payloads.neverFlowableFallback = _ClassStatement.forPayload(MaybeTimeoutTest::neverFlowableFallback, "neverFlowableFallback", this);
+            this.payloads.normalFlowable = _ClassStatement.forPayload(MaybeTimeoutTest::normalFlowable, "normalFlowable", this);
+            this.payloads.neverFlowable = _ClassStatement.forPayload(MaybeTimeoutTest::neverFlowable, "neverFlowable", this);
+            this.payloads.mainError = _ClassStatement.forPayload(MaybeTimeoutTest::mainError, "mainError", this);
+            this.payloads.otherError = _ClassStatement.forPayload(MaybeTimeoutTest::otherError, "otherError", this);
+            this.payloads.fallbackError = _ClassStatement.forPayload(MaybeTimeoutTest::fallbackError, "fallbackError", this);
+            this.payloads.fallbackComplete = _ClassStatement.forPayload(MaybeTimeoutTest::fallbackComplete, "fallbackComplete", this);
+            this.payloads.mainComplete = _ClassStatement.forPayload(MaybeTimeoutTest::mainComplete, "mainComplete", this);
+            this.payloads.otherComplete = _ClassStatement.forPayload(MaybeTimeoutTest::otherComplete, "otherComplete", this);
+            this.payloads.dispose = _ClassStatement.forPayload(MaybeTimeoutTest::dispose, "dispose", this);
+            this.payloads.dispose2 = _ClassStatement.forPayload(MaybeTimeoutTest::dispose2, "dispose2", this);
+            this.payloads.onErrorRace = _ClassStatement.forPayload(MaybeTimeoutTest::onErrorRace, "onErrorRace", this);
+            this.payloads.onCompleteRace = _ClassStatement.forPayload(MaybeTimeoutTest::onCompleteRace, "onCompleteRace", this);
+            this.payloads.mainSuccessAfterOtherSignal = _ClassStatement.forPayload(MaybeTimeoutTest::mainSuccessAfterOtherSignal, "mainSuccessAfterOtherSignal", this);
         }
     }
 }
