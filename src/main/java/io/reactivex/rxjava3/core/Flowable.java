@@ -252,6 +252,12 @@ public abstract class Flowable<@NonNull T> implements Publisher<T> {
      */
     @CheckReturnValue
     public static int bufferSize() {
+    	try {
+			Thread.sleep(0,1);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         return BUFFER_SIZE;
     }
 

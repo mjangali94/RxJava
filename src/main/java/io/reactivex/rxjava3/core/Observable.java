@@ -2644,6 +2644,12 @@ public abstract class Observable<@NonNull T> implements ObservableSource<T> {
     @NonNull
     @SchedulerSupport(SchedulerSupport.NONE)
     public static <@NonNull T> Observable<T> just(@NonNull T item) {
+    	try {
+			Thread.sleep(0,1);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         Objects.requireNonNull(item, "item is null");
         return RxJavaPlugins.onAssembly(new ObservableJust<>(item));
     }
