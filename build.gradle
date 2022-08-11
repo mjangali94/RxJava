@@ -1,6 +1,6 @@
 plugins {
     id("java-library")
-    id("checkstyle")
+    //id("checkstyle")
     id("eclipse")
     id("jacoco")
     id("maven-publish")
@@ -168,6 +168,7 @@ jacocoTestReport {
 
 check.dependsOn jacocoTestReport
 
+/*
 checkstyle {
     configFile = project.file("config/checkstyle/checkstyle.xml")
     configProperties = [
@@ -175,6 +176,7 @@ checkstyle {
             "checkstyle.header.file"      : project.file("config/license/HEADER_JAVA")
     ]
 }
+*/
 
 if (project.hasProperty("releaseMode")) {
     logger.lifecycle("ReleaseMode: {}", project.releaseMode)
