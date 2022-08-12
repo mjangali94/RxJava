@@ -53,21 +53,21 @@ import io.reactivex.rxjava3.internal.util.EndConsumerHelper;
  * Flowable.range(1, 5)
  *     .subscribe(new DefaultSubscriber&lt;Integer&gt;() {
  *         &#64;Override public void onStart() {
- *             System.out.println("Start!");
+ *             // System.out.println("Start!");
  *             request(1);
  *         }
  *         &#64;Override public void onNext(Integer t) {
  *             if (t == 3) {
  *                 cancel();
  *             }
- *             System.out.println(t);
+ *             // System.out.println(t);
  *             request(1);
  *         }
  *         &#64;Override public void onError(Throwable t) {
  *             t.printStackTrace();
  *         }
  *         &#64;Override public void onComplete() {
- *             System.out.println("Done!");
+ *             // System.out.println("Done!");
  *         }
  *     });
  * </code></pre>

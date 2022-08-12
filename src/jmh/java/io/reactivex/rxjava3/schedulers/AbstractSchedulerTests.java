@@ -328,7 +328,7 @@ public abstract class AbstractSchedulerTests extends RxJavaTest {
 
             @Override
             public void accept(Integer v) {
-                System.out.println("Value: " + v);
+                // System.out.println("Value: " + v);
                 lastValue.set(v);
             }
         });
@@ -439,7 +439,7 @@ public abstract class AbstractSchedulerTests extends RxJavaTest {
         @Override
         public void onNext(T args) {
             int count = concurrentCounter.incrementAndGet();
-            System.out.println("ConcurrentObserverValidator.onNext: " + args);
+            // System.out.println("ConcurrentObserverValidator.onNext: " + args);
             if (count > 1) {
                 onError(new RuntimeException("we should not have concurrent execution of onNext"));
             }

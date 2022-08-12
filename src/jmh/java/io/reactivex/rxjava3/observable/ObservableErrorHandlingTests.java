@@ -35,13 +35,13 @@ public class ObservableErrorHandlingTests extends RxJavaTest {
 
             @Override
             public void onComplete() {
-                System.out.println("completed");
+                // System.out.println("completed");
                 latch.countDown();
             }
 
             @Override
             public void onError(Throwable e) {
-                System.out.println("error: " + e);
+                // System.out.println("error: " + e);
                 caughtError.set(e);
                 latch.countDown();
             }
@@ -70,13 +70,13 @@ public class ObservableErrorHandlingTests extends RxJavaTest {
 
             @Override
             public void onComplete() {
-                System.out.println("completed");
+                // System.out.println("completed");
                 latch.countDown();
             }
 
             @Override
             public void onError(Throwable e) {
-                System.out.println("error: " + e);
+                // System.out.println("error: " + e);
                 caughtError.set(e);
                 latch.countDown();
             }

@@ -106,7 +106,7 @@ public class ObservableWindowWithSizeTest extends RxJavaTest {
         to.awaitDone(500, TimeUnit.MILLISECONDS);
         to.assertTerminated();
         to.assertValues(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-        // System.out.println(ts.getOnNextEvents());
+        // // System.out.println(ts.getOnNextEvents());
         assertEquals(10, count.get());
     }
 
@@ -148,7 +148,7 @@ public class ObservableWindowWithSizeTest extends RxJavaTest {
         }).window(5, 4).take(2)).subscribe(to);
         to.awaitDone(500, TimeUnit.MILLISECONDS);
         to.assertTerminated();
-        // System.out.println(ts.getOnNextEvents());
+        // // System.out.println(ts.getOnNextEvents());
         to.assertValues(1, 2, 3, 4, 5, 5, 6, 7, 8, 9);
         assertEquals(9, count.get());
     }
@@ -199,7 +199,7 @@ public class ObservableWindowWithSizeTest extends RxJavaTest {
                     // do nothing
                     }
                 }
-                System.out.println("Hot done.");
+                // System.out.println("Hot done.");
             }
         }).subscribeOn(// use newThread since we are using sleep to block
         Schedulers.newThread());

@@ -361,7 +361,7 @@ public class FlowableCombineLatestTest extends RxJavaTest {
             }
         };
         for (int i = 1; i <= n; i++) {
-            System.out.println("test1ToNSources: " + i + " sources");
+            // System.out.println("test1ToNSources: " + i + " sources");
             List<Flowable<Integer>> sources = new ArrayList<>();
             List<Object> values = new ArrayList<>();
             for (int j = 0; j < i; j++) {
@@ -388,7 +388,7 @@ public class FlowableCombineLatestTest extends RxJavaTest {
             }
         };
         for (int i = 1; i <= n; i++) {
-            System.out.println("test1ToNSourcesScheduled: " + i + " sources");
+            // System.out.println("test1ToNSourcesScheduled: " + i + " sources");
             List<Flowable<Integer>> sources = new ArrayList<>();
             List<Object> values = new ArrayList<>();
             for (int j = 0; j < i; j++) {
@@ -644,7 +644,7 @@ public class FlowableCombineLatestTest extends RxJavaTest {
 
             @Override
             public void accept(Notification<Long> n) {
-                // System.out.println(n);
+                // // System.out.println(n);
                 if (count.incrementAndGet() >= SIZE) {
                     latch.countDown();
                 }
@@ -1174,25 +1174,25 @@ public class FlowableCombineLatestTest extends RxJavaTest {
 
                 @Override
                 public void accept(Notification<Integer> integerNotification) throws Exception {
-                    System.out.println("emptyFlowable: " + integerNotification);
+                    // System.out.println("emptyFlowable: " + integerNotification);
                 }
             }).doFinally(new Action() {
 
                 @Override
                 public void run() throws Exception {
-                    System.out.println("emptyFlowable: doFinally");
+                    // System.out.println("emptyFlowable: doFinally");
                 }
             }), errorFlowable.doOnEach(new Consumer<Notification<Object>>() {
 
                 @Override
                 public void accept(Notification<Object> integerNotification) throws Exception {
-                    System.out.println("errorFlowable: " + integerNotification);
+                    // System.out.println("errorFlowable: " + integerNotification);
                 }
             }).doFinally(new Action() {
 
                 @Override
                 public void run() throws Exception {
-                    System.out.println("errorFlowable: doFinally");
+                    // System.out.println("errorFlowable: doFinally");
                 }
             })), new Function<Object[], Object>() {
 
@@ -1204,13 +1204,13 @@ public class FlowableCombineLatestTest extends RxJavaTest {
 
                 @Override
                 public void accept(Notification<Object> integerNotification) throws Exception {
-                    System.out.println("combineLatestDelayError: " + integerNotification);
+                    // System.out.println("combineLatestDelayError: " + integerNotification);
                 }
             }).doFinally(new Action() {
 
                 @Override
                 public void run() throws Exception {
-                    System.out.println("combineLatestDelayError: doFinally");
+                    // System.out.println("combineLatestDelayError: doFinally");
                 }
             }).subscribe(testSubscriber);
             testScheduler.advanceTimeBy(100, TimeUnit.MILLISECONDS);

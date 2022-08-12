@@ -32,12 +32,12 @@ public class ObservableGroupByTests extends RxJavaTest {
 
             @Override
             public void accept(GroupedObservable<String, Event> v) {
-                System.out.println(v);
+                // System.out.println(v);
                 // FIXME groups need consumption to a certain degree to cancel upstream
                 v.take(1).subscribe();
             }
         });
-        System.out.println("**** finished");
+        // System.out.println("**** finished");
         // make sure the event streams receive their interrupt
         Thread.sleep(200);
     }
@@ -66,10 +66,10 @@ public class ObservableGroupByTests extends RxJavaTest {
 
             @Override
             public void accept(Object pv) {
-                System.out.println(pv);
+                // System.out.println(pv);
             }
         });
-        System.out.println("**** finished");
+        // System.out.println("**** finished");
         // make sure the event streams receive their interrupt
         Thread.sleep(200);
     }

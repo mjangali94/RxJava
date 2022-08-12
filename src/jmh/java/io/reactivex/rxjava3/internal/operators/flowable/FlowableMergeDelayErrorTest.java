@@ -331,7 +331,7 @@ public class FlowableMergeDelayErrorTest extends RxJavaTest {
             boolean errorThrown = false;
             for (String s : valuesToReturn) {
                 if (s == null) {
-                    System.out.println("throwing exception");
+                    // System.out.println("throwing exception");
                     subscriber.onError(new NullPointerException());
                     errorThrown = true;
                 // purposefully not returning here so it will continue calling onNext
@@ -365,7 +365,7 @@ public class FlowableMergeDelayErrorTest extends RxJavaTest {
                 public void run() {
                     for (String s : valuesToReturn) {
                         if (s == null) {
-                            System.out.println("throwing exception");
+                            // System.out.println("throwing exception");
                             try {
                                 Thread.sleep(100);
                             } catch (Throwable e) {
@@ -376,7 +376,7 @@ public class FlowableMergeDelayErrorTest extends RxJavaTest {
                             subscriber.onNext(s);
                         }
                     }
-                    System.out.println("subscription complete");
+                    // System.out.println("subscription complete");
                     subscriber.onComplete();
                 }
             });
@@ -431,7 +431,7 @@ public class FlowableMergeDelayErrorTest extends RxJavaTest {
             TestSubscriberEx<String> ts = new TestSubscriberEx<>(stringSubscriber);
             Flowable<String> m = Flowable.mergeDelayError(parentFlowable);
             m.subscribe(ts);
-            System.out.println("testErrorInParentFlowableDelayed | " + i);
+            // System.out.println("testErrorInParentFlowableDelayed | " + i);
             ts.awaitDone(2000, TimeUnit.MILLISECONDS);
             ts.assertTerminated();
             verify(stringSubscriber, times(2)).onNext("hello");

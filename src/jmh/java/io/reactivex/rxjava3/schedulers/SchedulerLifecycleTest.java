@@ -25,7 +25,7 @@ public class SchedulerLifecycleTest extends RxJavaTest {
     @Test
     public void shutdown() throws InterruptedException {
         tryOutSchedulers();
-        System.out.println("testShutdown >> Giving time threads to spin-up");
+        // System.out.println("testShutdown >> Giving time threads to spin-up");
         Thread.sleep(500);
         Set<Thread> rxThreads = new HashSet<>();
         for (Thread t : Thread.getAllStackTraces().keySet()) {
@@ -34,7 +34,7 @@ public class SchedulerLifecycleTest extends RxJavaTest {
             }
         }
         Schedulers.shutdown();
-        System.out.println("testShutdown >> Giving time to threads to stop");
+        // System.out.println("testShutdown >> Giving time to threads to stop");
         Thread.sleep(500);
         StringBuilder b = new StringBuilder();
         for (Thread t : rxThreads) {
@@ -46,13 +46,13 @@ public class SchedulerLifecycleTest extends RxJavaTest {
             }
         }
         if (b.length() > 0) {
-            System.out.print(b);
-            System.out.println("testShutdown >> Restarting schedulers...");
+            // System.out.print(b);
+            // System.out.println("testShutdown >> Restarting schedulers...");
             // restart them anyways
             Schedulers.start();
             fail("Rx Threads were still alive:\r\n" + b);
         }
-        System.out.println("testShutdown >> Restarting schedulers...");
+        // System.out.println("testShutdown >> Restarting schedulers...");
         Schedulers.start();
         tryOutSchedulers();
     }
@@ -91,24 +91,24 @@ public class SchedulerLifecycleTest extends RxJavaTest {
     @Test
     public void startIdempotence() throws InterruptedException {
         tryOutSchedulers();
-        System.out.println("testStartIdempotence >> giving some time");
+        // System.out.println("testStartIdempotence >> giving some time");
         Thread.sleep(500);
         Set<Thread> rxThreadsBefore = new HashSet<>();
         for (Thread t : Thread.getAllStackTraces().keySet()) {
             if (t.getName().startsWith("Rx")) {
                 rxThreadsBefore.add(t);
-                System.out.println("testStartIdempotence >> " + t);
+                // System.out.println("testStartIdempotence >> " + t);
             }
         }
-        System.out.println("testStartIdempotence >> trying to start again");
+        // System.out.println("testStartIdempotence >> trying to start again");
         Schedulers.start();
-        System.out.println("testStartIdempotence >> giving some time again");
+        // System.out.println("testStartIdempotence >> giving some time again");
         Thread.sleep(500);
         Set<Thread> rxThreadsAfter = new HashSet<>();
         for (Thread t : Thread.getAllStackTraces().keySet()) {
             if (t.getName().startsWith("Rx")) {
                 rxThreadsAfter.add(t);
-                System.out.println("testStartIdempotence >>>> " + t);
+                // System.out.println("testStartIdempotence >>>> " + t);
             }
         }
         // cached threads may get dropped between the two checks

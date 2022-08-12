@@ -66,7 +66,7 @@ import io.reactivex.rxjava3.internal.util.EndConsumerHelper;
  *     .subscribeWith(new ResourceSubscriber&lt;Integer&gt;() {
  *         &#64;Override public void onStart() {
  *             add(Schedulers.single()
- *                 .scheduleDirect(() -&gt; System.out.println("Time!"),
+ *                 .scheduleDirect(() -&gt; // System.out.println("Time!"),
  *                     2, TimeUnit.SECONDS));
  *             request(1);
  *         }
@@ -74,7 +74,7 @@ import io.reactivex.rxjava3.internal.util.EndConsumerHelper;
  *             if (t == 3) {
  *                 dispose();
  *             }
- *             System.out.println(t);
+ *             // System.out.println(t);
  *             request(1);
  *         }
  *         &#64;Override public void onError(Throwable t) {
@@ -82,7 +82,7 @@ import io.reactivex.rxjava3.internal.util.EndConsumerHelper;
  *             dispose();
  *         }
  *         &#64;Override public void onComplete() {
- *             System.out.println("Done!");
+ *             // System.out.println("Done!");
  *             dispose();
  *         }
  *     });

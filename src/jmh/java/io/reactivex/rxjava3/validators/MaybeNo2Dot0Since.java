@@ -53,7 +53,7 @@ public class MaybeNo2Dot0Since {
             in.close();
         }
         if (b.length() != 0) {
-            System.out.println(b);
+            // System.out.println(b);
             fail(b.toString());
         }
     }

@@ -44,7 +44,7 @@ Collects the items emitted by a reactive source into buffers, and emits these bu
 ```java
 Observable.range(0, 10)
     .buffer(4)
-    .subscribe((List<Integer> buffer) -> System.out.println(buffer));
+    .subscribe((List<Integer> buffer) -> // System.out.println(buffer));
 
 // prints:
 // [0, 1, 2, 3]
@@ -67,7 +67,7 @@ Observable<Number> numbers = Observable.just(1, 4.0, 3f, 7, 12, 4.6, 5);
 
 numbers.filter((Number x) -> Integer.class.isInstance(x))
     .cast(Integer.class)
-    .subscribe((Integer x) -> System.out.println(x));
+    .subscribe((Integer x) -> // System.out.println(x));
 
 // prints:
 // 1
@@ -112,10 +112,10 @@ Applies the given `io.reactivex.functions.Function` to each item emitted by a re
 Observable<Integer> source = Observable.just(2, 1, 3);
 Completable completable = source.concatMapCompletable(x -> {
     return Completable.timer(x, TimeUnit.SECONDS)
-        .doOnComplete(() -> System.out.println("Info: Processing of item \"" + x + "\" completed"));
+        .doOnComplete(() -> // System.out.println("Info: Processing of item \"" + x + "\" completed"));
     });
 
-completable.doOnComplete(() -> System.out.println("Info: Processing of all items completed"))
+completable.doOnComplete(() -> // System.out.println("Info: Processing of all items completed"))
     .blockingAwait();
 
 // prints:
@@ -142,11 +142,11 @@ Completable completable = source.concatMapCompletableDelayError(x -> {
         return Completable.error(new IOException("Processing of item \"" + x + "\" failed!"));
     } else {
         return Completable.timer(1, TimeUnit.SECONDS)
-            .doOnComplete(() -> System.out.println("Info: Processing of item \"" + x + "\" completed"));
+            .doOnComplete(() -> // System.out.println("Info: Processing of item \"" + x + "\" completed"));
     }
 });
 
-completable.doOnError(error -> System.out.println("Error: " + error.getMessage()))
+completable.doOnError(error -> // System.out.println("Error: " + error.getMessage()))
     .onErrorComplete()
     .blockingAwait();
 
@@ -173,8 +173,8 @@ Observable.intervalRange(1, 3, 0, 1, TimeUnit.SECONDS)
         else return Observable.just(x, x * x);
     })
     .blockingSubscribe(
-        x -> System.out.println("onNext: " + x),
-        error -> System.out.println("onError: " + error.getMessage()));
+        x -> // System.out.println("onNext: " + x),
+        error -> // System.out.println("onError: " + error.getMessage()));
 
 // prints:
 // onNext: 2
@@ -201,9 +201,9 @@ Observable.range(0, 5)
 
         return Observable.timer(delay, TimeUnit.SECONDS)
             .map(n -> i)
-            .doOnNext(x -> System.out.println("Info: Finished processing item " + x));
+            .doOnNext(x -> // System.out.println("Info: Finished processing item " + x));
         })
-        .blockingSubscribe(i -> System.out.println("onNext: " + i));
+        .blockingSubscribe(i -> // System.out.println("onNext: " + i));
 
 // prints (lines beginning with "Info..." can be displayed in a different order):
 // Info: Finished processing item 2
@@ -235,14 +235,14 @@ Observable<Integer> source = Observable.create(emitter -> {
     emitter.onError(new Error("Fatal error!"));
 });
 
-source.doOnError(error -> System.out.println("Info: Error from main source " + error.getMessage()))
+source.doOnError(error -> // System.out.println("Info: Error from main source " + error.getMessage()))
     .concatMapEagerDelayError(x -> {
         return Observable.timer(1, TimeUnit.SECONDS).map(n -> x)
-            .doOnSubscribe(it -> System.out.println("Info: Processing of item \"" + x + "\" started"));
+            .doOnSubscribe(it -> // System.out.println("Info: Processing of item \"" + x + "\" started"));
     }, true)
     .blockingSubscribe(
-        x -> System.out.println("onNext: " + x),
-        error -> System.out.println("onError: " + error.getMessage()));
+        x -> // System.out.println("onNext: " + x),
+        error -> // System.out.println("onError: " + error.getMessage()));
 
 // prints:
 // Info: Processing of item "1" started
@@ -285,12 +285,12 @@ Applies the given `io.reactivex.functions.Function` to each item emitted by a re
 Observable.just("5", "3,14", "2.71", "FF")
     .concatMapMaybe(v -> {
         return Maybe.fromCallable(() -> Double.parseDouble(v))
-            .doOnError(e -> System.out.println("Info: The value \"" + v + "\" could not be parsed."))
+            .doOnError(e -> // System.out.println("Info: The value \"" + v + "\" could not be parsed."))
 
             // Ignore values that can not be parsed.
             .onErrorComplete();
     })
-    .subscribe(x -> System.out.println("onNext: " + x));
+    .subscribe(x -> // System.out.println("onNext: " + x));
 
 // prints:
 // onNext: 5.0
@@ -316,8 +316,8 @@ Observable.just("04.03.2018", "12-08-2018", "06.10.2018", "01.12.2018")
         return Maybe.fromCallable(() -> LocalDate.parse(date, dateFormatter));
     })
     .subscribe(
-        localDate -> System.out.println("onNext: " + localDate),
-        error -> System.out.println("onError: " + error.getMessage()));
+        localDate -> // System.out.println("onNext: " + localDate),
+        error -> // System.out.println("onError: " + error.getMessage()));
 
 // prints:
 // onNext: 2018-03-04
@@ -340,12 +340,12 @@ Applies the given `io.reactivex.functions.Function` to each item emitted by a re
 Observable.just("5", "3,14", "2.71", "FF")
     .concatMapSingle(v -> {
         return Single.fromCallable(() -> Double.parseDouble(v))
-            .doOnError(e -> System.out.println("Info: The value \"" + v + "\" could not be parsed."))
+            .doOnError(e -> // System.out.println("Info: The value \"" + v + "\" could not be parsed."))
 
             // Return a default value if the given value can not be parsed.
             .onErrorReturnItem(42.0);
     })
-    .subscribe(x -> System.out.println("onNext: " + x));
+    .subscribe(x -> // System.out.println("onNext: " + x));
 
 // prints:
 // onNext: 5.0
@@ -373,8 +373,8 @@ Observable.just("24.03.2018", "12-08-2018", "06.10.2018", "01.12.2018")
         return Single.fromCallable(() -> LocalDate.parse(date, dateFormatter));
     })
     .subscribe(
-        localDate -> System.out.println("onNext: " + localDate),
-        error -> System.out.println("onError: " + error.getMessage()));
+        localDate -> // System.out.println("onNext: " + localDate),
+        error -> // System.out.println("onError: " + error.getMessage()));
 
 // prints:
 // onNext: 2018-03-24
@@ -427,10 +427,10 @@ Applies the given `io.reactivex.functions.Function` to each item emitted by a re
 Observable<Integer> source = Observable.just(2, 1, 3);
 Completable completable = source.flatMapCompletable(x -> {
     return Completable.timer(x, TimeUnit.SECONDS)
-        .doOnComplete(() -> System.out.println("Info: Processing of item \"" + x + "\" completed"));
+        .doOnComplete(() -> // System.out.println("Info: Processing of item \"" + x + "\" completed"));
 });
 
-completable.doOnComplete(() -> System.out.println("Info: Processing of all items completed"))
+completable.doOnComplete(() -> // System.out.println("Info: Processing of all items completed"))
     .blockingAwait();
 
 // prints:
@@ -494,7 +494,7 @@ Observable.just(9.0, 16.0, -4.0)
     .subscribe(
         System.out::println,
         Throwable::printStackTrace,
-        () -> System.out.println("onComplete"));
+        () -> // System.out.println("onComplete"));
 
 // prints:
 // 3.0
@@ -519,7 +519,7 @@ Observable<String> names = source.flatMapObservable(text -> {
             .map(String::strip);
 });
 
-names.subscribe(name -> System.out.println("onNext: " + name));
+names.subscribe(name -> // System.out.println("onNext: " + name));
 
 // prints:
 // onNext: Kirk
@@ -545,7 +545,7 @@ Flowable<String> names = source.flatMapPublisher(text -> {
             .map(String::strip);
 });
 
-names.subscribe(name -> System.out.println("onNext: " + name));
+names.subscribe(name -> // System.out.println("onNext: " + name));
 
 // prints:
 // onNext: Kirk
@@ -578,8 +578,8 @@ Observable.just(4, 2, 1, 3)
 Maybe<Object> emptySource = Maybe.empty();
 Single<Object> result = emptySource.flatMapSingle(x -> Single.just(x));
 result.subscribe(
-    x -> System.out.println("onSuccess will not be printed!"),
-    error -> System.out.println("onError: Source was empty!"));
+    x -> // System.out.println("onSuccess will not be printed!"),
+    error -> // System.out.println("onError: Source was empty!"));
 
 // prints:
 // onError: Source was empty!
@@ -624,7 +624,7 @@ Flowable<Double> flowable = source.flattenAsFlowable(x -> {
     return List.of(x, Math.pow(x, 2), Math.pow(x, 3));
 });
 
-flowable.subscribe(x -> System.out.println("onNext: " + x));
+flowable.subscribe(x -> // System.out.println("onNext: " + x));
 
 // prints:
 // onNext: 2.0
@@ -648,7 +648,7 @@ Observable<Double> observable = source.flattenAsObservable(x -> {
     return List.of(x, Math.pow(x, 2), Math.pow(x, 3));
 });
 
-observable.subscribe(x -> System.out.println("onNext: " + x));
+observable.subscribe(x -> // System.out.println("onNext: " + x));
 
 // prints:
 // onNext: 2.0

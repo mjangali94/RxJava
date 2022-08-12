@@ -181,7 +181,7 @@ public class JavadocWording {
             }
         }
         if (e.length() != 0) {
-            System.out.println(e);
+            // System.out.println(e);
             fail(e.toString());
         }
     }
@@ -288,7 +288,7 @@ public class JavadocWording {
             }
         }
         if (e.length() != 0) {
-            System.out.println(e);
+            // System.out.println(e);
             fail(e.toString());
         }
     }
@@ -395,7 +395,7 @@ public class JavadocWording {
             }
         }
         if (e.length() != 0) {
-            System.out.println(e);
+            // System.out.println(e);
             fail(e.toString());
         }
     }
@@ -477,7 +477,7 @@ public class JavadocWording {
             }
         }
         if (e.length() != 0) {
-            System.out.println(e);
+            // System.out.println(e);
             fail(e.toString());
         }
     }
@@ -621,7 +621,7 @@ public class JavadocWording {
             }
         }
         if (e.length() != 0) {
-            System.out.println(e);
+            // System.out.println(e);
             fail(e.toString());
         }
     }
@@ -780,7 +780,7 @@ public class JavadocWording {
             }
         }
         if (e.length() != 0) {
-            System.out.println(e);
+            // System.out.println(e);
             fail(e.toString());
         }
     }

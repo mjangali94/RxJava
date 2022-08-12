@@ -269,7 +269,7 @@ public class BlockingObservableNextTest extends RxJavaTest {
                 running.set(false);
                 finished.await();
                 assertFalse(it.hasNext());
-                System.out.println("a: " + a + " b: " + b + " c: " + c);
+                // System.out.println("a: " + a + " b: " + b + " c: " + c);
                 break;
             } catch (AssertionError ex) {
                 if (++repeat == 3) {

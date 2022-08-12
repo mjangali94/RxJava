@@ -61,7 +61,7 @@ public class ObservableCacheTest extends RxJavaTest {
                     @Override
                     public void run() {
                         counter.incrementAndGet();
-                        System.out.println("published Observable being executed");
+                        // System.out.println("published Observable being executed");
                         observer.onNext("one");
                         observer.onComplete();
                     }
@@ -76,7 +76,7 @@ public class ObservableCacheTest extends RxJavaTest {
             @Override
             public void accept(String v) {
                 assertEquals("one", v);
-                System.out.println("v: " + v);
+                // System.out.println("v: " + v);
                 latch.countDown();
             }
         });
@@ -86,7 +86,7 @@ public class ObservableCacheTest extends RxJavaTest {
             @Override
             public void accept(String v) {
                 assertEquals("one", v);
-                System.out.println("v: " + v);
+                // System.out.println("v: " + v);
                 latch.countDown();
             }
         });

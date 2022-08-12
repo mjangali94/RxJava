@@ -667,7 +667,7 @@ public class ObservableZipTest extends RxJavaTest {
 
             @Override
             public void accept(String s) {
-                System.out.println(s);
+                // System.out.println(s);
                 list.add(s);
             }
         });
@@ -723,7 +723,7 @@ public class ObservableZipTest extends RxJavaTest {
 
             @Override
             public void onNext(String s) {
-                System.out.println(s);
+                // System.out.println(s);
                 list.add(s);
             }
         });
@@ -772,7 +772,7 @@ public class ObservableZipTest extends RxJavaTest {
 
             @Override
             public void accept(String s) {
-                System.out.println(s);
+                // System.out.println(s);
                 list.add(s);
             }
         });
@@ -797,7 +797,7 @@ public class ObservableZipTest extends RxJavaTest {
 
             @Override
             public void accept(String s) {
-                System.out.println(s);
+                // System.out.println(s);
                 list.add(s);
             }
         });
@@ -858,7 +858,7 @@ public class ObservableZipTest extends RxJavaTest {
         to.awaitDone(5, TimeUnit.SECONDS);
         to.assertNoErrors();
         assertEquals(Observable.bufferSize() * 2, to.values().size());
-        System.out.println("Generated => A: " + generatedA.get() + " B: " + generatedB.get());
+        // System.out.println("Generated => A: " + generatedA.get() + " B: " + generatedB.get());
         assertTrue(generatedA.get() < (Observable.bufferSize() * 3));
         assertTrue(generatedB.get() < (Observable.bufferSize() * 3));
     }
@@ -922,8 +922,8 @@ public class ObservableZipTest extends RxJavaTest {
 
                     @Override
                     public void run() {
-                        System.out.println("-------> subscribe to infinite sequence");
-                        System.out.println("Starting thread: " + Thread.currentThread());
+                        // System.out.println("-------> subscribe to infinite sequence");
+                        // System.out.println("Starting thread: " + Thread.currentThread());
                         int i = 1;
                         while (!d.isDisposed()) {
                             o.onNext(i++);
@@ -931,7 +931,7 @@ public class ObservableZipTest extends RxJavaTest {
                         }
                         o.onComplete();
                         latch.countDown();
-                        System.out.println("Ending thread: " + Thread.currentThread());
+                        // System.out.println("Ending thread: " + Thread.currentThread());
                     }
                 });
                 t.start();

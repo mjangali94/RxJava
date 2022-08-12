@@ -2264,7 +2264,7 @@ public class MaybeTest extends RxJavaTest {
         Thread.sleep(250);
         long after = usedMemoryNow();
         String log = String.format("%.2f MB -> %.2f MB -> %.2f MB%n", before / 1024.0 / 1024.0, middle / 1024.0 / 1024.0, after / 1024.0 / 1024.0);
-        System.out.printf(log);
+        // System.out.printf(log);
         if (before * 1.3 < after) {
             fail("There seems to be a memory leak: " + log);
         }

@@ -73,18 +73,18 @@ import io.reactivex.rxjava3.subscribers.*;
  *     .delay(1, TimeUnit.SECONDS)
  *     .subscribeWith(new DisposableSubscriber&lt;String&gt;() {
  *         &#64;Override public void onStart() {
- *             System.out.println("Start!");
+ *             // System.out.println("Start!");
  *             request(1);
  *         }
  *         &#64;Override public void onNext(String t) {
- *             System.out.println(t);
+ *             // System.out.println(t);
  *             request(1);
  *         }
  *         &#64;Override public void onError(Throwable t) {
  *             t.printStackTrace();
  *         }
  *         &#64;Override public void onComplete() {
- *             System.out.println("Done!");
+ *             // System.out.println("Done!");
  *         }
  *     });
  *
@@ -133,11 +133,11 @@ import io.reactivex.rxjava3.subscribers.*;
  *     }
  * }, BackpressureStrategy.BUFFER);
  *
- * System.out.println("Subscribe!");
+ * // System.out.println("Subscribe!");
  *
  * source.subscribe(System.out::println);
  *
- * System.out.println("Done!");
+ * // System.out.println("Done!");
  * </code></pre>
  * <p>
  * RxJava reactive sources, such as {@code Flowable}, are generally synchronous and sequential in nature. In the ReactiveX design, the location (thread)
@@ -9273,7 +9273,7 @@ public abstract class Flowable<@NonNull T> implements Publisher<T> {
      * returned {@code Flowable} cancels of the flow and terminates with that type of terminal event:
      * <pre><code>
      * Flowable.just(createOnNext(1), createOnComplete(), createOnNext(2))
-     * .doOnCancel(() -&gt; System.out.println("Canceled!"));
+     * .doOnCancel(() -&gt; // System.out.println("Canceled!"));
      * .dematerialize(notification -&gt; notification)
      * .test()
      * .assertResult(1);
@@ -14483,11 +14483,11 @@ public abstract class Flowable<@NonNull T> implements Publisher<T> {
      *
      * <pre><code>
      *  Flowable.create((FlowableEmitter&lt;? super String&gt; s) -&gt; {
-     *      System.out.println("subscribing");
+     *      // System.out.println("subscribing");
      *      s.onError(new RuntimeException("always fails"));
      *  }, BackpressureStrategy.BUFFER).retryWhen(attempts -&gt; {
      *      return attempts.zipWith(Flowable.range(1, 3), (n, i) -&gt; i).flatMap(i -&gt; {
-     *          System.out.println("delay retry by " + i + " second(s)");
+     *          // System.out.println("delay retry by " + i + " second(s)");
      *          return Flowable.timer(i, TimeUnit.SECONDS);
      *      });
      *  }).blockingForEach(System.out::println);
@@ -14516,14 +14516,14 @@ public abstract class Flowable<@NonNull T> implements Publisher<T> {
      * The following example demonstrates how to retry an asynchronous source with a delay:
      * <pre><code>
      * Flowable.timer(1, TimeUnit.SECONDS)
-     *     .doOnSubscribe(s -&gt; System.out.println("subscribing"))
+     *     .doOnSubscribe(s -&gt; // System.out.println("subscribing"))
      *     .map(v -&gt; { throw new RuntimeException(); })
      *     .retryWhen(errors -&gt; {
      *         AtomicInteger counter = new AtomicInteger();
      *         return errors
      *                   .takeWhile(e -&gt; counter.getAndIncrement() != 3)
      *                   .flatMap(e -&gt; {
-     *                       System.out.println("delay retry by " + counter.get() + " second(s)");
+     *                       // System.out.println("delay retry by " + counter.get() + " second(s)");
      *                       return Flowable.timer(counter.get(), TimeUnit.SECONDS);
      *                   });
      *     })

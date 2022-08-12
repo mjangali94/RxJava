@@ -358,7 +358,7 @@ public class FlowableReduceTest extends RxJavaTest {
                     @Override
                     public void accept(String s) throws Exception {
                         count.incrementAndGet();
-                        System.out.println("Completed with " + s);
+                        // System.out.println("Completed with " + s);
                     }
                 }).toFlowable();
             }
@@ -394,7 +394,7 @@ public class FlowableReduceTest extends RxJavaTest {
                     @Override
                     public void accept(String s) throws Exception {
                         count.incrementAndGet();
-                        System.out.println("Completed with " + s);
+                        // System.out.println("Completed with " + s);
                     }
                 });
             }

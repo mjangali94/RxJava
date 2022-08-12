@@ -70,9 +70,9 @@ Observable<String> source = Observable.create(emitter -> {
 source.subscribeOn(Schedulers.io())
         .debounce(1, TimeUnit.SECONDS)
         .blockingSubscribe(
-                item -> System.out.println("onNext: " + item),
+                item -> // System.out.println("onNext: " + item),
                 Throwable::printStackTrace,
-                () -> System.out.println("onComplete"));
+                () -> // System.out.println("onComplete"));
 
 // prints:
 // onNext: A
@@ -165,8 +165,8 @@ Observable<String> source = Observable.just("Kirk", "Spock", "Chekov", "Sulu");
 Single<String> element = source.elementAtOrError(4);
 
 element.subscribe(
-    name -> System.out.println("onSuccess will not be printed!"),
-    error -> System.out.println("onError: " + error));
+    name -> // System.out.println("onSuccess will not be printed!"),
+    error -> // System.out.println("onError: " + error));
 
 // prints:
 // onError: java.util.NoSuchElementException
@@ -246,8 +246,8 @@ Observable<String> emptySource = Observable.empty();
 Single<String> firstOrError = emptySource.firstOrError();
 
 firstOrError.subscribe(
-        element -> System.out.println("onSuccess will not be printed!"),
-        error -> System.out.println("onError: " + error));
+        element -> // System.out.println("onSuccess will not be printed!"),
+        error -> // System.out.println("onError: " + error));
 
 // prints:
 // onError: java.util.NoSuchElementException
@@ -267,7 +267,7 @@ Ignores the single item emitted by a `Single` or `Maybe` source, and returns a `
 Single<Long> source = Single.timer(1, TimeUnit.SECONDS);
 Completable completable = source.ignoreElement();
 
-completable.doOnComplete(() -> System.out.println("Done!"))
+completable.doOnComplete(() -> // System.out.println("Done!"))
         .blockingAwait();
 
 // prints (after 1 second):
@@ -288,7 +288,7 @@ Ignores all items from the `Observable` or `Flowable` source, and returns a `Com
 Observable<Long> source = Observable.intervalRange(1, 5, 1, 1, TimeUnit.SECONDS);
 Completable completable = source.ignoreElements();
 
-completable.doOnComplete(() -> System.out.println("Done!"))
+completable.doOnComplete(() -> // System.out.println("Done!"))
         .blockingAwait();
 
 // prints (after 5 seconds):
@@ -348,8 +348,8 @@ Observable<String> emptySource = Observable.empty();
 Single<String> lastOrError = emptySource.lastOrError();
 
 lastOrError.subscribe(
-        element -> System.out.println("onSuccess will not be printed!"),
-        error -> System.out.println("onError: " + error));
+        element -> // System.out.println("onSuccess will not be printed!"),
+        error -> // System.out.println("onError: " + error));
 
 // prints:
 // onError: java.util.NoSuchElementException
@@ -369,7 +369,7 @@ Filters items emitted by a reactive source by only emitting those of the specifi
 Observable<Number> numbers = Observable.just(1, 4.0, 3, 2.71, 2f, 7);
 Observable<Integer> integers = numbers.ofType(Integer.class);
 
-integers.subscribe((Integer x) -> System.out.println(x));
+integers.subscribe((Integer x) -> // System.out.println(x));
 
 // prints:
 // 1
@@ -413,9 +413,9 @@ Observable<String> source = Observable.create(emitter -> {
 source.subscribeOn(Schedulers.io())
         .sample(1, TimeUnit.SECONDS)
         .blockingSubscribe(
-                item -> System.out.println("onNext: " + item),
+                item -> // System.out.println("onNext: " + item),
                 Throwable::printStackTrace,
-                () -> System.out.println("onComplete"));
+                () -> // System.out.println("onComplete"));
 
 // prints:
 // onNext: C
@@ -556,9 +556,9 @@ Observable<String> source = Observable.create(emitter -> {
 source.subscribeOn(Schedulers.io())
         .throttleFirst(1, TimeUnit.SECONDS)
         .blockingSubscribe(
-                item -> System.out.println("onNext: " + item),
+                item -> // System.out.println("onNext: " + item),
                 Throwable::printStackTrace,
-                () -> System.out.println("onComplete"));
+                () -> // System.out.println("onComplete"));
 
 // prints:
 // onNext: A
@@ -602,9 +602,9 @@ Observable<String> source = Observable.create(emitter -> {
 source.subscribeOn(Schedulers.io())
         .throttleLast(1, TimeUnit.SECONDS)
         .blockingSubscribe(
-                item -> System.out.println("onNext: " + item),
+                item -> // System.out.println("onNext: " + item),
                 Throwable::printStackTrace,
-                () -> System.out.println("onComplete"));
+                () -> // System.out.println("onComplete"));
 
 // prints:
 // onNext: C
@@ -650,9 +650,9 @@ Observable<String> source = Observable.create(emitter -> {
 source.subscribeOn(Schedulers.io())
         .throttleLatest(1, TimeUnit.SECONDS)
         .blockingSubscribe(
-                item -> System.out.println("onNext: " + item),
+                item -> // System.out.println("onNext: " + item),
                 Throwable::printStackTrace,
-                () -> System.out.println("onComplete"));
+                () -> // System.out.println("onComplete"));
 
 // prints:
 // onNext: A
@@ -703,9 +703,9 @@ Observable<String> source = Observable.create(emitter -> {
 source.subscribeOn(Schedulers.io())
         .throttleWithTimeout(1, TimeUnit.SECONDS)
         .blockingSubscribe(
-                item -> System.out.println("onNext: " + item),
+                item -> // System.out.println("onNext: " + item),
                 Throwable::printStackTrace,
-                () -> System.out.println("onComplete"));
+                () -> // System.out.println("onComplete"));
 
 // prints:
 // onNext: A
@@ -748,9 +748,9 @@ Observable<String> source = Observable.create(emitter -> {
 
 source.timeout(1, TimeUnit.SECONDS)
         .subscribe(
-                item -> System.out.println("onNext: " + item),
-                error -> System.out.println("onError: " + error),
-                () -> System.out.println("onComplete will not be printed!"));
+                item -> // System.out.println("onNext: " + item),
+                error -> // System.out.println("onError: " + error),
+                () -> // System.out.println("onComplete will not be printed!"));
 
 // prints:
 // onNext: A

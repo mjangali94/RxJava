@@ -52,11 +52,11 @@ public class FlowableZipTests extends RxJavaTest {
             @Override
             public void accept(HashMap<String, String> v) {
                 synchronized (v) {
-                    System.out.println(v);
+                    // System.out.println(v);
                 }
             }
         });
-        System.out.println("**** finished");
+        // System.out.println("**** finished");
     }
 
     /**
@@ -88,7 +88,7 @@ public class FlowableZipTests extends RxJavaTest {
 
             @Override
             public Object apply(Object[] args) {
-                System.out.println("received: " + args);
+                // System.out.println("received: " + args);
                 assertEquals("No argument should have been passed", 0, args.length);
                 return invoked;
             }
@@ -108,7 +108,7 @@ public class FlowableZipTests extends RxJavaTest {
 
         @Override
         public void accept(Result t1) {
-            System.out.println("Result: " + t1);
+            // System.out.println("Result: " + t1);
         }
     };
 
@@ -116,7 +116,7 @@ public class FlowableZipTests extends RxJavaTest {
 
         @Override
         public void accept(ExtendedResult t1) {
-            System.out.println("Result: " + t1);
+            // System.out.println("Result: " + t1);
         }
     };
 

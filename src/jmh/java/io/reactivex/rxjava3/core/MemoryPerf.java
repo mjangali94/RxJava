@@ -116,15 +116,15 @@ public final class MemoryPerf {
 
         double use = Math.max(0.0, (after - before) / 1024.0 / 1024.0);
 
-        System.out.print(name);
-        System.out.print(" ");
-        System.out.print(typeLib);
-        System.out.print("     thrpt ");
-        System.out.print(n);
-        System.out.printf("           %.3f  0.000 MB%n", use);
+        // System.out.print(name);
+        // System.out.print(" ");
+        // System.out.print(typeLib);
+        // System.out.print("     thrpt ");
+        // System.out.print(n);
+        // System.out.printf("           %.3f  0.000 MB%n", use);
 
         if (array.hashCode() == 1) {
-            System.out.print("");
+            // System.out.print("");
         }
 
         array = null;
@@ -137,7 +137,7 @@ public final class MemoryPerf {
 
     public static void main(String[] args) throws Exception {
 
-        System.out.println("Benchmark  (lib-type)   Mode  Cnt       Score       Error  Units");
+        // System.out.println("Benchmark  (lib-type)   Mode  Cnt       Score       Error  Units");
 
         // ---------------------------------------------------------------------------------------------------------------------
 

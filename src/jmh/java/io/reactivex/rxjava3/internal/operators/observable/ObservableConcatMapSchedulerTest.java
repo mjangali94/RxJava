@@ -270,8 +270,8 @@ public class ObservableConcatMapSchedulerTest {
                 // ignored
                 }
                 if (counter.getAndIncrement() % 100 == 0) {
-                    System.out.print("testIssue2890NoStackoverflow -> ");
-                    System.out.println(counter.get());
+                    // System.out.print("testIssue2890NoStackoverflow -> ");
+                    // System.out.println(counter.get());
                 }
                 ;
             }
@@ -303,7 +303,7 @@ public class ObservableConcatMapSchedulerTest {
                 return;
             }
             if (i % 1000 == 0) {
-                System.out.println("concatMapRangeAsyncLoop > " + i);
+                // System.out.println("concatMapRangeAsyncLoop > " + i);
             }
             TestObserverEx<Integer> to = new TestObserverEx<>();
             Observable.range(0, 1000).concatMap(new Function<Integer, Observable<Integer>>() {

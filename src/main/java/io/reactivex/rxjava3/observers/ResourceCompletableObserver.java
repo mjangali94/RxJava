@@ -56,7 +56,7 @@ import io.reactivex.rxjava3.internal.util.EndConsumerHelper;
  *     .subscribeWith(new ResourceCompletableObserver() {
  *         &#64;Override public void onStart() {
  *             add(Schedulers.single()
- *                 .scheduleDirect(() -&gt; System.out.println("Time!"),
+ *                 .scheduleDirect(() -&gt; // System.out.println("Time!"),
  *                     2, TimeUnit.SECONDS));
  *         }
  *         &#64;Override public void onError(Throwable t) {
@@ -64,7 +64,7 @@ import io.reactivex.rxjava3.internal.util.EndConsumerHelper;
  *             dispose();
  *         }
  *         &#64;Override public void onComplete() {
- *             System.out.println("Done!");
+ *             // System.out.println("Done!");
  *             dispose();
  *         }
  *     });

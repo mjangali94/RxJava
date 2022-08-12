@@ -40,11 +40,11 @@ public class ReplaySubjectBoundedConcurrencyTest extends RxJavaTest {
                     @Override
                     public void subscribe(Observer<? super Long> o) {
                         o.onSubscribe(Disposable.empty());
-                        System.out.println("********* Start Source Data ***********");
+                        // System.out.println("********* Start Source Data ***********");
                         for (long l = 1; l <= 10000; l++) {
                             o.onNext(l);
                         }
-                        System.out.println("********* Finished Source Data ***********");
+                        // System.out.println("********* Finished Source Data ***********");
                         o.onComplete();
                     }
                 }).subscribe(replay);
@@ -63,7 +63,7 @@ public class ReplaySubjectBoundedConcurrencyTest extends RxJavaTest {
 
                     @Override
                     public void onComplete() {
-                        System.out.println("*** Slow Observer completed");
+                        // System.out.println("*** Slow Observer completed");
                         slowLatch.countDown();
                     }
 
@@ -74,7 +74,7 @@ public class ReplaySubjectBoundedConcurrencyTest extends RxJavaTest {
                     @Override
                     public void onNext(Long args) {
                         if (args == 1) {
-                            System.out.println("*** Slow Observer STARTED");
+                            // System.out.println("*** Slow Observer STARTED");
                         }
                         try {
                             if (args % 10 == 0) {
@@ -103,7 +103,7 @@ public class ReplaySubjectBoundedConcurrencyTest extends RxJavaTest {
 
                     @Override
                     public void onComplete() {
-                        System.out.println("*** Fast Observer completed");
+                        // System.out.println("*** Fast Observer completed");
                         fastLatch.countDown();
                     }
 
@@ -114,7 +114,7 @@ public class ReplaySubjectBoundedConcurrencyTest extends RxJavaTest {
                     @Override
                     public void onNext(Long args) {
                         if (args == 1) {
-                            System.out.println("*** Fast Observer STARTED");
+                            // System.out.println("*** Fast Observer STARTED");
                         }
                     }
                 };
@@ -145,11 +145,11 @@ public class ReplaySubjectBoundedConcurrencyTest extends RxJavaTest {
                     @Override
                     public void subscribe(Observer<? super Long> o) {
                         o.onSubscribe(Disposable.empty());
-                        System.out.println("********* Start Source Data ***********");
+                        // System.out.println("********* Start Source Data ***********");
                         for (long l = 1; l <= 10000; l++) {
                             o.onNext(l);
                         }
-                        System.out.println("********* Finished Source Data ***********");
+                        // System.out.println("********* Finished Source Data ***********");
                         o.onComplete();
                     }
                 }).subscribe(replay);
@@ -175,11 +175,11 @@ public class ReplaySubjectBoundedConcurrencyTest extends RxJavaTest {
                 public void run() {
                     List<Long> values = replay.toList().blockingGet();
                     listOfListsOfValues.add(values);
-                    System.out.println("Finished thread: " + count);
+                    // System.out.println("Finished thread: " + count);
                 }
             });
             t.start();
-            System.out.println("Started thread: " + i);
+            // System.out.println("Started thread: " + i);
             threads.add(t);
         }
         // wait for all threads to complete
@@ -200,11 +200,11 @@ public class ReplaySubjectBoundedConcurrencyTest extends RxJavaTest {
         for (long l : sums) {
             if (l != expected) {
                 success = false;
-                System.out.println("FAILURE => Expected " + expected + " but got: " + l);
+                // System.out.println("FAILURE => Expected " + expected + " but got: " + l);
             }
         }
         if (success) {
-            System.out.println("Success! " + sums.size() + " each had the same sum of " + expected);
+            // System.out.println("Success! " + sums.size() + " each had the same sum of " + expected);
         } else {
             throw new RuntimeException("Concurrency Bug");
         }
@@ -310,7 +310,7 @@ public class ReplaySubjectBoundedConcurrencyTest extends RxJavaTest {
         try {
             for (int i = 0; i < 50000; i++) {
                 if (i % 1000 == 0) {
-                    System.out.println(i);
+                    // System.out.println(i);
                 }
                 final ReplaySubject<Object> rs = ReplaySubject.createWithSize(2);
                 final CountDownLatch finish = new CountDownLatch(1);
@@ -325,7 +325,7 @@ public class ReplaySubjectBoundedConcurrencyTest extends RxJavaTest {
                         } catch (Exception e1) {
                             e1.printStackTrace();
                         }
-                        // System.out.println("> " + j);
+                        // // System.out.println("> " + j);
                         rs.onNext(1);
                     }
                 });
@@ -357,8 +357,8 @@ public class ReplaySubjectBoundedConcurrencyTest extends RxJavaTest {
                 });
                 start.countDown();
                 if (!finish.await(5, TimeUnit.SECONDS)) {
-                    System.out.println(o.get());
-                    System.out.println(rs.hasObservers());
+                    // System.out.println(o.get());
+                    // System.out.println(rs.hasObservers());
                     rs.onComplete();
                     Assert.fail("Timeout @ " + i);
                     break;
@@ -397,7 +397,7 @@ public class ReplaySubjectBoundedConcurrencyTest extends RxJavaTest {
                     rs.onNext(i);
                 }
                 rs.onComplete();
-                System.out.println("Replay fill Thread finished!");
+                // System.out.println("Replay fill Thread finished!");
             }
         });
         t.start();
@@ -451,7 +451,7 @@ public class ReplaySubjectBoundedConcurrencyTest extends RxJavaTest {
                     rs.onNext(i);
                 }
                 rs.onComplete();
-                System.out.println("Replay fill Thread finished!");
+                // System.out.println("Replay fill Thread finished!");
             }
         });
         t.start();
@@ -503,7 +503,7 @@ public class ReplaySubjectBoundedConcurrencyTest extends RxJavaTest {
                     }
                 }
                 rs.onComplete();
-                System.out.println("Replay fill Thread finished!");
+                // System.out.println("Replay fill Thread finished!");
             }
         });
         t.start();

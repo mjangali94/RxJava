@@ -57,7 +57,7 @@ public class FlowableBackpressureTests extends RxJavaTest {
                     a.onNext(i++);
                     c.incrementAndGet();
                 }
-                System.out.println("unsubscribed after: " + i);
+                // System.out.println("unsubscribed after: " + i);
             }
         }
 
@@ -84,7 +84,7 @@ public class FlowableBackpressureTests extends RxJavaTest {
         incrementingIntegers(c).observeOn(Schedulers.computation()).take(num).subscribe(ts);
         ts.awaitDone(5, TimeUnit.SECONDS);
         ts.assertNoErrors();
-        System.out.println("testObserveOn => Received: " + ts.values().size() + "  Emitted: " + c.get());
+        // System.out.println("testObserveOn => Received: " + ts.values().size() + "  Emitted: " + c.get());
         assertEquals(num, ts.values().size());
         assertTrue(c.get() < Flowable.bufferSize() * 4);
     }
@@ -108,7 +108,7 @@ public class FlowableBackpressureTests extends RxJavaTest {
         }).take(num).subscribe(ts);
         ts.awaitDone(5, TimeUnit.SECONDS);
         ts.assertNoErrors();
-        System.out.println("testObserveOnWithSlowConsumer => Received: " + ts.values().size() + "  Emitted: " + c.get());
+        // System.out.println("testObserveOnWithSlowConsumer => Received: " + ts.values().size() + "  Emitted: " + c.get());
         assertEquals(num, ts.values().size());
         assertTrue(c.get() < Flowable.bufferSize() * 2);
     }
@@ -123,8 +123,8 @@ public class FlowableBackpressureTests extends RxJavaTest {
         merged.take(num).subscribe(ts);
         ts.awaitDone(5, TimeUnit.SECONDS);
         ts.assertNoErrors();
-        System.out.println("Expected: " + num + " got: " + ts.values().size());
-        System.out.println("testMergeSync => Received: " + ts.values().size() + "  Emitted: " + c1.get() + " / " + c2.get());
+        // System.out.println("Expected: " + num + " got: " + ts.values().size());
+        // System.out.println("testMergeSync => Received: " + ts.values().size() + "  Emitted: " + c1.get() + " / " + c2.get());
         assertEquals(num, ts.values().size());
         // either one can starve the other, but neither should be capable of doing more than 5 batches (taking 4.1)
         // TODO is it possible to make this deterministic rather than one possibly starving the other?
@@ -143,7 +143,7 @@ public class FlowableBackpressureTests extends RxJavaTest {
         merged.take(num).subscribe(ts);
         ts.awaitDone(5, TimeUnit.SECONDS);
         ts.assertNoErrors();
-        System.out.println("testMergeAsync => Received: " + ts.values().size() + "  Emitted: " + c1.get() + " / " + c2.get());
+        // System.out.println("testMergeAsync => Received: " + ts.values().size() + "  Emitted: " + c1.get() + " / " + c2.get());
         assertEquals(num, ts.values().size());
         // either one can starve the other, but neither should be capable of doing more than 5 batches (taking 4.1)
         // TODO is it possible to make this deterministic rather than one possibly starving the other?
@@ -157,7 +157,7 @@ public class FlowableBackpressureTests extends RxJavaTest {
     public void mergeAsyncThenObserveOnLoop() {
         for (int i = 0; i < 500; i++) {
             if (i % 10 == 0) {
-                System.out.println("testMergeAsyncThenObserveOnLoop >> " + i);
+                // System.out.println("testMergeAsyncThenObserveOnLoop >> " + i);
             }
             // Verify there is no MissingBackpressureException
             int num = (int) (Flowable.bufferSize() * 4.1);
@@ -169,7 +169,7 @@ public class FlowableBackpressureTests extends RxJavaTest {
             ts.awaitDone(5, TimeUnit.SECONDS);
             ts.assertComplete();
             ts.assertNoErrors();
-            System.out.println("testMergeAsyncThenObserveOn => Received: " + ts.values().size() + "  Emitted: " + c1.get() + " / " + c2.get());
+            // System.out.println("testMergeAsyncThenObserveOn => Received: " + ts.values().size() + "  Emitted: " + c1.get() + " / " + c2.get());
             assertEquals(num, ts.values().size());
         }
     }
@@ -184,7 +184,7 @@ public class FlowableBackpressureTests extends RxJavaTest {
         merged.observeOn(Schedulers.newThread()).take(num).subscribe(ts);
         ts.awaitDone(5, TimeUnit.SECONDS);
         ts.assertNoErrors();
-        System.out.println("testMergeAsyncThenObserveOn => Received: " + ts.values().size() + "  Emitted: " + c1.get() + " / " + c2.get());
+        // System.out.println("testMergeAsyncThenObserveOn => Received: " + ts.values().size() + "  Emitted: " + c1.get() + " / " + c2.get());
         assertEquals(num, ts.values().size());
         // either one can starve the other, but neither should be capable of doing more than 5 batches (taking 4.1)
         // TODO is it possible to make this deterministic rather than one possibly starving the other?
@@ -208,7 +208,7 @@ public class FlowableBackpressureTests extends RxJavaTest {
         }).take(num).subscribe(ts);
         ts.awaitDone(5, TimeUnit.SECONDS);
         ts.assertNoErrors();
-        System.out.println("testFlatMapSync => Received: " + ts.values().size() + "  Emitted: " + c.get());
+        // System.out.println("testFlatMapSync => Received: " + ts.values().size() + "  Emitted: " + c.get());
         assertEquals(num, ts.values().size());
         // expect less than 1 buffer since the flatMap is emitting 10 each time, so it is num/10 that will be taken.
         assertTrue(c.get() < Flowable.bufferSize());
@@ -230,7 +230,7 @@ public class FlowableBackpressureTests extends RxJavaTest {
         zipped.take(num).subscribe(ts);
         ts.awaitDone(5, TimeUnit.SECONDS);
         ts.assertNoErrors();
-        System.out.println("testZipSync => Received: " + ts.values().size() + "  Emitted: " + c1.get() + " / " + c2.get());
+        // System.out.println("testZipSync => Received: " + ts.values().size() + "  Emitted: " + c1.get() + " / " + c2.get());
         assertEquals(num, ts.values().size());
         assertTrue(c1.get() < Flowable.bufferSize() * 7);
         assertTrue(c2.get() < Flowable.bufferSize() * 7);
@@ -252,7 +252,7 @@ public class FlowableBackpressureTests extends RxJavaTest {
         zipped.take(num).subscribe(ts);
         ts.awaitDone(5, TimeUnit.SECONDS);
         ts.assertNoErrors();
-        System.out.println("testZipAsync => Received: " + ts.values().size() + "  Emitted: " + c1.get() + " / " + c2.get());
+        // System.out.println("testZipAsync => Received: " + ts.values().size() + "  Emitted: " + c1.get() + " / " + c2.get());
         assertEquals(num, ts.values().size());
         int max = Flowable.bufferSize() * 5;
         assertTrue("" + c1.get() + " >= " + max, c1.get() < max);
@@ -271,12 +271,12 @@ public class FlowableBackpressureTests extends RxJavaTest {
             incrementingIntegers(c, threads).subscribeOn(Schedulers.computation()).observeOn(Schedulers.computation()).take(num).subscribe(ts);
             ts.awaitDone(5, TimeUnit.SECONDS);
             ts.assertNoErrors();
-            System.out.println("testSubscribeOnScheduling => Received: " + ts.values().size() + "  Emitted: " + c.get());
+            // System.out.println("testSubscribeOnScheduling => Received: " + ts.values().size() + "  Emitted: " + c.get());
             assertEquals(num, ts.values().size());
             assertTrue(c.get() < Flowable.bufferSize() * 4);
             Thread first = null;
             for (Thread t : threads) {
-                System.out.println("testSubscribeOnScheduling => thread: " + t);
+                // System.out.println("testSubscribeOnScheduling => thread: " + t);
                 if (first == null) {
                     first = t;
                 } else {
@@ -285,9 +285,9 @@ public class FlowableBackpressureTests extends RxJavaTest {
                     }
                 }
             }
-            System.out.println("testSubscribeOnScheduling => Number of batch requests seen: " + threads.size());
+            // System.out.println("testSubscribeOnScheduling => Number of batch requests seen: " + threads.size());
             assertTrue(threads.size() > 1);
-            System.out.println("-------------------------------------------------------------------------------------------");
+            // System.out.println("-------------------------------------------------------------------------------------------");
         }
     }
 
@@ -310,7 +310,7 @@ public class FlowableBackpressureTests extends RxJavaTest {
         // take num
         // so emitted is at least 10000+1000+num + extra for buffer size/threshold
         int expected = 10000 + 1000 + Flowable.bufferSize() * 3 + Flowable.bufferSize() / 2;
-        System.out.println("testTakeFilterSkipChain => Received: " + ts.values().size() + "  Emitted: " + c.get() + " Expected: " + expected);
+        // System.out.println("testTakeFilterSkipChain => Received: " + ts.values().size() + "  Emitted: " + c.get() + " Expected: " + expected);
         assertEquals(num, ts.values().size());
         assertTrue(c.get() < expected);
     }
@@ -350,7 +350,7 @@ public class FlowableBackpressureTests extends RxJavaTest {
                 }
             }
         });
-        System.out.println("testUserSubscriberUsingRequestSync => Received: " + totalReceived.get() + "  Emitted: " + c.get() + " Request Batches: " + batches.get());
+        // System.out.println("testUserSubscriberUsingRequestSync => Received: " + totalReceived.get() + "  Emitted: " + c.get() + " Request Batches: " + batches.get());
         assertEquals(2000, c.get());
         assertEquals(2000, totalReceived.get());
         assertEquals(20, batches.get());
@@ -402,7 +402,7 @@ public class FlowableBackpressureTests extends RxJavaTest {
             }
         });
         latch.await();
-        System.out.println("testUserSubscriberUsingRequestAsync => Received: " + totalReceived.get() + "  Emitted: " + c.get() + " Request Batches: " + batches.get());
+        // System.out.println("testUserSubscriberUsingRequestAsync => Received: " + totalReceived.get() + "  Emitted: " + c.get() + " Request Batches: " + batches.get());
         assertEquals(2000, c.get());
         assertEquals(2000, totalReceived.get());
         assertEquals(20, batches.get());
@@ -425,7 +425,7 @@ public class FlowableBackpressureTests extends RxJavaTest {
             }
         }).subscribe(ts);
         ts.awaitDone(5, TimeUnit.SECONDS);
-        System.out.println("testFirehoseFailsAsExpected => Received: " + ts.values().size() + "  Emitted: " + c.get());
+        // System.out.println("testFirehoseFailsAsExpected => Received: " + ts.values().size() + "  Emitted: " + c.get());
         // FIXME it is possible slow is not slow enough or the main gets delayed and thus more than one source value is emitted.
         int vc = ts.values().size();
         assertTrue("10 < " + vc, vc <= 10);
@@ -458,7 +458,7 @@ public class FlowableBackpressureTests extends RxJavaTest {
             List<Integer> onNextEvents = ts.values();
             assertEquals(num, onNextEvents.size());
             Integer lastEvent = onNextEvents.get(num - 1);
-            System.out.println("testOnBackpressureDrop => Received: " + onNextEvents.size() + "  Emitted: " + c.get() + " Last value: " + lastEvent);
+            // System.out.println("testOnBackpressureDrop => Received: " + onNextEvents.size() + "  Emitted: " + c.get() + " Last value: " + lastEvent);
             // it drop, so we should get some number far higher than what would have sequentially incremented
             assertTrue(num - 1 <= lastEvent.intValue());
         }
@@ -490,7 +490,7 @@ public class FlowableBackpressureTests extends RxJavaTest {
             ts.assertNoErrors();
             List<Integer> onNextEvents = ts.values();
             Integer lastEvent = onNextEvents.get(num - 1);
-            System.out.println(testName.getMethodName() + " => Received: " + onNextEvents.size() + " Passed: " + passCount.get() + " Dropped: " + dropCount.get() + "  Emitted: " + emitCount.get() + " Last value: " + lastEvent);
+            // System.out.println(testName.getMethodName() + " => Received: " + onNextEvents.size() + " Passed: " + passCount.get() + " Dropped: " + dropCount.get() + "  Emitted: " + emitCount.get() + " Last value: " + lastEvent);
             assertEquals(num, onNextEvents.size());
             // in reality, num < passCount
             assertTrue(num <= passCount.get());
@@ -514,7 +514,7 @@ public class FlowableBackpressureTests extends RxJavaTest {
             List<Integer> onNextEvents = ts.values();
             assertEquals(num, onNextEvents.size());
             Integer lastEvent = onNextEvents.get(num - 1);
-            System.out.println("testOnBackpressureDrop => Received: " + onNextEvents.size() + "  Emitted: " + c.get() + " Last value: " + lastEvent);
+            // System.out.println("testOnBackpressureDrop => Received: " + onNextEvents.size() + "  Emitted: " + c.get() + " Last value: " + lastEvent);
             // it drop, so we should get some number far higher than what would have sequentially incremented
             assertTrue(num - 1 <= lastEvent.intValue());
         }
@@ -540,7 +540,7 @@ public class FlowableBackpressureTests extends RxJavaTest {
             List<Integer> onNextEvents = ts.values();
             assertEquals(num, onNextEvents.size());
             Integer lastEvent = onNextEvents.get(num - 1);
-            System.out.println("testOnBackpressureDrop => Received: " + onNextEvents.size() + " Dropped: " + dropCount.get() + "  Emitted: " + c.get() + " Last value: " + lastEvent);
+            // System.out.println("testOnBackpressureDrop => Received: " + onNextEvents.size() + " Dropped: " + dropCount.get() + "  Emitted: " + c.get() + " Last value: " + lastEvent);
             // it drop, so we should get some number far higher than what would have sequentially incremented
             assertTrue(num - 1 <= lastEvent.intValue());
             // no drop in synchronous mode
@@ -564,7 +564,7 @@ public class FlowableBackpressureTests extends RxJavaTest {
         }).onBackpressureBuffer().observeOn(Schedulers.computation()).map(SLOW_PASS_THRU).take(num).subscribe(ts);
         ts.awaitDone(5, TimeUnit.SECONDS);
         ts.assertNoErrors();
-        System.out.println("testOnBackpressureBuffer => Received: " + ts.values().size() + "  Emitted: " + c.get());
+        // System.out.println("testOnBackpressureBuffer => Received: " + ts.values().size() + "  Emitted: " + c.get());
         assertEquals(num, ts.values().size());
         // it buffers, so we should get the right value sequentially
         assertEquals(num - 1, ts.values().get(num - 1).intValue());

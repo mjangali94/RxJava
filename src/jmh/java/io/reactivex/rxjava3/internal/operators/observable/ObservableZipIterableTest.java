@@ -284,7 +284,7 @@ public class ObservableZipIterableTest extends RxJavaTest {
 
         @Override
         public void accept(String pv) {
-            System.out.println(pv);
+            // System.out.println(pv);
         }
     };
 
@@ -295,7 +295,7 @@ public class ObservableZipIterableTest extends RxJavaTest {
         @Override
         public String apply(Integer t1) {
             counter.incrementAndGet();
-            System.out.println("Omg I'm calculating so hard: " + t1 + "*" + t1 + "=" + (t1 * t1));
+            // System.out.println("Omg I'm calculating so hard: " + t1 + "*" + t1 + "=" + (t1 * t1));
             return " " + (t1 * t1);
         }
     }

@@ -63,13 +63,13 @@ This means that `Observable<Void>` can no longer emit any values but only termin
 enum Irrelevant { INSTANCE; }
 
 Observable<Object> source = Observable.create((ObservableEmitter<Object> emitter) -> {
-   System.out.println("Side-effect 1");
+   // System.out.println("Side-effect 1");
    emitter.onNext(Irrelevant.INSTANCE);
 
-   System.out.println("Side-effect 2");
+   // System.out.println("Side-effect 2");
    emitter.onNext(Irrelevant.INSTANCE);
 
-   System.out.println("Side-effect 3");
+   // System.out.println("Side-effect 3");
    emitter.onNext(Irrelevant.INSTANCE);
 });
 
@@ -277,7 +277,7 @@ One notable difference is that all our functional interfaces now define `throws 
 ```java
 Flowable.just("file.txt")
 .map(name -> Files.readLines(name))
-.subscribe(lines -> System.out.println(lines.size()), Throwable::printStackTrace);
+.subscribe(lines -> // System.out.println(lines.size()), Throwable::printStackTrace);
 ```
 
 If the file doesn't exist or can't be read properly, the end consumer will print out `IOException` directly. Note also the `Files.readLines(name)` invoked without try-catch.
@@ -307,7 +307,7 @@ Flowable.range(1, 10).subscribe(new Subscriber<Integer>() {
 
     @Override
     public void onNext(Integer t) {
-        System.out.println(t);
+        // System.out.println(t);
     }
 
     @Override
@@ -317,7 +317,7 @@ Flowable.range(1, 10).subscribe(new Subscriber<Integer>() {
 
     @Override
     public void onComplete() {
-        System.out.println("Done");
+        // System.out.println("Done");
     }
 });
 ```
@@ -335,7 +335,7 @@ ResourceSubscriber<Integer> subscriber = new ResourceSubscriber<Integer>() {
 
     @Override
     public void onNext(Integer t) {
-        System.out.println(t);
+        // System.out.println(t);
     }
 
     @Override
@@ -345,7 +345,7 @@ ResourceSubscriber<Integer> subscriber = new ResourceSubscriber<Integer>() {
 
     @Override
     public void onComplete() {
-        System.out.println("Done");
+        // System.out.println("Done");
     }
 };
 
@@ -381,14 +381,14 @@ Flowable.range(1, 3).subscribe(new Subscriber<Integer>() {
 
     @Override
     public void onSubscribe(Subscription s) {
-        System.out.println("OnSubscribe start");
+        // System.out.println("OnSubscribe start");
         s.request(Long.MAX_VALUE);
-        System.out.println("OnSubscribe end");
+        // System.out.println("OnSubscribe end");
     }
 
     @Override
     public void onNext(Integer v) {
-        System.out.println(v);
+        // System.out.println(v);
     }
 
     @Override
@@ -398,7 +398,7 @@ Flowable.range(1, 3).subscribe(new Subscriber<Integer>() {
 
     @Override
     public void onComplete() {
-        System.out.println("Done");
+        // System.out.println("Done");
     }
 });
 ```
@@ -941,7 +941,7 @@ Therefore, the following sequence won't call `doOnCancel`:
 
 ```java
 Flowable.just(1, 2, 3)
-.doOnCancel(() -> System.out.println("Cancelled!"))
+.doOnCancel(() -> // System.out.println("Cancelled!"))
 .subscribe(System.out::println);
 ```
 
@@ -949,7 +949,7 @@ However, the following will call since the `take` operator cancels after the set
 
 ```java
 Flowable.just(1, 2, 3)
-.doOnCancel(() -> System.out.println("Cancelled!"))
+.doOnCancel(() -> // System.out.println("Cancelled!"))
 .take(2)
 .subscribe(System.out::println);
 ```
@@ -960,11 +960,11 @@ Alternatively, the `doFinally` operator (introduced in 2.0.1 and standardized in
 
 ```java
 Flowable.just(1, 2, 3)
-.doFinally(() -> System.out.println("Finally"))
+.doFinally(() -> // System.out.println("Finally"))
 .subscribe(System.out::println);
 
 Flowable.just(1, 2, 3)
-.doFinally(() -> System.out.println("Finally"))
+.doFinally(() -> // System.out.println("Finally"))
 .take(2) // cancels the above after 2 elements
 .subscribe(System.out::println);
 ```

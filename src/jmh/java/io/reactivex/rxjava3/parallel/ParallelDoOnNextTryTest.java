@@ -72,7 +72,7 @@ public class ParallelDoOnNextTryTest extends RxJavaTest implements Consumer<Obje
             @Override
             public void accept(Integer v) throws Exception {
                 if (1 / v < 0) {
-                    System.out.println("Should not happen!");
+                    // System.out.println("Should not happen!");
                 }
             }
         }, ParallelFailureHandling.ERROR).sequential().test().assertFailure(ArithmeticException.class);
@@ -85,7 +85,7 @@ public class ParallelDoOnNextTryTest extends RxJavaTest implements Consumer<Obje
             @Override
             public void accept(Integer v) throws Exception {
                 if (1 / v < 0) {
-                    System.out.println("Should not happen!");
+                    // System.out.println("Should not happen!");
                 }
             }
         }, ParallelFailureHandling.STOP).sequential().test().assertResult();
@@ -103,7 +103,7 @@ public class ParallelDoOnNextTryTest extends RxJavaTest implements Consumer<Obje
                     return;
                 }
                 if (1 / v < 0) {
-                    System.out.println("Should not happen!");
+                    // System.out.println("Should not happen!");
                 }
             }
         }, ParallelFailureHandling.RETRY).sequential().test().assertResult(0, 1);
@@ -116,7 +116,7 @@ public class ParallelDoOnNextTryTest extends RxJavaTest implements Consumer<Obje
             @Override
             public void accept(Integer v) throws Exception {
                 if (1 / v < 0) {
-                    System.out.println("Should not happen!");
+                    // System.out.println("Should not happen!");
                 }
             }
         }, new BiFunction<Long, Throwable, ParallelFailureHandling>() {
@@ -135,7 +135,7 @@ public class ParallelDoOnNextTryTest extends RxJavaTest implements Consumer<Obje
             @Override
             public void accept(Integer v) throws Exception {
                 if (1 / v < 0) {
-                    System.out.println("Should not happen!");
+                    // System.out.println("Should not happen!");
                 }
             }
         }, ParallelFailureHandling.SKIP).sequential().test().assertResult(1);
@@ -148,7 +148,7 @@ public class ParallelDoOnNextTryTest extends RxJavaTest implements Consumer<Obje
             @Override
             public void accept(Integer v) throws Exception {
                 if (1 / v < 0) {
-                    System.out.println("Should not happen!");
+                    // System.out.println("Should not happen!");
                 }
             }
         }, new BiFunction<Long, Throwable, ParallelFailureHandling>() {
@@ -184,7 +184,7 @@ public class ParallelDoOnNextTryTest extends RxJavaTest implements Consumer<Obje
             @Override
             public void accept(Integer v) throws Exception {
                 if (1 / v < 0) {
-                    System.out.println("Should not happen!");
+                    // System.out.println("Should not happen!");
                 }
             }
         }, ParallelFailureHandling.ERROR).filter(Functions.alwaysTrue()).sequential().test().assertFailure(ArithmeticException.class);
@@ -197,7 +197,7 @@ public class ParallelDoOnNextTryTest extends RxJavaTest implements Consumer<Obje
             @Override
             public void accept(Integer v) throws Exception {
                 if (1 / v < 0) {
-                    System.out.println("Should not happen!");
+                    // System.out.println("Should not happen!");
                 }
             }
         }, ParallelFailureHandling.STOP).filter(Functions.alwaysTrue()).sequential().test().assertResult();
@@ -215,7 +215,7 @@ public class ParallelDoOnNextTryTest extends RxJavaTest implements Consumer<Obje
                     return;
                 }
                 if (1 / v < 0) {
-                    System.out.println("Should not happen!");
+                    // System.out.println("Should not happen!");
                 }
             }
         }, ParallelFailureHandling.RETRY).filter(Functions.alwaysTrue()).sequential().test().assertResult(0, 1);
@@ -228,7 +228,7 @@ public class ParallelDoOnNextTryTest extends RxJavaTest implements Consumer<Obje
             @Override
             public void accept(Integer v) throws Exception {
                 if (1 / v < 0) {
-                    System.out.println("Should not happen!");
+                    // System.out.println("Should not happen!");
                 }
             }
         }, new BiFunction<Long, Throwable, ParallelFailureHandling>() {
@@ -247,7 +247,7 @@ public class ParallelDoOnNextTryTest extends RxJavaTest implements Consumer<Obje
             @Override
             public void accept(Integer v) throws Exception {
                 if (1 / v < 0) {
-                    System.out.println("Should not happen!");
+                    // System.out.println("Should not happen!");
                 }
             }
         }, ParallelFailureHandling.SKIP).filter(Functions.alwaysTrue()).sequential().test().assertResult(1);
@@ -260,7 +260,7 @@ public class ParallelDoOnNextTryTest extends RxJavaTest implements Consumer<Obje
             @Override
             public void accept(Integer v) throws Exception {
                 if (1 / v < 0) {
-                    System.out.println("Should not happen!");
+                    // System.out.println("Should not happen!");
                 }
             }
         }, new BiFunction<Long, Throwable, ParallelFailureHandling>() {

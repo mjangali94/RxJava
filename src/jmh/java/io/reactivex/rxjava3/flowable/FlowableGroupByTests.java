@@ -34,12 +34,12 @@ public class FlowableGroupByTests extends RxJavaTest {
 
             @Override
             public void accept(GroupedFlowable<Object, Event> v) {
-                System.out.println(v);
+                // System.out.println(v);
                 // FIXME groups need consumption to a certain degree to cancel upstream
                 v.take(1).subscribe();
             }
         });
-        System.out.println("**** finished");
+        // System.out.println("**** finished");
     }
 
     @Test
@@ -66,10 +66,10 @@ public class FlowableGroupByTests extends RxJavaTest {
 
             @Override
             public void accept(Object v) {
-                System.out.println(v);
+                // System.out.println(v);
             }
         });
-        System.out.println("**** finished");
+        // System.out.println("**** finished");
     }
 
     @Test

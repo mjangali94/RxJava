@@ -156,18 +156,18 @@ public class FlowableConversionTest extends RxJavaTest {
 
             @Override
             public void onComplete() {
-                System.out.println("Complete");
+                // System.out.println("Complete");
             }
 
             @Override
             public void onError(Throwable e) {
-                System.out.println("error: " + e.getMessage());
+                // System.out.println("error: " + e.getMessage());
                 e.printStackTrace();
             }
 
             @Override
             public void onNext(String t) {
-                System.out.println(t);
+                // System.out.println(t);
             }
         });
         List<Object> crewOfBattlestarGalactica = Arrays.asList(new Object[] { "William Adama", "Laura Roslin", "Lee Adama", new Cylon() });
@@ -175,7 +175,7 @@ public class FlowableConversionTest extends RxJavaTest {
 
             @Override
             public void accept(Object pv) {
-                System.out.println(pv);
+                // System.out.println(pv);
             }
         }).to(new ConvertToCylonDetector<>()).beep(new Predicate<Object>() {
 
@@ -251,7 +251,7 @@ public class FlowableConversionTest extends RxJavaTest {
             Integer i = queue.poll();
             if (i != null) {
                 x++;
-                System.out.println(x + " item: " + i);
+                // System.out.println(x + " item: " + i);
             }
         }
         Assert.assertNull(thrown.get());

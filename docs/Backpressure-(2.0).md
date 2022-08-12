@@ -65,7 +65,7 @@ Expressing backpressure in end-consumers is rarely necessary (because they are s
 
         @Override
         public void onComplete() {
-            System.out.println("Done!");
+            // System.out.println("Done!");
         }
     });
 ```
@@ -286,7 +286,7 @@ The most basic backpressure aware source is created via `just`:
 
         @Override
         public void onNext(Integer v) {
-            System.out.println(v);
+            // System.out.println(v);
         }
        
         // the rest is omitted for brevity

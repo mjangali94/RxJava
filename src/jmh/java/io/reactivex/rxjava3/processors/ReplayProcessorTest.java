@@ -228,7 +228,7 @@ public class ReplayProcessorTest extends FlowableProcessorTest<Object> {
 
             @Override
             public void onNext(String v) {
-                System.out.println("observer1: " + v);
+                // System.out.println("observer1: " + v);
                 lastValueForSubscriber1.set(v);
             }
         };
@@ -249,7 +249,7 @@ public class ReplayProcessorTest extends FlowableProcessorTest<Object> {
 
             @Override
             public void onNext(String v) {
-                System.out.println("observer2: " + v);
+                // System.out.println("observer2: " + v);
                 if (v.equals("one")) {
                     oneReceived.countDown();
                 } else {
@@ -270,20 +270,20 @@ public class ReplayProcessorTest extends FlowableProcessorTest<Object> {
         assertEquals("two", lastValueForSubscriber1.get());
         // use subscribeOn to make this async otherwise we deadlock as we are using CountDownLatches
         processor.subscribeOn(Schedulers.newThread()).subscribe(subscriber2);
-        System.out.println("before waiting for one");
+        // System.out.println("before waiting for one");
         // wait until observer2 starts having replay occur
         oneReceived.await();
-        System.out.println("after waiting for one");
+        // System.out.println("after waiting for one");
         processor.onNext("three");
-        System.out.println("sent three");
+        // System.out.println("sent three");
         // if subscription blocked existing subscribers then 'makeSlow' would cause this to not be there yet
         assertEquals("three", lastValueForSubscriber1.get());
-        System.out.println("about to send onComplete");
+        // System.out.println("about to send onComplete");
         processor.onComplete();
-        System.out.println("completed processor");
+        // System.out.println("completed processor");
         // release
         makeSlow.countDown();
-        System.out.println("makeSlow released");
+        // System.out.println("makeSlow released");
         completed.await();
         // all of them should be emitted with the last being "three"
         assertEquals("three", lastValueForSubscriber2.get());
@@ -306,7 +306,7 @@ public class ReplayProcessorTest extends FlowableProcessorTest<Object> {
             InOrder inOrder = inOrder(subscriber);
             String v = "" + i;
             src.onNext(v);
-            System.out.printf("Turn: %d%n", i);
+            // System.out.printf("Turn: %d%n", i);
             src.firstElement().toFlowable().flatMap(new Function<String, Flowable<String>>() {
 
                 @Override
@@ -317,7 +317,7 @@ public class ReplayProcessorTest extends FlowableProcessorTest<Object> {
 
                 @Override
                 public void onNext(String t) {
-                    System.out.println(t);
+                    // System.out.println(t);
                     subscriber.onNext(t);
                 }
 
@@ -1354,23 +1354,23 @@ public class ReplayProcessorTest extends FlowableProcessorTest<Object> {
                 return rp;
             }
         }).takeLast(1);
-        System.out.println("Bounded Replay Leak check: Wait before GC");
+        // System.out.println("Bounded Replay Leak check: Wait before GC");
         Thread.sleep(1000);
-        System.out.println("Bounded Replay Leak check: GC");
+        // System.out.println("Bounded Replay Leak check: GC");
         System.gc();
         Thread.sleep(500);
         final MemoryMXBean memoryMXBean = ManagementFactory.getMemoryMXBean();
         MemoryUsage memHeap = memoryMXBean.getHeapMemoryUsage();
         long initial = memHeap.getUsed();
-        System.out.printf("Bounded Replay Leak check: Starting: %.3f MB%n", initial / 1024.0 / 1024.0);
+        // System.out.printf("Bounded Replay Leak check: Starting: %.3f MB%n", initial / 1024.0 / 1024.0);
         final AtomicLong after = new AtomicLong();
         source.subscribe(new Consumer<byte[]>() {
 
             @Override
             public void accept(byte[] v) throws Exception {
-                System.out.println("Bounded Replay Leak check: Wait before GC 2");
+                // System.out.println("Bounded Replay Leak check: Wait before GC 2");
                 Thread.sleep(1000);
-                System.out.println("Bounded Replay Leak check:  GC 2");
+                // System.out.println("Bounded Replay Leak check:  GC 2");
                 System.gc();
                 Thread.sleep(500);
                 after.set(memoryMXBean.getHeapMemoryUsage().getUsed());
@@ -1380,7 +1380,7 @@ public class ReplayProcessorTest extends FlowableProcessorTest<Object> {
             rp.onNext(new byte[1024 * 1024]);
         }
         rp.onComplete();
-        System.out.printf("Bounded Replay Leak check: After: %.3f MB%n", after.get() / 1024.0 / 1024.0);
+        // System.out.printf("Bounded Replay Leak check: After: %.3f MB%n", after.get() / 1024.0 / 1024.0);
         if (initial + 100 * 1024 * 1024 < after.get()) {
             Assert.fail("Bounded Replay Leak check: Memory leak detected: " + (initial / 1024.0 / 1024.0) + " -> " + after.get() / 1024.0 / 1024.0);
         }

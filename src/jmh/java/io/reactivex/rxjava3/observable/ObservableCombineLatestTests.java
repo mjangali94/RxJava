@@ -46,7 +46,7 @@ public class ObservableCombineLatestTests extends RxJavaTest {
 
         @Override
         public void accept(Result t1) {
-            System.out.println("Result: " + t1);
+            // System.out.println("Result: " + t1);
         }
     };
 
@@ -54,7 +54,7 @@ public class ObservableCombineLatestTests extends RxJavaTest {
 
         @Override
         public void accept(ExtendedResult t1) {
-            System.out.println("Result: " + t1);
+            // System.out.println("Result: " + t1);
         }
     };
 }

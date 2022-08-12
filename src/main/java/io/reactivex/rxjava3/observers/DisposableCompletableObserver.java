@@ -38,13 +38,13 @@ import io.reactivex.rxjava3.internal.util.EndConsumerHelper;
  *     Completable.complete().delay(1, TimeUnit.SECONDS)
  *     .subscribeWith(new DisposableMaybeObserver&lt;Integer&gt;() {
  *         &#64;Override public void onStart() {
- *             System.out.println("Start!");
+ *             // System.out.println("Start!");
  *         }
  *         &#64;Override public void onError(Throwable t) {
  *             t.printStackTrace();
  *         }
  *         &#64;Override public void onComplete() {
- *             System.out.println("Done!");
+ *             // System.out.println("Done!");
  *         }
  *     });
  * // ...

@@ -45,7 +45,7 @@ public class TooManyEmptyNewLines {
     static void findPattern(int newLines) throws Exception {
         File f = TestHelper.findSource("Flowable");
         if (f == null) {
-            System.out.println("Unable to find sources of TestHelper.findSourceDir()");
+            // System.out.println("Unable to find sources of TestHelper.findSourceDir()");
             return;
         }
         Queue<File> dirs = new ArrayDeque<>();
@@ -108,7 +108,7 @@ public class TooManyEmptyNewLines {
         }
         if (total != 0) {
             fail.insert(0, "Found " + total + " instances\n");
-            System.out.println(fail);
+            // System.out.println(fail);
             throw new AssertionError(fail.toString());
         }
     }

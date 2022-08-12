@@ -58,14 +58,14 @@ import io.reactivex.rxjava3.internal.util.EndConsumerHelper;
  *             if (t == 3) {
  *                 cancel();
  *             }
- *             System.out.println(t);
+ *             // System.out.println(t);
  *             request(1);
  *         }
  *         &#64;Override public void onError(Throwable t) {
  *             t.printStackTrace();
  *         }
  *         &#64;Override public void onComplete() {
- *             System.out.println("Done!");
+ *             // System.out.println("Done!");
  *         }
  *     });
  * // ...

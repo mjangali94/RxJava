@@ -73,7 +73,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
  *    .subscribeWith(new DisposableCompletableObserver() {
  *        &#64;Override
  *        public void onStart() {
- *            System.out.println("Started");
+ *            // System.out.println("Started");
  *        }
  *
  *        &#64;Override
@@ -83,7 +83,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
  *
  *        &#64;Override
  *        public void onComplete() {
- *            System.out.println("Done!");
+ *            // System.out.println("Done!");
  *        }
  *    });
  * 
@@ -2095,7 +2095,7 @@ public abstract class Completable implements CompletableSource {
      *     // In completable, this could also mean doing some side-effects
      *     &#64;Override
      *     public void onComplete() {
-     *         System.out.println("Sequence completed");
+     *         // System.out.println("Sequence completed");
      *         downstream.onComplete();
      *     }
      *
@@ -2630,14 +2630,14 @@ public abstract class Completable implements CompletableSource {
      * The following example demonstrates how to retry an asynchronous source with a delay:
      * <pre><code>
      * Completable.timer(1, TimeUnit.SECONDS)
-     *     .doOnSubscribe(s -&gt; System.out.println("subscribing"))
+     *     .doOnSubscribe(s -&gt; // System.out.println("subscribing"))
      *     .doOnComplete(() -&gt; { throw new RuntimeException(); })
      *     .retryWhen(errors -&gt; {
      *         AtomicInteger counter = new AtomicInteger();
      *         return errors
      *                   .takeWhile(e -&gt; counter.getAndIncrement() != 3)
      *                   .flatMap(e -&gt; {
-     *                       System.out.println("delay retry by " + counter.get() + " second(s)");
+     *                       // System.out.println("delay retry by " + counter.get() + " second(s)");
      *                       return Flowable.timer(counter.get(), TimeUnit.SECONDS);
      *                   });
      *     })

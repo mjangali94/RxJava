@@ -122,7 +122,7 @@ public class ObservableGroupByTest extends RxJavaTest {
             @Override
             public void onNext(String v) {
                 eventCounter.incrementAndGet();
-                System.out.println(v);
+                // System.out.println(v);
             }
         });
         assertEquals(3, groupCounter.get());
@@ -167,7 +167,7 @@ public class ObservableGroupByTest extends RxJavaTest {
             @Override
             public void subscribe(final Observer<? super Event> observer) {
                 observer.onSubscribe(Disposable.empty());
-                System.out.println("*** Subscribing to EventStream ***");
+                // System.out.println("*** Subscribing to EventStream ***");
                 subscribeCounter.incrementAndGet();
                 new Thread(new Runnable() {
 
@@ -194,7 +194,7 @@ public class ObservableGroupByTest extends RxJavaTest {
 
             @Override
             public Observable<String> apply(GroupedObservable<Integer, Event> eventGroupedObservable) {
-                System.out.println("GroupedObservable Key: " + eventGroupedObservable.getKey());
+                // System.out.println("GroupedObservable Key: " + eventGroupedObservable.getKey());
                 groupCounter.incrementAndGet();
                 return eventGroupedObservable.map(new Function<Event, String>() {
 
@@ -219,7 +219,7 @@ public class ObservableGroupByTest extends RxJavaTest {
 
             @Override
             public void onNext(String outputMessage) {
-                System.out.println(outputMessage);
+                // System.out.println(outputMessage);
                 eventCounter.incrementAndGet();
             }
         });
@@ -268,7 +268,7 @@ public class ObservableGroupByTest extends RxJavaTest {
 
             @Override
             public Observable<String> apply(GroupedObservable<Integer, Event> eventGroupedObservable) {
-                System.out.println("testUnsubscribe => GroupedObservable Key: " + eventGroupedObservable.getKey());
+                // System.out.println("testUnsubscribe => GroupedObservable Key: " + eventGroupedObservable.getKey());
                 groupCounter.incrementAndGet();
                 return eventGroupedObservable.take(// limit to only 20 events on this group
                 20).map(new Function<Event, String>() {
@@ -294,7 +294,7 @@ public class ObservableGroupByTest extends RxJavaTest {
 
             @Override
             public void onNext(String outputMessage) {
-                System.out.println(outputMessage);
+                // System.out.println(outputMessage);
                 eventCounter.incrementAndGet();
             }
         });
@@ -337,7 +337,7 @@ public class ObservableGroupByTest extends RxJavaTest {
             @Override
             public void accept(String s) {
                 eventCounter.incrementAndGet();
-                System.out.println("=> " + s);
+                // System.out.println("=> " + s);
             }
         });
         assertEquals(30, eventCounter.get());
@@ -379,7 +379,7 @@ public class ObservableGroupByTest extends RxJavaTest {
             @Override
             public void accept(String s) {
                 eventCounter.incrementAndGet();
-                System.out.println("=> " + s);
+                // System.out.println("=> " + s);
             }
         });
         assertEquals(15, eventCounter.get());
@@ -417,7 +417,7 @@ public class ObservableGroupByTest extends RxJavaTest {
 
             @Override
             public void onComplete() {
-                System.out.println("=> onComplete");
+                // System.out.println("=> onComplete");
                 latch.countDown();
             }
 
@@ -430,7 +430,7 @@ public class ObservableGroupByTest extends RxJavaTest {
             @Override
             public void onNext(Integer s) {
                 eventCounter.incrementAndGet();
-                System.out.println("=> " + s);
+                // System.out.println("=> " + s);
             }
         });
         if (!latch.await(3000, TimeUnit.MILLISECONDS)) {
@@ -465,7 +465,7 @@ public class ObservableGroupByTest extends RxJavaTest {
             @Override
             public void onNext(GroupedObservable<Integer, Integer> s) {
                 eventCounter.incrementAndGet();
-                System.out.println("=> " + s);
+                // System.out.println("=> " + s);
             }
         });
         if (!latch.await(500, TimeUnit.MILLISECONDS)) {
@@ -515,7 +515,7 @@ public class ObservableGroupByTest extends RxJavaTest {
             @Override
             public void accept(String s) {
                 eventCounter.incrementAndGet();
-                System.out.println("=> " + s);
+                // System.out.println("=> " + s);
             }
         });
         assertEquals(30, eventCounter.get());
@@ -588,7 +588,7 @@ public class ObservableGroupByTest extends RxJavaTest {
                 results.add(s);
             }
         });
-        System.out.println("Results: " + results);
+        // System.out.println("Results: " + results);
         assertEquals(6, results.size());
     }
 
@@ -670,7 +670,7 @@ public class ObservableGroupByTest extends RxJavaTest {
                 results.add(s);
             }
         });
-        System.out.println("Results: " + results);
+        // System.out.println("Results: " + results);
         assertEquals(6, results.size());
     }
 
@@ -739,7 +739,7 @@ public class ObservableGroupByTest extends RxJavaTest {
                 results.add(s);
             }
         });
-        System.out.println("Results: " + results);
+        // System.out.println("Results: " + results);
         assertEquals(6, results.size());
     }
 
@@ -771,7 +771,7 @@ public class ObservableGroupByTest extends RxJavaTest {
 
                     @Override
                     public String apply(Integer t1) {
-                        System.out.println("Received: " + t1 + " on group : " + group.getKey());
+                        // System.out.println("Received: " + t1 + " on group : " + group.getKey());
                         return "first groups: " + t1;
                     }
                 });
@@ -780,7 +780,7 @@ public class ObservableGroupByTest extends RxJavaTest {
 
             @Override
             public void accept(Notification<String> t1) {
-                System.out.println("notification => " + t1);
+                // System.out.println("notification => " + t1);
             }
         }).blockingForEach(new Consumer<String>() {
 
@@ -789,7 +789,7 @@ public class ObservableGroupByTest extends RxJavaTest {
                 results.add(s);
             }
         });
-        System.out.println("Results: " + results);
+        // System.out.println("Results: " + results);
         assertEquals(4, results.size());
     }
 
@@ -832,7 +832,7 @@ public class ObservableGroupByTest extends RxJavaTest {
                 results.add(s);
             }
         });
-        System.out.println("Results: " + results);
+        // System.out.println("Results: " + results);
         assertEquals(4, results.size());
     }
 
@@ -1009,14 +1009,14 @@ public class ObservableGroupByTest extends RxJavaTest {
 
             @Override
             public Observable<String> apply(final GroupedObservable<String, String> g) {
-                System.out.println("-----------> NEXT: " + g.getKey());
+                // System.out.println("-----------> NEXT: " + g.getKey());
                 return g.take(2).map(new Function<String, String>() {
 
                     int count;
 
                     @Override
                     public String apply(String v) {
-                        System.out.println(v);
+                        // System.out.println(v);
                         return g.getKey() + "-" + count++;
                     }
                 });
@@ -1025,7 +1025,7 @@ public class ObservableGroupByTest extends RxJavaTest {
         TestObserver<String> to = new TestObserver<>();
         m.subscribe(to);
         to.awaitDone(5, TimeUnit.SECONDS);
-        System.out.println("ts .get " + to.values());
+        // System.out.println("ts .get " + to.values());
         to.assertNoErrors();
         assertEquals(to.values(), Arrays.asList("foo-0", "foo-1", "bar-0", "foo-0", "baz-0", "qux-0", "bar-1", "bar-0", "foo-1", "baz-1", "baz-0", "foo-0"));
     }
@@ -1061,7 +1061,7 @@ public class ObservableGroupByTest extends RxJavaTest {
         m.subscribe(to);
         to.awaitDone(5, TimeUnit.SECONDS);
         to.assertNoErrors();
-        System.out.println(to.values());
+        // System.out.println(to.values());
     }
 
     /**
@@ -1110,7 +1110,7 @@ public class ObservableGroupByTest extends RxJavaTest {
 
                     @Override
                     public void run() {
-                        System.out.println("//////////////////// COMPLETED-A");
+                        // System.out.println("//////////////////// COMPLETED-A");
                     }
                 }).observeOn(Schedulers.computation()).map(new Function<Integer, String>() {
 
@@ -1134,7 +1134,7 @@ public class ObservableGroupByTest extends RxJavaTest {
 
                     @Override
                     public void run() {
-                        System.out.println("//////////////////// COMPLETED-B");
+                        // System.out.println("//////////////////// COMPLETED-B");
                     }
                 });
             }
@@ -1142,7 +1142,7 @@ public class ObservableGroupByTest extends RxJavaTest {
 
             @Override
             public void accept(Notification<String> t1) {
-                System.out.println("NEXT: " + t1);
+                // System.out.println("NEXT: " + t1);
             }
         }).subscribe(to);
         to.awaitDone(5, TimeUnit.SECONDS);

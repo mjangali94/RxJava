@@ -23,7 +23,7 @@ Emit a specified sequence of items before beginning to emit the items from the O
 
 ```java
 Observable<String> names = Observable.just("Spock", "McCoy");
-names.startWith("Kirk").subscribe(item -> System.out.println(item));
+names.startWith("Kirk").subscribe(item -> // System.out.println(item));
 
 // prints Kirk, Spock, McCoy
 ```
@@ -46,7 +46,7 @@ Combines multiple Observables into one. Any `onError` notifications passed from 
 ```java
 Observable.just(1, 2, 3)
     .mergeWith(Observable.just(4, 5, 6))
-    .subscribe(item -> System.out.println(item));
+    .subscribe(item -> // System.out.println(item));
 
 // prints 1, 2, 3, 4, 5, 6
 ```
@@ -65,7 +65,7 @@ Combines multiple Observables into one. Any `onError` notifications passed from 
 Observable<String> observable1 = Observable.error(new IllegalArgumentException(""));
 Observable<String> observable2 = Observable.just("Four", "Five", "Six");
 Observable.mergeDelayError(observable1, observable2)
-        .subscribe(item -> System.out.println(item));
+        .subscribe(item -> // System.out.println(item));
 
 // emits 4, 5, 6 and then the IllegalArgumentException (in this specific
 // example, this throws an `OnErrorNotImplementedException`).
@@ -85,7 +85,7 @@ Combines sets of items emitted by two or more Observables together via a specifi
 Observable<String> firstNames = Observable.just("James", "Jean-Luc", "Benjamin");
 Observable<String> lastNames = Observable.just("Kirk", "Picard", "Sisko");
 firstNames.zipWith(lastNames, (first, last) -> first + " " + last)
-    .subscribe(item -> System.out.println(item));
+    .subscribe(item -> // System.out.println(item));
 
 // prints James Kirk, Jean-Luc Picard, Benjamin Sisko
 ```
@@ -106,7 +106,7 @@ Observable<Long> weatherRefreshes = Observable.interval(50, TimeUnit.MILLISECOND
 Observable.combineLatest(newsRefreshes, weatherRefreshes,
     (newsRefreshTimes, weatherRefreshTimes) ->
         "Refreshed news " + newsRefreshTimes + " times and weather " + weatherRefreshTimes)
-    .subscribe(item -> System.out.println(item));
+    .subscribe(item -> // System.out.println(item));
 
 // prints:
 // Refreshed news 0 times and weather 0
@@ -136,7 +136,7 @@ Observable<Observable<String>> timeIntervals =
       .map(ticks -> Observable.interval(100, TimeUnit.MILLISECONDS)
                               .map(innerInterval -> "outer: " + ticks + " - inner: " + innerInterval));
 Observable.switchOnNext(timeIntervals)
-    .subscribe(item -> System.out.println(item));
+    .subscribe(item -> // System.out.println(item));
 
 // prints:
 // outer: 0 - inner: 0

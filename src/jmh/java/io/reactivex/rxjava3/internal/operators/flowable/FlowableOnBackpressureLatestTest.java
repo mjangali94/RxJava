@@ -105,7 +105,7 @@ public class FlowableOnBackpressureLatestTest extends RxJavaTest {
         ts.awaitDone(2, TimeUnit.SECONDS);
         ts.assertTerminated();
         int n = ts.values().size();
-        System.out.println("testAsynchronousDrop -> " + n);
+        // System.out.println("testAsynchronousDrop -> " + n);
         Assert.assertTrue("All events received?", n < m);
         int previous = 0;
         for (Integer current : ts.values()) {

@@ -128,7 +128,7 @@ public class SafeSubscriberTest extends RxJavaTest {
                 @Override
                 public void cancel() {
                     // going to do nothing to pretend I'm a bad Observable that keeps allowing events to be sent
-                    System.out.println("==> SynchronizeTest unsubscribe that does nothing!");
+                    // System.out.println("==> SynchronizeTest unsubscribe that does nothing!");
                 }
 
                 @Override

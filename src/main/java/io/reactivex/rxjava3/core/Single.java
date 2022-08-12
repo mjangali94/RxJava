@@ -80,12 +80,12 @@ import io.reactivex.rxjava3.schedulers.*;
  *    .subscribeWith(new DisposableSingleObserver&lt;String&gt;() {
  *        &#64;Override
  *        public void onStart() {
- *            System.out.println("Started");
+ *            // System.out.println("Started");
  *        }
  *
  *        &#64;Override
  *        public void onSuccess(String value) {
- *            System.out.println("Success: " + value);
+ *            // System.out.println("Success: " + value);
  *        }
  *
  *        &#64;Override
@@ -4510,14 +4510,14 @@ public abstract class Single<@NonNull T> implements SingleSource<T> {
      * The following example demonstrates how to retry an asynchronous source with a delay:
      * <pre><code>
      * Single.timer(1, TimeUnit.SECONDS)
-     *     .doOnSubscribe(s -&gt; System.out.println("subscribing"))
+     *     .doOnSubscribe(s -&gt; // System.out.println("subscribing"))
      *     .map(v -&gt; { throw new RuntimeException(); })
      *     .retryWhen(errors -&gt; {
      *         AtomicInteger counter = new AtomicInteger();
      *         return errors
      *                   .takeWhile(e -&gt; counter.getAndIncrement() != 3)
      *                   .flatMap(e -&gt; {
-     *                       System.out.println("delay retry by " + counter.get() + " second(s)");
+     *                       // System.out.println("delay retry by " + counter.get() + " second(s)");
      *                       return Flowable.timer(counter.get(), TimeUnit.SECONDS);
      *                   });
      *     })

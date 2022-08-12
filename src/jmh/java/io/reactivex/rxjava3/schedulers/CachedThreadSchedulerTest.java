@@ -48,7 +48,7 @@ public class CachedThreadSchedulerTest extends AbstractSchedulerConcurrencyTests
 
             @Override
             public void accept(String t) {
-                System.out.println("t: " + t);
+                // System.out.println("t: " + t);
             }
         });
     }

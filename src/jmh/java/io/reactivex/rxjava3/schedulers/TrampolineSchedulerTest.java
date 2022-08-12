@@ -49,7 +49,7 @@ public class TrampolineSchedulerTest extends AbstractSchedulerTests {
 
             @Override
             public void accept(String t) {
-                System.out.println("t: " + t);
+                // System.out.println("t: " + t);
             }
         });
     }
@@ -123,7 +123,7 @@ public class TrampolineSchedulerTest extends AbstractSchedulerTests {
             public void run() {
                 String msg = key + ".1";
                 workDone.add(msg);
-                System.out.println(msg);
+                // System.out.println(msg);
                 Worker worker3 = Schedulers.trampoline().createWorker();
                 worker3.schedule(createPrintAction(key + ".B.1", workDone));
                 worker3.schedule(createPrintAction(key + ".B.2", workDone));
@@ -137,7 +137,7 @@ public class TrampolineSchedulerTest extends AbstractSchedulerTests {
 
             @Override
             public void run() {
-                System.out.println(message);
+                // System.out.println(message);
                 workDone.add(message);
             }
         };

@@ -85,10 +85,10 @@ public class SchedulerWorkerTest extends RxJavaTest {
             Thread.sleep(400);
             d.dispose();
             Thread.sleep(150);
-            System.out.println("Runs: " + times.size());
+            // System.out.println("Runs: " + times.size());
             for (int i = 0; i < times.size() - 1; i++) {
                 long diff = times.get(i + 1) - times.get(i);
-                System.out.println("Diff #" + i + ": " + diff);
+                // System.out.println("Diff #" + i + ": " + diff);
                 assertTrue("" + i + ":" + diff, diff < 150 && diff > 50);
             }
             assertTrue("Too few invocations: " + times.size(), times.size() > 2);
@@ -115,11 +115,11 @@ public class SchedulerWorkerTest extends RxJavaTest {
             Thread.sleep(400);
             d.dispose();
             Thread.sleep(150);
-            System.out.println("Runs: " + times.size());
+            // System.out.println("Runs: " + times.size());
             assertTrue(times.size() > 2);
             for (int i = 0; i < times.size() - 1; i++) {
                 long diff = times.get(i + 1) - times.get(i);
-                System.out.println("Diff #" + i + ": " + diff);
+                // System.out.println("Diff #" + i + ": " + diff);
                 assertTrue("Diff out of range: " + diff, diff < 250 && diff > 50);
             }
         } finally {

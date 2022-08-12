@@ -72,9 +72,9 @@ public class ComputationSchedulerTests extends AbstractSchedulerConcurrencyTests
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println("Count A: " + map.get("a"));
-            System.out.println("Count B: " + map.get("b"));
-            System.out.println("nonThreadSafeCounter: " + map.get("nonThreadSafeCounter"));
+            // System.out.println("Count A: " + map.get("a"));
+            // System.out.println("Count B: " + map.get("b"));
+            // System.out.println("nonThreadSafeCounter: " + map.get("nonThreadSafeCounter"));
             assertEquals(NUM, map.get("a").intValue());
             assertEquals(NUM, map.get("b").intValue());
             assertEquals(NUM, map.get("nonThreadSafeCounter").intValue());
@@ -99,7 +99,7 @@ public class ComputationSchedulerTests extends AbstractSchedulerConcurrencyTests
 
             @Override
             public void accept(String t) {
-                System.out.println("t: " + t);
+                // System.out.println("t: " + t);
             }
         });
     }
@@ -122,7 +122,7 @@ public class ComputationSchedulerTests extends AbstractSchedulerConcurrencyTests
 
             @Override
             public void accept(String t) {
-                System.out.println("t: " + t);
+                // System.out.println("t: " + t);
             }
         });
     }

@@ -359,7 +359,7 @@ public class ObservableCombineLatestTest extends RxJavaTest {
             }
         };
         for (int i = 1; i <= n; i++) {
-            System.out.println("test1ToNSources: " + i + " sources");
+            // System.out.println("test1ToNSources: " + i + " sources");
             List<Observable<Integer>> sources = new ArrayList<>();
             List<Object> values = new ArrayList<>();
             for (int j = 0; j < i; j++) {
@@ -386,7 +386,7 @@ public class ObservableCombineLatestTest extends RxJavaTest {
             }
         };
         for (int i = 1; i <= n; i++) {
-            System.out.println("test1ToNSourcesScheduled: " + i + " sources");
+            // System.out.println("test1ToNSourcesScheduled: " + i + " sources");
             List<Observable<Integer>> sources = new ArrayList<>();
             List<Object> values = new ArrayList<>();
             for (int j = 0; j < i; j++) {
@@ -620,7 +620,7 @@ public class ObservableCombineLatestTest extends RxJavaTest {
 
             @Override
             public void accept(Notification<Long> n) {
-                // System.out.println(n);
+                // // System.out.println(n);
                 if (count.incrementAndGet() >= SIZE) {
                     latch.countDown();
                 }
@@ -910,25 +910,25 @@ public class ObservableCombineLatestTest extends RxJavaTest {
 
                 @Override
                 public void accept(Notification<Integer> integerNotification) throws Exception {
-                    System.out.println("emptyObservable: " + integerNotification);
+                    // System.out.println("emptyObservable: " + integerNotification);
                 }
             }).doFinally(new Action() {
 
                 @Override
                 public void run() throws Exception {
-                    System.out.println("emptyObservable: doFinally");
+                    // System.out.println("emptyObservable: doFinally");
                 }
             }), errorObservable.doOnEach(new Consumer<Notification<Object>>() {
 
                 @Override
                 public void accept(Notification<Object> integerNotification) throws Exception {
-                    System.out.println("errorObservable: " + integerNotification);
+                    // System.out.println("errorObservable: " + integerNotification);
                 }
             }).doFinally(new Action() {
 
                 @Override
                 public void run() throws Exception {
-                    System.out.println("errorObservable: doFinally");
+                    // System.out.println("errorObservable: doFinally");
                 }
             })), new Function<Object[], Object>() {
 
@@ -940,13 +940,13 @@ public class ObservableCombineLatestTest extends RxJavaTest {
 
                 @Override
                 public void accept(Notification<Object> integerNotification) throws Exception {
-                    System.out.println("combineLatestDelayError: " + integerNotification);
+                    // System.out.println("combineLatestDelayError: " + integerNotification);
                 }
             }).doFinally(new Action() {
 
                 @Override
                 public void run() throws Exception {
-                    System.out.println("combineLatestDelayError: doFinally");
+                    // System.out.println("combineLatestDelayError: doFinally");
                 }
             }).subscribe(testObserver);
             testScheduler.advanceTimeBy(100, TimeUnit.MILLISECONDS);

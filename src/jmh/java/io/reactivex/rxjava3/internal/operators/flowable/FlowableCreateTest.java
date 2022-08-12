@@ -565,7 +565,7 @@ public class FlowableCreateTest extends RxJavaTest {
     @Test
     public void nullThrowable() {
         for (BackpressureStrategy m : BackpressureStrategy.values()) {
-            System.out.println(m);
+            // System.out.println(m);
             Flowable.create(new FlowableOnSubscribe<Object>() {
 
                 @Override

@@ -29,7 +29,7 @@ String greeting = "Hello world!";
 
 Observable<String> observable = Observable.just(greeting);
 
-observable.subscribe(item -> System.out.println(item));
+observable.subscribe(item -> // System.out.println(item));
 ```
 
 There exist overloads with 2 to 9 arguments for convenience, which objects (with the same common type) will be emitted in the order they are specified.
@@ -37,8 +37,8 @@ There exist overloads with 2 to 9 arguments for convenience, which objects (with
 ```java
 Observable<Object> observable = Observable.just("1", "A", "3.2", "def");
 
-  observable.subscribe(item -> System.out.print(item), error -> error.printStackTrace(),
-                () -> System.out.println());
+  observable.subscribe(item -> // System.out.print(item), error -> error.printStackTrace(),
+                () -> // System.out.println());
 ```
 
 ## From
@@ -62,8 +62,8 @@ List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8));
 
 Observable<Integer> observable = Observable.fromIterable(list);
 
-observable.subscribe(item -> System.out.println(item), error -> error.printStackTrace(), 
-     () -> System.out.println("Done"));
+observable.subscribe(item -> // System.out.println(item), error -> error.printStackTrace(), 
+     () -> // System.out.println("Done"));
 ```
 
 ### fromArray
@@ -82,8 +82,8 @@ for (int i = 0; i < array.length; i++) {
 
 Observable<Integer> observable = Observable.fromArray(array);
 
-observable.subscribe(item -> System.out.println(item), error -> error.printStackTrace(), 
-     () -> System.out.println("Done"));
+observable.subscribe(item -> // System.out.println(item), error -> error.printStackTrace(), 
+     () -> // System.out.println("Done"));
 ```
 
 *Note: RxJava does not support primitive arrays, only (generic) reference arrays.*
@@ -98,14 +98,14 @@ When a consumer subscribes, the given `java.util.concurrent.Callable` is invoked
 
 ```java
 Callable<String> callable = () -> {
-    System.out.println("Hello World!");
+    // System.out.println("Hello World!");
     return "Hello World!");
 }
 
 Observable<String> observable = Observable.fromCallable(callable);
 
-observable.subscribe(item -> System.out.println(item), error -> error.printStackTrace(), 
-    () -> System.out.println("Done"));
+observable.subscribe(item -> // System.out.println(item), error -> error.printStackTrace(), 
+    () -> // System.out.println("Done"));
 ```
 
 *Remark: In `Completable`, the actual returned value is ignored and the `Completable` simply completes.*
@@ -119,11 +119,11 @@ When a consumer subscribes, the given `io.reactivex.function.Action` is invoked 
 #### fromAction example:
 
 ```java
-Action action = () -> System.out.println("Hello World!");
+Action action = () -> // System.out.println("Hello World!");
 
 Completable completable = Completable.fromAction(action);
 
-completable.subscribe(() -> System.out.println("Done"), error -> error.printStackTrace());
+completable.subscribe(() -> // System.out.println("Done"), error -> error.printStackTrace());
 ```
 
 *Note: the difference between `fromAction` and `fromRunnable` is that the `Action` interface allows throwing a checked exception while the `java.lang.Runnable` does not.*
@@ -137,11 +137,11 @@ When a consumer subscribes, the given `io.reactivex.function.Action` is invoked 
 #### fromRunnable example:
 
 ```java
-Runnable runnable = () -> System.out.println("Hello World!");
+Runnable runnable = () -> // System.out.println("Hello World!");
 
 Completable completable = Completable.fromRunnable(runnable);
 
-completable.subscribe(() -> System.out.println("Done"), error -> error.printStackTrace());
+completable.subscribe(() -> // System.out.println("Done"), error -> error.printStackTrace());
 ```
 
 *Note: the difference between `fromAction` and `fromRunnable` is that the `Action` interface allows throwing a checked exception while the `java.lang.Runnable` does not.*
@@ -162,9 +162,9 @@ Future<String> future = executor.schedule(() -> "Hello world!", 1, TimeUnit.SECO
 Observable<String> observable = Observable.fromFuture(future);
 
 observable.subscribe(
-    item -> System.out.println(item), 
+    item -> // System.out.println(item), 
     error -> error.printStackTrace(),
-    () -> System.out.println("Done"));
+    () -> // System.out.println("Done"));
 
 executor.shutdown();
 ```
@@ -195,9 +195,9 @@ Flux<Integer> reactorFlux = Flux.fromCompletionStage(CompletableFuture.<Integer>
 Observable<Integer> observable = Observable.fromPublisher(reactorFlux);
 
 observable.subscribe(
-    item -> System.out.println(item), 
+    item -> // System.out.println(item), 
     error -> error.printStackTrace(),
-    () -> System.out.println("Done"));
+    () -> // System.out.println("Done"));
 ```
 
 ## generate
@@ -218,7 +218,7 @@ Flowable<Integer> flowable = Flowable.generate(() -> startValue, (s, emitter) ->
 	emitter.onNext(nextValue);
 	return nextValue;
 });
-flowable.subscribe(value -> System.out.println(value));
+flowable.subscribe(value -> // System.out.println(value));
 ```
 
 ## create
@@ -248,8 +248,8 @@ ObservableOnSubscribe<String> handler = emitter -> {
 
 Observable<String> observable = Observable.create(handler);
 
-observable.subscribe(item -> System.out.println(item), error -> error.printStackTrace(),
-     () -> System.out.println("Done"));
+observable.subscribe(item -> // System.out.println(item), error -> error.printStackTrace(),
+     () -> // System.out.println("Done"));
 
 Thread.sleep(2000);
 executor.shutdown();
@@ -277,11 +277,11 @@ Observable<Long> observable = Observable.defer(() -> {
     return Observable.just(time);
 });
 
-observable.subscribe(time -> System.out.println(time));
+observable.subscribe(time -> // System.out.println(time));
 
 Thread.sleep(1000);
 
-observable.subscribe(time -> System.out.println(time));
+observable.subscribe(time -> // System.out.println(time));
 ```
 
 ## range
@@ -301,8 +301,8 @@ Observable<Integer> indexes = Observable.range(0, greeting.length());
 Observable<Character> characters = indexes
     .map(index -> greeting.charAt(index));
 
-characters.subscribe(character -> System.out.print(character), error -> error.printStackTrace(),
-        () -> System.out.println());
+characters.subscribe(character -> // System.out.print(character), error -> error.printStackTrace(),
+        () -> // System.out.println());
 ```
 
 ## interval
@@ -320,9 +320,9 @@ Observable<Long> clock = Observable.interval(1, TimeUnit.SECONDS);
 
 clock.subscribe(time -> {
     if (time % 2 == 0) {
-        System.out.println("Tick");
+        // System.out.println("Tick");
     } else {
-        System.out.println("Tock");
+        // System.out.println("Tock");
     }
 });
 ```
@@ -340,7 +340,7 @@ After the specified time, this reactive source signals a single `0L` (then compl
 ```java
 Observable<Long> eggTimer = Observable.timer(5, TimeUnit.MINUTES);
 
-eggTimer.blockingSubscribe(v -> System.out.println("Egg is ready!"));
+eggTimer.blockingSubscribe(v -> // System.out.println("Egg is ready!"));
 ```
 
 ## empty
@@ -357,9 +357,9 @@ This type of source signals completion immediately upon subscription.
 Observable<String> empty = Observable.empty();
 
 empty.subscribe(
-    v -> System.out.println("This should never be printed!"), 
-    error -> System.out.println("Or this!"),
-    () -> System.out.println("Done will be printed."));
+    v -> // System.out.println("This should never be printed!"), 
+    error -> // System.out.println("Or this!"),
+    () -> // System.out.println("Done will be printed."));
 ```
 
 ## never
@@ -376,9 +376,9 @@ This type of source does not signal any `onNext`, `onSuccess`, `onError` or `onC
 Observable<String> never = Observable.never();
 
 never.subscribe(
-    v -> System.out.println("This should never be printed!"), 
-    error -> System.out.println("Or this!"),
-    () -> System.out.println("This neither!"));
+    v -> // System.out.println("This should never be printed!"), 
+    error -> // System.out.println("Or this!"),
+    () -> // System.out.println("This neither!"));
 ```
 
 ## error
@@ -395,9 +395,9 @@ Signal an error, either pre-existing or generated via a `java.util.concurrent.Ca
 Observable<String> error = Observable.error(new IOException());
 
 error.subscribe(
-    v -> System.out.println("This should never be printed!"), 
+    v -> // System.out.println("This should never be printed!"), 
     e -> e.printStackTrace(),
-    () -> System.out.println("This neither!"));
+    () -> // System.out.println("This neither!"));
 ```
 
 A typical use case is to conditionally map or suppress an exception in a chain utilizing `onErrorResumeNext`:
@@ -419,8 +419,8 @@ Observable<String> result = observable.onErrorResumeNext(error -> {
 
 for (int i = 0; i < 10; i++) {
     result.subscribe(
-        v -> System.out.println("This should never be printed!"), 
+        v -> // System.out.println("This should never be printed!"), 
         error -> error.printStackTrace(),
-        () -> System.out.println("Done"));
+        () -> // System.out.println("Done"));
 }
 ```

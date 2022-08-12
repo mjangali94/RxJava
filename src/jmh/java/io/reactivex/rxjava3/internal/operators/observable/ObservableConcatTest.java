@@ -113,7 +113,7 @@ public class ObservableConcatTest extends RxJavaTest {
     public void nestedAsyncConcatLoop() throws Throwable {
         for (int i = 0; i < 500; i++) {
             if (i % 10 == 0) {
-                System.out.println("testNestedAsyncConcat >> " + i);
+                // System.out.println("testNestedAsyncConcat >> " + i);
             }
             nestedAsyncConcat();
         }
@@ -146,12 +146,12 @@ public class ObservableConcatTest extends RxJavaTest {
                         try {
                             // emit first
                             if (!d.isDisposed()) {
-                                System.out.println("Emit o1");
+                                // System.out.println("Emit o1");
                                 observer.onNext(Observable.unsafeCreate(o1));
                             }
                             // emit second
                             if (!d.isDisposed()) {
-                                System.out.println("Emit o2");
+                                // System.out.println("Emit o2");
                                 observer.onNext(Observable.unsafeCreate(o2));
                             }
                             // wait until sometime later and emit third
@@ -161,13 +161,13 @@ public class ObservableConcatTest extends RxJavaTest {
                                 observer.onError(e);
                             }
                             if (!d.isDisposed()) {
-                                System.out.println("Emit o3");
+                                // System.out.println("Emit o3");
                                 observer.onNext(Observable.unsafeCreate(o3));
                             }
                         } catch (Throwable e) {
                             observer.onError(e);
                         } finally {
-                            System.out.println("Done parent Observable");
+                            // System.out.println("Done parent Observable");
                             observer.onComplete();
                             parentHasFinished.countDown();
                         }
@@ -182,9 +182,9 @@ public class ObservableConcatTest extends RxJavaTest {
         parentHasStarted.await();
         try {
             // wait for first 2 async observables to complete
-            System.out.println("Thread1 is starting ... waiting for it to complete ...");
+            // System.out.println("Thread1 is starting ... waiting for it to complete ...");
             o1.waitForThreadDone();
-            System.out.println("Thread2 is starting ... waiting for it to complete ...");
+            // System.out.println("Thread2 is starting ... waiting for it to complete ...");
             o2.waitForThreadDone();
         } catch (Throwable e) {
             throw new RuntimeException("failed waiting on threads", e);
@@ -630,7 +630,7 @@ public class ObservableConcatTest extends RxJavaTest {
                 // ignored
                 }
                 if (counter.getAndIncrement() % 100 == 0) {
-                    System.out.println("testIssue2890NoStackoverflow -> " + counter.get());
+                    // System.out.println("testIssue2890NoStackoverflow -> " + counter.get());
                 }
                 ;
             }
@@ -662,7 +662,7 @@ public class ObservableConcatTest extends RxJavaTest {
                 return;
             }
             if (i % 1000 == 0) {
-                System.out.println("concatMapRangeAsyncLoop > " + i);
+                // System.out.println("concatMapRangeAsyncLoop > " + i);
             }
             TestObserverEx<Integer> to = new TestObserverEx<>();
             Observable.range(0, 1000).concatMap(new Function<Integer, Observable<Integer>>() {

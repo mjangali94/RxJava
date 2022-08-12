@@ -92,7 +92,7 @@ public class FlowablePublishTest extends RxJavaTest {
 
             @Override
             public void run() {
-                System.out.println("^^^^^^^^^^^^^ completed FAST");
+                // System.out.println("^^^^^^^^^^^^^ completed FAST");
             }
         });
         Flowable<Integer> slow = is.observeOn(Schedulers.computation()).map(new Function<Integer, Integer>() {
@@ -114,7 +114,7 @@ public class FlowablePublishTest extends RxJavaTest {
 
             @Override
             public void run() {
-                System.out.println("^^^^^^^^^^^^^ completed SLOW");
+                // System.out.println("^^^^^^^^^^^^^ completed SLOW");
             }
         });
         TestSubscriber<Integer> ts = new TestSubscriber<>();
@@ -154,7 +154,7 @@ public class FlowablePublishTest extends RxJavaTest {
         ts.assertNoErrors();
         ts.assertValues(0, 1, 2, 3);
         assertEquals(5, emitted.get());
-        System.out.println(ts.values());
+        // System.out.println(ts.values());
     }
 
     // use case from https://github.com/ReactiveX/RxJava/issues/1732
@@ -171,7 +171,7 @@ public class FlowablePublishTest extends RxJavaTest {
             }
         })).subscribe(ts);
         xsp.connect();
-        System.out.println(ts.values());
+        // System.out.println(ts.values());
     }
 
     @Test
@@ -261,8 +261,8 @@ public class FlowablePublishTest extends RxJavaTest {
         ts2.assertValue(1);
         ts2.assertNoErrors();
         ts2.assertTerminated();
-        System.out.println(connection);
-        System.out.println(connection2);
+        // System.out.println(connection);
+        // System.out.println(connection2);
     }
 
     @Test
@@ -1145,7 +1145,7 @@ public class FlowablePublishTest extends RxJavaTest {
 
             @Override
             public void accept(Subscription v) throws Exception {
-                System.out.println("Subscribed");
+                // System.out.println("Subscribed");
             }
         }).publish(10).refCount();
         Flowable<Integer> evenNumbers = source.filter(new Predicate<Integer>() {

@@ -57,11 +57,11 @@ import io.reactivex.rxjava3.internal.util.EndConsumerHelper;
  *     .subscribeWith(new ResourceSingleObserver&lt;Integer&gt;() {
  *         &#64;Override public void onStart() {
  *             add(Schedulers.single()
- *                 .scheduleDirect(() -&gt; System.out.println("Time!"),
+ *                 .scheduleDirect(() -&gt; // System.out.println("Time!"),
  *                     2, TimeUnit.SECONDS));
  *         }
  *         &#64;Override public void onSuccess(Integer t) {
- *             System.out.println(t);
+ *             // System.out.println(t);
  *             dispose();
  *         }
  *         &#64;Override public void onError(Throwable t) {

@@ -47,7 +47,7 @@ Calculates the average of `Number`s emitted by an `Observable` and emits this av
 
 ```java
 Observable<Integer> numbers = Observable.just(1, 2, 3);
-MathObservable.averageDouble(numbers).subscribe((Double avg) -> System.out.println(avg));
+MathObservable.averageDouble(numbers).subscribe((Double avg) -> // System.out.println(avg));
 
 // prints 2.0
 ```
@@ -64,7 +64,7 @@ Calculates the average of `Number`s emitted by an `Observable` and emits this av
 
 ```java
 Observable<Integer> numbers = Observable.just(1, 2, 3);
-MathObservable.averageFloat(numbers).subscribe((Float avg) -> System.out.println(avg));
+MathObservable.averageFloat(numbers).subscribe((Float avg) -> // System.out.println(avg));
 
 // prints 2.0
 ```
@@ -125,7 +125,7 @@ Adds the `Double`s emitted by an `Observable` and emits this sum.
 
 ```java
 Observable<Double> numbers = Observable.just(1.0, 2.0, 3.0);
-MathObservable.sumDouble(numbers).subscribe((Double sum) -> System.out.println(sum));
+MathObservable.sumDouble(numbers).subscribe((Double sum) -> // System.out.println(sum));
 
 // prints 6.0
 ```
@@ -142,7 +142,7 @@ Adds the `Float`s emitted by an `Observable` and emits this sum.
 
 ```java
 Observable<Float> numbers = Observable.just(1.0F, 2.0F, 3.0F);
-MathObservable.sumFloat(numbers).subscribe((Float sum) -> System.out.println(sum));
+MathObservable.sumFloat(numbers).subscribe((Float sum) -> // System.out.println(sum));
 
 // prints 6.0
 ```
@@ -159,7 +159,7 @@ Adds the `Integer`s emitted by an `Observable` and emits this sum.
 
 ```java
 Observable<Integer> numbers = Observable.range(1, 100);
-MathObservable.sumInt(numbers).subscribe((Integer sum) -> System.out.println(sum));
+MathObservable.sumInt(numbers).subscribe((Integer sum) -> // System.out.println(sum));
 
 // prints 5050
 ```
@@ -176,7 +176,7 @@ Adds the `Long`s emitted by an `Observable` and emits this sum.
 
 ```java
 Observable<Long> numbers = Observable.rangeLong(1L, 100L);
-MathObservable.sumLong(numbers).subscribe((Long sum) -> System.out.println(sum));
+MathObservable.sumLong(numbers).subscribe((Long sum) -> // System.out.println(sum));
 
 // prints 5050
 ```

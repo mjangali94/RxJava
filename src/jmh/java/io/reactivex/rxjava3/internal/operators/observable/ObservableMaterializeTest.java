@@ -140,7 +140,7 @@ public class ObservableMaterializeTest extends RxJavaTest {
                 public void run() {
                     for (String s : valuesToReturn) {
                         if (s == null) {
-                            System.out.println("throwing exception");
+                            // System.out.println("throwing exception");
                             try {
                                 Thread.sleep(100);
                             } catch (Throwable e) {
@@ -151,7 +151,7 @@ public class ObservableMaterializeTest extends RxJavaTest {
                             observer.onNext(s);
                         }
                     }
-                    System.out.println("subscription complete");
+                    // System.out.println("subscription complete");
                     observer.onComplete();
                 }
             });

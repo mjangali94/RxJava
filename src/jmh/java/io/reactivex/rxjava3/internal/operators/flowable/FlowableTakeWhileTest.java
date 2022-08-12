@@ -169,7 +169,7 @@ public class FlowableTakeWhileTest extends RxJavaTest {
             e.printStackTrace();
             fail(e.getMessage());
         }
-        System.out.println("TestFlowable thread finished");
+        // System.out.println("TestFlowable thread finished");
         verify(subscriber, times(1)).onNext("one");
         verify(subscriber, never()).onNext("two");
         verify(subscriber, never()).onNext("three");
@@ -191,16 +191,16 @@ public class FlowableTakeWhileTest extends RxJavaTest {
 
         @Override
         public void subscribe(final Subscriber<? super String> subscriber) {
-            System.out.println("TestFlowable subscribed to ...");
+            // System.out.println("TestFlowable subscribed to ...");
             subscriber.onSubscribe(upstream);
             t = new Thread(new Runnable() {
 
                 @Override
                 public void run() {
                     try {
-                        System.out.println("running TestFlowable thread");
+                        // System.out.println("running TestFlowable thread");
                         for (String s : values) {
-                            System.out.println("TestFlowable onNext: " + s);
+                            // System.out.println("TestFlowable onNext: " + s);
                             subscriber.onNext(s);
                         }
                         subscriber.onComplete();
@@ -209,9 +209,9 @@ public class FlowableTakeWhileTest extends RxJavaTest {
                     }
                 }
             });
-            System.out.println("starting TestFlowable thread");
+            // System.out.println("starting TestFlowable thread");
             t.start();
-            System.out.println("done starting TestFlowable thread");
+            // System.out.println("done starting TestFlowable thread");
         }
     }
 

@@ -23,9 +23,9 @@ given two or more source Observables, emits all of the items from the first of t
     Observable source1 = Observable.range(1, 5);
     Observable source2 = Observable.range(6, 5);
     Observable.amb(new ArrayList(Arrays.asList(source1, source2)))
-        .subscribe(next -> System.out.printf("next: %s\n", next), // onNext
-            throwable -> System.out.printf("error: %s\n", throwable), //onError
-            () -> System.out.println("Completed") //onComplete
+        .subscribe(next -> // System.out.printf("next: %s\n", next), // onNext
+            throwable -> // System.out.printf("error: %s\n", throwable), //onError
+            () -> // System.out.println("Completed") //onComplete
         );
 ```
 ## defaultIfEmpty
@@ -37,9 +37,9 @@ given two or more source Observables, emits all of the items from the first of t
 emit items from the source Observable, or emit a default item if the source Observable completes after emitting no items
 
 ```java
- Observable.empty().defaultIfEmpty(1).blockingSubscribe(next -> System.out.printf("next: %s\n", next), // onNext
-                throwable -> System.out.printf("error: %s", throwable), //onError
-                () -> System.out.println("Completed") //onComplete
+ Observable.empty().defaultIfEmpty(1).blockingSubscribe(next -> // System.out.printf("next: %s\n", next), // onNext
+                throwable -> // System.out.printf("error: %s", throwable), //onError
+                () -> // System.out.println("Completed") //onComplete
         );
 ```
 
@@ -55,9 +55,9 @@ discard items emitted by a source Observable until a second Observable emits an 
 Observable observable1 = Observable.range(1, 10).doOnNext(next -> Thread.sleep(1000));
         
 observable1.skipUntil(Observable.timer(3, TimeUnit.SECONDS))
-    .subscribe(next -> System.out.printf("next: %s\n", next), // onNext
-        throwable -> System.out.printf("error: %s", throwable), //onError
-        () -> System.out.println("Completed") //onComplete
+    .subscribe(next -> // System.out.printf("next: %s\n", next), // onNext
+        throwable -> // System.out.printf("error: %s", throwable), //onError
+        () -> // System.out.println("Completed") //onComplete
     );
 ```
 ## skipWhile
@@ -70,9 +70,9 @@ discard items emitted by an Observable until a specified condition is false, the
 
 ```java
 Observable.range(1, 10).skipWhile(next -> next < 5)
-    .subscribe(next -> System.out.printf("next: %s\n", next), // onNext
-        throwable -> System.out.printf("error: %s", throwable), //onError
-        () -> System.out.println("Completed") //onComplete
+    .subscribe(next -> // System.out.printf("next: %s\n", next), // onNext
+        throwable -> // System.out.printf("error: %s", throwable), //onError
+        () -> // System.out.println("Completed") //onComplete
     );
 ```
 
@@ -86,9 +86,9 @@ emits the items from the source Observable until a second Observable emits an it
 
 ```java
 Observable.range(1, 10).takeUntil(value -> value >= 5)
-    .subscribe(next -> System.out.printf("next: %s\n", next), // onNext
-        throwable -> System.out.printf("error: %s", throwable), //onError
-        () -> System.out.println("Completed") //onComplete
+    .subscribe(next -> // System.out.printf("next: %s\n", next), // onNext
+        throwable -> // System.out.printf("error: %s", throwable), //onError
+        () -> // System.out.println("Completed") //onComplete
     );
 ```
 
@@ -102,9 +102,9 @@ emit items emitted by an Observable as long as a specified condition is true, th
 
 ```java
      Observable.range(1, 10).takeWhile(value -> value <= 5)
-                .subscribe(next -> System.out.printf("next: %s\n", next), // onNext
-                        throwable -> System.out.printf("error: %s", throwable), //onError
-                        () -> System.out.println("Completed") //onComplete
+                .subscribe(next -> // System.out.printf("next: %s\n", next), // onNext
+                        throwable -> // System.out.printf("error: %s", throwable), //onError
+                        () -> // System.out.println("Completed") //onComplete
                 );
 ```
 
@@ -125,8 +125,8 @@ emit items emitted by an Observable as long as a specified condition is true, th
 determine whether all items emitted by an Observable meet some criteria
 
 ```java
-Flowable.range(0,10).doOnNext(next -> System.out.println(next)).all(integer -> integer<10).
-    blockingSubscribe(success->System.out.println("Success: "+success));
+Flowable.range(0,10).doOnNext(next -> // System.out.println(next)).all(integer -> integer<10).
+    blockingSubscribe(success->// System.out.println("Success: "+success));
 ```
 
 ## contains
@@ -137,8 +137,8 @@ Flowable.range(0,10).doOnNext(next -> System.out.println(next)).all(integer -> i
 determine whether an Observable emits a particular item or not
 
 ```java
-Flowable.range(1,10).doOnNext(next->System.out.println(next))
-    .contains(4).blockingSubscribe(contains->System.out.println("contains: "+contains));
+Flowable.range(1,10).doOnNext(next->// System.out.println(next))
+    .contains(4).blockingSubscribe(contains->// System.out.println("contains: "+contains));
 ```
 
 ## isEmpty
@@ -149,7 +149,7 @@ Flowable.range(1,10).doOnNext(next->System.out.println(next))
 determine whether the source Publisher is empty
 
 ```java
-Flowable.empty().isEmpty().subscribe(isEmpty -> System.out.printf("isEmpty: %s", isEmpty));
+Flowable.empty().isEmpty().subscribe(isEmpty -> // System.out.printf("isEmpty: %s", isEmpty));
 ```
 
 ## sequenceEqual
@@ -160,10 +160,10 @@ Flowable.empty().isEmpty().subscribe(isEmpty -> System.out.printf("isEmpty: %s",
 test the equality of the sequences emitted by two Observables
 
 ```java
-Flowable<Integer> flowable1 = Flowable.range(1,3).doOnNext(next-> System.out.print("flowable1: "+next + " "));
+Flowable<Integer> flowable1 = Flowable.range(1,3).doOnNext(next-> // System.out.print("flowable1: "+next + " "));
 
-Flowable<Integer> flowable2 = Flowable.range(1,3).doOnNext(next-> System.out.println("flowable2: "+next));
+Flowable<Integer> flowable2 = Flowable.range(1,3).doOnNext(next-> // System.out.println("flowable2: "+next));
 
 Flowable.sequenceEqual(Flowable.fromPublisher(flowable1),Flowable.fromPublisher(flowable2))
-    .blockingSubscribe(sequenceEqual->System.out.println("sequenceEqual: "+sequenceEqual));
+    .blockingSubscribe(sequenceEqual->// System.out.println("sequenceEqual: "+sequenceEqual));
 ```

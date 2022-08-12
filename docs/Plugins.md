@@ -45,7 +45,7 @@ Example:
 
 ```java
 RxJavaHooks.setOnObservableCreate(o -> { 
-    System.out.println("Creating " + o.getClass());
+    // System.out.println("Creating " + o.getClass());
     return o; 
 });
 try {

@@ -59,8 +59,8 @@ public class FlowableUnsubscribeOnTest extends RxJavaTest {
             assertNotNull(subscribeThread.get());
             assertNotSame(Thread.currentThread(), subscribeThread.get());
             // True for Schedulers.newThread()
-            System.out.println("unsubscribeThread: " + unsubscribeThread);
-            System.out.println("subscribeThread.get(): " + subscribeThread.get());
+            // System.out.println("unsubscribeThread: " + unsubscribeThread);
+            // System.out.println("subscribeThread.get(): " + subscribeThread.get());
             assertSame(unsubscribeThread, uiEventLoop.getThread());
             ts.assertValues(1, 2);
             ts.assertTerminated();
@@ -98,9 +98,9 @@ public class FlowableUnsubscribeOnTest extends RxJavaTest {
             assertNotNull(subscribeThread.get());
             assertNotSame(Thread.currentThread(), subscribeThread.get());
             // True for Schedulers.newThread()
-            System.out.println("UI Thread: " + uiEventLoop.getThread());
-            System.out.println("unsubscribeThread: " + unsubscribeThread);
-            System.out.println("subscribeThread.get(): " + subscribeThread.get());
+            // System.out.println("UI Thread: " + uiEventLoop.getThread());
+            // System.out.println("unsubscribeThread: " + unsubscribeThread);
+            // System.out.println("subscribeThread.get(): " + subscribeThread.get());
             assertSame(unsubscribeThread, uiEventLoop.getThread());
             ts.assertValues(1, 2);
             ts.assertTerminated();
@@ -117,7 +117,7 @@ public class FlowableUnsubscribeOnTest extends RxJavaTest {
 
         @Override
         public void cancel() {
-            System.out.println("unsubscribe invoked: " + Thread.currentThread());
+            // System.out.println("unsubscribe invoked: " + Thread.currentThread());
             thread = Thread.currentThread();
             latch.countDown();
         }

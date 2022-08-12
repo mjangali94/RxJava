@@ -33,7 +33,7 @@ public class ObservableScanTests extends RxJavaTest {
 
             @Override
             public void accept(HashMap<String, String> pv) {
-                System.out.println(pv);
+                // System.out.println(pv);
             }
         });
         // make sure the event streams receive their interrupt

@@ -15,13 +15,13 @@ The following example code shows two Subscribers subscribing to the same Observa
 ```java
 Observable firstMillion = Observable.range(1, 1000000).sample(7, java.util.concurrent.TimeUnit.MILLISECONDS);
 
-firstMillion.subscribe(next -> System.out.println("Subscriber #1: " + next), // onNext
-		throwable -> System.out.println("Error: " + throwable), // onError
-		() -> System.out.println("Sequence #1 complete") // onComplete
+firstMillion.subscribe(next -> // System.out.println("Subscriber #1: " + next), // onNext
+		throwable -> // System.out.println("Error: " + throwable), // onError
+		() -> // System.out.println("Sequence #1 complete") // onComplete
 	);
-firstMillion.subscribe(next -> System.out.println("Subscriber #2: " + next), // onNext
-        throwable -> System.out.println("Error: " + throwable), // onError
-		() -> System.out.println("Sequence #2 complete") // onComplete
+firstMillion.subscribe(next -> // System.out.println("Subscriber #2: " + next), // onNext
+        throwable -> // System.out.println("Error: " + throwable), // onError
+		() -> // System.out.println("Sequence #2 complete") // onComplete
     );
 ```
 ```
@@ -40,14 +40,14 @@ Sequence #2 complete
 ```java
 ConnectableObservable firstMillion = Observable.range(1, 1000000).sample(7, java.util.concurrent.TimeUnit.MILLISECONDS).publish();
 
-firstMillion.subscribe(next -> System.out.println("Subscriber #1: " + next), // onNext
-		throwable -> System.out.println("Error: " + throwable), // onError
-		() -> System.out.println("Sequence #1 complete") // onComplete
+firstMillion.subscribe(next -> // System.out.println("Subscriber #1: " + next), // onNext
+		throwable -> // System.out.println("Error: " + throwable), // onError
+		() -> // System.out.println("Sequence #1 complete") // onComplete
 	);
 
-firstMillion.subscribe(next -> System.out.println("Subscriber #2: " + next), // onNext
-		throwable -> System.out.println("Error: " + throwable), // onError
-		() -> System.out.println("Sequence #2 complete") // onComplete
+firstMillion.subscribe(next -> // System.out.println("Subscriber #2: " + next), // onNext
+		throwable -> // System.out.println("Error: " + throwable), // onError
+		() -> // System.out.println("Sequence #2 complete") // onComplete
 	);
 
 firstMillion.connect();

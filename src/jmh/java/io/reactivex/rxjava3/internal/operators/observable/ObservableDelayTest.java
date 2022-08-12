@@ -540,7 +540,7 @@ public class ObservableDelayTest extends RxJavaTest {
 
             @Override
             public void accept(Notification<Integer> t1) {
-                System.out.println(t1);
+                // System.out.println(t1);
             }
         });
         TestObserver<Integer> observer = new TestObserver<>();

@@ -403,7 +403,7 @@ public class FlowableScanTest extends RxJavaTest {
 
             @Override
             public void accept(HashMap<String, String> v) {
-                System.out.println(v);
+                // System.out.println(v);
             }
         });
     }

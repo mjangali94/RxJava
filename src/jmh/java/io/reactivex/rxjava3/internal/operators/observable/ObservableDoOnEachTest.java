@@ -173,7 +173,7 @@ public class ObservableDoOnEachTest extends RxJavaTest {
     // .doOnNext(new Consumer<Object>() {
     // @Override
     // public void accept(Object o) {
-    // System.out.println("Won't come here");
+    // // System.out.println("Won't come here");
     // }
     // })
     // .subscribe();
@@ -181,7 +181,7 @@ public class ObservableDoOnEachTest extends RxJavaTest {
     // } catch (OnErrorNotImplementedException e) {
     // assertTrue(e.getCause() instanceof NullPointerException);
     // assertEquals(e.getCause().getMessage(), "Test NPE");
-    // System.out.println("Received exception: " + e);
+    // // System.out.println("Received exception: " + e);
     // }
     // }
     @Test

@@ -87,7 +87,7 @@ final class MyEmitter implements Producer, Subscription {
 
     @Override
     public void unsubscribe() {
-        System.out.println("Unsubscribed");
+        // System.out.println("Unsubscribed");
     }
 
     @Override

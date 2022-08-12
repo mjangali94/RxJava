@@ -43,19 +43,19 @@ import io.reactivex.rxjava3.internal.util.EndConsumerHelper;
  *     Observable.range(1, 5)
  *     .subscribeWith(new DisposableObserver&lt;Integer&gt;() {
  *         &#64;Override public void onStart() {
- *             System.out.println("Start!");
+ *             // System.out.println("Start!");
  *         }
  *         &#64;Override public void onNext(Integer t) {
  *             if (t == 3) {
  *                 dispose();
  *             }
- *             System.out.println(t);
+ *             // System.out.println(t);
  *         }
  *         &#64;Override public void onError(Throwable t) {
  *             t.printStackTrace();
  *         }
  *         &#64;Override public void onComplete() {
- *             System.out.println("Done!");
+ *             // System.out.println("Done!");
  *         }
  *     });
  * // ...

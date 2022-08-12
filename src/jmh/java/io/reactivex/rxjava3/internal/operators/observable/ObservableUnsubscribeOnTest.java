@@ -58,8 +58,8 @@ public class ObservableUnsubscribeOnTest extends RxJavaTest {
             assertNotNull(subscribeThread.get());
             assertNotSame(Thread.currentThread(), subscribeThread.get());
             // True for Schedulers.newThread()
-            System.out.println("unsubscribeThread: " + unsubscribeThread);
-            System.out.println("subscribeThread.get(): " + subscribeThread.get());
+            // System.out.println("unsubscribeThread: " + unsubscribeThread);
+            // System.out.println("subscribeThread.get(): " + subscribeThread.get());
             assertSame(unsubscribeThread.toString(), unsubscribeThread, uiEventLoop.getThread());
             observer.assertValues(1, 2);
             observer.assertTerminated();
@@ -97,9 +97,9 @@ public class ObservableUnsubscribeOnTest extends RxJavaTest {
             assertNotNull(subscribeThread.get());
             assertNotSame(Thread.currentThread(), subscribeThread.get());
             // True for Schedulers.newThread()
-            System.out.println("UI Thread: " + uiEventLoop.getThread());
-            System.out.println("unsubscribeThread: " + unsubscribeThread);
-            System.out.println("subscribeThread.get(): " + subscribeThread.get());
+            // System.out.println("UI Thread: " + uiEventLoop.getThread());
+            // System.out.println("unsubscribeThread: " + unsubscribeThread);
+            // System.out.println("subscribeThread.get(): " + subscribeThread.get());
             assertSame(unsubscribeThread, uiEventLoop.getThread());
             observer.assertValues(1, 2);
             observer.assertTerminated();
@@ -119,7 +119,7 @@ public class ObservableUnsubscribeOnTest extends RxJavaTest {
         @Override
         public void dispose() {
             set(true);
-            System.out.println("unsubscribe invoked: " + Thread.currentThread());
+            // System.out.println("unsubscribe invoked: " + Thread.currentThread());
             thread = Thread.currentThread();
             latch.countDown();
         }

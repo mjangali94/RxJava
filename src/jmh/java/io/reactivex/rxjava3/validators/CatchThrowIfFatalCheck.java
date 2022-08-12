@@ -30,7 +30,7 @@ public class CatchThrowIfFatalCheck {
     public void check() throws Exception {
         File f = TestHelper.findSource("Flowable");
         if (f == null) {
-            System.out.println("Unable to find sources of RxJava");
+            // System.out.println("Unable to find sources of RxJava");
             return;
         }
         Queue<File> dirs = new ArrayDeque<>();
@@ -66,7 +66,7 @@ public class CatchThrowIfFatalCheck {
         }
         if (errors != 0) {
             fail.insert(0, "Found " + errors + " cases\n");
-            System.out.println(fail);
+            // System.out.println(fail);
             throw new AssertionError(fail.toString());
         }
     }

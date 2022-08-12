@@ -635,7 +635,7 @@ public class ParamValidationCheckerTest {
                 if (ignoreList != null) {
                     for (ParamIgnore e : ignoreList) {
                         if (Arrays.equals(e.arguments, m.getParameterTypes())) {
-                            System.out.println("CheckClass - ignore: " + m);
+                            // System.out.println("CheckClass - ignore: " + m);
                             continue outer;
                         }
                     }

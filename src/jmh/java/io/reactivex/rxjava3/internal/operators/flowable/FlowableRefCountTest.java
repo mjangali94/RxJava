@@ -107,7 +107,7 @@ public class FlowableRefCountTest extends RxJavaTest {
         // unsubscribe s2 first as we're counting in 1 and there can be a race between unsubscribe and one subscriber getting a value but not the other
         d2.dispose();
         d1.dispose();
-        System.out.println("onNext: " + nextCount.get());
+        // System.out.println("onNext: " + nextCount.get());
         // should emit once for both subscribers
         assertEquals(nextCount.get(), receivedCount.get());
         // only 1 subscribe
@@ -149,7 +149,7 @@ public class FlowableRefCountTest extends RxJavaTest {
         // unsubscribe s2 first as we're counting in 1 and there can be a race between unsubscribe and one subscriber getting a value but not the other
         d2.dispose();
         d1.dispose();
-        System.out.println("onNext Count: " + nextCount.get());
+        // System.out.println("onNext Count: " + nextCount.get());
         // it will emit twice because it is synchronous
         assertEquals(nextCount.get(), receivedCount.get() * 2);
         // it will subscribe twice because it is synchronous
@@ -163,7 +163,7 @@ public class FlowableRefCountTest extends RxJavaTest {
 
             @Override
             public void accept(Integer l) {
-                System.out.println("onNext --------> " + l);
+                // System.out.println("onNext --------> " + l);
                 nextCount.incrementAndGet();
             }
         }).take(4).publish().refCount();
@@ -175,7 +175,7 @@ public class FlowableRefCountTest extends RxJavaTest {
                 receivedCount.incrementAndGet();
             }
         });
-        System.out.println("onNext: " + nextCount.get());
+        // System.out.println("onNext: " + nextCount.get());
         assertEquals(4, receivedCount.get());
         assertEquals(4, receivedCount.get());
     }
@@ -188,7 +188,7 @@ public class FlowableRefCountTest extends RxJavaTest {
 
             @Override
             public void accept(Subscription s) {
-                System.out.println("******************************* Subscribe received");
+                // System.out.println("******************************* Subscribe received");
                 // when we are subscribed
                 subscribeCount.incrementAndGet();
             }
@@ -196,7 +196,7 @@ public class FlowableRefCountTest extends RxJavaTest {
 
             @Override
             public void run() {
-                System.out.println("******************************* Unsubscribe received");
+                // System.out.println("******************************* Unsubscribe received");
                 // when we are unsubscribed
                 unsubscribeCount.incrementAndGet();
             }
@@ -229,7 +229,7 @@ public class FlowableRefCountTest extends RxJavaTest {
 
             @Override
             public void accept(Subscription s) {
-                System.out.println("******************************* Subscribe received");
+                // System.out.println("******************************* Subscribe received");
                 // when we are subscribed
                 subscribeLatch.countDown();
             }
@@ -237,21 +237,21 @@ public class FlowableRefCountTest extends RxJavaTest {
 
             @Override
             public void run() {
-                System.out.println("******************************* Unsubscribe received");
+                // System.out.println("******************************* Unsubscribe received");
                 // when we are unsubscribed
                 unsubscribeLatch.countDown();
             }
         });
         TestSubscriberEx<Long> s = new TestSubscriberEx<>();
         f.publish().refCount().subscribeOn(Schedulers.newThread()).subscribe(s);
-        System.out.println("send unsubscribe");
+        // System.out.println("send unsubscribe");
         // wait until connected
         subscribeLatch.await();
         // now unsubscribe
         s.cancel();
-        System.out.println("DONE sending unsubscribe ... now waiting");
+        // System.out.println("DONE sending unsubscribe ... now waiting");
         if (!unsubscribeLatch.await(3000, TimeUnit.MILLISECONDS)) {
-            System.out.println("Errors: " + s.errors());
+            // System.out.println("Errors: " + s.errors());
             if (s.errors().size() > 0) {
                 s.errors().get(0).printStackTrace();
             }
@@ -274,7 +274,7 @@ public class FlowableRefCountTest extends RxJavaTest {
 
             @Override
             public void run() {
-                System.out.println("******************************* Unsubscribe received");
+                // System.out.println("******************************* Unsubscribe received");
                 // when we are unsubscribed
                 subUnsubCount.decrementAndGet();
             }
@@ -282,13 +282,13 @@ public class FlowableRefCountTest extends RxJavaTest {
 
             @Override
             public void accept(Subscription s) {
-                System.out.println("******************************* SUBSCRIBE received");
+                // System.out.println("******************************* SUBSCRIBE received");
                 subUnsubCount.incrementAndGet();
             }
         });
         TestSubscriberEx<Long> s = new TestSubscriberEx<>();
         f.publish().refCount().subscribeOn(Schedulers.computation()).subscribe(s);
-        System.out.println("send unsubscribe");
+        // System.out.println("send unsubscribe");
         // now immediately unsubscribe while subscribeOn is racing to subscribe
         s.cancel();
         // this generally will mean it won't even subscribe as it is already unsubscribed by the time connect() gets scheduled
@@ -296,8 +296,8 @@ public class FlowableRefCountTest extends RxJavaTest {
         Thread.sleep(10);
         // either we subscribed and then unsubscribed, or we didn't ever even subscribe
         assertEquals(0, subUnsubCount.get());
-        System.out.println("DONE sending unsubscribe ... now waiting");
-        System.out.println("Errors: " + s.errors());
+        // System.out.println("DONE sending unsubscribe ... now waiting");
+        // System.out.println("Errors: " + s.errors());
         if (s.errors().size() > 0) {
             s.errors().get(0).printStackTrace();
         }
@@ -498,7 +498,7 @@ public class FlowableRefCountTest extends RxJavaTest {
 
                 @Override
                 public void accept(Subscription s) {
-                    System.out.println("Subscribing to interval " + intervalSubscribed.incrementAndGet());
+                    // System.out.println("Subscribing to interval " + intervalSubscribed.incrementAndGet());
                 }
             }).flatMap(new Function<Long, Publisher<String>>() {
 
@@ -523,13 +523,13 @@ public class FlowableRefCountTest extends RxJavaTest {
 
                 @Override
                 public void accept(Throwable t1) {
-                    System.out.println("Subscriber 1 onError: " + t1);
+                    // System.out.println("Subscriber 1 onError: " + t1);
                 }
             }).retry(5).subscribe(new Consumer<String>() {
 
                 @Override
                 public void accept(String t1) {
-                    System.out.println("Subscriber 1: " + t1);
+                    // System.out.println("Subscriber 1: " + t1);
                 }
             });
             Thread.sleep(100);
@@ -537,17 +537,17 @@ public class FlowableRefCountTest extends RxJavaTest {
 
                 @Override
                 public void accept(Throwable t1) {
-                    System.out.println("Subscriber 2 onError: " + t1);
+                    // System.out.println("Subscriber 2 onError: " + t1);
                 }
             }).retry(5).subscribe(new Consumer<String>() {
 
                 @Override
                 public void accept(String t1) {
-                    System.out.println("Subscriber 2: " + t1);
+                    // System.out.println("Subscriber 2: " + t1);
                 }
             });
             Thread.sleep(1300);
-            System.out.println(intervalSubscribed.get());
+            // System.out.println(intervalSubscribed.get());
             assertEquals(6, intervalSubscribed.get());
             TestHelper.assertError(errors, 0, OnErrorNotImplementedException.class);
         } finally {

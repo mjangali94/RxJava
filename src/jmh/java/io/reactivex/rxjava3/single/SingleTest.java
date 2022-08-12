@@ -150,14 +150,14 @@ public class SingleTest extends RxJavaTest {
 
             @Override
             public String apply(String v) {
-                System.out.println("SubscribeOn Thread: " + Thread.currentThread());
+                // System.out.println("SubscribeOn Thread: " + Thread.currentThread());
                 return v;
             }
         }).observeOn(Schedulers.computation()).map(new Function<String, String>() {
 
             @Override
             public String apply(String v) {
-                System.out.println("ObserveOn Thread: " + Thread.currentThread());
+                // System.out.println("ObserveOn Thread: " + Thread.currentThread());
                 return v;
             }
         }).toFlowable().subscribe(ts);

@@ -43,7 +43,7 @@ public class TestSchedulerTest extends RxJavaTest {
 
                 @Override
                 public void run() {
-                    System.out.println(scheduler.now(TimeUnit.MILLISECONDS));
+                    // System.out.println(scheduler.now(TimeUnit.MILLISECONDS));
                     try {
                         calledOp.apply(scheduler.now(TimeUnit.MILLISECONDS));
                     } catch (Throwable ex) {
@@ -84,7 +84,7 @@ public class TestSchedulerTest extends RxJavaTest {
 
                 @Override
                 public void run() {
-                    System.out.println(scheduler.now(TimeUnit.MILLISECONDS));
+                    // System.out.println(scheduler.now(TimeUnit.MILLISECONDS));
                     try {
                         calledOp.apply(scheduler.now(TimeUnit.MILLISECONDS));
                     } catch (Throwable ex) {
@@ -124,7 +124,7 @@ public class TestSchedulerTest extends RxJavaTest {
                 @Override
                 public void run() {
                     counter.incrementAndGet();
-                    System.out.println("counter: " + counter.get());
+                    // System.out.println("counter: " + counter.get());
                     inner.schedule(this);
                 }
             });
@@ -146,7 +146,7 @@ public class TestSchedulerTest extends RxJavaTest {
                 @Override
                 public void run() {
                     counter.incrementAndGet();
-                    System.out.println("counter: " + counter.get());
+                    // System.out.println("counter: " + counter.get());
                     inner.schedule(this);
                 }
             });

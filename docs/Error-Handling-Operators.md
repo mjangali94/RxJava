@@ -31,9 +31,9 @@ Instructs a reactive type to invoke the given `io.reactivex.functions.Consumer` 
 Observable.error(new IOException("Something went wrong"))
     .doOnError(error -> System.err.println("The error message is: " + error.getMessage()))
     .subscribe(
-        x -> System.out.println("onNext should never be printed!"),
+        x -> // System.out.println("onNext should never be printed!"),
         Throwable::printStackTrace,
-        () -> System.out.println("onComplete should never be printed!"));
+        () -> // System.out.println("onComplete should never be printed!"));
 ```
 
 ## onErrorComplete
@@ -55,7 +55,7 @@ Completable.fromAction(() -> {
     // Only ignore errors of type java.io.IOException.
     return error instanceof IOException;
 }).subscribe(
-    () -> System.out.println("IOException was ignored"),
+    () -> // System.out.println("IOException was ignored"),
     error -> System.err.println("onError should not be printed!"));
 ```
 
@@ -161,7 +161,7 @@ Observable<String> error = Observable.<String>error(Error::new)
 
 Observable.concat(exception, error)
     .subscribe(
-        message -> System.out.println("onNext: " + message),
+        message -> // System.out.println("onNext: " + message),
         err -> System.err.println("onError: " + err));
 
 // prints:
@@ -188,7 +188,7 @@ Observable<Long> source = Observable.interval(0, 1, TimeUnit.SECONDS)
 
 source.retry((retryCount, error) -> retryCount < 3)
     .blockingSubscribe(
-        x -> System.out.println("onNext: " + x),
+        x -> // System.out.println("onNext: " + x),
         error -> System.err.println("onError: " + error.getMessage()));
 
 // prints:
@@ -222,7 +222,7 @@ Observable<Long> source = Observable.interval(0, 1, TimeUnit.SECONDS)
 
 source.retryUntil(() -> errorCounter.intValue() >= 3)
     .blockingSubscribe(
-        x -> System.out.println("onNext: " + x),
+        x -> // System.out.println("onNext: " + x),
         error -> System.err.println("onError: " + error.getMessage()));
 
 // prints:
@@ -258,7 +258,7 @@ source.retryWhen(errors -> {
     // Count the number of errors.
     .scan(Math::addExact)
 
-    .doOnNext(errorCount -> System.out.println("No. of errors: " + errorCount))
+    .doOnNext(errorCount -> // System.out.println("No. of errors: " + errorCount))
 
     // Limit the maximum number of retries.
     .takeWhile(errorCount -> errorCount < 3)
@@ -266,9 +266,9 @@ source.retryWhen(errors -> {
     // Signal resubscribe event after some delay.
     .flatMapSingle(errorCount -> Single.timer(errorCount, TimeUnit.SECONDS));
 }).blockingSubscribe(
-    x -> System.out.println("onNext: " + x),
+    x -> // System.out.println("onNext: " + x),
     Throwable::printStackTrace,
-    () -> System.out.println("onComplete"));
+    () -> // System.out.println("onComplete"));
 
 // prints:
 // onNext: 0

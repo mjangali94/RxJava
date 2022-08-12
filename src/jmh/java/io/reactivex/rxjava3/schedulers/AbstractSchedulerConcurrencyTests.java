@@ -52,12 +52,12 @@ public abstract class AbstractSchedulerConcurrencyTests extends AbstractSchedule
 
             @Override
             public void onComplete() {
-                System.out.println("--- completed");
+                // System.out.println("--- completed");
             }
 
             @Override
             public void onError(Throwable e) {
-                System.out.println("--- onError");
+                // System.out.println("--- onError");
             }
 
             @Override
@@ -66,11 +66,11 @@ public abstract class AbstractSchedulerConcurrencyTests extends AbstractSchedule
                     cancel();
                     latch.countDown();
                 }
-                System.out.println("==> Received " + args);
+                // System.out.println("==> Received " + args);
             }
         });
         latch.await(1000, TimeUnit.MILLISECONDS);
-        System.out.println("----------- it thinks it is finished ------------------ ");
+        // System.out.println("----------- it thinks it is finished ------------------ ");
         int timeout = 10;
         while (timeout-- > 0 && countGenerated.get() != 2) {
             Thread.sleep(100);
@@ -95,7 +95,7 @@ public abstract class AbstractSchedulerConcurrencyTests extends AbstractSchedule
 
                         @Override
                         public void run() {
-                            System.out.println("Run: " + i++);
+                            // System.out.println("Run: " + i++);
                             if (i == 10) {
                                 latch.countDown();
                                 try {
@@ -141,7 +141,7 @@ public abstract class AbstractSchedulerConcurrencyTests extends AbstractSchedule
 
                         @Override
                         public void run() {
-                            System.out.println("Run: " + i++);
+                            // System.out.println("Run: " + i++);
                             if (i == 10) {
                                 inner.dispose();
                             }
@@ -219,7 +219,7 @@ public abstract class AbstractSchedulerConcurrencyTests extends AbstractSchedule
                 public void run() {
                     i++;
                     if (i % 100000 == 0) {
-                        System.out.println(i + "  Total Memory: " + Runtime.getRuntime().totalMemory() + "  Free: " + Runtime.getRuntime().freeMemory());
+                        // System.out.println(i + "  Total Memory: " + Runtime.getRuntime().totalMemory() + "  Free: " + Runtime.getRuntime().freeMemory());
                     }
                     if (i < 1000000L) {
                         inner.schedule(this);
@@ -247,7 +247,7 @@ public abstract class AbstractSchedulerConcurrencyTests extends AbstractSchedule
                 public void run() {
                     i++;
                     if (i % 100000 == 0) {
-                        System.out.println(i + "  Total Memory: " + Runtime.getRuntime().totalMemory() + "  Free: " + Runtime.getRuntime().freeMemory());
+                        // System.out.println(i + "  Total Memory: " + Runtime.getRuntime().totalMemory() + "  Free: " + Runtime.getRuntime().freeMemory());
                     }
                     if (i < 1000000L) {
                         inner.schedule(this);
@@ -304,19 +304,19 @@ public abstract class AbstractSchedulerConcurrencyTests extends AbstractSchedule
 
                 @Override
                 public void onComplete() {
-                    System.out.println("Completed");
+                    // System.out.println("Completed");
                     completed.set(true);
                 }
 
                 @Override
                 public void onError(Throwable e) {
-                    System.out.println("Error");
+                    // System.out.println("Error");
                 }
 
                 @Override
                 public void onNext(Integer args) {
                     count.incrementAndGet();
-                    System.out.println(args);
+                    // System.out.println(args);
                 }
             };
             obs.subscribe(s);
@@ -325,7 +325,7 @@ public abstract class AbstractSchedulerConcurrencyTests extends AbstractSchedule
             }
             // now unsubscribe and ensure it stops the recursive loop
             s.dispose();
-            System.out.println("unsubscribe");
+            // System.out.println("unsubscribe");
             if (!completionLatch.await(5000, TimeUnit.MILLISECONDS)) {
                 fail("Timed out waiting on completion latch");
             }
@@ -346,8 +346,8 @@ public abstract class AbstractSchedulerConcurrencyTests extends AbstractSchedule
 
             @Override
             public void accept(Integer t) {
-                System.out.println("Thread: " + Thread.currentThread().getName());
-                System.out.println("t: " + t);
+                // System.out.println("Thread: " + Thread.currentThread().getName());
+                // System.out.println("t: " + t);
                 count.incrementAndGet();
             }
         });
@@ -370,8 +370,8 @@ public abstract class AbstractSchedulerConcurrencyTests extends AbstractSchedule
                     throw new RuntimeException("The latch should have released if we are async.", e);
                 }
                 assertNotEquals(Thread.currentThread().getName(), currentThreadName);
-                System.out.println("Thread: " + Thread.currentThread().getName());
-                System.out.println("t: " + t);
+                // System.out.println("Thread: " + Thread.currentThread().getName());
+                // System.out.println("t: " + t);
                 count.incrementAndGet();
                 latch.countDown();
             }

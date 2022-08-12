@@ -53,7 +53,7 @@ public final class JavadocNoThrows {
                         }
                     }
                     if (!found) {
-                        System.out.printf(" at %s.%s.method(%s.java:%s)%n%n", packageName, clazzName, clazzName, i + 1);
+                        // System.out.printf(" at %s.%s.method(%s.java:%s)%n%n", packageName, clazzName, clazzName, i + 1);
                     }
                 }
             }

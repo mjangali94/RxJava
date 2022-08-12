@@ -52,11 +52,11 @@ public class ObservableZipTests extends RxJavaTest {
             @Override
             public void accept(Object pv) {
                 synchronized (pv) {
-                    System.out.println(pv);
+                    // System.out.println(pv);
                 }
             }
         });
-        System.out.println("**** finished");
+        // System.out.println("**** finished");
         // make sure the event streams receive their interrupt
         Thread.sleep(200);
     }
@@ -90,7 +90,7 @@ public class ObservableZipTests extends RxJavaTest {
 
             @Override
             public Object apply(Object[] args) {
-                System.out.println("received: " + args);
+                // System.out.println("received: " + args);
                 Assert.assertEquals("No argument should have been passed", 0, args.length);
                 return invoked;
             }
@@ -110,7 +110,7 @@ public class ObservableZipTests extends RxJavaTest {
 
         @Override
         public void accept(Result t1) {
-            System.out.println("Result: " + t1);
+            // System.out.println("Result: " + t1);
         }
     };
 
@@ -118,7 +118,7 @@ public class ObservableZipTests extends RxJavaTest {
 
         @Override
         public void accept(ExtendedResult t1) {
-            System.out.println("Result: " + t1);
+            // System.out.println("Result: " + t1);
         }
     };
 

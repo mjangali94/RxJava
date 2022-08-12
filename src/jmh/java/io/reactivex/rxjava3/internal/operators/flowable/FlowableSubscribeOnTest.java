@@ -188,11 +188,11 @@ public class FlowableSubscribeOnTest extends RxJavaTest {
         Flowable.range(1, 10000000).subscribeOn(Schedulers.newThread()).take(20).subscribe(ts);
         latch.await();
         Thread t = ts.lastThread();
-        System.out.println("First schedule: " + t);
+        // System.out.println("First schedule: " + t);
         assertTrue(t.getName().startsWith("Rx"));
         ts.request(10);
         ts.awaitDone(20, TimeUnit.SECONDS);
-        System.out.println("After reschedule: " + ts.lastThread());
+        // System.out.println("After reschedule: " + ts.lastThread());
         assertEquals(t, ts.lastThread());
     }
 

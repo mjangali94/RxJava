@@ -76,16 +76,16 @@ import io.reactivex.rxjava3.schedulers.*;
  *     .delay(1, TimeUnit.SECONDS)
  *     .subscribeWith(new DisposableObserver&lt;String&gt;() {
  *         &#64;Override public void onStart() {
- *             System.out.println("Start!");
+ *             // System.out.println("Start!");
  *         }
  *         &#64;Override public void onNext(String t) {
- *             System.out.println(t);
+ *             // System.out.println(t);
  *         }
  *         &#64;Override public void onError(Throwable t) {
  *             t.printStackTrace();
  *         }
  *         &#64;Override public void onComplete() {
- *             System.out.println("Done!");
+ *             // System.out.println("Done!");
  *         }
  *     });
  *
@@ -8206,7 +8206,7 @@ public abstract class Observable<@NonNull T> implements ObservableSource<T> {
      * returned {@code Observable} disposes of the flow and terminates with that type of terminal event:
      * <pre><code>
      * Observable.just(createOnNext(1), createOnComplete(), createOnNext(2))
-     * .doOnDispose(() -&gt; System.out.println("Disposed!"));
+     * .doOnDispose(() -&gt; // System.out.println("Disposed!"));
      * .dematerialize(notification -&gt; notification)
      * .test()
      * .assertResult(1);
@@ -11962,11 +11962,11 @@ public abstract class Observable<@NonNull T> implements ObservableSource<T> {
      *
      * <pre><code>
      *  Observable.create((ObservableEmitter&lt;? super String&gt; s) -&gt; {
-     *      System.out.println("subscribing");
+     *      // System.out.println("subscribing");
      *      s.onError(new RuntimeException("always fails"));
      *  }).retryWhen(attempts -&gt; {
      *      return attempts.zipWith(Observable.range(1, 3), (n, i) -&gt; i).flatMap(i -&gt; {
-     *          System.out.println("delay retry by " + i + " second(s)");
+     *          // System.out.println("delay retry by " + i + " second(s)");
      *          return Observable.timer(i, TimeUnit.SECONDS);
      *      });
      *  }).blockingForEach(System.out::println);
@@ -11995,14 +11995,14 @@ public abstract class Observable<@NonNull T> implements ObservableSource<T> {
      * The following example demonstrates how to retry an asynchronous source with a delay:
      * <pre><code>
      * Observable.timer(1, TimeUnit.SECONDS)
-     *     .doOnSubscribe(s -&gt; System.out.println("subscribing"))
+     *     .doOnSubscribe(s -&gt; // System.out.println("subscribing"))
      *     .map(v -&gt; { throw new RuntimeException(); })
      *     .retryWhen(errors -&gt; {
      *         AtomicInteger counter = new AtomicInteger();
      *         return errors
      *                   .takeWhile(e -&gt; counter.getAndIncrement() != 3)
      *                   .flatMap(e -&gt; {
-     *                       System.out.println("delay retry by " + counter.get() + " second(s)");
+     *                       // System.out.println("delay retry by " + counter.get() + " second(s)");
      *                       return Observable.timer(counter.get(), TimeUnit.SECONDS);
      *                   });
      *     })

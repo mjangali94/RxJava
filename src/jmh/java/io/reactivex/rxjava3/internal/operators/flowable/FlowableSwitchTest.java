@@ -509,7 +509,7 @@ public class FlowableSwitchTest extends RxJavaTest {
         };
         src.subscribe(ts);
         ts.awaitDone(10, TimeUnit.SECONDS);
-        System.out.println("> testIssue2654: " + ts.values().size());
+        // System.out.println("> testIssue2654: " + ts.values().size());
         ts.assertTerminated();
         ts.assertNoErrors();
         Assert.assertEquals(250, ts.values().size());

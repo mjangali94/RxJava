@@ -80,7 +80,7 @@ public class FlowableCacheTest extends RxJavaTest {
                     @Override
                     public void run() {
                         counter.incrementAndGet();
-                        System.out.println("published observable being executed");
+                        // System.out.println("published observable being executed");
                         subscriber.onNext("one");
                         subscriber.onComplete();
                     }
@@ -95,7 +95,7 @@ public class FlowableCacheTest extends RxJavaTest {
             @Override
             public void accept(String v) {
                 assertEquals("one", v);
-                System.out.println("v: " + v);
+                // System.out.println("v: " + v);
                 latch.countDown();
             }
         });
@@ -105,7 +105,7 @@ public class FlowableCacheTest extends RxJavaTest {
             @Override
             public void accept(String v) {
                 assertEquals("one", v);
-                System.out.println("v: " + v);
+                // System.out.println("v: " + v);
                 latch.countDown();
             }
         });
