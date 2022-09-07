@@ -25,6 +25,7 @@ import io.reactivex.rxjava3.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.rxjava3.internal.util.*;
 import io.reactivex.rxjava3.internal.util.AppendOnlyLinkedArrayList.NonThrowingPredicate;
 import io.reactivex.rxjava3.plugins.RxJavaPlugins;
+import io.reactivex.rxjava3.processors.PublishProcessor.PublishSubscription;
 
 /**
  * Processor that emits the most recent item it has observed and all subsequent observed items to each subscribed
@@ -428,8 +429,14 @@ public final class BehaviorProcessor<T> extends FlowableProcessor<T> {
                 return;
             }
             int j = -1;
-            for (int i = 0; i < len; i++) {
-                if (a[i] == rs) {
+            /**
+             * @pmt efl#3
+             * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+             */
+            int i = -1;
+            for (BehaviorSubscription<T> tmp:a) {
+            	i++;
+                if (tmp == rs) {
                     j = i;
                     break;
                 }

@@ -237,9 +237,13 @@ public final class ParallelJoin<T> extends Flowable<T> {
                     boolean d = done.get() == 0;
 
                     boolean empty = true;
-
-                    for (int i = 0; i < s.length; i++) {
-                        JoinInnerSubscriber<T> inner = s[i];
+                    /**
+                     * @pmt efl#5
+                     * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+                     */
+                    int i = -1;
+                    for (JoinInnerSubscriber<T> inner :s) {
+                        i++;
                         SimplePlainQueue<T> q = inner.queue;
                         if (q != null) {
                             T v = q.poll();

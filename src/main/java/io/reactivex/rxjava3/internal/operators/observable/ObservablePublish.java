@@ -231,8 +231,14 @@ implements HasUpstreamObservableSource<T> {
                 }
 
                 int j = -1;
-                for (int i = 0; i < n; i++) {
-                    if (a[i] == inner) {
+                /**
+                 * @pmt efl#6
+                 * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+                 */
+                int i = -1;
+                for (InnerDisposable<T> tmp:a) {
+                	i++;
+                    if (tmp == inner) {
                         j = i;
                         break;
                     }

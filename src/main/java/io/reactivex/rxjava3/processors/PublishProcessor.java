@@ -200,8 +200,14 @@ public final class PublishProcessor<T> extends FlowableProcessor<T> {
 
             int n = a.length;
             int j = -1;
-            for (int i = 0; i < n; i++) {
-                if (a[i] == ps) {
+            /**
+             * @pmt efl#2
+             * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+             */
+            int i = -1;
+            for (PublishSubscription<T> tmp:a) {
+            	i++;
+                if (tmp == ps) {
                     j = i;
                     break;
                 }

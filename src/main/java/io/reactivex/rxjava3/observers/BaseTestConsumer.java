@@ -450,8 +450,13 @@ public abstract class BaseTestConsumer<T, U extends BaseTestConsumer<T, U>> {
             throw fail("Value count differs; expected: " + values.length + " " + Arrays.toString(values)
             + " but was: " + s + " " + this.values);
         }
-        for (int i = 0; i < s; i++) {
-            T v = this.values.get(i);
+        /**
+         * @pmt efl#4
+         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+         */
+        int i = -1;
+        for (T v:this.values) {
+            i = this.values.indexOf(v);
             T u = values[i];
             if (!Objects.equals(u, v)) {
                 throw fail("Values at position " + i + " differ; expected: " + valueAndClass(u) + " but was: " + valueAndClass(v));
