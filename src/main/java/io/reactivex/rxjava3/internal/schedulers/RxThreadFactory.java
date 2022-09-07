@@ -50,7 +50,11 @@ public final class RxThreadFactory extends AtomicLong implements ThreadFactory {
 
     @Override
     public Thread newThread(@NonNull Runnable r) {
-        StringBuilder nameBuilder = new StringBuilder(prefix).append('-').append(incrementAndGet());
+        /**
+         * @pmt sts#2
+         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+         */
+        StringBuffer nameBuilder = new StringBuffer(prefix).append('-').append(incrementAndGet());
 
 //        if (CREATE_TRACE) {
 //            nameBuilder.append("\r\n");

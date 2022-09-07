@@ -106,8 +106,11 @@ public final class CompositeException extends RuntimeException {
             String separator = System.getProperty("line.separator");
             if (exceptions.size() > 1) {
                 Map<Throwable, Boolean> seenCauses = new IdentityHashMap<>();
-
-                StringBuilder aggregateMessage = new StringBuilder();
+                /**
+                 * @pmt sts#1
+                 * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+                 */
+                StringBuffer aggregateMessage = new StringBuffer();
                 aggregateMessage.append("Multiple exceptions (").append(exceptions.size()).append(")").append(separator);
 
                 for (Throwable inner : exceptions) {

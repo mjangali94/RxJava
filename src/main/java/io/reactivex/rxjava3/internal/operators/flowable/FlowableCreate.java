@@ -379,12 +379,7 @@ public final class FlowableCreate<T> extends Flowable<T> {
 
             for (;;) {
                 long r = get();
-                /**
-                 * @pmt soc#5
-                 * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-                 */
-                
-                if (compareAndSet(r, r - 1) || r == 0L) {
+                if (r == 0L || compareAndSet(r, r - 1)) {
                     return;
                 }
             }
@@ -471,11 +466,7 @@ public final class FlowableCreate<T> extends Flowable<T> {
 
         @Override
         public void onNext(T t) {
-            /**
-             * @pmt soc#3
-             * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-             */
-            if (isCancelled() || done) {
+            if (done || isCancelled()) {
                 return;
             }
 
@@ -489,11 +480,7 @@ public final class FlowableCreate<T> extends Flowable<T> {
 
         @Override
         public boolean signalError(Throwable e) {
-            /**
-             * @pmt soc#4
-             * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-             */
-            if (isCancelled() || done) {
+            if (done || isCancelled()) {
                 return false;
             }
 
@@ -617,11 +604,7 @@ public final class FlowableCreate<T> extends Flowable<T> {
 
         @Override
         public void onNext(T t) {
-            /**
-             * @pmt soc#1
-             * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-             */
-            if (isCancelled() || done) {
+            if (done || isCancelled()) {
                 return;
             }
 
@@ -635,11 +618,7 @@ public final class FlowableCreate<T> extends Flowable<T> {
 
         @Override
         public boolean signalError(Throwable e) {
-            /**
-             * @pmt soc#2
-             * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-             */
-            if (isCancelled() || done) {
+            if (done || isCancelled()) {
                 return false;
             }
             error = e;
