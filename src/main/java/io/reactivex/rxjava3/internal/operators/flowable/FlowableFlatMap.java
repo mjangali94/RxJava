@@ -171,11 +171,7 @@ public final class FlowableFlatMap<T, U> extends AbstractFlowableWithUpstream<T,
                     inner.dispose();
                     return false;
                 }
-                /**
-                 * @pmt ptw#25
-                 * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-                 */
-                int n = (Integer.valueOf(a.length)).intValue();
+                int n = a.length;
                 InnerSubscriber<?, ?>[] b = new InnerSubscriber[n + 1];
                 System.arraycopy(a, 0, b, 0, n);
                 b[n] = inner;
@@ -628,11 +624,7 @@ public final class FlowableFlatMap<T, U> extends AbstractFlowableWithUpstream<T,
 
         @Override
         public void onNext(U t) {
-            /**
-             * @pmt ptw#26
-             * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-             */
-            if ((Boolean.valueOf(fusionMode != QueueSubscription.ASYNC)).booleanValue()) {
+            if (fusionMode != QueueSubscription.ASYNC) {
                 parent.tryEmit(t, this);
             } else {
                 parent.drain();

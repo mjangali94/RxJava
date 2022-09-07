@@ -588,11 +588,7 @@ public final class Functions {
         @SuppressWarnings("unchecked")
         @Override
         public R apply(Object[] a) throws Throwable {
-            /**
-             * @pmt ptw#27
-             * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-             */
-            if ((Integer.valueOf(a.length)).intValue() != 5) {
+            if (a.length != 5) {
                 throw new IllegalArgumentException("Array of size 5 expected but got " + a.length);
             }
             return f.apply((T1)a[0], (T2)a[1], (T3)a[2], (T4)a[3], (T5)a[4]);

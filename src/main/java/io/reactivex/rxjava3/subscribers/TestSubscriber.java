@@ -265,11 +265,7 @@ implements FlowableSubscriber<T>, Subscription {
      */
     @Override
     protected final TestSubscriber<T> assertSubscribed() {
-        /**
-         * @pmt ptw#7
-         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-         */
-        if ((Boolean.valueOf(upstream.get() == null)).booleanValue()) {
+        if (upstream.get() == null) {
             throw fail("Not subscribed!");
         }
         return this;

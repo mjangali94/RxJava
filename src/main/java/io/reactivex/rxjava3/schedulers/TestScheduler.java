@@ -207,11 +207,7 @@ public final class TestScheduler extends Scheduler {
             if (useOnScheduleHook) {
                 run = RxJavaPlugins.onSchedule(run);
             }
-            /**
-             * @pmt ptw#39
-             * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-             */
-            final TimedRunnable timedAction = new TimedRunnable(this, (Long.valueOf(time)).longValue() + unit.toNanos(delayTime), run, counter++);
+            final TimedRunnable timedAction = new TimedRunnable(this, time + unit.toNanos(delayTime), run, counter++);
             queue.add(timedAction);
 
             return new QueueRemove(timedAction);

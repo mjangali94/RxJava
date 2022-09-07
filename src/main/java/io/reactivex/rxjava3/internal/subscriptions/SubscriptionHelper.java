@@ -174,11 +174,7 @@ public enum SubscriptionHelper implements Subscription {
      */
     public static boolean cancel(AtomicReference<Subscription> field) {
         Subscription current = field.get();
-        /**
-         * @pmt ptw#3
-         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-         */
-        if ((Boolean.valueOf(current != CANCELLED)).booleanValue()) {
+        if (current != CANCELLED) {
             current = field.getAndSet(CANCELLED);
             if (current != CANCELLED) {
                 if (current != null) {

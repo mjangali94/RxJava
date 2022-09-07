@@ -257,11 +257,7 @@ implements HasUpstreamPublisher<T> {
             int missed = 1;
             SimpleQueue<T> queue = this.queue;
             int consumed = this.consumed;
-            /**
-             * @pmt ptw#34
-             * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-             */
-            int limit = (Integer.valueOf(this.bufferSize)).intValue() - (this.bufferSize >> 2);
+            int limit = this.bufferSize - (this.bufferSize >> 2);
             boolean async = this.sourceMode != QueueSubscription.SYNC;
 
             outer:

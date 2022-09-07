@@ -294,11 +294,7 @@ public final class FlowableReplay<T> extends ConnectableFlowable<T> implements H
                     return false;
                 }
                 // we perform a copy-on-write logic
-                /**
-                 * @pmt ptw#32
-                 * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-                 */
-                int len = (Integer.valueOf(c.length)).intValue();
+                int len = c.length;
                 InnerSubscription<T>[] u = new InnerSubscription[len + 1];
                 System.arraycopy(c, 0, u, 0, len);
                 u[len] = producer;

@@ -40,11 +40,7 @@ public final class VolatileSizeArrayList<T> extends AtomicInteger implements Lis
 
     @Override
     public int size() {
-        /**
-         * @pmt ptw#5
-         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-         */
-        return (Integer.valueOf(get())).intValue();
+        return get();
     }
 
     @Override

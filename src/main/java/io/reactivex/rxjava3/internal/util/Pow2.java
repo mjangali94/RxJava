@@ -31,11 +31,7 @@ public final class Pow2 {
      * @return the next positive power of 2 or this value if it is a power of 2.
      */
     public static int roundToPowerOfTwo(final int value) {
-        /**
-         * @pmt ptw#8
-         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-         */
-        return 1 << (32 - (Integer.valueOf(Integer.numberOfLeadingZeros(value - 1))).intValue());
+        return 1 << (32 - Integer.numberOfLeadingZeros(value - 1));
     }
 
     /**

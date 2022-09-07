@@ -1041,11 +1041,7 @@ public final class RxJavaPlugins {
     @NonNull
     public static <T> Flowable<T> onAssembly(@NonNull Flowable<T> source) {
         Function<? super Flowable, ? extends Flowable> f = onFlowableAssembly;
-        /**
-         * @pmt ptw#12
-         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-         */
-        if ((Boolean.valueOf(f != null)).booleanValue()) {
+        if (f != null) {
             return apply(f, source);
         }
         return source;
@@ -1109,11 +1105,7 @@ public final class RxJavaPlugins {
     @NonNull
     public static <T> Single<T> onAssembly(@NonNull Single<T> source) {
         Function<? super Single, ? extends Single> f = onSingleAssembly;
-        /**
-         * @pmt ptw#1
-         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-         */
-        if ((Boolean.valueOf(f != null)).booleanValue()) {
+        if (f != null) {
             return apply(f, source);
         }
         return source;

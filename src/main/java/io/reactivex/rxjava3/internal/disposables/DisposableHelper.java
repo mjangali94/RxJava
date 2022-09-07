@@ -97,11 +97,7 @@ public enum DisposableHelper implements Disposable {
     public static boolean replace(AtomicReference<Disposable> field, Disposable d) {
         for (;;) {
             Disposable current = field.get();
-            /**
-             * @pmt ptw#31
-             * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-             */
-            if ((Boolean.valueOf(current == DISPOSED)).booleanValue()) {
+            if (current == DISPOSED) {
                 if (d != null) {
                     d.dispose();
                 }
@@ -150,11 +146,7 @@ public enum DisposableHelper implements Disposable {
             reportDisposableSet();
             return false;
         }
-        /**
-         * @pmt ptw#30
-         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-         */
-        return (Boolean.valueOf(true)).booleanValue();
+        return true;
     }
 
     /**

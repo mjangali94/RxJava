@@ -1244,11 +1244,7 @@ public abstract class Observable<@NonNull T> implements ObservableSource<T> {
     @SafeVarargs
     public static <T> Observable<T> concatArray(@NonNull ObservableSource<? extends T>... sources) {
         Objects.requireNonNull(sources, "sources is null");
-        /**
-         * @pmt ptw#38
-         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-         */
-        if ((Integer.valueOf(sources.length)).intValue() == 0) {
+        if (sources.length == 0) {
             return empty();
         }
         if (sources.length == 1) {
@@ -1927,11 +1923,7 @@ public abstract class Observable<@NonNull T> implements ObservableSource<T> {
     @SafeVarargs
     public static <T> Observable<T> fromArray(@NonNull T... items) {
         Objects.requireNonNull(items, "items is null");
-        /**
-         * @pmt ptw#37
-         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-         */
-        if ((Boolean.valueOf(items.length == 0)).booleanValue()) {
+        if (items.length == 0) {
             return empty();
         }
         if (items.length == 1) {
@@ -4118,11 +4110,7 @@ public abstract class Observable<@NonNull T> implements ObservableSource<T> {
     @NonNull
     public static <T> Single<Boolean> sequenceEqual(@NonNull ObservableSource<? extends T> source1, @NonNull ObservableSource<? extends T> source2,
             int bufferSize) {
-        /**
-         * @pmt ptw#41
-         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-         */
-        return sequenceEqual(source1, source2, ObjectHelper.equalsPredicate(), (Integer.valueOf(bufferSize)).intValue());
+        return sequenceEqual(source1, source2, ObjectHelper.equalsPredicate(), bufferSize);
     }
 
     /**

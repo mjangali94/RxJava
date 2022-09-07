@@ -75,11 +75,7 @@ public final class ExceptionHelper {
 
     public static Throwable terminate(AtomicReference<Throwable> field) {
         Throwable current = field.get();
-        /**
-         * @pmt ptw#2
-         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-         */
-        if ((Boolean.valueOf(current != TERMINATED)).booleanValue()) {
+        if (current != TERMINATED) {
             current = field.getAndSet(TERMINATED);
         }
         return current;
@@ -179,11 +175,7 @@ public final class ExceptionHelper {
      * @since 3.0.0
      */
     public static <T> T nullCheck(T value, String prefix) {
-        /**
-         * @pmt ptw#10
-         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-         */
-        if ((Boolean.valueOf(value == null)).booleanValue()) {
+        if (value == null) {
             throw createNullPointerException(prefix);
         }
         return value;

@@ -4498,11 +4498,7 @@ public abstract class Maybe<T> implements MaybeSource<T> {
     @SchedulerSupport(SchedulerSupport.NONE)
     @NonNull
     public final Flowable<T> toFlowable() {
-        /**
-         * @pmt ptw#19
-         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-         */
-        if ((Boolean.valueOf(this instanceof FuseToFlowable)).booleanValue()) {
+        if (this instanceof FuseToFlowable) {
             return ((FuseToFlowable<T>)this).fuseToFlowable();
         }
         return RxJavaPlugins.onAssembly(new MaybeToFlowable<>(this));
