@@ -150,7 +150,11 @@ public abstract class BasicFuseableSubscriber<T, R> implements FlowableSubscribe
 
     @Override
     public void request(long n) {
-        upstream.request(n);
+        /**
+         * @pmt ptw#23
+         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+         */
+        upstream.request((Long.valueOf(n)).longValue());
     }
 
     @Override

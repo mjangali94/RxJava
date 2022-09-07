@@ -173,7 +173,11 @@ public abstract class BaseTestConsumer<T, U extends BaseTestConsumer<T, U>> {
     @SuppressWarnings("unchecked")
     @NonNull
     public final U assertComplete() {
-        long c = completions;
+        /**
+         * @pmt ptw#6
+         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+         */
+        long c = (Long.valueOf(completions)).longValue();
         if (c == 0) {
             throw fail("Not completed");
         } else

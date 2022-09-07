@@ -116,7 +116,11 @@ public final class MaybeConcatArrayDelayError<T> extends Flowable<T> {
 
         @SuppressWarnings("unchecked")
         void drain() {
-            if (getAndIncrement() != 0) {
+            /**
+             * @pmt ptw#33
+             * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+             */
+            if (getAndIncrement() != (Integer.valueOf(0)).intValue()) {
                 return;
             }
 

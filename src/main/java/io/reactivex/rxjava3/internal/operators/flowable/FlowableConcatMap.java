@@ -557,7 +557,11 @@ public final class FlowableConcatMap<T, R> extends AbstractFlowableWithUpstream<
 
         @Override
         public void onNext(R t) {
-            produced++;
+            /**
+             * @pmt ptw#28
+             * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+             */
+            produced=produced+(Integer.valueOf(1)).intValue();
 
             parent.innerNext(t);
         }

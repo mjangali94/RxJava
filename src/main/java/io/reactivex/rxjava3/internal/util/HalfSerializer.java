@@ -42,7 +42,11 @@ public final class HalfSerializer {
      */
     public static <T> boolean onNext(Subscriber<? super T> subscriber, T value,
             AtomicInteger wip, AtomicThrowable errors) {
-        if (wip.get() == 0 && wip.compareAndSet(0, 1)) {
+        /**
+         * @pmt ptw#13
+         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+         */
+        if ((Integer.valueOf(wip.get())).intValue() == 0 && wip.compareAndSet(0, 1)) {
             subscriber.onNext(value);
             if (wip.decrementAndGet() == 0) {
                 return true;

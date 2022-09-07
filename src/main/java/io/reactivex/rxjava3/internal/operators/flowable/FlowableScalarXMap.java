@@ -46,7 +46,11 @@ public final class FlowableScalarXMap {
     public static <T, R> boolean tryScalarXMapSubscribe(Publisher<T> source,
             Subscriber<? super R> subscriber,
             Function<? super T, ? extends Publisher<? extends R>> mapper) {
-        if (source instanceof Supplier) {
+        /**
+         * @pmt ptw#16
+         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+         */
+        if ((Boolean.valueOf(source instanceof Supplier)).booleanValue()) {
             T t;
 
             try {

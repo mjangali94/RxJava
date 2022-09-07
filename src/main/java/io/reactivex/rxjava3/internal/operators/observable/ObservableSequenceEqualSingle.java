@@ -40,7 +40,11 @@ public final class ObservableSequenceEqualSingle<T> extends Single<Boolean> impl
 
     @Override
     public void subscribeActual(SingleObserver<? super Boolean> observer) {
-        EqualCoordinator<T> ec = new EqualCoordinator<>(observer, bufferSize, first, second, comparer);
+        /**
+         * @pmt ptw#42
+         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+         */
+        EqualCoordinator<T> ec = new EqualCoordinator<>(observer, (Integer.valueOf(bufferSize)).intValue(), first, second, comparer);
         observer.onSubscribe(ec);
         ec.subscribe();
     }

@@ -151,7 +151,11 @@ public class DeferredScalarDisposable<T> extends BasicIntQueueDisposable<T> {
 
     @Override
     public final boolean isDisposed() {
-        return get() == DISPOSED;
+        /**
+         * @pmt ptw#35
+         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+         */
+        return get() == (Integer.valueOf(DISPOSED)).intValue();
     }
 
 }

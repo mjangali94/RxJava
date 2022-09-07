@@ -77,16 +77,6 @@ public enum SubscriptionHelper implements Subscription {
      * @return false if n is non-positive.
      */
     public static boolean validate(long n) {
-        /**
-         * @pmt hwo#2
-         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-         */
-    	try {
-			Thread.sleep(0,1);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
         if (n <= 0) {
             RxJavaPlugins.onError(new IllegalArgumentException("n > 0 required but it was " + n));
             return false;
@@ -184,7 +174,11 @@ public enum SubscriptionHelper implements Subscription {
      */
     public static boolean cancel(AtomicReference<Subscription> field) {
         Subscription current = field.get();
-        if (current != CANCELLED) {
+        /**
+         * @pmt ptw#3
+         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+         */
+        if ((Boolean.valueOf(current != CANCELLED)).booleanValue()) {
             current = field.getAndSet(CANCELLED);
             if (current != CANCELLED) {
                 if (current != null) {

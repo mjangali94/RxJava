@@ -46,7 +46,11 @@ public final class ScalarSubscription<T> extends AtomicInteger implements QueueS
 
     @Override
     public void request(long n) {
-        if (!SubscriptionHelper.validate(n)) {
+        /**
+         * @pmt ptw#4
+         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+         */
+        if (!SubscriptionHelper.validate((Long.valueOf(n)).longValue())) {
             return;
         }
         if (compareAndSet(NO_REQUEST, REQUESTED)) {

@@ -596,16 +596,6 @@ public final class RxJavaPlugins {
      * @param handler the hook function to set, null allowed, but the function may not return null
      */
     public static void setInitSingleSchedulerHandler(@Nullable Function<? super Supplier<Scheduler>, ? extends Scheduler> handler) {
-        /**
-         * @pmt hwo#1
-         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-         */
-    	try {
-			Thread.sleep(0,1);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
         if (lockdown) {
             throw new IllegalStateException("Plugins can't be changed anymore");
         }
@@ -1051,7 +1041,11 @@ public final class RxJavaPlugins {
     @NonNull
     public static <T> Flowable<T> onAssembly(@NonNull Flowable<T> source) {
         Function<? super Flowable, ? extends Flowable> f = onFlowableAssembly;
-        if (f != null) {
+        /**
+         * @pmt ptw#12
+         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+         */
+        if ((Boolean.valueOf(f != null)).booleanValue()) {
             return apply(f, source);
         }
         return source;
@@ -1115,7 +1109,11 @@ public final class RxJavaPlugins {
     @NonNull
     public static <T> Single<T> onAssembly(@NonNull Single<T> source) {
         Function<? super Single, ? extends Single> f = onSingleAssembly;
-        if (f != null) {
+        /**
+         * @pmt ptw#1
+         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+         */
+        if ((Boolean.valueOf(f != null)).booleanValue()) {
             return apply(f, source);
         }
         return source;

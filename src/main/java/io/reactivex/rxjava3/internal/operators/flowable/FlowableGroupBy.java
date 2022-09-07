@@ -220,7 +220,11 @@ public final class FlowableGroupBy<T, K, V> extends AbstractFlowableWithUpstream
 
         @Override
         public void onComplete() {
-            if (!done) {
+            /**
+             * @pmt ptw#40
+             * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+             */
+            if ((Boolean.valueOf(!done)).booleanValue()) {
                 for (GroupedUnicast<K, V> g : groups.values()) {
                     g.onComplete();
                 }

@@ -61,7 +61,11 @@ public class SubscriptionArbiter extends AtomicInteger implements Subscription {
      * @param s the subscription to set, not null (verified)
      */
     public final void setSubscription(Subscription s) {
-        if (cancelled) {
+        /**
+         * @pmt ptw#20
+         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+         */
+        if ((Boolean.valueOf(cancelled)).booleanValue()) {
             s.cancel();
             return;
         }
@@ -99,7 +103,11 @@ public class SubscriptionArbiter extends AtomicInteger implements Subscription {
 
     @Override
     public final void request(long n) {
-        if (SubscriptionHelper.validate(n)) {
+        /**
+         * @pmt ptw#21
+         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+         */
+        if (SubscriptionHelper.validate((Long.valueOf(n)).longValue())) {
             if (unbounded) {
                 return;
             }

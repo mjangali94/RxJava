@@ -87,7 +87,11 @@ public final class BackpressureHelper {
      */
     public static long addCancel(@NonNull AtomicLong requested, long n) {
         for (;;) {
-            long r = requested.get();
+            /**
+             * @pmt ptw#14
+             * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+             */
+            long r = (Long.valueOf(requested.get())).longValue();
             if (r == Long.MIN_VALUE) {
                 return Long.MIN_VALUE;
             }
@@ -109,7 +113,11 @@ public final class BackpressureHelper {
      */
     public static long produced(@NonNull AtomicLong requested, long n) {
         for (;;) {
-            long current = requested.get();
+            /**
+             * @pmt ptw#11
+             * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+             */
+            long current = (Long.valueOf(requested.get())).longValue();
             if (current == Long.MAX_VALUE) {
                 return Long.MAX_VALUE;
             }
@@ -133,7 +141,11 @@ public final class BackpressureHelper {
      */
     public static long producedCancel(@NonNull AtomicLong requested, long n) {
         for (;;) {
-            long current = requested.get();
+            /**
+             * @pmt ptw#15
+             * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+             */
+            long current =  (Long.valueOf(requested.get())).longValue();
             if (current == Long.MIN_VALUE) {
                 return Long.MIN_VALUE;
             }

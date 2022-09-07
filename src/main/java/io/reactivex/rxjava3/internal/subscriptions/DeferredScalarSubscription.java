@@ -72,7 +72,11 @@ public class DeferredScalarSubscription<T> extends BasicIntQueueSubscription<T> 
 
     @Override
     public final void request(long n) {
-        if (SubscriptionHelper.validate(n)) {
+        /**
+         * @pmt ptw#9
+         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+         */
+        if (SubscriptionHelper.validate((Long.valueOf(n)).longValue())) {
             for (;;) {
                 int state = get();
                 // if the any bits 1-31 are set, we are either in fusion mode (FUSED_*)

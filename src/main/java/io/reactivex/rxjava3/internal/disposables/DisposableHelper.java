@@ -75,16 +75,6 @@ public enum DisposableHelper implements Disposable {
      * @return true if the operation succeeded, false
      */
     public static boolean setOnce(AtomicReference<Disposable> field, Disposable d) {
-        /**
-         * @pmt hwo#5
-         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-         */
-    	try {
-			Thread.sleep(0,1);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
         Objects.requireNonNull(d, "d is null");
         if (!field.compareAndSet(null, d)) {
             d.dispose();
@@ -107,7 +97,11 @@ public enum DisposableHelper implements Disposable {
     public static boolean replace(AtomicReference<Disposable> field, Disposable d) {
         for (;;) {
             Disposable current = field.get();
-            if (current == DISPOSED) {
+            /**
+             * @pmt ptw#31
+             * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+             */
+            if ((Boolean.valueOf(current == DISPOSED)).booleanValue()) {
                 if (d != null) {
                     d.dispose();
                 }
@@ -147,16 +141,6 @@ public enum DisposableHelper implements Disposable {
      * @return true if the validation succeeded
      */
     public static boolean validate(Disposable current, Disposable next) {
-        /**
-         * @pmt hwo#4
-         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-         */
-    	try {
-			Thread.sleep(0,1);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
         if (next == null) {
             RxJavaPlugins.onError(new NullPointerException("next is null"));
             return false;
@@ -166,7 +150,11 @@ public enum DisposableHelper implements Disposable {
             reportDisposableSet();
             return false;
         }
-        return true;
+        /**
+         * @pmt ptw#30
+         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+         */
+        return (Boolean.valueOf(true)).booleanValue();
     }
 
     /**

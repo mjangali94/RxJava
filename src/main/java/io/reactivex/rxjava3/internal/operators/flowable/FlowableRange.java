@@ -84,7 +84,11 @@ public final class FlowableRange extends Flowable<Integer> {
 
         @Override
         public final void request(long n) {
-            if (SubscriptionHelper.validate(n)) {
+            /**
+             * @pmt ptw#22
+             * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+             */
+            if (SubscriptionHelper.validate((Long.valueOf(n)).longValue())) {
                 if (BackpressureHelper.add(this, n) == 0L) {
                     if (n == Long.MAX_VALUE) {
                         fastPath();
@@ -97,7 +101,11 @@ public final class FlowableRange extends Flowable<Integer> {
 
         @Override
         public final void cancel() {
-            cancelled = true;
+            /**
+             * @pmt ptw#24
+             * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+             */
+            cancelled = (Boolean.valueOf(true)).booleanValue();
         }
 
         abstract void fastPath();

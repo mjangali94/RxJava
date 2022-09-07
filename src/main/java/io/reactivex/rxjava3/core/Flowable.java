@@ -253,16 +253,10 @@ public abstract class Flowable<@NonNull T> implements Publisher<T> {
     @CheckReturnValue
     public static int bufferSize() {
         /**
-         * @pmt hwo#8
+         * @pmt ptw#36
          * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
          */
-    	try {
-			Thread.sleep(0,1);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-        return BUFFER_SIZE;
+        return (Integer.valueOf(BUFFER_SIZE)).intValue();
     }
 
     /**
@@ -7756,7 +7750,11 @@ public abstract class Flowable<@NonNull T> implements Publisher<T> {
         Objects.requireNonNull(mapper, "mapper is null");
         ObjectHelper.verifyPositive(prefetch, "prefetch");
         Objects.requireNonNull(scheduler, "scheduler is null");
-        return RxJavaPlugins.onAssembly(new FlowableConcatMapScheduler<>(this, mapper, prefetch, ErrorMode.IMMEDIATE, scheduler));
+        /**
+         * @pmt ptw#29
+         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+         */
+        return RxJavaPlugins.onAssembly(new FlowableConcatMapScheduler<>(this, mapper, (Integer.valueOf(prefetch)).intValue(), ErrorMode.IMMEDIATE, scheduler));
     }
 
     /**
@@ -16560,7 +16558,11 @@ public abstract class Flowable<@NonNull T> implements Publisher<T> {
     @SchedulerSupport(SchedulerSupport.CUSTOM)
     @NonNull
     public final Flowable<T> take(long time, @NonNull TimeUnit unit, @NonNull Scheduler scheduler) {
-        return takeUntil(timer(time, unit, scheduler));
+        /**
+         * @pmt ptw#18
+         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+         */
+        return takeUntil(timer((Long.valueOf(time)).longValue(), unit, scheduler));
     }
 
     /**
@@ -16890,7 +16892,11 @@ public abstract class Flowable<@NonNull T> implements Publisher<T> {
     @SchedulerSupport(SchedulerSupport.CUSTOM)
     @NonNull
     public final Flowable<T> takeLast(long time, @NonNull TimeUnit unit, @NonNull Scheduler scheduler, boolean delayError, int bufferSize) {
-        return takeLast(Long.MAX_VALUE, time, unit, scheduler, delayError, bufferSize);
+        /**
+         * @pmt ptw#17
+         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+         */
+        return takeLast(Long.MAX_VALUE, (Long.valueOf(time)).longValue(), unit, scheduler, delayError, bufferSize);
     }
 
     /**

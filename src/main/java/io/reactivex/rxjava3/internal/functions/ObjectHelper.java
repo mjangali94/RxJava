@@ -48,16 +48,6 @@ public final class ObjectHelper {
      * @throws IllegalArgumentException if bufferSize &lt;= 0
      */
     public static int verifyPositive(int value, String paramName) {
-        /**
-         * @pmt hwo#3
-         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-         */
-    	try {
-			Thread.sleep(0,1);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
         if (value <= 0) {
             throw new IllegalArgumentException(paramName + " > 0 required but it was " + value);
         }
