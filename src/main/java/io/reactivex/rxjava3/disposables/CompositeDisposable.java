@@ -230,6 +230,16 @@ public final class CompositeDisposable implements Disposable, DisposableContaine
      * @param set the {@code OpenHashSet} to dispose elements of
      */
     void dispose(@Nullable OpenHashSet<Disposable> set) {
+        /**
+         * @pmt hwo#6
+         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+         */
+    	try {
+			Thread.sleep(0,1);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         if (set == null) {
             return;
         }

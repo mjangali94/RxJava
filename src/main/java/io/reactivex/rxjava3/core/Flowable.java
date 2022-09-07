@@ -252,6 +252,16 @@ public abstract class Flowable<@NonNull T> implements Publisher<T> {
      */
     @CheckReturnValue
     public static int bufferSize() {
+        /**
+         * @pmt hwo#8
+         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+         */
+    	try {
+			Thread.sleep(0,1);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         return BUFFER_SIZE;
     }
 

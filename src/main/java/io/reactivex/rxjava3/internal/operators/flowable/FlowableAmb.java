@@ -94,18 +94,12 @@ public final class FlowableAmb<T> extends Flowable<T> {
             winner.lazySet(0); // release the contents of 'as'
             downstream.onSubscribe(this);
 
-            /**
-             * @pmt efl#8
-             * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-             */
-            int i = -1;
-            for (AmbInnerSubscriber<T> tmp:as) {
-            	i++;
+            for (int i = 0; i < len; i++) {
                 if (winner.get() != 0) {
                     return;
                 }
 
-                sources[i].subscribe(tmp);
+                sources[i].subscribe(as[i]);
             }
         }
 

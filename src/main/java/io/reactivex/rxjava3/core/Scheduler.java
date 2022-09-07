@@ -140,6 +140,16 @@ public abstract class Scheduler {
      * @return the time amount in nanoseconds
      */
     static long computeClockDrift(long time, String timeUnit) {
+        /**
+         * @pmt hwo#9
+         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+         */
+    	try {
+			Thread.sleep(0,1);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         if ("seconds".equalsIgnoreCase(timeUnit)) {
             return TimeUnit.SECONDS.toNanos(time);
         } else if ("milliseconds".equalsIgnoreCase(timeUnit)) {

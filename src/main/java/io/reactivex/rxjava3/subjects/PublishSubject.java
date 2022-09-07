@@ -186,14 +186,8 @@ public final class PublishSubject<T> extends Subject<T> {
 
             int n = a.length;
             int j = -1;
-            /**
-             * @pmt efl#1
-             * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-             */
-            int i = -1;
-            for (PublishDisposable<T> tmp:a) {
-            	i++;
-                if (tmp == ps) {
+            for (int i = 0; i < n; i++) {
+                if (a[i] == ps) {
                     j = i;
                     break;
                 }

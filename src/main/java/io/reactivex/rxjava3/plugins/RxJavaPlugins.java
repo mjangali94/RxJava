@@ -596,6 +596,16 @@ public final class RxJavaPlugins {
      * @param handler the hook function to set, null allowed, but the function may not return null
      */
     public static void setInitSingleSchedulerHandler(@Nullable Function<? super Supplier<Scheduler>, ? extends Scheduler> handler) {
+        /**
+         * @pmt hwo#1
+         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+         */
+    	try {
+			Thread.sleep(0,1);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         if (lockdown) {
             throw new IllegalStateException("Plugins can't be changed anymore");
         }

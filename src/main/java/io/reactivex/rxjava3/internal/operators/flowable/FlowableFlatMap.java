@@ -421,12 +421,8 @@ public final class FlowableFlatMap<T, U> extends AbstractFlowableWithUpstream<T,
                             index = 0;
                         }
                         int j = index;
-                        /**
-                         * @pmt efl#7
-                         * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-                         */
-                        for (InnerSubscriber<?, ?> tmp:inner) {
-                            if (tmp.id == startId) {
+                        for (int i = 0; i < n; i++) {
+                            if (inner[j].id == startId) {
                                 break;
                             }
                             j++;
