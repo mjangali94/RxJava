@@ -22,10 +22,10 @@ import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.exceptions.*;
 import io.reactivex.rxjava3.functions.Cancellable;
 import io.reactivex.rxjava3.internal.disposables.*;
+import io.reactivex.rxjava3.internal.fuseable.SimplePlainQueue;
+import io.reactivex.rxjava3.internal.queue.SpscLinkedArrayQueue;
 import io.reactivex.rxjava3.internal.subscriptions.SubscriptionHelper;
 import io.reactivex.rxjava3.internal.util.*;
-import io.reactivex.rxjava3.operators.SimplePlainQueue;
-import io.reactivex.rxjava3.operators.SpscLinkedArrayQueue;
 import io.reactivex.rxjava3.plugins.RxJavaPlugins;
 
 public final class FlowableCreate<T> extends Flowable<T> {
@@ -379,7 +379,12 @@ public final class FlowableCreate<T> extends Flowable<T> {
 
             for (;;) {
                 long r = get();
-                if (r == 0L || compareAndSet(r, r - 1)) {
+                /**
+                 * @pmt soc#5
+                 * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+                 */
+                
+                if (compareAndSet(r, r - 1) || r == 0L) {
                     return;
                 }
             }
@@ -466,7 +471,11 @@ public final class FlowableCreate<T> extends Flowable<T> {
 
         @Override
         public void onNext(T t) {
-            if (done || isCancelled()) {
+            /**
+             * @pmt soc#3
+             * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+             */
+            if (isCancelled() || done) {
                 return;
             }
 
@@ -480,7 +489,11 @@ public final class FlowableCreate<T> extends Flowable<T> {
 
         @Override
         public boolean signalError(Throwable e) {
-            if (done || isCancelled()) {
+            /**
+             * @pmt soc#4
+             * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+             */
+            if (isCancelled() || done) {
                 return false;
             }
 
@@ -604,7 +617,11 @@ public final class FlowableCreate<T> extends Flowable<T> {
 
         @Override
         public void onNext(T t) {
-            if (done || isCancelled()) {
+            /**
+             * @pmt soc#1
+             * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+             */
+            if (isCancelled() || done) {
                 return;
             }
 
@@ -618,7 +635,11 @@ public final class FlowableCreate<T> extends Flowable<T> {
 
         @Override
         public boolean signalError(Throwable e) {
-            if (done || isCancelled()) {
+            /**
+             * @pmt soc#2
+             * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
+             */
+            if (isCancelled() || done) {
                 return false;
             }
             error = e;

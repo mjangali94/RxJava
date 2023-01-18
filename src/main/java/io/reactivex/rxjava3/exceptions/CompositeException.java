@@ -107,7 +107,7 @@ public final class CompositeException extends RuntimeException {
             if (exceptions.size() > 1) {
                 Map<Throwable, Boolean> seenCauses = new IdentityHashMap<>();
 
-                StringBuffer aggregateMessage = new StringBuffer();
+                StringBuilder aggregateMessage = new StringBuilder();
                 aggregateMessage.append("Multiple exceptions (").append(exceptions.size()).append(")").append(separator);
 
                 for (Throwable inner : exceptions) {
