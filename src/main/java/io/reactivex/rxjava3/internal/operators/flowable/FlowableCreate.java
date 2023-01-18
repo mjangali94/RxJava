@@ -483,8 +483,8 @@ public final class FlowableCreate<T> extends Flowable<T> {
 
         @Override
         public boolean signalError(Throwable e) {
-
-            if (done || isCancelled()) {
+            // #soc4
+            if (isCancelled() || done) {
                 return false;
             }
 
@@ -623,11 +623,8 @@ public final class FlowableCreate<T> extends Flowable<T> {
 
         @Override
         public boolean signalError(Throwable e) {
-            /**
-             * @pmt soc#2
-             * Generated artificial performance mutant for IEEE paper. DOI: 10.1109/TSE.2022.3188005
-             */
-            if (isCancelled() || done) {
+
+            if (done || isCancelled()) {
                 return false;
             }
             error = e;
