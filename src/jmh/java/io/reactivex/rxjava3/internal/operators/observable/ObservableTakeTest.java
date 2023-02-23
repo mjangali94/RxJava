@@ -139,7 +139,7 @@ public class ObservableTakeTest extends RxJavaTest {
             e.printStackTrace();
             fail(e.getMessage());
         }
-        System.out.println("TestObservable thread finished");
+        // System.out.println("TestObservable thread finished");
         verify(observer).onSubscribe((Disposable) notNull());
         verify(observer, times(1)).onNext("one");
         verify(observer, never()).onNext("two");
@@ -171,7 +171,7 @@ public class ObservableTakeTest extends RxJavaTest {
                 Disposable bs = Disposable.empty();
                 observer.onSubscribe(bs);
                 for (int i = 0; !bs.isDisposed(); i++) {
-                    System.out.println("Emit: " + i);
+                    // System.out.println("Emit: " + i);
                     count.incrementAndGet();
                     observer.onNext(i);
                 }
@@ -180,7 +180,7 @@ public class ObservableTakeTest extends RxJavaTest {
 
             @Override
             public void accept(Integer t1) {
-                System.out.println("Receive: " + t1);
+                // System.out.println("Receive: " + t1);
             }
         });
         assertEquals(1, count.get());
@@ -199,15 +199,15 @@ public class ObservableTakeTest extends RxJavaTest {
         @Override
         public void subscribe(final Observer<? super String> observer) {
             observer.onSubscribe(Disposable.empty());
-            System.out.println("TestObservable subscribed to ...");
+            // System.out.println("TestObservable subscribed to ...");
             t = new Thread(new Runnable() {
 
                 @Override
                 public void run() {
                     try {
-                        System.out.println("running TestObservable thread");
+                        // System.out.println("running TestObservable thread");
                         for (String s : values) {
-                            System.out.println("TestObservable onNext: " + s);
+                            // System.out.println("TestObservable onNext: " + s);
                             observer.onNext(s);
                         }
                         observer.onComplete();
@@ -216,9 +216,9 @@ public class ObservableTakeTest extends RxJavaTest {
                     }
                 }
             });
-            System.out.println("starting TestObservable thread");
+            // System.out.println("starting TestObservable thread");
             t.start();
-            System.out.println("done starting TestObservable thread");
+            // System.out.println("done starting TestObservable thread");
         }
     }
 

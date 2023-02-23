@@ -159,7 +159,7 @@ public class ObservableRepeatTest extends RxJavaTest {
 
             @Override
             public Observable<Integer> apply(Integer x) {
-                System.out.println("testRepeatRetarget -> " + x);
+                // System.out.println("testRepeatRetarget -> " + x);
                 concatBase.add(x);
                 return Observable.<Integer>empty().delay(200, TimeUnit.MILLISECONDS);
             }

@@ -42,14 +42,14 @@ public class ExecutorSchedulerTest extends AbstractSchedulerConcurrencyTests {
     }
 
     public static void cancelledRetention(Scheduler.Worker w, boolean periodic) throws InterruptedException {
-        System.out.println("Wait before GC");
+        // System.out.println("Wait before GC");
         Thread.sleep(1000);
-        System.out.println("GC");
+        // System.out.println("GC");
         System.gc();
         Thread.sleep(1000);
         MemoryMXBean memoryMXBean = ManagementFactory.getMemoryMXBean();
         long initial = memoryMXBean.getHeapMemoryUsage().getUsed();
-        System.out.printf("Starting: %.3f MB%n", initial / 1024.0 / 1024.0);
+        // System.out.printf("Starting: %.3f MB%n", initial / 1024.0 / 1024.0);
         int n = 100 * 1000;
         if (periodic) {
             final CountDownLatch cdl = new CountDownLatch(n);
@@ -62,44 +62,44 @@ public class ExecutorSchedulerTest extends AbstractSchedulerConcurrencyTests {
             };
             for (int i = 0; i < n; i++) {
                 if (i % 50000 == 0) {
-                    System.out.println("  -> still scheduling: " + i);
+                    // System.out.println("  -> still scheduling: " + i);
                 }
                 w.schedulePeriodically(action, 0, 1, TimeUnit.DAYS);
             }
-            System.out.println("Waiting for the first round to finish...");
+            // System.out.println("Waiting for the first round to finish...");
             cdl.await();
         } else {
             for (int i = 0; i < n; i++) {
                 if (i % 50000 == 0) {
-                    System.out.println("  -> still scheduling: " + i);
+                    // System.out.println("  -> still scheduling: " + i);
                 }
                 w.schedule(Functions.EMPTY_RUNNABLE, 1, TimeUnit.DAYS);
             }
         }
         long after = memoryMXBean.getHeapMemoryUsage().getUsed();
-        System.out.printf("Peak: %.3f MB%n", after / 1024.0 / 1024.0);
+        // System.out.printf("Peak: %.3f MB%n", after / 1024.0 / 1024.0);
         w.dispose();
-        System.out.println("Wait before second GC");
-        System.out.println("JDK 6 purge is N log N because it removes and shifts one by one");
+        // System.out.println("Wait before second GC");
+        // System.out.println("JDK 6 purge is N log N because it removes and shifts one by one");
         int t = (int) (n * Math.log(n) / 100) + 1000;
         int sleepStep = 100;
         while (t > 0) {
-            System.out.printf("  >> Waiting for purge: %.2f s remaining%n", t / 1000d);
+            // System.out.printf("  >> Waiting for purge: %.2f s remaining%n", t / 1000d);
             System.gc();
             long finish = memoryMXBean.getHeapMemoryUsage().getUsed();
-            System.out.printf("After: %.3f MB%n", finish / 1024.0 / 1024.0);
+            // System.out.printf("After: %.3f MB%n", finish / 1024.0 / 1024.0);
             if (finish <= initial * 5) {
                 break;
             }
             Thread.sleep(sleepStep);
             t -= sleepStep;
         }
-        System.out.println("Second GC");
+        // System.out.println("Second GC");
         System.gc();
         t = 2000;
         long finish = memoryMXBean.getHeapMemoryUsage().getUsed();
         while (t > 0) {
-            System.out.printf("After: %.3f MB%n", finish / 1024.0 / 1024.0);
+            // System.out.printf("After: %.3f MB%n", finish / 1024.0 / 1024.0);
             if (finish <= initial * 5) {
                 return;
             }

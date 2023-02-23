@@ -89,7 +89,7 @@ public class ObservableSerializeTest extends RxJavaTest {
         BusyObserver busyobserver = new BusyObserver();
         w.serialize().subscribe(busyobserver);
         onSubscribe.waitToFinish();
-        System.out.println("maxConcurrentThreads: " + onSubscribe.maxConcurrentThreads.get());
+        // System.out.println("maxConcurrentThreads: " + onSubscribe.maxConcurrentThreads.get());
         // we can't know how many onNext calls will occur since they each run on a separate thread
         // that depends on thread scheduling so 0, 1, 2 and 3 are all valid options
         // assertEquals(3, busyobserver.onNextCount.get());
@@ -130,10 +130,10 @@ public class ObservableSerializeTest extends RxJavaTest {
             BusyObserver busyobserver = new BusyObserver();
             w.serialize().subscribe(busyobserver);
             onSubscribe.waitToFinish();
-            System.out.println("maxConcurrentThreads: " + onSubscribe.maxConcurrentThreads.get());
+            // System.out.println("maxConcurrentThreads: " + onSubscribe.maxConcurrentThreads.get());
             // this should not always be the full number of items since the error should (very often)
             // stop it before it completes all 9
-            System.out.println("onNext count: " + busyobserver.onNextCount.get());
+            // System.out.println("onNext count: " + busyobserver.onNextCount.get());
             if (busyobserver.onNextCount.get() < 9) {
                 lessThan9 = true;
             }
@@ -235,15 +235,15 @@ public class ObservableSerializeTest extends RxJavaTest {
         @Override
         public void subscribe(final Observer<? super String> observer) {
             observer.onSubscribe(Disposable.empty());
-            System.out.println("TestSingleThreadedObservable subscribed to ...");
+            // System.out.println("TestSingleThreadedObservable subscribed to ...");
             t = new Thread(new Runnable() {
 
                 @Override
                 public void run() {
                     try {
-                        System.out.println("running TestSingleThreadedObservable thread");
+                        // System.out.println("running TestSingleThreadedObservable thread");
                         for (String s : values) {
-                            System.out.println("TestSingleThreadedObservable onNext: " + s);
+                            // System.out.println("TestSingleThreadedObservable onNext: " + s);
                             observer.onNext(s);
                         }
                         observer.onComplete();
@@ -252,9 +252,9 @@ public class ObservableSerializeTest extends RxJavaTest {
                     }
                 }
             });
-            System.out.println("starting TestSingleThreadedObservable thread");
+            // System.out.println("starting TestSingleThreadedObservable thread");
             t.start();
-            System.out.println("done starting TestSingleThreadedObservable thread");
+            // System.out.println("done starting TestSingleThreadedObservable thread");
         }
 
         public void waitToFinish() {
@@ -289,14 +289,14 @@ public class ObservableSerializeTest extends RxJavaTest {
         @Override
         public void subscribe(final Observer<? super String> observer) {
             observer.onSubscribe(Disposable.empty());
-            System.out.println("TestMultiThreadedObservable subscribed to ...");
+            // System.out.println("TestMultiThreadedObservable subscribed to ...");
             final NullPointerException npe = new NullPointerException();
             t = new Thread(new Runnable() {
 
                 @Override
                 public void run() {
                     try {
-                        System.out.println("running TestMultiThreadedObservable thread");
+                        // System.out.println("running TestMultiThreadedObservable thread");
                         for (final String s : values) {
                             threadPool.execute(new Runnable() {
 
@@ -306,11 +306,11 @@ public class ObservableSerializeTest extends RxJavaTest {
                                     try {
                                         // perform onNext call
                                         if (s == null) {
-                                            System.out.println("TestMultiThreadedObservable onNext: null");
+                                            // System.out.println("TestMultiThreadedObservable onNext: null");
                                             // force an error
                                             throw npe;
                                         } else {
-                                            System.out.println("TestMultiThreadedObservable onNext: " + s);
+                                            // System.out.println("TestMultiThreadedObservable onNext: " + s);
                                         }
                                         observer.onNext(s);
                                         // capture 'maxThreads'
@@ -342,9 +342,9 @@ public class ObservableSerializeTest extends RxJavaTest {
                     observer.onComplete();
                 }
             });
-            System.out.println("starting TestMultiThreadedObservable thread");
+            // System.out.println("starting TestMultiThreadedObservable thread");
             t.start();
-            System.out.println("done starting TestMultiThreadedObservable thread");
+            // System.out.println("done starting TestMultiThreadedObservable thread");
         }
 
         public void waitToFinish() {
@@ -371,7 +371,7 @@ public class ObservableSerializeTest extends RxJavaTest {
         @Override
         public void onComplete() {
             threadsRunning.incrementAndGet();
-            System.out.println(">>> Busyobserver received onComplete");
+            // System.out.println(">>> Busyobserver received onComplete");
             onComplete = true;
             int concurrentThreads = threadsRunning.get();
             int maxThreads = maxConcurrentThreads.get();
@@ -384,7 +384,7 @@ public class ObservableSerializeTest extends RxJavaTest {
         @Override
         public void onError(Throwable e) {
             threadsRunning.incrementAndGet();
-            System.out.println(">>> Busyobserver received onError: " + e.getMessage());
+            // System.out.println(">>> Busyobserver received onError: " + e.getMessage());
             onError = true;
             int concurrentThreads = threadsRunning.get();
             int maxThreads = maxConcurrentThreads.get();
@@ -399,7 +399,7 @@ public class ObservableSerializeTest extends RxJavaTest {
             threadsRunning.incrementAndGet();
             try {
                 onNextCount.incrementAndGet();
-                System.out.println(">>> Busyobserver received onNext: " + args);
+                // System.out.println(">>> Busyobserver received onNext: " + args);
                 try {
                     // simulate doing something computational
                     Thread.sleep(200);

@@ -130,7 +130,7 @@ public class FlowableOnBackpressureReduceTest extends RxJavaTest {
 
     private <T> void assertValuesDropped(TestSubscriberEx<T> ts, int totalValues) {
         int n = ts.values().size();
-        System.out.println("testAsynchronousDrop -> " + n);
+        // System.out.println("testAsynchronousDrop -> " + n);
         Assert.assertTrue("All events received?", n < totalValues);
     }
 

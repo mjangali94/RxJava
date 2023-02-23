@@ -154,7 +154,7 @@ public class FlowableAmbTest extends RxJavaTest {
 
                     @Override
                     public void request(long n) {
-                        System.out.println("1-requested: " + n);
+                        // System.out.println("1-requested: " + n);
                         requested1.set(n);
                     }
 
@@ -172,7 +172,7 @@ public class FlowableAmbTest extends RxJavaTest {
 
                     @Override
                     public void request(long n) {
-                        System.out.println("2-requested: " + n);
+                        // System.out.println("2-requested: " + n);
                         requested2.set(n);
                     }
 

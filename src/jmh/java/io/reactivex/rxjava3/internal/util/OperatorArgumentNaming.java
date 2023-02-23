@@ -108,19 +108,19 @@ public final class OperatorArgumentNaming {
                                     if (match) {
                                         for (int k = 0; k < overloadFirst.size(); k++) {
                                             if (!overloadFirst.get(k).name.equals(overloadSecond.get(k).name)) {
-                                                System.out.print("Argument naming mismatch #");
-                                                System.out.println(++counter);
-                                                System.out.print("  ");
-                                                System.out.print(Strings.padEnd(firstName, Math.max(firstName.length(), secondName.length()) + 1, ' '));
-                                                System.out.print(methodOverloadsFirst.getKey());
-                                                System.out.print("  ");
-                                                System.out.println(overloadFirst);
-                                                System.out.print("  ");
-                                                System.out.print(Strings.padEnd(secondName, Math.max(firstName.length(), secondName.length()) + 1, ' '));
-                                                System.out.print(methodOverloadsFirst.getKey());
-                                                System.out.print("  ");
-                                                System.out.println(overloadSecond);
-                                                System.out.println();
+                                                // System.out.print("Argument naming mismatch #");
+                                                // System.out.println(++counter);
+                                                // System.out.print("  ");
+                                                // System.out.print(Strings.padEnd(firstName, Math.max(firstName.length(), secondName.length()) + 1, ' '));
+                                                // System.out.print(methodOverloadsFirst.getKey());
+                                                // System.out.print("  ");
+                                                // System.out.println(overloadFirst);
+                                                // System.out.print("  ");
+                                                // System.out.print(Strings.padEnd(secondName, Math.max(firstName.length(), secondName.length()) + 1, ' '));
+                                                // System.out.print(methodOverloadsFirst.getKey());
+                                                // System.out.print("  ");
+                                                // System.out.println(overloadSecond);
+                                                // System.out.println();
                                                 break;
                                             }
                                         }

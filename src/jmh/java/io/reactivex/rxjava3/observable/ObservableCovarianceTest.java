@@ -69,7 +69,7 @@ public class ObservableCovarianceTest extends RxJavaTest {
 
             @Override
             public void accept(GroupedObservable<Object, Movie> g) {
-                System.out.println(g.getKey());
+                // System.out.println(g.getKey());
             }
         }).flatMap(new Function<GroupedObservable<Object, Movie>, Observable<String>>() {
 
@@ -79,7 +79,7 @@ public class ObservableCovarianceTest extends RxJavaTest {
 
                     @Override
                     public void accept(Movie pv) {
-                        System.out.println(pv);
+                        // System.out.println(pv);
                     }
                 }).compose(new ObservableTransformer<Movie, Movie>() {
 
@@ -98,7 +98,7 @@ public class ObservableCovarianceTest extends RxJavaTest {
         }).subscribe(to);
         to.assertTerminated();
         to.assertNoErrors();
-        // System.out.println(ts.getOnNextEvents());
+        // // System.out.println(ts.getOnNextEvents());
         assertEquals(6, to.values().size());
     }
 

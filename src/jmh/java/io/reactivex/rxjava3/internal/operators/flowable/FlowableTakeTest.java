@@ -154,7 +154,7 @@ public class FlowableTakeTest extends RxJavaTest {
             e.printStackTrace();
             fail(e.getMessage());
         }
-        System.out.println("TestFlowable thread finished");
+        // System.out.println("TestFlowable thread finished");
         verify(subscriber).onSubscribe((Subscription) notNull());
         verify(subscriber, times(1)).onNext("one");
         verify(subscriber, never()).onNext("two");
@@ -188,7 +188,7 @@ public class FlowableTakeTest extends RxJavaTest {
                 BooleanSubscription bs = new BooleanSubscription();
                 s.onSubscribe(bs);
                 for (int i = 0; !bs.isCancelled(); i++) {
-                    System.out.println("Emit: " + i);
+                    // System.out.println("Emit: " + i);
                     count.incrementAndGet();
                     s.onNext(i);
                 }
@@ -197,7 +197,7 @@ public class FlowableTakeTest extends RxJavaTest {
 
             @Override
             public void accept(Integer t1) {
-                System.out.println("Receive: " + t1);
+                // System.out.println("Receive: " + t1);
             }
         });
         assertEquals(1, count.get());
@@ -216,15 +216,15 @@ public class FlowableTakeTest extends RxJavaTest {
         @Override
         public void subscribe(final Subscriber<? super String> subscriber) {
             subscriber.onSubscribe(new BooleanSubscription());
-            System.out.println("TestFlowable subscribed to ...");
+            // System.out.println("TestFlowable subscribed to ...");
             t = new Thread(new Runnable() {
 
                 @Override
                 public void run() {
                     try {
-                        System.out.println("running TestFlowable thread");
+                        // System.out.println("running TestFlowable thread");
                         for (String s : values) {
-                            System.out.println("TestFlowable onNext: " + s);
+                            // System.out.println("TestFlowable onNext: " + s);
                             subscriber.onNext(s);
                         }
                         subscriber.onComplete();
@@ -233,9 +233,9 @@ public class FlowableTakeTest extends RxJavaTest {
                     }
                 }
             });
-            System.out.println("starting TestFlowable thread");
+            // System.out.println("starting TestFlowable thread");
             t.start();
-            System.out.println("done starting TestFlowable thread");
+            // System.out.println("done starting TestFlowable thread");
         }
     }
 
@@ -345,7 +345,7 @@ public class FlowableTakeTest extends RxJavaTest {
 
             @Override
             public void accept(long n) {
-                System.out.println(n);
+                // System.out.println(n);
                 requests.addAndGet(n);
             }
         }).take(2).subscribe(ts);

@@ -52,7 +52,7 @@ public class OperatorsAreFinal {
             }
         }
         if (e.length() != 0) {
-            System.out.println(e);
+            // System.out.println(e);
             throw new AssertionError(e.toString());
         }
     }

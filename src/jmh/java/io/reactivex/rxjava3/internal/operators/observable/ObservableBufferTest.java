@@ -295,7 +295,7 @@ public class ObservableBufferTest extends RxJavaTest {
 
             @Override
             public void accept(List<Integer> pv) {
-                System.out.println(pv);
+                // System.out.println(pv);
             }
         }).subscribe(to);
         InOrder inOrder = Mockito.inOrder(o);
@@ -476,7 +476,7 @@ public class ObservableBufferTest extends RxJavaTest {
 
             @Override
             public void accept(List<Long> pv) {
-                System.out.println(pv);
+                // System.out.println(pv);
             }
         }).subscribe(o);
         scheduler.advanceTimeBy(5, TimeUnit.SECONDS);

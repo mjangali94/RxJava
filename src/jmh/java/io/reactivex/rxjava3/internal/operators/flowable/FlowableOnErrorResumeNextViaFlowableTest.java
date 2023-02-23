@@ -70,7 +70,7 @@ public class FlowableOnErrorResumeNextViaFlowableTest extends RxJavaTest {
                 if ("fail".equals(s)) {
                     throw new RuntimeException("Forced Failure");
                 }
-                System.out.println("BadMapper:" + s);
+                // System.out.println("BadMapper:" + s);
                 return s;
             }
         });
@@ -106,32 +106,32 @@ public class FlowableOnErrorResumeNextViaFlowableTest extends RxJavaTest {
 
         @Override
         public void subscribe(final Subscriber<? super String> subscriber) {
-            System.out.println("TestObservable subscribed to ...");
+            // System.out.println("TestObservable subscribed to ...");
             subscriber.onSubscribe(upstream);
             t = new Thread(new Runnable() {
 
                 @Override
                 public void run() {
                     try {
-                        System.out.println("running TestObservable thread");
+                        // System.out.println("running TestObservable thread");
                         for (String s : values) {
                             if ("fail".equals(s)) {
                                 throw new RuntimeException("Forced Failure");
                             }
-                            System.out.println("TestObservable onNext: " + s);
+                            // System.out.println("TestObservable onNext: " + s);
                             subscriber.onNext(s);
                         }
-                        System.out.println("TestObservable onComplete");
+                        // System.out.println("TestObservable onComplete");
                         subscriber.onComplete();
                     } catch (Throwable e) {
-                        System.out.println("TestObservable onError: " + e);
+                        // System.out.println("TestObservable onError: " + e);
                         subscriber.onError(e);
                     }
                 }
             });
-            System.out.println("starting TestObservable thread");
+            // System.out.println("starting TestObservable thread");
             t.start();
-            System.out.println("done starting TestObservable thread");
+            // System.out.println("done starting TestObservable thread");
         }
     }
 

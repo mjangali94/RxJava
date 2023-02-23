@@ -90,7 +90,7 @@ public class ObservablePublishTest extends RxJavaTest {
 
             @Override
             public void run() {
-                System.out.println("^^^^^^^^^^^^^ completed FAST");
+                // System.out.println("^^^^^^^^^^^^^ completed FAST");
             }
         });
         Observable<Integer> slow = is.observeOn(Schedulers.computation()).map(new Function<Integer, Integer>() {
@@ -112,7 +112,7 @@ public class ObservablePublishTest extends RxJavaTest {
 
             @Override
             public void run() {
-                System.out.println("^^^^^^^^^^^^^ completed SLOW");
+                // System.out.println("^^^^^^^^^^^^^ completed SLOW");
             }
         });
         TestObserver<Integer> to = new TestObserver<>();
@@ -152,7 +152,7 @@ public class ObservablePublishTest extends RxJavaTest {
         to.assertNoErrors();
         to.assertValues(0, 1, 2, 3);
         assertEquals(5, emitted.get());
-        System.out.println(to.values());
+        // System.out.println(to.values());
     }
 
     // use case from https://github.com/ReactiveX/RxJava/issues/1732
@@ -169,7 +169,7 @@ public class ObservablePublishTest extends RxJavaTest {
             }
         })).subscribe(to);
         xsp.connect();
-        System.out.println(to.values());
+        // System.out.println(to.values());
     }
 
     @Test
@@ -260,8 +260,8 @@ public class ObservablePublishTest extends RxJavaTest {
         to2.assertValue(1);
         to2.assertNoErrors();
         to2.assertTerminated();
-        System.out.println(connection);
-        System.out.println(connection2);
+        // System.out.println(connection);
+        // System.out.println(connection2);
     }
 
     @Test

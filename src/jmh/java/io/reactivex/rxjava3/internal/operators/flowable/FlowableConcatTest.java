@@ -116,7 +116,7 @@ public class FlowableConcatTest {
     public void nestedAsyncConcatLoop() throws Throwable {
         for (int i = 0; i < 500; i++) {
             if (i % 10 == 0) {
-                System.out.println("testNestedAsyncConcat >> " + i);
+                // System.out.println("testNestedAsyncConcat >> " + i);
             }
             nestedAsyncConcat();
         }
@@ -159,12 +159,12 @@ public class FlowableConcatTest {
                         try {
                             // emit first
                             if (!d.isDisposed()) {
-                                System.out.println("Emit o1");
+                                // System.out.println("Emit o1");
                                 subscriber.onNext(Flowable.unsafeCreate(o1));
                             }
                             // emit second
                             if (!d.isDisposed()) {
-                                System.out.println("Emit o2");
+                                // System.out.println("Emit o2");
                                 subscriber.onNext(Flowable.unsafeCreate(o2));
                             }
                             // wait until sometime later and emit third
@@ -174,13 +174,13 @@ public class FlowableConcatTest {
                                 subscriber.onError(e);
                             }
                             if (!d.isDisposed()) {
-                                System.out.println("Emit o3");
+                                // System.out.println("Emit o3");
                                 subscriber.onNext(Flowable.unsafeCreate(o3));
                             }
                         } catch (Throwable e) {
                             subscriber.onError(e);
                         } finally {
-                            System.out.println("Done parent Flowable");
+                            // System.out.println("Done parent Flowable");
                             subscriber.onComplete();
                             parentHasFinished.countDown();
                         }
@@ -195,9 +195,9 @@ public class FlowableConcatTest {
         parentHasStarted.await();
         try {
             // wait for first 2 async observables to complete
-            System.out.println("Thread1 is starting ... waiting for it to complete ...");
+            // System.out.println("Thread1 is starting ... waiting for it to complete ...");
             o1.waitForThreadDone();
-            System.out.println("Thread2 is starting ... waiting for it to complete ...");
+            // System.out.println("Thread2 is starting ... waiting for it to complete ...");
             o2.waitForThreadDone();
         } catch (Throwable e) {
             throw new RuntimeException("failed waiting on threads", e);
@@ -668,8 +668,8 @@ public class FlowableConcatTest {
                 // ignored
                 }
                 if (counter.getAndIncrement() % 100 == 0) {
-                    System.out.print("testIssue2890NoStackoverflow -> ");
-                    System.out.println(counter.get());
+                    // System.out.print("testIssue2890NoStackoverflow -> ");
+                    // System.out.println(counter.get());
                 }
                 ;
             }
@@ -725,7 +725,7 @@ public class FlowableConcatTest {
                 return;
             }
             if (i % 1000 == 0) {
-                System.out.println("concatMapRangeAsyncLoop > " + i);
+                // System.out.println("concatMapRangeAsyncLoop > " + i);
             }
             TestSubscriberEx<Integer> ts = new TestSubscriberEx<>();
             Flowable.range(0, 1000).concatMap(new Function<Integer, Flowable<Integer>>() {

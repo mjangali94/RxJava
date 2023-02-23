@@ -64,14 +64,14 @@ public final class ObservableToFlowabeTestSync {
             for (Method m : clazz.getMethods()) {
                 if (!methods2.contains(m.getName()) && !methods2.contains(m.getName().replace("Observable", "Flowable"))) {
                     count++;
-                    System.out.println();
-                    System.out.print("java.lang.RuntimeException: missing > ");
-                    System.out.println(m.getName());
-                    System.out.print(" at ");
-                    System.out.print(clazz.getName());
-                    System.out.print(" (");
-                    System.out.print(clazz.getSimpleName());
-                    System.out.print(".java:");
+                    // System.out.println();
+                    // System.out.print("java.lang.RuntimeException: missing > ");
+                    // System.out.println(m.getName());
+                    // System.out.print(" at ");
+                    // System.out.print(clazz.getName());
+                    // System.out.print(" (");
+                    // System.out.print(clazz.getSimpleName());
+                    // System.out.print(".java:");
                     List<String> lines = readAllLines(f);
                     int j = 1;
                     for (int i = 1; i <= lines.size(); i++) {
@@ -79,21 +79,21 @@ public final class ObservableToFlowabeTestSync {
                             j = i;
                         }
                     }
-                    System.out.print(j);
-                    System.out.println(")");
-                    System.out.print(" at ");
-                    System.out.print(clazz2.getName());
-                    System.out.print(" (");
-                    System.out.print(clazz2.getSimpleName());
+                    // System.out.print(j);
+                    // System.out.println(")");
+                    // System.out.print(" at ");
+                    // System.out.print(clazz2.getName());
+                    // System.out.print(" (");
+                    // System.out.print(clazz2.getSimpleName());
                     lines = readAllLines(f2);
-                    System.out.print(".java:");
-                    System.out.print(lines.size() - 1);
-                    System.out.println(")");
+                    // System.out.print(".java:");
+                    // System.out.print(lines.size() - 1);
+                    // System.out.println(")");
                 }
             }
         }
-        System.out.println();
-        System.out.println(count);
+        // System.out.println();
+        // System.out.println(count);
     }
 
     public static void main(String[] args) throws Exception {

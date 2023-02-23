@@ -69,7 +69,7 @@ public class FlowableCovarianceTest extends RxJavaTest {
 
             @Override
             public void accept(GroupedFlowable<Object, Movie> g) {
-                System.out.println(g.getKey());
+                // System.out.println(g.getKey());
             }
         }).flatMap(new Function<GroupedFlowable<Object, Movie>, Publisher<String>>() {
 
@@ -79,7 +79,7 @@ public class FlowableCovarianceTest extends RxJavaTest {
 
                     @Override
                     public void accept(Movie v) {
-                        System.out.println(v);
+                        // System.out.println(v);
                     }
                 }).compose(new FlowableTransformer<Movie, Movie>() {
 
@@ -98,7 +98,7 @@ public class FlowableCovarianceTest extends RxJavaTest {
         }).subscribe(ts);
         ts.assertTerminated();
         ts.assertNoErrors();
-        // System.out.println(ts.getOnNextEvents());
+        // // System.out.println(ts.getOnNextEvents());
         assertEquals(6, ts.values().size());
     }
 

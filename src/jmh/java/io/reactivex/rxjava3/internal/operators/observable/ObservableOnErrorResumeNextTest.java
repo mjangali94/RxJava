@@ -139,7 +139,7 @@ public class ObservableOnErrorResumeNextTest extends RxJavaTest {
                 if ("fail".equals(s)) {
                     throw new RuntimeException("Forced Failure");
                 }
-                System.out.println("BadMapper:" + s);
+                // System.out.println("BadMapper:" + s);
                 return s;
             }
         });
@@ -175,16 +175,16 @@ public class ObservableOnErrorResumeNextTest extends RxJavaTest {
 
         @Override
         public void subscribe(final Observer<? super String> observer) {
-            System.out.println("TestObservable subscribed to ...");
+            // System.out.println("TestObservable subscribed to ...");
             observer.onSubscribe(Disposable.empty());
             t = new Thread(new Runnable() {
 
                 @Override
                 public void run() {
                     try {
-                        System.out.println("running TestObservable thread");
+                        // System.out.println("running TestObservable thread");
                         for (String s : values) {
-                            System.out.println("TestObservable onNext: " + s);
+                            // System.out.println("TestObservable onNext: " + s);
                             observer.onNext(s);
                         }
                         throw new RuntimeException("Forced Failure");
@@ -193,9 +193,9 @@ public class ObservableOnErrorResumeNextTest extends RxJavaTest {
                     }
                 }
             });
-            System.out.println("starting TestObservable thread");
+            // System.out.println("starting TestObservable thread");
             t.start();
-            System.out.println("done starting TestObservable thread");
+            // System.out.println("done starting TestObservable thread");
         }
     }
 

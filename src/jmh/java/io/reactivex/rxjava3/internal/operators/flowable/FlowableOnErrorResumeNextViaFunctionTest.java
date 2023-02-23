@@ -141,7 +141,7 @@ public class FlowableOnErrorResumeNextViaFunctionTest extends RxJavaTest {
                 if ("fail".equals(s)) {
                     throw new RuntimeException("Forced Failure");
                 }
-                System.out.println("BadMapper:" + s);
+                // System.out.println("BadMapper:" + s);
                 return s;
             }
         });
@@ -177,16 +177,16 @@ public class FlowableOnErrorResumeNextViaFunctionTest extends RxJavaTest {
 
         @Override
         public void subscribe(final Subscriber<? super String> subscriber) {
-            System.out.println("TestFlowable subscribed to ...");
+            // System.out.println("TestFlowable subscribed to ...");
             subscriber.onSubscribe(new BooleanSubscription());
             t = new Thread(new Runnable() {
 
                 @Override
                 public void run() {
                     try {
-                        System.out.println("running TestFlowable thread");
+                        // System.out.println("running TestFlowable thread");
                         for (String s : values) {
-                            System.out.println("TestFlowable onNext: " + s);
+                            // System.out.println("TestFlowable onNext: " + s);
                             subscriber.onNext(s);
                         }
                         throw new RuntimeException("Forced Failure");
@@ -195,9 +195,9 @@ public class FlowableOnErrorResumeNextViaFunctionTest extends RxJavaTest {
                     }
                 }
             });
-            System.out.println("starting TestFlowable thread");
+            // System.out.println("starting TestFlowable thread");
             t.start();
-            System.out.println("done starting TestFlowable thread");
+            // System.out.println("done starting TestFlowable thread");
         }
     }
 

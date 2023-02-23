@@ -66,7 +66,7 @@ public class TextualAorAn {
             }
         }
         if (fail.length() != 0) {
-            System.out.println(fail);
+            // System.out.println(fail);
             throw new AssertionError(fail.toString());
         }
     }

@@ -209,7 +209,7 @@ public class BehaviorProcessorTest extends FlowableProcessorTest<Object> {
             InOrder inOrder = inOrder(subscriber);
             String v = "" + i;
             src.onNext(v);
-            System.out.printf("Turn: %d%n", i);
+            // System.out.printf("Turn: %d%n", i);
             src.firstElement().toFlowable().flatMap(new Function<String, Flowable<String>>() {
 
                 @Override
@@ -303,7 +303,7 @@ public class BehaviorProcessorTest extends FlowableProcessorTest<Object> {
         try {
             for (int i = 0; i < 50000; i++) {
                 if (i % 1000 == 0) {
-                    System.out.println(i);
+                    // System.out.println(i);
                 }
                 final BehaviorProcessor<Object> rs = BehaviorProcessor.create();
                 final CountDownLatch finish = new CountDownLatch(1);
@@ -343,8 +343,8 @@ public class BehaviorProcessorTest extends FlowableProcessorTest<Object> {
                 });
                 start.countDown();
                 if (!finish.await(5, TimeUnit.SECONDS)) {
-                    System.out.println(o.get());
-                    System.out.println(rs.hasSubscribers());
+                    // System.out.println(o.get());
+                    // System.out.println(rs.hasSubscribers());
                     rs.onComplete();
                     Assert.fail("Timeout @ " + i);
                     break;

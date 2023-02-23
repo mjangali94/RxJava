@@ -159,7 +159,7 @@ public class FlowableRepeatTest {
 
             @Override
             public Flowable<Integer> apply(Integer x) {
-                System.out.println("testRepeatRetarget -> " + x);
+                // System.out.println("testRepeatRetarget -> " + x);
                 concatBase.add(x);
                 return Flowable.<Integer>empty().delay(200, TimeUnit.MILLISECONDS);
             }

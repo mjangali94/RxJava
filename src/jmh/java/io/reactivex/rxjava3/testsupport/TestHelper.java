@@ -3050,7 +3050,7 @@ public enum TestHelper {
         URL u = TestHelper.class.getResource(TestHelper.class.getSimpleName() + ".class");
         String path = new File(u.toURI()).toString().replace('\\', '/');
         parentPackage = parentPackage.replace(".", "/");
-        // System.out.println(path);
+        // // System.out.println(path);
         // Locate the src/main/java directory
         String p = null;
         while (true) {
@@ -3073,7 +3073,7 @@ public enum TestHelper {
         if (f.canRead()) {
             return f;
         }
-        System.out.println("Can't read " + p);
+        // System.out.println("Can't read " + p);
         return null;
     }
 

@@ -65,9 +65,9 @@ public class BaseTypeAnnotations {
             }
         }
         if (b.length() != 0) {
-            System.out.println(clazz);
-            System.out.println("------------------------");
-            System.out.println(b);
+            // System.out.println(clazz);
+            // System.out.println("------------------------");
+            // System.out.println(b);
             fail(b.toString());
         }
     }
@@ -108,9 +108,9 @@ public class BaseTypeAnnotations {
             }
         }
         if (b.length() != 0) {
-            System.out.println(clazz);
-            System.out.println("------------------------");
-            System.out.println(b);
+            // System.out.println(clazz);
+            // System.out.println("------------------------");
+            // System.out.println(b);
             fail(b.toString());
         }
     }
@@ -153,9 +153,9 @@ public class BaseTypeAnnotations {
             }
         }
         if (b.length() != 0) {
-            System.out.println(clazz);
-            System.out.println("------------------------");
-            System.out.println(b);
+            // System.out.println(clazz);
+            // System.out.println("------------------------");
+            // System.out.println(b);
             fail(b.toString());
         }
     }

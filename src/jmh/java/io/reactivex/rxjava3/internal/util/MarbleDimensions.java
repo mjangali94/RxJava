@@ -42,8 +42,8 @@ public final class MarbleDimensions {
         Map<String, Integer[]> dimensions = new HashMap<>();
         for (Class<?> clazz : CLASSES) {
             String simpleName = clazz.getSimpleName();
-            System.out.println(simpleName);
-            System.out.println("----");
+            // System.out.println(simpleName);
+            // System.out.println("----");
             String packageName = clazz.getPackage().getName();
             File f = TestHelper.findSource(clazz.getSimpleName(), packageName);
             if (f == null) {
@@ -77,11 +77,11 @@ public final class MarbleDimensions {
                     if (imageDim != null) {
                         int expectedHeight = (int) Math.round(1.0 * width / imageDim[0] * imageDim[1]);
                         if (expectedHeight != height) {
-                            System.out.printf("    %d => %d%n", height, expectedHeight);
-                            System.out.printf(" at %s.%s.method(%s.java:%d)%n", packageName, simpleName, simpleName, i + 1);
+                            // System.out.printf("    %d => %d%n", height, expectedHeight);
+                            // System.out.printf(" at %s.%s.method(%s.java:%d)%n", packageName, simpleName, simpleName, i + 1);
                         }
                     }
-                // System.out.printf("%d: %d x %d => %s%n", i + 1, width, height, url);
+                // // System.out.printf("%d: %d x %d => %s%n", i + 1, width, height, url);
                 }
             }
         }

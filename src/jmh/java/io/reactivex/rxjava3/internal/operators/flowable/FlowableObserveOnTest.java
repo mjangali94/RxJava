@@ -80,7 +80,7 @@ public class FlowableObserveOnTest extends RxJavaTest {
 
     @Test
     public void threadName() throws InterruptedException {
-        System.out.println("Main Thread: " + Thread.currentThread().getName());
+        // System.out.println("Main Thread: " + Thread.currentThread().getName());
         Flowable<String> obs = Flowable.just("one", "null", "two", "three", "four");
         Subscriber<String> subscriber = TestHelper.mockSubscriber();
         final String parentThreadName = Thread.currentThread().getName();
@@ -91,7 +91,7 @@ public class FlowableObserveOnTest extends RxJavaTest {
             @Override
             public void accept(String s) {
                 String threadName = Thread.currentThread().getName();
-                System.out.println("Source ThreadName: " + threadName + "  Expected => " + parentThreadName);
+                // System.out.println("Source ThreadName: " + threadName + "  Expected => " + parentThreadName);
                 assertEquals(parentThreadName, threadName);
             }
         });
@@ -102,7 +102,7 @@ public class FlowableObserveOnTest extends RxJavaTest {
             public void accept(String t1) {
                 String threadName = Thread.currentThread().getName();
                 boolean correctThreadName = threadName.startsWith("RxNewThreadScheduler");
-                System.out.println("ObserveOn ThreadName: " + threadName + "  Correct => " + correctThreadName);
+                // System.out.println("ObserveOn ThreadName: " + threadName + "  Correct => " + correctThreadName);
                 assertTrue(correctThreadName);
             }
         }).doAfterTerminate(new Action() {
@@ -272,7 +272,7 @@ public class FlowableObserveOnTest extends RxJavaTest {
 
             @Override
             public void onComplete() {
-                System.out.println("onComplete");
+                // System.out.println("onComplete");
                 completeTime.set(System.nanoTime());
                 completedLatch.countDown();
             }
@@ -294,12 +294,12 @@ public class FlowableObserveOnTest extends RxJavaTest {
             }
         });
         long afterSubscribeTime = System.nanoTime();
-        System.out.println("After subscribe: " + completedLatch.getCount());
+        // System.out.println("After subscribe: " + completedLatch.getCount());
         assertEquals(1, completedLatch.getCount());
         nextLatch.countDown();
         completedLatch.await(1000, TimeUnit.MILLISECONDS);
         assertTrue(completeTime.get() > afterSubscribeTime);
-        System.out.println("onComplete nanos after subscribe: " + (completeTime.get() - afterSubscribeTime));
+        // System.out.println("onComplete nanos after subscribe: " + (completeTime.get() - afterSubscribeTime));
     }
 
     private static int randomIntFrom0to100() {
@@ -381,7 +381,7 @@ public class FlowableObserveOnTest extends RxJavaTest {
         System.err.println(testSubscriber.values());
         testSubscriber.assertValues(0, 1, 2);
         // it should be between the take num and requested batch size across the async boundary
-        System.out.println("Generated: " + generated.get());
+        // System.out.println("Generated: " + generated.get());
         assertTrue(generated.get() >= 3 && generated.get() <= Flowable.bufferSize());
     }
 
@@ -424,7 +424,7 @@ public class FlowableObserveOnTest extends RxJavaTest {
         testSubscriber.awaitDone(5, TimeUnit.SECONDS);
         System.err.println(testSubscriber.values());
         // it should be between the take num and requested batch size across the async boundary
-        System.out.println("Generated: " + generated.get());
+        // System.out.println("Generated: " + generated.get());
         assertTrue(generated.get() >= numForBatches && generated.get() <= numForBatches + Flowable.bufferSize());
     }
 
@@ -499,7 +499,7 @@ public class FlowableObserveOnTest extends RxJavaTest {
         testSubscriber.awaitDone(5, TimeUnit.SECONDS);
         List<Throwable> errors = testSubscriber.errors();
         assertEquals(1, errors.size());
-        System.out.println("Errors: " + errors);
+        // System.out.println("Errors: " + errors);
         Throwable t = errors.get(0);
         if (t instanceof MissingBackpressureException) {
         // success, we expect this
@@ -572,7 +572,7 @@ public class FlowableObserveOnTest extends RxJavaTest {
 
             @Override
             public String apply(Long t1) {
-                System.out.println(t1);
+                // System.out.println(t1);
                 try {
                     Thread.sleep(100);
                 } catch (InterruptedException e) {
@@ -581,7 +581,7 @@ public class FlowableObserveOnTest extends RxJavaTest {
             }
         }).subscribe(ts);
         ts.awaitDone(5, TimeUnit.SECONDS);
-        System.out.println("Errors: " + ts.errors());
+        // System.out.println("Errors: " + ts.errors());
         assertEquals(1, ts.errors().size());
         assertEquals(MissingBackpressureException.class, ts.errors().get(0).getClass());
     }
@@ -592,7 +592,7 @@ public class FlowableObserveOnTest extends RxJavaTest {
 
             @Override
             public void accept(Notification<Long> n) {
-            // System.out.println("BEFORE " + n);
+            // // System.out.println("BEFORE " + n);
             }
         }).observeOn(Schedulers.newThread()).doOnEach(new Consumer<Notification<Long>>() {
 
@@ -602,7 +602,7 @@ public class FlowableObserveOnTest extends RxJavaTest {
                     Thread.sleep(100);
                 } catch (InterruptedException e) {
                 }
-            // System.out.println("AFTER " + n);
+            // // System.out.println("AFTER " + n);
             }
         });
         TestSubscriberEx<Long> ts = new TestSubscriberEx<>();

@@ -201,9 +201,9 @@ public class PublishProcessorTest extends FlowableProcessorTest<Object> {
             s.onNext(i);
         }
         s.onComplete();
-        // System.out.println("countParent: " + countParent.get());
-        // System.out.println("countChildren: " + countChildren.get());
-        // System.out.println("countTotal: " + countTotal.get());
+        // // System.out.println("countParent: " + countParent.get());
+        // // System.out.println("countChildren: " + countChildren.get());
+        // // System.out.println("countTotal: " + countTotal.get());
         // 9+8+7+6+5+4+3+2+1+0 == 45
         assertEquals(45, list.size());
     }
@@ -248,7 +248,7 @@ public class PublishProcessorTest extends FlowableProcessorTest<Object> {
             final Subscriber<Object> subscriber = TestHelper.mockSubscriber();
             InOrder inOrder = inOrder(subscriber);
             String v = "" + i;
-            System.out.printf("Turn: %d%n", i);
+            // System.out.printf("Turn: %d%n", i);
             src.firstElement().toFlowable().flatMap(new Function<String, Flowable<String>>() {
 
                 @Override

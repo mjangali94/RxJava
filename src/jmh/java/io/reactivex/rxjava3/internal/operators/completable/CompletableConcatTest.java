@@ -241,7 +241,7 @@ public class CompletableConcatTest extends RxJavaTest {
                         try {
                             Thread.sleep(30);
                         } catch (InterruptedException e) {
-                            System.out.println("Interrupted! " + Thread.currentThread());
+                            // System.out.println("Interrupted! " + Thread.currentThread());
                             interrupted[0] = true;
                         }
                     }

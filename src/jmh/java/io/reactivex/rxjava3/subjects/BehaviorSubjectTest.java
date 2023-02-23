@@ -208,7 +208,7 @@ public class BehaviorSubjectTest extends SubjectTest<Integer> {
             InOrder inOrder = inOrder(o);
             String v = "" + i;
             src.onNext(v);
-            System.out.printf("Turn: %d%n", i);
+            // System.out.printf("Turn: %d%n", i);
             src.firstElement().toObservable().flatMap(new Function<String, Observable<String>>() {
 
                 @Override
@@ -302,7 +302,7 @@ public class BehaviorSubjectTest extends SubjectTest<Integer> {
         try {
             for (int i = 0; i < 50000; i++) {
                 if (i % 1000 == 0) {
-                    System.out.println(i);
+                    // System.out.println(i);
                 }
                 final BehaviorSubject<Object> rs = BehaviorSubject.create();
                 final CountDownLatch finish = new CountDownLatch(1);
@@ -342,8 +342,8 @@ public class BehaviorSubjectTest extends SubjectTest<Integer> {
                 });
                 start.countDown();
                 if (!finish.await(5, TimeUnit.SECONDS)) {
-                    System.out.println(o.get());
-                    System.out.println(rs.hasObservers());
+                    // System.out.println(o.get());
+                    // System.out.println(rs.hasObservers());
                     rs.onComplete();
                     Assert.fail("Timeout @ " + i);
                     break;

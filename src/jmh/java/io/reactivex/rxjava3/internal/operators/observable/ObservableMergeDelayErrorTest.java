@@ -326,7 +326,7 @@ public class ObservableMergeDelayErrorTest extends RxJavaTest {
             boolean errorThrown = false;
             for (String s : valuesToReturn) {
                 if (s == null) {
-                    System.out.println("throwing exception");
+                    // System.out.println("throwing exception");
                     observer.onError(new NullPointerException());
                     errorThrown = true;
                 // purposefully not returning here so it will continue calling onNext
@@ -360,7 +360,7 @@ public class ObservableMergeDelayErrorTest extends RxJavaTest {
                 public void run() {
                     for (String s : valuesToReturn) {
                         if (s == null) {
-                            System.out.println("throwing exception");
+                            // System.out.println("throwing exception");
                             try {
                                 Thread.sleep(100);
                             } catch (Throwable e) {
@@ -371,7 +371,7 @@ public class ObservableMergeDelayErrorTest extends RxJavaTest {
                             observer.onNext(s);
                         }
                     }
-                    System.out.println("subscription complete");
+                    // System.out.println("subscription complete");
                     observer.onComplete();
                 }
             });
@@ -426,7 +426,7 @@ public class ObservableMergeDelayErrorTest extends RxJavaTest {
             TestObserverEx<String> to = new TestObserverEx<>(stringObserver);
             Observable<String> m = Observable.mergeDelayError(parentObservable);
             m.subscribe(to);
-            System.out.println("testErrorInParentObservableDelayed | " + i);
+            // System.out.println("testErrorInParentObservableDelayed | " + i);
             to.awaitDone(2000, TimeUnit.MILLISECONDS);
             to.assertTerminated();
             verify(stringObserver, times(2)).onNext("hello");

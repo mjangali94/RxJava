@@ -456,7 +456,7 @@ public class ObservableSwitchTest extends RxJavaTest {
         };
         src.subscribe(to);
         to.awaitDone(10, TimeUnit.SECONDS);
-        System.out.println("> testIssue2654: " + to.values().size());
+        // System.out.println("> testIssue2654: " + to.values().size());
         to.assertTerminated();
         to.assertNoErrors();
         Assert.assertEquals(250, to.values().size());

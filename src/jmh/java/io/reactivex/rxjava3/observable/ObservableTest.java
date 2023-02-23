@@ -352,14 +352,14 @@ public class ObservableTest extends RxJavaTest {
 
             @Override
             public void onComplete() {
-                System.out.println("completed");
+                // System.out.println("completed");
                 latch.countDown();
             }
 
             @Override
             public void onError(Throwable e) {
                 error.set(e);
-                System.out.println("error");
+                // System.out.println("error");
                 e.printStackTrace();
                 latch.countDown();
             }
@@ -367,7 +367,7 @@ public class ObservableTest extends RxJavaTest {
             @Override
             public void onNext(String v) {
                 int num = Integer.parseInt(v);
-                System.out.println(num);
+                // System.out.println(num);
                 // doSomething(num);
                 count.incrementAndGet();
             }
@@ -395,20 +395,20 @@ public class ObservableTest extends RxJavaTest {
 
             @Override
             public void onComplete() {
-                System.out.println("completed");
+                // System.out.println("completed");
             }
 
             @Override
             public void onError(Throwable e) {
                 error.set(e);
-                System.out.println("error");
+                // System.out.println("error");
                 e.printStackTrace();
             }
 
             @Override
             public void onNext(String v) {
                 int num = Integer.parseInt(v);
-                System.out.println(num);
+                // System.out.println(num);
                 // doSomething(num);
                 count.incrementAndGet();
             }
@@ -440,19 +440,19 @@ public class ObservableTest extends RxJavaTest {
 
             @Override
             public void onComplete() {
-                System.out.println("completed");
+                // System.out.println("completed");
             }
 
             @Override
             public void onError(Throwable e) {
                 error.set(e);
-                System.out.println("error");
+                // System.out.println("error");
                 e.printStackTrace();
             }
 
             @Override
             public void onNext(String v) {
-                System.out.println(v);
+                // System.out.println(v);
                 count.incrementAndGet();
             }
         });
@@ -650,20 +650,20 @@ public class ObservableTest extends RxJavaTest {
 
             @Override
             public void onComplete() {
-                System.out.println("completed");
+                // System.out.println("completed");
             }
 
             @Override
             public void onError(Throwable e) {
                 error.set(e);
-                System.out.println("error");
+                // System.out.println("error");
                 e.printStackTrace();
             }
 
             @Override
             public void onNext(String v) {
                 int num = Integer.parseInt(v);
-                System.out.println(num);
+                // System.out.println(num);
                 // doSomething(num);
                 count.incrementAndGet();
             }
@@ -905,7 +905,7 @@ public class ObservableTest extends RxJavaTest {
         Observable.error(new RuntimeException("oops")).materialize().delay(1, TimeUnit.SECONDS).dematerialize(Functions.<Notification<Object>>identity()).subscribe(subject);
         subject.subscribe();
         subject.materialize().blockingFirst();
-        System.out.println("Done");
+        // System.out.println("Done");
     }
 
     @Test

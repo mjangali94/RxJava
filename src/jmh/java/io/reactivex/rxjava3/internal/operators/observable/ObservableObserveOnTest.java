@@ -81,7 +81,7 @@ public class ObservableObserveOnTest extends RxJavaTest {
 
     @Test
     public void threadName() throws InterruptedException {
-        System.out.println("Main Thread: " + Thread.currentThread().getName());
+        // System.out.println("Main Thread: " + Thread.currentThread().getName());
         // FIXME null values not allowed
         // Observable<String> obs = Observable.just("one", null, "two", "three", "four");
         Observable<String> obs = Observable.just("one", "null", "two", "three", "four");
@@ -94,7 +94,7 @@ public class ObservableObserveOnTest extends RxJavaTest {
             @Override
             public void accept(String s) {
                 String threadName = Thread.currentThread().getName();
-                System.out.println("Source ThreadName: " + threadName + "  Expected => " + parentThreadName);
+                // System.out.println("Source ThreadName: " + threadName + "  Expected => " + parentThreadName);
                 assertEquals(parentThreadName, threadName);
             }
         });
@@ -105,7 +105,7 @@ public class ObservableObserveOnTest extends RxJavaTest {
             public void accept(String t1) {
                 String threadName = Thread.currentThread().getName();
                 boolean correctThreadName = threadName.startsWith("RxNewThreadScheduler");
-                System.out.println("ObserveOn ThreadName: " + threadName + "  Correct => " + correctThreadName);
+                // System.out.println("ObserveOn ThreadName: " + threadName + "  Correct => " + correctThreadName);
                 assertTrue(correctThreadName);
             }
         }).doAfterTerminate(new Action() {
@@ -275,7 +275,7 @@ public class ObservableObserveOnTest extends RxJavaTest {
 
             @Override
             public void onComplete() {
-                System.out.println("onComplete");
+                // System.out.println("onComplete");
                 completeTime.set(System.nanoTime());
                 completedLatch.countDown();
             }
@@ -297,12 +297,12 @@ public class ObservableObserveOnTest extends RxJavaTest {
             }
         });
         long afterSubscribeTime = System.nanoTime();
-        System.out.println("After subscribe: " + completedLatch.getCount());
+        // System.out.println("After subscribe: " + completedLatch.getCount());
         assertEquals(1, completedLatch.getCount());
         nextLatch.countDown();
         completedLatch.await(1000, TimeUnit.MILLISECONDS);
         assertTrue(completeTime.get() > afterSubscribeTime);
-        System.out.println("onComplete nanos after subscribe: " + (completeTime.get() - afterSubscribeTime));
+        // System.out.println("onComplete nanos after subscribe: " + (completeTime.get() - afterSubscribeTime));
     }
 
     private static int randomIntFrom0to100() {

@@ -293,7 +293,7 @@ public class ObservableRetryWithPredicateTest extends RxJavaTest {
 
             @Override
             public Long apply(Long x) {
-                System.out.println("map " + x);
+                // System.out.println("map " + x);
                 if (x == 2 && isFirst.getAndSet(false)) {
                     throw new RuntimeException("retryable error");
                 }
@@ -309,7 +309,7 @@ public class ObservableRetryWithPredicateTest extends RxJavaTest {
 
             @Override
             public void accept(Long t) {
-                System.out.println(t);
+                // System.out.println(t);
                 list.add(t);
             }
         });
@@ -324,7 +324,7 @@ public class ObservableRetryWithPredicateTest extends RxJavaTest {
 
             @Override
             public Long apply(Long x) {
-                System.out.println("map " + x);
+                // System.out.println("map " + x);
                 if (x == 2 && isFirst.getAndSet(false)) {
                     throw new RuntimeException("retryable error");
                 }
@@ -334,7 +334,7 @@ public class ObservableRetryWithPredicateTest extends RxJavaTest {
 
             @Override
             public void accept(Long t) {
-                System.out.println(t);
+                // System.out.println(t);
                 list.add(t);
             }
         });

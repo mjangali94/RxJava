@@ -333,7 +333,7 @@ public class FlowableFlatMapTest extends RxJavaTest {
         ts.assertNoErrors();
         Set<Integer> expected = new HashSet<>(Arrays.asList(1010, 1011, 2020, 2021, 3030, 3031, 4040, 4041, 5050, 5051, 6060, 6061, 7070, 7071, 8080, 8081, 9090, 9091, 10100, 10101));
         Assert.assertEquals(expected.size(), ts.values().size());
-        System.out.println("--> testFlatMapSelectorMaxConcurrent: " + ts.values());
+        // System.out.println("--> testFlatMapSelectorMaxConcurrent: " + ts.values());
         Assert.assertTrue(expected.containsAll(ts.values()));
     }
 
@@ -341,7 +341,7 @@ public class FlowableFlatMapTest extends RxJavaTest {
     public void flatMapTransformsMaxConcurrentNormalLoop() {
         for (int i = 0; i < 1000; i++) {
             if (i % 100 == 0) {
-                System.out.println("testFlatMapTransformsMaxConcurrentNormalLoop => " + i);
+                // System.out.println("testFlatMapTransformsMaxConcurrentNormalLoop => " + i);
             }
             flatMapTransformsMaxConcurrentNormal();
         }
@@ -377,7 +377,7 @@ public class FlowableFlatMapTest extends RxJavaTest {
     public void flatMapRangeMixedAsyncLoop() {
         for (int i = 0; i < 2000; i++) {
             if (i % 10 == 0) {
-                System.out.println("flatMapRangeAsyncLoop > " + i);
+                // System.out.println("flatMapRangeAsyncLoop > " + i);
             }
             TestSubscriberEx<Integer> ts = new TestSubscriberEx<>();
             Flowable.range(0, 1000).flatMap(new Function<Integer, Flowable<Integer>>() {
@@ -395,7 +395,7 @@ public class FlowableFlatMapTest extends RxJavaTest {
             }).observeOn(Schedulers.computation()).subscribe(ts);
             ts.awaitDone(2500, TimeUnit.MILLISECONDS);
             if (ts.completions() == 0) {
-                System.out.println(ts.values().size());
+                // System.out.println(ts.values().size());
             }
             ts.assertTerminated();
             ts.assertNoErrors();
@@ -404,7 +404,7 @@ public class FlowableFlatMapTest extends RxJavaTest {
                 Set<Integer> set = new HashSet<>(list);
                 for (int j = 0; j < 1000; j++) {
                     if (!set.contains(j)) {
-                        System.out.println(j + " missing");
+                        // System.out.println(j + " missing");
                     }
                 }
             }
@@ -441,7 +441,7 @@ public class FlowableFlatMapTest extends RxJavaTest {
                     return Flowable.range(1, n);
                 }
             }).subscribe(ts);
-            System.out.println("flatMapTwoNestedSync >> @ " + n);
+            // System.out.println("flatMapTwoNestedSync >> @ " + n);
             ts.assertNoErrors();
             ts.assertComplete();
             ts.assertValueCount(n * 2);

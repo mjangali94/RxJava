@@ -274,7 +274,7 @@ public class ObservableMapTest extends RxJavaTest {
     // 
     // @Override
     // public void accept(Object object) {
-    // System.out.println(object.toString());
+    // // System.out.println(object.toString());
     // }
     // };
     // 
@@ -308,7 +308,7 @@ public class ObservableMapTest extends RxJavaTest {
     // }).forEach(new Consumer<String>() {
     // @Override
     // public void accept(String s) {
-    // System.out.println(s);
+    // // System.out.println(s);
     // }
     // });
     // }

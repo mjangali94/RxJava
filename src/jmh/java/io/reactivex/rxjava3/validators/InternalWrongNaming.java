@@ -52,9 +52,9 @@ public class InternalWrongNaming {
                 }
             }
             if (fail.length() != 0) {
-                System.out.println(fail);
-                System.out.println();
-                System.out.println("Total: " + count);
+                // System.out.println(fail);
+                // System.out.println();
+                // System.out.println("Total: " + count);
                 throw new AssertionError(fail.toString());
             }
         }

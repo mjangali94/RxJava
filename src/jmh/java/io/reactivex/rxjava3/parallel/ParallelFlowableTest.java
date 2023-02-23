@@ -134,9 +134,9 @@ public class ParallelFlowableTest extends RxJavaTest {
     public void parallelReduceFull() {
         int m = 100000;
         for (int n = 1; n <= m; n *= 10) {
-            // System.out.println(n);
+            // // System.out.println(n);
             for (int i = 1; i <= Runtime.getRuntime().availableProcessors(); i++) {
-                // System.out.println("  " + i);
+                // // System.out.println("  " + i);
                 ExecutorService exec = Executors.newFixedThreadPool(i);
                 Scheduler scheduler = Schedulers.from(exec);
                 try {
@@ -270,7 +270,7 @@ public class ParallelFlowableTest extends RxJavaTest {
 
                 @Override
                 public void accept(List<Integer> v) throws Exception {
-                    System.out.println(v.size());
+                    // System.out.println(v.size());
                 }
             }).sequential().subscribe(ts);
             ts.awaitDone(5, TimeUnit.SECONDS);
@@ -305,7 +305,7 @@ public class ParallelFlowableTest extends RxJavaTest {
 
                 @Override
                 public void accept(List<Integer> v) throws Exception {
-                    System.out.println(v.size());
+                    // System.out.println(v.size());
                 }
             }).sequential().subscribe(ts);
             ts.awaitDone(5, TimeUnit.SECONDS);
@@ -340,7 +340,7 @@ public class ParallelFlowableTest extends RxJavaTest {
 
                 @Override
                 public void accept(List<Integer> v) throws Exception {
-                    System.out.println(v.size());
+                    // System.out.println(v.size());
                 }
             }).sequential().subscribe(ts);
             ts.awaitDone(5, TimeUnit.SECONDS);
@@ -375,7 +375,7 @@ public class ParallelFlowableTest extends RxJavaTest {
 
                 @Override
                 public void accept(List<Integer> v) throws Exception {
-                    System.out.println(v.size());
+                    // System.out.println(v.size());
                 }
             }).sequential().subscribe(ts);
             ts.awaitDone(5, TimeUnit.SECONDS);
@@ -410,7 +410,7 @@ public class ParallelFlowableTest extends RxJavaTest {
 
                 @Override
                 public void accept(List<Integer> v) throws Exception {
-                    System.out.println(v.size());
+                    // System.out.println(v.size());
                 }
             }).sequential().subscribe(ts);
             ts.awaitDone(5, TimeUnit.SECONDS);
@@ -445,7 +445,7 @@ public class ParallelFlowableTest extends RxJavaTest {
 
                 @Override
                 public void accept(List<Integer> v) throws Exception {
-                    System.out.println(v.size());
+                    // System.out.println(v.size());
                 }
             }).sequential().subscribe(ts);
             ts.awaitDone(5, TimeUnit.SECONDS);
@@ -484,7 +484,7 @@ public class ParallelFlowableTest extends RxJavaTest {
 
                 @Override
                 public void accept(List<Integer> v) throws Exception {
-                    System.out.println(v.size());
+                    // System.out.println(v.size());
                 }
             }).sequential().subscribe(ts);
             ts.awaitDone(5, TimeUnit.SECONDS);
@@ -517,7 +517,7 @@ public class ParallelFlowableTest extends RxJavaTest {
     public void parallelismAndPrefetchAsync() {
         for (int parallelism = 1; parallelism <= 8; parallelism *= 2) {
             for (int prefetch = 1; prefetch <= 1024; prefetch *= 2) {
-                System.out.println("parallelismAndPrefetchAsync >> " + parallelism + ", " + prefetch);
+                // System.out.println("parallelismAndPrefetchAsync >> " + parallelism + ", " + prefetch);
                 Flowable.range(1, 1024 * 1024).parallel(parallelism, prefetch).runOn(Schedulers.computation()).map(Functions.<Integer>identity()).sequential(prefetch).to(TestHelper.<Integer>testConsumer()).withTag("parallelism = " + parallelism + ", prefetch = " + prefetch).awaitDone(30, TimeUnit.SECONDS).assertSubscribed().assertValueCount(1024 * 1024).assertNoErrors().assertComplete();
             }
         }

@@ -369,7 +369,7 @@ public class FlowableReplayTest extends RxJavaTest {
             @Override
             public void accept(Integer v) {
                 effectCounter.incrementAndGet();
-                System.out.println("Sideeffect #" + v);
+                // System.out.println("Sideeffect #" + v);
             }
         });
         Flowable<Integer> result = source.replay(new Function<Flowable<Integer>, Flowable<Integer>>() {
@@ -381,12 +381,12 @@ public class FlowableReplayTest extends RxJavaTest {
         });
         for (int i = 1; i < 3; i++) {
             effectCounter.set(0);
-            System.out.printf("- %d -%n", i);
+            // System.out.printf("- %d -%n", i);
             result.subscribe(new Consumer<Integer>() {
 
                 @Override
                 public void accept(Integer t1) {
-                    System.out.println(t1);
+                    // System.out.println(t1);
                 }
             }, new Consumer<Throwable>() {
 
@@ -398,7 +398,7 @@ public class FlowableReplayTest extends RxJavaTest {
 
                 @Override
                 public void run() {
-                    System.out.println("Done");
+                    // System.out.println("Done");
                 }
             });
             assertEquals(2, effectCounter.get());
@@ -759,7 +759,7 @@ public class FlowableReplayTest extends RxJavaTest {
                     @Override
                     public void run() {
                         counter.incrementAndGet();
-                        System.out.println("published observable being executed");
+                        // System.out.println("published observable being executed");
                         subscriber.onNext("one");
                         subscriber.onComplete();
                     }
@@ -774,7 +774,7 @@ public class FlowableReplayTest extends RxJavaTest {
             @Override
             public void accept(String v) {
                 assertEquals("one", v);
-                System.out.println("v: " + v);
+                // System.out.println("v: " + v);
                 latch.countDown();
             }
         });
@@ -784,7 +784,7 @@ public class FlowableReplayTest extends RxJavaTest {
             @Override
             public void accept(String v) {
                 assertEquals("one", v);
-                System.out.println("v: " + v);
+                // System.out.println("v: " + v);
                 latch.countDown();
             }
         });
@@ -1005,7 +1005,7 @@ public class FlowableReplayTest extends RxJavaTest {
         TestSubscriber<Integer> ts3 = new TestSubscriber<>();
         source.subscribe(ts3);
         ts3.assertNoErrors();
-        System.out.println(ts3.values());
+        // System.out.println(ts3.values());
         ts3.assertValues(3, 4, 5, 6, 7, 8, 9, 10);
         ts3.assertComplete();
     }
@@ -1042,7 +1042,7 @@ public class FlowableReplayTest extends RxJavaTest {
         TestSubscriber<Integer> ts3 = new TestSubscriber<>();
         source.subscribe(ts3);
         ts3.assertNoErrors();
-        System.out.println(ts3.values());
+        // System.out.println(ts3.values());
         ts3.assertValues(2, 3, 4, 5, 6, 7, 8, 9, 10);
         ts3.assertComplete();
     }
@@ -1590,29 +1590,29 @@ public class FlowableReplayTest extends RxJavaTest {
                 });
             }
         }, 1).takeLast(1);
-        System.out.println("Bounded Replay Leak check: Wait before GC");
+        // System.out.println("Bounded Replay Leak check: Wait before GC");
         Thread.sleep(1000);
-        System.out.println("Bounded Replay Leak check: GC");
+        // System.out.println("Bounded Replay Leak check: GC");
         System.gc();
         Thread.sleep(500);
         final MemoryMXBean memoryMXBean = ManagementFactory.getMemoryMXBean();
         MemoryUsage memHeap = memoryMXBean.getHeapMemoryUsage();
         long initial = memHeap.getUsed();
-        System.out.printf("Bounded Replay Leak check: Starting: %.3f MB%n", initial / 1024.0 / 1024.0);
+        // System.out.printf("Bounded Replay Leak check: Starting: %.3f MB%n", initial / 1024.0 / 1024.0);
         final AtomicLong after = new AtomicLong();
         source.subscribe(new Consumer<byte[]>() {
 
             @Override
             public void accept(byte[] v) throws Exception {
-                System.out.println("Bounded Replay Leak check: Wait before GC 2");
+                // System.out.println("Bounded Replay Leak check: Wait before GC 2");
                 Thread.sleep(1000);
-                System.out.println("Bounded Replay Leak check:  GC 2");
+                // System.out.println("Bounded Replay Leak check:  GC 2");
                 System.gc();
                 Thread.sleep(500);
                 after.set(memoryMXBean.getHeapMemoryUsage().getUsed());
             }
         });
-        System.out.printf("Bounded Replay Leak check: After: %.3f MB%n", after.get() / 1024.0 / 1024.0);
+        // System.out.printf("Bounded Replay Leak check: After: %.3f MB%n", after.get() / 1024.0 / 1024.0);
         if (initial + 100 * 1024 * 1024 < after.get()) {
             Assert.fail("Bounded Replay Leak check: Memory leak detected: " + (initial / 1024.0 / 1024.0) + " -> " + after.get() / 1024.0 / 1024.0);
         }

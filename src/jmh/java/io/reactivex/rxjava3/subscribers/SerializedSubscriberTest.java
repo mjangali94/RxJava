@@ -87,7 +87,7 @@ public class SerializedSubscriberTest extends RxJavaTest {
         w.subscribe(aw);
         onSubscribe.waitToFinish();
         busySubscriber.terminalEvent.await();
-        System.out.println("OnSubscribe maxConcurrentThreads: " + onSubscribe.maxConcurrentThreads.get() + "  Subscriber maxConcurrentThreads: " + busySubscriber.maxConcurrentThreads.get());
+        // System.out.println("OnSubscribe maxConcurrentThreads: " + onSubscribe.maxConcurrentThreads.get() + "  Subscriber maxConcurrentThreads: " + busySubscriber.maxConcurrentThreads.get());
         // we can't know how many onNext calls will occur since they each run on a separate thread
         // that depends on thread scheduling so 0, 1, 2 and 3 are all valid options
         // assertEquals(3, busySubscriber.onNextCount.get());
@@ -114,13 +114,13 @@ public class SerializedSubscriberTest extends RxJavaTest {
             Subscriber<String> aw = serializedSubscriber(busySubscriber);
             w.subscribe(aw);
             onSubscribe.waitToFinish();
-            System.out.println("OnSubscribe maxConcurrentThreads: " + onSubscribe.maxConcurrentThreads.get() + "  Subscriber maxConcurrentThreads: " + busySubscriber.maxConcurrentThreads.get());
+            // System.out.println("OnSubscribe maxConcurrentThreads: " + onSubscribe.maxConcurrentThreads.get() + "  Subscriber maxConcurrentThreads: " + busySubscriber.maxConcurrentThreads.get());
             // we can have concurrency ...
             assertTrue(onSubscribe.maxConcurrentThreads.get() > 1);
             // ... but the onNext execution should be single threaded
             assertEquals(1, busySubscriber.maxConcurrentThreads.get());
             // this should not be the full number of items since the error should stop it before it completes all 9
-            System.out.println("onNext count: " + busySubscriber.onNextCount.get());
+            // System.out.println("onNext count: " + busySubscriber.onNextCount.get());
             assertFalse(busySubscriber.onComplete);
             assertTrue(busySubscriber.onError);
             assertTrue(busySubscriber.onNextCount.get() < 9);
@@ -170,7 +170,7 @@ public class SerializedSubscriberTest extends RxJavaTest {
             @SuppressWarnings("unused")
             int // no check of type since we don't want to test barging results here, just interleaving behavior
             numNextEvents = tw.assertEvents(null);
-            // System.out.println("Number of events executed: " + numNextEvents);
+            // // System.out.println("Number of events executed: " + numNextEvents);
             for (int i = 0; i < errors.size(); i++) {
                 TestHelper.assertUndeliverable(errors, i, RuntimeException.class);
             }
@@ -215,7 +215,7 @@ public class SerializedSubscriberTest extends RxJavaTest {
             // no check of type since we don't want to test barging results here, just interleaving behavior
             int numNextEvents = tw.assertEvents(null);
             assertEquals(173500, numNextEvents);
-        // System.out.println("Number of events executed: " + numNextEvents);
+        // // System.out.println("Number of events executed: " + numNextEvents);
         } catch (Throwable e) {
             fail("Concurrency test failed: " + e.getMessage());
             e.printStackTrace();
@@ -273,17 +273,17 @@ public class SerializedSubscriberTest extends RxJavaTest {
                 running.await();
                 firstOnNext.await();
                 Thread t1 = ts.lastThread();
-                System.out.println("first onNext on thread: " + t1);
+                // System.out.println("first onNext on thread: " + t1);
                 latch.countDown();
                 waitOnThreads(f1, f2);
                 // not completed yet
                 assertEquals(2, ts.values().size());
                 Thread t2 = ts.lastThread();
-                System.out.println("second onNext on thread: " + t2);
+                // System.out.println("second onNext on thread: " + t2);
                 assertSame(t1, t2);
-                System.out.println(ts.values());
+                // System.out.println(ts.values());
                 subscriber.onComplete();
-                System.out.println(ts.values());
+                // System.out.println(ts.values());
             }
         } finally {
             tp1.shutdown();
@@ -371,7 +371,7 @@ public class SerializedSubscriberTest extends RxJavaTest {
         infinite(p1).subscribe(as1);
         infinite(p2).subscribe(as2);
         Thread.sleep(100);
-        System.out.println("p1: " + p1.get() + " p2: " + p2.get() + " => should be close to each other unless we have thread starvation");
+        // System.out.println("p1: " + p1.get() + " p2: " + p2.get() + " => should be close to each other unless we have thread starvation");
         // fairly distributed within 10000 of each other
         assertEquals(p1.get(), p2.get(), 10000);
         as1.dispose();
@@ -602,15 +602,15 @@ public class SerializedSubscriberTest extends RxJavaTest {
         @Override
         public void subscribe(final Subscriber<? super String> subscriber) {
             subscriber.onSubscribe(new BooleanSubscription());
-            System.out.println("TestSingleThreadedObservable subscribed to ...");
+            // System.out.println("TestSingleThreadedObservable subscribed to ...");
             t = new Thread(new Runnable() {
 
                 @Override
                 public void run() {
                     try {
-                        System.out.println("running TestSingleThreadedObservable thread");
+                        // System.out.println("running TestSingleThreadedObservable thread");
                         for (String s : values) {
-                            System.out.println("TestSingleThreadedObservable onNext: " + s);
+                            // System.out.println("TestSingleThreadedObservable onNext: " + s);
                             subscriber.onNext(s);
                         }
                         subscriber.onComplete();
@@ -619,9 +619,9 @@ public class SerializedSubscriberTest extends RxJavaTest {
                     }
                 }
             });
-            System.out.println("starting TestSingleThreadedObservable thread");
+            // System.out.println("starting TestSingleThreadedObservable thread");
             t.start();
-            System.out.println("done starting TestSingleThreadedObservable thread");
+            // System.out.println("done starting TestSingleThreadedObservable thread");
         }
 
         public void waitToFinish() {
@@ -657,13 +657,13 @@ public class SerializedSubscriberTest extends RxJavaTest {
         public void subscribe(final Subscriber<? super String> subscriber) {
             subscriber.onSubscribe(new BooleanSubscription());
             final NullPointerException npe = new NullPointerException();
-            System.out.println("TestMultiThreadedObservable subscribed to ...");
+            // System.out.println("TestMultiThreadedObservable subscribed to ...");
             t = new Thread(new Runnable() {
 
                 @Override
                 public void run() {
                     try {
-                        System.out.println("running TestMultiThreadedObservable thread");
+                        // System.out.println("running TestMultiThreadedObservable thread");
                         int j = 0;
                         for (final String s : values) {
                             final int fj = ++j;
@@ -674,7 +674,7 @@ public class SerializedSubscriberTest extends RxJavaTest {
                                     threadsRunning.incrementAndGet();
                                     try {
                                         // perform onNext call
-                                        System.out.println("TestMultiThreadedObservable onNext: " + s + " on thread " + Thread.currentThread().getName());
+                                        // System.out.println("TestMultiThreadedObservable onNext: " + s + " on thread " + Thread.currentThread().getName());
                                         if (s == null) {
                                             // force an error
                                             throw npe;
@@ -709,7 +709,7 @@ public class SerializedSubscriberTest extends RxJavaTest {
                     try {
                         // wait for all the threads to finish
                         if (!threadPool.awaitTermination(5, TimeUnit.SECONDS)) {
-                            System.out.println("Threadpool did not terminate in time.");
+                            // System.out.println("Threadpool did not terminate in time.");
                         }
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
@@ -717,9 +717,9 @@ public class SerializedSubscriberTest extends RxJavaTest {
                     subscriber.onComplete();
                 }
             });
-            System.out.println("starting TestMultiThreadedObservable thread");
+            // System.out.println("starting TestMultiThreadedObservable thread");
             t.start();
-            System.out.println("done starting TestMultiThreadedObservable thread");
+            // System.out.println("done starting TestMultiThreadedObservable thread");
         }
 
         public void waitToFinish() {
@@ -759,7 +759,7 @@ public class SerializedSubscriberTest extends RxJavaTest {
 
         @Override
         public void onError(Throwable e) {
-            System.out.println(">>>>>>>>>>>>>>>>>>>> onError received: " + e);
+            // System.out.println(">>>>>>>>>>>>>>>>>>>> onError received: " + e);
             threadsRunning.incrementAndGet();
             try {
                 onError = true;

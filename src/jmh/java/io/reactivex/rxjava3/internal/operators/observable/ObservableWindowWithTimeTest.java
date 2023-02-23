@@ -182,7 +182,7 @@ public class ObservableWindowWithTimeTest extends RxJavaTest {
 
             @Override
             public void run() {
-                System.out.println("Main done!");
+                // System.out.println("Main done!");
             }
         }).flatMap(new Function<Observable<Integer>, Observable<Integer>>() {
 
@@ -192,7 +192,7 @@ public class ObservableWindowWithTimeTest extends RxJavaTest {
 
                     @Override
                     public void run() {
-                        System.out.println("inner done: " + wip.incrementAndGet());
+                        // System.out.println("inner done: " + wip.incrementAndGet());
                     }
                 });
             }
@@ -200,7 +200,7 @@ public class ObservableWindowWithTimeTest extends RxJavaTest {
 
             @Override
             public void accept(Integer pv) {
-                System.out.println(pv);
+                // System.out.println(pv);
             }
         }).subscribe(to);
         to.awaitDone(5, TimeUnit.SECONDS);
@@ -535,7 +535,7 @@ public class ObservableWindowWithTimeTest extends RxJavaTest {
 
             @Override
             public void accept(Observable<Integer> v) throws Exception {
-                System.out.println(Thread.currentThread());
+                // System.out.println(Thread.currentThread());
                 if (count++ == 1) {
                     secondWindowProcessing.countDown();
                     try {
@@ -568,7 +568,7 @@ public class ObservableWindowWithTimeTest extends RxJavaTest {
 
             @Override
             public void accept(Observable<Integer> v) throws Exception {
-                System.out.println(Thread.currentThread());
+                // System.out.println(Thread.currentThread());
                 if (count++ == 1) {
                     secondWindowProcessing.countDown();
                     try {
@@ -600,7 +600,7 @@ public class ObservableWindowWithTimeTest extends RxJavaTest {
 
             @Override
             public void accept(Observable<Integer> v) throws Exception {
-                System.out.println(Thread.currentThread());
+                // System.out.println(Thread.currentThread());
                 if (count++ == 1) {
                     secondWindowProcessing.countDown();
                     try {
@@ -633,7 +633,7 @@ public class ObservableWindowWithTimeTest extends RxJavaTest {
 
             @Override
             public void accept(Observable<Integer> v) throws Exception {
-                System.out.println(Thread.currentThread());
+                // System.out.println(Thread.currentThread());
                 if (count++ == 1) {
                     secondWindowProcessing.countDown();
                     try {
@@ -665,7 +665,7 @@ public class ObservableWindowWithTimeTest extends RxJavaTest {
 
             @Override
             public void accept(Observable<Integer> v) throws Exception {
-                System.out.println(Thread.currentThread());
+                // System.out.println(Thread.currentThread());
                 if (count++ == 1) {
                     secondWindowProcessing.countDown();
                     try {
@@ -698,7 +698,7 @@ public class ObservableWindowWithTimeTest extends RxJavaTest {
 
             @Override
             public void accept(Observable<Integer> v) throws Exception {
-                System.out.println(Thread.currentThread());
+                // System.out.println(Thread.currentThread());
                 if (count++ == 1) {
                     secondWindowProcessing.countDown();
                     try {

@@ -48,7 +48,7 @@ public class FlowableRetryTest extends RxJavaTest {
             @Override
             public void subscribe(Subscriber<? super String> t1) {
                 t1.onSubscribe(new BooleanSubscription());
-                System.out.println(count.get() + " @ " + String.valueOf(last - System.currentTimeMillis()));
+                // System.out.println(count.get() + " @ " + String.valueOf(last - System.currentTimeMillis()));
                 last = System.currentTimeMillis();
                 if (count.getAndDecrement() == 0) {
                     t1.onNext("hello");
@@ -80,7 +80,7 @@ public class FlowableRetryTest extends RxJavaTest {
 
                     @Override
                     public Flowable<Object> apply(Tuple t) {
-                        System.out.println("Retry # " + t.count);
+                        // System.out.println("Retry # " + t.count);
                         return t.count > 20 ? Flowable.<Object>error(t.n) : Flowable.timer(t.count * 1L, TimeUnit.MILLISECONDS).cast(Object.class);
                     }
                 });
@@ -710,7 +710,7 @@ public class FlowableRetryTest extends RxJavaTest {
         try {
             for (int r = 0; r < NUM_LOOPS; r++) {
                 if (r % 10 == 0) {
-                    System.out.println("testRetryWithBackpressureParallelLoop -> " + r);
+                    // System.out.println("testRetryWithBackpressureParallelLoop -> " + r);
                 }
                 final AtomicInteger timeouts = new AtomicInteger();
                 final Map<Integer, List<String>> data = new ConcurrentHashMap<>();
@@ -740,7 +740,7 @@ public class FlowableRetryTest extends RxJavaTest {
                                 }
                             } catch (Throwable t) {
                                 timeouts.incrementAndGet();
-                                System.out.println(j + " | " + cdl.getCount() + " !!! " + nexts.get());
+                                // System.out.println(j + " | " + cdl.getCount() + " !!! " + nexts.get());
                             }
                             cdl.countDown();
                         }

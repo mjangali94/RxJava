@@ -24,7 +24,7 @@ public class NoAnonymousInnerClassesTest {
         URL u = NoAnonymousInnerClassesTest.class.getResource("/");
         File f = new File(u.toURI());
         String fs = f.toString().toLowerCase().replace("\\", "/");
-        System.out.println("Found " + fs);
+        // System.out.println("Found " + fs);
         // running this particular test from IntelliJ will have the wrong class directory
         // gradle will generate test classes into a separate directory too
         int idx = fs.indexOf("/test");

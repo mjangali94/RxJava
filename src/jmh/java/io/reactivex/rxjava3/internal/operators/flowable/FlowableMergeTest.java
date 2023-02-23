@@ -132,7 +132,7 @@ public class FlowableMergeTest extends RxJavaTest {
 
                     @Override
                     public void cancel() {
-                        System.out.println("*** unsubscribed");
+                        // System.out.println("*** unsubscribed");
                         unsubscribed.set(true);
                     }
                 };
@@ -144,7 +144,7 @@ public class FlowableMergeTest extends RxJavaTest {
                         while (!unsubscribed.get()) {
                             subscriber.onNext(Flowable.just(1L, 2L));
                         }
-                        System.out.println("Done looping after unsubscribe: " + unsubscribed.get());
+                        // System.out.println("Done looping after unsubscribe: " + unsubscribed.get());
                         subscriber.onComplete();
                         // mark that the thread is finished
                         latch.countDown();
@@ -157,7 +157,7 @@ public class FlowableMergeTest extends RxJavaTest {
 
             @Override
             public void accept(Long v) {
-                System.out.println("Value: " + v);
+                // System.out.println("Value: " + v);
                 int c = count.incrementAndGet();
                 if (c > 6) {
                     fail("Should be only 6");
@@ -165,7 +165,7 @@ public class FlowableMergeTest extends RxJavaTest {
             }
         });
         latch.await(1000, TimeUnit.MILLISECONDS);
-        System.out.println("unsubscribed: " + unsubscribed.get());
+        // System.out.println("unsubscribed: " + unsubscribed.get());
         assertTrue(unsubscribed.get());
     }
 
@@ -186,7 +186,7 @@ public class FlowableMergeTest extends RxJavaTest {
     @Test
     public void synchronizationOfMultipleSequencesLoop() throws Throwable {
         for (int i = 0; i < 100; i++) {
-            System.out.println("testSynchronizationOfMultipleSequencesLoop > " + i);
+            // System.out.println("testSynchronizationOfMultipleSequencesLoop > " + i);
             synchronizationOfMultipleSequences();
         }
     }
@@ -364,7 +364,7 @@ public class FlowableMergeTest extends RxJavaTest {
             subscriber.onSubscribe(new BooleanSubscription());
             for (String s : valuesToReturn) {
                 if (s == null) {
-                    System.out.println("throwing exception");
+                    // System.out.println("throwing exception");
                     subscriber.onError(new NullPointerException());
                 } else {
                     subscriber.onNext(s);
@@ -490,7 +490,7 @@ public class FlowableMergeTest extends RxJavaTest {
             ts.assertComplete();
             List<Integer> onNextEvents = ts.values();
             assertEquals(30000, onNextEvents.size());
-        // System.out.println("onNext: " + onNextEvents.size() + " onComplete: " + ts.getOnCompletedEvents().size());
+        // // System.out.println("onNext: " + onNextEvents.size() + " onComplete: " + ts.getOnCompletedEvents().size());
         }
     }
 
@@ -535,7 +535,7 @@ public class FlowableMergeTest extends RxJavaTest {
             ts.assertComplete();
             List<Integer> onNextEvents = ts.values();
             assertEquals(300, onNextEvents.size());
-        // System.out.println("onNext: " + onNextEvents.size() + " onComplete: " + ts.getOnCompletedEvents().size());
+        // // System.out.println("onNext: " + onNextEvents.size() + " onComplete: " + ts.getOnCompletedEvents().size());
         }
     }
 
@@ -578,7 +578,7 @@ public class FlowableMergeTest extends RxJavaTest {
             ts.assertComplete();
             List<Integer> onNextEvents = ts.values();
             assertEquals(30000, onNextEvents.size());
-        // System.out.println("onNext: " + onNextEvents.size() + " onComplete: " + ts.getOnCompletedEvents().size());
+        // // System.out.println("onNext: " + onNextEvents.size() + " onComplete: " + ts.getOnCompletedEvents().size());
         }
     }
 
@@ -605,8 +605,8 @@ public class FlowableMergeTest extends RxJavaTest {
         System.err.println(testSubscriber.values());
         assertEquals(Flowable.bufferSize() * 4, testSubscriber.values().size());
         // it should be between the take num and requested batch size across the async boundary
-        System.out.println("Generated 1: " + generated1.get());
-        System.out.println("Generated 2: " + generated2.get());
+        // System.out.println("Generated 1: " + generated1.get());
+        // System.out.println("Generated 2: " + generated2.get());
         assertTrue(generated1.get() >= Flowable.bufferSize() * 2 && generated1.get() <= Flowable.bufferSize() * 4);
     }
 
@@ -614,7 +614,7 @@ public class FlowableMergeTest extends RxJavaTest {
     public void backpressureUpstream2InLoop() throws InterruptedException {
         for (int i = 0; i < 1000; i++) {
             System.err.flush();
-            System.out.println("---");
+            // System.out.println("---");
             System.out.flush();
             backpressureUpstream2();
         }
@@ -634,8 +634,8 @@ public class FlowableMergeTest extends RxJavaTest {
         Flowable.merge(f1.take(Flowable.bufferSize() * 2), Flowable.just(-99)).subscribe(testSubscriber);
         testSubscriber.awaitDone(10, TimeUnit.SECONDS);
         List<Integer> onNextEvents = testSubscriber.values();
-        System.out.println("Generated 1: " + generated1.get() + " / received: " + onNextEvents.size());
-        System.out.println(onNextEvents);
+        // System.out.println("Generated 1: " + generated1.get() + " / received: " + onNextEvents.size());
+        // System.out.println(onNextEvents);
         if (testSubscriber.errors().size() > 0) {
             testSubscriber.errors().get(0).printStackTrace();
         }
@@ -682,8 +682,8 @@ public class FlowableMergeTest extends RxJavaTest {
         System.err.println(testSubscriber.values());
         assertEquals(Flowable.bufferSize() * 4, testSubscriber.values().size());
         // it should be between the take num and requested batch size across the async boundary
-        System.out.println("Generated 1: " + generated1.get());
-        System.out.println("Generated 2: " + generated2.get());
+        // System.out.println("Generated 1: " + generated1.get());
+        // System.out.println("Generated 2: " + generated2.get());
         assertTrue(generated1.get() >= Flowable.bufferSize() * 2 && generated1.get() <= Flowable.bufferSize() * 4);
     }
 
@@ -719,7 +719,7 @@ public class FlowableMergeTest extends RxJavaTest {
             testSubscriber.errors().get(0).printStackTrace();
         }
         testSubscriber.assertNoErrors();
-        System.out.println("Generated 1: " + generated1.get());
+        // System.out.println("Generated 1: " + generated1.get());
         System.err.println(testSubscriber.values());
         assertEquals(Flowable.bufferSize() * 2, testSubscriber.values().size());
         // it should be between the take num and requested batch size across the async boundary
@@ -772,11 +772,11 @@ public class FlowableMergeTest extends RxJavaTest {
             testSubscriber.errors().get(0).printStackTrace();
         }
         testSubscriber.assertNoErrors();
-        System.out.println("Generated 1: " + generated1.get());
+        // System.out.println("Generated 1: " + generated1.get());
         System.err.println(testSubscriber.values());
-        System.out.println("done1 testBackpressureBothUpstreamAndDownstreamWithRegularFlowables ");
+        // System.out.println("done1 testBackpressureBothUpstreamAndDownstreamWithRegularFlowables ");
         assertEquals(Flowable.bufferSize() * 2, testSubscriber.values().size());
-        System.out.println("done2 testBackpressureBothUpstreamAndDownstreamWithRegularFlowables ");
+        // System.out.println("done2 testBackpressureBothUpstreamAndDownstreamWithRegularFlowables ");
     // we can't restrict this ... see comment above
     // assertTrue(generated1.get() >= Flowable.bufferSize() && generated1.get() <= Flowable.bufferSize() * 4);
     }
@@ -1065,7 +1065,7 @@ public class FlowableMergeTest extends RxJavaTest {
     @Test
     public void mergeKeepsRequesting() throws InterruptedException {
         // for (int i = 0; i < 5000; i++) {
-        // System.out.println(i + ".......................................................................");
+        // // System.out.println(i + ".......................................................................");
         final CountDownLatch latch = new CountDownLatch(1);
         final ConcurrentLinkedQueue<String> messages = new ConcurrentLinkedQueue<>();
         Flowable.range(1, 2).flatMap(new Function<Integer, Flowable<Integer>>() {
@@ -1096,7 +1096,7 @@ public class FlowableMergeTest extends RxJavaTest {
         boolean a = latch.await(10, TimeUnit.SECONDS);
         if (!a) {
             for (String s : messages) {
-                System.out.println("DEBUG => " + s);
+                // System.out.println("DEBUG => " + s);
             }
         }
         assertTrue(a);
@@ -1144,7 +1144,7 @@ public class FlowableMergeTest extends RxJavaTest {
             @Override
             public void accept(Integer t1) {
                 count++;
-                System.out.println("count=" + count);
+                // System.out.println("count=" + count);
             }
         };
     }
@@ -1187,7 +1187,7 @@ public class FlowableMergeTest extends RxJavaTest {
         Flowable<Integer> source = Flowable.fromIterable(list);
         source.flatMap(func).subscribe(ts);
         if (ts.values().size() != 1000) {
-            System.out.println(ts.values());
+            // System.out.println(ts.values());
         }
         ts.assertTerminated();
         ts.assertNoErrors();

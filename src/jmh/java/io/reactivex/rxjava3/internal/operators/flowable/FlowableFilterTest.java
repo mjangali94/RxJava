@@ -73,7 +73,7 @@ public class FlowableFilterTest extends RxJavaTest {
 
             @Override
             public void onComplete() {
-                System.out.println("onComplete");
+                // System.out.println("onComplete");
                 latch.countDown();
             }
 
@@ -85,7 +85,7 @@ public class FlowableFilterTest extends RxJavaTest {
 
             @Override
             public void onNext(String t) {
-                System.out.println("Received: " + t);
+                // System.out.println("Received: " + t);
                 // request more each time we receive
                 request(1);
             }
@@ -116,7 +116,7 @@ public class FlowableFilterTest extends RxJavaTest {
 
             @Override
             public void onComplete() {
-                System.out.println("onComplete");
+                // System.out.println("onComplete");
                 latch.countDown();
             }
 
@@ -128,7 +128,7 @@ public class FlowableFilterTest extends RxJavaTest {
 
             @Override
             public void onNext(Integer t) {
-                System.out.println("Received: " + t);
+                // System.out.println("Received: " + t);
                 // request more each time we receive
                 request(1);
             }

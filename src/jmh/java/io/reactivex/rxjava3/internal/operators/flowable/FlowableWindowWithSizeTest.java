@@ -100,7 +100,7 @@ public class FlowableWindowWithSizeTest extends RxJavaTest {
         ts.awaitDone(500, TimeUnit.MILLISECONDS);
         ts.assertTerminated();
         ts.assertValues(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-        // System.out.println(ts.getOnNextEvents());
+        // // System.out.println(ts.getOnNextEvents());
         assertEquals(10, count.get());
     }
 
@@ -135,7 +135,7 @@ public class FlowableWindowWithSizeTest extends RxJavaTest {
         }).window(5, 4).take(2)).subscribe(ts);
         ts.awaitDone(500, TimeUnit.MILLISECONDS);
         ts.assertTerminated();
-        // System.out.println(ts.getOnNextEvents());
+        // // System.out.println(ts.getOnNextEvents());
         ts.assertValues(1, 2, 3, 4, 5, 5, 6, 7, 8, 9);
         assertEquals(9, count.get());
     }
@@ -235,7 +235,7 @@ public class FlowableWindowWithSizeTest extends RxJavaTest {
                     // do nothing
                     }
                 }
-                System.out.println("Hot done.");
+                // System.out.println("Hot done.");
             }
         }).subscribeOn(// use newThread since we are using sleep to block
         Schedulers.newThread());
@@ -281,7 +281,7 @@ public class FlowableWindowWithSizeTest extends RxJavaTest {
         ts.assertNoErrors();
         ts.assertNotComplete();
         ts.request(5);
-        System.out.println(ts.values());
+        // System.out.println(ts.values());
         ts.assertValues(Arrays.asList(1, 2), Arrays.asList(2, 3), Arrays.asList(3, 4), Arrays.asList(4, 5), Arrays.asList(5));
         ts.assertNoErrors();
         ts.assertComplete();

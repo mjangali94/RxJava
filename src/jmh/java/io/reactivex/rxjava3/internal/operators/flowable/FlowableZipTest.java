@@ -669,7 +669,7 @@ public class FlowableZipTest extends RxJavaTest {
 
             @Override
             public void accept(String s) {
-                System.out.println(s);
+                // System.out.println(s);
                 list.add(s);
             }
         });
@@ -725,7 +725,7 @@ public class FlowableZipTest extends RxJavaTest {
 
             @Override
             public void onNext(String s) {
-                System.out.println(s);
+                // System.out.println(s);
                 list.add(s);
             }
         });
@@ -774,7 +774,7 @@ public class FlowableZipTest extends RxJavaTest {
 
             @Override
             public void accept(String s) {
-                System.out.println(s);
+                // System.out.println(s);
                 list.add(s);
             }
         });
@@ -799,7 +799,7 @@ public class FlowableZipTest extends RxJavaTest {
 
             @Override
             public void accept(String s) {
-                System.out.println(s);
+                // System.out.println(s);
                 list.add(s);
             }
         });
@@ -902,7 +902,7 @@ public class FlowableZipTest extends RxJavaTest {
         ts.awaitDone(5, TimeUnit.SECONDS);
         ts.assertNoErrors();
         assertEquals(Flowable.bufferSize() * 2, ts.values().size());
-        System.out.println("Generated => A: " + generatedA.get() + " B: " + generatedB.get());
+        // System.out.println("Generated => A: " + generatedA.get() + " B: " + generatedB.get());
         assertTrue(generatedA.get() < (Flowable.bufferSize() * 3));
         assertTrue(generatedB.get() < (Flowable.bufferSize() * 3));
     }
@@ -924,7 +924,7 @@ public class FlowableZipTest extends RxJavaTest {
         ts.awaitDone(5, TimeUnit.SECONDS);
         ts.assertNoErrors();
         assertEquals(Flowable.bufferSize() * 2, ts.values().size());
-        System.out.println("Generated => A: " + generatedA.get() + " B: " + generatedB.get());
+        // System.out.println("Generated => A: " + generatedA.get() + " B: " + generatedB.get());
         assertTrue(generatedA.get() < (Flowable.bufferSize() * 4));
         assertTrue(generatedB.get() < (Flowable.bufferSize() * 4));
     }
@@ -946,7 +946,7 @@ public class FlowableZipTest extends RxJavaTest {
         ts.awaitDone(5, TimeUnit.SECONDS);
         ts.assertNoErrors();
         assertEquals(Flowable.bufferSize() * 2, ts.values().size());
-        System.out.println("Generated => A: " + generatedA.get() + " B: " + generatedB.get());
+        // System.out.println("Generated => A: " + generatedA.get() + " B: " + generatedB.get());
         assertTrue(generatedA.get() < (Flowable.bufferSize() * 4));
         assertTrue(generatedB.get() < (Flowable.bufferSize() * 4));
     }
@@ -1010,8 +1010,8 @@ public class FlowableZipTest extends RxJavaTest {
 
                     @Override
                     public void run() {
-                        System.out.println("-------> subscribe to infinite sequence");
-                        System.out.println("Starting thread: " + Thread.currentThread());
+                        // System.out.println("-------> subscribe to infinite sequence");
+                        // System.out.println("Starting thread: " + Thread.currentThread());
                         int i = 1;
                         while (!bs.isCancelled()) {
                             subscriber.onNext(i++);
@@ -1019,7 +1019,7 @@ public class FlowableZipTest extends RxJavaTest {
                         }
                         subscriber.onComplete();
                         latch.countDown();
-                        System.out.println("Ending thread: " + Thread.currentThread());
+                        // System.out.println("Ending thread: " + Thread.currentThread());
                     }
                 });
                 t.start();

@@ -182,7 +182,7 @@ public class FlowableWindowWithTimeTest extends RxJavaTest {
 
             @Override
             public void run() {
-                System.out.println("Main done!");
+                // System.out.println("Main done!");
             }
         }).flatMap(new Function<Flowable<Integer>, Flowable<Integer>>() {
 
@@ -192,7 +192,7 @@ public class FlowableWindowWithTimeTest extends RxJavaTest {
 
                     @Override
                     public void run() {
-                        System.out.println("inner done: " + wip.incrementAndGet());
+                        // System.out.println("inner done: " + wip.incrementAndGet());
                     }
                 });
             }
@@ -200,7 +200,7 @@ public class FlowableWindowWithTimeTest extends RxJavaTest {
 
             @Override
             public void accept(Integer pv) {
-                System.out.println(pv);
+                // System.out.println(pv);
             }
         }).subscribe(ts);
         ts.awaitDone(5, TimeUnit.SECONDS);
@@ -693,7 +693,7 @@ public class FlowableWindowWithTimeTest extends RxJavaTest {
 
             @Override
             public void accept(Flowable<Integer> v) throws Exception {
-                System.out.println(Thread.currentThread());
+                // System.out.println(Thread.currentThread());
                 if (count++ == 1) {
                     secondWindowProcessing.countDown();
                     try {
@@ -726,7 +726,7 @@ public class FlowableWindowWithTimeTest extends RxJavaTest {
 
             @Override
             public void accept(Flowable<Integer> v) throws Exception {
-                System.out.println(Thread.currentThread());
+                // System.out.println(Thread.currentThread());
                 if (count++ == 1) {
                     secondWindowProcessing.countDown();
                     try {
@@ -758,7 +758,7 @@ public class FlowableWindowWithTimeTest extends RxJavaTest {
 
             @Override
             public void accept(Flowable<Integer> v) throws Exception {
-                System.out.println(Thread.currentThread());
+                // System.out.println(Thread.currentThread());
                 if (count++ == 1) {
                     secondWindowProcessing.countDown();
                     try {
@@ -791,7 +791,7 @@ public class FlowableWindowWithTimeTest extends RxJavaTest {
 
             @Override
             public void accept(Flowable<Integer> v) throws Exception {
-                System.out.println(Thread.currentThread());
+                // System.out.println(Thread.currentThread());
                 if (count++ == 1) {
                     secondWindowProcessing.countDown();
                     try {
@@ -823,7 +823,7 @@ public class FlowableWindowWithTimeTest extends RxJavaTest {
 
             @Override
             public void accept(Flowable<Integer> v) throws Exception {
-                System.out.println(Thread.currentThread());
+                // System.out.println(Thread.currentThread());
                 if (count++ == 1) {
                     secondWindowProcessing.countDown();
                     try {
@@ -856,7 +856,7 @@ public class FlowableWindowWithTimeTest extends RxJavaTest {
 
             @Override
             public void accept(Flowable<Integer> v) throws Exception {
-                System.out.println(Thread.currentThread());
+                // System.out.println(Thread.currentThread());
                 if (count++ == 1) {
                     secondWindowProcessing.countDown();
                     try {

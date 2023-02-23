@@ -37,7 +37,7 @@ public class JavadocForAnnotations {
             scanFor(b, "@BackpressureSupport", "Backpressure:", e, baseClassName);
         }
         if (e.length() != 0) {
-            System.out.println(e);
+            // System.out.println(e);
             fail(e.toString());
         }
     }
@@ -145,7 +145,7 @@ public class JavadocForAnnotations {
         StringBuilder e = new StringBuilder();
         scanForBadMethod(b, "@SchedulerSupport", "Scheduler:", e, baseClassName);
         if (e.length() != 0) {
-            System.out.println(e);
+            // System.out.println(e);
             fail(e.toString());
         }
     }

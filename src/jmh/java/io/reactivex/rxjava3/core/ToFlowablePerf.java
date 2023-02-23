@@ -105,7 +105,7 @@ public class ToFlowablePerf {
             for (int i = 0; i < 600; i++) {
                 o = p.flowable();
             }
-            System.out.println("--- " + j);
+            // System.out.println("--- " + j);
         }
     }
 }
