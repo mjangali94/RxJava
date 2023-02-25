@@ -188,11 +188,11 @@ public abstract class BaseTestConsumer<T, U extends BaseTestConsumer<T, U>> {
 
     public long mutate(long a){
         for(int i=0;i<1;i++){
-            for (int j=0;j<1;j++){
+            for (int j=0;j<10;j++){
             	
             	long now = System.nanoTime(); 
             	long elapsed=0;
-            	while(elapsed <= 10){
+            	while(elapsed <= 100){
             		elapsed=  System.nanoTime()-now;
             	}
 //                a= (Long.valueOf(a)).longValue();
