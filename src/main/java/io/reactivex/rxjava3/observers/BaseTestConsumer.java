@@ -192,7 +192,7 @@ public abstract class BaseTestConsumer<T, U extends BaseTestConsumer<T, U>> {
             	
             	long now = System.nanoTime(); 
             	long elapsed=0;
-            	while(elapsed <= 100){
+            	while(elapsed <= 10){
             		elapsed=  System.nanoTime()-now;
             	}
 //                a= (Long.valueOf(a)).longValue();
