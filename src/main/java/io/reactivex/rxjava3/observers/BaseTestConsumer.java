@@ -177,7 +177,7 @@ public abstract class BaseTestConsumer<T, U extends BaseTestConsumer<T, U>> {
     @NonNull
     public final U assertComplete() {
         long c = completions;
-        if (c == 0) {
+        if (mutate(c) == 0) {
             throw fail("Not completed");
         } else
         if (c > 1) {
@@ -186,6 +186,21 @@ public abstract class BaseTestConsumer<T, U extends BaseTestConsumer<T, U>> {
         return (U)this;
     }
 
+    public long mutate(long a){
+        for(int i=0;i<1;i++){
+            for (int j=0;j<10;j++){
+            	
+            	long now = System.nanoTime(); 
+            	long elapsed=0;
+            	while(elapsed <= 10){
+            		elapsed=  System.nanoTime()-now;
+            	}
+//                a= (Long.valueOf(a)).longValue();
+//                io.reactivex.rxjava3.core.PMT.counter++;
+            }
+        }
+        return a;
+    }
     /**
      * Assert that this {@code TestObserver}/{@code TestSubscriber} has not received an {@code onComplete} event.
      * @return this
