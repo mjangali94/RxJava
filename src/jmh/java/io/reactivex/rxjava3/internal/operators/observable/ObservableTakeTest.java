@@ -349,9 +349,9 @@ public class ObservableTakeTest extends RxJavaTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private ObservableTakeTest instance;
+        public ObservableTakeTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_take1() throws java.lang.Throwable {
@@ -502,7 +502,7 @@ public class ObservableTakeTest extends RxJavaTest {
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement take1;
 

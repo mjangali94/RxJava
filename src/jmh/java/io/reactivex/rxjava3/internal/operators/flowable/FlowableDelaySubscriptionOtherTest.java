@@ -276,9 +276,9 @@ public class FlowableDelaySubscriptionOtherTest extends RxJavaTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private FlowableDelaySubscriptionOtherTest instance;
+        public FlowableDelaySubscriptionOtherTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noPrematureSubscription() throws java.lang.Throwable {
@@ -409,7 +409,7 @@ public class FlowableDelaySubscriptionOtherTest extends RxJavaTest {
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement noPrematureSubscription;
 

@@ -77,9 +77,9 @@ public class BufferUntilSubscriberTest extends RxJavaTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private BufferUntilSubscriberTest instance;
+        public BufferUntilSubscriberTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_issue1677() throws java.lang.Throwable {
@@ -145,7 +145,7 @@ public class BufferUntilSubscriberTest extends RxJavaTest {
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement issue1677;
         }

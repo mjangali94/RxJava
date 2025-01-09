@@ -257,9 +257,9 @@ public final class ConverterTest extends RxJavaTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private ConverterTest instance;
+        public ConverterTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_flowableConverterThrows() throws java.lang.Throwable {
@@ -375,7 +375,7 @@ public final class ConverterTest extends RxJavaTest {
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement flowableConverterThrows;
 

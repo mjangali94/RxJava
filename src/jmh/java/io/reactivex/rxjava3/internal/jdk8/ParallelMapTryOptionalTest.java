@@ -238,9 +238,9 @@ public class ParallelMapTryOptionalTest extends RxJavaTest implements Consumer<O
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private ParallelMapTryOptionalTest instance;
+        public ParallelMapTryOptionalTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mapNoError() throws java.lang.Throwable {
@@ -436,7 +436,7 @@ public class ParallelMapTryOptionalTest extends RxJavaTest implements Consumer<O
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement mapNoError;
 

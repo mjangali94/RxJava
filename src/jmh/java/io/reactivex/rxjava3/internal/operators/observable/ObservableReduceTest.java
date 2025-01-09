@@ -339,9 +339,9 @@ public class ObservableReduceTest extends RxJavaTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private ObservableReduceTest instance;
+        public ObservableReduceTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_aggregateAsIntSumObservable() throws java.lang.Throwable {
@@ -498,7 +498,7 @@ public class ObservableReduceTest extends RxJavaTest {
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement aggregateAsIntSumObservable;
 

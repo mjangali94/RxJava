@@ -126,9 +126,9 @@ public class CompletableSafeSubscribeTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private CompletableSafeSubscribeTest instance;
+        public CompletableSafeSubscribeTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalError() throws java.lang.Throwable {
@@ -155,12 +155,12 @@ public class CompletableSafeSubscribeTest {
             this.runBenchmark(this.payloads.onCompleteCrash);
         }
 
-        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableSafeSubscribeTest> payload) throws java.lang.Throwable {
+        public void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableSafeSubscribeTest> payload) throws java.lang.Throwable {
             this.instance = new CompletableSafeSubscribeTest();
             payload.accept(this.instance);
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableSafeSubscribeTest> normalError;
 

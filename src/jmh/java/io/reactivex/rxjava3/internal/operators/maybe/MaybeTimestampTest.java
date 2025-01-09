@@ -76,9 +76,9 @@ public class MaybeTimestampTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private MaybeTimestampTest instance;
+        public MaybeTimestampTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_just() throws java.lang.Throwable {
@@ -125,12 +125,12 @@ public class MaybeTimestampTest {
             this.runBenchmark(this.payloads.timeInfo);
         }
 
-        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeTimestampTest> payload) throws java.lang.Throwable {
+        public void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeTimestampTest> payload) throws java.lang.Throwable {
             this.instance = new MaybeTimestampTest();
             payload.accept(this.instance);
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeTimestampTest> just;
 

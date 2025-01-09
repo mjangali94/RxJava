@@ -79,9 +79,9 @@ public class CompletableDoFinallyTest extends RxJavaTest implements Action {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private CompletableDoFinallyTest instance;
+        public CompletableDoFinallyTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalEmpty() throws java.lang.Throwable {
@@ -167,7 +167,7 @@ public class CompletableDoFinallyTest extends RxJavaTest implements Action {
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement normalEmpty;
 

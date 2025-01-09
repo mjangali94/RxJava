@@ -86,9 +86,9 @@ public class SingleStartWithTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private SingleStartWithTest instance;
+        public SingleStartWithTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_justCompletableComplete() throws java.lang.Throwable {
@@ -155,12 +155,12 @@ public class SingleStartWithTest {
             this.runBenchmark(this.payloads.justFlowableError);
         }
 
-        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleStartWithTest> payload) throws java.lang.Throwable {
+        public void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleStartWithTest> payload) throws java.lang.Throwable {
             this.instance = new SingleStartWithTest();
             payload.accept(this.instance);
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleStartWithTest> justCompletableComplete;
 

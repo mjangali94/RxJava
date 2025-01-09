@@ -198,9 +198,9 @@ public class FlowableSwitchIfEmptyTest extends RxJavaTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private FlowableSwitchIfEmptyTest instance;
+        public FlowableSwitchIfEmptyTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_switchWhenNotEmpty() throws java.lang.Throwable {
@@ -306,7 +306,7 @@ public class FlowableSwitchIfEmptyTest extends RxJavaTest {
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement switchWhenNotEmpty;
 

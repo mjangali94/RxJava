@@ -1006,9 +1006,9 @@ public class ObservableMergeTest extends RxJavaTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private ObservableMergeTest instance;
+        public ObservableMergeTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_mergeObservableOfObservables() throws java.lang.Throwable {
@@ -1259,7 +1259,7 @@ public class ObservableMergeTest extends RxJavaTest {
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement mergeObservableOfObservables;
 

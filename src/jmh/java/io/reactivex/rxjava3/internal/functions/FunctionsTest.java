@@ -208,9 +208,9 @@ public class FunctionsTest extends RxJavaTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private FunctionsTest instance;
+        public FunctionsTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_utilityClass() throws java.lang.Throwable {
@@ -356,7 +356,7 @@ public class FunctionsTest extends RxJavaTest {
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement utilityClass;
 

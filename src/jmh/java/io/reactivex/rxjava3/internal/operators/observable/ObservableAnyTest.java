@@ -508,9 +508,9 @@ public class ObservableAnyTest extends RxJavaTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private ObservableAnyTest instance;
+        public ObservableAnyTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_anyWithTwoItemsObservable() throws java.lang.Throwable {
@@ -721,7 +721,7 @@ public class ObservableAnyTest extends RxJavaTest {
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement anyWithTwoItemsObservable;
 

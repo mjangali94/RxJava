@@ -308,9 +308,9 @@ public class FlowableTakeLastTimedTest extends RxJavaTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private FlowableTakeLastTimedTest instance;
+        public FlowableTakeLastTimedTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_takeLastTimedWithNegativeCount() throws java.lang.Throwable {
@@ -461,7 +461,7 @@ public class FlowableTakeLastTimedTest extends RxJavaTest {
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement takeLastTimedWithNegativeCount;
 

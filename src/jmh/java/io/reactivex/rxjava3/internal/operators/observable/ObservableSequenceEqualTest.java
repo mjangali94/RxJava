@@ -323,9 +323,9 @@ public class ObservableSequenceEqualTest extends RxJavaTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private ObservableSequenceEqualTest instance;
+        public ObservableSequenceEqualTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_observable1() throws java.lang.Throwable {
@@ -556,7 +556,7 @@ public class ObservableSequenceEqualTest extends RxJavaTest {
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement observable1;
 

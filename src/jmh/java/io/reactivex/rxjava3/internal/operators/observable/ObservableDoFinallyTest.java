@@ -385,9 +385,9 @@ public class ObservableDoFinallyTest extends RxJavaTest implements Action {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private ObservableDoFinallyTest instance;
+        public ObservableDoFinallyTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalJust() throws java.lang.Throwable {
@@ -578,7 +578,7 @@ public class ObservableDoFinallyTest extends RxJavaTest implements Action {
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement normalJust;
 

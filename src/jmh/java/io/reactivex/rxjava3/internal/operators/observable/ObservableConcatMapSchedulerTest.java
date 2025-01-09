@@ -923,9 +923,9 @@ public class ObservableConcatMapSchedulerTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private ObservableConcatMapSchedulerTest instance;
+        public ObservableConcatMapSchedulerTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_boundaryFusion() throws java.lang.Throwable {
@@ -1232,12 +1232,12 @@ public class ObservableConcatMapSchedulerTest {
             this.runBenchmark(this.payloads.scalarInnerEmptyDisposeDelayError);
         }
 
-        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> payload) throws java.lang.Throwable {
+        public void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> payload) throws java.lang.Throwable {
             this.instance = new ObservableConcatMapSchedulerTest();
             payload.accept(this.instance);
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public se.chalmers.ju2jmh.api.ThrowingConsumer<ObservableConcatMapSchedulerTest> boundaryFusion;
 

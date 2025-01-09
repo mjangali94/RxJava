@@ -133,9 +133,9 @@ public class MaybeStartWithTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private MaybeStartWithTest instance;
+        public MaybeStartWithTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_justCompletableComplete() throws java.lang.Throwable {
@@ -222,12 +222,12 @@ public class MaybeStartWithTest {
             this.runBenchmark(this.payloads.runFlowableError);
         }
 
-        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeStartWithTest> payload) throws java.lang.Throwable {
+        public void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeStartWithTest> payload) throws java.lang.Throwable {
             this.instance = new MaybeStartWithTest();
             payload.accept(this.instance);
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeStartWithTest> justCompletableComplete;
 

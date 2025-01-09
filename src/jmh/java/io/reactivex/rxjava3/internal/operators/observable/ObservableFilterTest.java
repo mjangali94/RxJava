@@ -116,9 +116,9 @@ public class ObservableFilterTest extends RxJavaTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private ObservableFilterTest instance;
+        public ObservableFilterTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_filter() throws java.lang.Throwable {
@@ -214,7 +214,7 @@ public class ObservableFilterTest extends RxJavaTest {
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement filter;
 

@@ -371,9 +371,9 @@ public class DeferredScalarSubscriberTest extends RxJavaTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private DeferredScalarSubscriberTest instance;
+        public DeferredScalarSubscriberTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_completeFirst() throws java.lang.Throwable {
@@ -524,7 +524,7 @@ public class DeferredScalarSubscriberTest extends RxJavaTest {
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement completeFirst;
 

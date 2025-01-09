@@ -181,9 +181,9 @@ public class BlockingFlowableLatestTest extends RxJavaTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private BlockingFlowableLatestTest instance;
+        public BlockingFlowableLatestTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_simple() throws java.lang.Throwable {
@@ -309,7 +309,7 @@ public class BlockingFlowableLatestTest extends RxJavaTest {
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement simple;
 

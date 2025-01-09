@@ -605,9 +605,9 @@ public class MaybeUsingTest extends RxJavaTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private MaybeUsingTest instance;
+        public MaybeUsingTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_resourceSupplierThrows() throws java.lang.Throwable {
@@ -773,7 +773,7 @@ public class MaybeUsingTest extends RxJavaTest {
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement resourceSupplierThrows;
 

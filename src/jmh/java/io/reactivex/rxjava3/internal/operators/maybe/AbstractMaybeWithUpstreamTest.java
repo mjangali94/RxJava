@@ -30,9 +30,9 @@ public class AbstractMaybeWithUpstreamTest extends RxJavaTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private AbstractMaybeWithUpstreamTest instance;
+        public AbstractMaybeWithUpstreamTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_upstream() throws java.lang.Throwable {
@@ -98,7 +98,7 @@ public class AbstractMaybeWithUpstreamTest extends RxJavaTest {
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement upstream;
         }

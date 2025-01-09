@@ -49,9 +49,9 @@ public class PeriodicDirectTaskTest extends RxJavaTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private PeriodicDirectTaskTest instance;
+        public PeriodicDirectTaskTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_runnableThrows() throws java.lang.Throwable {
@@ -117,7 +117,7 @@ public class PeriodicDirectTaskTest extends RxJavaTest {
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement runnableThrows;
         }

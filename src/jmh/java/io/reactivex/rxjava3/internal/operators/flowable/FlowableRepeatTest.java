@@ -431,9 +431,9 @@ public class FlowableRepeatTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private FlowableRepeatTest instance;
+        public FlowableRepeatTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_repetition() throws java.lang.Throwable {
@@ -570,12 +570,12 @@ public class FlowableRepeatTest {
             this.runBenchmark(this.payloads.repeatFloodNoSubscriptionError);
         }
 
-        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> payload) throws java.lang.Throwable {
+        public void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> payload) throws java.lang.Throwable {
             this.instance = new FlowableRepeatTest();
             payload.accept(this.instance);
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableRepeatTest> repetition;
 

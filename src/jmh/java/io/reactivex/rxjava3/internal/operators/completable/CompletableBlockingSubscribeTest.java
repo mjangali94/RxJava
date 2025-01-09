@@ -241,9 +241,9 @@ public class CompletableBlockingSubscribeTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private CompletableBlockingSubscribeTest instance;
+        public CompletableBlockingSubscribeTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noArgComplete() throws java.lang.Throwable {
@@ -355,12 +355,12 @@ public class CompletableBlockingSubscribeTest {
             this.runBenchmark(this.payloads.ovserverInterrupted);
         }
 
-        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableBlockingSubscribeTest> payload) throws java.lang.Throwable {
+        public void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableBlockingSubscribeTest> payload) throws java.lang.Throwable {
             this.instance = new CompletableBlockingSubscribeTest();
             payload.accept(this.instance);
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableBlockingSubscribeTest> noArgComplete;
 

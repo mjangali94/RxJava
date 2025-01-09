@@ -36,9 +36,9 @@ public class CompletableSequenceEqualTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private CompletableSequenceEqualTest instance;
+        public CompletableSequenceEqualTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_bothComplete() throws java.lang.Throwable {
@@ -55,12 +55,12 @@ public class CompletableSequenceEqualTest {
             this.runBenchmark(this.payloads.secondFails);
         }
 
-        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableSequenceEqualTest> payload) throws java.lang.Throwable {
+        public void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableSequenceEqualTest> payload) throws java.lang.Throwable {
             this.instance = new CompletableSequenceEqualTest();
             payload.accept(this.instance);
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public se.chalmers.ju2jmh.api.ThrowingConsumer<CompletableSequenceEqualTest> bothComplete;
 

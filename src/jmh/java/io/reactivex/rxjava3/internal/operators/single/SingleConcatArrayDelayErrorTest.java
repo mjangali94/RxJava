@@ -26,21 +26,21 @@ public class SingleConcatArrayDelayErrorTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private SingleConcatArrayDelayErrorTest instance;
+        public SingleConcatArrayDelayErrorTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normal() throws java.lang.Throwable {
             this.runBenchmark(this.payloads.normal);
         }
 
-        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleConcatArrayDelayErrorTest> payload) throws java.lang.Throwable {
+        public void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<SingleConcatArrayDelayErrorTest> payload) throws java.lang.Throwable {
             this.instance = new SingleConcatArrayDelayErrorTest();
             payload.accept(this.instance);
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public se.chalmers.ju2jmh.api.ThrowingConsumer<SingleConcatArrayDelayErrorTest> normal;
         }

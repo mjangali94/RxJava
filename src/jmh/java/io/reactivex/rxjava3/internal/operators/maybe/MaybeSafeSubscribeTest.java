@@ -168,9 +168,9 @@ public class MaybeSafeSubscribeTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private MaybeSafeSubscribeTest instance;
+        public MaybeSafeSubscribeTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_normalSuccess() throws java.lang.Throwable {
@@ -207,12 +207,12 @@ public class MaybeSafeSubscribeTest {
             this.runBenchmark(this.payloads.onCompleteCrash);
         }
 
-        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeSafeSubscribeTest> payload) throws java.lang.Throwable {
+        public void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeSafeSubscribeTest> payload) throws java.lang.Throwable {
             this.instance = new MaybeSafeSubscribeTest();
             payload.accept(this.instance);
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeSafeSubscribeTest> normalSuccess;
 

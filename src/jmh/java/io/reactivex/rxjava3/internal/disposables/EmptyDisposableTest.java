@@ -41,9 +41,9 @@ public class EmptyDisposableTest extends RxJavaTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private EmptyDisposableTest instance;
+        public EmptyDisposableTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noOffer() throws java.lang.Throwable {
@@ -119,7 +119,7 @@ public class EmptyDisposableTest extends RxJavaTest {
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement noOffer;
 

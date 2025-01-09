@@ -1400,9 +1400,9 @@ public class FlowableConcatTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private FlowableConcatTest instance;
+        public FlowableConcatTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_concat() throws java.lang.Throwable {
@@ -1829,12 +1829,12 @@ public class FlowableConcatTest {
             this.runBenchmark(this.payloads.arrayDelayErrorMultipleNullErrors);
         }
 
-        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> payload) throws java.lang.Throwable {
+        public void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> payload) throws java.lang.Throwable {
             this.instance = new FlowableConcatTest();
             payload.accept(this.instance);
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public se.chalmers.ju2jmh.api.ThrowingConsumer<FlowableConcatTest> concat;
 

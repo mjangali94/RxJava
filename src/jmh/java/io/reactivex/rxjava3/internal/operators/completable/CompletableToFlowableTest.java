@@ -34,9 +34,9 @@ public class CompletableToFlowableTest extends RxJavaTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private CompletableToFlowableTest instance;
+        public CompletableToFlowableTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_doubleOnSubscribe() throws java.lang.Throwable {
@@ -102,7 +102,7 @@ public class CompletableToFlowableTest extends RxJavaTest {
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement doubleOnSubscribe;
         }

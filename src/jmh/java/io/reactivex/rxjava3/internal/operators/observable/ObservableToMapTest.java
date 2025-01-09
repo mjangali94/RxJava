@@ -359,9 +359,9 @@ public class ObservableToMapTest extends RxJavaTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private ObservableToMapTest instance;
+        public ObservableToMapTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_toMapObservable() throws java.lang.Throwable {
@@ -483,7 +483,7 @@ public class ObservableToMapTest extends RxJavaTest {
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement toMapObservable;
 

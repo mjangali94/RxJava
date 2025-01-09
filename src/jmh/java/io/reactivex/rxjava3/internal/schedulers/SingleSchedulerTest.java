@@ -123,9 +123,9 @@ public class SingleSchedulerTest extends AbstractSchedulerTests {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private SingleSchedulerTest instance;
+        public SingleSchedulerTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_nestedActions() throws java.lang.Throwable {
@@ -346,7 +346,7 @@ public class SingleSchedulerTest extends AbstractSchedulerTests {
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement nestedActions;
 

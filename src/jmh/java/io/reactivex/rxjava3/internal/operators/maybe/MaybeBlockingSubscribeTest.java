@@ -373,9 +373,9 @@ public class MaybeBlockingSubscribeTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private MaybeBlockingSubscribeTest instance;
+        public MaybeBlockingSubscribeTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_noArgSuccess() throws java.lang.Throwable {
@@ -547,12 +547,12 @@ public class MaybeBlockingSubscribeTest {
             this.runBenchmark(this.payloads.ovserverInterrupted);
         }
 
-        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeBlockingSubscribeTest> payload) throws java.lang.Throwable {
+        public void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeBlockingSubscribeTest> payload) throws java.lang.Throwable {
             this.instance = new MaybeBlockingSubscribeTest();
             payload.accept(this.instance);
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public se.chalmers.ju2jmh.api.ThrowingConsumer<MaybeBlockingSubscribeTest> noArgSuccess;
 

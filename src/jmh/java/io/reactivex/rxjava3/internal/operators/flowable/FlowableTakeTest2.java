@@ -163,9 +163,9 @@ public class FlowableTakeTest2 extends RxJavaTest implements LongConsumer, Actio
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private FlowableTakeTest2 instance;
+        public FlowableTakeTest2 instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_shorterSequence() throws java.lang.Throwable {
@@ -286,7 +286,7 @@ public class FlowableTakeTest2 extends RxJavaTest implements LongConsumer, Actio
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement shorterSequence;
 

@@ -392,9 +392,9 @@ public class ObservableAmbTest extends RxJavaTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private ObservableAmbTest instance;
+        public ObservableAmbTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_amb() throws java.lang.Throwable {
@@ -566,7 +566,7 @@ public class ObservableAmbTest extends RxJavaTest {
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement amb;
 

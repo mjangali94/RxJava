@@ -70,9 +70,9 @@ public class CancellableQueueFuseableTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private CancellableQueueFuseableTest instance;
+        public CancellableQueueFuseableTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_offer() throws java.lang.Throwable {
@@ -104,12 +104,12 @@ public class CancellableQueueFuseableTest {
             this.runBenchmark(this.payloads.dispose2);
         }
 
-        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<CancellableQueueFuseableTest> payload) throws java.lang.Throwable {
+        public void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<CancellableQueueFuseableTest> payload) throws java.lang.Throwable {
             this.instance = new CancellableQueueFuseableTest();
             payload.accept(this.instance);
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public se.chalmers.ju2jmh.api.ThrowingConsumer<CancellableQueueFuseableTest> offer;
 

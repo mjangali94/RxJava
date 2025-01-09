@@ -30,9 +30,9 @@ public class CompletableFromSingleTest extends RxJavaTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private CompletableFromSingleTest instance;
+        public CompletableFromSingleTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_fromSingle() throws java.lang.Throwable {
@@ -103,7 +103,7 @@ public class CompletableFromSingleTest extends RxJavaTest {
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement fromSingle;
 

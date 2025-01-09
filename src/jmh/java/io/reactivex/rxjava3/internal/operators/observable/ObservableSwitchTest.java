@@ -1206,9 +1206,9 @@ public class ObservableSwitchTest extends RxJavaTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private ObservableSwitchTest instance;
+        public ObservableSwitchTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_switchWhenOuterCompleteBeforeInner() throws java.lang.Throwable {
@@ -1550,7 +1550,7 @@ public class ObservableSwitchTest extends RxJavaTest {
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement switchWhenOuterCompleteBeforeInner;
 

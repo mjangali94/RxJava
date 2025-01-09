@@ -385,9 +385,9 @@ public class ScheduledRunnableTest extends RxJavaTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private ScheduledRunnableTest instance;
+        public ScheduledRunnableTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_dispose() throws java.lang.Throwable {
@@ -553,7 +553,7 @@ public class ScheduledRunnableTest extends RxJavaTest {
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement dispose;
 

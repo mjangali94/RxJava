@@ -156,9 +156,9 @@ public class OperatorsUseInterfaces {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private OperatorsUseInterfaces instance;
+        public OperatorsUseInterfaces instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_checkFlowable() throws java.lang.Throwable {
@@ -195,12 +195,12 @@ public class OperatorsUseInterfaces {
             this.runBenchmark(this.payloads.checkSelf);
         }
 
-        private void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<OperatorsUseInterfaces> payload) throws java.lang.Throwable {
+        public void runBenchmark(se.chalmers.ju2jmh.api.ThrowingConsumer<OperatorsUseInterfaces> payload) throws java.lang.Throwable {
             this.instance = new OperatorsUseInterfaces();
             payload.accept(this.instance);
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public se.chalmers.ju2jmh.api.ThrowingConsumer<OperatorsUseInterfaces> checkFlowable;
 

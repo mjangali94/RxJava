@@ -121,9 +121,9 @@ public class FlowableTimestampTest extends RxJavaTest {
     @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-        private _Payloads payloads;
+public _Payloads payloads;
 
-        private FlowableTimestampTest instance;
+        public FlowableTimestampTest instance;
 
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_timestampWithScheduler() throws java.lang.Throwable {
@@ -205,7 +205,7 @@ public class FlowableTimestampTest extends RxJavaTest {
             }
         }
 
-        private static class _Payloads {
+        public static class _Payloads {
 
             public org.junit.runners.model.Statement timestampWithScheduler;
 
