@@ -50,7 +50,6 @@ public class Cluster_1 {
         
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_Cluster_1() throws java.lang.Throwable {
-            
             this._Benchmark_benchmark_0.payloads.concatWithFlowableOfFlowable.evaluate();
             this._Benchmark_benchmark_0.payloads.concatCovariance.evaluate();
             this._Benchmark_benchmark_0.payloads.concatCovariance2.evaluate();

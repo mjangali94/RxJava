@@ -5,15 +5,15 @@ public class Cluster_157 {
    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-       private io.reactivex.rxjava3.internal.operators.flowable.FlowableSingleTest._Benchmark _Benchmark_benchmark_0;
-       private io.reactivex.rxjava3.internal.operators.flowable.FlowableCacheTest._Benchmark _Benchmark_benchmark_1;
-       private io.reactivex.rxjava3.internal.operators.maybe.MaybeMergeArrayTest._Benchmark _Benchmark_benchmark_2;
+       private io.reactivex.rxjava3.internal.operators.flowable.FlowableIgnoreElementsTest._Benchmark _Benchmark_benchmark_0;
+       private io.reactivex.rxjava3.internal.operators.completable.CompletableConcatTest._Benchmark _Benchmark_benchmark_1;
+       private io.reactivex.rxjava3.internal.operators.completable.CompletableMergeTest._Benchmark _Benchmark_benchmark_2;
 
         @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
         public void makePayloads() {
-            _Benchmark_benchmark_0 = new io.reactivex.rxjava3.internal.operators.flowable.FlowableSingleTest._Benchmark();
-            _Benchmark_benchmark_1 = new io.reactivex.rxjava3.internal.operators.flowable.FlowableCacheTest._Benchmark();
-            _Benchmark_benchmark_2 = new io.reactivex.rxjava3.internal.operators.maybe.MaybeMergeArrayTest._Benchmark();
+            _Benchmark_benchmark_0 = new io.reactivex.rxjava3.internal.operators.flowable.FlowableIgnoreElementsTest._Benchmark();
+            _Benchmark_benchmark_1 = new io.reactivex.rxjava3.internal.operators.completable.CompletableConcatTest._Benchmark();
+            _Benchmark_benchmark_2 = new io.reactivex.rxjava3.internal.operators.completable.CompletableMergeTest._Benchmark();
             this._Benchmark_benchmark_0.makePayloads();
             this._Benchmark_benchmark_1.makePayloads();
             this._Benchmark_benchmark_2.makePayloads();
@@ -21,10 +21,9 @@ public class Cluster_157 {
         
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_Cluster_157() throws java.lang.Throwable {
-            
             this._Benchmark_benchmark_0.payloads.doubleOnSubscribe.evaluate();
-            this._Benchmark_benchmark_1.payloads.dispose.evaluate();
-            this._Benchmark_benchmark_2.payloads.take.evaluate();
+            this._Benchmark_benchmark_1.payloads.doubleOnSubscribe.evaluate();
+            this._Benchmark_benchmark_2.payloads.doubleOnSubscribe.evaluate();
         }
 
    }

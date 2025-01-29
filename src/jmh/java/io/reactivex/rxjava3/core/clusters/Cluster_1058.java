@@ -5,23 +5,21 @@ public class Cluster_1058 {
    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-       private io.reactivex.rxjava3.internal.operators.maybe.MaybeConcatMapTest._Benchmark _Benchmark_benchmark_0;
-       private io.reactivex.rxjava3.internal.operators.single.SingleOnErrorCompleteTest._Benchmark _Benchmark_benchmark_1;
+       private io.reactivex.rxjava3.internal.operators.flowable.FlowableConcatMapSchedulerTest._Benchmark _Benchmark_benchmark_0;
+       private io.reactivex.rxjava3.internal.operators.flowable.FlowableRetryTest._Benchmark _Benchmark_benchmark_1;
 
         @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
         public void makePayloads() {
-            _Benchmark_benchmark_0 = new io.reactivex.rxjava3.internal.operators.maybe.MaybeConcatMapTest._Benchmark();
-            _Benchmark_benchmark_1 = new io.reactivex.rxjava3.internal.operators.single.SingleOnErrorCompleteTest._Benchmark();
+            _Benchmark_benchmark_0 = new io.reactivex.rxjava3.internal.operators.flowable.FlowableConcatMapSchedulerTest._Benchmark();
+            _Benchmark_benchmark_1 = new io.reactivex.rxjava3.internal.operators.flowable.FlowableRetryTest._Benchmark();
             this._Benchmark_benchmark_0.makePayloads();
             this._Benchmark_benchmark_1.makePayloads();
         }
         
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_Cluster_1058() throws java.lang.Throwable {
-            
-            this._Benchmark_benchmark_0.payloads.doubleOnSubscribe.evaluate();
-
-            this._Benchmark_benchmark_1.runBenchmark(this._Benchmark_benchmark_1.payloads.errorPredicateCrash);
+            this._Benchmark_benchmark_0.payloads.concatMapJustSource.evaluate();
+            this._Benchmark_benchmark_1.payloads.noCancelPreviousRetryWhile2.evaluate();
         }
 
    }

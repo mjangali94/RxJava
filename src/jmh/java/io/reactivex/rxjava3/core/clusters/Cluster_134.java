@@ -5,15 +5,15 @@ public class Cluster_134 {
    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-       private io.reactivex.rxjava3.internal.operators.maybe.MaybeDelayOtherTest._Benchmark _Benchmark_benchmark_0;
-       private io.reactivex.rxjava3.internal.operators.maybe.MaybeTakeUntilTest._Benchmark _Benchmark_benchmark_1;
-       private io.reactivex.rxjava3.internal.operators.maybe.MaybeFlatMapSingleTest._Benchmark _Benchmark_benchmark_2;
+       private io.reactivex.rxjava3.internal.operators.observable.ObservableMergeWithSingleTest._Benchmark _Benchmark_benchmark_0;
+       private io.reactivex.rxjava3.internal.operators.single.SingleDoAfterSuccessTest._Benchmark _Benchmark_benchmark_1;
+       private io.reactivex.rxjava3.internal.operators.single.SingleUsingTest._Benchmark _Benchmark_benchmark_2;
 
         @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
         public void makePayloads() {
-            _Benchmark_benchmark_0 = new io.reactivex.rxjava3.internal.operators.maybe.MaybeDelayOtherTest._Benchmark();
-            _Benchmark_benchmark_1 = new io.reactivex.rxjava3.internal.operators.maybe.MaybeTakeUntilTest._Benchmark();
-            _Benchmark_benchmark_2 = new io.reactivex.rxjava3.internal.operators.maybe.MaybeFlatMapSingleTest._Benchmark();
+            _Benchmark_benchmark_0 = new io.reactivex.rxjava3.internal.operators.observable.ObservableMergeWithSingleTest._Benchmark();
+            _Benchmark_benchmark_1 = new io.reactivex.rxjava3.internal.operators.single.SingleDoAfterSuccessTest._Benchmark();
+            _Benchmark_benchmark_2 = new io.reactivex.rxjava3.internal.operators.single.SingleUsingTest._Benchmark();
             this._Benchmark_benchmark_0.makePayloads();
             this._Benchmark_benchmark_1.makePayloads();
             this._Benchmark_benchmark_2.makePayloads();
@@ -21,10 +21,9 @@ public class Cluster_134 {
         
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_Cluster_134() throws java.lang.Throwable {
-            
-            this._Benchmark_benchmark_0.payloads.errorWithOnError.evaluate();
-            this._Benchmark_benchmark_1.payloads.untilPublisherDispose.evaluate();
-            this._Benchmark_benchmark_2.payloads.dispose.evaluate();
+            this._Benchmark_benchmark_0.payloads.onErrorMainOverflow.evaluate();
+            this._Benchmark_benchmark_1.payloads.errorConditional.evaluate();
+            this._Benchmark_benchmark_2.payloads.errorEager.evaluate();
         }
 
    }

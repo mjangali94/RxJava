@@ -5,42 +5,56 @@ public class Cluster_113 {
    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-       private io.reactivex.rxjava3.internal.jdk8.FlowableStageSubscriberOrDefaultTest._Benchmark _Benchmark_benchmark_0;
-       private io.reactivex.rxjava3.internal.operators.flowable.FlowableUsingTest._Benchmark _Benchmark_benchmark_1;
-       private io.reactivex.rxjava3.internal.operators.maybe.MaybeZipArrayTest._Benchmark _Benchmark_benchmark_3;
-       private io.reactivex.rxjava3.internal.jdk8.FlowableFromStreamTest._Benchmark _Benchmark_benchmark_4;
-       private io.reactivex.rxjava3.internal.operators.flowable.FlowableDematerializeTest._Benchmark _Benchmark_benchmark_5;
-       private io.reactivex.rxjava3.flowable.FlowableSubscriberTest._Benchmark _Benchmark_benchmark_6;
+       private io.reactivex.rxjava3.observable.ObservableConcatTests._Benchmark _Benchmark_benchmark_0;
+       private io.reactivex.rxjava3.internal.operators.observable.ObservableConcatMapTest._Benchmark _Benchmark_benchmark_3;
+       private io.reactivex.rxjava3.internal.operators.observable.ObservableFromIterableTest._Benchmark _Benchmark_benchmark_4;
+       private io.reactivex.rxjava3.internal.operators.observable.ObservableTakeLastOneTest._Benchmark _Benchmark_benchmark_11;
+       private io.reactivex.rxjava3.internal.operators.observable.ObservableSkipLastTest._Benchmark _Benchmark_benchmark_13;
+       private io.reactivex.rxjava3.internal.operators.observable.ObservableSkipTest._Benchmark _Benchmark_benchmark_14;
 
         @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
         public void makePayloads() {
-            _Benchmark_benchmark_0 = new io.reactivex.rxjava3.internal.jdk8.FlowableStageSubscriberOrDefaultTest._Benchmark();
-            _Benchmark_benchmark_1 = new io.reactivex.rxjava3.internal.operators.flowable.FlowableUsingTest._Benchmark();
-            _Benchmark_benchmark_3 = new io.reactivex.rxjava3.internal.operators.maybe.MaybeZipArrayTest._Benchmark();
-            _Benchmark_benchmark_4 = new io.reactivex.rxjava3.internal.jdk8.FlowableFromStreamTest._Benchmark();
-            _Benchmark_benchmark_5 = new io.reactivex.rxjava3.internal.operators.flowable.FlowableDematerializeTest._Benchmark();
-            _Benchmark_benchmark_6 = new io.reactivex.rxjava3.flowable.FlowableSubscriberTest._Benchmark();
+            _Benchmark_benchmark_0 = new io.reactivex.rxjava3.observable.ObservableConcatTests._Benchmark();
+            _Benchmark_benchmark_3 = new io.reactivex.rxjava3.internal.operators.observable.ObservableConcatMapTest._Benchmark();
+            _Benchmark_benchmark_4 = new io.reactivex.rxjava3.internal.operators.observable.ObservableFromIterableTest._Benchmark();
+            _Benchmark_benchmark_11 = new io.reactivex.rxjava3.internal.operators.observable.ObservableTakeLastOneTest._Benchmark();
+            _Benchmark_benchmark_13 = new io.reactivex.rxjava3.internal.operators.observable.ObservableSkipLastTest._Benchmark();
+            _Benchmark_benchmark_14 = new io.reactivex.rxjava3.internal.operators.observable.ObservableSkipTest._Benchmark();
             this._Benchmark_benchmark_0.makePayloads();
-            this._Benchmark_benchmark_1.makePayloads();
+            this._Benchmark_benchmark_0.makePayloads();
             this._Benchmark_benchmark_0.makePayloads();
             this._Benchmark_benchmark_3.makePayloads();
             this._Benchmark_benchmark_4.makePayloads();
-            this._Benchmark_benchmark_5.makePayloads();
-            this._Benchmark_benchmark_6.makePayloads();
+            this._Benchmark_benchmark_0.makePayloads();
+            this._Benchmark_benchmark_3.makePayloads();
+            this._Benchmark_benchmark_3.makePayloads();
+            this._Benchmark_benchmark_3.makePayloads();
+            this._Benchmark_benchmark_3.makePayloads();
+            this._Benchmark_benchmark_3.makePayloads();
+            this._Benchmark_benchmark_11.makePayloads();
+            this._Benchmark_benchmark_3.makePayloads();
+            this._Benchmark_benchmark_13.makePayloads();
+            this._Benchmark_benchmark_14.makePayloads();
         }
         
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_Cluster_113() throws java.lang.Throwable {
-            
-            this._Benchmark_benchmark_0.payloads.lastCompletableManualCompleteExceptionallyCancels.evaluate();
-            this._Benchmark_benchmark_1.payloads.nonEagerTermination.evaluate();
-            this._Benchmark_benchmark_0.payloads.singleCompletableManualCompleteExceptionallyCancels.evaluate();
+            this._Benchmark_benchmark_0.payloads.concatWithObservableOfObservable.evaluate();
+            this._Benchmark_benchmark_0.payloads.concatCovariance.evaluate();
+            this._Benchmark_benchmark_0.payloads.concatCovariance2.evaluate();
+            this._Benchmark_benchmark_3.payloads.concatReportsDisposedOnComplete.evaluate();
+            this._Benchmark_benchmark_4.payloads.fusionWithConcatMap.evaluate();
+            this._Benchmark_benchmark_0.payloads.concatWithIterableOfObservable.evaluate();
+            this._Benchmark_benchmark_3.payloads.noCancelPrevious.evaluate();
+            this._Benchmark_benchmark_3.payloads.concatReportsDisposedOnError.evaluate();
+            this._Benchmark_benchmark_3.payloads.rejectedFusion.evaluate();
             this._Benchmark_benchmark_3.payloads.dispose.evaluate();
-            this._Benchmark_benchmark_4.payloads.requestOneByOneConditional.evaluate();
-            this._Benchmark_benchmark_5.payloads.nonNotificationInstanceAfterDispose.evaluate();
-            this._Benchmark_benchmark_6.runBenchmark(this._Benchmark_benchmark_6.payloads.subscribeConsumerConsumerWithError);
-            
-            }
+            this._Benchmark_benchmark_3.payloads.reentrantNoOverflowHidden.evaluate();
+            this._Benchmark_benchmark_11.payloads.dispose.evaluate();
+            this._Benchmark_benchmark_3.payloads.asyncFused.evaluate();
+            this._Benchmark_benchmark_13.payloads.dispose.evaluate();
+            this._Benchmark_benchmark_14.payloads.dispose.evaluate();
+        }
 
    }
 

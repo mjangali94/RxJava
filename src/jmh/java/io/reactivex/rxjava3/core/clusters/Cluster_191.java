@@ -5,28 +5,37 @@ public class Cluster_191 {
    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-       private io.reactivex.rxjava3.internal.operators.single.SingleFlatMapIterableFlowableTest._Benchmark _Benchmark_benchmark_0;
-       private io.reactivex.rxjava3.flowable.FlowableNullTests._Benchmark _Benchmark_benchmark_2;
-       private io.reactivex.rxjava3.internal.operators.maybe.MaybeMergeArrayTest._Benchmark _Benchmark_benchmark_3;
+       private io.reactivex.rxjava3.internal.operators.observable.ObservableGroupByTest._Benchmark _Benchmark_benchmark_0;
+       private io.reactivex.rxjava3.internal.operators.observable.ObservableFlatMapTest._Benchmark _Benchmark_benchmark_1;
+       private io.reactivex.rxjava3.internal.operators.observable.BlockingObservableToFutureTest._Benchmark _Benchmark_benchmark_5;
+       private io.reactivex.rxjava3.internal.operators.observable.ObservableStartWithTest._Benchmark _Benchmark_benchmark_6;
 
         @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
         public void makePayloads() {
-            _Benchmark_benchmark_0 = new io.reactivex.rxjava3.internal.operators.single.SingleFlatMapIterableFlowableTest._Benchmark();
-            _Benchmark_benchmark_2 = new io.reactivex.rxjava3.flowable.FlowableNullTests._Benchmark();
-            _Benchmark_benchmark_3 = new io.reactivex.rxjava3.internal.operators.maybe.MaybeMergeArrayTest._Benchmark();
+            _Benchmark_benchmark_0 = new io.reactivex.rxjava3.internal.operators.observable.ObservableGroupByTest._Benchmark();
+            _Benchmark_benchmark_1 = new io.reactivex.rxjava3.internal.operators.observable.ObservableFlatMapTest._Benchmark();
+            _Benchmark_benchmark_5 = new io.reactivex.rxjava3.internal.operators.observable.BlockingObservableToFutureTest._Benchmark();
+            _Benchmark_benchmark_6 = new io.reactivex.rxjava3.internal.operators.observable.ObservableStartWithTest._Benchmark();
             this._Benchmark_benchmark_0.makePayloads();
-            this._Benchmark_benchmark_0.makePayloads();
-            this._Benchmark_benchmark_2.makePayloads();
-            this._Benchmark_benchmark_3.makePayloads();
+            this._Benchmark_benchmark_1.makePayloads();
+            this._Benchmark_benchmark_1.makePayloads();
+            this._Benchmark_benchmark_1.makePayloads();
+            this._Benchmark_benchmark_1.makePayloads();
+            this._Benchmark_benchmark_5.makePayloads();
+            this._Benchmark_benchmark_6.makePayloads();
+            this._Benchmark_benchmark_1.makePayloads();
         }
         
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_Cluster_191() throws java.lang.Throwable {
-            
-            this._Benchmark_benchmark_0.payloads.hasNextCrash2.evaluate();
-            this._Benchmark_benchmark_0.payloads.hasNextThrowsUnbounded.evaluate();
-            this._Benchmark_benchmark_2.payloads.debounceFunctionReturnsNull.evaluate();
-            this._Benchmark_benchmark_3.payloads.errorFused.evaluate();
+            this._Benchmark_benchmark_0.payloads.keySelectorThrows.evaluate();
+            this._Benchmark_benchmark_1.payloads.mainErrorsInnerCancelled.evaluate();
+            this._Benchmark_benchmark_1.payloads.innerErrorsMainCancelled.evaluate();
+            this._Benchmark_benchmark_1.payloads.scalarReentrant2.evaluate();
+            this._Benchmark_benchmark_1.payloads.scalarReentrant.evaluate();
+            this._Benchmark_benchmark_5.payloads.toFutureList.evaluate();
+            this._Benchmark_benchmark_6.runBenchmark(this._Benchmark_benchmark_6.payloads.justObservableJust);
+            this._Benchmark_benchmark_1.payloads.scalarQueueNoOverflow.evaluate();
         }
 
    }

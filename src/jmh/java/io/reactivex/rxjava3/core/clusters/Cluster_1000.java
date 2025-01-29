@@ -5,22 +5,21 @@ public class Cluster_1000 {
    @org.openjdk.jmh.annotations.State(org.openjdk.jmh.annotations.Scope.Thread)
     public static class _Benchmark {
 
-       private io.reactivex.rxjava3.internal.observers.LambdaObserverTest._Benchmark _Benchmark_benchmark_0;
-       private io.reactivex.rxjava3.internal.operators.observable.ObservableAllTest._Benchmark _Benchmark_benchmark_1;
+       private io.reactivex.rxjava3.internal.operators.flowable.FlowableCombineLatestTest._Benchmark _Benchmark_benchmark_0;
+       private io.reactivex.rxjava3.internal.operators.flowable.FlowableRefCountTest._Benchmark _Benchmark_benchmark_1;
 
         @org.openjdk.jmh.annotations.Setup(org.openjdk.jmh.annotations.Level.Trial)
         public void makePayloads() {
-            _Benchmark_benchmark_0 = new io.reactivex.rxjava3.internal.observers.LambdaObserverTest._Benchmark();
-            _Benchmark_benchmark_1 = new io.reactivex.rxjava3.internal.operators.observable.ObservableAllTest._Benchmark();
+            _Benchmark_benchmark_0 = new io.reactivex.rxjava3.internal.operators.flowable.FlowableCombineLatestTest._Benchmark();
+            _Benchmark_benchmark_1 = new io.reactivex.rxjava3.internal.operators.flowable.FlowableRefCountTest._Benchmark();
             this._Benchmark_benchmark_0.makePayloads();
             this._Benchmark_benchmark_1.makePayloads();
         }
         
         @org.openjdk.jmh.annotations.Benchmark
         public void benchmark_Cluster_1000() throws java.lang.Throwable {
-            
-            this._Benchmark_benchmark_0.payloads.onErrorThrows.evaluate();
-            this._Benchmark_benchmark_1.payloads.doubleOnSubscribeObservable.evaluate();
+            this._Benchmark_benchmark_0.payloads.bothError.evaluate();
+            this._Benchmark_benchmark_1.payloads.disconnectBeforeConnect.evaluate();
         }
 
    }
