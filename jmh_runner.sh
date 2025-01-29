@@ -13,10 +13,10 @@ ERROR_LOG="error_log.txt"
 JMH_JAR="build/libs/rxjava-3.0.0-SNAPSHOT-jmh.jar"
 
 # JMH options
-JMH_OPTIONS="-f 5 -i 6 -r 1 -wi 3 -w 1"
+JMH_OPTIONS="-f 1 -i 30 -r 1 -wi 30 -w 1"
 
 # JMH lock file location (default location)
-JMH_LOCK_FILE="/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/T/jmh.lock"
+JMH_LOCK_FILE="/tmp/jmh.lock"
 
 # Check if the benchmarks file exists
 if [[ ! -f "$BENCHMARKS_FILE" ]]; then
